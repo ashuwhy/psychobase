@@ -1,0 +1,11 @@
+node_modules/
+dist/
+.DS_Store
+*.local
+.vite/
+
+# Datasets come from Stiti and the build output is generated from them.
+# Everyone runs `npm run data` locally - see public/data/README.md.
+public/data/raw_csv/
+public/data/json/
+public/data/build/

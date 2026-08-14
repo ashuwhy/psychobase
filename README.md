@@ -1,0 +1,78 @@
+# Physiological Conversation Visualisation
+
+Select a conversation context, read it turn by turn, and see the physiological
+signals recorded alongside it. Clicking a turn highlights the time interval that
+turn's physiological summary describes, on all five graphs at once.
+
+## Setup
+
+```bash
+# 1. Put the supplied data in place (not committed - see .gitignore)
+#    public/data/raw_csv/   <- dataGrouped.zip
+#    public/data/json/      <- Modified_JSON.zip
+
+# 2. Build the frontend-ready JSON (standard library only, no pip install)
+python3 scripts/build_data.py
+
+# 3. Run
+npm install
+npm run dev
+```
+
+`npm run data` re-runs step 2 after Stiti sends updated files.
+
+## How the data actually works
+
+Worth reading before writing any chart code - the CSV is not what it first looks
+like.
+
+**The CSV is one row per conversation turn, not a stream of samples.** Its
+`timestamp` column is a *range* joined by an en-dash:
+
+```
+2026-05-04T19:33:00–2026-05-04T19:34:00
+```
+
+and each signal column holds a short array of samples taken inside that range:
+
+```
+EDA = "[4.13, 3.99]"    PR = "[101.0, 92.0]"    ACT_CLASS = "['generic', 'still']"
+```
+
+`build_data.py` flattens those arrays onto a real time axis, spacing a row's
+samples evenly inside its own window, to produce one continuous series per
+signal for the whole conversation.
+
+**The highlight interval looks backwards, and it grows.** A turn's interval is
+not its own row window. Turn 4 sits at 19:38 and its summary says "over the past
+5 minutes", so the band runs 19:33-19:38 and covers several earlier turns. That
+look-back grows through the conversation - 1, 2, 3 minutes - then holds at 6.
+This is why the intervals must be dynamic: they are the input to the highlight.
+
+The pipeline reads the minutes out of each summary, converts them to a real
+start/end pair, and hands the UI a ready-made interval. **Do not re-derive
+intervals in the frontend**; read `turn.interval`.
+
+## Output
+
+`scripts/build_data.py` writes to `public/data/build/`:
+
+- `index.json` - every context, for the selection screen
+- `<context_id>.json` - `signals`, `domain`, `series`, `turns` for one context
+
+Shapes are declared in `src/types.ts`. That file and the script change together.
+
+## Data notes
+
+- 40 contexts build successfully; 4 CSVs (23, 23_1, 24, 25) have no matching
+  JSON yet and are skipped.
+- All 749 turns yield an interval from their summary text.
+- Some turns state a look-back that doesn't follow the 1-2-3-...-6 scheme; those
+  are listed per context in `interval_mismatches` for review rather than being
+  silently corrected.
+- `nan` in the source becomes `null`, so charts can break the line instead of
+  plotting zero.
+
+## Who is doing what
+
+See [TASKS.md](TASKS.md).
