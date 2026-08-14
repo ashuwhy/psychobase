@@ -11,7 +11,7 @@ real JSON to work against from the first commit rather than mocking it.
 
 ---
 
-## Task A - Data pipeline and contract (Ashutosh) - DONE
+## Task A - Data pipeline and contract (Ashutosh)
 
 `scripts/build_data.py`, `src/types.ts`
 
