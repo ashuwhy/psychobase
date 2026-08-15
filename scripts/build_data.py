@@ -35,13 +35,20 @@ RAW = ROOT / "public" / "data" / "raw_csv"
 JSON_DIR = ROOT / "public" / "data" / "json"
 OUT = ROOT / "public" / "data" / "build"
 
-# The five signals the brief asks for. ACT_CLASS is categorical, the rest numeric.
+# The five charted signals. The brief listed ACT_CLASS as the fifth, but it holds
+# category strings ('generic', 'still') rather than numbers; Stiti confirmed on
+# 15 Aug that the fifth graph is ACT_COUNT.
 SIGNALS = [
     {"key": "EDA", "label": "Electrodermal activity", "unit": "uS", "kind": "numeric"},
     {"key": "PR", "label": "Pulse rate", "unit": "bpm", "kind": "numeric"},
     {"key": "SkinTemp", "label": "Skin temperature", "unit": "degC", "kind": "numeric"},
     {"key": "ACCEL", "label": "Acceleration", "unit": "g", "kind": "numeric"},
     {"key": "ACT_COUNT", "label": "Activity count", "unit": "counts", "kind": "numeric"},
+]
+
+# Carried in `series` but not charted - useful for annotating a turn ("still" vs
+# "walking") without becoming a sixth graph.
+EXTRA_SERIES = [
     {"key": "ACT_CLASS", "label": "Activity class", "unit": "", "kind": "categorical"},
 ]
 
@@ -113,11 +120,12 @@ def build_series(rows):
     marks of that minute rather than both on the boundary, so consecutive rows
     do not stack points on the same timestamp.
     """
-    series = {s["key"]: [] for s in SIGNALS}
+    channels = SIGNALS + EXTRA_SERIES
+    series = {s["key"]: [] for s in channels}
     for row in rows:
         start, end = parse_range(row["timestamp"])
         span = (end - start).total_seconds()
-        for signal in SIGNALS:
+        for signal in channels:
             values = parse_array(row.get(signal["key"], ""))
             if not values:
                 continue
@@ -185,8 +193,23 @@ def build_context(csv_path, json_path):
             "interval_mismatches": mismatches}
 
 
+def context_names():
+    """Optional context_id -> display name map, from Stiti's Google doc.
+
+    The JSON files carry an empty `context` field for all 749 turns, so the
+    selection screen has no scenario name of its own. Drop the mapping into
+    public/data/context_names.json and it flows through to index.json; until
+    then cards fall back to the participant id.
+    """
+    path = ROOT / "public" / "data" / "context_names.json"
+    if not path.exists():
+        return {}
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
 def main():
     OUT.mkdir(parents=True, exist_ok=True)
+    names = context_names()
     index = []
     for csv_path in sorted(RAW.glob("participantGrouped*data.csv")):
         cid = csv_path.stem.replace("participantGrouped", "").replace("data", "")
@@ -201,6 +224,7 @@ def main():
         mismatched = len(context["interval_mismatches"])
         index.append({
             "context_id": cid,
+            "name": names.get(cid, ""),
             "participant_id": context["turns"][0]["participant_full_id"] if context["turns"] else "",
             "turn_count": len(context["turns"]),
             "start": context["domain"][0],
@@ -211,7 +235,10 @@ def main():
               + (f", {unreadable} without a summary interval" if unreadable else "")
               + (f", {mismatched} off the 1-2-3-..-6 scheme" if mismatched else ""))
     (OUT / "index.json").write_text(json.dumps(index, indent=1), encoding="utf-8")
+    named = sum(1 for row in index if row["name"])
     print(f"\n{len(index)} contexts -> {OUT}")
+    if not named:
+        print("  no context_names.json yet - cards will fall back to participant id")
 
 
 if __name__ == "__main__":

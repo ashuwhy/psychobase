@@ -11,6 +11,8 @@ export interface ContextSummary {
   context_id: string;
   participant_id: string;
   turn_count: number;
+  /** Scenario name from Stiti's mapping; "" until context_names.json exists. */
+  name: string;
   /** ISO timestamps bounding the whole conversation. */
   start: string;
   end: string;
@@ -70,9 +72,17 @@ export interface Turn {
 }
 
 export interface ContextData {
+  /**
+   * The five signals to chart: EDA, PR, SkinTemp, ACCEL, ACT_COUNT. Render one
+   * graph per entry rather than hard-coding the list.
+   */
   signals: SignalMeta[];
   /** [start, end] ISO timestamps - the shared X domain for all five charts. */
   domain: [string, string];
+  /**
+   * Keyed by signal. Also carries ACT_CLASS, which is categorical and is NOT
+   * one of the five graphs - available for annotating a turn if wanted.
+   */
   series: Record<SignalKey, Point[]>;
   turns: Turn[];
   /**

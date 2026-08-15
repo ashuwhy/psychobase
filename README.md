@@ -64,12 +64,19 @@ Shapes are declared in `src/types.ts`. That file and the script change together.
 
 ## Data notes
 
-- 40 contexts build successfully; 4 CSVs (23, 23_1, 24, 25) have no matching
-  JSON yet and are skipped.
+- 40 contexts build successfully. CSVs 23, 23_1, 24 and 25 have no matching
+  JSON; Stiti confirmed we skip those for now.
+- The five charted signals are EDA, PR, SkinTemp, ACCEL and ACT_COUNT. The brief
+  named ACT_CLASS as the fifth, but it holds category strings rather than
+  numbers, and Stiti confirmed ACT_COUNT instead. ACT_CLASS still ships inside
+  `series` for anyone who wants to annotate with it.
+- Context display names come from `public/data/context_names.json`, a
+  context_id -> name mapping. Stiti is sharing the names in a Google doc; until
+  that file exists the cards fall back to the participant id.
 - All 749 turns yield an interval from their summary text.
-- Some turns state a look-back that doesn't follow the 1-2-3-...-6 scheme; those
-  are listed per context in `interval_mismatches` for review rather than being
-  silently corrected.
+- Some turns state a look-back that doesn't follow the 1-2-3-...-6 scheme. Per
+  Stiti we highlight exactly what the summary text says; `interval_mismatches`
+  lists them per context as a diagnostic only.
 - `nan` in the source becomes `null`, so charts can break the line instead of
   plotting zero.
 

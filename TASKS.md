@@ -19,6 +19,9 @@ real JSON to work against from the first commit rather than mocking it.
 - [x] Read each turn's highlight interval out of its physiological summary
 - [x] Emit `public/data/build/index.json` + one `<context_id>.json` per context
 - [x] Report intervals that disagree with the 1-2-3-...-6 scheme
+- [x] Fifth graph switched to ACT_COUNT per Stiti, 15 Aug
+- [x] Support `public/data/context_names.json` for scenario names
+- [ ] Drop in the context-name mapping when Stiti shares the Google doc
 - [ ] Re-run `npm run data` whenever Stiti sends updated JSON
 
 Run it with `npm run data` (or `python3 scripts/build_data.py`). No dependencies
@@ -32,7 +35,8 @@ Screen 1, plus the loading layer everyone else uses.
 
 - [ ] Fetch and render `index.json` as cards - **nothing hard-coded**, the brief
       is explicit that contexts come from the file
-- [ ] Each card: context id, participant id, turn count, date/duration
+- [ ] Each card: context name (`name`, falls back to participant id until
+      Stiti's mapping arrives), context id, turn count, date/duration
 - [ ] Click routes to `/context/:contextId`
 - [ ] Loading and error states (a missing context file must not blank the page)
 
@@ -43,7 +47,9 @@ new card appear with no code change.
 
 `src/components/SignalChart.tsx`, `src/lib/time.ts`
 
-The heart of the app. One chart per signal: EDA, PR, SkinTemp, ACCEL, ACT_COUNT.
+The heart of the app. One chart per entry in `ContextData.signals` - EDA, PR,
+SkinTemp, ACCEL, ACT_COUNT. Stiti confirmed ACT_COUNT as the fifth graph, not
+ACT_CLASS.
 
 - [ ] Line chart per signal over the **whole** conversation
 - [ ] Every chart uses the same X domain from `ContextData.domain`, so the five
@@ -53,8 +59,6 @@ The heart of the app. One chart per signal: EDA, PR, SkinTemp, ACCEL, ACT_COUNT.
 - [ ] **Translucent band** for the selected turn's interval, full chart height,
       identical range on all five
 - [ ] `v: null` breaks the line - it must not plot as zero
-- [ ] ACT_CLASS is categorical (`generic` / `still` / `walking`); either render
-      it as a step/band strip or leave it out of the five and say so
 
 Done when: clicking any turn moves the band on all five charts to the same range
 in one render.
@@ -90,8 +94,8 @@ Done when: selecting a turn highlights it in the list and drives the graphs.
   pipeline slides it forward; don't re-derive intervals in the UI, just read
   `turn.interval`.
 - **Intervals off the scheme.** `interval_mismatches` lists turns whose stated
-  look-back is not `min(turn, 6)` minutes. Siddaarth is confirming the intended
-  scheme with Sudipa - until then the UI trusts whatever the summary says.
+  look-back is not `min(turn, 6)` minutes. Settled: highlight what the summary
+  text says. The list stays as a diagnostic only.
 - **Few points per signal.** Some contexts have only ~20 samples across an hour.
   Show the markers, not just the line, or the charts look empty.
 - **Categorical NaN.** Some rows carry `nan` inside the arrays; the pipeline
