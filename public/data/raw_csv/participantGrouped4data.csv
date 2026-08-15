@@ -1,0 +1,167 @@
+timestamp,participant_full_id,user_text,ai_text,ai_strategy,EDA,PR,SkinTemp,ACCEL,ACT_CLASS,ACT_COUNT,ACT_INT,MET,PRV,RESP,SLEEP,STEPS,WEAR,BODY_POS_LEFT,BODY_POS_RIGHT,ACTI_X,ACTI_Y,ACTI_Z,ACTIG_X,ACTIG_Y,ACTIG_Z
+2026-05-04T16:05:00,2753-1-1-0000,"Hi, I feel very low, frustrated, and anxious.","I am really sorry you are feeling this way.
+You do not need to handle all of it alone right now.
+Please do only one thing now: drink some water and sit down somewhere safe.
+If you want, send me just 2 words: ârelationship issueâ or âother.â",EmotionalValidation,[0.07],[120.0],[29.23],[0.096],['generic'],[24.0],['sedentary'],[0.95],[nan],[nan],[0.0],[0.0],[100.0],['sitting_reclining_lying'],['standing'],[11.0],[11.0],[7.0],[87.0],[134.0],[231.0]
+2026-05-04T16:06:00,2753-1-1-0000,"Both. I have too much workload, and there is also a hostel water crisis. Because of this, I am feeling worse.","That is too much at once. No wonder you feel overwhelmed.
+Right now, do only 3 things: drink water, wash your face, and stop checking your phone for 10 minutes.
+Then message me only this: âworkloadâ or ârelationshipâ â we will handle one first, not both together.",EmotionalValidation,[0.08],[119.0],[29.17],[0.023],['generic'],[40.0],['sedentary'],[1.44],[nan],[nan],[0.0],[0.0],[100.0],['sitting_reclining_lying'],['standing'],[9.0],[37.0],[26.0],[378.0],[177.0],[894.0]
+2026-05-04T16:07:00,2753-1-1-0000,Workload.,"Okay. First: do not try to finish everything tonight.
+Pick only 1 urgent task for the next 30 minutes. Just one.
+Send me in 3 words: assignment / coding / paper / exam prep.",ReflectiveStatements,[0.1],[130.0],[29.09],[0.041],['generic'],[102.0],['LPA'],[1.92],[nan],[nan],[0.0],[8.0],[100.0],['sitting_reclining_lying'],['standing'],[38.0],[118.0],[84.0],[641.0],[1026.0],[974.0]
+2026-05-04T16:08:00,2753-1-1-0000,"I am doing my assignment. It takes time to complete. I also have lots of work going on in my mind, and I cannot focus on it.","That is mental overload, not laziness.
+Do this now: open only the assignment, set a 15-minute timer, and do just the first small part.
+Ignore all other work for now â if you want, send me the assignment topic and I will help you break it down quickly.",ReflectiveStatements,[0.1],[143.0],[29.02],[0.086],['generic'],[151.0],['LPA'],[2.01],[nan],[nan],[0.0],[45.0],[100.0],['sitting_reclining_lying'],['sitting_reclining_lying'],[131.0],[321.0],[284.0],[938.0],[1055.0],[1947.0]
+2026-05-04T16:09:00,2753-1-1-0000,"Thanks, but right now I need someone to talk to me.","I am here with you right now.
+You do not need to solve anything this minute. Just stay with me for 2 minutes.
+Send me only one line: âWhat is hurting most right now?â",EmotionalValidation,[0.11],[145.0],[29.03],[0.09],['generic'],[148.0],['LPA'],[2.11],[nan],[nan],[0.0],[40.0],[100.0],['sitting_reclining_lying'],['sitting_reclining_lying'],[142.0],[299.0],[289.0],[860.0],[1787.0],[3150.0]
+2026-05-04T16:10:00,2753-1-1-0000,One of the most important problems is that there is no water in my hostel.,"That is a real problem, not a small one.
+No water makes everything feel worse and more panicky.
+Right now: keep 1 bottle near you, ask 1 nearby hostel mate what they are doing, and message the warden/caretaker once.
+If you want, I can help you write a short message to the hostel group or warden now.",ReflectiveStatements,[0.13],[146.0],[29.04],[0.088],['generic'],[140.0],['LPA'],[2.19],[nan],[nan],[0.0],[50.0],[100.0],['sitting_reclining_lying'],['sitting_reclining_lying'],[132.0],[339.0],[334.0],[1314.0],[1616.0],[3474.0]
+2026-05-04T16:11:00,2753-1-1-0000,The whole campus is facing this issue. There is also no water in my department.,"That is serious, especially if the whole campus is affected.
+Then this is not your personal burden to solve alone.
+Right now, conserve what you have, avoid overthinking tonight, and wait for an official update.
+If you want, I can write a strong but polite message for the hostel group / class group / authority now.",ReflectiveStatements,[0.14],[139.0],[29.04],[0.05],['generic'],[68.0],['LPA'],[2.11],[nan],[nan],[0.0],[15.0],[100.0],['sitting_reclining_lying'],['standing'],[41.0],[128.0],[120.0],[612.0],[544.0],[934.0]
+2026-05-04T16:12:00,2753-1-1-0000,"No thanks, I have already sent them an email. This issue is not the only reason for my frustration. Tomorrow I wasted too much time wandering, chatting, and calling for more than 5 hours. That also makes me feel like I wasted my day, and it is making me frustrated.","Yesâ¦ that is what is hurting you most.
+Not just the water issue â you feel guilty because your time slipped away, and now your mind is attacking you for it.
+But listen carefully: today is already gone. Punishing yourself tonight will only waste more time. Only one thing matters now â protect tomorrow.
+Do this now:
+Put your phone away for 20 minutes.
+Write only 3 tasks for tomorrow.
+Sleep after doing just 10â15 minutes of your assignment.
+You are not behind forever. You are just overloaded today.",Clarification,[0.15],[132.0],[29.03],[0.05],['generic'],[69.0],['LPA'],[2.13],[nan],[nan],[0.0],[15.0],[100.0],['sitting_reclining_lying'],['standing'],[28.0],[143.0],[103.0],[1667.0],[1219.0],[905.0]
+2026-05-04T16:13:00,2753-1-1-0000,"Many times I do it. I think I should not do it, but I repeat it again and again.","I understand. That is exactly why you feel so frustrated.
+You are not only tired â you are hurt because you keep repeating the same pattern even when you know it is harming you.
+But this moment is not for self-punishment. It is for one small change right now, so tomorrow does not feel the same.",ReflectiveStatements,[0.15],[132.0],[29.01],[0.117],['generic'],[145.0],['LPA'],[2.72],[nan],[nan],[0.0],[37.0],[100.0],['sitting_reclining_lying'],['sitting_reclining_lying'],[148.0],[384.0],[362.0],[1405.0],[3036.0],[4484.0]
+2026-05-04T16:14:00,2753-1-1-0000,"After waking up, I try to manage my time, but by evening I cannot maintain it.","That means your problem is not starting â your problem is consistency.
+You begin with good intention, but as the day goes on, your energy, emotions, or distractions take over.
+So do not judge yourself for the whole day. We need to fix the evening pattern, not your entire life.",EmotionalValidation,[0.14],[134.0],[28.97],[0.118],['generic'],[146.0],['LPA'],[2.61],[nan],[nan],[0.0],[70.0],[100.0],['sitting_reclining_lying'],['sitting_reclining_lying'],[109.0],[383.0],[301.0],[1373.0],[2688.0],[3491.0]
+2026-05-04T16:15:00,2753-1-1-0000,How do I do it?,"Start with one rule: never plan your whole day â protect only your evening.
+Keep 2 fixed evening tasks only, and when your mind starts wandering, do the easier one first.
+Your goal is not a perfect day. Your goal is to stop the evening from slipping away.",StressManagement,[0.12],[149.0],[28.97],[0.112],['generic'],[138.0],['LPA'],[2.84],[nan],[nan],[0.0],[49.0],[100.0],['miscellaneous'],['sitting_reclining_lying'],[119.0],[414.0],[258.0],[1416.0],[1874.0],[2008.0]
+2026-05-04T16:16:00,2753-1-1-0000,"How do I do it? I try to do it, but I start talking to someone or start scrolling Instagram.","Then the real problem is not time management â it is distraction during emotional moments.
+You do not âchooseâ distraction calmly. You escape into chatting or scrolling when your mind feels heavy or restless.
+So the solution is not more motivation. The solution is to block the trigger before evening starts.",StressManagement,[0.11],[144.0],[28.99],[0.109],['generic'],[147.0],['LPA'],[2.86],[nan],[nan],[0.0],[46.0],[100.0],['sitting_reclining_lying'],['sitting_reclining_lying'],[107.0],[296.0],[278.0],[988.0],[1795.0],[2321.0]
+2026-05-04T16:17:00,2753-1-1-0000,Help me do it.,"Yes. From tomorrow, make 3 evening rules:
+Log out of Instagram by 5 PM.
+Keep your phone on silent and away for 30 minutes.
+Do only 1 small task first before replying to anyone.
+If you want to scroll or text, first say:
+âAfter 15 minutes, not now.â
+This one line will break the habit loop.
+You do not need full control â you only need one small delay.",StressManagement,[0.11],[125.0],[29.01],[0.107],['generic'],[143.0],['MPA'],[3.17],[nan],[nan],[0.0],[46.0],[100.0],['standing'],['standing'],[97.0],[326.0],[282.0],[1560.0],[1633.0],[2667.0]
+2026-05-04T16:18:00,2753-1-1-0000,"When I waste time like this, I cannot sleep properly at night. These thoughts keep going in my mind. I try to distract myself at that time, but I cannot.","Yes, because your mind is carrying guilt into the night.
+At night, do not try to âfix the whole day.â Just do 3 things: put the phone away, write tomorrowâs 3 tasks, and tell yourself:
+âToday is over. I will restart tomorrow.â
+Your night problem is not laziness â it is overthinking after guilt.",ReflectiveStatements,[0.11],[118.0],[29.03],[0.114],['generic'],[146.0],['LPA'],[2.27],[nan],[nan],[0.0],[56.0],[100.0],['standing'],['sitting_reclining_lying'],[107.0],[397.0],[299.0],[1206.0],[1482.0],[2267.0]
+2026-05-04T16:19:00,2753-1-1-0000,How can I overcome this overthinking?,"Do not fight the thought. End the loop.
+When it starts at night, write the thought in 1 line, then write 1 next action under it.
+Your mind keeps spinning because it has no ending â give it a small ending, not a perfect solution.",StressManagement,[0.12],[121.0],[29.07],[0.097],['generic'],[118.0],['LPA'],[2.88],[nan],[nan],[0.0],[37.0],[100.0],['sitting_reclining_lying'],['sitting_reclining_lying'],[78.0],[270.0],[159.0],[1675.0],[1527.0],[2932.0]
+2026-05-04T16:20:00,2753-1-1-0000,"Another problem I face is in the exam hall. Due to nervousness, I make mistakes in problem solving. I cannot remember at that time. Even after studying, I cannot do it in the exam.","This is exam anxiety, not lack of ability.
+Your mind knows the answer, but nervousness blocks recall and makes you rush or freeze.
+So we do not only study more â we train your brain to stay calm for the first 5 minutes of the exam.
+Do this in the exam hall:
+First take 3 slow breaths.
+Start with the easiest question, not the hardest.
+Underline keywords in the question before solving.
+If blank, write the formula / first step only.
+Your rule:
+Do not think âI forgot everything.â
+Say instead:
+âI only need the first step.â
+This reduces panic and helps memory come back.",Clarification,[0.13],[101.0],[29.14],[0.01],['generic'],[31.0],['sedentary'],[0.95],[nan],[nan],[0.0],[0.0],[100.0],['sitting_reclining_lying'],['sitting_reclining_lying'],[0.0],[22.0],[8.0],[26.0],[0.0],[196.0]
+2026-05-04T16:21:00,2753-1-1-0000,"Yes, please help me with a small exam hall control routine.","Of course. Here is your simple exam hall control routine:
+Before entering the exam hall:
+Do not discuss difficult topics with others.
+Take 3 slow breaths.
+Tell yourself: âI do not need perfection. I need a calm start.â
+In the first 5 minutes:
+Read the full paper once.
+Mark easy questions first.
+Start with the easiest one to build confidence.
+Underline important words before solving.
+If your mind goes blank:
+Stop for 10 seconds.
+Take 1 deep breath.
+Write the formula / theorem / first known step only.
+Do not force the full answer immediately.
+Your emergency sentence in the exam hall:
+âI do not need the full answer right now. I only need the first step.â
+This one line is very important for you.
+Because your real problem is panic blocking memory â not lack of preparation.",EmotionalValidation,[0.17],[80.0],[29.11],[0.028],['generic'],[52.0],['LPA'],[2.36],[nan],[nan],[0.0],[5.0],[100.0],['sitting_reclining_lying'],['miscellaneous'],[33.0],[93.0],[77.0],[256.0],[435.0],[821.0]
+2026-05-04T16:22:00,2753-1-1-0000,"Yes, please make the night overthinking control routine.","Of course. Here is your simple night overthinking control routine:
+When overthinking starts at night:
+Stop using your phone.
+Sit or lie down quietly for 1 minute.
+Do not argue with your thoughts.
+Then do this on paper:
+Write the thought in 1 line.
+Write: âCan I solve this now?â
+If no, write 1 next action for tomorrow.
+Example:
+Thought: I wasted too much time today.
+Next action: Tomorrow from 6:00â6:30 PM, I will do only my assignment.
+Your night rule:
+Do not try to solve your life at night.
+Night is only for:
+Closing today
+Writing 3 tasks for tomorrow
+Sleeping
+Your emergency sentence at night:
+âToday is over. I will not solve tomorrow in bed.â
+This is very important for you.
+Because your mind keeps spinning when guilt has no ending.
+We are giving it a small ending.",ReflectiveStatements,[0.14],[110.0],[29.11],[0.013],['still'],[26.0],['sedentary'],[1.24],[nan],[nan],[0.0],[6.0],[100.0],['sitting_reclining_lying'],['standing'],[6.0],[77.0],[35.0],[45.0],[234.0],[476.0]
+2026-05-04T16:23:00,2753-1-1-0000,"Due to my nervousness, I face many problems in my life.","I understand.
+Your nervousness is not just a small habit â it is affecting your focus, confidence, sleep, exams, and decisions.
+But this can improve. We do not fix your whole life at once â we train your mind in small situations, one by one.
+Nervousness makes you:
+Rush
+Overthink
+Doubt yourself
+Escape into distraction
+Feel guilty later
+So your healing plan is simple:
+Slow your body
+Slow the first step
+Stop reacting immediately
+Practice small control daily
+Your new rule:
+âWhen I feel nervous, I will not react fast.â
+That one line can help in chatting, studying, exams, and overthinking.",EmotionalValidation,[0.11],[93.0],[29.07],[0.046],['generic'],[100.0],['LPA'],[1.67],[nan],[nan],[0.0],[11.0],[100.0],['sitting_reclining_lying'],['standing'],[46.0],[132.0],[162.0],[1074.0],[1028.0],[1609.0]
+2026-05-04T16:24:00,2753-1-1-0000,"Yes, please make a nervousness control routine for daily life.","Of course. Here is your simple nervousness control routine for daily life:
+When nervousness starts:
+Stop for 10 seconds.
+Take 3 slow breaths.
+Do not react immediately.
+Ask yourself only 1 question:
+âDo I need to act now, or can I wait 10 minutes?â
+Most of the time, waiting 10 minutes will save you from panic decisions.
+If your mind starts rushing:
+Do the first small step only.
+Do not solve the full problem in your head.
+Focus only on what is in front of you.
+In chatting / calling:
+Do not reply instantly when emotional.
+Say:
+âI will reply after 10 minutes.â
+This protects you from emotional looping.
+In study time:
+When nervous, do not think:
+âI have so much to do.â
+Think:
+âFor the next 15 minutes, I will do only this one task.â
+At night:
+If guilt starts, do not replay the whole day.
+Write:
+What went wrong
+One next action for tomorrow
+Then stop.
+Your daily emergency sentence:
+âI do not need to react fast. I need to respond calmly.â
+This sentence is very important for you.
+Because your nervousness makes you react fast, and later you suffer.",StressManagement,[0.1],[69.0],[29.04],[0.086],['generic'],[134.0],['LPA'],[2.52],[nan],[nan],[0.0],[45.0],[100.0],['sitting_reclining_lying'],['sitting_reclining_lying'],[43.0],[265.0],[196.0],[1252.0],[1448.0],[2535.0]
+2026-05-04T16:25:00,2753-1-1-0000,Thank you for giving such suggestions.,"You are most welcome.
+And I want you to remember one thing â you are not weak, you are just mentally overloaded right now.
+Slowly, step by step, you can regain control. I am here whenever you need.",EmotionalValidation,[0.07],[67.0],[29.06],[0.07],['generic'],[100.0],['LPA'],[2.69],[nan],[nan],[0.0],[31.0],[100.0],['sitting_reclining_lying'],['sitting_reclining_lying'],[68.0],[212.0],[170.0],[1399.0],[1053.0],[749.0]

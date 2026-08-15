@@ -1,0 +1,1328 @@
+[
+    {
+        "session_id": "2753-1-1",
+        "person_id": "2753",
+        "turns": [
+            {
+                "timestamp": "2026-05-22T19:00:00",
+                "participant_full_id": "2753-1-1-0000",
+                "user_text": "I feel weird about my health.",
+                "ai_text": "It sounds like something about your body or mind doesn't feel quite right, and that uncertainty can be unsettling. Sometimes a vague feeling like this comes from stress, fatigue, anxiety, or the beginning of a physical illness, but it's also important not to ignore persistent or worsening symptoms. Pay attention to what feels different, and if the feeling continues, becomes severe, or is accompanied by symptoms like chest pain, trouble breathing, or fainting, seek medical care promptly.",
+                "context": "",
+                "strategy": "EmotionalValidation",
+                "raw_physio": {
+                    "EDA": [
+                        4.42,
+                        4.4
+                    ],
+                    "PR": [
+                        74.0,
+                        84.0
+                    ],
+                    "SkinTemp": [
+                        34.03,
+                        33.94
+                    ],
+                    "ACCEL": [
+                        0.09,
+                        0.075
+                    ],
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": [
+                        115.0,
+                        110.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "PR": "Heart rate drifted increasing across the first minute to 84.0 bpm, without any notable peaks or valleys.",
+                    "ACCEL": "During the first minute, movement registered a downward shift to 0.07 g, without any notable peaks or valleys.",
+                    "SkinTemp": "The temperature signal was falling for the first minute, smooth, around 33.94 degC.",
+                    "EDA": "The sympathetic arousal marker (EDA) dropping slightly over the first minute, now 4.4 uS.",
+                    "ACT_CLASS": "Over the first minute, generic activity was sustained without interruption."
+                },
+                "physio_summary_fusion": "Over the first minute, considering MET levels near 4.23 and generic movement, EDA and PR and SkinTemp and ACCEL shifted, not explained by movement. EDA and PR and SkinTemp and ACCEL rose while ACCEL and ACT_COUNT showed no corresponding movement, suggesting this arousal is not explained by physical activity.",
+                "stress_score": -2,
+                "stress_level": null,
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I feel weird about my health.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: EmotionalValidation\n\nResponse: It sounds like something about your body or mind doesn't feel quite right, and that uncertainty can be unsettling. Sometimes a vague feeling like this comes from stress, fatigue, anxiety, or the beginning of a physical illness, but it's also important not to ignore persistent or worsening symptoms. Pay attention to what feels different, and if the feeling continues, becomes severe, or is accompanied by symptoms like chest pain, trouble breathing, or fainting, seek medical care promptly.<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I feel weird about my health.\nPhysiological Signals: Over the first minute, considering MET levels near 4.23 and generic movement, EDA and PR and SkinTemp and ACCEL shifted, not explained by movement. EDA and PR and SkinTemp and ACCEL rose while ACCEL and ACT_COUNT showed no corresponding movement, suggesting this arousal is not explained by physical activity. Notably, Heart rate drifted increasing across the first minute to 84.0 bpm, without any notable peaks or valleys. Simultaneously, During the first minute, movement registered a downward shift to 0.07 g, without any notable peaks or valleys. Simultaneously, The temperature signal was falling for the first minute, smooth, around 33.94 degC. At the same time, The sympathetic arousal marker (EDA) dropping slightly over the first minute, now 4.4 uS. Over the first minute, generic activity was sustained without interruption.\n\n### Response:\nStrategy: EmotionalValidation\n\nResponse: It sounds like something about your body or mind doesn't feel quite right, and that uncertainty can be unsettling. Sometimes a vague feeling like this comes from stress, fatigue, anxiety, or the beginning of a physical illness, but it's also important not to ignore persistent or worsening symptoms. Pay attention to what feels different, and if the feeling continues, becomes severe, or is accompanied by symptoms like chest pain, trouble breathing, or fainting, seek medical care promptly.<EOS>"
+            },
+            {
+                "timestamp": "2026-05-22T19:02:00",
+                "participant_full_id": "2753-1-1-0000",
+                "user_text": "If I face even a very small health issue, I become nervous.",
+                "ai_text": "It sounds like small changes in your health quickly make you worry that something is seriously wrong. Your mind may be trying to protect you by staying alert, but it can make minor symptoms feel much bigger than they are. When this happens, pause before jumping to the worst conclusion and give yourself a little time to observe how you actually feel.",
+                "context": "",
+                "strategy": "EmotionalValidation",
+                "raw_physio": {
+                    "EDA": [
+                        4.0,
+                        3.57
+                    ],
+                    "PR": [
+                        79.0,
+                        71.0
+                    ],
+                    "SkinTemp": [
+                        33.82,
+                        33.68
+                    ],
+                    "ACCEL": [
+                        0.076,
+                        0.052
+                    ],
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": [
+                        88.0,
+                        91.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "EDA": "Over the past 2 minutes, electrodermal activity moved sharply in a dropping direction, from 4.42 to 3.57 uS.",
+                    "ACCEL": "Over the past 2 minutes, physical motion remained dropping, staying close to 0.05 g.",
+                    "SkinTemp": "Across the past 2 minutes, skin temperature held decreasing near 33.68 degC.",
+                    "PR": "The pulse signal was falling for the past 2 minutes, mildly fluctuating, around 71.0 bpm.",
+                    "ACT_CLASS": "The participant's movement pattern was classified as generic for all of the past 2 minutes."
+                },
+                "physio_summary_fusion": "Over the past 2 minutes, the combined signal (EDA and PR and SkinTemp and ACCEL) showed fell, with movement generic, not clearly linked to physical activity. The relationship between EDA and PR and SkinTemp and ACCEL and movement was inconsistent over the past 2 minutes, making the source of change unclear.",
+                "stress_score": -2,
+                "stress_level": null,
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: If I face even a very small health issue, I become nervous.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: EmotionalValidation\n\nResponse: It sounds like small changes in your health quickly make you worry that something is seriously wrong. Your mind may be trying to protect you by staying alert, but it can make minor symptoms feel much bigger than they are. When this happens, pause before jumping to the worst conclusion and give yourself a little time to observe how you actually feel.<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: If I face even a very small health issue, I become nervous.\nPhysiological Signals: Over the past 2 minutes, the combined signal (EDA and PR and SkinTemp and ACCEL) showed fell, with movement generic, not clearly linked to physical activity. The relationship between EDA and PR and SkinTemp and ACCEL and movement was inconsistent over the past 2 minutes, making the source of change unclear. Also, Over the past 2 minutes, electrodermal activity moved sharply in a dropping direction, from 4.42 to 3.57 uS. Notably, Over the past 2 minutes, physical motion remained dropping, staying close to 0.05 g. Notably, Across the past 2 minutes, skin temperature held decreasing near 33.68 degC. Also, The pulse signal was falling for the past 2 minutes, mildly fluctuating, around 71.0 bpm. At the same time, The participant's movement pattern was classified as generic for all of the past 2 minutes.\n\n### Response:\nStrategy: EmotionalValidation\n\nResponse: It sounds like small changes in your health quickly make you worry that something is seriously wrong. Your mind may be trying to protect you by staying alert, but it can make minor symptoms feel much bigger than they are. When this happens, pause before jumping to the worst conclusion and give yourself a little time to observe how you actually feel.<EOS>"
+            },
+            {
+                "timestamp": "2026-05-22T19:04:00",
+                "participant_full_id": "2753-1-1-0000",
+                "user_text": "I try to give myself time, but after that I still do the same thing.",
+                "ai_text": "It sounds like you genuinely try to calm yourself, but the worry keeps coming back. That often happens when your brain has learned to treat even small health changes as a possible danger, so reassurance only helps for a short time. Instead of trying to convince yourself that nothing is wrong, notice the worry without immediately acting on it. If this pattern happens often and affects your daily life, talking with a mental health professional can be very helpfulâthey can teach techniques to break this cycle.",
+                "context": "",
+                "strategy": "ReflectiveStatements",
+                "raw_physio": {
+                    "EDA": [
+                        3.44,
+                        3.22
+                    ],
+                    "PR": [
+                        73.0,
+                        71.0
+                    ],
+                    "SkinTemp": [
+                        33.55,
+                        33.42
+                    ],
+                    "ACCEL": [
+                        0.074,
+                        0.041
+                    ],
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": [
+                        109.0,
+                        69.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "EDA": "Across the past 4 minutes, electrodermal activity showed a decreasing pattern, settling around 3.22 uS.",
+                    "ACCEL": "Over the past 4 minutes, motion intensity stayed decreasing, around 0.04 g.",
+                    "SkinTemp": "The temperature signal was decreasing for the past 4 minutes, mildly fluctuating, around 33.42 degC.",
+                    "PR": "Beats per minute decreasing slightly over the past 4 minutes, now 71.0, without any notable peaks or valleys.",
+                    "ACT_CLASS": "Activity remained categorized as generic over the past 4 minutes."
+                },
+                "physio_summary_fusion": "Over the past 4 minutes, EDA and PR and SkinTemp and ACCEL fell, occurring with reliable and generic movement, not clearly linked to physical activity. Neither EDA and PR and SkinTemp and ACCEL nor movement showed a notable change, so no clear stress or activity signal is present here.",
+                "stress_score": 0,
+                "stress_level": null,
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I try to give myself time, but after that I still do the same thing.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: ReflectiveStatements\n\nResponse: It sounds like you genuinely try to calm yourself, but the worry keeps coming back. That often happens when your brain has learned to treat even small health changes as a possible danger, so reassurance only helps for a short time. Instead of trying to convince yourself that nothing is wrong, notice the worry without immediately acting on it. If this pattern happens often and affects your daily life, talking with a mental health professional can be very helpfulâthey can teach techniques to break this cycle.<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I try to give myself time, but after that I still do the same thing.\nPhysiological Signals: Over the past 4 minutes, EDA and PR and SkinTemp and ACCEL fell, occurring with reliable and generic movement, not clearly linked to physical activity. Neither EDA and PR and SkinTemp and ACCEL nor movement showed a notable change, so no clear stress or activity signal is present here. Across the past 4 minutes, electrodermal activity showed a decreasing pattern, settling around 3.22 uS. In parallel, Over the past 4 minutes, motion intensity stayed decreasing, around 0.04 g. At the same time, The temperature signal was decreasing for the past 4 minutes, mildly fluctuating, around 33.42 degC. Additionally, Beats per minute decreasing slightly over the past 4 minutes, now 71.0, without any notable peaks or valleys. At the same time, Activity remained categorized as generic over the past 4 minutes.\n\n### Response:\nStrategy: ReflectiveStatements\n\nResponse: It sounds like you genuinely try to calm yourself, but the worry keeps coming back. That often happens when your brain has learned to treat even small health changes as a possible danger, so reassurance only helps for a short time. Instead of trying to convince yourself that nothing is wrong, notice the worry without immediately acting on it. If this pattern happens often and affects your daily life, talking with a mental health professional can be very helpfulâthey can teach techniques to break this cycle.<EOS>"
+            },
+            {
+                "timestamp": "2026-05-22T19:06:00",
+                "participant_full_id": "2753-1-1-0000",
+                "user_text": "Actually, I belong to the healthcare field.",
+                "ai_text": "That makes sense. When you work or study in healthcare, you know about many illnesses, so it's easier for your mind to connect small symptoms with serious conditions. Knowledge can sometimes increase worry instead of reducing it. Try asking yourself, \"Am I responding to the actual symptom, or to the fear of what it could mean?\" That small question can help you separate facts from anxiety.",
+                "context": "",
+                "strategy": "ReflectiveStatements",
+                "raw_physio": {
+                    "EDA": [
+                        2.72,
+                        2.67
+                    ],
+                    "PR": [
+                        66.0,
+                        72.0
+                    ],
+                    "SkinTemp": [
+                        33.25,
+                        33.14
+                    ],
+                    "ACCEL": [
+                        0.024,
+                        0.094
+                    ],
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": [
+                        71.0,
+                        109.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "EDA": "EDA levels moved sharply and declining through the past 6 minutes, ending at 2.67 uS.",
+                    "SkinTemp": "Surface temperature decreasing sharply over the past 6 minutes, now 33.14 degC, showing a single sustained rise with no reversal.",
+                    "PR": "A easing pulse rate pattern emerged over the past 6 minutes, mildly fluctuating, reaching 72.0 bpm.",
+                    "ACCEL": "Overall movement (accelerometer) increasing slightly over the past 6 minutes, moving from 0.09 to 0.09 g.",
+                    "ACT_CLASS": "Activity classification remained generic throughout the past 6 minutes."
+                },
+                "physio_summary_fusion": "Across the past 6 minutes, EDA and PR and SkinTemp and ACCEL moved in a shifted direction while the participant stayed generic, indicating the response is not clearly linked to physical activity. The relationship between EDA and PR and SkinTemp and ACCEL and movement was inconsistent over the past 6 minutes, making the source of change unclear.",
+                "stress_score": -2,
+                "stress_level": null,
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Actually, I belong to the healthcare field.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: ReflectiveStatements\n\nResponse: That makes sense. When you work or study in healthcare, you know about many illnesses, so it's easier for your mind to connect small symptoms with serious conditions. Knowledge can sometimes increase worry instead of reducing it. Try asking yourself, \"Am I responding to the actual symptom, or to the fear of what it could mean?\" That small question can help you separate facts from anxiety.<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Actually, I belong to the healthcare field.\nPhysiological Signals: Across the past 6 minutes, EDA and PR and SkinTemp and ACCEL moved in a shifted direction while the participant stayed generic, indicating the response is not clearly linked to physical activity. The relationship between EDA and PR and SkinTemp and ACCEL and movement was inconsistent over the past 6 minutes, making the source of change unclear. Simultaneously, EDA levels moved sharply and declining through the past 6 minutes, ending at 2.67 uS. Additionally, Surface temperature decreasing sharply over the past 6 minutes, now 33.14 degC, showing a single sustained rise with no reversal. Meanwhile, A easing pulse rate pattern emerged over the past 6 minutes, mildly fluctuating, reaching 72.0 bpm. On top of that, Overall movement (accelerometer) increasing slightly over the past 6 minutes, moving from 0.09 to 0.09 g. Meanwhile, Activity classification remained generic throughout the past 6 minutes.\n\n### Response:\nStrategy: ReflectiveStatements\n\nResponse: That makes sense. When you work or study in healthcare, you know about many illnesses, so it's easier for your mind to connect small symptoms with serious conditions. Knowledge can sometimes increase worry instead of reducing it. Try asking yourself, \"Am I responding to the actual symptom, or to the fear of what it could mean?\" That small question can help you separate facts from anxiety.<EOS>"
+            },
+            {
+                "timestamp": "2026-05-22T19:08:00",
+                "participant_full_id": "2753-1-1-0000",
+                "user_text": "I do my tests, but they always come back normal.",
+                "ai_text": "It sounds frustrating because even though the results are normal, the worry doesn't go away. This can happen when anxiety is looking for certainty that no test can fully provide, so each normal result brings only temporary relief. If this keeps happening, it may be worth focusing on treating the anxiety itself, not just checking for illness.",
+                "context": "",
+                "strategy": "EmotionalValidation",
+                "raw_physio": {
+                    "EDA": [
+                        2.62,
+                        2.56
+                    ],
+                    "PR": [
+                        74.0,
+                        82.0
+                    ],
+                    "SkinTemp": [
+                        33.0,
+                        32.85
+                    ],
+                    "ACCEL": [
+                        0.082,
+                        0.054
+                    ],
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": [
+                        90.0,
+                        68.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "EDA": "Over the past 6 minutes, electrodermal activity moved sharply in a declining direction, from 4.0 to 2.56 uS.",
+                    "SkinTemp": "Over the past 6 minutes, skin temperature remained dropping, staying close to 32.85 degC.",
+                    "ACCEL": "Over the past 6 minutes, motion intensity stayed easing, around 0.05 g.",
+                    "PR": "Pulse readings moved slightly and upward through the past 6 minutes, ending at 82.0 bpm.",
+                    "ACT_CLASS": "No change in activity state was observed over the past 6 minutes; it remained generic."
+                },
+                "physio_summary_fusion": "During the past 6 minutes, physiological arousal (EDA and PR and SkinTemp and ACCEL) shifted; given generic movement and reclining/lying posture, this appears not explained by movement. EDA and PR and SkinTemp and ACCEL increased while the participant remained sedentary, so the change cannot be attributed to physical exertion.",
+                "stress_score": 0,
+                "stress_level": null,
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I do my tests, but they always come back normal.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: EmotionalValidation\n\nResponse: It sounds frustrating because even though the results are normal, the worry doesn't go away. This can happen when anxiety is looking for certainty that no test can fully provide, so each normal result brings only temporary relief. If this keeps happening, it may be worth focusing on treating the anxiety itself, not just checking for illness.<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I do my tests, but they always come back normal.\nPhysiological Signals: During the past 6 minutes, physiological arousal (EDA and PR and SkinTemp and ACCEL) shifted; given generic movement and reclining/lying posture, this appears not explained by movement. EDA and PR and SkinTemp and ACCEL increased while the participant remained sedentary, so the change cannot be attributed to physical exertion. Alongside this, Over the past 6 minutes, electrodermal activity moved sharply in a declining direction, from 4.0 to 2.56 uS. At the same time, Over the past 6 minutes, skin temperature remained dropping, staying close to 32.85 degC. Meanwhile, Over the past 6 minutes, motion intensity stayed easing, around 0.05 g. Additionally, Pulse readings moved slightly and upward through the past 6 minutes, ending at 82.0 bpm. Meanwhile, No change in activity state was observed over the past 6 minutes; it remained generic.\n\n### Response:\nStrategy: EmotionalValidation\n\nResponse: It sounds frustrating because even though the results are normal, the worry doesn't go away. This can happen when anxiety is looking for certainty that no test can fully provide, so each normal result brings only temporary relief. If this keeps happening, it may be worth focusing on treating the anxiety itself, not just checking for illness.<EOS>"
+            },
+            {
+                "timestamp": "2026-05-22T19:10:00",
+                "participant_full_id": "2753-1-1-0000",
+                "user_text": "I had some back pain, so I asked the doctor about it and showed my reports. The doctor said it wasn't anything serious. They told me it was probably due to not drinking enough water and advised me to eat healthy food.",
+                "ai_text": "It sounds like part of you believes the doctor, but another part still finds it hard to let go of the worry. Your mind may be staying alert even after getting reassurance because it's trying to keep you safe. Since your doctor isn't concerned, try trusting their guidance for a few daysâdrink more water, eat healthy food, and notice whether your body gradually feels better instead of checking for signs that something is wrong.",
+                "context": "",
+                "strategy": "ReflectiveStatements",
+                "raw_physio": {
+                    "EDA": [
+                        2.38,
+                        2.04
+                    ],
+                    "PR": [
+                        71.0,
+                        77.0
+                    ],
+                    "SkinTemp": [
+                        32.73,
+                        32.61
+                    ],
+                    "ACCEL": [
+                        0.078,
+                        0.082
+                    ],
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": [
+                        69.0,
+                        90.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "EDA": "Electrodermal activity remained falling across the past 6 minutes, staying near 2.04 uS.",
+                    "SkinTemp": "Skin temperature moved sharply in a easing direction over the past 6 minutes, from 33.55 to 32.61 degC.",
+                    "PR": "Pulse rate moved slightly in a growing direction over the past 6 minutes, from 73.0 to 77.0 bpm.",
+                    "ACCEL": "The motion signal was growing for the past 6 minutes, mildly fluctuating, around 0.08 g.",
+                    "ACT_CLASS": "Activity classification showed no change over the past 6 minutes, staying generic."
+                },
+                "physio_summary_fusion": "Across the past 6 minutes, EDA and PR and SkinTemp and ACCEL shifted while the participant was awake, likely activity-related. EDA and PR and SkinTemp and ACCEL climbed while movement also increased, suggesting the change may be confounded by physical activity.",
+                "stress_score": 0,
+                "stress_level": null,
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I had some back pain, so I asked the doctor about it and showed my reports. The doctor said it wasn't anything serious. They told me it was probably due to not drinking enough water and advised me to eat healthy food.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: ReflectiveStatements\n\nResponse: It sounds like part of you believes the doctor, but another part still finds it hard to let go of the worry. Your mind may be staying alert even after getting reassurance because it's trying to keep you safe. Since your doctor isn't concerned, try trusting their guidance for a few daysâdrink more water, eat healthy food, and notice whether your body gradually feels better instead of checking for signs that something is wrong.<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I had some back pain, so I asked the doctor about it and showed my reports. The doctor said it wasn't anything serious. They told me it was probably due to not drinking enough water and advised me to eat healthy food.\nPhysiological Signals: Across the past 6 minutes, EDA and PR and SkinTemp and ACCEL shifted while the participant was awake, likely activity-related. EDA and PR and SkinTemp and ACCEL climbed while movement also increased, suggesting the change may be confounded by physical activity. Notably, Electrodermal activity remained falling across the past 6 minutes, staying near 2.04 uS. Meanwhile, Skin temperature moved sharply in a easing direction over the past 6 minutes, from 33.55 to 32.61 degC. On top of that, Pulse rate moved slightly in a growing direction over the past 6 minutes, from 73.0 to 77.0 bpm. In parallel, The motion signal was growing for the past 6 minutes, mildly fluctuating, around 0.08 g. Meanwhile, Activity classification showed no change over the past 6 minutes, staying generic.\n\n### Response:\nStrategy: ReflectiveStatements\n\nResponse: It sounds like part of you believes the doctor, but another part still finds it hard to let go of the worry. Your mind may be staying alert even after getting reassurance because it's trying to keep you safe. Since your doctor isn't concerned, try trusting their guidance for a few daysâdrink more water, eat healthy food, and notice whether your body gradually feels better instead of checking for signs that something is wrong.<EOS>"
+            },
+            {
+                "timestamp": "2026-05-22T19:12:00",
+                "participant_full_id": "2753-1-1-0000",
+                "user_text": "After all this, after some time, I start getting many medical tests again.",
+                "ai_text": "It sounds like the tests give you temporary peace, but after a while the fear comes back and you feel the need to check again. This can happen when anxiety is searching for complete certainty, and no amount of testing can fully satisfy it. A gentle step is to notice when the urge to get another test appears and ask yourself, \"Has anything actually changed, or is this my anxiety asking for reassurance again?\" If this cycle keeps repeating, it would be worth discussing the anxiety itself with a mental health professional, because breaking that cycle is often more helpful than repeating normal medical tests.",
+                "context": "",
+                "strategy": "ReflectiveStatements",
+                "raw_physio": {
+                    "EDA": [
+                        2.02,
+                        2.02
+                    ],
+                    "PR": [
+                        67.0,
+                        69.0
+                    ],
+                    "SkinTemp": [
+                        32.47,
+                        32.35
+                    ],
+                    "ACCEL": [
+                        0.047,
+                        0.059
+                    ],
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": [
+                        67.0,
+                        103.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "SkinTemp": "Over the past 6 minutes, skin temperature remained dropping, staying close to 32.35 degC.",
+                    "EDA": "Skin conductance levels stayed decreasing over the past 6 minutes, near 2.02 uS.",
+                    "ACCEL": "Over the past 6 minutes, physical activity intensity growing moderately, now near 0.06 g.",
+                    "PR": "Pulse rate showed a increasing trend across the past 6 minutes, with mildly fluctuating variation, now 69.0 bpm.",
+                    "ACT_CLASS": "Over the past 6 minutes, generic activity was sustained without interruption."
+                },
+                "physio_summary_fusion": "Over the past 6 minutes, EDA and PR and SkinTemp and ACCEL shifted, while movement remained generic (LPA intensity), suggesting the change is likely activity-related. EDA and PR and SkinTemp and ACCEL rose in step with heightened motion, indicating the signal is at least partly explained by movement rather than stress alone.",
+                "stress_score": -2,
+                "stress_level": null,
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: After all this, after some time, I start getting many medical tests again.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: ReflectiveStatements\n\nResponse: It sounds like the tests give you temporary peace, but after a while the fear comes back and you feel the need to check again. This can happen when anxiety is searching for complete certainty, and no amount of testing can fully satisfy it. A gentle step is to notice when the urge to get another test appears and ask yourself, \"Has anything actually changed, or is this my anxiety asking for reassurance again?\" If this cycle keeps repeating, it would be worth discussing the anxiety itself with a mental health professional, because breaking that cycle is often more helpful than repeating normal medical tests.<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: After all this, after some time, I start getting many medical tests again.\nPhysiological Signals: Over the past 6 minutes, EDA and PR and SkinTemp and ACCEL shifted, while movement remained generic (LPA intensity), suggesting the change is likely activity-related. EDA and PR and SkinTemp and ACCEL rose in step with heightened motion, indicating the signal is at least partly explained by movement rather than stress alone. Notably, Over the past 6 minutes, skin temperature remained dropping, staying close to 32.35 degC. Additionally, Skin conductance levels stayed decreasing over the past 6 minutes, near 2.02 uS. Also, Over the past 6 minutes, physical activity intensity growing moderately, now near 0.06 g. Simultaneously, Pulse rate showed a increasing trend across the past 6 minutes, with mildly fluctuating variation, now 69.0 bpm. In parallel, Over the past 6 minutes, generic activity was sustained without interruption.\n\n### Response:\nStrategy: ReflectiveStatements\n\nResponse: It sounds like the tests give you temporary peace, but after a while the fear comes back and you feel the need to check again. This can happen when anxiety is searching for complete certainty, and no amount of testing can fully satisfy it. A gentle step is to notice when the urge to get another test appears and ask yourself, \"Has anything actually changed, or is this my anxiety asking for reassurance again?\" If this cycle keeps repeating, it would be worth discussing the anxiety itself with a mental health professional, because breaking that cycle is often more helpful than repeating normal medical tests.<EOS>"
+            },
+            {
+                "timestamp": "2026-05-22T19:14:00",
+                "participant_full_id": "2753-1-1-0000",
+                "user_text": "Because of this, I lose and waste a lot of money on medical tests.",
+                "ai_text": "It sounds painful because you're not only carrying the fear, but also dealing with the financial cost of trying to feel safe. The tests may reduce your anxiety for a little while, but they don't solve the fear underneath, so the cycle starts again. A small step is to make a rule for yourself: unless a doctor recommends a test or you develop a new or serious symptom, wait before booking another one. That pause can help you slowly break the pattern.",
+                "context": "",
+                "strategy": "EmotionalValidation",
+                "raw_physio": {
+                    "EDA": [
+                        1.97,
+                        2.11
+                    ],
+                    "PR": [
+                        65.0,
+                        84.0
+                    ],
+                    "SkinTemp": [
+                        32.16,
+                        32.03
+                    ],
+                    "ACCEL": [
+                        0.098,
+                        0.114
+                    ],
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": [
+                        138.0,
+                        126.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "SkinTemp": "During the past 6 minutes, skin temperature registered a decreasing shift to 32.03 degC, showing a single sustained rise with no reversal.",
+                    "PR": "Pulse rate climbing moderately over the past 6 minutes, moving from 74.0 to 84.0 bpm.",
+                    "ACCEL": "Over the past 6 minutes, physical motion remained increasing, staying close to 0.11 g.",
+                    "EDA": "Skin conductance drifted downward across the past 6 minutes to 2.11 uS, with a small valley followed by recovery.",
+                    "ACT_CLASS": "The participant stayed generic for the duration of the past 6 minutes."
+                },
+                "physio_summary_fusion": "During the past 6 minutes, EDA and PR and SkinTemp and ACCEL shifted while activity intensity stayed MPA, likely activity-related. Because both arousal and activity increased together, this pattern is more consistent with exertion than emotional stress.",
+                "stress_score": -2,
+                "stress_level": null,
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Because of this, I lose and waste a lot of money on medical tests.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: EmotionalValidation\n\nResponse: It sounds painful because you're not only carrying the fear, but also dealing with the financial cost of trying to feel safe. The tests may reduce your anxiety for a little while, but they don't solve the fear underneath, so the cycle starts again. A small step is to make a rule for yourself: unless a doctor recommends a test or you develop a new or serious symptom, wait before booking another one. That pause can help you slowly break the pattern.<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Because of this, I lose and waste a lot of money on medical tests.\nPhysiological Signals: During the past 6 minutes, EDA and PR and SkinTemp and ACCEL shifted while activity intensity stayed MPA, likely activity-related. Because both arousal and activity increased together, this pattern is more consistent with exertion than emotional stress. Additionally, During the past 6 minutes, skin temperature registered a decreasing shift to 32.03 degC, showing a single sustained rise with no reversal. Notably, Pulse rate climbing moderately over the past 6 minutes, moving from 74.0 to 84.0 bpm. Alongside this, Over the past 6 minutes, physical motion remained increasing, staying close to 0.11 g. Simultaneously, Skin conductance drifted downward across the past 6 minutes to 2.11 uS, with a small valley followed by recovery. On top of that, The participant stayed generic for the duration of the past 6 minutes.\n\n### Response:\nStrategy: EmotionalValidation\n\nResponse: It sounds painful because you're not only carrying the fear, but also dealing with the financial cost of trying to feel safe. The tests may reduce your anxiety for a little while, but they don't solve the fear underneath, so the cycle starts again. A small step is to make a rule for yourself: unless a doctor recommends a test or you develop a new or serious symptom, wait before booking another one. That pause can help you slowly break the pattern.<EOS>"
+            },
+            {
+                "timestamp": "2026-05-22T19:16:00",
+                "participant_full_id": "2753-1-1-0000",
+                "user_text": "I talk to my friends about it, and they also say the same thing.",
+                "ai_text": "It sounds like the people around you are trying to reassure you, but the worry still doesn't settle. That doesn't mean you're ignoring themâit means the fear feels stronger than the reassurance. Sometimes, when this pattern keeps repeating despite normal tests and reassurance from doctors and friends, the problem is no longer the body but the anxiety itself. Focusing on that anxiety can bring more lasting relief than seeking more reassurance.",
+                "context": "",
+                "strategy": "ReflectiveStatements",
+                "raw_physio": {
+                    "EDA": [
+                        2.63,
+                        2.58
+                    ],
+                    "PR": [
+                        78.0,
+                        68.0
+                    ],
+                    "SkinTemp": [
+                        32.03,
+                        32.15
+                    ],
+                    "ACCEL": [
+                        0.011,
+                        0.02
+                    ],
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": [
+                        8.0,
+                        30.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "ACCEL": "A decreasing movement pattern was observed over the past 6 minutes, highly fluctuating, reaching 0.02 g.",
+                    "SkinTemp": "Over the past 6 minutes, peripheral warmth dropping moderately, now near 32.15 degC.",
+                    "EDA": "Electrodermal readings climbing slightly across the past 6 minutes to 2.58 uS, without any notable peaks or valleys.",
+                    "PR": "Over the past 6 minutes, cardiac pace declining slightly, now near 68.0 bpm.",
+                    "ACT_CLASS": "Across the past 6 minutes, the participant's classification changed: generic to still."
+                },
+                "physio_summary_fusion": "Across the past 6 minutes, wear-quality was reliable; within that context, EDA and PR and SkinTemp and ACCEL shifted, not explained by movement. Despite little to no movement recorded, EDA and PR and SkinTemp and ACCEL climbed noticeably - this decoupling from activity strengthens the case for a stress-driven response.",
+                "stress_score": 2,
+                "stress_level": "Mild stress",
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I talk to my friends about it, and they also say the same thing.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: ReflectiveStatements\n\nResponse: It sounds like the people around you are trying to reassure you, but the worry still doesn't settle. That doesn't mean you're ignoring themâit means the fear feels stronger than the reassurance. Sometimes, when this pattern keeps repeating despite normal tests and reassurance from doctors and friends, the problem is no longer the body but the anxiety itself. Focusing on that anxiety can bring more lasting relief than seeking more reassurance.<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I talk to my friends about it, and they also say the same thing.\nPhysiological Signals: Across the past 6 minutes, wear-quality was reliable; within that context, EDA and PR and SkinTemp and ACCEL shifted, not explained by movement. Despite little to no movement recorded, EDA and PR and SkinTemp and ACCEL climbed noticeably - this decoupling from activity strengthens the case for a stress-driven response. At the same time, A decreasing movement pattern was observed over the past 6 minutes, highly fluctuating, reaching 0.02 g. At the same time, Over the past 6 minutes, peripheral warmth dropping moderately, now near 32.15 degC. Further, Electrodermal readings climbing slightly across the past 6 minutes to 2.58 uS, without any notable peaks or valleys. Notably, Over the past 6 minutes, cardiac pace declining slightly, now near 68.0 bpm. Meanwhile, Across the past 6 minutes, the participant's classification changed: generic to still. Simultaneously, With activity count at 30.0, the composite stress score for the past 6 minutes is 2, indicating Mild stress.\n\n### Response:\nStrategy: ReflectiveStatements\n\nResponse: It sounds like the people around you are trying to reassure you, but the worry still doesn't settle. That doesn't mean you're ignoring themâit means the fear feels stronger than the reassurance. Sometimes, when this pattern keeps repeating despite normal tests and reassurance from doctors and friends, the problem is no longer the body but the anxiety itself. Focusing on that anxiety can bring more lasting relief than seeking more reassurance.<EOS>"
+            },
+            {
+                "timestamp": "2026-05-22T19:18:00",
+                "participant_full_id": "2753-1-1-0000",
+                "user_text": "But I do not stay calm.",
+                "ai_text": "It sounds like you truly want to be calm, but your mind won't let you stay there for long. When fear takes over, it can make even normal sensations feel urgent, so reassurance fades quickly. The fact that you can't stay calm doesn't mean you're in dangerâit means your anxiety may need attention just as much as your physical health. You don't have to fight it alone; talking to a mental health professional could help you learn how to break this cycle.",
+                "context": "",
+                "strategy": "EmotionalValidation",
+                "raw_physio": {
+                    "EDA": [
+                        2.68,
+                        2.91
+                    ],
+                    "PR": [
+                        74.0,
+                        80.0
+                    ],
+                    "SkinTemp": [
+                        32.34,
+                        32.53
+                    ],
+                    "ACCEL": [
+                        0.034,
+                        0.012
+                    ],
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": [
+                        79.0,
+                        44.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "EDA": "The sympathetic arousal marker (EDA) increasing sharply over the past 6 minutes, now 2.91 uS.",
+                    "PR": "Pulse rate showed a increasing trend across the past 6 minutes, with mildly fluctuating variation, now 80.0 bpm.",
+                    "ACCEL": "Over the past 6 minutes, physical activity intensity declining moderately, now near 0.01 g.",
+                    "SkinTemp": "The temperature signal was growing for the past 6 minutes, mildly fluctuating, around 32.53 degC.",
+                    "ACT_CLASS": "A change in activity was noted over the past 6 minutes, moving from generic to generic."
+                },
+                "physio_summary_fusion": "During the past 6 minutes, EDA and PR and SkinTemp and ACCEL shifted while activity intensity stayed LPA, not explained by movement. Movement stayed minimal while EDA and PR and SkinTemp and ACCEL rose, pointing toward a stress response rather than exertion.",
+                "stress_score": 2,
+                "stress_level": "Mild stress",
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: But I do not stay calm.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: EmotionalValidation\n\nResponse: It sounds like you truly want to be calm, but your mind won't let you stay there for long. When fear takes over, it can make even normal sensations feel urgent, so reassurance fades quickly. The fact that you can't stay calm doesn't mean you're in dangerâit means your anxiety may need attention just as much as your physical health. You don't have to fight it alone; talking to a mental health professional could help you learn how to break this cycle.<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: But I do not stay calm.\nPhysiological Signals: During the past 6 minutes, EDA and PR and SkinTemp and ACCEL shifted while activity intensity stayed LPA, not explained by movement. Movement stayed minimal while EDA and PR and SkinTemp and ACCEL rose, pointing toward a stress response rather than exertion. The sympathetic arousal marker (EDA) increasing sharply over the past 6 minutes, now 2.91 uS. Simultaneously, Pulse rate showed a increasing trend across the past 6 minutes, with mildly fluctuating variation, now 80.0 bpm. Additionally, Over the past 6 minutes, physical activity intensity declining moderately, now near 0.01 g. Additionally, The temperature signal was growing for the past 6 minutes, mildly fluctuating, around 32.53 degC. A change in activity was noted over the past 6 minutes, moving from generic to generic. Further, Factoring in an activity count of 44.0, the composite indicator over the past 6 minutes reads 2, suggesting Mild stress.\n\n### Response:\nStrategy: EmotionalValidation\n\nResponse: It sounds like you truly want to be calm, but your mind won't let you stay there for long. When fear takes over, it can make even normal sensations feel urgent, so reassurance fades quickly. The fact that you can't stay calm doesn't mean you're in dangerâit means your anxiety may need attention just as much as your physical health. You don't have to fight it alone; talking to a mental health professional could help you learn how to break this cycle.<EOS>"
+            },
+            {
+                "timestamp": "2026-05-22T19:20:00",
+                "participant_full_id": "2753-1-1-0000",
+                "user_text": "Since I'm unmarried, I keep thinking that these health problems might affect my future married life.",
+                "ai_text": "It sounds like your fear goes beyond your current healthâyouâre worried about your future and whether these problems could affect your marriage. When anxiety is strong, it often starts imagining the worst-case scenario, even when doctors have said your health is okay. Since your tests are normal and your doctor isn't concerned, try reminding yourself that you're reacting to a fear about the future, not to evidence that something is seriously wrong. If these thoughts keep returning, working with a mental health professional can help you reduce their hold on you.",
+                "context": "",
+                "strategy": "ReflectiveStatements",
+                "raw_physio": {
+                    "EDA": [
+                        2.67,
+                        2.6
+                    ],
+                    "PR": [
+                        77.0,
+                        70.0
+                    ],
+                    "SkinTemp": [
+                        32.74,
+                        32.94
+                    ],
+                    "ACCEL": [
+                        0.09,
+                        0.01
+                    ],
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": [
+                        105.0,
+                        23.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "ACCEL": "Movement levels drifted decreasing across the past 6 minutes to 0.01 g, without any notable peaks or valleys.",
+                    "SkinTemp": "Surface temperature climbing sharply over the past 6 minutes, now 32.94 degC, without any notable peaks or valleys.",
+                    "EDA": "Across the past 6 minutes, EDA trended growing from 1.97 to 2.6 uS.",
+                    "PR": "The pulse signal was elevating for the past 6 minutes, mildly fluctuating, around 70.0 bpm.",
+                    "ACT_CLASS": "Across the past 6 minutes, the participant's classification changed: generic to generic."
+                },
+                "physio_summary_fusion": "Across the past 6 minutes, wear-quality was reliable; within that context, EDA and PR and SkinTemp and ACCEL shifted, not explained by movement. EDA and PR and SkinTemp and ACCEL increased even as the body stayed still, a pattern more consistent with emotional than physical arousal.",
+                "stress_score": 2,
+                "stress_level": "Mild stress",
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Since I'm unmarried, I keep thinking that these health problems might affect my future married life.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: ReflectiveStatements\n\nResponse: It sounds like your fear goes beyond your current healthâyouâre worried about your future and whether these problems could affect your marriage. When anxiety is strong, it often starts imagining the worst-case scenario, even when doctors have said your health is okay. Since your tests are normal and your doctor isn't concerned, try reminding yourself that you're reacting to a fear about the future, not to evidence that something is seriously wrong. If these thoughts keep returning, working with a mental health professional can help you reduce their hold on you.<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Since I'm unmarried, I keep thinking that these health problems might affect my future married life.\nPhysiological Signals: Across the past 6 minutes, wear-quality was reliable; within that context, EDA and PR and SkinTemp and ACCEL shifted, not explained by movement. EDA and PR and SkinTemp and ACCEL increased even as the body stayed still, a pattern more consistent with emotional than physical arousal. Meanwhile, Movement levels drifted decreasing across the past 6 minutes to 0.01 g, without any notable peaks or valleys. Notably, Surface temperature climbing sharply over the past 6 minutes, now 32.94 degC, without any notable peaks or valleys. Further, Across the past 6 minutes, EDA trended growing from 1.97 to 2.6 uS. On top of that, The pulse signal was elevating for the past 6 minutes, mildly fluctuating, around 70.0 bpm. Simultaneously, Across the past 6 minutes, the participant's classification changed: generic to generic. Also, Combining the signals above with an activity count of 23.0, the resulting score over the past 6 minutes is 2 - Mild stress.\n\n### Response:\nStrategy: ReflectiveStatements\n\nResponse: It sounds like your fear goes beyond your current healthâyouâre worried about your future and whether these problems could affect your marriage. When anxiety is strong, it often starts imagining the worst-case scenario, even when doctors have said your health is okay. Since your tests are normal and your doctor isn't concerned, try reminding yourself that you're reacting to a fear about the future, not to evidence that something is seriously wrong. If these thoughts keep returning, working with a mental health professional can help you reduce their hold on you.<EOS>"
+            },
+            {
+                "timestamp": "2026-05-22T19:22:00",
+                "participant_full_id": "2753-1-1-0000",
+                "user_text": "Yes, I mentioned that I come from a medical background. I have some knowledge, and because of that, I keep thinking these problems might affect my pregnancy in the future.",
+                "ai_text": "It sounds like your knowledge is making it easier to imagine future complications, even though there's no clear evidence that they will happen. Since you hope to have a healthy pregnancy one day, your mind is trying to eliminate every possible risk, but that search for certainty can become exhausting. From what you've shared, your doctors have reassured you and your tests have been normal, so your current fear seems to be driven more by \"what if\" thoughts than by medical findings. If these worries are becoming a regular part of your life, speaking with a mental health professionalâespecially one familiar with health anxietyâcould help you manage them while still respecting your medical knowledge.",
+                "context": "",
+                "strategy": "ReflectiveStatements",
+                "raw_physio": {
+                    "EDA": [
+                        2.67,
+                        2.94
+                    ],
+                    "PR": [
+                        68.0,
+                        69.0
+                    ],
+                    "SkinTemp": [
+                        33.13,
+                        33.29
+                    ],
+                    "ACCEL": [
+                        0.06,
+                        0.072
+                    ],
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": [
+                        59.0,
+                        89.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "SkinTemp": "Over the past 6 minutes, peripheral warmth increasing sharply, now near 33.29 degC.",
+                    "ACCEL": "Motion intensity elevating sharply during the past 6 minutes, reaching 0.07 g.",
+                    "PR": "Over the past 6 minutes, heart rate stayed dropping around 69.0 beats per minute.",
+                    "EDA": "Over the past 6 minutes, electrodermal activity climbing moderately, moving from 2.63 to 2.94 uS.",
+                    "ACT_CLASS": "During the past 6 minutes, movement classification changed from still to generic."
+                },
+                "physio_summary_fusion": "During the past 6 minutes, EDA and PR and SkinTemp and ACCEL shifted; movement counts and MET (~4.12) suggest this is not explained by movement. EDA and PR and SkinTemp and ACCEL increased while the participant remained sedentary, so the change cannot be attributed to physical exertion.",
+                "stress_score": 2,
+                "stress_level": "Mild stress",
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Yes, I mentioned that I come from a medical background. I have some knowledge, and because of that, I keep thinking these problems might affect my pregnancy in the future.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: ReflectiveStatements\n\nResponse: It sounds like your knowledge is making it easier to imagine future complications, even though there's no clear evidence that they will happen. Since you hope to have a healthy pregnancy one day, your mind is trying to eliminate every possible risk, but that search for certainty can become exhausting. From what you've shared, your doctors have reassured you and your tests have been normal, so your current fear seems to be driven more by \"what if\" thoughts than by medical findings. If these worries are becoming a regular part of your life, speaking with a mental health professionalâespecially one familiar with health anxietyâcould help you manage them while still respecting your medical knowledge.<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Yes, I mentioned that I come from a medical background. I have some knowledge, and because of that, I keep thinking these problems might affect my pregnancy in the future.\nPhysiological Signals: During the past 6 minutes, EDA and PR and SkinTemp and ACCEL shifted; movement counts and MET (~4.12) suggest this is not explained by movement. EDA and PR and SkinTemp and ACCEL increased while the participant remained sedentary, so the change cannot be attributed to physical exertion. In parallel, Over the past 6 minutes, peripheral warmth increasing sharply, now near 33.29 degC. Notably, Motion intensity elevating sharply during the past 6 minutes, reaching 0.07 g. Over the past 6 minutes, heart rate stayed dropping around 69.0 beats per minute. In parallel, Over the past 6 minutes, electrodermal activity climbing moderately, moving from 2.63 to 2.94 uS. Also, During the past 6 minutes, movement classification changed from still to generic. Further, With activity count at 89.0, the composite stress score for the past 6 minutes is 2, indicating Mild stress.\n\n### Response:\nStrategy: ReflectiveStatements\n\nResponse: It sounds like your knowledge is making it easier to imagine future complications, even though there's no clear evidence that they will happen. Since you hope to have a healthy pregnancy one day, your mind is trying to eliminate every possible risk, but that search for certainty can become exhausting. From what you've shared, your doctors have reassured you and your tests have been normal, so your current fear seems to be driven more by \"what if\" thoughts than by medical findings. If these worries are becoming a regular part of your life, speaking with a mental health professionalâespecially one familiar with health anxietyâcould help you manage them while still respecting your medical knowledge.<EOS>"
+            },
+            {
+                "timestamp": "2026-05-22T19:24:00",
+                "participant_full_id": "2753-1-1-0000",
+                "user_text": "I am over 28 years old, and I know that getting pregnant before the age of 30 is generally considered better.",
+                "ai_text": "It sounds like you're feeling the pressure of time as well as concern about your health and future pregnancy. Because you have a medical background, your mind may be combining real medical knowledge with anxious \"what if\" thoughts, making everything feel more urgent than it is. While fertility and pregnancy risks do change gradually with age, being over 28 does not mean you've missed your chance or that you'll have problems. If having children is important to you, focusing on your overall health and discussing your plans with a gynecologist when you're ready will give you much more useful guidance than letting anxiety predict the future.",
+                "context": "",
+                "strategy": "EmotionalValidation",
+                "raw_physio": {
+                    "EDA": [
+                        3.03,
+                        2.96
+                    ],
+                    "PR": [
+                        76.0,
+                        70.0
+                    ],
+                    "SkinTemp": [
+                        33.43,
+                        33.55
+                    ],
+                    "ACCEL": [
+                        0.131,
+                        0.023
+                    ],
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": [
+                        144.0,
+                        82.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "SkinTemp": "Across the past 6 minutes, peripheral temperature trended climbing from 32.34 to 33.55 degC.",
+                    "EDA": "EDA levels moved moderately and climbing through the past 6 minutes, ending at 2.96 uS.",
+                    "PR": "Across the past 6 minutes, pulse rate held dropping, staying close to 70.0 bpm.",
+                    "ACCEL": "The motion signal was downward for the past 6 minutes, highly fluctuating, around 0.02 g.",
+                    "ACT_CLASS": "The participant stayed generic for the duration of the past 6 minutes."
+                },
+                "physio_summary_fusion": "During the past 6 minutes, EDA and PR and SkinTemp and ACCEL shifted while activity intensity stayed MPA, not explained by movement. Despite little to no movement recorded, EDA and PR and SkinTemp and ACCEL climbed noticeably - this decoupling from activity strengthens the case for a stress-driven response.",
+                "stress_score": 2,
+                "stress_level": "Mild stress",
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I am over 28 years old, and I know that getting pregnant before the age of 30 is generally considered better.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: EmotionalValidation\n\nResponse: It sounds like you're feeling the pressure of time as well as concern about your health and future pregnancy. Because you have a medical background, your mind may be combining real medical knowledge with anxious \"what if\" thoughts, making everything feel more urgent than it is. While fertility and pregnancy risks do change gradually with age, being over 28 does not mean you've missed your chance or that you'll have problems. If having children is important to you, focusing on your overall health and discussing your plans with a gynecologist when you're ready will give you much more useful guidance than letting anxiety predict the future.<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I am over 28 years old, and I know that getting pregnant before the age of 30 is generally considered better.\nPhysiological Signals: During the past 6 minutes, EDA and PR and SkinTemp and ACCEL shifted while activity intensity stayed MPA, not explained by movement. Despite little to no movement recorded, EDA and PR and SkinTemp and ACCEL climbed noticeably - this decoupling from activity strengthens the case for a stress-driven response. Notably, Across the past 6 minutes, peripheral temperature trended climbing from 32.34 to 33.55 degC. Also, EDA levels moved moderately and climbing through the past 6 minutes, ending at 2.96 uS. Additionally, Across the past 6 minutes, pulse rate held dropping, staying close to 70.0 bpm. On top of that, The motion signal was downward for the past 6 minutes, highly fluctuating, around 0.02 g. Additionally, The participant stayed generic for the duration of the past 6 minutes. Additionally, Movement count of 82.0 contributes to a combined stress score of 2 over the past 6 minutes, consistent with Mild stress.\n\n### Response:\nStrategy: EmotionalValidation\n\nResponse: It sounds like you're feeling the pressure of time as well as concern about your health and future pregnancy. Because you have a medical background, your mind may be combining real medical knowledge with anxious \"what if\" thoughts, making everything feel more urgent than it is. While fertility and pregnancy risks do change gradually with age, being over 28 does not mean you've missed your chance or that you'll have problems. If having children is important to you, focusing on your overall health and discussing your plans with a gynecologist when you're ready will give you much more useful guidance than letting anxiety predict the future.<EOS>"
+            },
+            {
+                "timestamp": "2026-05-22T19:26:00",
+                "participant_full_id": "2753-1-1-0000",
+                "user_text": "Although I'm not stressed about pregnancy right now, I do feel stressed about my marriage.",
+                "ai_text": "It sounds like your worries about health, marriage, and the future are becoming connected. When one concern appears, your mind quickly jumps ahead to everything that could go wrong, making the future feel uncertain. Remember, your future marriage will be built on much more than perfect health. One gentle step is to focus on what you can do today, rather than trying to solve every future possibility in your mind.\nFrom everything you've shared, there seems to be a pattern: normal test results, reassurance from doctors and friends, temporary relief, then the worry returns. That pattern is common in health anxiety, and it's something that can be treated. You don't have to keep carrying this burden by yourself.",
+                "context": "",
+                "strategy": "ReflectiveStatements",
+                "raw_physio": {
+                    "EDA": [
+                        2.62,
+                        2.51
+                    ],
+                    "PR": [
+                        66.0,
+                        75.0
+                    ],
+                    "SkinTemp": [
+                        33.68,
+                        33.81
+                    ],
+                    "ACCEL": [
+                        0.022,
+                        0.049
+                    ],
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": [
+                        89.0,
+                        115.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "SkinTemp": "Over the past 6 minutes, peripheral warmth elevating sharply, now near 33.81 degC.",
+                    "ACCEL": "Over the past 6 minutes, motion intensity stayed falling, around 0.05 g.",
+                    "EDA": "Electrodermal activity remained easing across the past 6 minutes, staying near 2.51 uS.",
+                    "PR": "Heart rate easing slightly during the past 6 minutes, reaching 75.0 bpm.",
+                    "ACT_CLASS": "During the past 6 minutes, movement classification changed from generic to walking."
+                },
+                "physio_summary_fusion": "Over the past 6 minutes, considering MET levels near 1.77 and walking movement, EDA and PR and SkinTemp and ACCEL shifted, not clearly linked to physical activity. The relationship between EDA and PR and SkinTemp and ACCEL and movement was inconsistent over the past 6 minutes, making the source of change unclear.",
+                "stress_score": -2,
+                "stress_level": null,
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Although I'm not stressed about pregnancy right now, I do feel stressed about my marriage.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: ReflectiveStatements\n\nResponse: It sounds like your worries about health, marriage, and the future are becoming connected. When one concern appears, your mind quickly jumps ahead to everything that could go wrong, making the future feel uncertain. Remember, your future marriage will be built on much more than perfect health. One gentle step is to focus on what you can do today, rather than trying to solve every future possibility in your mind.\nFrom everything you've shared, there seems to be a pattern: normal test results, reassurance from doctors and friends, temporary relief, then the worry returns. That pattern is common in health anxiety, and it's something that can be treated. You don't have to keep carrying this burden by yourself.<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Although I'm not stressed about pregnancy right now, I do feel stressed about my marriage.\nPhysiological Signals: Over the past 6 minutes, considering MET levels near 1.77 and walking movement, EDA and PR and SkinTemp and ACCEL shifted, not clearly linked to physical activity. The relationship between EDA and PR and SkinTemp and ACCEL and movement was inconsistent over the past 6 minutes, making the source of change unclear. Additionally, Over the past 6 minutes, peripheral warmth elevating sharply, now near 33.81 degC. In parallel, Over the past 6 minutes, motion intensity stayed falling, around 0.05 g. Meanwhile, Electrodermal activity remained easing across the past 6 minutes, staying near 2.51 uS. In parallel, Heart rate easing slightly during the past 6 minutes, reaching 75.0 bpm. Notably, During the past 6 minutes, movement classification changed from generic to walking.\n\n### Response:\nStrategy: ReflectiveStatements\n\nResponse: It sounds like your worries about health, marriage, and the future are becoming connected. When one concern appears, your mind quickly jumps ahead to everything that could go wrong, making the future feel uncertain. Remember, your future marriage will be built on much more than perfect health. One gentle step is to focus on what you can do today, rather than trying to solve every future possibility in your mind.\nFrom everything you've shared, there seems to be a pattern: normal test results, reassurance from doctors and friends, temporary relief, then the worry returns. That pattern is common in health anxiety, and it's something that can be treated. You don't have to keep carrying this burden by yourself.<EOS>"
+            },
+            {
+                "timestamp": "2026-05-22T19:28:00",
+                "participant_full_id": "2753-1-1-0000",
+                "user_text": "What do you think I should do?",
+                "ai_text": "From everything you've shared, I don't think your biggest problem is your physical health. Your doctors have examined you, your tests have been normal, and they've advised simple lifestyle changes. Yet the fear keeps returning, spreads to your future marriage and pregnancy, and leads you to repeat medical tests. That suggests the anxiety itself has become the problem, not the medical findings.\nOne step I would encourage is to meet with a clinical psychologist or psychiatrist who has experience treating health anxiety. This doesn't mean your symptoms are \"imaginary.\" It means your brain has become stuck in a cycle of constantly searching for certainty. Treatments such as cognitive behavioral therapy (CBT), and sometimes medication if needed, can be very effective at breaking that cycle.\nIn the meantime, make one promise to yourself: don't book a medical test just because you're feeling anxious. Instead, only get tests when a doctor recommends them or when you develop a genuinely new or concerning symptom. It will feel uncomfortable at first, but resisting that urge is one of the ways the cycle gradually weakens.\nOne more thing stood out to me. You mentioned you're from a healthcare background. People with medical knowledge often recognize diseases earlier, but that same knowledge can also make it easier to imagine worst-case scenarios. Knowledge is valuableâbut anxiety can misuse that knowledge.\nI also want to say this: from our conversation, you come across as someone who is thoughtful, responsible, and deeply concerned about your future. Those are strengths. The goal isn't to stop caring about your health; it's to stop letting fear make every small symptom feel like a threat. I believe that's something you can work toward with the right support.",
+                "context": "",
+                "strategy": "ReflectiveStatements",
+                "raw_physio": {
+                    "EDA": [
+                        2.6,
+                        2.6
+                    ],
+                    "PR": [
+                        72.0,
+                        69.0
+                    ],
+                    "SkinTemp": [
+                        33.92,
+                        34.01
+                    ],
+                    "ACCEL": [
+                        0.123,
+                        0.101
+                    ],
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": [
+                        126.0,
+                        133.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "SkinTemp": "Skin temperature showed a elevating pattern across the past 6 minutes, with mildly fluctuating change, now 34.01 degC.",
+                    "ACCEL": "Over the past 6 minutes, physical activity intensity elevating moderately, now near 0.1 g.",
+                    "EDA": "The electrodermal signal was declining for the past 6 minutes, showing mildly fluctuating behavior around 2.6 uS.",
+                    "PR": "Across the past 6 minutes, heart rate trended increasing from 68.0 to 69.0 bpm.",
+                    "ACT_CLASS": "A change in activity was noted over the past 6 minutes, moving from generic to generic."
+                },
+                "physio_summary_fusion": "During the past 6 minutes, physiological arousal (EDA and PR and SkinTemp and ACCEL) shifted; given generic movement and reclining/lying posture, this appears likely activity-related. EDA and PR and SkinTemp and ACCEL rose alongside increased movement, so the change is likely activity-related rather than a pure stress response.",
+                "stress_score": -2,
+                "stress_level": null,
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: What do you think I should do?\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: ReflectiveStatements\n\nResponse: From everything you've shared, I don't think your biggest problem is your physical health. Your doctors have examined you, your tests have been normal, and they've advised simple lifestyle changes. Yet the fear keeps returning, spreads to your future marriage and pregnancy, and leads you to repeat medical tests. That suggests the anxiety itself has become the problem, not the medical findings.\nOne step I would encourage is to meet with a clinical psychologist or psychiatrist who has experience treating health anxiety. This doesn't mean your symptoms are \"imaginary.\" It means your brain has become stuck in a cycle of constantly searching for certainty. Treatments such as cognitive behavioral therapy (CBT), and sometimes medication if needed, can be very effective at breaking that cycle.\nIn the meantime, make one promise to yourself: don't book a medical test just because you're feeling anxious. Instead, only get tests when a doctor recommends them or when you develop a genuinely new or concerning symptom. It will feel uncomfortable at first, but resisting that urge is one of the ways the cycle gradually weakens.\nOne more thing stood out to me. You mentioned you're from a healthcare background. People with medical knowledge often recognize diseases earlier, but that same knowledge can also make it easier to imagine worst-case scenarios. Knowledge is valuableâbut anxiety can misuse that knowledge.\nI also want to say this: from our conversation, you come across as someone who is thoughtful, responsible, and deeply concerned about your future. Those are strengths. The goal isn't to stop caring about your health; it's to stop letting fear make every small symptom feel like a threat. I believe that's something you can work toward with the right support.<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: What do you think I should do?\nPhysiological Signals: During the past 6 minutes, physiological arousal (EDA and PR and SkinTemp and ACCEL) shifted; given generic movement and reclining/lying posture, this appears likely activity-related. EDA and PR and SkinTemp and ACCEL rose alongside increased movement, so the change is likely activity-related rather than a pure stress response. Additionally, Skin temperature showed a elevating pattern across the past 6 minutes, with mildly fluctuating change, now 34.01 degC. Over the past 6 minutes, physical activity intensity elevating moderately, now near 0.1 g. In parallel, The electrodermal signal was declining for the past 6 minutes, showing mildly fluctuating behavior around 2.6 uS. Simultaneously, Across the past 6 minutes, heart rate trended increasing from 68.0 to 69.0 bpm. Further, A change in activity was noted over the past 6 minutes, moving from generic to generic.\n\n### Response:\nStrategy: ReflectiveStatements\n\nResponse: From everything you've shared, I don't think your biggest problem is your physical health. Your doctors have examined you, your tests have been normal, and they've advised simple lifestyle changes. Yet the fear keeps returning, spreads to your future marriage and pregnancy, and leads you to repeat medical tests. That suggests the anxiety itself has become the problem, not the medical findings.\nOne step I would encourage is to meet with a clinical psychologist or psychiatrist who has experience treating health anxiety. This doesn't mean your symptoms are \"imaginary.\" It means your brain has become stuck in a cycle of constantly searching for certainty. Treatments such as cognitive behavioral therapy (CBT), and sometimes medication if needed, can be very effective at breaking that cycle.\nIn the meantime, make one promise to yourself: don't book a medical test just because you're feeling anxious. Instead, only get tests when a doctor recommends them or when you develop a genuinely new or concerning symptom. It will feel uncomfortable at first, but resisting that urge is one of the ways the cycle gradually weakens.\nOne more thing stood out to me. You mentioned you're from a healthcare background. People with medical knowledge often recognize diseases earlier, but that same knowledge can also make it easier to imagine worst-case scenarios. Knowledge is valuableâbut anxiety can misuse that knowledge.\nI also want to say this: from our conversation, you come across as someone who is thoughtful, responsible, and deeply concerned about your future. Those are strengths. The goal isn't to stop caring about your health; it's to stop letting fear make every small symptom feel like a threat. I believe that's something you can work toward with the right support.<EOS>"
+            },
+            {
+                "timestamp": "2026-05-22T19:30:00",
+                "participant_full_id": "2753-1-1-0000",
+                "user_text": "Give me a small descriptive suggestion.",
+                "ai_text": "I think you've done enough to check your physical health. Now it's time to take care of your mind with the same seriousness. Trust your doctor's advice, avoid unnecessary tests, and remember that not every symptom means something serious. If the fear keeps returning, seek help for the anxiety itselfâit can be treated, and you don't have to face it alone.",
+                "context": "",
+                "strategy": "ReflectiveStatements",
+                "raw_physio": {
+                    "EDA": [
+                        2.75,
+                        2.97
+                    ],
+                    "PR": [
+                        67.0,
+                        65.0
+                    ],
+                    "SkinTemp": [
+                        34.07,
+                        34.13
+                    ],
+                    "ACCEL": [
+                        0.086,
+                        0.05
+                    ],
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": [
+                        123.0,
+                        120.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "ACCEL": "Accelerometer readings moved sharply and decreasing through the past 6 minutes, ending at 0.05 g.",
+                    "SkinTemp": "Skin temperature moved moderately in a upward direction over the past 6 minutes, from 33.43 to 34.13 degC.",
+                    "PR": "Pulse rate dropping moderately across the past 6 minutes, showing mildly fluctuating activity, now 65.0 bpm.",
+                    "EDA": "Across the past 6 minutes, electrodermal activity showed a decreasing pattern, settling around 2.97 uS.",
+                    "ACT_CLASS": "A transition from generic to generic occurred within the past 6 minutes."
+                },
+                "physio_summary_fusion": "Over the past 6 minutes, EDA and PR and SkinTemp and ACCEL shifted, while movement remained generic (MPA intensity), suggesting the change is not clearly linked to physical activity. The relationship between EDA and PR and SkinTemp and ACCEL and movement was inconsistent over the past 6 minutes, making the source of change unclear.",
+                "stress_score": -2,
+                "stress_level": null,
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Give me a small descriptive suggestion.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: ReflectiveStatements\n\nResponse: I think you've done enough to check your physical health. Now it's time to take care of your mind with the same seriousness. Trust your doctor's advice, avoid unnecessary tests, and remember that not every symptom means something serious. If the fear keeps returning, seek help for the anxiety itselfâit can be treated, and you don't have to face it alone.<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Give me a small descriptive suggestion.\nPhysiological Signals: Over the past 6 minutes, EDA and PR and SkinTemp and ACCEL shifted, while movement remained generic (MPA intensity), suggesting the change is not clearly linked to physical activity. The relationship between EDA and PR and SkinTemp and ACCEL and movement was inconsistent over the past 6 minutes, making the source of change unclear. Simultaneously, Accelerometer readings moved sharply and decreasing through the past 6 minutes, ending at 0.05 g. Also, Skin temperature moved moderately in a upward direction over the past 6 minutes, from 33.43 to 34.13 degC. Simultaneously, Pulse rate dropping moderately across the past 6 minutes, showing mildly fluctuating activity, now 65.0 bpm. Alongside this, Across the past 6 minutes, electrodermal activity showed a decreasing pattern, settling around 2.97 uS. Notably, A transition from generic to generic occurred within the past 6 minutes.\n\n### Response:\nStrategy: ReflectiveStatements\n\nResponse: I think you've done enough to check your physical health. Now it's time to take care of your mind with the same seriousness. Trust your doctor's advice, avoid unnecessary tests, and remember that not every symptom means something serious. If the fear keeps returning, seek help for the anxiety itselfâit can be treated, and you don't have to face it alone.<EOS>"
+            },
+            {
+                "timestamp": "2026-05-22T19:32:00",
+                "participant_full_id": "2753-1-1-0000",
+                "user_text": "Without going to a doctor, what suggestions can you give me that I can follow for now?",
+                "ai_text": "It sounds like you want to regain control instead of letting fear control you. Since your doctors have already reassured you and your tests have been normal, your goal now is to change how you respond to the worry, not to every symptom.\nTry these small steps:\nWhen you notice a symptom, wait at least 24 hours before searching online or thinking about getting a test, unless it's a true emergency.\nAsk yourself, \"Do I have new medical evidence, or am I reacting to fear?\"\nStay hydrated, eat regular healthy meals, sleep 7â8 hours, and go for a 20â30 minute walk most days. These habits help both your body and your anxiety.\nLimit asking friends or family for reassurance. It feels comforting for a short time, but it often keeps the worry going.\nSpend 10 minutes each day writing down your worries instead of carrying them all day. Once the 10 minutes are over, return to your normal activities.\nFrom what you've shared, you've already had normal test results and medical reassurance. Now, the next step is to build trust in your body a little at a time. You don't have to stop worrying overnightâjust practice responding differently each time the fear appears. That is how the cycle gradually becomes weaker.",
+                "context": "",
+                "strategy": "ReflectiveStatements",
+                "raw_physio": {
+                    "EDA": [
+                        3.03,
+                        2.96
+                    ],
+                    "PR": [
+                        64.0,
+                        66.0
+                    ],
+                    "SkinTemp": [
+                        34.2,
+                        34.26
+                    ],
+                    "ACCEL": [
+                        0.074,
+                        0.113
+                    ],
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": [
+                        116.0,
+                        131.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "ACCEL": "Motion intensity upward sharply during the past 6 minutes, reaching 0.11 g.",
+                    "SkinTemp": "The temperature signal was increasing for the past 6 minutes, mildly fluctuating, around 34.26 degC.",
+                    "EDA": "Electrodermal readings elevating moderately across the past 6 minutes to 2.96 uS, without any notable peaks or valleys.",
+                    "PR": "Pulse rate constant slightly over the past 6 minutes, moving from 66.0 to 66.0 bpm.",
+                    "ACT_CLASS": "Activity state evolved from walking to generic during the past 6 minutes."
+                },
+                "physio_summary_fusion": "Across the past 6 minutes, EDA and SkinTemp and ACCEL rose while the participant was awake, likely activity-related. The rise in EDA and SkinTemp and ACCEL coincided with elevated ACT_COUNT, making it difficult to separate physical exertion from emotional stress.",
+                "stress_score": 0,
+                "stress_level": null,
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Without going to a doctor, what suggestions can you give me that I can follow for now?\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: ReflectiveStatements\n\nResponse: It sounds like you want to regain control instead of letting fear control you. Since your doctors have already reassured you and your tests have been normal, your goal now is to change how you respond to the worry, not to every symptom.\nTry these small steps:\nWhen you notice a symptom, wait at least 24 hours before searching online or thinking about getting a test, unless it's a true emergency.\nAsk yourself, \"Do I have new medical evidence, or am I reacting to fear?\"\nStay hydrated, eat regular healthy meals, sleep 7â8 hours, and go for a 20â30 minute walk most days. These habits help both your body and your anxiety.\nLimit asking friends or family for reassurance. It feels comforting for a short time, but it often keeps the worry going.\nSpend 10 minutes each day writing down your worries instead of carrying them all day. Once the 10 minutes are over, return to your normal activities.\nFrom what you've shared, you've already had normal test results and medical reassurance. Now, the next step is to build trust in your body a little at a time. You don't have to stop worrying overnightâjust practice responding differently each time the fear appears. That is how the cycle gradually becomes weaker.<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Without going to a doctor, what suggestions can you give me that I can follow for now?\nPhysiological Signals: Across the past 6 minutes, EDA and SkinTemp and ACCEL rose while the participant was awake, likely activity-related. The rise in EDA and SkinTemp and ACCEL coincided with elevated ACT_COUNT, making it difficult to separate physical exertion from emotional stress. Meanwhile, Motion intensity upward sharply during the past 6 minutes, reaching 0.11 g. Additionally, The temperature signal was increasing for the past 6 minutes, mildly fluctuating, around 34.26 degC. In parallel, Electrodermal readings elevating moderately across the past 6 minutes to 2.96 uS, without any notable peaks or valleys. Meanwhile, Pulse rate constant slightly over the past 6 minutes, moving from 66.0 to 66.0 bpm. Additionally, Activity state evolved from walking to generic during the past 6 minutes.\n\n### Response:\nStrategy: ReflectiveStatements\n\nResponse: It sounds like you want to regain control instead of letting fear control you. Since your doctors have already reassured you and your tests have been normal, your goal now is to change how you respond to the worry, not to every symptom.\nTry these small steps:\nWhen you notice a symptom, wait at least 24 hours before searching online or thinking about getting a test, unless it's a true emergency.\nAsk yourself, \"Do I have new medical evidence, or am I reacting to fear?\"\nStay hydrated, eat regular healthy meals, sleep 7â8 hours, and go for a 20â30 minute walk most days. These habits help both your body and your anxiety.\nLimit asking friends or family for reassurance. It feels comforting for a short time, but it often keeps the worry going.\nSpend 10 minutes each day writing down your worries instead of carrying them all day. Once the 10 minutes are over, return to your normal activities.\nFrom what you've shared, you've already had normal test results and medical reassurance. Now, the next step is to build trust in your body a little at a time. You don't have to stop worrying overnightâjust practice responding differently each time the fear appears. That is how the cycle gradually becomes weaker.<EOS>"
+            },
+            {
+                "timestamp": "2026-05-22T19:34:00",
+                "participant_full_id": "2753-1-1-0000",
+                "user_text": "I think I also do some overthinking. What do you think?",
+                "ai_text": "Yes, from what you've shared, it does sound like you tend to overthinkâespecially about your health and your future. Your mind seems to keep asking \"What if?\" even after doctors, test results, and friends have reassured you. That doesn't mean your concerns aren't real; it means your thoughts may be staying active long after the actual problem has been addressed.\nOne simple habit to try is this: when a worrying thought appears, don't ask, \"What if this is true?\" Instead, ask, \"Do I have evidence for this right now?\" That small shift can help you spend less time in fear and more time in the present.",
+                "context": "",
+                "strategy": "ReflectiveStatements",
+                "raw_physio": {
+                    "EDA": [
+                        2.98,
+                        2.86
+                    ],
+                    "PR": [
+                        68.0,
+                        76.0
+                    ],
+                    "SkinTemp": [
+                        34.34,
+                        34.42
+                    ],
+                    "ACCEL": [
+                        0.042,
+                        0.148
+                    ],
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": [
+                        104.0,
+                        145.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "SkinTemp": "Temperature readings moved moderately and upward through the past 6 minutes, ending at 34.42 degC.",
+                    "ACCEL": "Movement levels drifted elevating across the past 6 minutes to 0.15 g, without any notable peaks or valleys.",
+                    "EDA": "Over the past 6 minutes, electrodermal activity moved moderately in a upward direction, from 2.6 to 2.86 uS.",
+                    "PR": "Pulse rate moved slightly in a increasing direction over the past 6 minutes, from 72.0 to 76.0 bpm.",
+                    "ACT_CLASS": "No change in activity state was observed over the past 6 minutes; it remained generic."
+                },
+                "physio_summary_fusion": "Across the past 6 minutes, EDA and PR and SkinTemp and ACCEL showed a rose pattern, occurring while the participant was generic and positioned reclining/lying, likely activity-related. EDA and PR and SkinTemp and ACCEL rose alongside increased movement, so the change is likely activity-related rather than a pure stress response.",
+                "stress_score": 0,
+                "stress_level": null,
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I think I also do some overthinking. What do you think?\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: ReflectiveStatements\n\nResponse: Yes, from what you've shared, it does sound like you tend to overthinkâespecially about your health and your future. Your mind seems to keep asking \"What if?\" even after doctors, test results, and friends have reassured you. That doesn't mean your concerns aren't real; it means your thoughts may be staying active long after the actual problem has been addressed.\nOne simple habit to try is this: when a worrying thought appears, don't ask, \"What if this is true?\" Instead, ask, \"Do I have evidence for this right now?\" That small shift can help you spend less time in fear and more time in the present.<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I think I also do some overthinking. What do you think?\nPhysiological Signals: Across the past 6 minutes, EDA and PR and SkinTemp and ACCEL showed a rose pattern, occurring while the participant was generic and positioned reclining/lying, likely activity-related. EDA and PR and SkinTemp and ACCEL rose alongside increased movement, so the change is likely activity-related rather than a pure stress response. Meanwhile, Temperature readings moved moderately and upward through the past 6 minutes, ending at 34.42 degC. Further, Movement levels drifted elevating across the past 6 minutes to 0.15 g, without any notable peaks or valleys. Simultaneously, Over the past 6 minutes, electrodermal activity moved moderately in a upward direction, from 2.6 to 2.86 uS. Alongside this, Pulse rate moved slightly in a increasing direction over the past 6 minutes, from 72.0 to 76.0 bpm. Further, No change in activity state was observed over the past 6 minutes; it remained generic.\n\n### Response:\nStrategy: ReflectiveStatements\n\nResponse: Yes, from what you've shared, it does sound like you tend to overthinkâespecially about your health and your future. Your mind seems to keep asking \"What if?\" even after doctors, test results, and friends have reassured you. That doesn't mean your concerns aren't real; it means your thoughts may be staying active long after the actual problem has been addressed.\nOne simple habit to try is this: when a worrying thought appears, don't ask, \"What if this is true?\" Instead, ask, \"Do I have evidence for this right now?\" That small shift can help you spend less time in fear and more time in the present.<EOS>"
+            },
+            {
+                "timestamp": "2026-05-22T19:36:00",
+                "participant_full_id": "2753-1-1-0000",
+                "user_text": "When I feel anxious, what can I do immediately?",
+                "ai_text": "It sounds like your anxiety rises very quickly, and in those moments your mind wants immediate certainty. Instead of trying to prove you're okay, try calming your body first. Here are five things you can do right away:\nTake 10 slow breaths, making each exhale longer than your inhale.\nTell yourself, \"This is anxiety, not proof that something is seriously wrong.\"\nLook around and name 5 things you can see, 4 you can touch, 3 you can hear, 2 you can smell, and 1 you can taste.\nDrink a glass of water and walk for 5â10 minutes.\nPromise yourself, \"I won't Google symptoms or book a test for the next 24 hours unless I have a true emergency or a doctor has advised me to.\"\nFrom everything you've shared, your anxiety seems to follow a pattern: symptom â fear â repeated thinking â reassurance â temporary relief â fear again. The goal is to interrupt that pattern before it reaches the \"reassurance\" stage.\nOne sentence I'd like you to remember is:\n\"Feelings are not facts. Anxiety can feel convincing without being correct.\"\nI think repeating this to yourself whenever the anxiety starts may help you regain a little control.",
+                "context": "",
+                "strategy": "StressManagement",
+                "raw_physio": {
+                    "EDA": [
+                        2.78,
+                        2.58
+                    ],
+                    "PR": [
+                        88.0,
+                        108.0
+                    ],
+                    "SkinTemp": [
+                        34.47,
+                        34.53
+                    ],
+                    "ACCEL": [
+                        0.123,
+                        0.077
+                    ],
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": [
+                        143.0,
+                        128.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "PR": "Across the past 6 minutes, pulse rate held growing, staying close to 108.0 bpm.",
+                    "SkinTemp": "Over the past 6 minutes, peripheral temperature stayed increasing, around 34.53 degC.",
+                    "EDA": "EDA held downward through the past 6 minutes, close to 2.58 uS.",
+                    "ACCEL": "A dropping movement pattern was observed over the past 6 minutes, highly fluctuating, reaching 0.08 g.",
+                    "ACT_CLASS": "The participant's movement pattern was classified as generic for all of the past 6 minutes."
+                },
+                "physio_summary_fusion": "During the past 6 minutes, EDA and PR and SkinTemp and ACCEL shifted; movement counts and MET (~4.7) suggest this is likely activity-related. EDA and PR and SkinTemp and ACCEL rose in step with heightened motion, indicating the signal is at least partly explained by movement rather than stress alone.",
+                "stress_score": 0,
+                "stress_level": null,
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: When I feel anxious, what can I do immediately?\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: StressManagement\n\nResponse: It sounds like your anxiety rises very quickly, and in those moments your mind wants immediate certainty. Instead of trying to prove you're okay, try calming your body first. Here are five things you can do right away:\nTake 10 slow breaths, making each exhale longer than your inhale.\nTell yourself, \"This is anxiety, not proof that something is seriously wrong.\"\nLook around and name 5 things you can see, 4 you can touch, 3 you can hear, 2 you can smell, and 1 you can taste.\nDrink a glass of water and walk for 5â10 minutes.\nPromise yourself, \"I won't Google symptoms or book a test for the next 24 hours unless I have a true emergency or a doctor has advised me to.\"\nFrom everything you've shared, your anxiety seems to follow a pattern: symptom â fear â repeated thinking â reassurance â temporary relief â fear again. The goal is to interrupt that pattern before it reaches the \"reassurance\" stage.\nOne sentence I'd like you to remember is:\n\"Feelings are not facts. Anxiety can feel convincing without being correct.\"\nI think repeating this to yourself whenever the anxiety starts may help you regain a little control.<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: When I feel anxious, what can I do immediately?\nPhysiological Signals: During the past 6 minutes, EDA and PR and SkinTemp and ACCEL shifted; movement counts and MET (~4.7) suggest this is likely activity-related. EDA and PR and SkinTemp and ACCEL rose in step with heightened motion, indicating the signal is at least partly explained by movement rather than stress alone. Simultaneously, Across the past 6 minutes, pulse rate held growing, staying close to 108.0 bpm. Also, Over the past 6 minutes, peripheral temperature stayed increasing, around 34.53 degC. Meanwhile, EDA held downward through the past 6 minutes, close to 2.58 uS. Meanwhile, A dropping movement pattern was observed over the past 6 minutes, highly fluctuating, reaching 0.08 g. Simultaneously, The participant's movement pattern was classified as generic for all of the past 6 minutes.\n\n### Response:\nStrategy: StressManagement\n\nResponse: It sounds like your anxiety rises very quickly, and in those moments your mind wants immediate certainty. Instead of trying to prove you're okay, try calming your body first. Here are five things you can do right away:\nTake 10 slow breaths, making each exhale longer than your inhale.\nTell yourself, \"This is anxiety, not proof that something is seriously wrong.\"\nLook around and name 5 things you can see, 4 you can touch, 3 you can hear, 2 you can smell, and 1 you can taste.\nDrink a glass of water and walk for 5â10 minutes.\nPromise yourself, \"I won't Google symptoms or book a test for the next 24 hours unless I have a true emergency or a doctor has advised me to.\"\nFrom everything you've shared, your anxiety seems to follow a pattern: symptom â fear â repeated thinking â reassurance â temporary relief â fear again. The goal is to interrupt that pattern before it reaches the \"reassurance\" stage.\nOne sentence I'd like you to remember is:\n\"Feelings are not facts. Anxiety can feel convincing without being correct.\"\nI think repeating this to yourself whenever the anxiety starts may help you regain a little control.<EOS>"
+            },
+            {
+                "timestamp": "2026-05-22T19:38:00",
+                "participant_full_id": "2753-1-1-0000",
+                "user_text": "Do you think meditation can help?",
+                "ai_text": "Yes. Meditation can help by teaching your mind not to react to every anxious thought. Practice for 10â15 minutes daily, focusing on your breath. The goal isn't to stop thoughtsâit's to let them pass without following them.",
+                "context": "",
+                "strategy": "StressManagement",
+                "raw_physio": {
+                    "EDA": [
+                        2.47,
+                        2.43
+                    ],
+                    "PR": [
+                        92.0,
+                        92.0
+                    ],
+                    "SkinTemp": [
+                        34.58,
+                        34.59
+                    ],
+                    "ACCEL": [
+                        0.147,
+                        0.11
+                    ],
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": [
+                        144.0,
+                        142.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "PR": "Heart rate drifted elevating across the past 6 minutes to 92.0 bpm, showing one clear peak during the period.",
+                    "EDA": "The electrodermal signal was falling for the past 6 minutes, showing mildly fluctuating behavior around 2.43 uS.",
+                    "ACCEL": "Across the past 6 minutes, movement levels held growing, near 0.11 g.",
+                    "SkinTemp": "During the past 6 minutes, skin temperature registered a increasing shift to 34.59 degC, showing a single sustained rise with no reversal.",
+                    "ACT_CLASS": "A shift occurred over the past 6 minutes: activity went from generic to walking."
+                },
+                "physio_summary_fusion": "Over the past 6 minutes, step count suggests some walking activity; EDA and PR and SkinTemp and ACCEL shifted, a response that is likely activity-related. The rise in EDA and PR and SkinTemp and ACCEL coincided with elevated ACT_COUNT, making it difficult to separate physical exertion from emotional stress.",
+                "stress_score": 0,
+                "stress_level": null,
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Do you think meditation can help?\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: StressManagement\n\nResponse: Yes. Meditation can help by teaching your mind not to react to every anxious thought. Practice for 10â15 minutes daily, focusing on your breath. The goal isn't to stop thoughtsâit's to let them pass without following them.<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Do you think meditation can help?\nPhysiological Signals: Over the past 6 minutes, step count suggests some walking activity; EDA and PR and SkinTemp and ACCEL shifted, a response that is likely activity-related. The rise in EDA and PR and SkinTemp and ACCEL coincided with elevated ACT_COUNT, making it difficult to separate physical exertion from emotional stress. In parallel, Heart rate drifted elevating across the past 6 minutes to 92.0 bpm, showing one clear peak during the period. Meanwhile, The electrodermal signal was falling for the past 6 minutes, showing mildly fluctuating behavior around 2.43 uS. At the same time, Across the past 6 minutes, movement levels held growing, near 0.11 g. Alongside this, During the past 6 minutes, skin temperature registered a increasing shift to 34.59 degC, showing a single sustained rise with no reversal. Alongside this, A shift occurred over the past 6 minutes: activity went from generic to walking.\n\n### Response:\nStrategy: StressManagement\n\nResponse: Yes. Meditation can help by teaching your mind not to react to every anxious thought. Practice for 10â15 minutes daily, focusing on your breath. The goal isn't to stop thoughtsâit's to let them pass without following them.<EOS>"
+            },
+            {
+                "timestamp": "2026-05-22T19:40:00",
+                "participant_full_id": "2753-1-1-0000",
+                "user_text": "Yes, I missed telling you about one incident.",
+                "ai_text": "I'm listening. Sometimes one experience can help explain why certain fears have become so strong. Tell me what happened, and we'll try to understand it together.",
+                "context": "",
+                "strategy": "ReflectiveStatements",
+                "raw_physio": {
+                    "EDA": [
+                        2.43,
+                        2.37
+                    ],
+                    "PR": [
+                        82.0,
+                        82.0
+                    ],
+                    "SkinTemp": [
+                        34.54,
+                        34.47
+                    ],
+                    "ACCEL": [
+                        0.066,
+                        0.066
+                    ],
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": [
+                        146.0,
+                        141.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "PR": "A rising pulse rate pattern emerged over the past 6 minutes, highly fluctuating, reaching 82.0 bpm.",
+                    "EDA": "Skin conductance declining moderately during the past 6 minutes, reaching 2.37 uS.",
+                    "ACCEL": "Accelerometer output elevating moderately across the past 6 minutes, showing highly fluctuating activity, now 0.07 g.",
+                    "SkinTemp": "Across the past 6 minutes, peripheral temperature trended growing from 34.34 to 34.47 degC.",
+                    "ACT_CLASS": "A transition from generic to generic occurred within the past 6 minutes."
+                },
+                "physio_summary_fusion": "Across the past 6 minutes, EDA and PR and SkinTemp and ACCEL shifted while the participant was awake, likely activity-related. EDA and PR and SkinTemp and ACCEL rose alongside increased movement, so the change is likely activity-related rather than a pure stress response.",
+                "stress_score": -2,
+                "stress_level": null,
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Yes, I missed telling you about one incident.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: ReflectiveStatements\n\nResponse: I'm listening. Sometimes one experience can help explain why certain fears have become so strong. Tell me what happened, and we'll try to understand it together.<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Yes, I missed telling you about one incident.\nPhysiological Signals: Across the past 6 minutes, EDA and PR and SkinTemp and ACCEL shifted while the participant was awake, likely activity-related. EDA and PR and SkinTemp and ACCEL rose alongside increased movement, so the change is likely activity-related rather than a pure stress response. On top of that, A rising pulse rate pattern emerged over the past 6 minutes, highly fluctuating, reaching 82.0 bpm. At the same time, Skin conductance declining moderately during the past 6 minutes, reaching 2.37 uS. Further, Accelerometer output elevating moderately across the past 6 minutes, showing highly fluctuating activity, now 0.07 g. In parallel, Across the past 6 minutes, peripheral temperature trended growing from 34.34 to 34.47 degC. Notably, A transition from generic to generic occurred within the past 6 minutes.\n\n### Response:\nStrategy: ReflectiveStatements\n\nResponse: I'm listening. Sometimes one experience can help explain why certain fears have become so strong. Tell me what happened, and we'll try to understand it together.<EOS>"
+            },
+            {
+                "timestamp": "2026-05-22T19:42:00",
+                "participant_full_id": "2753-1-1-0000",
+                "user_text": "One of my cousins is facing pregnancy problems. She is around 29 years old.",
+                "ai_text": "That sounds like it may have affected you more than you realized. When someone close to us goes through a difficult experience, it's natural for our mind to wonder, \"What if this happens to me too?\" But one person's experience doesn't predict your future. Try to remind yourself that your story is your own, not someone else's.",
+                "context": "",
+                "strategy": "EmotionalValidation",
+                "raw_physio": {
+                    "EDA": [
+                        2.4,
+                        2.38
+                    ],
+                    "PR": [
+                        80.0,
+                        86.0
+                    ],
+                    "SkinTemp": [
+                        34.43,
+                        34.41
+                    ],
+                    "ACCEL": [
+                        0.067,
+                        0.105
+                    ],
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": [
+                        145.0,
+                        151.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "EDA": "Across the past 6 minutes, electrodermal activity showed a falling pattern, settling around 2.38 uS.",
+                    "ACCEL": "Over the past 6 minutes, motion intensity stayed decreasing, around 0.1 g.",
+                    "PR": "Over the past 6 minutes, heart rate remained declining near 86.0 beats per minute.",
+                    "SkinTemp": "Skin temperature drifted falling across the past 6 minutes to 34.41 degC, without any notable peaks or valleys.",
+                    "ACT_CLASS": "A shift occurred over the past 6 minutes: activity went from generic to generic."
+                },
+                "physio_summary_fusion": "During the past 6 minutes, EDA and PR and SkinTemp and ACCEL fell while activity intensity stayed MPA, not clearly linked to physical activity. The relationship between EDA and PR and SkinTemp and ACCEL and movement was inconsistent over the past 6 minutes, making the source of change unclear.",
+                "stress_score": -2,
+                "stress_level": null,
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: One of my cousins is facing pregnancy problems. She is around 29 years old.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: EmotionalValidation\n\nResponse: That sounds like it may have affected you more than you realized. When someone close to us goes through a difficult experience, it's natural for our mind to wonder, \"What if this happens to me too?\" But one person's experience doesn't predict your future. Try to remind yourself that your story is your own, not someone else's.<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: One of my cousins is facing pregnancy problems. She is around 29 years old.\nPhysiological Signals: During the past 6 minutes, EDA and PR and SkinTemp and ACCEL fell while activity intensity stayed MPA, not clearly linked to physical activity. The relationship between EDA and PR and SkinTemp and ACCEL and movement was inconsistent over the past 6 minutes, making the source of change unclear. Additionally, Across the past 6 minutes, electrodermal activity showed a falling pattern, settling around 2.38 uS. Notably, Over the past 6 minutes, motion intensity stayed decreasing, around 0.1 g. Notably, Over the past 6 minutes, heart rate remained declining near 86.0 beats per minute. On top of that, Skin temperature drifted falling across the past 6 minutes to 34.41 degC, without any notable peaks or valleys. At the same time, A shift occurred over the past 6 minutes: activity went from generic to generic.\n\n### Response:\nStrategy: EmotionalValidation\n\nResponse: That sounds like it may have affected you more than you realized. When someone close to us goes through a difficult experience, it's natural for our mind to wonder, \"What if this happens to me too?\" But one person's experience doesn't predict your future. Try to remind yourself that your story is your own, not someone else's.<EOS>"
+            },
+            {
+                "timestamp": "2026-05-22T19:44:00",
+                "participant_full_id": "2753-1-1-0000",
+                "user_text": "I told my family members about it, and they also scolded me for overthinking.",
+                "ai_text": "It sounds like you were looking for comfort, but instead you felt misunderstood. When people don't know how to respond, they sometimes react with frustration instead of support. Be kind to yourselfâyour feelings deserve understanding, even while you work on managing the overthinking.",
+                "context": "",
+                "strategy": "EmotionalValidation",
+                "raw_physio": {
+                    "EDA": [
+                        2.34,
+                        2.3
+                    ],
+                    "PR": [
+                        86.0,
+                        82.0
+                    ],
+                    "SkinTemp": [
+                        34.37,
+                        34.3
+                    ],
+                    "ACCEL": [
+                        0.077,
+                        0.088
+                    ],
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": [
+                        128.0,
+                        138.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "ACCEL": "Over the past 6 minutes, physical activity intensity decreasing sharply, now near 0.09 g.",
+                    "PR": "Over the past 6 minutes, heart rate stayed dropping around 82.0 beats per minute.",
+                    "SkinTemp": "Skin temperature moved moderately in a downward direction over the past 6 minutes, from 34.58 to 34.3 degC.",
+                    "EDA": "The sympathetic arousal marker (EDA) falling slightly over the past 6 minutes, now 2.3 uS.",
+                    "ACT_CLASS": "Over the past 6 minutes, the participant's activity changed from walking to generic."
+                },
+                "physio_summary_fusion": "Over the past 6 minutes, the combined signal (EDA and PR and SkinTemp and ACCEL) showed fell, with movement generic, not clearly linked to physical activity. Neither EDA and PR and SkinTemp and ACCEL nor movement showed a notable change, so no clear stress or activity signal is present here.",
+                "stress_score": -2,
+                "stress_level": null,
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I told my family members about it, and they also scolded me for overthinking.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: EmotionalValidation\n\nResponse: It sounds like you were looking for comfort, but instead you felt misunderstood. When people don't know how to respond, they sometimes react with frustration instead of support. Be kind to yourselfâyour feelings deserve understanding, even while you work on managing the overthinking.<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I told my family members about it, and they also scolded me for overthinking.\nPhysiological Signals: Over the past 6 minutes, the combined signal (EDA and PR and SkinTemp and ACCEL) showed fell, with movement generic, not clearly linked to physical activity. Neither EDA and PR and SkinTemp and ACCEL nor movement showed a notable change, so no clear stress or activity signal is present here. At the same time, Over the past 6 minutes, physical activity intensity decreasing sharply, now near 0.09 g. Over the past 6 minutes, heart rate stayed dropping around 82.0 beats per minute. Skin temperature moved moderately in a downward direction over the past 6 minutes, from 34.58 to 34.3 degC. On top of that, The sympathetic arousal marker (EDA) falling slightly over the past 6 minutes, now 2.3 uS. Over the past 6 minutes, the participant's activity changed from walking to generic.\n\n### Response:\nStrategy: EmotionalValidation\n\nResponse: It sounds like you were looking for comfort, but instead you felt misunderstood. When people don't know how to respond, they sometimes react with frustration instead of support. Be kind to yourselfâyour feelings deserve understanding, even while you work on managing the overthinking.<EOS>"
+            },
+            {
+                "timestamp": "2026-05-22T19:46:00",
+                "participant_full_id": "2753-1-1-0000",
+                "user_text": "No, you misunderstood. They usually scold me because I overthink.",
+                "ai_text": "I understand now. It sounds like your family recognizes that you tend to overthink, and they're trying to stop you from worrying so much, even if the way they express it feels harsh. The important thing is that this pattern has been noticed by both you and the people around you. That's a sign it's worth focusing on the overthinking itself rather than assuming every worry reflects a real danger.",
+                "context": "",
+                "strategy": "ReflectiveStatements",
+                "raw_physio": {
+                    "EDA": [
+                        2.25,
+                        2.14
+                    ],
+                    "PR": [
+                        79.0,
+                        82.0
+                    ],
+                    "SkinTemp": [
+                        34.24,
+                        34.19
+                    ],
+                    "ACCEL": [
+                        0.065,
+                        0.068
+                    ],
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": [
+                        91.0,
+                        106.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "SkinTemp": "Over the past 6 minutes, peripheral warmth falling moderately, now near 34.19 degC.",
+                    "EDA": "A decreasing EDA pattern was observed over the past 6 minutes, smooth, reaching 2.14 uS.",
+                    "ACCEL": "Accelerometer readings moved slightly and stable through the past 6 minutes, ending at 0.07 g.",
+                    "PR": "Pulse rate showed a unchanged trend across the past 6 minutes, with mildly fluctuating variation, now 82.0 bpm.",
+                    "ACT_CLASS": "The generic state held steady for the past 6 minutes."
+                },
+                "physio_summary_fusion": "Over the past 6 minutes, EDA and SkinTemp fell, occurring with reliable and generic movement, not clearly linked to physical activity. The relationship between EDA and SkinTemp and movement was inconsistent over the past 6 minutes, making the source of change unclear.",
+                "stress_score": -2,
+                "stress_level": null,
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: No, you misunderstood. They usually scold me because I overthink.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: ReflectiveStatements\n\nResponse: I understand now. It sounds like your family recognizes that you tend to overthink, and they're trying to stop you from worrying so much, even if the way they express it feels harsh. The important thing is that this pattern has been noticed by both you and the people around you. That's a sign it's worth focusing on the overthinking itself rather than assuming every worry reflects a real danger.<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: No, you misunderstood. They usually scold me because I overthink.\nPhysiological Signals: Over the past 6 minutes, EDA and SkinTemp fell, occurring with reliable and generic movement, not clearly linked to physical activity. The relationship between EDA and SkinTemp and movement was inconsistent over the past 6 minutes, making the source of change unclear. Over the past 6 minutes, peripheral warmth falling moderately, now near 34.19 degC. Simultaneously, A decreasing EDA pattern was observed over the past 6 minutes, smooth, reaching 2.14 uS. In parallel, Accelerometer readings moved slightly and stable through the past 6 minutes, ending at 0.07 g. At the same time, Pulse rate showed a unchanged trend across the past 6 minutes, with mildly fluctuating variation, now 82.0 bpm. At the same time, The generic state held steady for the past 6 minutes.\n\n### Response:\nStrategy: ReflectiveStatements\n\nResponse: I understand now. It sounds like your family recognizes that you tend to overthink, and they're trying to stop you from worrying so much, even if the way they express it feels harsh. The important thing is that this pattern has been noticed by both you and the people around you. That's a sign it's worth focusing on the overthinking itself rather than assuming every worry reflects a real danger.<EOS>"
+            },
+            {
+                "timestamp": "2026-05-22T19:48:00",
+                "participant_full_id": "2753-1-1-0000",
+                "user_text": "Because of all this, I can't focus on my work.",
+                "ai_text": "It sounds like your anxiety has started affecting an important part of your life. When your mind is constantly checking for danger, it's hard to give your full attention to work. Don't judge yourself for strugglingâfocus on taking one small task at a time, and remember that reducing the anxiety will gradually help your concentration return.",
+                "context": "",
+                "strategy": "EmotionalValidation",
+                "raw_physio": {
+                    "EDA": [
+                        2.09,
+                        2.18
+                    ],
+                    "PR": [
+                        87.0,
+                        83.0
+                    ],
+                    "SkinTemp": [
+                        34.17,
+                        34.13
+                    ],
+                    "ACCEL": [
+                        0.098,
+                        0.16
+                    ],
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": [
+                        140.0,
+                        151.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "ACCEL": "Across the past 6 minutes, movement levels held rising, near 0.16 g.",
+                    "SkinTemp": "A dropping skin temperature pattern was observed over the past 6 minutes, smooth, reaching 34.13 degC.",
+                    "EDA": "Skin conductance downward slightly during the past 6 minutes, reaching 2.18 uS.",
+                    "PR": "A climbing pulse rate pattern emerged over the past 6 minutes, mildly fluctuating, reaching 83.0 bpm.",
+                    "ACT_CLASS": "Activity type persisted as generic through the past 6 minutes."
+                },
+                "physio_summary_fusion": "Over the past 6 minutes, considering MET levels near 5.22 and generic movement, EDA and PR and SkinTemp and ACCEL shifted, likely activity-related. Because both arousal and activity increased together, this pattern is more consistent with exertion than emotional stress.",
+                "stress_score": -2,
+                "stress_level": null,
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Because of all this, I can't focus on my work.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: EmotionalValidation\n\nResponse: It sounds like your anxiety has started affecting an important part of your life. When your mind is constantly checking for danger, it's hard to give your full attention to work. Don't judge yourself for strugglingâfocus on taking one small task at a time, and remember that reducing the anxiety will gradually help your concentration return.<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Because of all this, I can't focus on my work.\nPhysiological Signals: Over the past 6 minutes, considering MET levels near 5.22 and generic movement, EDA and PR and SkinTemp and ACCEL shifted, likely activity-related. Because both arousal and activity increased together, this pattern is more consistent with exertion than emotional stress. At the same time, Across the past 6 minutes, movement levels held rising, near 0.16 g. Additionally, A dropping skin temperature pattern was observed over the past 6 minutes, smooth, reaching 34.13 degC. Notably, Skin conductance downward slightly during the past 6 minutes, reaching 2.18 uS. Alongside this, A climbing pulse rate pattern emerged over the past 6 minutes, mildly fluctuating, reaching 83.0 bpm. At the same time, Activity type persisted as generic through the past 6 minutes.\n\n### Response:\nStrategy: EmotionalValidation\n\nResponse: It sounds like your anxiety has started affecting an important part of your life. When your mind is constantly checking for danger, it's hard to give your full attention to work. Don't judge yourself for strugglingâfocus on taking one small task at a time, and remember that reducing the anxiety will gradually help your concentration return.<EOS>"
+            },
+            {
+                "timestamp": "2026-05-22T19:50:00",
+                "participant_full_id": "2753-1-1-0000",
+                "user_text": "Okay, thank you for all these suggestions.",
+                "ai_text": "You're very welcome. From everything you've shared, I can see that you genuinely want to get better, and that's an important first step. Be patient with yourselfâprogress comes from small, consistent changes, not from becoming worry-free overnight. I wish you the very best.",
+                "context": "",
+                "strategy": "EmotionalValidation",
+                "raw_physio": {
+                    "EDA": [
+                        2.23,
+                        2.27
+                    ],
+                    "PR": [
+                        80.0,
+                        82.0
+                    ],
+                    "SkinTemp": [
+                        34.1,
+                        34.08
+                    ],
+                    "ACCEL": [
+                        0.079,
+                        0.022
+                    ],
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": [
+                        95.0,
+                        42.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "ACCEL": "Motion intensity easing sharply during the past 6 minutes, reaching 0.02 g.",
+                    "SkinTemp": "Across the past 6 minutes, peripheral temperature trended dropping from 34.37 to 34.08 degC.",
+                    "PR": "Over the past 6 minutes, cardiac pace easing slightly, now near 82.0 bpm.",
+                    "EDA": "Electrodermal readings downward slightly across the past 6 minutes to 2.27 uS, with a dip that partially resolved.",
+                    "ACT_CLASS": "Over the past 6 minutes, generic activity was sustained without interruption."
+                },
+                "physio_summary_fusion": "Over the past 6 minutes, EDA and PR and SkinTemp and ACCEL fell, while movement remained generic (MPA intensity), suggesting the change is not clearly linked to physical activity. The relationship between EDA and PR and SkinTemp and ACCEL and movement was inconsistent over the past 6 minutes, making the source of change unclear.",
+                "stress_score": 0,
+                "stress_level": null,
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Okay, thank you for all these suggestions.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: EmotionalValidation\n\nResponse: You're very welcome. From everything you've shared, I can see that you genuinely want to get better, and that's an important first step. Be patient with yourselfâprogress comes from small, consistent changes, not from becoming worry-free overnight. I wish you the very best.<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Okay, thank you for all these suggestions.\nPhysiological Signals: Over the past 6 minutes, EDA and PR and SkinTemp and ACCEL fell, while movement remained generic (MPA intensity), suggesting the change is not clearly linked to physical activity. The relationship between EDA and PR and SkinTemp and ACCEL and movement was inconsistent over the past 6 minutes, making the source of change unclear. In parallel, Motion intensity easing sharply during the past 6 minutes, reaching 0.02 g. Notably, Across the past 6 minutes, peripheral temperature trended dropping from 34.37 to 34.08 degC. Over the past 6 minutes, cardiac pace easing slightly, now near 82.0 bpm. Meanwhile, Electrodermal readings downward slightly across the past 6 minutes to 2.27 uS, with a dip that partially resolved. Over the past 6 minutes, generic activity was sustained without interruption.\n\n### Response:\nStrategy: EmotionalValidation\n\nResponse: You're very welcome. From everything you've shared, I can see that you genuinely want to get better, and that's an important first step. Be patient with yourselfâprogress comes from small, consistent changes, not from becoming worry-free overnight. I wish you the very best.<EOS>"
+            },
+            {
+                "timestamp": "2026-05-22T19:52:00",
+                "participant_full_id": "2753-1-1-0000",
+                "user_text": "I think I also do some overthinking. What do you think?",
+                "ai_text": "Yes, from everything you've shared, it does sound like overthinking is playing a big role. Your mind keeps trying to protect you by imagining every possible problem, but instead of making you safer, it's making you more anxious. Try asking yourself, \"Is this a fact, or is this a fear?\" That one question can help you slow down your thoughts.",
+                "context": "",
+                "strategy": "ReflectiveStatements",
+                "raw_physio": {
+                    "EDA": [
+                        2.14,
+                        2.04
+                    ],
+                    "PR": [
+                        81.0,
+                        78.0
+                    ],
+                    "SkinTemp": [
+                        34.06,
+                        34.04
+                    ],
+                    "ACCEL": [
+                        0.059,
+                        0.049
+                    ],
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": [
+                        109.0,
+                        101.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "ACCEL": "Across the past 6 minutes, movement levels held falling, near 0.05 g.",
+                    "EDA": "EDA levels moved slightly and falling through the past 6 minutes, ending at 2.04 uS.",
+                    "SkinTemp": "During the past 6 minutes, skin temperature registered a falling shift to 34.04 degC, showing a single sustained rise with no reversal.",
+                    "PR": "Pulse readings moved slightly and decreasing through the past 6 minutes, ending at 78.0 bpm.",
+                    "ACT_CLASS": "The generic state held steady for the past 6 minutes."
+                },
+                "physio_summary_fusion": "Over the past 6 minutes, EDA and PR and SkinTemp and ACCEL fell, with minimal walking and MPA intensity noted, not clearly linked to physical activity. Neither EDA and PR and SkinTemp and ACCEL nor movement showed a notable change, so no clear stress or activity signal is present here.",
+                "stress_score": -2,
+                "stress_level": null,
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I think I also do some overthinking. What do you think?\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: ReflectiveStatements\n\nResponse: Yes, from everything you've shared, it does sound like overthinking is playing a big role. Your mind keeps trying to protect you by imagining every possible problem, but instead of making you safer, it's making you more anxious. Try asking yourself, \"Is this a fact, or is this a fear?\" That one question can help you slow down your thoughts.<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I think I also do some overthinking. What do you think?\nPhysiological Signals: Over the past 6 minutes, EDA and PR and SkinTemp and ACCEL fell, with minimal walking and MPA intensity noted, not clearly linked to physical activity. Neither EDA and PR and SkinTemp and ACCEL nor movement showed a notable change, so no clear stress or activity signal is present here. Simultaneously, Across the past 6 minutes, movement levels held falling, near 0.05 g. Notably, EDA levels moved slightly and falling through the past 6 minutes, ending at 2.04 uS. Also, During the past 6 minutes, skin temperature registered a falling shift to 34.04 degC, showing a single sustained rise with no reversal. Additionally, Pulse readings moved slightly and decreasing through the past 6 minutes, ending at 78.0 bpm. Simultaneously, The generic state held steady for the past 6 minutes.\n\n### Response:\nStrategy: ReflectiveStatements\n\nResponse: Yes, from everything you've shared, it does sound like overthinking is playing a big role. Your mind keeps trying to protect you by imagining every possible problem, but instead of making you safer, it's making you more anxious. Try asking yourself, \"Is this a fact, or is this a fear?\" That one question can help you slow down your thoughts.<EOS>"
+            },
+            {
+                "timestamp": "2026-05-22T19:54:00",
+                "participant_full_id": "2753-1-1-0000",
+                "user_text": "When I feel anxious, what can I do immediately?",
+                "ai_text": "It sounds like your anxiety becomes intense very quickly, and in those moments your mind wants immediate certainty. Instead of trying to prove you're okay, pause and calm your body first. Take 10 slow breaths, drink a glass of water, go for a short walk, and remind yourself, \"This is anxiety, not proof that something is seriously wrong.\"",
+                "context": "",
+                "strategy": "StressManagement",
+                "raw_physio": {
+                    "EDA": [
+                        2.08,
+                        1.97
+                    ],
+                    "PR": [
+                        79.0,
+                        79.0
+                    ],
+                    "SkinTemp": [
+                        34.03,
+                        34.02
+                    ],
+                    "ACCEL": [
+                        0.032,
+                        0.06
+                    ],
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": [
+                        108.0,
+                        113.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "ACCEL": "Movement levels drifted declining across the past 6 minutes to 0.06 g, without any notable peaks or valleys.",
+                    "PR": "Pulse rate showed a downward trend across the past 6 minutes, with mildly fluctuating variation, now 79.0 bpm.",
+                    "SkinTemp": "Skin temperature decreasing slightly over the past 6 minutes, moving from 34.17 to 34.02 degC.",
+                    "EDA": "Over the past 6 minutes, electrodermal activity moved slightly in a falling direction, from 2.09 to 1.97 uS.",
+                    "ACT_CLASS": "Throughout the past 6 minutes, the recorded activity class stayed generic."
+                },
+                "physio_summary_fusion": "During the past 6 minutes, EDA and PR and SkinTemp and ACCEL fell; since movement stayed generic with MET near 1.79, this arousal appears not clearly linked to physical activity. The relationship between EDA and PR and SkinTemp and ACCEL and movement was inconsistent over the past 6 minutes, making the source of change unclear.",
+                "stress_score": -2,
+                "stress_level": null,
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: When I feel anxious, what can I do immediately?\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: StressManagement\n\nResponse: It sounds like your anxiety becomes intense very quickly, and in those moments your mind wants immediate certainty. Instead of trying to prove you're okay, pause and calm your body first. Take 10 slow breaths, drink a glass of water, go for a short walk, and remind yourself, \"This is anxiety, not proof that something is seriously wrong.\"<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: When I feel anxious, what can I do immediately?\nPhysiological Signals: During the past 6 minutes, EDA and PR and SkinTemp and ACCEL fell; since movement stayed generic with MET near 1.79, this arousal appears not clearly linked to physical activity. The relationship between EDA and PR and SkinTemp and ACCEL and movement was inconsistent over the past 6 minutes, making the source of change unclear. On top of that, Movement levels drifted declining across the past 6 minutes to 0.06 g, without any notable peaks or valleys. Pulse rate showed a downward trend across the past 6 minutes, with mildly fluctuating variation, now 79.0 bpm. Meanwhile, Skin temperature decreasing slightly over the past 6 minutes, moving from 34.17 to 34.02 degC. Additionally, Over the past 6 minutes, electrodermal activity moved slightly in a falling direction, from 2.09 to 1.97 uS. Throughout the past 6 minutes, the recorded activity class stayed generic.\n\n### Response:\nStrategy: StressManagement\n\nResponse: It sounds like your anxiety becomes intense very quickly, and in those moments your mind wants immediate certainty. Instead of trying to prove you're okay, pause and calm your body first. Take 10 slow breaths, drink a glass of water, go for a short walk, and remind yourself, \"This is anxiety, not proof that something is seriously wrong.\"<EOS>"
+            },
+            {
+                "timestamp": "2026-05-22T19:56:00",
+                "participant_full_id": "2753-1-1-0000",
+                "user_text": "Do you think meditation can help?",
+                "ai_text": "Yes. Meditation can help by teaching your mind not to react to every anxious thought. Practice for 10â15 minutes daily, focusing on your breath. The goal isn't to stop thoughtsâit's to let them pass without following them.",
+                "context": "",
+                "strategy": "StressManagement",
+                "raw_physio": {
+                    "EDA": [
+                        1.97,
+                        2.08
+                    ],
+                    "PR": [
+                        82.0,
+                        86.0
+                    ],
+                    "SkinTemp": [
+                        34.02,
+                        34.02
+                    ],
+                    "ACCEL": [
+                        0.053,
+                        0.041
+                    ],
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": [
+                        108.0,
+                        125.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "ACCEL": "Over the past 6 minutes, physical motion remained downward, staying close to 0.04 g.",
+                    "PR": "Across the past 6 minutes, heart rate trended rising from 80.0 to 86.0 bpm.",
+                    "EDA": "EDA levels moved slightly and dropping through the past 6 minutes, ending at 2.08 uS.",
+                    "SkinTemp": "Skin temperature drifted decreasing across the past 6 minutes to 34.02 degC, showing a single sustained rise with no reversal.",
+                    "ACT_CLASS": "The participant stayed generic for the duration of the past 6 minutes."
+                },
+                "physio_summary_fusion": "Over the past 6 minutes, considering MET levels near 1.86 and generic movement, EDA and PR and SkinTemp and ACCEL shifted, likely activity-related. EDA and PR and SkinTemp and ACCEL climbed while movement also increased, suggesting the change may be confounded by physical activity.",
+                "stress_score": -2,
+                "stress_level": null,
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Do you think meditation can help?\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: StressManagement\n\nResponse: Yes. Meditation can help by teaching your mind not to react to every anxious thought. Practice for 10â15 minutes daily, focusing on your breath. The goal isn't to stop thoughtsâit's to let them pass without following them.<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Do you think meditation can help?\nPhysiological Signals: Over the past 6 minutes, considering MET levels near 1.86 and generic movement, EDA and PR and SkinTemp and ACCEL shifted, likely activity-related. EDA and PR and SkinTemp and ACCEL climbed while movement also increased, suggesting the change may be confounded by physical activity. Notably, Over the past 6 minutes, physical motion remained downward, staying close to 0.04 g. Further, Across the past 6 minutes, heart rate trended rising from 80.0 to 86.0 bpm. On top of that, EDA levels moved slightly and dropping through the past 6 minutes, ending at 2.08 uS. Additionally, Skin temperature drifted decreasing across the past 6 minutes to 34.02 degC, showing a single sustained rise with no reversal. The participant stayed generic for the duration of the past 6 minutes.\n\n### Response:\nStrategy: StressManagement\n\nResponse: Yes. Meditation can help by teaching your mind not to react to every anxious thought. Practice for 10â15 minutes daily, focusing on your breath. The goal isn't to stop thoughtsâit's to let them pass without following them.<EOS>"
+            },
+            {
+                "timestamp": "2026-05-22T19:58:00",
+                "participant_full_id": "2753-1-1-0000",
+                "user_text": "Reply to me in short.",
+                "ai_text": "Yes. Meditation can help by teaching your mind not to react to every anxious thought. Practice for 10â15 minutes daily, focusing on your breath. The goal isn't to stop thoughtsâit's to let them pass without following them.",
+                "context": "",
+                "strategy": "ReflectiveStatements",
+                "raw_physio": {
+                    "EDA": [
+                        2.03,
+                        2.05
+                    ],
+                    "PR": [
+                        77.0,
+                        79.0
+                    ],
+                    "SkinTemp": [
+                        34.04,
+                        34.04
+                    ],
+                    "ACCEL": [
+                        0.081,
+                        0.036
+                    ],
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": [
+                        136.0,
+                        86.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "ACCEL": "The motion signal was falling for the past 6 minutes, mildly fluctuating, around 0.04 g.",
+                    "PR": "The pulse signal was easing for the past 6 minutes, mildly fluctuating, around 79.0 bpm.",
+                    "EDA": "Skin conductance levels stayed declining over the past 6 minutes, near 2.05 uS.",
+                    "SkinTemp": "Skin temperature dropping slightly over the past 6 minutes, moving from 34.06 to 34.04 degC.",
+                    "ACT_CLASS": "Activity classification showed no change over the past 6 minutes, staying generic."
+                },
+                "physio_summary_fusion": "Over the past 6 minutes, step count suggests some walking activity; EDA and PR and SkinTemp and ACCEL fell, a response that is not clearly linked to physical activity. The relationship between EDA and PR and SkinTemp and ACCEL and movement was inconsistent over the past 6 minutes, making the source of change unclear.",
+                "stress_score": 0,
+                "stress_level": null,
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Reply to me in short.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: ReflectiveStatements\n\nResponse: Yes. Meditation can help by teaching your mind not to react to every anxious thought. Practice for 10â15 minutes daily, focusing on your breath. The goal isn't to stop thoughtsâit's to let them pass without following them.<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Reply to me in short.\nPhysiological Signals: Over the past 6 minutes, step count suggests some walking activity; EDA and PR and SkinTemp and ACCEL fell, a response that is not clearly linked to physical activity. The relationship between EDA and PR and SkinTemp and ACCEL and movement was inconsistent over the past 6 minutes, making the source of change unclear. Alongside this, The motion signal was falling for the past 6 minutes, mildly fluctuating, around 0.04 g. The pulse signal was easing for the past 6 minutes, mildly fluctuating, around 79.0 bpm. Also, Skin conductance levels stayed declining over the past 6 minutes, near 2.05 uS. Additionally, Skin temperature dropping slightly over the past 6 minutes, moving from 34.06 to 34.04 degC. Alongside this, Activity classification showed no change over the past 6 minutes, staying generic.\n\n### Response:\nStrategy: ReflectiveStatements\n\nResponse: Yes. Meditation can help by teaching your mind not to react to every anxious thought. Practice for 10â15 minutes daily, focusing on your breath. The goal isn't to stop thoughtsâit's to let them pass without following them.<EOS>"
+            }
+        ]
+    }
+]

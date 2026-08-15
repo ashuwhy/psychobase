@@ -1,0 +1,697 @@
+[
+    {
+        "session_id": "2753-1-1",
+        "person_id": "2753",
+        "turns": [
+            {
+                "timestamp": "2026-05-04T17:11:00",
+                "participant_full_id": "2753-1-1-0000",
+                "user_text": "I had a meeting with my supervisor today, and I don't think it went well.",
+                "ai_text": "That sounds disappointing. When a meeting doesn't go the way we hoped, it's natural to keep thinking about it afterward. I'm here to listenâwhat happened?",
+                "context": "",
+                "strategy": "Emotional Validation",
+                "raw_physio": {
+                    "EDA": [
+                        0.28,
+                        0.46
+                    ],
+                    "PR": [
+                        97.0,
+                        94.0
+                    ],
+                    "SkinTemp": [
+                        32.97,
+                        33.17
+                    ],
+                    "ACCEL": [
+                        0.02,
+                        0.001
+                    ],
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": [
+                        25.0,
+                        0.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "EDA": "A rising EDA pattern was observed over the first minute, highly fluctuating, reaching 0.46 uS.",
+                    "SkinTemp": "Temperature readings moved moderately and growing through the first minute, ending at 33.17 degC.",
+                    "PR": "Pulse rate falling moderately across the first minute, showing mildly fluctuating activity, now 94.0 bpm.",
+                    "ACCEL": "Over the first minute, physical motion remained downward, staying close to 0.0 g.",
+                    "ACT_CLASS": "Activity level held steady at still across the first minute."
+                },
+                "physio_summary_fusion": "During the first minute, EDA and PR and SkinTemp and ACCEL shifted; since movement stayed still with MET near 1.23, this arousal appears not explained by movement. EDA and PR and SkinTemp and ACCEL rose while ACCEL and ACT_COUNT showed no corresponding movement, suggesting this arousal is not explained by physical activity.",
+                "stress_score": 5,
+                "stress_level": "Moderate stress",
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I had a meeting with my supervisor today, and I don't think it went well.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: Emotional Validation\n\nResponse: That sounds disappointing. When a meeting doesn't go the way we hoped, it's natural to keep thinking about it afterward. I'm here to listenâwhat happened?<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I had a meeting with my supervisor today, and I don't think it went well.\nPhysiological Signals: During the first minute, EDA and PR and SkinTemp and ACCEL shifted; since movement stayed still with MET near 1.23, this arousal appears not explained by movement. EDA and PR and SkinTemp and ACCEL rose while ACCEL and ACT_COUNT showed no corresponding movement, suggesting this arousal is not explained by physical activity. Notably, A rising EDA pattern was observed over the first minute, highly fluctuating, reaching 0.46 uS. Simultaneously, Temperature readings moved moderately and growing through the first minute, ending at 33.17 degC. Also, Pulse rate falling moderately across the first minute, showing mildly fluctuating activity, now 94.0 bpm. In parallel, Over the first minute, physical motion remained downward, staying close to 0.0 g. Also, Activity level held steady at still across the first minute. At the same time, Movement count of 0.0 contributes to a combined stress score of 5 over the first minute, consistent with Moderate stress.\n\n### Response:\nStrategy: Emotional Validation\n\nResponse: That sounds disappointing. When a meeting doesn't go the way we hoped, it's natural to keep thinking about it afterward. I'm here to listenâwhat happened?<EOS>"
+            },
+            {
+                "timestamp": "2026-05-04T17:13:00",
+                "participant_full_id": "2753-1-1-0000",
+                "user_text": "I understood the research paper, but I couldn't explain how it relates to my own research.",
+                "ai_text": "It sounds like you understood the material itself but found it difficult to connect it to your research. Those are different skills, and struggling with one doesn't mean you lack understanding.",
+                "context": "",
+                "strategy": "Strength-Based Reflection",
+                "raw_physio": {
+                    "EDA": [
+                        0.45,
+                        0.34
+                    ],
+                    "PR": [
+                        90.0,
+                        92.0
+                    ],
+                    "SkinTemp": [
+                        33.42,
+                        33.63
+                    ],
+                    "ACCEL": [
+                        0.001,
+                        0.001
+                    ],
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": [
+                        0.0,
+                        0.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "SkinTemp": "Skin temperature moved sharply in a upward direction over the past 2 minutes, from 32.97 to 33.63 degC.",
+                    "PR": "Over the past 2 minutes, cardiac pace decreasing moderately, now near 92.0 bpm.",
+                    "EDA": "EDA levels moved moderately and growing through the past 2 minutes, ending at 0.34 uS.",
+                    "ACCEL": "Movement levels drifted easing across the past 2 minutes to 0.0 g, showing a single sustained rise with no reversal.",
+                    "ACT_CLASS": "Activity classification showed no change over the past 2 minutes, staying still."
+                },
+                "physio_summary_fusion": "During the past 2 minutes, with body position reclining/lying and the participant was awake, EDA and PR and SkinTemp and ACCEL shifted, not explained by movement. Arousal markers rose without any matching rise in movement, indicating the shift is likely psychological rather than exertional.",
+                "stress_score": 5,
+                "stress_level": "Moderate stress",
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I understood the research paper, but I couldn't explain how it relates to my own research.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: Strength-Based Reflection\n\nResponse: It sounds like you understood the material itself but found it difficult to connect it to your research. Those are different skills, and struggling with one doesn't mean you lack understanding.<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I understood the research paper, but I couldn't explain how it relates to my own research.\nPhysiological Signals: During the past 2 minutes, with body position reclining/lying and the participant was awake, EDA and PR and SkinTemp and ACCEL shifted, not explained by movement. Arousal markers rose without any matching rise in movement, indicating the shift is likely psychological rather than exertional. Also, Skin temperature moved sharply in a upward direction over the past 2 minutes, from 32.97 to 33.63 degC. Also, Over the past 2 minutes, cardiac pace decreasing moderately, now near 92.0 bpm. Meanwhile, EDA levels moved moderately and growing through the past 2 minutes, ending at 0.34 uS. Movement levels drifted easing across the past 2 minutes to 0.0 g, showing a single sustained rise with no reversal. Notably, Activity classification showed no change over the past 2 minutes, staying still. Notably, Factoring in an activity count of 0.0, the composite indicator over the past 2 minutes reads 5, suggesting Moderate stress.\n\n### Response:\nStrategy: Strength-Based Reflection\n\nResponse: It sounds like you understood the material itself but found it difficult to connect it to your research. Those are different skills, and struggling with one doesn't mean you lack understanding.<EOS>"
+            },
+            {
+                "timestamp": "2026-05-04T17:15:00",
+                "participant_full_id": "2753-1-1-0000",
+                "user_text": "My supervisor kept asking me how I would use the ideas in my project, and I couldn't answer properly.",
+                "ai_text": "That must have felt uncomfortable. Being asked follow-up questions can make it harder to organize your thoughts, especially when you're already feeling nervous.",
+                "context": "",
+                "strategy": "Active Listening",
+                "raw_physio": {
+                    "EDA": [
+                        0.26,
+                        0.2
+                    ],
+                    "PR": [
+                        91.0,
+                        89.0
+                    ],
+                    "SkinTemp": [
+                        33.79,
+                        33.92
+                    ],
+                    "ACCEL": [
+                        0.029,
+                        0.013
+                    ],
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": [
+                        23.0,
+                        10.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "SkinTemp": "Skin temperature growing sharply over the past 4 minutes, moving from 32.97 to 33.92 degC.",
+                    "PR": "A falling pulse rate pattern emerged over the past 4 minutes, mildly fluctuating, reaching 89.0 bpm.",
+                    "EDA": "EDA held easing through the past 4 minutes, close to 0.2 uS.",
+                    "ACCEL": "Over the past 4 minutes, physical motion remained dropping, staying close to 0.01 g.",
+                    "ACT_CLASS": "Activity remained categorized as still over the past 4 minutes."
+                },
+                "physio_summary_fusion": "Across the past 4 minutes, EDA and PR and SkinTemp and ACCEL shifted while the participant was awake, not clearly linked to physical activity. Neither EDA and PR and SkinTemp and ACCEL nor movement showed a notable change, so no clear stress or activity signal is present here.",
+                "stress_score": 1,
+                "stress_level": null,
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: My supervisor kept asking me how I would use the ideas in my project, and I couldn't answer properly.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: Active Listening\n\nResponse: That must have felt uncomfortable. Being asked follow-up questions can make it harder to organize your thoughts, especially when you're already feeling nervous.<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: My supervisor kept asking me how I would use the ideas in my project, and I couldn't answer properly.\nPhysiological Signals: Across the past 4 minutes, EDA and PR and SkinTemp and ACCEL shifted while the participant was awake, not clearly linked to physical activity. Neither EDA and PR and SkinTemp and ACCEL nor movement showed a notable change, so no clear stress or activity signal is present here. At the same time, Skin temperature growing sharply over the past 4 minutes, moving from 32.97 to 33.92 degC. Meanwhile, A falling pulse rate pattern emerged over the past 4 minutes, mildly fluctuating, reaching 89.0 bpm. Simultaneously, EDA held easing through the past 4 minutes, close to 0.2 uS. Over the past 4 minutes, physical motion remained dropping, staying close to 0.01 g. Additionally, Activity remained categorized as still over the past 4 minutes.\n\n### Response:\nStrategy: Active Listening\n\nResponse: That must have felt uncomfortable. Being asked follow-up questions can make it harder to organize your thoughts, especially when you're already feeling nervous.<EOS>"
+            },
+            {
+                "timestamp": "2026-05-04T17:17:00",
+                "participant_full_id": "2753-1-1-0000",
+                "user_text": "I had prepared for the paper, but not for those kinds of questions.",
+                "ai_text": "That makes sense. Preparing for the content and preparing for discussion questions are different things. Many students experience that gap during research meetings.",
+                "context": "",
+                "strategy": "Normalization",
+                "raw_physio": {
+                    "EDA": [
+                        0.17,
+                        0.18
+                    ],
+                    "PR": [
+                        90.0,
+                        91.0
+                    ],
+                    "SkinTemp": [
+                        33.96,
+                        34.03
+                    ],
+                    "ACCEL": [
+                        0.003,
+                        0.011
+                    ],
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": [
+                        6.0,
+                        16.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "SkinTemp": "Skin temperature moved sharply in a increasing direction over the past 6 minutes, from 32.97 to 34.03 degC.",
+                    "EDA": "The electrodermal signal was falling for the past 6 minutes, showing highly fluctuating behavior around 0.18 uS.",
+                    "PR": "Pulse readings moved moderately and declining through the past 6 minutes, ending at 91.0 bpm.",
+                    "ACCEL": "A falling movement pattern was observed over the past 6 minutes, smooth, reaching 0.01 g.",
+                    "ACT_CLASS": "Throughout the past 6 minutes, the recorded activity class stayed still."
+                },
+                "physio_summary_fusion": "Over the past 6 minutes, the combined signal (EDA and PR and SkinTemp and ACCEL) showed shifted, with movement still, not clearly linked to physical activity. The relationship between EDA and PR and SkinTemp and ACCEL and movement was inconsistent over the past 6 minutes, making the source of change unclear.",
+                "stress_score": 3,
+                "stress_level": "Mild stress",
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I had prepared for the paper, but not for those kinds of questions.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: Normalization\n\nResponse: That makes sense. Preparing for the content and preparing for discussion questions are different things. Many students experience that gap during research meetings.<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I had prepared for the paper, but not for those kinds of questions.\nPhysiological Signals: Over the past 6 minutes, the combined signal (EDA and PR and SkinTemp and ACCEL) showed shifted, with movement still, not clearly linked to physical activity. The relationship between EDA and PR and SkinTemp and ACCEL and movement was inconsistent over the past 6 minutes, making the source of change unclear. Simultaneously, Skin temperature moved sharply in a increasing direction over the past 6 minutes, from 32.97 to 34.03 degC. Additionally, The electrodermal signal was falling for the past 6 minutes, showing highly fluctuating behavior around 0.18 uS. Meanwhile, Pulse readings moved moderately and declining through the past 6 minutes, ending at 91.0 bpm. At the same time, A falling movement pattern was observed over the past 6 minutes, smooth, reaching 0.01 g. Also, Throughout the past 6 minutes, the recorded activity class stayed still. Notably, Movement count of 16.0 contributes to a combined stress score of 3 over the past 6 minutes, consistent with Mild stress.\n\n### Response:\nStrategy: Normalization\n\nResponse: That makes sense. Preparing for the content and preparing for discussion questions are different things. Many students experience that gap during research meetings.<EOS>"
+            },
+            {
+                "timestamp": "2026-05-04T17:19:00",
+                "participant_full_id": "2753-1-1-0000",
+                "user_text": "Yesterday evening, my supervisor asked me to read another paper before today's meeting.",
+                "ai_text": "That gave you very little time to absorb new information. Last-minute preparation can leave anyone feeling less confident, even if they've worked hard.",
+                "context": "",
+                "strategy": "Emotional Validation",
+                "raw_physio": {
+                    "EDA": [
+                        0.28,
+                        0.27
+                    ],
+                    "PR": [
+                        93.0,
+                        96.0
+                    ],
+                    "SkinTemp": [
+                        34.09,
+                        34.11
+                    ],
+                    "ACCEL": [
+                        0.005,
+                        0.018
+                    ],
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": [
+                        6.0,
+                        27.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "SkinTemp": "Over the past 6 minutes, peripheral temperature stayed climbing, around 34.11 degC.",
+                    "EDA": "Skin conductance falling sharply during the past 6 minutes, reaching 0.27 uS.",
+                    "PR": "During the past 6 minutes, heart rate registered a rising shift to 96.0 bpm, without any notable peaks or valleys.",
+                    "ACCEL": "During the past 6 minutes, movement registered a elevating shift to 0.02 g, without any notable peaks or valleys.",
+                    "ACT_CLASS": "The participant's movement pattern was classified as still for all of the past 6 minutes."
+                },
+                "physio_summary_fusion": "Across the past 6 minutes, EDA and PR and SkinTemp and ACCEL shifted; posture stayed reclining/lying throughout, not explained by movement. EDA and PR and SkinTemp and ACCEL increased while the participant remained sedentary, so the change cannot be attributed to physical exertion.",
+                "stress_score": 2,
+                "stress_level": "Mild stress",
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Yesterday evening, my supervisor asked me to read another paper before today's meeting.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: Emotional Validation\n\nResponse: That gave you very little time to absorb new information. Last-minute preparation can leave anyone feeling less confident, even if they've worked hard.<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Yesterday evening, my supervisor asked me to read another paper before today's meeting.\nPhysiological Signals: Across the past 6 minutes, EDA and PR and SkinTemp and ACCEL shifted; posture stayed reclining/lying throughout, not explained by movement. EDA and PR and SkinTemp and ACCEL increased while the participant remained sedentary, so the change cannot be attributed to physical exertion. On top of that, Over the past 6 minutes, peripheral temperature stayed climbing, around 34.11 degC. Skin conductance falling sharply during the past 6 minutes, reaching 0.27 uS. Alongside this, During the past 6 minutes, heart rate registered a rising shift to 96.0 bpm, without any notable peaks or valleys. Meanwhile, During the past 6 minutes, movement registered a elevating shift to 0.02 g, without any notable peaks or valleys. On top of that, The participant's movement pattern was classified as still for all of the past 6 minutes. Also, The stress score for the past 6 minutes is 2 (activity count: 27.0), pointing to Mild stress.\n\n### Response:\nStrategy: Emotional Validation\n\nResponse: That gave you very little time to absorb new information. Last-minute preparation can leave anyone feeling less confident, even if they've worked hard.<EOS>"
+            },
+            {
+                "timestamp": "2026-05-04T17:21:00",
+                "participant_full_id": "2753-1-1-0000",
+                "user_text": "Because of that, I couldn't organize my notes properly.",
+                "ai_text": "It sounds like your preparation felt rushed. When we don't have enough time to organize our thoughts, it's much harder to explain them clearly.",
+                "context": "",
+                "strategy": "Emotional Validation",
+                "raw_physio": {
+                    "EDA": [
+                        0.21,
+                        0.22
+                    ],
+                    "PR": [
+                        97.0,
+                        104.0
+                    ],
+                    "SkinTemp": [
+                        34.11,
+                        34.13
+                    ],
+                    "ACCEL": [
+                        0.025,
+                        0.136
+                    ],
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": [
+                        31.0,
+                        99.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "ACCEL": "Over the past 6 minutes, physical motion remained elevating, staying close to 0.14 g.",
+                    "PR": "Pulse readings moved sharply and growing through the past 6 minutes, ending at 104.0 bpm.",
+                    "SkinTemp": "Temperature readings moved moderately and elevating through the past 6 minutes, ending at 34.13 degC.",
+                    "EDA": "Electrodermal activity remained falling across the past 6 minutes, staying near 0.22 uS.",
+                    "ACT_CLASS": "Activity type persisted as still through the past 6 minutes."
+                },
+                "physio_summary_fusion": "Across the past 6 minutes, EDA and PR and SkinTemp and ACCEL showed a shifted pattern, occurring while the participant was still and positioned reclining/lying, likely activity-related. EDA and PR and SkinTemp and ACCEL rose alongside increased movement, so the change is likely activity-related rather than a pure stress response.",
+                "stress_score": 0,
+                "stress_level": null,
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Because of that, I couldn't organize my notes properly.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: Emotional Validation\n\nResponse: It sounds like your preparation felt rushed. When we don't have enough time to organize our thoughts, it's much harder to explain them clearly.<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Because of that, I couldn't organize my notes properly.\nPhysiological Signals: Across the past 6 minutes, EDA and PR and SkinTemp and ACCEL showed a shifted pattern, occurring while the participant was still and positioned reclining/lying, likely activity-related. EDA and PR and SkinTemp and ACCEL rose alongside increased movement, so the change is likely activity-related rather than a pure stress response. Simultaneously, Over the past 6 minutes, physical motion remained elevating, staying close to 0.14 g. Also, Pulse readings moved sharply and growing through the past 6 minutes, ending at 104.0 bpm. In parallel, Temperature readings moved moderately and elevating through the past 6 minutes, ending at 34.13 degC. In parallel, Electrodermal activity remained falling across the past 6 minutes, staying near 0.22 uS. Further, Activity type persisted as still through the past 6 minutes.\n\n### Response:\nStrategy: Emotional Validation\n\nResponse: It sounds like your preparation felt rushed. When we don't have enough time to organize our thoughts, it's much harder to explain them clearly.<EOS>"
+            },
+            {
+                "timestamp": "2026-05-04T17:23:00",
+                "participant_full_id": "2753-1-1-0000",
+                "user_text": "I also get nervous speaking in English during research meetings.",
+                "ai_text": "That adds another challenge. You're trying to think about research ideas while communicating in a language that still requires extra effort. That doesn't reflect your intelligenceâit reflects the difficulty of the situation.",
+                "context": "",
+                "strategy": "Strength-Based Reflection",
+                "raw_physio": {
+                    "EDA": [
+                        0.18,
+                        0.19
+                    ],
+                    "PR": [
+                        113.0,
+                        114.0
+                    ],
+                    "SkinTemp": [
+                        34.12,
+                        34.14
+                    ],
+                    "ACCEL": [
+                        0.201,
+                        0.141
+                    ],
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": [
+                        136.0,
+                        141.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "PR": "Over the past 6 minutes, cardiac pace increasing sharply, now near 114.0 bpm.",
+                    "ACCEL": "Over the past 6 minutes, motion intensity stayed climbing, around 0.14 g.",
+                    "SkinTemp": "Skin temperature showed a increasing pattern across the past 6 minutes, with smooth change, now 34.14 degC.",
+                    "EDA": "Over the past 6 minutes, electrodermal activity moved slightly in a climbing direction, from 0.17 to 0.19 uS.",
+                    "ACT_CLASS": "A transition from still to generic occurred within the past 6 minutes."
+                },
+                "physio_summary_fusion": "Across the past 6 minutes, EDA and PR and SkinTemp and ACCEL together rose while activity stayed generic - this pattern is likely activity-related. EDA and PR and SkinTemp and ACCEL rose in step with heightened motion, indicating the signal is at least partly explained by movement rather than stress alone.",
+                "stress_score": 2,
+                "stress_level": "Mild stress",
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I also get nervous speaking in English during research meetings.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: Strength-Based Reflection\n\nResponse: That adds another challenge. You're trying to think about research ideas while communicating in a language that still requires extra effort. That doesn't reflect your intelligenceâit reflects the difficulty of the situation.<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I also get nervous speaking in English during research meetings.\nPhysiological Signals: Across the past 6 minutes, EDA and PR and SkinTemp and ACCEL together rose while activity stayed generic - this pattern is likely activity-related. EDA and PR and SkinTemp and ACCEL rose in step with heightened motion, indicating the signal is at least partly explained by movement rather than stress alone. Over the past 6 minutes, cardiac pace increasing sharply, now near 114.0 bpm. Additionally, Over the past 6 minutes, motion intensity stayed climbing, around 0.14 g. Additionally, Skin temperature showed a increasing pattern across the past 6 minutes, with smooth change, now 34.14 degC. Also, Over the past 6 minutes, electrodermal activity moved slightly in a climbing direction, from 0.17 to 0.19 uS. Simultaneously, A transition from still to generic occurred within the past 6 minutes. Also, Movement count of 141.0 contributes to a combined stress score of 2 over the past 6 minutes, consistent with Mild stress.\n\n### Response:\nStrategy: Strength-Based Reflection\n\nResponse: That adds another challenge. You're trying to think about research ideas while communicating in a language that still requires extra effort. That doesn't reflect your intelligenceâit reflects the difficulty of the situation.<EOS>"
+            },
+            {
+                "timestamp": "2026-05-04T17:25:00",
+                "participant_full_id": "2753-1-1-0000",
+                "user_text": "That's why I usually need more time before meetings.",
+                "ai_text": "That sounds like a reasonable need. Extra preparation helps you organize both your ideas and your language, allowing your knowledge to come across more clearly.",
+                "context": "",
+                "strategy": "Encouragement",
+                "raw_physio": {
+                    "EDA": [
+                        0.17,
+                        0.13
+                    ],
+                    "PR": [
+                        115.0,
+                        118.0
+                    ],
+                    "SkinTemp": [
+                        34.04,
+                        33.86
+                    ],
+                    "ACCEL": [
+                        0.065,
+                        0.047
+                    ],
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": [
+                        116.0,
+                        99.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "PR": "A rising pulse rate pattern emerged over the past 6 minutes, highly fluctuating, reaching 118.0 bpm.",
+                    "EDA": "The electrodermal signal was downward for the past 6 minutes, showing mildly fluctuating behavior around 0.13 uS.",
+                    "ACCEL": "Over the past 6 minutes, physical activity intensity elevating moderately, now near 0.05 g.",
+                    "SkinTemp": "Over the past 6 minutes, peripheral warmth easing moderately, now near 33.86 degC.",
+                    "ACT_CLASS": "The activity label changed from still to generic within the past 6 minutes."
+                },
+                "physio_summary_fusion": "Across the past 6 minutes, EDA and PR and SkinTemp and ACCEL shifted; posture stayed reclining/lying throughout, likely activity-related. EDA and PR and SkinTemp and ACCEL rose alongside increased movement, so the change is likely activity-related rather than a pure stress response.",
+                "stress_score": 0,
+                "stress_level": null,
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: That's why I usually need more time before meetings.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: Encouragement\n\nResponse: That sounds like a reasonable need. Extra preparation helps you organize both your ideas and your language, allowing your knowledge to come across more clearly.<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: That's why I usually need more time before meetings.\nPhysiological Signals: Across the past 6 minutes, EDA and PR and SkinTemp and ACCEL shifted; posture stayed reclining/lying throughout, likely activity-related. EDA and PR and SkinTemp and ACCEL rose alongside increased movement, so the change is likely activity-related rather than a pure stress response. Additionally, A rising pulse rate pattern emerged over the past 6 minutes, highly fluctuating, reaching 118.0 bpm. Simultaneously, The electrodermal signal was downward for the past 6 minutes, showing mildly fluctuating behavior around 0.13 uS. Alongside this, Over the past 6 minutes, physical activity intensity elevating moderately, now near 0.05 g. Additionally, Over the past 6 minutes, peripheral warmth easing moderately, now near 33.86 degC. Further, The activity label changed from still to generic within the past 6 minutes.\n\n### Response:\nStrategy: Encouragement\n\nResponse: That sounds like a reasonable need. Extra preparation helps you organize both your ideas and your language, allowing your knowledge to come across more clearly.<EOS>"
+            },
+            {
+                "timestamp": "2026-05-04T17:27:00",
+                "participant_full_id": "2753-1-1-0000",
+                "user_text": "For the last few weeks, my supervisor has been pointing out mistakes in almost every meeting.",
+                "ai_text": "That sounds emotionally tiring. Repeated criticism can slowly make us doubt ourselves, even when we're genuinely improving.",
+                "context": "",
+                "strategy": "Emotional Awareness",
+                "raw_physio": {
+                    "EDA": [
+                        0.12,
+                        0.1
+                    ],
+                    "PR": [
+                        114.0,
+                        103.0
+                    ],
+                    "SkinTemp": [
+                        33.69,
+                        33.57
+                    ],
+                    "ACCEL": [
+                        0.095,
+                        0.054
+                    ],
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": [
+                        89.0,
+                        67.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "SkinTemp": "Skin temperature drifted downward across the past 6 minutes to 33.57 degC, without any notable peaks or valleys.",
+                    "EDA": "Over the past 6 minutes, electrodermal activity falling moderately, moving from 0.21 to 0.1 uS.",
+                    "PR": "Pulse rate climbing moderately over the past 6 minutes, moving from 97.0 to 103.0 bpm.",
+                    "ACCEL": "Motion intensity growing moderately during the past 6 minutes, reaching 0.05 g.",
+                    "ACT_CLASS": "A shift occurred over the past 6 minutes: activity went from still to generic."
+                },
+                "physio_summary_fusion": "Over the past 6 minutes, EDA and PR and SkinTemp and ACCEL shifted, with some walking activity and MPA intensity noted, likely activity-related. EDA and PR and SkinTemp and ACCEL climbed while movement also increased, suggesting the change may be confounded by physical activity.",
+                "stress_score": 2,
+                "stress_level": "Mild stress",
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: For the last few weeks, my supervisor has been pointing out mistakes in almost every meeting.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: Emotional Awareness\n\nResponse: That sounds emotionally tiring. Repeated criticism can slowly make us doubt ourselves, even when we're genuinely improving.<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: For the last few weeks, my supervisor has been pointing out mistakes in almost every meeting.\nPhysiological Signals: Over the past 6 minutes, EDA and PR and SkinTemp and ACCEL shifted, with some walking activity and MPA intensity noted, likely activity-related. EDA and PR and SkinTemp and ACCEL climbed while movement also increased, suggesting the change may be confounded by physical activity. Additionally, Skin temperature drifted downward across the past 6 minutes to 33.57 degC, without any notable peaks or valleys. Further, Over the past 6 minutes, electrodermal activity falling moderately, moving from 0.21 to 0.1 uS. Notably, Pulse rate climbing moderately over the past 6 minutes, moving from 97.0 to 103.0 bpm. Additionally, Motion intensity growing moderately during the past 6 minutes, reaching 0.05 g. Additionally, A shift occurred over the past 6 minutes: activity went from still to generic. On top of that, The stress score for the past 6 minutes is 2 (activity count: 67.0), pointing to Mild stress.\n\n### Response:\nStrategy: Emotional Awareness\n\nResponse: That sounds emotionally tiring. Repeated criticism can slowly make us doubt ourselves, even when we're genuinely improving.<EOS>"
+            },
+            {
+                "timestamp": "2026-05-04T17:29:00",
+                "participant_full_id": "2753-1-1-0000",
+                "user_text": "I was already stressed before today's meeting even started.",
+                "ai_text": "It sounds like today's meeting was only one part of a much bigger emotional picture. Carrying stress into an important discussion naturally affects your confidence.",
+                "context": "",
+                "strategy": "Emotional Validation",
+                "raw_physio": {
+                    "EDA": [
+                        0.1,
+                        0.07
+                    ],
+                    "PR": [
+                        103.0,
+                        105.0
+                    ],
+                    "SkinTemp": [
+                        33.65,
+                        33.69
+                    ],
+                    "ACCEL": [
+                        0.093,
+                        0.144
+                    ],
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": [
+                        111.0,
+                        111.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "SkinTemp": "Over the past 6 minutes, peripheral temperature stayed falling, around 33.69 degC.",
+                    "ACCEL": "Movement levels drifted dropping across the past 6 minutes to 0.14 g, without any notable peaks or valleys.",
+                    "PR": "Pulse rate moved moderately in a dropping direction over the past 6 minutes, from 113.0 to 105.0 bpm.",
+                    "EDA": "Over the past 6 minutes, electrodermal activity moved moderately in a easing direction, from 0.18 to 0.07 uS.",
+                    "ACT_CLASS": "Activity remained categorized as generic over the past 6 minutes."
+                },
+                "physio_summary_fusion": "During the past 6 minutes, EDA and PR and SkinTemp and ACCEL fell; movement counts and MET (~6.01) suggest this is not clearly linked to physical activity. Neither EDA and PR and SkinTemp and ACCEL nor movement showed a notable change, so no clear stress or activity signal is present here.",
+                "stress_score": 0,
+                "stress_level": null,
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I was already stressed before today's meeting even started.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: Emotional Validation\n\nResponse: It sounds like today's meeting was only one part of a much bigger emotional picture. Carrying stress into an important discussion naturally affects your confidence.<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I was already stressed before today's meeting even started.\nPhysiological Signals: During the past 6 minutes, EDA and PR and SkinTemp and ACCEL fell; movement counts and MET (~6.01) suggest this is not clearly linked to physical activity. Neither EDA and PR and SkinTemp and ACCEL nor movement showed a notable change, so no clear stress or activity signal is present here. On top of that, Over the past 6 minutes, peripheral temperature stayed falling, around 33.69 degC. Additionally, Movement levels drifted dropping across the past 6 minutes to 0.14 g, without any notable peaks or valleys. Also, Pulse rate moved moderately in a dropping direction over the past 6 minutes, from 113.0 to 105.0 bpm. Notably, Over the past 6 minutes, electrodermal activity moved moderately in a easing direction, from 0.18 to 0.07 uS. Alongside this, Activity remained categorized as generic over the past 6 minutes.\n\n### Response:\nStrategy: Emotional Validation\n\nResponse: It sounds like today's meeting was only one part of a much bigger emotional picture. Carrying stress into an important discussion naturally affects your confidence.<EOS>"
+            },
+            {
+                "timestamp": "2026-05-04T17:31:00",
+                "participant_full_id": "2753-1-1-0000",
+                "user_text": "During the discussion, I became more nervous every time my supervisor interrupted me.",
+                "ai_text": "That must have made it difficult to stay focused. When we feel interrupted or rushed, it's easy to lose our train of thought, even if we know the answer.",
+                "context": "",
+                "strategy": "Reflective Statements",
+                "raw_physio": {
+                    "EDA": [
+                        0.07,
+                        0.1
+                    ],
+                    "PR": [
+                        115.0,
+                        108.0
+                    ],
+                    "SkinTemp": [
+                        33.8,
+                        33.99
+                    ],
+                    "ACCEL": [
+                        0.106,
+                        0.172
+                    ],
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": [
+                        142.0,
+                        132.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "ACCEL": "Accelerometer readings showed a climbing pattern across the past 6 minutes, with highly fluctuating variation, now 0.17 g.",
+                    "PR": "Over the past 6 minutes, heart rate remained decreasing near 108.0 beats per minute.",
+                    "EDA": "Skin conductance drifted falling across the past 6 minutes to 0.1 uS, without any notable peaks or valleys.",
+                    "SkinTemp": "Surface temperature dropping slightly over the past 6 minutes, now 33.99 degC, with a dip that partially resolved.",
+                    "ACT_CLASS": "Activity type persisted as generic through the past 6 minutes."
+                },
+                "physio_summary_fusion": "During the past 6 minutes, EDA and PR and SkinTemp and ACCEL shifted, occurring alongside generic movement and some walking activity, suggesting this is not clearly linked to physical activity. The relationship between EDA and PR and SkinTemp and ACCEL and movement was inconsistent over the past 6 minutes, making the source of change unclear.",
+                "stress_score": 0,
+                "stress_level": null,
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: During the discussion, I became more nervous every time my supervisor interrupted me.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: Reflective Statements\n\nResponse: That must have made it difficult to stay focused. When we feel interrupted or rushed, it's easy to lose our train of thought, even if we know the answer.<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: During the discussion, I became more nervous every time my supervisor interrupted me.\nPhysiological Signals: During the past 6 minutes, EDA and PR and SkinTemp and ACCEL shifted, occurring alongside generic movement and some walking activity, suggesting this is not clearly linked to physical activity. The relationship between EDA and PR and SkinTemp and ACCEL and movement was inconsistent over the past 6 minutes, making the source of change unclear. Simultaneously, Accelerometer readings showed a climbing pattern across the past 6 minutes, with highly fluctuating variation, now 0.17 g. Simultaneously, Over the past 6 minutes, heart rate remained decreasing near 108.0 beats per minute. Alongside this, Skin conductance drifted falling across the past 6 minutes to 0.1 uS, without any notable peaks or valleys. Surface temperature dropping slightly over the past 6 minutes, now 33.99 degC, with a dip that partially resolved. At the same time, Activity type persisted as generic through the past 6 minutes.\n\n### Response:\nStrategy: Reflective Statements\n\nResponse: That must have made it difficult to stay focused. When we feel interrupted or rushed, it's easy to lose our train of thought, even if we know the answer.<EOS>"
+            },
+            {
+                "timestamp": "2026-05-04T17:33:00",
+                "participant_full_id": "2753-1-1-0000",
+                "user_text": "After the meeting, my supervisor told me that my explanations were confusing.",
+                "ai_text": "Hearing that must have been painful. Feedback like that can stay with us, especially when we've already been doubting ourselves.",
+                "context": "",
+                "strategy": "Active Listening",
+                "raw_physio": {
+                    "EDA": [
+                        0.14,
+                        0.11
+                    ],
+                    "PR": [
+                        102.0,
+                        94.0
+                    ],
+                    "SkinTemp": [
+                        34.02,
+                        33.86
+                    ],
+                    "ACCEL": [
+                        0.034,
+                        0.003
+                    ],
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": [
+                        51.0,
+                        4.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "PR": "Heart rate drifted easing across the past 6 minutes to 94.0 bpm, with a brief peak observed mid-window.",
+                    "ACCEL": "The motion signal was declining for the past 6 minutes, highly fluctuating, around 0.0 g.",
+                    "SkinTemp": "Across the past 6 minutes, skin temperature held elevating near 33.86 degC.",
+                    "EDA": "Arousal-linked skin conductance downward slightly across the past 6 minutes, now 0.11 uS.",
+                    "ACT_CLASS": "The recorded state shifted from generic to still over the past 6 minutes."
+                },
+                "physio_summary_fusion": "Across the past 6 minutes, EDA and PR and SkinTemp and ACCEL moved in a shifted direction while the participant stayed still, indicating the response is not clearly linked to physical activity. Neither EDA and PR and SkinTemp and ACCEL nor movement showed a notable change, so no clear stress or activity signal is present here.",
+                "stress_score": 3,
+                "stress_level": "Mild stress",
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: After the meeting, my supervisor told me that my explanations were confusing.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: Active Listening\n\nResponse: Hearing that must have been painful. Feedback like that can stay with us, especially when we've already been doubting ourselves.<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: After the meeting, my supervisor told me that my explanations were confusing.\nPhysiological Signals: Across the past 6 minutes, EDA and PR and SkinTemp and ACCEL moved in a shifted direction while the participant stayed still, indicating the response is not clearly linked to physical activity. Neither EDA and PR and SkinTemp and ACCEL nor movement showed a notable change, so no clear stress or activity signal is present here. Simultaneously, Heart rate drifted easing across the past 6 minutes to 94.0 bpm, with a brief peak observed mid-window. Further, The motion signal was declining for the past 6 minutes, highly fluctuating, around 0.0 g. Additionally, Across the past 6 minutes, skin temperature held elevating near 33.86 degC. Meanwhile, Arousal-linked skin conductance downward slightly across the past 6 minutes, now 0.11 uS. The recorded state shifted from generic to still over the past 6 minutes. Alongside this, Factoring in an activity count of 4.0, the composite indicator over the past 6 minutes reads 3, suggesting Mild stress.\n\n### Response:\nStrategy: Active Listening\n\nResponse: Hearing that must have been painful. Feedback like that can stay with us, especially when we've already been doubting ourselves.<EOS>"
+            },
+            {
+                "timestamp": "2026-05-04T17:35:00",
+                "participant_full_id": "2753-1-1-0000",
+                "user_text": "They also said I need to improve before my next research review.",
+                "ai_text": "Those words may feel discouraging, but they also suggest that improvement is possible. Communication skills grow through practice and experience.",
+                "context": "",
+                "strategy": "Cognitive Reframing",
+                "raw_physio": {
+                    "EDA": [
+                        0.09,
+                        0.07
+                    ],
+                    "PR": [
+                        94.0,
+                        92.0
+                    ],
+                    "SkinTemp": [
+                        33.68,
+                        33.44
+                    ],
+                    "ACCEL": [
+                        0.009,
+                        0.006
+                    ],
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": [
+                        21.0,
+                        7.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "ACCEL": "During the past 6 minutes, movement registered a downward shift to 0.01 g, without any notable peaks or valleys.",
+                    "PR": "Pulse rate dropping sharply across the past 6 minutes, showing highly fluctuating activity, now 92.0 bpm.",
+                    "SkinTemp": "Over the past 6 minutes, peripheral temperature stayed falling, around 33.44 degC.",
+                    "EDA": "Over the past 6 minutes, electrodermal activity moved slightly in a downward direction, from 0.1 to 0.07 uS.",
+                    "ACT_CLASS": "Movement classification transitioned to generic from generic over the past 6 minutes."
+                },
+                "physio_summary_fusion": "During the past 6 minutes, EDA and PR and SkinTemp and ACCEL fell; since movement stayed generic with MET near 1.02, this arousal appears not clearly linked to physical activity. The relationship between EDA and PR and SkinTemp and ACCEL and movement was inconsistent over the past 6 minutes, making the source of change unclear.",
+                "stress_score": 3,
+                "stress_level": "Mild stress",
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: They also said I need to improve before my next research review.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: Cognitive Reframing\n\nResponse: Those words may feel discouraging, but they also suggest that improvement is possible. Communication skills grow through practice and experience.<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: They also said I need to improve before my next research review.\nPhysiological Signals: During the past 6 minutes, EDA and PR and SkinTemp and ACCEL fell; since movement stayed generic with MET near 1.02, this arousal appears not clearly linked to physical activity. The relationship between EDA and PR and SkinTemp and ACCEL and movement was inconsistent over the past 6 minutes, making the source of change unclear. Additionally, During the past 6 minutes, movement registered a downward shift to 0.01 g, without any notable peaks or valleys. Pulse rate dropping sharply across the past 6 minutes, showing highly fluctuating activity, now 92.0 bpm. In parallel, Over the past 6 minutes, peripheral temperature stayed falling, around 33.44 degC. Additionally, Over the past 6 minutes, electrodermal activity moved slightly in a downward direction, from 0.1 to 0.07 uS. In parallel, Movement classification transitioned to generic from generic over the past 6 minutes. Meanwhile, Combining the signals above with an activity count of 7.0, the resulting score over the past 6 minutes is 3 - Mild stress.\n\n### Response:\nStrategy: Cognitive Reframing\n\nResponse: Those words may feel discouraging, but they also suggest that improvement is possible. Communication skills grow through practice and experience.<EOS>"
+            },
+            {
+                "timestamp": "2026-05-04T17:37:00",
+                "participant_full_id": "2753-1-1-0000",
+                "user_text": "Now I feel really discouraged.",
+                "ai_text": "I'm sorry you're feeling this way. After several stressful meetings and today's feedback, it's understandable that your confidence has been shaken.",
+                "context": "",
+                "strategy": "Emotional Validation",
+                "raw_physio": {
+                    "EDA": [
+                        0.06,
+                        0.05
+                    ],
+                    "PR": [
+                        92.0,
+                        95.0
+                    ],
+                    "SkinTemp": [
+                        33.19,
+                        32.96
+                    ],
+                    "ACCEL": [
+                        0.003,
+                        0.082
+                    ],
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": [
+                        2.0,
+                        84.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "PR": "A downward pulse rate pattern emerged over the past 6 minutes, highly fluctuating, reaching 95.0 bpm.",
+                    "SkinTemp": "Over the past 6 minutes, peripheral warmth decreasing sharply, now near 32.96 degC.",
+                    "ACCEL": "A falling movement pattern was observed over the past 6 minutes, highly fluctuating, reaching 0.08 g.",
+                    "EDA": "Across the past 6 minutes, electrodermal activity showed a decreasing pattern, settling around 0.05 uS.",
+                    "ACT_CLASS": "A transition from generic to still occurred within the past 6 minutes."
+                },
+                "physio_summary_fusion": "Over the past 6 minutes, EDA and PR and SkinTemp and ACCEL fell, while movement remained still (sedentary intensity), suggesting the change is not clearly linked to physical activity. Neither EDA and PR and SkinTemp and ACCEL nor movement showed a notable change, so no clear stress or activity signal is present here.",
+                "stress_score": 2,
+                "stress_level": "Mild stress",
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Now I feel really discouraged.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: Emotional Validation\n\nResponse: I'm sorry you're feeling this way. After several stressful meetings and today's feedback, it's understandable that your confidence has been shaken.<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Now I feel really discouraged.\nPhysiological Signals: Over the past 6 minutes, EDA and PR and SkinTemp and ACCEL fell, while movement remained still (sedentary intensity), suggesting the change is not clearly linked to physical activity. Neither EDA and PR and SkinTemp and ACCEL nor movement showed a notable change, so no clear stress or activity signal is present here. Also, A downward pulse rate pattern emerged over the past 6 minutes, highly fluctuating, reaching 95.0 bpm. Simultaneously, Over the past 6 minutes, peripheral warmth decreasing sharply, now near 32.96 degC. In parallel, A falling movement pattern was observed over the past 6 minutes, highly fluctuating, reaching 0.08 g. Notably, Across the past 6 minutes, electrodermal activity showed a decreasing pattern, settling around 0.05 uS. A transition from generic to still occurred within the past 6 minutes. Simultaneously, Factoring in an activity count of 84.0, the composite indicator over the past 6 minutes reads 2, suggesting Mild stress.\n\n### Response:\nStrategy: Emotional Validation\n\nResponse: I'm sorry you're feeling this way. After several stressful meetings and today's feedback, it's understandable that your confidence has been shaken.<EOS>"
+            },
+            {
+                "timestamp": "2026-05-04T17:39:00",
+                "participant_full_id": "2753-1-1-0000",
+                "user_text": "I keep thinking that maybe I'm not good enough for research.",
+                "ai_text": "It sounds like today's experience has made you question yourself as a researcher. Those thoughts often appear after difficult feedback, but they don't necessarily reflect your true ability.",
+                "context": "",
+                "strategy": "Cognitive Reframing",
+                "raw_physio": {
+                    "EDA": [
+                        0.04,
+                        0.04
+                    ],
+                    "PR": [
+                        108.0,
+                        97.0
+                    ],
+                    "SkinTemp": [
+                        32.86,
+                        32.9
+                    ],
+                    "ACCEL": [
+                        0.179,
+                        0.037
+                    ],
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": [
+                        138.0,
+                        46.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "SkinTemp": "Skin temperature showed a dropping pattern across the past 6 minutes, with highly fluctuating change, now 32.9 degC.",
+                    "EDA": "Skin conductance easing moderately during the past 6 minutes, reaching 0.04 uS.",
+                    "PR": "Pulse rate declining moderately across the past 6 minutes, showing highly fluctuating activity, now 97.0 bpm.",
+                    "ACCEL": "Movement levels drifted increasing across the past 6 minutes to 0.04 g, without any notable peaks or valleys.",
+                    "ACT_CLASS": "Activity state evolved from still to generic during the past 6 minutes."
+                },
+                "physio_summary_fusion": "Across the past 6 minutes, EDA and PR and SkinTemp and ACCEL showed a shifted pattern, occurring while the participant was generic and positioned reclining/lying, not clearly linked to physical activity. The relationship between EDA and PR and SkinTemp and ACCEL and movement was inconsistent over the past 6 minutes, making the source of change unclear.",
+                "stress_score": 2,
+                "stress_level": "Mild stress",
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I keep thinking that maybe I'm not good enough for research.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: Cognitive Reframing\n\nResponse: It sounds like today's experience has made you question yourself as a researcher. Those thoughts often appear after difficult feedback, but they don't necessarily reflect your true ability.<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I keep thinking that maybe I'm not good enough for research.\nPhysiological Signals: Across the past 6 minutes, EDA and PR and SkinTemp and ACCEL showed a shifted pattern, occurring while the participant was generic and positioned reclining/lying, not clearly linked to physical activity. The relationship between EDA and PR and SkinTemp and ACCEL and movement was inconsistent over the past 6 minutes, making the source of change unclear. Further, Skin temperature showed a dropping pattern across the past 6 minutes, with highly fluctuating change, now 32.9 degC. Notably, Skin conductance easing moderately during the past 6 minutes, reaching 0.04 uS. At the same time, Pulse rate declining moderately across the past 6 minutes, showing highly fluctuating activity, now 97.0 bpm. On top of that, Movement levels drifted increasing across the past 6 minutes to 0.04 g, without any notable peaks or valleys. Additionally, Activity state evolved from still to generic during the past 6 minutes. Movement count of 46.0 contributes to a combined stress score of 2 over the past 6 minutes, consistent with Mild stress.\n\n### Response:\nStrategy: Cognitive Reframing\n\nResponse: It sounds like today's experience has made you question yourself as a researcher. Those thoughts often appear after difficult feedback, but they don't necessarily reflect your true ability.<EOS>"
+            },
+            {
+                "timestamp": "2026-05-04T17:41:00",
+                "participant_full_id": "2753-1-1-0000",
+                "user_text": "I'm worried that my next meeting will go the same way.",
+                "ai_text": "That fear is understandable. A difficult experience can make the future feel uncertain, but one meeting doesn't determine how the next one will unfold. Each discussion gives you another chance to grow and communicate your ideas more confidently.",
+                "context": "",
+                "strategy": "Hope Instillation",
+                "raw_physio": {
+                    "EDA": 0.04,
+                    "PR": 95.0,
+                    "SkinTemp": 32.77,
+                    "ACCEL": 0.038,
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": 67.0
+                },
+                "physio_summary_per_channel": {
+                    "SkinTemp": "Skin temperature held at a similar level (32.77 degC) across the past 6 minutes, based on limited resolution data.",
+                    "ACCEL": "Motion levels stayed close to 0.04 g through the past 6 minutes, though only a coarse reading was available.",
+                    "EDA": "Skin conductance showed no notable change over the past 6 minutes, staying around 0.04 uS; the underlying data was coarse.",
+                    "PR": "No notable pulse rate change was detected over the past 6 minutes; pulse rate held near 95.0 bpm, and the source data was coarse.",
+                    "ACT_CLASS": "Activity classification shifted from generic to generic during the past 6 minutes."
+                },
+                "physio_summary_fusion": "Across the past 6 minutes, the available signals showed no notable change, though resolution was limited; taken together, this appears likely activity-related.",
+                "stress_score": 2,
+                "stress_level": "Mild stress",
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I'm worried that my next meeting will go the same way.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: Hope Instillation\n\nResponse: That fear is understandable. A difficult experience can make the future feel uncertain, but one meeting doesn't determine how the next one will unfold. Each discussion gives you another chance to grow and communicate your ideas more confidently.<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I'm worried that my next meeting will go the same way.\nPhysiological Signals: Across the past 6 minutes, the available signals showed no notable change, though resolution was limited; taken together, this appears likely activity-related. At the same time, Skin temperature held at a similar level (32.77 degC) across the past 6 minutes, based on limited resolution data. Also, Motion levels stayed close to 0.04 g through the past 6 minutes, though only a coarse reading was available. In parallel, Skin conductance showed no notable change over the past 6 minutes, staying around 0.04 uS; the underlying data was coarse. On top of that, No notable pulse rate change was detected over the past 6 minutes; pulse rate held near 95.0 bpm, and the source data was coarse. On top of that, Activity classification shifted from generic to generic during the past 6 minutes. Notably, The stress score for the past 6 minutes is 2 (activity count: 67.0), pointing to Mild stress.\n\n### Response:\nStrategy: Hope Instillation\n\nResponse: That fear is understandable. A difficult experience can make the future feel uncertain, but one meeting doesn't determine how the next one will unfold. Each discussion gives you another chance to grow and communicate your ideas more confidently.<EOS>"
+            }
+        ]
+    }
+]

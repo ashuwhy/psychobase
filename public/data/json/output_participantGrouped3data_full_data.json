@@ -1,0 +1,501 @@
+[
+    {
+        "session_id": "2753-1-1",
+        "person_id": "2753",
+        "turns": [
+            {
+                "timestamp": "2026-05-19T13:58:00",
+                "participant_full_id": "2753-1-1-0005",
+                "user_text": "Hi, I feel anxious and very aggressive right now.",
+                "ai_text": "It sounds like your mind and body are carrying too much tension at once, and that can make emotions come out as anger or restlessness. Sometimes anxiety hides underneath aggression when we feel overwhelmed or mentally exhausted. Try stepping away from anything stressful for a few minutes and slow your breathing a little. You do not need to solve everything immediately.",
+                "context": "",
+                "strategy": "EmotionalValidation",
+                "raw_physio": {
+                    "EDA": 0.0,
+                    "PR": 117.0,
+                    "SkinTemp": 35.3,
+                    "ACCEL": 0.001,
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": 0.0
+                },
+                "physio_summary_per_channel": {
+                    "EDA": "EDA appeared flat over the first minute, holding near 0.0 uS; this reflects an averaged reading rather than fine-grained detail.",
+                    "PR": "Pulse rate stayed at a comparable level (117.0 bpm) over the first minute, based on limited resolution data.",
+                    "SkinTemp": "Over the first minute, skin temperature stayed near a constant value (35.3 degC) from a single aggregated point.",
+                    "ACCEL": "No notable change in motion (0.0 g) was detected over the first minute; the source data was coarse.",
+                    "ACT_CLASS": "The state remained still across the full span of the first minute."
+                },
+                "physio_summary_fusion": "Overall physiological readings appeared flat over the first minute, reflecting averaged rather than fine-grained data; the pattern is not clearly linked to physical activity.",
+                "stress_score": 3,
+                "stress_level": "Mild stress",
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Hi, I feel anxious and very aggressive right now.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: EmotionalValidation\n\nResponse: It sounds like your mind and body are carrying too much tension at once, and that can make emotions come out as anger or restlessness. Sometimes anxiety hides underneath aggression when we feel overwhelmed or mentally exhausted. Try stepping away from anything stressful for a few minutes and slow your breathing a little. You do not need to solve everything immediately.<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Hi, I feel anxious and very aggressive right now.\nPhysiological Signals: Overall physiological readings appeared flat over the first minute, reflecting averaged rather than fine-grained data; the pattern is not clearly linked to physical activity. On top of that, EDA appeared flat over the first minute, holding near 0.0 uS; this reflects an averaged reading rather than fine-grained detail. At the same time, Pulse rate stayed at a comparable level (117.0 bpm) over the first minute, based on limited resolution data. Over the first minute, skin temperature stayed near a constant value (35.3 degC) from a single aggregated point. Alongside this, No notable change in motion (0.0 g) was detected over the first minute; the source data was coarse. On top of that, The state remained still across the full span of the first minute. The stress score for the first minute is 3 (activity count: 0.0), pointing to Mild stress.\n\n### Response:\nStrategy: EmotionalValidation\n\nResponse: It sounds like your mind and body are carrying too much tension at once, and that can make emotions come out as anger or restlessness. Sometimes anxiety hides underneath aggression when we feel overwhelmed or mentally exhausted. Try stepping away from anything stressful for a few minutes and slow your breathing a little. You do not need to solve everything immediately.<EOS>"
+            },
+            {
+                "timestamp": "2026-05-19T20:26:00",
+                "participant_full_id": "2753-1-1-0005",
+                "user_text": "It is not only because of that. I also grew up in an unstable family, and since childhood I have seen my parents fighting all the time about everything. Their married life has always been problematic.",
+                "ai_text": "Growing up around constant conflict can quietly teach the mind that relationships are unsafe, stressful, or emotionally painful. So when marriage becomes real in your own life, your fear is not coming only from the present â it is also coming from old emotional memories and insecurity built over many years. A part of you is scared that your future may repeat what you saw at home. Try to remember that your parentsâ relationship is an example you witnessed, not a destiny you are forced to live.",
+                "context": "",
+                "strategy": "ReflectiveStatements",
+                "raw_physio": {
+                    "EDA": 1.65,
+                    "PR": 108.0,
+                    "SkinTemp": 35.21,
+                    "ACCEL": 0.03,
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": 40.0
+                },
+                "physio_summary_per_channel": {
+                    "EDA": "Over the past 6 minutes, EDA held near a constant value (1.65 uS), derived from a single aggregated reading.",
+                    "PR": "No notable pulse rate change was detected over the past 6 minutes; pulse rate held near 108.0 bpm, and the source data was coarse.",
+                    "SkinTemp": "No notable skin temperature shift was detected over the past 6 minutes; temperature held near 35.21 degC, and the data was coarse.",
+                    "ACCEL": "Accelerometer output appeared flat over the past 6 minutes, holding near 0.03 g, reflecting an averaged reading.",
+                    "ACT_CLASS": "Activity type persisted as still through the past 6 minutes."
+                },
+                "physio_summary_fusion": "Signals stayed at a broadly similar level across the past 6 minutes; finer trend detail was not available for this window, though the overall pattern appears not clearly linked to physical activity.",
+                "stress_score": 2,
+                "stress_level": "Mild stress",
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: It is not only because of that. I also grew up in an unstable family, and since childhood I have seen my parents fighting all the time about everything. Their married life has always been problematic.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: ReflectiveStatements\n\nResponse: Growing up around constant conflict can quietly teach the mind that relationships are unsafe, stressful, or emotionally painful. So when marriage becomes real in your own life, your fear is not coming only from the present â it is also coming from old emotional memories and insecurity built over many years. A part of you is scared that your future may repeat what you saw at home. Try to remember that your parentsâ relationship is an example you witnessed, not a destiny you are forced to live.<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: It is not only because of that. I also grew up in an unstable family, and since childhood I have seen my parents fighting all the time about everything. Their married life has always been problematic.\nPhysiological Signals: Signals stayed at a broadly similar level across the past 6 minutes; finer trend detail was not available for this window, though the overall pattern appears not clearly linked to physical activity. Alongside this, Over the past 6 minutes, EDA held near a constant value (1.65 uS), derived from a single aggregated reading. No notable pulse rate change was detected over the past 6 minutes; pulse rate held near 108.0 bpm, and the source data was coarse. No notable skin temperature shift was detected over the past 6 minutes; temperature held near 35.21 degC, and the data was coarse. Also, Accelerometer output appeared flat over the past 6 minutes, holding near 0.03 g, reflecting an averaged reading. On top of that, Activity type persisted as still through the past 6 minutes. In parallel, Movement count of 40.0 contributes to a combined stress score of 2 over the past 6 minutes, consistent with Mild stress.\n\n### Response:\nStrategy: ReflectiveStatements\n\nResponse: Growing up around constant conflict can quietly teach the mind that relationships are unsafe, stressful, or emotionally painful. So when marriage becomes real in your own life, your fear is not coming only from the present â it is also coming from old emotional memories and insecurity built over many years. A part of you is scared that your future may repeat what you saw at home. Try to remember that your parentsâ relationship is an example you witnessed, not a destiny you are forced to live.<EOS>"
+            },
+            {
+                "timestamp": "2026-05-19T20:27:00",
+                "participant_full_id": "2753-1-1-0005",
+                "user_text": "What should I do now to get out of it?",
+                "ai_text": "Right now, you do not need to force yourself to âbe normalâ immediately. Your mind is reacting to years of fear, instability, and uncertainty, so healing will take patience, not pressure. Start by separating your future from your childhood little by little â whenever overthinking starts, remind yourself that you are not living your parentsâ marriage, you are living your own life. Focus on building small stability in your present first, like improving your routine, work goals, sleep, or emotional support system, because stability outside slowly calms instability inside.",
+                "context": "",
+                "strategy": "Clarification",
+                "raw_physio": {
+                    "EDA": 1.54,
+                    "PR": 113.0,
+                    "SkinTemp": 35.26,
+                    "ACCEL": 0.032,
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": 96.0
+                },
+                "physio_summary_per_channel": {
+                    "PR": "Pulse rate stayed close to 113.0 bpm through the past 6 minutes, though only a coarse reading was available.",
+                    "SkinTemp": "Skin temperature stayed close to 35.26 degC through the past 6 minutes, though only a coarse reading was available.",
+                    "EDA": "EDA appeared flat over the past 6 minutes, holding near 1.54 uS; this reflects an averaged reading rather than fine-grained detail.",
+                    "ACCEL": "Over the past 6 minutes, movement intensity stayed near a constant value (0.03 g) from a single aggregated point.",
+                    "ACT_CLASS": "Movement classification transitioned to walking from still over the past 6 minutes."
+                },
+                "physio_summary_fusion": "Over the past 6 minutes, physiological data held near constant values sourced from aggregated readings, appearing likely activity-related.",
+                "stress_score": 0,
+                "stress_level": null,
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: What should I do now to get out of it?\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: Clarification\n\nResponse: Right now, you do not need to force yourself to âbe normalâ immediately. Your mind is reacting to years of fear, instability, and uncertainty, so healing will take patience, not pressure. Start by separating your future from your childhood little by little â whenever overthinking starts, remind yourself that you are not living your parentsâ marriage, you are living your own life. Focus on building small stability in your present first, like improving your routine, work goals, sleep, or emotional support system, because stability outside slowly calms instability inside.<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: What should I do now to get out of it?\nPhysiological Signals: Over the past 6 minutes, physiological data held near constant values sourced from aggregated readings, appearing likely activity-related. Further, Pulse rate stayed close to 113.0 bpm through the past 6 minutes, though only a coarse reading was available. Also, Skin temperature stayed close to 35.26 degC through the past 6 minutes, though only a coarse reading was available. In parallel, EDA appeared flat over the past 6 minutes, holding near 1.54 uS; this reflects an averaged reading rather than fine-grained detail. Meanwhile, Over the past 6 minutes, movement intensity stayed near a constant value (0.03 g) from a single aggregated point. In parallel, Movement classification transitioned to walking from still over the past 6 minutes.\n\n### Response:\nStrategy: Clarification\n\nResponse: Right now, you do not need to force yourself to âbe normalâ immediately. Your mind is reacting to years of fear, instability, and uncertainty, so healing will take patience, not pressure. Start by separating your future from your childhood little by little â whenever overthinking starts, remind yourself that you are not living your parentsâ marriage, you are living your own life. Focus on building small stability in your present first, like improving your routine, work goals, sleep, or emotional support system, because stability outside slowly calms instability inside.<EOS>"
+            },
+            {
+                "timestamp": "2026-05-19T20:28:00",
+                "participant_full_id": "2753-1-1-0005",
+                "user_text": "I try to build small stability in my life, but overthinking always comes back. I am 31 years old, and for the last 10 years my mother has been trying to arrange my marriage, but for different reasons it never got fixed. I have faced many rejections.",
+                "ai_text": "Repeated rejection over many years can slowly make a person feel emotionally tired, doubtful, and constantly alert for disappointment. Your overthinking is probably not only about marriage now â it is also about fear of being unwanted, left behind, or emotionally hurt again. After carrying this pressure for so long, your mind has learned to expect pain even before anything happens. Right now, try to stop measuring your value through marriage outcomes or age alone; your emotional exhaustion needs kindness and recovery, not more self-criticism.",
+                "context": "",
+                "strategy": "ReflectiveStatements",
+                "raw_physio": {
+                    "EDA": 1.52,
+                    "PR": 116.0,
+                    "SkinTemp": 35.3,
+                    "ACCEL": 0.03,
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": 66.0
+                },
+                "physio_summary_per_channel": {
+                    "PR": "No notable pulse rate change was detected over the past 6 minutes; pulse rate held near 116.0 bpm, and the source data was coarse.",
+                    "SkinTemp": "Temperature appeared flat over the past 6 minutes, holding near 35.3 degC; this reflects an averaged reading rather than fine detail.",
+                    "EDA": "Electrodermal activity stayed close to 1.52 uS through the past 6 minutes, though only a coarse reading was available.",
+                    "ACCEL": "Movement intensity held at a similar level (0.03 g) across the past 6 minutes, based on limited resolution data.",
+                    "ACT_CLASS": "A transition from still to walking occurred within the past 6 minutes."
+                },
+                "physio_summary_fusion": "Signals stayed at a broadly similar level across the past 6 minutes; finer trend detail was not available for this window, though the overall pattern appears not explained by movement.",
+                "stress_score": 2,
+                "stress_level": "Mild stress",
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I try to build small stability in my life, but overthinking always comes back. I am 31 years old, and for the last 10 years my mother has been trying to arrange my marriage, but for different reasons it never got fixed. I have faced many rejections.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: ReflectiveStatements\n\nResponse: Repeated rejection over many years can slowly make a person feel emotionally tired, doubtful, and constantly alert for disappointment. Your overthinking is probably not only about marriage now â it is also about fear of being unwanted, left behind, or emotionally hurt again. After carrying this pressure for so long, your mind has learned to expect pain even before anything happens. Right now, try to stop measuring your value through marriage outcomes or age alone; your emotional exhaustion needs kindness and recovery, not more self-criticism.<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I try to build small stability in my life, but overthinking always comes back. I am 31 years old, and for the last 10 years my mother has been trying to arrange my marriage, but for different reasons it never got fixed. I have faced many rejections.\nPhysiological Signals: Signals stayed at a broadly similar level across the past 6 minutes; finer trend detail was not available for this window, though the overall pattern appears not explained by movement. At the same time, No notable pulse rate change was detected over the past 6 minutes; pulse rate held near 116.0 bpm, and the source data was coarse. At the same time, Temperature appeared flat over the past 6 minutes, holding near 35.3 degC; this reflects an averaged reading rather than fine detail. Electrodermal activity stayed close to 1.52 uS through the past 6 minutes, though only a coarse reading was available. In parallel, Movement intensity held at a similar level (0.03 g) across the past 6 minutes, based on limited resolution data. Alongside this, A transition from still to walking occurred within the past 6 minutes. At the same time, Combining the signals above with an activity count of 66.0, the resulting score over the past 6 minutes is 2 - Mild stress.\n\n### Response:\nStrategy: ReflectiveStatements\n\nResponse: Repeated rejection over many years can slowly make a person feel emotionally tired, doubtful, and constantly alert for disappointment. Your overthinking is probably not only about marriage now â it is also about fear of being unwanted, left behind, or emotionally hurt again. After carrying this pressure for so long, your mind has learned to expect pain even before anything happens. Right now, try to stop measuring your value through marriage outcomes or age alone; your emotional exhaustion needs kindness and recovery, not more self-criticism.<EOS>"
+            },
+            {
+                "timestamp": "2026-05-19T20:29:00",
+                "participant_full_id": "2753-1-1-0005",
+                "user_text": "But seeing everyone of my age getting married, and even people younger than me getting married and having children, hurts me a lot.",
+                "ai_text": "It makes sense that this affects you deeply, because every time you see others moving ahead in life, it quietly reminds you of what you feel is missing in your own life. When this happens for years, comparison starts turning into pressure, loneliness, and self-doubt. But peopleâs timelines are not proof that your life has failed or ended; they only show that their path is different from yours. Try to protect your mind a little from constant comparison, because your pain is becoming heavier every time you use othersâ lives to judge your own worth.",
+                "context": "",
+                "strategy": "EmotionalValidation",
+                "raw_physio": {
+                    "EDA": 1.47,
+                    "PR": 115.0,
+                    "SkinTemp": 35.32,
+                    "ACCEL": 0.044,
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": 92.0
+                },
+                "physio_summary_per_channel": {
+                    "PR": "Pulse rate stayed at a comparable level (115.0 bpm) over the past 6 minutes, based on limited resolution data.",
+                    "ACCEL": "Over the past 6 minutes, movement intensity stayed near a constant value (0.04 g) from a single aggregated point.",
+                    "SkinTemp": "No notable skin temperature shift was detected over the past 6 minutes; temperature held near 35.32 degC, and the data was coarse.",
+                    "EDA": "Over the past 6 minutes, EDA held near a constant value (1.47 uS), derived from a single aggregated reading.",
+                    "ACT_CLASS": "Activity state evolved from still to generic during the past 6 minutes."
+                },
+                "physio_summary_fusion": "Across the past 6 minutes, the available signals showed no notable change, though resolution was limited; taken together, this appears likely activity-related.",
+                "stress_score": 0,
+                "stress_level": null,
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: But seeing everyone of my age getting married, and even people younger than me getting married and having children, hurts me a lot.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: EmotionalValidation\n\nResponse: It makes sense that this affects you deeply, because every time you see others moving ahead in life, it quietly reminds you of what you feel is missing in your own life. When this happens for years, comparison starts turning into pressure, loneliness, and self-doubt. But peopleâs timelines are not proof that your life has failed or ended; they only show that their path is different from yours. Try to protect your mind a little from constant comparison, because your pain is becoming heavier every time you use othersâ lives to judge your own worth.<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: But seeing everyone of my age getting married, and even people younger than me getting married and having children, hurts me a lot.\nPhysiological Signals: Across the past 6 minutes, the available signals showed no notable change, though resolution was limited; taken together, this appears likely activity-related. Notably, Pulse rate stayed at a comparable level (115.0 bpm) over the past 6 minutes, based on limited resolution data. At the same time, Over the past 6 minutes, movement intensity stayed near a constant value (0.04 g) from a single aggregated point. Additionally, No notable skin temperature shift was detected over the past 6 minutes; temperature held near 35.32 degC, and the data was coarse. Over the past 6 minutes, EDA held near a constant value (1.47 uS), derived from a single aggregated reading. On top of that, Activity state evolved from still to generic during the past 6 minutes.\n\n### Response:\nStrategy: EmotionalValidation\n\nResponse: It makes sense that this affects you deeply, because every time you see others moving ahead in life, it quietly reminds you of what you feel is missing in your own life. When this happens for years, comparison starts turning into pressure, loneliness, and self-doubt. But peopleâs timelines are not proof that your life has failed or ended; they only show that their path is different from yours. Try to protect your mind a little from constant comparison, because your pain is becoming heavier every time you use othersâ lives to judge your own worth.<EOS>"
+            },
+            {
+                "timestamp": "2026-05-19T20:30:00",
+                "participant_full_id": "2753-1-1-0005",
+                "user_text": "For all of these reasons, I do not like to go out or attend any occasions.",
+                "ai_text": "That reaction is very understandable, because social occasions probably no longer feel emotionally safe for you. Instead of enjoyment, your mind expects comparison, questions, judgment, or reminders of what is hurting you inside. After carrying rejection, pressure, and overthinking for so long, avoiding people can start feeling like protection. But slowly isolating yourself too much can also make the sadness and anxiety grow stronger, so try not to disappear completely from life â even small, low-pressure outings are enough for now.",
+                "context": "",
+                "strategy": "ReflectiveStatements",
+                "raw_physio": {
+                    "EDA": 1.37,
+                    "PR": 116.0,
+                    "SkinTemp": 35.35,
+                    "ACCEL": 0.039,
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": 71.0
+                },
+                "physio_summary_per_channel": {
+                    "PR": "Heart rate appeared flat across the past 6 minutes, holding near 116.0 bpm; that time pulse rate is 116.0 bpm from a coarse, averaged reading.",
+                    "SkinTemp": "Temperature appeared flat over the past 6 minutes, holding near 35.35 degC; this reflects an averaged reading rather than fine detail.",
+                    "ACCEL": "Accelerometer output appeared flat over the past 6 minutes, holding near 0.04 g, reflecting an averaged reading.",
+                    "EDA": "EDA appeared flat over the past 6 minutes, holding near 1.37 uS; this reflects an averaged reading rather than fine-grained detail.",
+                    "ACT_CLASS": "Activity type moved from still to generic across the past 6 minutes."
+                },
+                "physio_summary_fusion": "Signals stayed at a broadly similar level across the past 6 minutes; finer trend detail was not available for this window, though the overall pattern appears not explained by movement.",
+                "stress_score": 2,
+                "stress_level": "Mild stress",
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: For all of these reasons, I do not like to go out or attend any occasions.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: ReflectiveStatements\n\nResponse: That reaction is very understandable, because social occasions probably no longer feel emotionally safe for you. Instead of enjoyment, your mind expects comparison, questions, judgment, or reminders of what is hurting you inside. After carrying rejection, pressure, and overthinking for so long, avoiding people can start feeling like protection. But slowly isolating yourself too much can also make the sadness and anxiety grow stronger, so try not to disappear completely from life â even small, low-pressure outings are enough for now.<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: For all of these reasons, I do not like to go out or attend any occasions.\nPhysiological Signals: Signals stayed at a broadly similar level across the past 6 minutes; finer trend detail was not available for this window, though the overall pattern appears not explained by movement. On top of that, Heart rate appeared flat across the past 6 minutes, holding near 116.0 bpm; that time pulse rate is 116.0 bpm from a coarse, averaged reading. Also, Temperature appeared flat over the past 6 minutes, holding near 35.35 degC; this reflects an averaged reading rather than fine detail. At the same time, Accelerometer output appeared flat over the past 6 minutes, holding near 0.04 g, reflecting an averaged reading. On top of that, EDA appeared flat over the past 6 minutes, holding near 1.37 uS; this reflects an averaged reading rather than fine-grained detail. Notably, Activity type moved from still to generic across the past 6 minutes. Also, Movement count of 71.0 contributes to a combined stress score of 2 over the past 6 minutes, consistent with Mild stress.\n\n### Response:\nStrategy: ReflectiveStatements\n\nResponse: That reaction is very understandable, because social occasions probably no longer feel emotionally safe for you. Instead of enjoyment, your mind expects comparison, questions, judgment, or reminders of what is hurting you inside. After carrying rejection, pressure, and overthinking for so long, avoiding people can start feeling like protection. But slowly isolating yourself too much can also make the sadness and anxiety grow stronger, so try not to disappear completely from life â even small, low-pressure outings are enough for now.<EOS>"
+            },
+            {
+                "timestamp": "2026-05-19T20:31:00",
+                "participant_full_id": "2753-1-1-0005",
+                "user_text": "Some relatives keep asking me about my marriage, and even so-called friends ask about it. I do not want to go through this anymore.",
+                "ai_text": "Constant questions about marriage can feel emotionally exhausting when you are already carrying pain, rejection, and self-doubt inside. Even if people ask casually, your mind experiences it like pressure, judgment, or a reminder of something deeply sensitive. After hearing the same questions again and again, it is natural to feel like avoiding people altogether. You are allowed to protect your peace a little â giving short answers and setting emotional distance from hurtful conversations is not wrong.",
+                "context": "",
+                "strategy": "Clarification",
+                "raw_physio": {
+                    "EDA": 1.31,
+                    "PR": 119.0,
+                    "SkinTemp": 35.38,
+                    "ACCEL": 0.03,
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": 66.0
+                },
+                "physio_summary_per_channel": {
+                    "PR": "Over the past 6 minutes, pulse rate held near a constant value (119.0 bpm) from a single aggregated point.",
+                    "SkinTemp": "Over the past 6 minutes, skin temperature stayed near a constant value (35.38 degC) from a single aggregated point.",
+                    "EDA": "Electrodermal activity remained at a similar level (1.31 uS) across the past 6 minutes, based on limited resolution data.",
+                    "ACCEL": "Movement intensity held at a similar level (0.03 g) across the past 6 minutes, based on limited resolution data.",
+                    "ACT_CLASS": "The activity label changed from still to generic within the past 6 minutes."
+                },
+                "physio_summary_fusion": "Over the past 6 minutes, physiological data held near constant values sourced from aggregated readings, appearing not explained by movement.",
+                "stress_score": 2,
+                "stress_level": "Mild stress",
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Some relatives keep asking me about my marriage, and even so-called friends ask about it. I do not want to go through this anymore.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: Clarification\n\nResponse: Constant questions about marriage can feel emotionally exhausting when you are already carrying pain, rejection, and self-doubt inside. Even if people ask casually, your mind experiences it like pressure, judgment, or a reminder of something deeply sensitive. After hearing the same questions again and again, it is natural to feel like avoiding people altogether. You are allowed to protect your peace a little â giving short answers and setting emotional distance from hurtful conversations is not wrong.<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Some relatives keep asking me about my marriage, and even so-called friends ask about it. I do not want to go through this anymore.\nPhysiological Signals: Over the past 6 minutes, physiological data held near constant values sourced from aggregated readings, appearing not explained by movement. Notably, Over the past 6 minutes, pulse rate held near a constant value (119.0 bpm) from a single aggregated point. Further, Over the past 6 minutes, skin temperature stayed near a constant value (35.38 degC) from a single aggregated point. Alongside this, Electrodermal activity remained at a similar level (1.31 uS) across the past 6 minutes, based on limited resolution data. On top of that, Movement intensity held at a similar level (0.03 g) across the past 6 minutes, based on limited resolution data. Also, The activity label changed from still to generic within the past 6 minutes. Meanwhile, Over the past 6 minutes, with activity count at 66.0, the composite score reaches 2, classified as Mild stress.\n\n### Response:\nStrategy: Clarification\n\nResponse: Constant questions about marriage can feel emotionally exhausting when you are already carrying pain, rejection, and self-doubt inside. Even if people ask casually, your mind experiences it like pressure, judgment, or a reminder of something deeply sensitive. After hearing the same questions again and again, it is natural to feel like avoiding people altogether. You are allowed to protect your peace a little â giving short answers and setting emotional distance from hurtful conversations is not wrong.<EOS>"
+            },
+            {
+                "timestamp": "2026-05-19T20:32:00",
+                "participant_full_id": "2753-1-1-0005",
+                "user_text": "How do I deal with all of this?",
+                "ai_text": "Right now, you are carrying years of pressure, comparison, rejection, family instability, and fear about the future, so your mind is emotionally overloaded, not weak. You do not have to solve your whole life at once â first focus on reducing the emotional weight you carry every day. Try creating small boundaries with people who repeatedly trigger your anxiety, and stop forcing yourself into conversations that leave you mentally drained. Most importantly, start giving yourself the kind of understanding you were always searching for from others, because healing begins when you stop treating yourself like a failure for struggling.",
+                "context": "",
+                "strategy": "ReflectiveStatements",
+                "raw_physio": {
+                    "EDA": 1.21,
+                    "PR": 118.0,
+                    "SkinTemp": 35.4,
+                    "ACCEL": 0.027,
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": 63.0
+                },
+                "physio_summary_per_channel": {
+                    "PR": "Pulse rate stayed close to 118.0 bpm through the past 6 minutes, though only a coarse reading was available.",
+                    "SkinTemp": "Skin temperature stayed close to 35.4 degC through the past 6 minutes, though only a coarse reading was available.",
+                    "EDA": "Electrodermal activity stayed close to 1.21 uS through the past 6 minutes, though only a coarse reading was available.",
+                    "ACCEL": "No notable change in motion (0.03 g) was detected over the past 6 minutes; the source data was coarse.",
+                    "ACT_CLASS": "Activity classification shifted from still to generic during the past 6 minutes."
+                },
+                "physio_summary_fusion": "Overall physiological readings appeared flat over the past 6 minutes, reflecting averaged rather than fine-grained data; the pattern is likely activity-related.",
+                "stress_score": 2,
+                "stress_level": "Mild stress",
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: How do I deal with all of this?\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: ReflectiveStatements\n\nResponse: Right now, you are carrying years of pressure, comparison, rejection, family instability, and fear about the future, so your mind is emotionally overloaded, not weak. You do not have to solve your whole life at once â first focus on reducing the emotional weight you carry every day. Try creating small boundaries with people who repeatedly trigger your anxiety, and stop forcing yourself into conversations that leave you mentally drained. Most importantly, start giving yourself the kind of understanding you were always searching for from others, because healing begins when you stop treating yourself like a failure for struggling.<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: How do I deal with all of this?\nPhysiological Signals: Overall physiological readings appeared flat over the past 6 minutes, reflecting averaged rather than fine-grained data; the pattern is likely activity-related. Also, Pulse rate stayed close to 118.0 bpm through the past 6 minutes, though only a coarse reading was available. Further, Skin temperature stayed close to 35.4 degC through the past 6 minutes, though only a coarse reading was available. Also, Electrodermal activity stayed close to 1.21 uS through the past 6 minutes, though only a coarse reading was available. At the same time, No notable change in motion (0.03 g) was detected over the past 6 minutes; the source data was coarse. Simultaneously, Activity classification shifted from still to generic during the past 6 minutes. Alongside this, Movement count of 63.0 contributes to a combined stress score of 2 over the past 6 minutes, consistent with Mild stress.\n\n### Response:\nStrategy: ReflectiveStatements\n\nResponse: Right now, you are carrying years of pressure, comparison, rejection, family instability, and fear about the future, so your mind is emotionally overloaded, not weak. You do not have to solve your whole life at once â first focus on reducing the emotional weight you carry every day. Try creating small boundaries with people who repeatedly trigger your anxiety, and stop forcing yourself into conversations that leave you mentally drained. Most importantly, start giving yourself the kind of understanding you were always searching for from others, because healing begins when you stop treating yourself like a failure for struggling.<EOS>"
+            },
+            {
+                "timestamp": "2026-05-19T20:33:00",
+                "participant_full_id": "2753-1-1-0005",
+                "user_text": "When I try to heal myself, even people close to me at home give me taunts about it.",
+                "ai_text": "That hurts deeply because home is supposed to feel emotionally safe, and instead you are feeling judged or misunderstood while already struggling inside. When people repeatedly make taunts, the mind slowly starts believing those words and healing becomes much harder. Their comments may come from their own frustration, pressure, or lack of emotional understanding, but that does not mean your pain is invalid. For now, try protecting your inner space a little more â reduce emotional dependence on hurtful reactions and remind yourself that healing does not need everyoneâs approval to be real.",
+                "context": "",
+                "strategy": "EmotionalValidation",
+                "raw_physio": {
+                    "EDA": 1.15,
+                    "PR": 119.0,
+                    "SkinTemp": 35.41,
+                    "ACCEL": 0.025,
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": 104.0
+                },
+                "physio_summary_per_channel": {
+                    "SkinTemp": "Temperature appeared flat over the past 6 minutes, holding near 35.41 degC; this reflects an averaged reading rather than fine detail.",
+                    "PR": "No notable pulse rate change was detected over the past 6 minutes; pulse rate held near 119.0 bpm, and the source data was coarse.",
+                    "EDA": "Electrodermal activity remained at a similar level (1.15 uS) across the past 6 minutes, based on limited resolution data.",
+                    "ACCEL": "Accelerometer output appeared flat over the past 6 minutes, holding near 0.03 g, reflecting an averaged reading.",
+                    "ACT_CLASS": "Activity type moved from walking to walking across the past 6 minutes."
+                },
+                "physio_summary_fusion": "Across the past 6 minutes, the available signals showed no notable change, though resolution was limited; taken together, this appears likely activity-related.",
+                "stress_score": 0,
+                "stress_level": null,
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: When I try to heal myself, even people close to me at home give me taunts about it.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: EmotionalValidation\n\nResponse: That hurts deeply because home is supposed to feel emotionally safe, and instead you are feeling judged or misunderstood while already struggling inside. When people repeatedly make taunts, the mind slowly starts believing those words and healing becomes much harder. Their comments may come from their own frustration, pressure, or lack of emotional understanding, but that does not mean your pain is invalid. For now, try protecting your inner space a little more â reduce emotional dependence on hurtful reactions and remind yourself that healing does not need everyoneâs approval to be real.<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: When I try to heal myself, even people close to me at home give me taunts about it.\nPhysiological Signals: Across the past 6 minutes, the available signals showed no notable change, though resolution was limited; taken together, this appears likely activity-related. Additionally, Temperature appeared flat over the past 6 minutes, holding near 35.41 degC; this reflects an averaged reading rather than fine detail. No notable pulse rate change was detected over the past 6 minutes; pulse rate held near 119.0 bpm, and the source data was coarse. On top of that, Electrodermal activity remained at a similar level (1.15 uS) across the past 6 minutes, based on limited resolution data. At the same time, Accelerometer output appeared flat over the past 6 minutes, holding near 0.03 g, reflecting an averaged reading. Additionally, Activity type moved from walking to walking across the past 6 minutes.\n\n### Response:\nStrategy: EmotionalValidation\n\nResponse: That hurts deeply because home is supposed to feel emotionally safe, and instead you are feeling judged or misunderstood while already struggling inside. When people repeatedly make taunts, the mind slowly starts believing those words and healing becomes much harder. Their comments may come from their own frustration, pressure, or lack of emotional understanding, but that does not mean your pain is invalid. For now, try protecting your inner space a little more â reduce emotional dependence on hurtful reactions and remind yourself that healing does not need everyoneâs approval to be real.<EOS>"
+            },
+            {
+                "timestamp": "2026-05-19T20:34:00",
+                "participant_full_id": "2753-1-1-0005",
+                "user_text": "Because of all these reasons, now I speak loudly even over small things, I do not listen carefully, and I have become very stubborn. Even when someone gives me a good suggestion, I do not want to listen.",
+                "ai_text": "What you are describing often happens when a person stays emotionally stressed and mentally defensive for a long time. Your mind may have slowly entered a âprotective mode,â where even normal advice or small situations start feeling irritating, controlling, or emotionally unsafe. Deep inside, you are probably exhausted, hurt, and carrying too much pressure for too many years. The important thing is that you are aware of these changes in yourself â that awareness means a part of you still wants to heal, even if your mind feels tired and resistant right now.",
+                "context": "",
+                "strategy": "ReflectiveStatements",
+                "raw_physio": {
+                    "EDA": 1.05,
+                    "PR": 119.0,
+                    "SkinTemp": 35.43,
+                    "ACCEL": 0.029,
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": 95.0
+                },
+                "physio_summary_per_channel": {
+                    "SkinTemp": "Skin temperature stayed close to 35.43 degC through the past 6 minutes, though only a coarse reading was available.",
+                    "EDA": "Over the past 6 minutes, EDA held near a constant value (1.05 uS), derived from a single aggregated reading.",
+                    "PR": "Heart rate appeared flat across the past 6 minutes, holding near 119.0 bpm; that time pulse rate is 119.0 bpm from a coarse, averaged reading.",
+                    "ACCEL": "No notable change in motion (0.03 g) was detected over the past 6 minutes; the source data was coarse.",
+                    "ACT_CLASS": "Over the past 6 minutes, a shift from walking to walking was recorded."
+                },
+                "physio_summary_fusion": "Signals stayed at a broadly similar level across the past 6 minutes; finer trend detail was not available for this window, though the overall pattern appears likely activity-related.",
+                "stress_score": 0,
+                "stress_level": null,
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Because of all these reasons, now I speak loudly even over small things, I do not listen carefully, and I have become very stubborn. Even when someone gives me a good suggestion, I do not want to listen.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: ReflectiveStatements\n\nResponse: What you are describing often happens when a person stays emotionally stressed and mentally defensive for a long time. Your mind may have slowly entered a âprotective mode,â where even normal advice or small situations start feeling irritating, controlling, or emotionally unsafe. Deep inside, you are probably exhausted, hurt, and carrying too much pressure for too many years. The important thing is that you are aware of these changes in yourself â that awareness means a part of you still wants to heal, even if your mind feels tired and resistant right now.<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Because of all these reasons, now I speak loudly even over small things, I do not listen carefully, and I have become very stubborn. Even when someone gives me a good suggestion, I do not want to listen.\nPhysiological Signals: Signals stayed at a broadly similar level across the past 6 minutes; finer trend detail was not available for this window, though the overall pattern appears likely activity-related. Additionally, Skin temperature stayed close to 35.43 degC through the past 6 minutes, though only a coarse reading was available. Also, Over the past 6 minutes, EDA held near a constant value (1.05 uS), derived from a single aggregated reading. Also, Heart rate appeared flat across the past 6 minutes, holding near 119.0 bpm; that time pulse rate is 119.0 bpm from a coarse, averaged reading. Meanwhile, No notable change in motion (0.03 g) was detected over the past 6 minutes; the source data was coarse. Notably, Over the past 6 minutes, a shift from walking to walking was recorded.\n\n### Response:\nStrategy: ReflectiveStatements\n\nResponse: What you are describing often happens when a person stays emotionally stressed and mentally defensive for a long time. Your mind may have slowly entered a âprotective mode,â where even normal advice or small situations start feeling irritating, controlling, or emotionally unsafe. Deep inside, you are probably exhausted, hurt, and carrying too much pressure for too many years. The important thing is that you are aware of these changes in yourself â that awareness means a part of you still wants to heal, even if your mind feels tired and resistant right now.<EOS>"
+            },
+            {
+                "timestamp": "2026-05-19T20:35:00",
+                "participant_full_id": "2753-1-1-0005",
+                "user_text": "But these things keep going on. When will I get out of all of this?",
+                "ai_text": "After carrying emotional stress for so many years, healing usually does not happen suddenly â it happens slowly, in layers. Right now your mind is tired from constantly staying alert, disappointed, and emotionally pressured, so it keeps falling back into overthinking and irritation even when you want peace. But the fact that you are noticing your pain, talking about it, and wanting change already means you are not stuck forever. Try to focus less on âWhen will everything end?â and more on âWhat can help me feel 1% lighter today?â because small emotional recovery repeated daily is what slowly brings a person out of this state.",
+                "context": "",
+                "strategy": "EmotionalValidation",
+                "raw_physio": {
+                    "EDA": 1.04,
+                    "PR": 116.0,
+                    "SkinTemp": 35.49,
+                    "ACCEL": 0.043,
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": 85.0
+                },
+                "physio_summary_per_channel": {
+                    "SkinTemp": "Over the past 6 minutes, skin temperature stayed near a constant value (35.49 degC) from a single aggregated point.",
+                    "EDA": "Electrodermal activity stayed close to 1.04 uS through the past 6 minutes, though only a coarse reading was available.",
+                    "PR": "Pulse rate stayed close to 116.0 bpm through the past 6 minutes, though only a coarse reading was available.",
+                    "ACCEL": "Motion levels stayed close to 0.04 g through the past 6 minutes, though only a coarse reading was available.",
+                    "ACT_CLASS": "Activity state evolved from generic to walking during the past 6 minutes."
+                },
+                "physio_summary_fusion": "Given the coarse resolution over the past 6 minutes, signals held broadly steady; the combined pattern reads as likely activity-related.",
+                "stress_score": 2,
+                "stress_level": "Mild stress",
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: But these things keep going on. When will I get out of all of this?\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: EmotionalValidation\n\nResponse: After carrying emotional stress for so many years, healing usually does not happen suddenly â it happens slowly, in layers. Right now your mind is tired from constantly staying alert, disappointed, and emotionally pressured, so it keeps falling back into overthinking and irritation even when you want peace. But the fact that you are noticing your pain, talking about it, and wanting change already means you are not stuck forever. Try to focus less on âWhen will everything end?â and more on âWhat can help me feel 1% lighter today?â because small emotional recovery repeated daily is what slowly brings a person out of this state.<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: But these things keep going on. When will I get out of all of this?\nPhysiological Signals: Given the coarse resolution over the past 6 minutes, signals held broadly steady; the combined pattern reads as likely activity-related. At the same time, Over the past 6 minutes, skin temperature stayed near a constant value (35.49 degC) from a single aggregated point. Notably, Electrodermal activity stayed close to 1.04 uS through the past 6 minutes, though only a coarse reading was available. Also, Pulse rate stayed close to 116.0 bpm through the past 6 minutes, though only a coarse reading was available. On top of that, Motion levels stayed close to 0.04 g through the past 6 minutes, though only a coarse reading was available. Simultaneously, Activity state evolved from generic to walking during the past 6 minutes. Alongside this, Factoring in an activity count of 85.0, the composite indicator over the past 6 minutes reads 2, suggesting Mild stress.\n\n### Response:\nStrategy: EmotionalValidation\n\nResponse: After carrying emotional stress for so many years, healing usually does not happen suddenly â it happens slowly, in layers. Right now your mind is tired from constantly staying alert, disappointed, and emotionally pressured, so it keeps falling back into overthinking and irritation even when you want peace. But the fact that you are noticing your pain, talking about it, and wanting change already means you are not stuck forever. Try to focus less on âWhen will everything end?â and more on âWhat can help me feel 1% lighter today?â because small emotional recovery repeated daily is what slowly brings a person out of this state.<EOS>"
+            },
+            {
+                "timestamp": "2026-05-19T20:36:00",
+                "participant_full_id": "2753-1-1-0005",
+                "user_text": "Give me some suggestions to get out of it.",
+                "ai_text": "First, stop fighting yourself all the time. Your mind has been under emotional pressure for many years, so healing will need calm consistency, not self-hatred or force. Try reducing daily triggers little by little â avoid unnecessary marriage discussions, limit comparison with others, and spend some time outside your room even if only for a short walk. Also, when you feel angry or stubborn, pause before reacting and ask yourself, âAm I reacting to this moment, or to years of pain behind it?â Small awareness like this slowly changes emotional patterns over time.",
+                "context": "",
+                "strategy": "StressManagement",
+                "raw_physio": {
+                    "EDA": 1.09,
+                    "PR": 117.0,
+                    "SkinTemp": 35.5,
+                    "ACCEL": 0.017,
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": 37.0
+                },
+                "physio_summary_per_channel": {
+                    "ACCEL": "Movement intensity held at a similar level (0.02 g) across the past 6 minutes, based on limited resolution data.",
+                    "SkinTemp": "Skin temperature held at a similar level (35.5 degC) across the past 6 minutes, based on limited resolution data.",
+                    "EDA": "Over the past 6 minutes, EDA held near a constant value (1.09 uS), derived from a single aggregated reading.",
+                    "PR": "Heart rate appeared flat across the past 6 minutes, holding near 117.0 bpm; that time pulse rate is 117.0 bpm from a coarse, averaged reading.",
+                    "ACT_CLASS": "Movement classification transitioned to still from generic over the past 6 minutes."
+                },
+                "physio_summary_fusion": "Signals stayed at a broadly similar level across the past 6 minutes; finer trend detail was not available for this window, though the overall pattern appears not explained by movement.",
+                "stress_score": 2,
+                "stress_level": "Mild stress",
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Give me some suggestions to get out of it.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: StressManagement\n\nResponse: First, stop fighting yourself all the time. Your mind has been under emotional pressure for many years, so healing will need calm consistency, not self-hatred or force. Try reducing daily triggers little by little â avoid unnecessary marriage discussions, limit comparison with others, and spend some time outside your room even if only for a short walk. Also, when you feel angry or stubborn, pause before reacting and ask yourself, âAm I reacting to this moment, or to years of pain behind it?â Small awareness like this slowly changes emotional patterns over time.<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Give me some suggestions to get out of it.\nPhysiological Signals: Signals stayed at a broadly similar level across the past 6 minutes; finer trend detail was not available for this window, though the overall pattern appears not explained by movement. Also, Movement intensity held at a similar level (0.02 g) across the past 6 minutes, based on limited resolution data. In parallel, Skin temperature held at a similar level (35.5 degC) across the past 6 minutes, based on limited resolution data. In parallel, Over the past 6 minutes, EDA held near a constant value (1.09 uS), derived from a single aggregated reading. Additionally, Heart rate appeared flat across the past 6 minutes, holding near 117.0 bpm; that time pulse rate is 117.0 bpm from a coarse, averaged reading. Additionally, Movement classification transitioned to still from generic over the past 6 minutes. At the same time, Combining the signals above with an activity count of 37.0, the resulting score over the past 6 minutes is 2 - Mild stress.\n\n### Response:\nStrategy: StressManagement\n\nResponse: First, stop fighting yourself all the time. Your mind has been under emotional pressure for many years, so healing will need calm consistency, not self-hatred or force. Try reducing daily triggers little by little â avoid unnecessary marriage discussions, limit comparison with others, and spend some time outside your room even if only for a short walk. Also, when you feel angry or stubborn, pause before reacting and ask yourself, âAm I reacting to this moment, or to years of pain behind it?â Small awareness like this slowly changes emotional patterns over time.<EOS>"
+            },
+            {
+                "timestamp": "2026-05-19T20:37:00",
+                "participant_full_id": "2753-1-1-0005",
+                "user_text": "But one thing is bothering me â I feel like I am getting older, and more delay may also create problems with pregnancy in the future.",
+                "ai_text": "It is understandable that this fear is affecting you, because age, marriage pressure, and thoughts about future motherhood can feel very heavy together. When the mind already feels uncertain, thoughts about time passing can become even more emotionally intense and urgent. But constantly panicking about the future will only exhaust you more mentally and emotionally right now. Try to focus on building emotional stability and taking care of your health step by step, because fear grows when the mind feels powerless, but calm planning slowly brings back a sense of control.",
+                "context": "",
+                "strategy": "ReflectiveStatements",
+                "raw_physio": {
+                    "EDA": 1.0,
+                    "PR": 123.0,
+                    "SkinTemp": 35.55,
+                    "ACCEL": 0.02,
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": 87.0
+                },
+                "physio_summary_per_channel": {
+                    "SkinTemp": "Skin temperature stayed close to 35.55 degC through the past 6 minutes, though only a coarse reading was available.",
+                    "PR": "Over the past 6 minutes, pulse rate held near a constant value (123.0 bpm) from a single aggregated point.",
+                    "ACCEL": "Motion levels stayed close to 0.02 g through the past 6 minutes, though only a coarse reading was available.",
+                    "EDA": "Electrodermal activity stayed close to 1.0 uS through the past 6 minutes, though only a coarse reading was available.",
+                    "ACT_CLASS": "Activity state evolved from generic to walking during the past 6 minutes."
+                },
+                "physio_summary_fusion": "Over the past 6 minutes, physiological data held near constant values sourced from aggregated readings, appearing likely activity-related.",
+                "stress_score": 2,
+                "stress_level": "Mild stress",
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: But one thing is bothering me â I feel like I am getting older, and more delay may also create problems with pregnancy in the future.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: ReflectiveStatements\n\nResponse: It is understandable that this fear is affecting you, because age, marriage pressure, and thoughts about future motherhood can feel very heavy together. When the mind already feels uncertain, thoughts about time passing can become even more emotionally intense and urgent. But constantly panicking about the future will only exhaust you more mentally and emotionally right now. Try to focus on building emotional stability and taking care of your health step by step, because fear grows when the mind feels powerless, but calm planning slowly brings back a sense of control.<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: But one thing is bothering me â I feel like I am getting older, and more delay may also create problems with pregnancy in the future.\nPhysiological Signals: Over the past 6 minutes, physiological data held near constant values sourced from aggregated readings, appearing likely activity-related. Simultaneously, Skin temperature stayed close to 35.55 degC through the past 6 minutes, though only a coarse reading was available. Over the past 6 minutes, pulse rate held near a constant value (123.0 bpm) from a single aggregated point. Motion levels stayed close to 0.02 g through the past 6 minutes, though only a coarse reading was available. Additionally, Electrodermal activity stayed close to 1.0 uS through the past 6 minutes, though only a coarse reading was available. Simultaneously, Activity state evolved from generic to walking during the past 6 minutes. Additionally, Movement count of 87.0 contributes to a combined stress score of 2 over the past 6 minutes, consistent with Mild stress.\n\n### Response:\nStrategy: ReflectiveStatements\n\nResponse: It is understandable that this fear is affecting you, because age, marriage pressure, and thoughts about future motherhood can feel very heavy together. When the mind already feels uncertain, thoughts about time passing can become even more emotionally intense and urgent. But constantly panicking about the future will only exhaust you more mentally and emotionally right now. Try to focus on building emotional stability and taking care of your health step by step, because fear grows when the mind feels powerless, but calm planning slowly brings back a sense of control.<EOS>"
+            },
+            {
+                "timestamp": "2026-05-19T20:38:00",
+                "participant_full_id": "2753-1-1-0005",
+                "user_text": "Sometimes I feel my life is better without marriage, and sometimes I feel the opposite.",
+                "ai_text": "Those mixed feelings are very natural when your mind connects marriage with both hope and fear at the same time. One part of you wants love, stability, and companionship, while another part is scared of emotional pain, pressure, conflict, or losing peace like you saw in childhood. So your mind keeps moving between âI want thisâ and âMaybe I am safer without it.â Right now, you do not need to force a final answer immediately â your emotions first need calmness and clarity, not more pressure to decide your whole future.",
+                "context": "",
+                "strategy": "ReflectiveStatements",
+                "raw_physio": {
+                    "EDA": 0.94,
+                    "PR": 125.0,
+                    "SkinTemp": 35.6,
+                    "ACCEL": 0.051,
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": 104.0
+                },
+                "physio_summary_per_channel": {
+                    "SkinTemp": "No notable skin temperature shift was detected over the past 6 minutes; temperature held near 35.6 degC, and the data was coarse.",
+                    "ACCEL": "Over the past 6 minutes, movement intensity stayed near a constant value (0.05 g) from a single aggregated point.",
+                    "PR": "Pulse rate stayed close to 125.0 bpm through the past 6 minutes, though only a coarse reading was available.",
+                    "EDA": "EDA appeared flat over the past 6 minutes, holding near 0.94 uS; this reflects an averaged reading rather than fine-grained detail.",
+                    "ACT_CLASS": "A shift occurred over the past 6 minutes: activity went from generic to generic."
+                },
+                "physio_summary_fusion": "Across the past 6 minutes, the available signals showed no notable change, though resolution was limited; taken together, this appears likely activity-related.",
+                "stress_score": 0,
+                "stress_level": null,
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Sometimes I feel my life is better without marriage, and sometimes I feel the opposite.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: ReflectiveStatements\n\nResponse: Those mixed feelings are very natural when your mind connects marriage with both hope and fear at the same time. One part of you wants love, stability, and companionship, while another part is scared of emotional pain, pressure, conflict, or losing peace like you saw in childhood. So your mind keeps moving between âI want thisâ and âMaybe I am safer without it.â Right now, you do not need to force a final answer immediately â your emotions first need calmness and clarity, not more pressure to decide your whole future.<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Sometimes I feel my life is better without marriage, and sometimes I feel the opposite.\nPhysiological Signals: Across the past 6 minutes, the available signals showed no notable change, though resolution was limited; taken together, this appears likely activity-related. Alongside this, No notable skin temperature shift was detected over the past 6 minutes; temperature held near 35.6 degC, and the data was coarse. In parallel, Over the past 6 minutes, movement intensity stayed near a constant value (0.05 g) from a single aggregated point. Additionally, Pulse rate stayed close to 125.0 bpm through the past 6 minutes, though only a coarse reading was available. EDA appeared flat over the past 6 minutes, holding near 0.94 uS; this reflects an averaged reading rather than fine-grained detail. Meanwhile, A shift occurred over the past 6 minutes: activity went from generic to generic.\n\n### Response:\nStrategy: ReflectiveStatements\n\nResponse: Those mixed feelings are very natural when your mind connects marriage with both hope and fear at the same time. One part of you wants love, stability, and companionship, while another part is scared of emotional pain, pressure, conflict, or losing peace like you saw in childhood. So your mind keeps moving between âI want thisâ and âMaybe I am safer without it.â Right now, you do not need to force a final answer immediately â your emotions first need calmness and clarity, not more pressure to decide your whole future.<EOS>"
+            },
+            {
+                "timestamp": "2026-05-19T20:39:00",
+                "participant_full_id": "2753-1-1-0005",
+                "user_text": "Should I marry someone who is not financially stable? My family members say I overthink too much about financial things. They say it is okay, at least I will move one step ahead in life.",
+                "ai_text": "Your fear about financial stability is not unreasonable, especially because you already grew up around instability and emotional conflict. A part of you is trying to protect your future from becoming another stressful or unsafe situation, so your mind naturally thinks carefully about these things. Marriage should not happen only because of pressure, age, or âmoving one step aheadâ â you also need emotional safety, mutual respect, and a feeling that both people are willing to grow together. Try to ask yourself not only âAre they financially stable now?â but also âDo I feel emotionally secure, understood, and able to build a life with this person over time?â",
+                "context": "",
+                "strategy": "Clarification",
+                "raw_physio": {
+                    "EDA": 1.09,
+                    "PR": 121.0,
+                    "SkinTemp": 35.62,
+                    "ACCEL": 0.026,
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": 116.0
+                },
+                "physio_summary_per_channel": {
+                    "SkinTemp": "Skin temperature stayed close to 35.62 degC through the past 6 minutes, though only a coarse reading was available.",
+                    "PR": "Pulse rate stayed at a comparable level (121.0 bpm) over the past 6 minutes, based on limited resolution data.",
+                    "EDA": "Electrodermal activity remained at a similar level (1.09 uS) across the past 6 minutes, based on limited resolution data.",
+                    "ACCEL": "Movement intensity held at a similar level (0.03 g) across the past 6 minutes, based on limited resolution data.",
+                    "ACT_CLASS": "Across the past 6 minutes, the participant's classification changed: walking to generic."
+                },
+                "physio_summary_fusion": "Signals stayed at a broadly similar level across the past 6 minutes; finer trend detail was not available for this window, though the overall pattern appears likely activity-related.",
+                "stress_score": 0,
+                "stress_level": null,
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Should I marry someone who is not financially stable? My family members say I overthink too much about financial things. They say it is okay, at least I will move one step ahead in life.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: Clarification\n\nResponse: Your fear about financial stability is not unreasonable, especially because you already grew up around instability and emotional conflict. A part of you is trying to protect your future from becoming another stressful or unsafe situation, so your mind naturally thinks carefully about these things. Marriage should not happen only because of pressure, age, or âmoving one step aheadâ â you also need emotional safety, mutual respect, and a feeling that both people are willing to grow together. Try to ask yourself not only âAre they financially stable now?â but also âDo I feel emotionally secure, understood, and able to build a life with this person over time?â<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Should I marry someone who is not financially stable? My family members say I overthink too much about financial things. They say it is okay, at least I will move one step ahead in life.\nPhysiological Signals: Signals stayed at a broadly similar level across the past 6 minutes; finer trend detail was not available for this window, though the overall pattern appears likely activity-related. Skin temperature stayed close to 35.62 degC through the past 6 minutes, though only a coarse reading was available. Alongside this, Pulse rate stayed at a comparable level (121.0 bpm) over the past 6 minutes, based on limited resolution data. Electrodermal activity remained at a similar level (1.09 uS) across the past 6 minutes, based on limited resolution data. Also, Movement intensity held at a similar level (0.03 g) across the past 6 minutes, based on limited resolution data. Notably, Across the past 6 minutes, the participant's classification changed: walking to generic.\n\n### Response:\nStrategy: Clarification\n\nResponse: Your fear about financial stability is not unreasonable, especially because you already grew up around instability and emotional conflict. A part of you is trying to protect your future from becoming another stressful or unsafe situation, so your mind naturally thinks carefully about these things. Marriage should not happen only because of pressure, age, or âmoving one step aheadâ â you also need emotional safety, mutual respect, and a feeling that both people are willing to grow together. Try to ask yourself not only âAre they financially stable now?â but also âDo I feel emotionally secure, understood, and able to build a life with this person over time?â<EOS>"
+            },
+            {
+                "timestamp": "2026-05-19T20:40:00",
+                "participant_full_id": "2753-1-1-0005",
+                "user_text": "I do not feel secure without financial support.",
+                "ai_text": "That feeling is very understandable, especially because your mind has spent years craving stability, safety, and reassurance. When someone grows up around emotional or financial instability, financial security can start feeling connected to emotional survival itself, not just money. So this is not simply greed or overthinking â it is your nervous system trying to avoid future helplessness and stress. Try not to shame yourself for needing stability; instead, slowly understand what level of security genuinely helps you feel safe and emotionally balanced in a relationship.",
+                "context": "",
+                "strategy": "EmotionalValidation",
+                "raw_physio": {
+                    "EDA": 1.28,
+                    "PR": 126.0,
+                    "SkinTemp": 35.6,
+                    "ACCEL": 0.027,
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": 55.0
+                },
+                "physio_summary_per_channel": {
+                    "SkinTemp": "Temperature appeared flat over the past 6 minutes, holding near 35.6 degC; this reflects an averaged reading rather than fine detail.",
+                    "PR": "Pulse rate stayed close to 126.0 bpm through the past 6 minutes, though only a coarse reading was available.",
+                    "EDA": "Skin conductance showed no notable change over the past 6 minutes, staying around 1.28 uS; the underlying data was coarse.",
+                    "ACCEL": "Motion levels stayed close to 0.03 g through the past 6 minutes, though only a coarse reading was available.",
+                    "ACT_CLASS": "The recorded state shifted from walking to walking over the past 6 minutes."
+                },
+                "physio_summary_fusion": "Given the coarse resolution over the past 6 minutes, signals held broadly steady; the combined pattern reads as not explained by movement.",
+                "stress_score": 4,
+                "stress_level": "Moderate stress",
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I do not feel secure without financial support.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: EmotionalValidation\n\nResponse: That feeling is very understandable, especially because your mind has spent years craving stability, safety, and reassurance. When someone grows up around emotional or financial instability, financial security can start feeling connected to emotional survival itself, not just money. So this is not simply greed or overthinking â it is your nervous system trying to avoid future helplessness and stress. Try not to shame yourself for needing stability; instead, slowly understand what level of security genuinely helps you feel safe and emotionally balanced in a relationship.<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I do not feel secure without financial support.\nPhysiological Signals: Given the coarse resolution over the past 6 minutes, signals held broadly steady; the combined pattern reads as not explained by movement. Meanwhile, Temperature appeared flat over the past 6 minutes, holding near 35.6 degC; this reflects an averaged reading rather than fine detail. Simultaneously, Pulse rate stayed close to 126.0 bpm through the past 6 minutes, though only a coarse reading was available. On top of that, Skin conductance showed no notable change over the past 6 minutes, staying around 1.28 uS; the underlying data was coarse. In parallel, Motion levels stayed close to 0.03 g through the past 6 minutes, though only a coarse reading was available. In parallel, The recorded state shifted from walking to walking over the past 6 minutes. Notably, With activity count at 55.0, the composite stress score for the past 6 minutes is 4, indicating Moderate stress.\n\n### Response:\nStrategy: EmotionalValidation\n\nResponse: That feeling is very understandable, especially because your mind has spent years craving stability, safety, and reassurance. When someone grows up around emotional or financial instability, financial security can start feeling connected to emotional survival itself, not just money. So this is not simply greed or overthinking â it is your nervous system trying to avoid future helplessness and stress. Try not to shame yourself for needing stability; instead, slowly understand what level of security genuinely helps you feel safe and emotionally balanced in a relationship.<EOS>"
+            },
+            {
+                "timestamp": "2026-05-19T20:41:00",
+                "participant_full_id": "2753-1-1-0005",
+                "user_text": "So tell me what should I do now?",
+                "ai_text": "Right now, do not rush yourself into marriage only because of age, pressure, or fear of being left behind. Your mind is already emotionally overwhelmed, and making a major life decision from panic may increase your anxiety later. First, try to become clearer about what truly matters for your emotional safety â financial stability, respectful behavior, emotional support, and peace are valid needs, not selfish demands. At the same time, slowly work on rebuilding your own confidence and stability too, because when you feel stronger inside, decisions become calmer and less fear-driven.",
+                "context": "",
+                "strategy": "StressManagement",
+                "raw_physio": {
+                    "EDA": 1.2,
+                    "PR": 122.0,
+                    "SkinTemp": 35.59,
+                    "ACCEL": 0.01,
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": 42.0
+                },
+                "physio_summary_per_channel": {
+                    "ACCEL": "Accelerometer output appeared flat over the past 6 minutes, holding near 0.01 g, reflecting an averaged reading.",
+                    "PR": "No notable pulse rate change was detected over the past 6 minutes; pulse rate held near 122.0 bpm, and the source data was coarse.",
+                    "SkinTemp": "Skin temperature stayed close to 35.59 degC through the past 6 minutes, though only a coarse reading was available.",
+                    "EDA": "Electrodermal activity stayed close to 1.2 uS through the past 6 minutes, though only a coarse reading was available.",
+                    "ACT_CLASS": "Activity state evolved from walking to walking during the past 6 minutes."
+                },
+                "physio_summary_fusion": "Overall physiological readings appeared flat over the past 6 minutes, reflecting averaged rather than fine-grained data; the pattern is not explained by movement.",
+                "stress_score": 4,
+                "stress_level": "Moderate stress",
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: So tell me what should I do now?\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: StressManagement\n\nResponse: Right now, do not rush yourself into marriage only because of age, pressure, or fear of being left behind. Your mind is already emotionally overwhelmed, and making a major life decision from panic may increase your anxiety later. First, try to become clearer about what truly matters for your emotional safety â financial stability, respectful behavior, emotional support, and peace are valid needs, not selfish demands. At the same time, slowly work on rebuilding your own confidence and stability too, because when you feel stronger inside, decisions become calmer and less fear-driven.<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: So tell me what should I do now?\nPhysiological Signals: Overall physiological readings appeared flat over the past 6 minutes, reflecting averaged rather than fine-grained data; the pattern is not explained by movement. At the same time, Accelerometer output appeared flat over the past 6 minutes, holding near 0.01 g, reflecting an averaged reading. Also, No notable pulse rate change was detected over the past 6 minutes; pulse rate held near 122.0 bpm, and the source data was coarse. Further, Skin temperature stayed close to 35.59 degC through the past 6 minutes, though only a coarse reading was available. At the same time, Electrodermal activity stayed close to 1.2 uS through the past 6 minutes, though only a coarse reading was available. Further, Activity state evolved from walking to walking during the past 6 minutes. Over the past 6 minutes, with activity count at 42.0, the composite score reaches 4, classified as Moderate stress.\n\n### Response:\nStrategy: StressManagement\n\nResponse: Right now, do not rush yourself into marriage only because of age, pressure, or fear of being left behind. Your mind is already emotionally overwhelmed, and making a major life decision from panic may increase your anxiety later. First, try to become clearer about what truly matters for your emotional safety â financial stability, respectful behavior, emotional support, and peace are valid needs, not selfish demands. At the same time, slowly work on rebuilding your own confidence and stability too, because when you feel stronger inside, decisions become calmer and less fear-driven.<EOS>"
+            }
+        ]
+    }
+]

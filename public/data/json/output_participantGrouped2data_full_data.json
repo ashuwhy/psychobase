@@ -1,0 +1,685 @@
+[
+    {
+        "session_id": "2753-1-1",
+        "person_id": "2753",
+        "turns": [
+            {
+                "timestamp": "2026-03-22T12:40:00",
+                "participant_full_id": "2753-1-1-0000",
+                "user_text": "I feel very confused and disturbed.",
+                "ai_text": "I know.\nRight now do not solve everything.\nJust tell me only one thing:\nWhat is hurting most right now â workload, relationship, or overthinking?",
+                "context": "",
+                "strategy": "EmotionalValidation",
+                "raw_physio": {
+                    "EDA": [
+                        0.01,
+                        0.01,
+                        0.01,
+                        0.01
+                    ],
+                    "PR": [
+                        89.0,
+                        94.0,
+                        97.0,
+                        97.0
+                    ],
+                    "SkinTemp": [
+                        33.81,
+                        33.85,
+                        33.91,
+                        34.0
+                    ],
+                    "ACCEL": [
+                        0.025,
+                        0.011,
+                        0.014,
+                        0.013
+                    ],
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": [
+                        59.0,
+                        60.0,
+                        76.0,
+                        65.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "PR": "During the first minute, heart rate registered a rising shift to 97.0 bpm, without any notable peaks or valleys.",
+                    "SkinTemp": "During the first minute, skin temperature registered a climbing shift to 34.0 degC, without any notable peaks or valleys.",
+                    "ACCEL": "During the first minute, movement registered a easing shift to 0.01 g, without any notable peaks or valleys.",
+                    "EDA": "Over the first minute, electrodermal activity moved slightly in a dropping direction, from 0.01 to 0.01 uS.",
+                    "ACT_CLASS": "No change in activity state was observed over the first minute; it remained walking."
+                },
+                "physio_summary_fusion": "During the first minute, the participant was awake alongside walking movement, EDA and PR and SkinTemp and ACCEL shifted, not explained by movement. Movement stayed minimal while EDA and PR and SkinTemp and ACCEL rose, pointing toward a stress response rather than exertion.",
+                "stress_score": 2,
+                "stress_level": "Mild stress",
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I feel very confused and disturbed.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: EmotionalValidation\n\nResponse: I know.\nRight now do not solve everything.\nJust tell me only one thing:\nWhat is hurting most right now â workload, relationship, or overthinking?<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I feel very confused and disturbed.\nPhysiological Signals: During the first minute, the participant was awake alongside walking movement, EDA and PR and SkinTemp and ACCEL shifted, not explained by movement. Movement stayed minimal while EDA and PR and SkinTemp and ACCEL rose, pointing toward a stress response rather than exertion. Also, During the first minute, heart rate registered a rising shift to 97.0 bpm, without any notable peaks or valleys. During the first minute, skin temperature registered a climbing shift to 34.0 degC, without any notable peaks or valleys. On top of that, During the first minute, movement registered a easing shift to 0.01 g, without any notable peaks or valleys. Meanwhile, Over the first minute, electrodermal activity moved slightly in a dropping direction, from 0.01 to 0.01 uS. Additionally, No change in activity state was observed over the first minute; it remained walking. Movement count of 65.0 contributes to a combined stress score of 2 over the first minute, consistent with Mild stress.\n\n### Response:\nStrategy: EmotionalValidation\n\nResponse: I know.\nRight now do not solve everything.\nJust tell me only one thing:\nWhat is hurting most right now â workload, relationship, or overthinking?<EOS>"
+            },
+            {
+                "timestamp": "2026-03-22T12:44:00",
+                "participant_full_id": "2753-1-1-0000",
+                "user_text": "I think it is overthinking.",
+                "ai_text": "Okay. Then do not fight the thoughts right now.\nTake a paper and write only 2 lines:\nWhat am I thinking about?\nCan I solve this tonight?\nIf the answer is no, write:\nâI will handle this tomorrow, not in bed.â\nSend me the one thought that is repeating most.",
+                "context": "",
+                "strategy": "ReflectiveStatements",
+                "raw_physio": {
+                    "EDA": [
+                        0.01,
+                        0.01,
+                        0.01,
+                        0.01
+                    ],
+                    "PR": [
+                        96.0,
+                        83.0,
+                        81.0,
+                        77.0
+                    ],
+                    "SkinTemp": [
+                        34.12,
+                        34.21,
+                        34.23,
+                        34.2
+                    ],
+                    "ACCEL": [
+                        0.02,
+                        0.024,
+                        0.048,
+                        0.032
+                    ],
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": [
+                        71.0,
+                        39.0,
+                        93.0,
+                        93.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "SkinTemp": "The temperature signal was upward for the past 4 minutes, highly fluctuating, around 34.2 degC.",
+                    "PR": "Pulse rate dropping sharply over the past 4 minutes, moving from 89.0 to 77.0 bpm.",
+                    "ACCEL": "A upward movement pattern was observed over the past 4 minutes, highly fluctuating, reaching 0.03 g.",
+                    "EDA": "Electrodermal readings declining slightly across the past 4 minutes to 0.01 uS, showing a single sustained rise with no reversal.",
+                    "ACT_CLASS": "A transition from walking to generic occurred within the past 4 minutes."
+                },
+                "physio_summary_fusion": "Across the past 4 minutes, EDA and PR and SkinTemp and ACCEL showed a shifted pattern, occurring while the participant was generic and positioned reclining/lying, not clearly linked to physical activity. Neither EDA and PR and SkinTemp and ACCEL nor movement showed a notable change, so no clear stress or activity signal is present here.",
+                "stress_score": -2,
+                "stress_level": null,
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I think it is overthinking.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: ReflectiveStatements\n\nResponse: Okay. Then do not fight the thoughts right now.\nTake a paper and write only 2 lines:\nWhat am I thinking about?\nCan I solve this tonight?\nIf the answer is no, write:\nâI will handle this tomorrow, not in bed.â\nSend me the one thought that is repeating most.<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I think it is overthinking.\nPhysiological Signals: Across the past 4 minutes, EDA and PR and SkinTemp and ACCEL showed a shifted pattern, occurring while the participant was generic and positioned reclining/lying, not clearly linked to physical activity. Neither EDA and PR and SkinTemp and ACCEL nor movement showed a notable change, so no clear stress or activity signal is present here. Alongside this, The temperature signal was upward for the past 4 minutes, highly fluctuating, around 34.2 degC. Simultaneously, Pulse rate dropping sharply over the past 4 minutes, moving from 89.0 to 77.0 bpm. Also, A upward movement pattern was observed over the past 4 minutes, highly fluctuating, reaching 0.03 g. Electrodermal readings declining slightly across the past 4 minutes to 0.01 uS, showing a single sustained rise with no reversal. Also, A transition from walking to generic occurred within the past 4 minutes.\n\n### Response:\nStrategy: ReflectiveStatements\n\nResponse: Okay. Then do not fight the thoughts right now.\nTake a paper and write only 2 lines:\nWhat am I thinking about?\nCan I solve this tonight?\nIf the answer is no, write:\nâI will handle this tomorrow, not in bed.â\nSend me the one thought that is repeating most.<EOS>"
+            },
+            {
+                "timestamp": "2026-03-22T12:48:00",
+                "participant_full_id": "2753-1-1-0000",
+                "user_text": "My family is finding someone for me. When they came to my home, at that time I was okay with it, but now I feel confused.",
+                "ai_text": "That is completely understandable.\nSometimes in the moment we say yes calmly, but later the mind starts asking: âDo I really want this?â\nRight now do not force a final decision tonight. First ask yourself only one thing:\nâAm I confused because I do not want it, or because I am scared?â\nSend me just one word:\ndonât want / scared / both",
+                "context": "",
+                "strategy": "EmotionalValidation",
+                "raw_physio": {
+                    "EDA": [
+                        0.01,
+                        0.02,
+                        0.02,
+                        0.01
+                    ],
+                    "PR": [
+                        80.0,
+                        88.0,
+                        93.0,
+                        94.0
+                    ],
+                    "SkinTemp": [
+                        34.17,
+                        34.13,
+                        34.09,
+                        34.11
+                    ],
+                    "ACCEL": [
+                        0.031,
+                        0.05,
+                        0.014,
+                        0.014
+                    ],
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": [
+                        43.0,
+                        67.0,
+                        90.0,
+                        83.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "ACCEL": "Overall movement (accelerometer) easing moderately over the past 6 minutes, moving from 0.02 to 0.01 g.",
+                    "PR": "Heart rate declining moderately during the past 6 minutes, reaching 94.0 bpm.",
+                    "SkinTemp": "Skin temperature showed a easing pattern across the past 6 minutes, with mildly fluctuating change, now 34.11 degC.",
+                    "EDA": "Across the past 6 minutes, EDA trended decreasing from 0.01 to 0.01 uS.",
+                    "ACT_CLASS": "Activity state evolved from generic to walking during the past 6 minutes."
+                },
+                "physio_summary_fusion": "Over the past 6 minutes, EDA and PR and SkinTemp and ACCEL fell against a backdrop of walking activity and some walking activity, not clearly linked to physical activity. The relationship between EDA and PR and SkinTemp and ACCEL and movement was inconsistent over the past 6 minutes, making the source of change unclear.",
+                "stress_score": 2,
+                "stress_level": "Mild stress",
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: My family is finding someone for me. When they came to my home, at that time I was okay with it, but now I feel confused.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: EmotionalValidation\n\nResponse: That is completely understandable.\nSometimes in the moment we say yes calmly, but later the mind starts asking: âDo I really want this?â\nRight now do not force a final decision tonight. First ask yourself only one thing:\nâAm I confused because I do not want it, or because I am scared?â\nSend me just one word:\ndonât want / scared / both<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: My family is finding someone for me. When they came to my home, at that time I was okay with it, but now I feel confused.\nPhysiological Signals: Over the past 6 minutes, EDA and PR and SkinTemp and ACCEL fell against a backdrop of walking activity and some walking activity, not clearly linked to physical activity. The relationship between EDA and PR and SkinTemp and ACCEL and movement was inconsistent over the past 6 minutes, making the source of change unclear. Further, Overall movement (accelerometer) easing moderately over the past 6 minutes, moving from 0.02 to 0.01 g. Alongside this, Heart rate declining moderately during the past 6 minutes, reaching 94.0 bpm. In parallel, Skin temperature showed a easing pattern across the past 6 minutes, with mildly fluctuating change, now 34.11 degC. Simultaneously, Across the past 6 minutes, EDA trended decreasing from 0.01 to 0.01 uS. Meanwhile, Activity state evolved from generic to walking during the past 6 minutes. Alongside this, Over the past 6 minutes, with activity count at 83.0, the composite score reaches 2, classified as Mild stress.\n\n### Response:\nStrategy: EmotionalValidation\n\nResponse: That is completely understandable.\nSometimes in the moment we say yes calmly, but later the mind starts asking: âDo I really want this?â\nRight now do not force a final decision tonight. First ask yourself only one thing:\nâAm I confused because I do not want it, or because I am scared?â\nSend me just one word:\ndonât want / scared / both<EOS>"
+            },
+            {
+                "timestamp": "2026-03-22T12:52:00",
+                "participant_full_id": "2753-1-1-0000",
+                "user_text": "After that, I started talking with him. We talked for 5â6 days, around 1 hour daily on average. But I do not like it.",
+                "ai_text": "Then your answer is becoming clear.\nYou are not just confused â you are uncomfortable.\nIf you do not like talking to him, please do not force yourself just because the process has started.\nRight now your truth is simple:\nâI gave it a chance, but I do not feel comfortable continuing.â\nThat is enough reason.",
+                "context": "",
+                "strategy": "ReflectiveStatements",
+                "raw_physio": {
+                    "EDA": [
+                        0.01,
+                        0.02,
+                        0.02,
+                        0.02
+                    ],
+                    "PR": [
+                        96.0,
+                        90.0,
+                        90.0,
+                        91.0
+                    ],
+                    "SkinTemp": [
+                        34.18,
+                        34.27,
+                        34.32,
+                        34.34
+                    ],
+                    "ACCEL": [
+                        0.013,
+                        0.013,
+                        0.016,
+                        0.058
+                    ],
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": [
+                        69.0,
+                        62.0,
+                        86.0,
+                        81.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "PR": "Pulse rate climbing sharply over the past 6 minutes, moving from 80.0 to 91.0 bpm.",
+                    "ACCEL": "Movement levels drifted growing across the past 6 minutes to 0.06 g, with a brief peak observed mid-window.",
+                    "EDA": "Skin conductance increasing sharply during the past 6 minutes, reaching 0.02 uS.",
+                    "SkinTemp": "Over the past 6 minutes, skin temperature remained growing, staying close to 34.34 degC.",
+                    "ACT_CLASS": "Activity classification showed no change over the past 6 minutes, staying walking."
+                },
+                "physio_summary_fusion": "During the past 6 minutes, physiological arousal (EDA and PR and SkinTemp and ACCEL) rose; given walking movement and reclining/lying posture, this appears likely activity-related. The rise in EDA and PR and SkinTemp and ACCEL coincided with elevated ACT_COUNT, making it difficult to separate physical exertion from emotional stress.",
+                "stress_score": 4,
+                "stress_level": "Moderate stress",
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: After that, I started talking with him. We talked for 5â6 days, around 1 hour daily on average. But I do not like it.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: ReflectiveStatements\n\nResponse: Then your answer is becoming clear.\nYou are not just confused â you are uncomfortable.\nIf you do not like talking to him, please do not force yourself just because the process has started.\nRight now your truth is simple:\nâI gave it a chance, but I do not feel comfortable continuing.â\nThat is enough reason.<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: After that, I started talking with him. We talked for 5â6 days, around 1 hour daily on average. But I do not like it.\nPhysiological Signals: During the past 6 minutes, physiological arousal (EDA and PR and SkinTemp and ACCEL) rose; given walking movement and reclining/lying posture, this appears likely activity-related. The rise in EDA and PR and SkinTemp and ACCEL coincided with elevated ACT_COUNT, making it difficult to separate physical exertion from emotional stress. Notably, Pulse rate climbing sharply over the past 6 minutes, moving from 80.0 to 91.0 bpm. On top of that, Movement levels drifted growing across the past 6 minutes to 0.06 g, with a brief peak observed mid-window. In parallel, Skin conductance increasing sharply during the past 6 minutes, reaching 0.02 uS. On top of that, Over the past 6 minutes, skin temperature remained growing, staying close to 34.34 degC. Additionally, Activity classification showed no change over the past 6 minutes, staying walking. Additionally, Factoring in an activity count of 81.0, the composite indicator over the past 6 minutes reads 4, suggesting Moderate stress.\n\n### Response:\nStrategy: ReflectiveStatements\n\nResponse: Then your answer is becoming clear.\nYou are not just confused â you are uncomfortable.\nIf you do not like talking to him, please do not force yourself just because the process has started.\nRight now your truth is simple:\nâI gave it a chance, but I do not feel comfortable continuing.â\nThat is enough reason.<EOS>"
+            },
+            {
+                "timestamp": "2026-03-22T12:56:00",
+                "participant_full_id": "2753-1-1-0000",
+                "user_text": "It is not like that. He is good in everything, but still I do not know why I cannot like him. Before that, I also wanted to talk with someone.",
+                "ai_text": "That is the most important point.\nA good person is not always your person.\nYou may have wanted connection before, but when it became real, your heart did not feel safe, easy, or naturally interested.\nPlease remember:\nYou do not need a âbig reasonâ to not like someone.\nSometimes the reason is simply:\nâHe is good, but I do not feel that way.â\nThat is valid.\nRight now ask yourself only this:\nWhen I talk to him, do I feel peacefulâ¦ or pressured?",
+                "context": "",
+                "strategy": "ReflectiveStatements",
+                "raw_physio": {
+                    "EDA": [
+                        0.02,
+                        0.01,
+                        0.01,
+                        0.01
+                    ],
+                    "PR": [
+                        83.0,
+                        83.0,
+                        90.0,
+                        93.0
+                    ],
+                    "SkinTemp": [
+                        34.31,
+                        34.23,
+                        34.18,
+                        34.18
+                    ],
+                    "ACCEL": [
+                        0.032,
+                        0.012,
+                        0.017,
+                        0.014
+                    ],
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": [
+                        45.0,
+                        13.0,
+                        58.0,
+                        73.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "PR": "The pulse signal was dropping for the past 6 minutes, highly fluctuating, around 93.0 bpm.",
+                    "ACCEL": "During the past 6 minutes, movement registered a upward shift to 0.01 g, without any notable peaks or valleys.",
+                    "EDA": "Over the past 6 minutes, sweat-gland activity (EDA) dropping slightly, now near 0.01 uS.",
+                    "SkinTemp": "Across the past 6 minutes, peripheral temperature trended steady from 34.18 to 34.18 degC.",
+                    "ACT_CLASS": "Activity level held steady at walking across the past 6 minutes."
+                },
+                "physio_summary_fusion": "Over the past 6 minutes, step count suggests minimal walking; EDA and PR and ACCEL shifted, a response that is not clearly linked to physical activity. The relationship between EDA and PR and ACCEL and movement was inconsistent over the past 6 minutes, making the source of change unclear.",
+                "stress_score": 2,
+                "stress_level": "Mild stress",
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: It is not like that. He is good in everything, but still I do not know why I cannot like him. Before that, I also wanted to talk with someone.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: ReflectiveStatements\n\nResponse: That is the most important point.\nA good person is not always your person.\nYou may have wanted connection before, but when it became real, your heart did not feel safe, easy, or naturally interested.\nPlease remember:\nYou do not need a âbig reasonâ to not like someone.\nSometimes the reason is simply:\nâHe is good, but I do not feel that way.â\nThat is valid.\nRight now ask yourself only this:\nWhen I talk to him, do I feel peacefulâ¦ or pressured?<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: It is not like that. He is good in everything, but still I do not know why I cannot like him. Before that, I also wanted to talk with someone.\nPhysiological Signals: Over the past 6 minutes, step count suggests minimal walking; EDA and PR and ACCEL shifted, a response that is not clearly linked to physical activity. The relationship between EDA and PR and ACCEL and movement was inconsistent over the past 6 minutes, making the source of change unclear. Notably, The pulse signal was dropping for the past 6 minutes, highly fluctuating, around 93.0 bpm. Also, During the past 6 minutes, movement registered a upward shift to 0.01 g, without any notable peaks or valleys. Meanwhile, Over the past 6 minutes, sweat-gland activity (EDA) dropping slightly, now near 0.01 uS. At the same time, Across the past 6 minutes, peripheral temperature trended steady from 34.18 to 34.18 degC. Alongside this, Activity level held steady at walking across the past 6 minutes. On top of that, The stress score for the past 6 minutes is 2 (activity count: 73.0), pointing to Mild stress.\n\n### Response:\nStrategy: ReflectiveStatements\n\nResponse: That is the most important point.\nA good person is not always your person.\nYou may have wanted connection before, but when it became real, your heart did not feel safe, easy, or naturally interested.\nPlease remember:\nYou do not need a âbig reasonâ to not like someone.\nSometimes the reason is simply:\nâHe is good, but I do not feel that way.â\nThat is valid.\nRight now ask yourself only this:\nWhen I talk to him, do I feel peacefulâ¦ or pressured?<EOS>"
+            },
+            {
+                "timestamp": "2026-03-22T13:00:00",
+                "participant_full_id": "2753-1-1-0000",
+                "user_text": "No, I am not feeling peaceful. He talks too much nonsense, and I think he is also trying to show off in front of me.",
+                "ai_text": "Then your mind is already telling you the truth.\nYou do not feel calm, respected, or naturally connected with him.\nThat is enough. You do not need to force liking someone just because he looks good on paper.\nYour real feeling is:\nâHe may be a good person, but I do not feel comfortable with his nature.â\nThat is a valid reason.\nPlease remember this:\nGood match â  good person only\nA match means:\nPeace\nComfort\nRespect\nNatural liking",
+                "context": "",
+                "strategy": "ReflectiveStatements",
+                "raw_physio": {
+                    "EDA": [
+                        0.02,
+                        0.02,
+                        0.02,
+                        0.02
+                    ],
+                    "PR": [
+                        94.0,
+                        87.0,
+                        81.0,
+                        88.0
+                    ],
+                    "SkinTemp": [
+                        34.24,
+                        34.29,
+                        34.28,
+                        34.26
+                    ],
+                    "ACCEL": [
+                        0.016,
+                        0.033,
+                        0.011,
+                        0.015
+                    ],
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": [
+                        87.0,
+                        63.0,
+                        37.0,
+                        79.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "ACCEL": "Accelerometer readings moved sharply and downward through the past 6 minutes, ending at 0.01 g.",
+                    "PR": "Across the past 6 minutes, pulse rate held rising, staying close to 88.0 bpm.",
+                    "SkinTemp": "Skin temperature showed a declining pattern across the past 6 minutes, with mildly fluctuating change, now 34.26 degC.",
+                    "EDA": "EDA decreasing slightly over the past 6 minutes, with highly fluctuating fluctuation, now at 0.02 uS.",
+                    "ACT_CLASS": "The participant stayed walking for the duration of the past 6 minutes."
+                },
+                "physio_summary_fusion": "Across the past 6 minutes, EDA and PR and SkinTemp and ACCEL shifted while the participant was awake, likely activity-related. Because both arousal and activity increased together, this pattern is more consistent with exertion than emotional stress.",
+                "stress_score": 0,
+                "stress_level": null,
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: No, I am not feeling peaceful. He talks too much nonsense, and I think he is also trying to show off in front of me.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: ReflectiveStatements\n\nResponse: Then your mind is already telling you the truth.\nYou do not feel calm, respected, or naturally connected with him.\nThat is enough. You do not need to force liking someone just because he looks good on paper.\nYour real feeling is:\nâHe may be a good person, but I do not feel comfortable with his nature.â\nThat is a valid reason.\nPlease remember this:\nGood match â  good person only\nA match means:\nPeace\nComfort\nRespect\nNatural liking<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: No, I am not feeling peaceful. He talks too much nonsense, and I think he is also trying to show off in front of me.\nPhysiological Signals: Across the past 6 minutes, EDA and PR and SkinTemp and ACCEL shifted while the participant was awake, likely activity-related. Because both arousal and activity increased together, this pattern is more consistent with exertion than emotional stress. Additionally, Accelerometer readings moved sharply and downward through the past 6 minutes, ending at 0.01 g. Simultaneously, Across the past 6 minutes, pulse rate held rising, staying close to 88.0 bpm. Notably, Skin temperature showed a declining pattern across the past 6 minutes, with mildly fluctuating change, now 34.26 degC. At the same time, EDA decreasing slightly over the past 6 minutes, with highly fluctuating fluctuation, now at 0.02 uS. The participant stayed walking for the duration of the past 6 minutes.\n\n### Response:\nStrategy: ReflectiveStatements\n\nResponse: Then your mind is already telling you the truth.\nYou do not feel calm, respected, or naturally connected with him.\nThat is enough. You do not need to force liking someone just because he looks good on paper.\nYour real feeling is:\nâHe may be a good person, but I do not feel comfortable with his nature.â\nThat is a valid reason.\nPlease remember this:\nGood match â  good person only\nA match means:\nPeace\nComfort\nRespect\nNatural liking<EOS>"
+            },
+            {
+                "timestamp": "2026-03-22T13:04:00",
+                "participant_full_id": "2753-1-1-0000",
+                "user_text": "Also one thing is running in my mind. When I say something is not okay for me, he says, âItâs okay.â How is he always okay with my opinion? Is that odd?",
+                "ai_text": "Not always a red flag, but yes â it can feel odd.\nSometimes people say âitâs okayâ too quickly to look overly agreeable, impress you, or avoid showing their real nature.\nA healthy person has understanding and their own genuine opinion. If he always adjusts too smoothly, your discomfort is valid.",
+                "context": "",
+                "strategy": "Clarification",
+                "raw_physio": {
+                    "EDA": [
+                        0.02,
+                        0.01,
+                        0.01,
+                        0.02
+                    ],
+                    "PR": [
+                        89.0,
+                        86.0,
+                        80.0,
+                        81.0
+                    ],
+                    "SkinTemp": [
+                        34.23,
+                        34.22,
+                        34.2,
+                        34.16
+                    ],
+                    "ACCEL": [
+                        0.016,
+                        0.023,
+                        0.025,
+                        0.009
+                    ],
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": [
+                        77.0,
+                        68.0,
+                        39.0,
+                        30.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "PR": "Over the past 6 minutes, heart rate remained easing near 81.0 beats per minute.",
+                    "ACCEL": "Movement levels drifted falling across the past 6 minutes to 0.01 g, without any notable peaks or valleys.",
+                    "SkinTemp": "Across the past 6 minutes, skin temperature held easing near 34.16 degC.",
+                    "EDA": "Over the past 6 minutes, electrodermal activity moved slightly in a falling direction, from 0.02 to 0.02 uS.",
+                    "ACT_CLASS": "Activity type moved from walking to generic across the past 6 minutes."
+                },
+                "physio_summary_fusion": "Over the past 6 minutes, EDA and PR and SkinTemp and ACCEL fell, with minimal walking and sedentary intensity noted, not clearly linked to physical activity. The relationship between EDA and PR and SkinTemp and ACCEL and movement was inconsistent over the past 6 minutes, making the source of change unclear.",
+                "stress_score": 0,
+                "stress_level": null,
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Also one thing is running in my mind. When I say something is not okay for me, he says, âItâs okay.â How is he always okay with my opinion? Is that odd?\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: Clarification\n\nResponse: Not always a red flag, but yes â it can feel odd.\nSometimes people say âitâs okayâ too quickly to look overly agreeable, impress you, or avoid showing their real nature.\nA healthy person has understanding and their own genuine opinion. If he always adjusts too smoothly, your discomfort is valid.<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Also one thing is running in my mind. When I say something is not okay for me, he says, âItâs okay.â How is he always okay with my opinion? Is that odd?\nPhysiological Signals: Over the past 6 minutes, EDA and PR and SkinTemp and ACCEL fell, with minimal walking and sedentary intensity noted, not clearly linked to physical activity. The relationship between EDA and PR and SkinTemp and ACCEL and movement was inconsistent over the past 6 minutes, making the source of change unclear. Also, Over the past 6 minutes, heart rate remained easing near 81.0 beats per minute. Additionally, Movement levels drifted falling across the past 6 minutes to 0.01 g, without any notable peaks or valleys. Also, Across the past 6 minutes, skin temperature held easing near 34.16 degC. Alongside this, Over the past 6 minutes, electrodermal activity moved slightly in a falling direction, from 0.02 to 0.02 uS. Alongside this, Activity type moved from walking to generic across the past 6 minutes.\n\n### Response:\nStrategy: Clarification\n\nResponse: Not always a red flag, but yes â it can feel odd.\nSometimes people say âitâs okayâ too quickly to look overly agreeable, impress you, or avoid showing their real nature.\nA healthy person has understanding and their own genuine opinion. If he always adjusts too smoothly, your discomfort is valid.<EOS>"
+            },
+            {
+                "timestamp": "2026-03-22T13:08:00",
+                "participant_full_id": "2753-1-1-0000",
+                "user_text": "Yes, he is always too smooth, and that makes me uncomfortable. Also, he says drinking and smoking are not good, and that he never did those things in his life. He told me his friends forced him, but he still did not do it. But when I said I have tried it and may want to try drinking in the future, he suddenly became too comfortable with it. That made me feel odd.",
+                "ai_text": "Yes â your discomfort makes sense.\nThis is exactly why your mind is not feeling safe with him.\nHe is saying one value first, but then changing too quickly to match you. That can feel inauthentic, people-pleasing, or performative.\nYour mind is noticing:\nHe may be trying too hard to impress you\nHe may not be showing his real self\nHe may be changing opinions too fast just to stay liked\nThat is why you feel odd.\nNot because you are overthinking everything â\nbut because his words and behavior are not feeling natural to you.\nYour real feeling is:\nâI do not feel I am seeing the real him.â\nAnd that is a very valid reason to step back emotionally.\nPlease remember:\nYou do not need to reject him because he is âbad.â\nYou can simply feel:\nâSomething feels off, and I do not feel natural comfort.â\nThat is enough.",
+                "context": "",
+                "strategy": "ReflectiveStatements",
+                "raw_physio": {
+                    "EDA": [
+                        0.02,
+                        0.02,
+                        0.02,
+                        0.02
+                    ],
+                    "PR": [
+                        82.0,
+                        82.0,
+                        79.0,
+                        80.0
+                    ],
+                    "SkinTemp": [
+                        34.12,
+                        34.06,
+                        34.02,
+                        33.99
+                    ],
+                    "ACCEL": [
+                        0.02,
+                        0.012,
+                        0.007,
+                        0.008
+                    ],
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": [
+                        54.0,
+                        39.0,
+                        19.0,
+                        16.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "PR": "Pulse readings moved sharply and dropping through the past 6 minutes, ending at 80.0 bpm.",
+                    "SkinTemp": "Surface temperature dropping sharply over the past 6 minutes, now 33.99 degC, without any notable peaks or valleys.",
+                    "ACCEL": "A decreasing movement pattern was observed over the past 6 minutes, mildly fluctuating, reaching 0.01 g.",
+                    "EDA": "The electrodermal signal was decreasing for the past 6 minutes, showing highly fluctuating behavior around 0.02 uS.",
+                    "ACT_CLASS": "Over the past 6 minutes, generic activity was sustained without interruption."
+                },
+                "physio_summary_fusion": "Over the past 6 minutes, considering MET levels near 0.95 and generic movement, EDA and PR and SkinTemp and ACCEL fell, not clearly linked to physical activity. Neither EDA and PR and SkinTemp and ACCEL nor movement showed a notable change, so no clear stress or activity signal is present here.",
+                "stress_score": 1,
+                "stress_level": null,
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Yes, he is always too smooth, and that makes me uncomfortable. Also, he says drinking and smoking are not good, and that he never did those things in his life. He told me his friends forced him, but he still did not do it. But when I said I have tried it and may want to try drinking in the future, he suddenly became too comfortable with it. That made me feel odd.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: ReflectiveStatements\n\nResponse: Yes â your discomfort makes sense.\nThis is exactly why your mind is not feeling safe with him.\nHe is saying one value first, but then changing too quickly to match you. That can feel inauthentic, people-pleasing, or performative.\nYour mind is noticing:\nHe may be trying too hard to impress you\nHe may not be showing his real self\nHe may be changing opinions too fast just to stay liked\nThat is why you feel odd.\nNot because you are overthinking everything â\nbut because his words and behavior are not feeling natural to you.\nYour real feeling is:\nâI do not feel I am seeing the real him.â\nAnd that is a very valid reason to step back emotionally.\nPlease remember:\nYou do not need to reject him because he is âbad.â\nYou can simply feel:\nâSomething feels off, and I do not feel natural comfort.â\nThat is enough.<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Yes, he is always too smooth, and that makes me uncomfortable. Also, he says drinking and smoking are not good, and that he never did those things in his life. He told me his friends forced him, but he still did not do it. But when I said I have tried it and may want to try drinking in the future, he suddenly became too comfortable with it. That made me feel odd.\nPhysiological Signals: Over the past 6 minutes, considering MET levels near 0.95 and generic movement, EDA and PR and SkinTemp and ACCEL fell, not clearly linked to physical activity. Neither EDA and PR and SkinTemp and ACCEL nor movement showed a notable change, so no clear stress or activity signal is present here. Further, Pulse readings moved sharply and dropping through the past 6 minutes, ending at 80.0 bpm. At the same time, Surface temperature dropping sharply over the past 6 minutes, now 33.99 degC, without any notable peaks or valleys. Meanwhile, A decreasing movement pattern was observed over the past 6 minutes, mildly fluctuating, reaching 0.01 g. At the same time, The electrodermal signal was decreasing for the past 6 minutes, showing highly fluctuating behavior around 0.02 uS. Further, Over the past 6 minutes, generic activity was sustained without interruption.\n\n### Response:\nStrategy: ReflectiveStatements\n\nResponse: Yes â your discomfort makes sense.\nThis is exactly why your mind is not feeling safe with him.\nHe is saying one value first, but then changing too quickly to match you. That can feel inauthentic, people-pleasing, or performative.\nYour mind is noticing:\nHe may be trying too hard to impress you\nHe may not be showing his real self\nHe may be changing opinions too fast just to stay liked\nThat is why you feel odd.\nNot because you are overthinking everything â\nbut because his words and behavior are not feeling natural to you.\nYour real feeling is:\nâI do not feel I am seeing the real him.â\nAnd that is a very valid reason to step back emotionally.\nPlease remember:\nYou do not need to reject him because he is âbad.â\nYou can simply feel:\nâSomething feels off, and I do not feel natural comfort.â\nThat is enough.<EOS>"
+            },
+            {
+                "timestamp": "2026-03-22T13:12:00",
+                "participant_full_id": "2753-1-1-0000",
+                "user_text": "I am confused about that. Sometimes I feel, âAm I not liking a good person?â Is it my problem that I am judging him?",
+                "ai_text": "No â noticing discomfort is not the same as wrongly judging someone.\nHe may be a good person, but you still may not feel safe, natural, or connected with him.\nYour rule is simple: good person does not always mean right person.\nRight now, do not decide âyes.â Stay slow and observe more.",
+                "context": "",
+                "strategy": "Clarification",
+                "raw_physio": {
+                    "EDA": [
+                        0.02,
+                        0.02,
+                        0.02,
+                        0.02
+                    ],
+                    "PR": [
+                        81.0,
+                        81.0,
+                        82.0,
+                        82.0
+                    ],
+                    "SkinTemp": [
+                        33.96,
+                        33.94,
+                        33.91,
+                        33.88
+                    ],
+                    "ACCEL": [
+                        0.013,
+                        0.015,
+                        0.015,
+                        0.022
+                    ],
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": [
+                        44.0,
+                        26.0,
+                        19.0,
+                        55.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "SkinTemp": "The temperature signal was falling for the past 6 minutes, mildly fluctuating, around 33.88 degC.",
+                    "ACCEL": "Accelerometer readings moved slightly and increasing through the past 6 minutes, ending at 0.02 g.",
+                    "EDA": "EDA held downward through the past 6 minutes, close to 0.02 uS.",
+                    "PR": "Across the past 6 minutes, pulse rate held dropping, staying close to 82.0 bpm.",
+                    "ACT_CLASS": "The participant stayed generic for the duration of the past 6 minutes."
+                },
+                "physio_summary_fusion": "During the past 6 minutes, physiological arousal (EDA and PR and SkinTemp and ACCEL) shifted; given generic movement and reclining/lying posture, this appears not clearly linked to physical activity. The relationship between EDA and PR and SkinTemp and ACCEL and movement was inconsistent over the past 6 minutes, making the source of change unclear.",
+                "stress_score": 0,
+                "stress_level": null,
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I am confused about that. Sometimes I feel, âAm I not liking a good person?â Is it my problem that I am judging him?\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: Clarification\n\nResponse: No â noticing discomfort is not the same as wrongly judging someone.\nHe may be a good person, but you still may not feel safe, natural, or connected with him.\nYour rule is simple: good person does not always mean right person.\nRight now, do not decide âyes.â Stay slow and observe more.<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I am confused about that. Sometimes I feel, âAm I not liking a good person?â Is it my problem that I am judging him?\nPhysiological Signals: During the past 6 minutes, physiological arousal (EDA and PR and SkinTemp and ACCEL) shifted; given generic movement and reclining/lying posture, this appears not clearly linked to physical activity. The relationship between EDA and PR and SkinTemp and ACCEL and movement was inconsistent over the past 6 minutes, making the source of change unclear. In parallel, The temperature signal was falling for the past 6 minutes, mildly fluctuating, around 33.88 degC. At the same time, Accelerometer readings moved slightly and increasing through the past 6 minutes, ending at 0.02 g. In parallel, EDA held downward through the past 6 minutes, close to 0.02 uS. Further, Across the past 6 minutes, pulse rate held dropping, staying close to 82.0 bpm. Further, The participant stayed generic for the duration of the past 6 minutes.\n\n### Response:\nStrategy: Clarification\n\nResponse: No â noticing discomfort is not the same as wrongly judging someone.\nHe may be a good person, but you still may not feel safe, natural, or connected with him.\nYour rule is simple: good person does not always mean right person.\nRight now, do not decide âyes.â Stay slow and observe more.<EOS>"
+            },
+            {
+                "timestamp": "2026-03-22T13:16:00",
+                "participant_full_id": "2753-1-1-0000",
+                "user_text": "I feel guilty also that he is so nice to me, but I am doing this, as I try to avoid him.",
+                "ai_text": "Feeling guilty is natural, but guilt does not mean you owe him your feelings.\nSomeone being nice does not mean you must force attachment, comfort, or a future.\nDo not avoid too much and do not fake too much â just stay polite, slow, and honest with yourself first.",
+                "context": "",
+                "strategy": "EmotionalValidation",
+                "raw_physio": {
+                    "EDA": [
+                        0.03,
+                        0.03,
+                        0.02,
+                        0.02
+                    ],
+                    "PR": [
+                        85.0,
+                        89.0,
+                        87.0,
+                        85.0
+                    ],
+                    "SkinTemp": [
+                        33.85,
+                        33.84,
+                        33.86,
+                        33.88
+                    ],
+                    "ACCEL": [
+                        0.01,
+                        0.02,
+                        0.025,
+                        0.018
+                    ],
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": [
+                        32.0,
+                        88.0,
+                        93.0,
+                        73.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "PR": "Over the past 6 minutes, heart rate stayed elevating around 85.0 beats per minute.",
+                    "SkinTemp": "Skin temperature moved moderately in a falling direction over the past 6 minutes, from 33.96 to 33.88 degC.",
+                    "ACCEL": "Across the past 6 minutes, movement levels held increasing, near 0.02 g.",
+                    "EDA": "EDA levels moved slightly and easing through the past 6 minutes, ending at 0.02 uS.",
+                    "ACT_CLASS": "During the past 6 minutes, movement classification changed from generic to walking."
+                },
+                "physio_summary_fusion": "Over the past 6 minutes, step count suggests minimal walking; EDA and PR and SkinTemp and ACCEL shifted, a response that is likely activity-related. EDA and PR and SkinTemp and ACCEL climbed while movement also increased, suggesting the change may be confounded by physical activity.",
+                "stress_score": 0,
+                "stress_level": null,
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I feel guilty also that he is so nice to me, but I am doing this, as I try to avoid him.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: EmotionalValidation\n\nResponse: Feeling guilty is natural, but guilt does not mean you owe him your feelings.\nSomeone being nice does not mean you must force attachment, comfort, or a future.\nDo not avoid too much and do not fake too much â just stay polite, slow, and honest with yourself first.<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I feel guilty also that he is so nice to me, but I am doing this, as I try to avoid him.\nPhysiological Signals: Over the past 6 minutes, step count suggests minimal walking; EDA and PR and SkinTemp and ACCEL shifted, a response that is likely activity-related. EDA and PR and SkinTemp and ACCEL climbed while movement also increased, suggesting the change may be confounded by physical activity. At the same time, Over the past 6 minutes, heart rate stayed elevating around 85.0 beats per minute. On top of that, Skin temperature moved moderately in a falling direction over the past 6 minutes, from 33.96 to 33.88 degC. On top of that, Across the past 6 minutes, movement levels held increasing, near 0.02 g. EDA levels moved slightly and easing through the past 6 minutes, ending at 0.02 uS. Additionally, During the past 6 minutes, movement classification changed from generic to walking.\n\n### Response:\nStrategy: EmotionalValidation\n\nResponse: Feeling guilty is natural, but guilt does not mean you owe him your feelings.\nSomeone being nice does not mean you must force attachment, comfort, or a future.\nDo not avoid too much and do not fake too much â just stay polite, slow, and honest with yourself first.<EOS>"
+            },
+            {
+                "timestamp": "2026-03-22T13:20:00",
+                "participant_full_id": "2753-1-1-0000",
+                "user_text": "He is giving time and wants to talk to build the connection. I am busy, but if I try, I can give him time. I do not do it. Am I doing the right thing?",
+                "ai_text": "Yes â your lack of interest is also an answer.\nIf you truly wanted this, even in a busy life, your mind would make some natural space.\nDo not force extra time out of guilt. Give only small, honest, limited time while observing yourself â not because he is nice, but because you want clarity, not pressure.",
+                "context": "",
+                "strategy": "ReflectiveStatements",
+                "raw_physio": {
+                    "EDA": [
+                        0.02,
+                        0.02,
+                        0.02,
+                        0.03
+                    ],
+                    "PR": [
+                        90.0,
+                        82.0,
+                        82.0,
+                        81.0
+                    ],
+                    "SkinTemp": [
+                        33.89,
+                        33.91,
+                        33.91,
+                        33.89
+                    ],
+                    "ACCEL": [
+                        0.038,
+                        0.02,
+                        0.02,
+                        0.034
+                    ],
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": [
+                        94.0,
+                        57.0,
+                        84.0,
+                        59.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "ACCEL": "Over the past 6 minutes, physical motion remained increasing, staying close to 0.03 g.",
+                    "PR": "Pulse rate declining moderately over the past 6 minutes, moving from 85.0 to 81.0 bpm.",
+                    "SkinTemp": "A growing skin temperature pattern was observed over the past 6 minutes, smooth, reaching 33.89 degC.",
+                    "EDA": "Electrodermal readings downward slightly across the past 6 minutes to 0.03 uS, showing a single sustained rise with no reversal.",
+                    "ACT_CLASS": "A transition from walking to generic occurred within the past 6 minutes."
+                },
+                "physio_summary_fusion": "Across the past 6 minutes, EDA and PR and SkinTemp and ACCEL showed a shifted pattern, occurring while the participant was generic and positioned reclining/lying, not clearly linked to physical activity. The relationship between EDA and PR and SkinTemp and ACCEL and movement was inconsistent over the past 6 minutes, making the source of change unclear.",
+                "stress_score": 0,
+                "stress_level": null,
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: He is giving time and wants to talk to build the connection. I am busy, but if I try, I can give him time. I do not do it. Am I doing the right thing?\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: ReflectiveStatements\n\nResponse: Yes â your lack of interest is also an answer.\nIf you truly wanted this, even in a busy life, your mind would make some natural space.\nDo not force extra time out of guilt. Give only small, honest, limited time while observing yourself â not because he is nice, but because you want clarity, not pressure.<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: He is giving time and wants to talk to build the connection. I am busy, but if I try, I can give him time. I do not do it. Am I doing the right thing?\nPhysiological Signals: Across the past 6 minutes, EDA and PR and SkinTemp and ACCEL showed a shifted pattern, occurring while the participant was generic and positioned reclining/lying, not clearly linked to physical activity. The relationship between EDA and PR and SkinTemp and ACCEL and movement was inconsistent over the past 6 minutes, making the source of change unclear. In parallel, Over the past 6 minutes, physical motion remained increasing, staying close to 0.03 g. Meanwhile, Pulse rate declining moderately over the past 6 minutes, moving from 85.0 to 81.0 bpm. Further, A growing skin temperature pattern was observed over the past 6 minutes, smooth, reaching 33.89 degC. At the same time, Electrodermal readings downward slightly across the past 6 minutes to 0.03 uS, showing a single sustained rise with no reversal. A transition from walking to generic occurred within the past 6 minutes.\n\n### Response:\nStrategy: ReflectiveStatements\n\nResponse: Yes â your lack of interest is also an answer.\nIf you truly wanted this, even in a busy life, your mind would make some natural space.\nDo not force extra time out of guilt. Give only small, honest, limited time while observing yourself â not because he is nice, but because you want clarity, not pressure.<EOS>"
+            },
+            {
+                "timestamp": "2026-03-22T13:24:00",
+                "participant_full_id": "2753-1-1-0000",
+                "user_text": "What do you think? Should I give some time to this person for a few more days, and then make a decision?",
+                "ai_text": "Yes â but only a little, not too much.\nGive it 5â7 more days max, with short conversations, not long emotional investment.\nYour goal is clarity, not forcing feelings.\nDuring these days, notice only 3 things:\nDo I feel peaceful or drained after talking?\nDoes he feel real or too performative?\nAm I talking because I want to or because I feel guilty?\nVery important:\nIf after 5â7 days you still feel uneasy, pressured, or uninterested, then that is your answer.\nDo not continue just because he is nice.\nNice is good. Comfort is necessary.",
+                "context": "",
+                "strategy": "StressManagement",
+                "raw_physio": {
+                    "EDA": [
+                        0.03,
+                        0.03,
+                        0.03,
+                        0.03
+                    ],
+                    "PR": [
+                        82.0,
+                        82.0,
+                        83.0,
+                        82.0
+                    ],
+                    "SkinTemp": [
+                        33.85,
+                        33.81,
+                        33.77,
+                        33.74
+                    ],
+                    "ACCEL": [
+                        0.026,
+                        0.008,
+                        0.007,
+                        0.03
+                    ],
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": [
+                        39.0,
+                        33.0,
+                        17.0,
+                        39.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "EDA": "Electrodermal activity remained growing across the past 6 minutes, staying near 0.03 uS.",
+                    "PR": "Over the past 6 minutes, heart rate stayed falling around 82.0 beats per minute.",
+                    "SkinTemp": "Skin temperature showed a downward pattern across the past 6 minutes, with mildly fluctuating change, now 33.74 degC.",
+                    "ACCEL": "The motion signal was dropping for the past 6 minutes, highly fluctuating, around 0.03 g.",
+                    "ACT_CLASS": "Activity type moved from generic to walking across the past 6 minutes."
+                },
+                "physio_summary_fusion": "During the past 6 minutes, EDA and PR and SkinTemp and ACCEL shifted; movement counts and MET (~1.42) suggest this is likely activity-related. EDA and PR and SkinTemp and ACCEL rose alongside increased movement, so the change is likely activity-related rather than a pure stress response.",
+                "stress_score": 2,
+                "stress_level": "Mild stress",
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: What do you think? Should I give some time to this person for a few more days, and then make a decision?\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: StressManagement\n\nResponse: Yes â but only a little, not too much.\nGive it 5â7 more days max, with short conversations, not long emotional investment.\nYour goal is clarity, not forcing feelings.\nDuring these days, notice only 3 things:\nDo I feel peaceful or drained after talking?\nDoes he feel real or too performative?\nAm I talking because I want to or because I feel guilty?\nVery important:\nIf after 5â7 days you still feel uneasy, pressured, or uninterested, then that is your answer.\nDo not continue just because he is nice.\nNice is good. Comfort is necessary.<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: What do you think? Should I give some time to this person for a few more days, and then make a decision?\nPhysiological Signals: During the past 6 minutes, EDA and PR and SkinTemp and ACCEL shifted; movement counts and MET (~1.42) suggest this is likely activity-related. EDA and PR and SkinTemp and ACCEL rose alongside increased movement, so the change is likely activity-related rather than a pure stress response. Electrodermal activity remained growing across the past 6 minutes, staying near 0.03 uS. Also, Over the past 6 minutes, heart rate stayed falling around 82.0 beats per minute. Skin temperature showed a downward pattern across the past 6 minutes, with mildly fluctuating change, now 33.74 degC. In parallel, The motion signal was dropping for the past 6 minutes, highly fluctuating, around 0.03 g. Alongside this, Activity type moved from generic to walking across the past 6 minutes. Further, Movement count of 39.0 contributes to a combined stress score of 2 over the past 6 minutes, consistent with Mild stress.\n\n### Response:\nStrategy: StressManagement\n\nResponse: Yes â but only a little, not too much.\nGive it 5â7 more days max, with short conversations, not long emotional investment.\nYour goal is clarity, not forcing feelings.\nDuring these days, notice only 3 things:\nDo I feel peaceful or drained after talking?\nDoes he feel real or too performative?\nAm I talking because I want to or because I feel guilty?\nVery important:\nIf after 5â7 days you still feel uneasy, pressured, or uninterested, then that is your answer.\nDo not continue just because he is nice.\nNice is good. Comfort is necessary.<EOS>"
+            },
+            {
+                "timestamp": "2026-03-22T13:28:00",
+                "participant_full_id": "2753-1-1-0000",
+                "user_text": "Thank you for your advice. I will try to follow it.",
+                "ai_text": "You are welcome.\nAnd please remember â go slow, not guilty.\nYou do not need to force feelings. You only need to notice your truth calmly.",
+                "context": "",
+                "strategy": "EmotionalValidation",
+                "raw_physio": {
+                    "EDA": null,
+                    "PR": null,
+                    "SkinTemp": null,
+                    "ACCEL": null,
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": null
+                },
+                "physio_summary_per_channel": {
+                    "SkinTemp": "Across the past 6 minutes, skin temperature held dropping near 33.74 degC.",
+                    "ACCEL": "During the past 6 minutes, movement registered a upward shift to 0.03 g, with a small valley followed by recovery.",
+                    "EDA": "Across the past 6 minutes, EDA trended falling from 0.03 to 0.03 uS.",
+                    "PR": "Over the past 6 minutes, cardiac pace declining slightly, now near 82.0 bpm.",
+                    "ACT_CLASS": "Movement classification transitioned to ['walking', nan, nan] from walking over the past 6 minutes."
+                },
+                "physio_summary_fusion": "During the past 6 minutes, EDA and PR and SkinTemp and ACCEL shifted while activity intensity stayed ['MPA', nan, nan], not clearly linked to physical activity. Neither EDA and PR and SkinTemp and ACCEL nor movement showed a notable change, so no clear stress or activity signal is present here.",
+                "stress_score": 0,
+                "stress_level": null,
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Thank you for your advice. I will try to follow it.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: EmotionalValidation\n\nResponse: You are welcome.\nAnd please remember â go slow, not guilty.\nYou do not need to force feelings. You only need to notice your truth calmly.<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Thank you for your advice. I will try to follow it.\nPhysiological Signals: During the past 6 minutes, EDA and PR and SkinTemp and ACCEL shifted while activity intensity stayed ['MPA', nan, nan], not clearly linked to physical activity. Neither EDA and PR and SkinTemp and ACCEL nor movement showed a notable change, so no clear stress or activity signal is present here. At the same time, Across the past 6 minutes, skin temperature held dropping near 33.74 degC. Additionally, During the past 6 minutes, movement registered a upward shift to 0.03 g, with a small valley followed by recovery. At the same time, Across the past 6 minutes, EDA trended falling from 0.03 to 0.03 uS. Meanwhile, Over the past 6 minutes, cardiac pace declining slightly, now near 82.0 bpm. Alongside this, Movement classification transitioned to ['walking', nan, nan] from walking over the past 6 minutes.\n\n### Response:\nStrategy: EmotionalValidation\n\nResponse: You are welcome.\nAnd please remember â go slow, not guilty.\nYou do not need to force feelings. You only need to notice your truth calmly.<EOS>"
+            }
+        ]
+    }
+]

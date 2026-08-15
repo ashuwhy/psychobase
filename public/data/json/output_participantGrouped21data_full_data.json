@@ -1,0 +1,343 @@
+[
+    {
+        "session_id": "2753-1-1",
+        "person_id": "2753",
+        "turns": [
+            {
+                "timestamp": "2026-06-25T13:01:00",
+                "participant_full_id": "2753-1-1-0006",
+                "user_text": "Can you recommend movies for someone who just got their first academic backlog in the sixth semester and wants to shake off distraction habits? I'm a big sci-fi, Marvel, and DC fan.",
+                "ai_text": "A few that tend to land hard for exactly that situation: Whiplash for discipline, The Martian for methodical problem-solving, and Interstellar since you're already into sci-fi. Want more, or is that a good starting list for tonight?",
+                "context": "",
+                "strategy": "Motivation",
+                "raw_physio": {
+                    "EDA": [
+                        0.08,
+                        0.08,
+                        0.08,
+                        0.08,
+                        0.09
+                    ],
+                    "PR": [
+                        105.0,
+                        99.0,
+                        97.0,
+                        91.0,
+                        98.0
+                    ],
+                    "SkinTemp": [
+                        33.99,
+                        34.11,
+                        34.18,
+                        34.27,
+                        34.36
+                    ],
+                    "ACCEL": [
+                        0.131,
+                        0.012,
+                        0.044,
+                        0.006,
+                        0.004
+                    ],
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": [
+                        87.0,
+                        16.0,
+                        30.0,
+                        11.0,
+                        5.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "ACCEL": "The motion signal was dropping for the first minute, highly fluctuating, around 0.0 g.",
+                    "SkinTemp": "Skin temperature elevating sharply over the first minute, moving from 33.99 to 34.36 degC.",
+                    "EDA": "EDA held growing through the first minute, close to 0.09 uS.",
+                    "PR": "Beats per minute easing sharply over the first minute, now 98.0, with a dip that partially resolved.",
+                    "ACT_CLASS": "Throughout the first minute, the recorded activity class stayed generic."
+                },
+                "physio_summary_fusion": "Across the first minute, EDA and PR and SkinTemp and ACCEL shifted while the participant was awake, not explained by movement. EDA and PR and SkinTemp and ACCEL increased even as the body stayed still, a pattern more consistent with emotional than physical arousal.",
+                "stress_score": 5,
+                "stress_level": "Moderate stress",
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Can you recommend movies for someone who just got their first academic backlog in the sixth semester and wants to shake off distraction habits? I'm a big sci-fi, Marvel, and DC fan.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: Motivation\n\nResponse: A few that tend to land hard for exactly that situation: Whiplash for discipline, The Martian for methodical problem-solving, and Interstellar since you're already into sci-fi. Want more, or is that a good starting list for tonight?<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Can you recommend movies for someone who just got their first academic backlog in the sixth semester and wants to shake off distraction habits? I'm a big sci-fi, Marvel, and DC fan.\nPhysiological Signals: Across the first minute, EDA and PR and SkinTemp and ACCEL shifted while the participant was awake, not explained by movement. EDA and PR and SkinTemp and ACCEL increased even as the body stayed still, a pattern more consistent with emotional than physical arousal. At the same time, The motion signal was dropping for the first minute, highly fluctuating, around 0.0 g. Skin temperature elevating sharply over the first minute, moving from 33.99 to 34.36 degC. EDA held growing through the first minute, close to 0.09 uS. At the same time, Beats per minute easing sharply over the first minute, now 98.0, with a dip that partially resolved. Simultaneously, Throughout the first minute, the recorded activity class stayed generic. Meanwhile, Over the first minute, with activity count at 5.0, the composite score reaches 5, classified as Moderate stress.\n\n### Response:\nStrategy: Motivation\n\nResponse: A few that tend to land hard for exactly that situation: Whiplash for discipline, The Martian for methodical problem-solving, and Interstellar since you're already into sci-fi. Want more, or is that a good starting list for tonight?<EOS>"
+            },
+            {
+                "timestamp": "2026-06-25T13:06:00",
+                "participant_full_id": "2753-1-1-0006",
+                "user_text": "Animated movies work too, not just live-action.",
+                "ai_text": "Good call, some hit just as hard. WALL-E is oddly relevant if screens have been the main distraction. Spirited Away and A Silent Voice are both about rebuilding after things go wrong. Want a couple more in that direction?",
+                "context": "",
+                "strategy": "Motivation",
+                "raw_physio": {
+                    "EDA": [
+                        0.09,
+                        0.09,
+                        0.09,
+                        0.09,
+                        0.09
+                    ],
+                    "PR": [
+                        98.0,
+                        97.0,
+                        97.0,
+                        97.0,
+                        97.0
+                    ],
+                    "SkinTemp": [
+                        34.43,
+                        34.45,
+                        34.47,
+                        34.5,
+                        34.55
+                    ],
+                    "ACCEL": [
+                        0.026,
+                        0.009,
+                        0.006,
+                        0.002,
+                        0.004
+                    ],
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": [
+                        19.0,
+                        19.0,
+                        14.0,
+                        0.0,
+                        11.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "ACCEL": "Body movement moved sharply in a falling direction over the past 5 minutes, from 0.13 to 0.0 g.",
+                    "SkinTemp": "The temperature signal was elevating for the past 5 minutes, highly fluctuating, around 34.55 degC.",
+                    "EDA": "During the past 5 minutes, EDA registered a elevating shift to 0.09 uS, with showing a single sustained rise with no reversal.",
+                    "PR": "Pulse rate downward sharply over the past 5 minutes, moving from 105.0 to 97.0 bpm.",
+                    "ACT_CLASS": "The activity label changed from generic to still within the past 5 minutes."
+                },
+                "physio_summary_fusion": "Across the past 5 minutes, wear-quality was reliable; within that context, EDA and PR and SkinTemp and ACCEL shifted, likely activity-related. EDA and PR and SkinTemp and ACCEL rose in step with heightened motion, indicating the signal is at least partly explained by movement rather than stress alone.",
+                "stress_score": 5,
+                "stress_level": "Moderate stress",
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Animated movies work too, not just live-action.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: Motivation\n\nResponse: Good call, some hit just as hard. WALL-E is oddly relevant if screens have been the main distraction. Spirited Away and A Silent Voice are both about rebuilding after things go wrong. Want a couple more in that direction?<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Animated movies work too, not just live-action.\nPhysiological Signals: Across the past 5 minutes, wear-quality was reliable; within that context, EDA and PR and SkinTemp and ACCEL shifted, likely activity-related. EDA and PR and SkinTemp and ACCEL rose in step with heightened motion, indicating the signal is at least partly explained by movement rather than stress alone. Simultaneously, Body movement moved sharply in a falling direction over the past 5 minutes, from 0.13 to 0.0 g. Alongside this, The temperature signal was elevating for the past 5 minutes, highly fluctuating, around 34.55 degC. Further, During the past 5 minutes, EDA registered a elevating shift to 0.09 uS, with showing a single sustained rise with no reversal. Notably, Pulse rate downward sharply over the past 5 minutes, moving from 105.0 to 97.0 bpm. On top of that, The activity label changed from generic to still within the past 5 minutes. Further, Movement count of 11.0 contributes to a combined stress score of 5 over the past 5 minutes, consistent with Moderate stress.\n\n### Response:\nStrategy: Motivation\n\nResponse: Good call, some hit just as hard. WALL-E is oddly relevant if screens have been the main distraction. Spirited Away and A Silent Voice are both about rebuilding after things go wrong. Want a couple more in that direction?<EOS>"
+            },
+            {
+                "timestamp": "2026-06-25T13:11:00",
+                "participant_full_id": "2753-1-1-0006",
+                "user_text": "What about Batman movies?",
+                "ai_text": "Since you're already into DCâBatman Begins fits your moment best, it's literally about someone at rock bottom rebuilding from scratch. The Dark Knight is worth a rewatch for the 'keep going even when things are burning' energy. Want the rest of the ranking too?",
+                "context": "",
+                "strategy": "Strength-Based Reflection",
+                "raw_physio": {
+                    "EDA": [
+                        0.09,
+                        0.09,
+                        0.09,
+                        0.09,
+                        0.09,
+                        0.09
+                    ],
+                    "PR": [
+                        101.0,
+                        99.0,
+                        93.0,
+                        92.0,
+                        97.0,
+                        103.0
+                    ],
+                    "SkinTemp": [
+                        34.57,
+                        34.59,
+                        34.6,
+                        34.59,
+                        34.58,
+                        34.57
+                    ],
+                    "ACCEL": [
+                        0.003,
+                        0.035,
+                        0.003,
+                        0.002,
+                        0.03,
+                        0.014
+                    ],
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": [
+                        3.0,
+                        24.0,
+                        4.0,
+                        0.0,
+                        20.0,
+                        12.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "PR": "Across the past 6 minutes, pulse rate held elevating, staying close to 103.0 bpm.",
+                    "SkinTemp": "Temperature readings moved moderately and upward through the past 6 minutes, ending at 34.57 degC.",
+                    "ACCEL": "Movement levels drifted easing across the past 6 minutes to 0.01 g, without any notable peaks or valleys.",
+                    "EDA": "Across the past 6 minutes, electrodermal activity showed a easing pattern, settling around 0.09 uS.",
+                    "ACT_CLASS": "Over the past 6 minutes, still activity was sustained without interruption."
+                },
+                "physio_summary_fusion": "During the past 6 minutes, EDA and PR and SkinTemp and ACCEL shifted while activity intensity stayed sedentary, likely activity-related. The rise in EDA and PR and SkinTemp and ACCEL coincided with elevated ACT_COUNT, making it difficult to separate physical exertion from emotional stress.",
+                "stress_score": 3,
+                "stress_level": "Mild stress",
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: What about Batman movies?\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: Strength-Based Reflection\n\nResponse: Since you're already into DCâBatman Begins fits your moment best, it's literally about someone at rock bottom rebuilding from scratch. The Dark Knight is worth a rewatch for the 'keep going even when things are burning' energy. Want the rest of the ranking too?<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: What about Batman movies?\nPhysiological Signals: During the past 6 minutes, EDA and PR and SkinTemp and ACCEL shifted while activity intensity stayed sedentary, likely activity-related. The rise in EDA and PR and SkinTemp and ACCEL coincided with elevated ACT_COUNT, making it difficult to separate physical exertion from emotional stress. Further, Across the past 6 minutes, pulse rate held elevating, staying close to 103.0 bpm. In parallel, Temperature readings moved moderately and upward through the past 6 minutes, ending at 34.57 degC. Also, Movement levels drifted easing across the past 6 minutes to 0.01 g, without any notable peaks or valleys. Across the past 6 minutes, electrodermal activity showed a easing pattern, settling around 0.09 uS. Simultaneously, Over the past 6 minutes, still activity was sustained without interruption. In parallel, Combining the signals above with an activity count of 12.0, the resulting score over the past 6 minutes is 3 - Mild stress.\n\n### Response:\nStrategy: Strength-Based Reflection\n\nResponse: Since you're already into DCâBatman Begins fits your moment best, it's literally about someone at rock bottom rebuilding from scratch. The Dark Knight is worth a rewatch for the 'keep going even when things are burning' energy. Want the rest of the ranking too?<EOS>"
+            },
+            {
+                "timestamp": "2026-06-25T13:17:00",
+                "participant_full_id": "2753-1-1-0006",
+                "user_text": "Just tell me some good movies, whatever you think.",
+                "ai_text": "Fairâgive me a sense of what you're in the mood for and I'll narrow it down fast instead of listing everything again.",
+                "context": "",
+                "strategy": "Clarification",
+                "raw_physio": {
+                    "EDA": [
+                        0.09,
+                        0.09,
+                        0.1,
+                        0.09,
+                        0.09
+                    ],
+                    "PR": [
+                        105.0,
+                        91.0,
+                        100.0,
+                        93.0,
+                        92.0
+                    ],
+                    "SkinTemp": [
+                        34.55,
+                        34.54,
+                        34.54,
+                        34.49,
+                        34.48
+                    ],
+                    "ACCEL": [
+                        0.036,
+                        0.02,
+                        0.039,
+                        0.001,
+                        0.003
+                    ],
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": [
+                        38.0,
+                        17.0,
+                        11.0,
+                        0.0,
+                        8.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "PR": "Across the past 6 minutes, heart rate trended declining from 101.0 to 92.0 bpm.",
+                    "SkinTemp": "Skin temperature drifted declining across the past 6 minutes to 34.48 degC, without any notable peaks or valleys.",
+                    "EDA": "Arousal-linked skin conductance dropping slightly across the past 6 minutes, now 0.09 uS.",
+                    "ACCEL": "Over the past 6 minutes, physical motion remained easing, staying close to 0.0 g.",
+                    "ACT_CLASS": "For the past 6 minutes, the participant's activity did not shift from still."
+                },
+                "physio_summary_fusion": "Across the past 6 minutes, taking reclining/lying posture and sedentary intensity into account, EDA and PR and SkinTemp and ACCEL fell, not clearly linked to physical activity. The relationship between EDA and PR and SkinTemp and ACCEL and movement was inconsistent over the past 6 minutes, making the source of change unclear.",
+                "stress_score": 3,
+                "stress_level": "Mild stress",
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Just tell me some good movies, whatever you think.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: Clarification\n\nResponse: Fairâgive me a sense of what you're in the mood for and I'll narrow it down fast instead of listing everything again.<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Just tell me some good movies, whatever you think.\nPhysiological Signals: Across the past 6 minutes, taking reclining/lying posture and sedentary intensity into account, EDA and PR and SkinTemp and ACCEL fell, not clearly linked to physical activity. The relationship between EDA and PR and SkinTemp and ACCEL and movement was inconsistent over the past 6 minutes, making the source of change unclear. Further, Across the past 6 minutes, heart rate trended declining from 101.0 to 92.0 bpm. Additionally, Skin temperature drifted declining across the past 6 minutes to 34.48 degC, without any notable peaks or valleys. Arousal-linked skin conductance dropping slightly across the past 6 minutes, now 0.09 uS. Simultaneously, Over the past 6 minutes, physical motion remained easing, staying close to 0.0 g. Simultaneously, For the past 6 minutes, the participant's activity did not shift from still. In parallel, The stress score for the past 6 minutes is 3 (activity count: 8.0), pointing to Mild stress.\n\n### Response:\nStrategy: Clarification\n\nResponse: Fairâgive me a sense of what you're in the mood for and I'll narrow it down fast instead of listing everything again.<EOS>"
+            },
+            {
+                "timestamp": "2026-06-25T13:22:00",
+                "participant_full_id": "2753-1-1-0006",
+                "user_text": "I loved Tony Stark's character a lotâit's actually part of why I chose engineering, I used to imagine becoming him in real life. But here I am, feeling like I've wasted three years.",
+                "ai_text": "That's a real thing to sit withâloving an idea enough to shape a career choice around it, then feeling far from it. Three years feels heavy, but it doesn't erase the reason you started. Tony's arc was never about talent, it was about deciding to build something from wherever he actually wasâwhich is available to you starting today, not just in the movie.",
+                "context": "",
+                "strategy": "Hope Instillation",
+                "raw_physio": {
+                    "EDA": [
+                        0.09,
+                        0.1,
+                        0.1,
+                        0.1,
+                        0.1,
+                        0.09
+                    ],
+                    "PR": [
+                        90.0,
+                        88.0,
+                        89.0,
+                        94.0,
+                        96.0,
+                        94.0
+                    ],
+                    "SkinTemp": [
+                        34.5,
+                        34.54,
+                        34.56,
+                        34.58,
+                        34.57,
+                        34.54
+                    ],
+                    "ACCEL": [
+                        0.005,
+                        0.007,
+                        0.007,
+                        0.045,
+                        0.017,
+                        0.003
+                    ],
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": [
+                        13.0,
+                        15.0,
+                        18.0,
+                        47.0,
+                        18.0,
+                        6.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "PR": "Pulse rate downward sharply across the past 6 minutes, showing highly fluctuating activity, now 94.0 bpm.",
+                    "ACCEL": "Overall movement (accelerometer) decreasing moderately over the past 6 minutes, moving from 0.04 to 0.0 g.",
+                    "SkinTemp": "Across the past 6 minutes, skin temperature held easing near 34.54 degC.",
+                    "EDA": "Across the past 6 minutes, EDA trended declining from 0.09 to 0.09 uS.",
+                    "ACT_CLASS": "Activity level held steady at still across the past 6 minutes."
+                },
+                "physio_summary_fusion": "Over the past 6 minutes, EDA and PR and SkinTemp and ACCEL fell against a backdrop of still activity and some walking activity, not clearly linked to physical activity. Neither EDA and PR and SkinTemp and ACCEL nor movement showed a notable change, so no clear stress or activity signal is present here.",
+                "stress_score": 3,
+                "stress_level": "Mild stress",
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I loved Tony Stark's character a lotâit's actually part of why I chose engineering, I used to imagine becoming him in real life. But here I am, feeling like I've wasted three years.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: Hope Instillation\n\nResponse: That's a real thing to sit withâloving an idea enough to shape a career choice around it, then feeling far from it. Three years feels heavy, but it doesn't erase the reason you started. Tony's arc was never about talent, it was about deciding to build something from wherever he actually wasâwhich is available to you starting today, not just in the movie.<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I loved Tony Stark's character a lotâit's actually part of why I chose engineering, I used to imagine becoming him in real life. But here I am, feeling like I've wasted three years.\nPhysiological Signals: Over the past 6 minutes, EDA and PR and SkinTemp and ACCEL fell against a backdrop of still activity and some walking activity, not clearly linked to physical activity. Neither EDA and PR and SkinTemp and ACCEL nor movement showed a notable change, so no clear stress or activity signal is present here. Additionally, Pulse rate downward sharply across the past 6 minutes, showing highly fluctuating activity, now 94.0 bpm. Overall movement (accelerometer) decreasing moderately over the past 6 minutes, moving from 0.04 to 0.0 g. Further, Across the past 6 minutes, skin temperature held easing near 34.54 degC. In parallel, Across the past 6 minutes, EDA trended declining from 0.09 to 0.09 uS. On top of that, Activity level held steady at still across the past 6 minutes. Additionally, Combining the signals above with an activity count of 6.0, the resulting score over the past 6 minutes is 3 - Mild stress.\n\n### Response:\nStrategy: Hope Instillation\n\nResponse: That's a real thing to sit withâloving an idea enough to shape a career choice around it, then feeling far from it. Three years feels heavy, but it doesn't erase the reason you started. Tony's arc was never about talent, it was about deciding to build something from wherever he actually wasâwhich is available to you starting today, not just in the movie.<EOS>"
+            },
+            {
+                "timestamp": "2026-06-25T13:28:00",
+                "participant_full_id": "2753-1-1-0006",
+                "user_text": "Could you tell me movies with a similar energy to that?",
+                "ai_text": "The Social Network has that same brilliant-but-messy builder energy. The Martian is a quieter versionâpure focus under pressure. Good Will Hunting is worth watching too, since it's about talent paired with self-sabotage, which might feel uncomfortably familiar in a useful way.",
+                "context": "",
+                "strategy": "Encouragement",
+                "raw_physio": {
+                    "EDA": 0.09,
+                    "PR": 88.0,
+                    "SkinTemp": 34.52,
+                    "ACCEL": 0.003,
+                    "PRV": null,
+                    "RESP": 22.0,
+                    "ACT_COUNT": 4.0
+                },
+                "physio_summary_per_channel": {
+                    "PR": "Over the past 6 minutes, pulse rate held near a constant value (88.0 bpm) from a single aggregated point.",
+                    "SkinTemp": "Skin temperature held at a similar level (34.52 degC) across the past 6 minutes, based on limited resolution data.",
+                    "ACCEL": "Motion levels stayed close to 0.0 g through the past 6 minutes, though only a coarse reading was available.",
+                    "EDA": "Electrodermal activity remained at a similar level (0.09 uS) across the past 6 minutes, based on limited resolution data.",
+                    "ACT_CLASS": "For the past 6 minutes, the participant's activity did not shift from still.",
+                    "RESP": "Insufficient data to determine a respiratory rate trend over the past 6 minutes."
+                },
+                "physio_summary_fusion": "Over the past 6 minutes, physiological data held near constant values sourced from aggregated readings, appearing not clearly linked to physical activity.",
+                "stress_score": 2,
+                "stress_level": "Mild stress",
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Could you tell me movies with a similar energy to that?\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: Encouragement\n\nResponse: The Social Network has that same brilliant-but-messy builder energy. The Martian is a quieter versionâpure focus under pressure. Good Will Hunting is worth watching too, since it's about talent paired with self-sabotage, which might feel uncomfortably familiar in a useful way.<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Could you tell me movies with a similar energy to that?\nPhysiological Signals: Over the past 6 minutes, physiological data held near constant values sourced from aggregated readings, appearing not clearly linked to physical activity. Meanwhile, Over the past 6 minutes, pulse rate held near a constant value (88.0 bpm) from a single aggregated point. On top of that, Skin temperature held at a similar level (34.52 degC) across the past 6 minutes, based on limited resolution data. Also, Motion levels stayed close to 0.0 g through the past 6 minutes, though only a coarse reading was available. Also, Electrodermal activity remained at a similar level (0.09 uS) across the past 6 minutes, based on limited resolution data. Simultaneously, For the past 6 minutes, the participant's activity did not shift from still. Also, Insufficient data to determine a respiratory rate trend over the past 6 minutes. Also, The stress score for the past 6 minutes is 2 (activity count: 4.0), pointing to Mild stress.\n\n### Response:\nStrategy: Encouragement\n\nResponse: The Social Network has that same brilliant-but-messy builder energy. The Martian is a quieter versionâpure focus under pressure. Good Will Hunting is worth watching too, since it's about talent paired with self-sabotage, which might feel uncomfortably familiar in a useful way.<EOS>"
+            }
+        ]
+    }
+]

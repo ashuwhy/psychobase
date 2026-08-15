@@ -4,8 +4,8 @@ dist/
 *.local
 .vite/
 
-# Datasets come from Stiti and the build output is generated from them.
-# Everyone runs `npm run data` locally - see public/data/README.md.
-public/data/raw_csv/
-public/data/json/
+# Source datasets are versioned so everyone is provably on the same data -
+# the repo is private and limited to the four of us plus Stiti.
+# The build output is derived from them, so it is not versioned: run
+# `npm run data` after cloning. See public/data/README.md.
 public/data/build/

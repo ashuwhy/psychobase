@@ -1,0 +1,1158 @@
+[
+    {
+        "session_id": "2753-1-1",
+        "person_id": "2753",
+        "turns": [
+            {
+                "timestamp": "2026-07-13T16:16:00",
+                "participant_full_id": "2753-1-1-0000",
+                "user_text": "I'm feeling really tense because of an upcoming exam.",
+                "ai_text": "I'm sorry you're feeling so tense. It's completely understandable to feel anxious when an exam matters to you, and sometimes that pressure can make everything feel more overwhelming than it really is. You're not alone in feeling this way. Is this exam especially important for your studies or your future plans?",
+                "context": "",
+                "strategy": "Active Listening",
+                "raw_physio": {
+                    "EDA": [
+                        0.06,
+                        0.17,
+                        0.14
+                    ],
+                    "PR": [
+                        93.0,
+                        100.0,
+                        102.0
+                    ],
+                    "SkinTemp": [
+                        34.13,
+                        33.46,
+                        33.46
+                    ],
+                    "ACCEL": [
+                        0.043,
+                        0.035,
+                        0.027
+                    ],
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": [
+                        33.0,
+                        25.0,
+                        8.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "SkinTemp": "A declining skin temperature pattern was observed over the first minute, highly fluctuating, reaching 33.46 degC.",
+                    "PR": "Over the first minute, heart rate stayed elevating around 102.0 beats per minute.",
+                    "EDA": "During the first minute, EDA registered a climbing shift to 0.14 uS, with without any notable peaks or valleys.",
+                    "ACCEL": "Body movement moved moderately in a decreasing direction over the first minute, from 0.04 to 0.03 g.",
+                    "ACT_CLASS": "The participant stayed generic for the duration of the first minute."
+                },
+                "physio_summary_fusion": "Across the first minute, EDA and PR and SkinTemp and ACCEL shifted while the participant was awake, not explained by movement. EDA and PR and SkinTemp and ACCEL increased while the participant remained sedentary, so the change cannot be attributed to physical exertion.",
+                "stress_score": 5,
+                "stress_level": "Moderate stress",
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I'm feeling really tense because of an upcoming exam.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: Active Listening\n\nResponse: I'm sorry you're feeling so tense. It's completely understandable to feel anxious when an exam matters to you, and sometimes that pressure can make everything feel more overwhelming than it really is. You're not alone in feeling this way. Is this exam especially important for your studies or your future plans?<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I'm feeling really tense because of an upcoming exam.\nPhysiological Signals: Across the first minute, EDA and PR and SkinTemp and ACCEL shifted while the participant was awake, not explained by movement. EDA and PR and SkinTemp and ACCEL increased while the participant remained sedentary, so the change cannot be attributed to physical exertion. Also, A declining skin temperature pattern was observed over the first minute, highly fluctuating, reaching 33.46 degC. Alongside this, Over the first minute, heart rate stayed elevating around 102.0 beats per minute. In parallel, During the first minute, EDA registered a climbing shift to 0.14 uS, with without any notable peaks or valleys. Further, Body movement moved moderately in a decreasing direction over the first minute, from 0.04 to 0.03 g. Simultaneously, The participant stayed generic for the duration of the first minute. Movement count of 8.0 contributes to a combined stress score of 5 over the first minute, consistent with Moderate stress.\n\n### Response:\nStrategy: Active Listening\n\nResponse: I'm sorry you're feeling so tense. It's completely understandable to feel anxious when an exam matters to you, and sometimes that pressure can make everything feel more overwhelming than it really is. You're not alone in feeling this way. Is this exam especially important for your studies or your future plans?<EOS>"
+            },
+            {
+                "timestamp": "2026-07-13T16:18:00",
+                "participant_full_id": "2753-1-1-0000",
+                "user_text": "Yes, it's very important. If I don't qualify for this exam, I won't be able to give my registration seminar.",
+                "ai_text": "That explains why you're feeling so much pressure. This isn't just another examâit's an important milestone in your PhD journey. When something has such a big impact on your future, it's natural for your mind to focus on the possibility of failure instead of the progress you've already made. You're carrying a lot of responsibility, and that can make even small setbacks feel much bigger than they really are.",
+                "context": "",
+                "strategy": "Reflective Statements",
+                "raw_physio": {
+                    "EDA": [
+                        0.15,
+                        0.17,
+                        0.22
+                    ],
+                    "PR": [
+                        103.0,
+                        101.0,
+                        101.0
+                    ],
+                    "SkinTemp": [
+                        33.52,
+                        33.54,
+                        33.52
+                    ],
+                    "ACCEL": [
+                        0.067,
+                        0.039,
+                        0.023
+                    ],
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": [
+                        15.0,
+                        17.0,
+                        32.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "SkinTemp": "During the past 2 minutes, skin temperature registered a dropping shift to 33.52 degC, with a brief peak observed mid-window.",
+                    "PR": "Beats per minute elevating sharply over the past 2 minutes, now 101.0, without any notable peaks or valleys.",
+                    "EDA": "Electrodermal readings growing sharply across the past 2 minutes to 0.22 uS, without any notable peaks or valleys.",
+                    "ACCEL": "Across the past 2 minutes, movement levels held decreasing, near 0.02 g.",
+                    "ACT_CLASS": "Activity remained categorized as generic over the past 2 minutes."
+                },
+                "physio_summary_fusion": "Across the past 2 minutes, wear-quality was reliable; within that context, EDA and PR and SkinTemp and ACCEL shifted, likely activity-related. EDA and PR and SkinTemp and ACCEL climbed while movement also increased, suggesting the change may be confounded by physical activity.",
+                "stress_score": 4,
+                "stress_level": "Moderate stress",
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Yes, it's very important. If I don't qualify for this exam, I won't be able to give my registration seminar.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: Reflective Statements\n\nResponse: That explains why you're feeling so much pressure. This isn't just another examâit's an important milestone in your PhD journey. When something has such a big impact on your future, it's natural for your mind to focus on the possibility of failure instead of the progress you've already made. You're carrying a lot of responsibility, and that can make even small setbacks feel much bigger than they really are.<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Yes, it's very important. If I don't qualify for this exam, I won't be able to give my registration seminar.\nPhysiological Signals: Across the past 2 minutes, wear-quality was reliable; within that context, EDA and PR and SkinTemp and ACCEL shifted, likely activity-related. EDA and PR and SkinTemp and ACCEL climbed while movement also increased, suggesting the change may be confounded by physical activity. Additionally, During the past 2 minutes, skin temperature registered a dropping shift to 33.52 degC, with a brief peak observed mid-window. Additionally, Beats per minute elevating sharply over the past 2 minutes, now 101.0, without any notable peaks or valleys. Meanwhile, Electrodermal readings growing sharply across the past 2 minutes to 0.22 uS, without any notable peaks or valleys. Meanwhile, Across the past 2 minutes, movement levels held decreasing, near 0.02 g. On top of that, Activity remained categorized as generic over the past 2 minutes. Also, Combining the signals above with an activity count of 32.0, the resulting score over the past 2 minutes is 4 - Moderate stress.\n\n### Response:\nStrategy: Reflective Statements\n\nResponse: That explains why you're feeling so much pressure. This isn't just another examâit's an important milestone in your PhD journey. When something has such a big impact on your future, it's natural for your mind to focus on the possibility of failure instead of the progress you've already made. You're carrying a lot of responsibility, and that can make even small setbacks feel much bigger than they really are.<EOS>"
+            },
+            {
+                "timestamp": "2026-07-13T16:21:00",
+                "participant_full_id": "2753-1-1-0000",
+                "user_text": "I know, but this is a very difficult exam.",
+                "ai_text": "I understand why that worries you. When we know an exam is difficult, our mind often starts treating it like an impossible challenge before we've even given ourselves a fair chance. Feeling anxious doesn't mean you can't succeedâit often means the exam is important to you. Can I ask, what part of the exam makes you feel the most nervous?",
+                "context": "",
+                "strategy": "Emotional Validation",
+                "raw_physio": {
+                    "EDA": [
+                        0.22,
+                        0.22
+                    ],
+                    "PR": [
+                        99.0,
+                        97.0
+                    ],
+                    "SkinTemp": [
+                        33.49,
+                        33.48
+                    ],
+                    "ACCEL": [
+                        0.008,
+                        0.005
+                    ],
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": [
+                        17.0,
+                        6.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "SkinTemp": "Surface temperature declining sharply over the past 5 minutes, now 33.48 degC, with a brief peak observed mid-window.",
+                    "EDA": "Across the past 5 minutes, electrodermal activity showed a rising pattern, settling around 0.22 uS.",
+                    "ACCEL": "A falling movement pattern was observed over the past 5 minutes, mildly fluctuating, reaching 0.01 g.",
+                    "PR": "Pulse rate increasing moderately over the past 5 minutes, moving from 93.0 to 97.0 bpm.",
+                    "ACT_CLASS": "Over the past 5 minutes, the participant's activity changed from generic to still."
+                },
+                "physio_summary_fusion": "During the past 5 minutes, EDA and PR and SkinTemp and ACCEL shifted; since movement stayed still with MET near 0.95, this arousal appears not explained by movement. Movement stayed minimal while EDA and PR and SkinTemp and ACCEL rose, pointing toward a stress response rather than exertion.",
+                "stress_score": 5,
+                "stress_level": "Moderate stress",
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I know, but this is a very difficult exam.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: Emotional Validation\n\nResponse: I understand why that worries you. When we know an exam is difficult, our mind often starts treating it like an impossible challenge before we've even given ourselves a fair chance. Feeling anxious doesn't mean you can't succeedâit often means the exam is important to you. Can I ask, what part of the exam makes you feel the most nervous?<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I know, but this is a very difficult exam.\nPhysiological Signals: During the past 5 minutes, EDA and PR and SkinTemp and ACCEL shifted; since movement stayed still with MET near 0.95, this arousal appears not explained by movement. Movement stayed minimal while EDA and PR and SkinTemp and ACCEL rose, pointing toward a stress response rather than exertion. Alongside this, Surface temperature declining sharply over the past 5 minutes, now 33.48 degC, with a brief peak observed mid-window. Additionally, Across the past 5 minutes, electrodermal activity showed a rising pattern, settling around 0.22 uS. Simultaneously, A falling movement pattern was observed over the past 5 minutes, mildly fluctuating, reaching 0.01 g. Simultaneously, Pulse rate increasing moderately over the past 5 minutes, moving from 93.0 to 97.0 bpm. On top of that, Over the past 5 minutes, the participant's activity changed from generic to still. Further, Movement count of 6.0 contributes to a combined stress score of 5 over the past 5 minutes, consistent with Moderate stress.\n\n### Response:\nStrategy: Emotional Validation\n\nResponse: I understand why that worries you. When we know an exam is difficult, our mind often starts treating it like an impossible challenge before we've even given ourselves a fair chance. Feeling anxious doesn't mean you can't succeedâit often means the exam is important to you. Can I ask, what part of the exam makes you feel the most nervous?<EOS>"
+            },
+            {
+                "timestamp": "2026-07-13T16:23:00",
+                "participant_full_id": "2753-1-1-0000",
+                "user_text": "After looking at the previous year's question paper, I became even more tense.",
+                "ai_text": "I can understand why that affected your confidence. Previous year's papers are meant to show the level of the exam, but sometimes we see a few difficult questions and start believing we're not capable enough. That reaction is more common than you might think. Was it the difficulty of the questions that worried you, or did you feel that many topics were unfamiliar?",
+                "context": "",
+                "strategy": "Clarification",
+                "raw_physio": {
+                    "EDA": [
+                        0.22,
+                        0.23,
+                        0.24
+                    ],
+                    "PR": [
+                        98.0,
+                        97.0,
+                        103.0
+                    ],
+                    "SkinTemp": [
+                        33.47,
+                        33.49,
+                        33.5
+                    ],
+                    "ACCEL": [
+                        0.005,
+                        0.009,
+                        0.02
+                    ],
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": [
+                        3.0,
+                        26.0,
+                        33.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "ACCEL": "Over the past 6 minutes, physical motion remained dropping, staying close to 0.02 g.",
+                    "EDA": "Skin conductance drifted climbing across the past 6 minutes to 0.24 uS, without any notable peaks or valleys.",
+                    "SkinTemp": "Over the past 6 minutes, peripheral temperature stayed decreasing, around 33.5 degC.",
+                    "PR": "Heart rate stable slightly during the past 6 minutes, reaching 103.0 bpm.",
+                    "ACT_CLASS": "Movement classification transitioned to still from generic over the past 6 minutes."
+                },
+                "physio_summary_fusion": "Over the past 6 minutes, physiological signals (EDA and SkinTemp and ACCEL) shifted, with activity remaining still - likely activity-related. EDA and SkinTemp and ACCEL rose alongside increased movement, so the change is likely activity-related rather than a pure stress response.",
+                "stress_score": 4,
+                "stress_level": "Moderate stress",
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: After looking at the previous year's question paper, I became even more tense.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: Clarification\n\nResponse: I can understand why that affected your confidence. Previous year's papers are meant to show the level of the exam, but sometimes we see a few difficult questions and start believing we're not capable enough. That reaction is more common than you might think. Was it the difficulty of the questions that worried you, or did you feel that many topics were unfamiliar?<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: After looking at the previous year's question paper, I became even more tense.\nPhysiological Signals: Over the past 6 minutes, physiological signals (EDA and SkinTemp and ACCEL) shifted, with activity remaining still - likely activity-related. EDA and SkinTemp and ACCEL rose alongside increased movement, so the change is likely activity-related rather than a pure stress response. Meanwhile, Over the past 6 minutes, physical motion remained dropping, staying close to 0.02 g. Alongside this, Skin conductance drifted climbing across the past 6 minutes to 0.24 uS, without any notable peaks or valleys. Additionally, Over the past 6 minutes, peripheral temperature stayed decreasing, around 33.5 degC. Further, Heart rate stable slightly during the past 6 minutes, reaching 103.0 bpm. Additionally, Movement classification transitioned to still from generic over the past 6 minutes. At the same time, The stress score for the past 6 minutes is 4 (activity count: 33.0), pointing to Moderate stress.\n\n### Response:\nStrategy: Clarification\n\nResponse: I can understand why that affected your confidence. Previous year's papers are meant to show the level of the exam, but sometimes we see a few difficult questions and start believing we're not capable enough. That reaction is more common than you might think. Was it the difficulty of the questions that worried you, or did you feel that many topics were unfamiliar?<EOS>"
+            },
+            {
+                "timestamp": "2026-07-13T16:26:00",
+                "participant_full_id": "2753-1-1-0000",
+                "user_text": "I have to work really hard to crack this exam.",
+                "ai_text": "I can see how serious you are about this. The fact that you're thinking about working harder tells me that you haven't given upâyou know it's a difficult exam, but you're still willing to put in the effort. Can I ask what's making you feel least confident right now? Is it the syllabus, the previous year's questions, or the limited time left?",
+                "context": "",
+                "strategy": "Encouragement",
+                "raw_physio": {
+                    "EDA": [
+                        0.25,
+                        0.25
+                    ],
+                    "PR": [
+                        94.0,
+                        95.0
+                    ],
+                    "SkinTemp": [
+                        33.49,
+                        33.45
+                    ],
+                    "ACCEL": [
+                        0.002,
+                        0.002
+                    ],
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": [
+                        5.0,
+                        0.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "PR": "During the past 6 minutes, heart rate registered a downward shift to 95.0 bpm, without any notable peaks or valleys.",
+                    "EDA": "Skin conductance increasing slightly during the past 6 minutes, reaching 0.25 uS.",
+                    "ACCEL": "Accelerometer output downward slightly across the past 6 minutes, showing smooth activity, now 0.0 g.",
+                    "SkinTemp": "Across the past 6 minutes, peripheral temperature trended falling from 33.49 to 33.45 degC.",
+                    "ACT_CLASS": "Over the past 6 minutes, still activity was sustained without interruption."
+                },
+                "physio_summary_fusion": "Over the past 6 minutes, EDA and PR and SkinTemp and ACCEL shifted against a backdrop of still activity and minimal walking, not explained by movement. EDA and PR and SkinTemp and ACCEL increased while the participant remained sedentary, so the change cannot be attributed to physical exertion.",
+                "stress_score": 5,
+                "stress_level": "Moderate stress",
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I have to work really hard to crack this exam.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: Encouragement\n\nResponse: I can see how serious you are about this. The fact that you're thinking about working harder tells me that you haven't given upâyou know it's a difficult exam, but you're still willing to put in the effort. Can I ask what's making you feel least confident right now? Is it the syllabus, the previous year's questions, or the limited time left?<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I have to work really hard to crack this exam.\nPhysiological Signals: Over the past 6 minutes, EDA and PR and SkinTemp and ACCEL shifted against a backdrop of still activity and minimal walking, not explained by movement. EDA and PR and SkinTemp and ACCEL increased while the participant remained sedentary, so the change cannot be attributed to physical exertion. In parallel, During the past 6 minutes, heart rate registered a downward shift to 95.0 bpm, without any notable peaks or valleys. At the same time, Skin conductance increasing slightly during the past 6 minutes, reaching 0.25 uS. Also, Accelerometer output downward slightly across the past 6 minutes, showing smooth activity, now 0.0 g. On top of that, Across the past 6 minutes, peripheral temperature trended falling from 33.49 to 33.45 degC. Also, Over the past 6 minutes, still activity was sustained without interruption. Also, With activity count at 0.0, the composite stress score for the past 6 minutes is 5, indicating Moderate stress.\n\n### Response:\nStrategy: Encouragement\n\nResponse: I can see how serious you are about this. The fact that you're thinking about working harder tells me that you haven't given upâyou know it's a difficult exam, but you're still willing to put in the effort. Can I ask what's making you feel least confident right now? Is it the syllabus, the previous year's questions, or the limited time left?<EOS>"
+            },
+            {
+                "timestamp": "2026-07-13T16:28:00",
+                "participant_full_id": "2753-1-1-0000",
+                "user_text": "The syllabus is already tough, but the previous year's questions are what make me lose confidence the most.",
+                "ai_text": "I can understand why those papers are making you feel anxious. Sometimes, seeing difficult questions makes us doubt ourselves before we've even had the chance to prepare fully. When you looked at the previous year's paper, what worried you the most? Was it the difficulty of the questions, the unfamiliar topics, or the amount of time needed to solve them?",
+                "context": "",
+                "strategy": "Clarification",
+                "raw_physio": {
+                    "EDA": [
+                        0.25,
+                        0.26,
+                        0.27
+                    ],
+                    "PR": [
+                        98.0,
+                        97.0,
+                        96.0
+                    ],
+                    "SkinTemp": [
+                        33.41,
+                        33.36,
+                        33.32
+                    ],
+                    "ACCEL": [
+                        0.003,
+                        0.004,
+                        0.007
+                    ],
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": [
+                        0.0,
+                        7.0,
+                        14.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "SkinTemp": "Over the past 6 minutes, peripheral temperature stayed easing, around 33.32 degC.",
+                    "EDA": "Skin conductance drifted growing across the past 6 minutes to 0.27 uS, without any notable peaks or valleys.",
+                    "PR": "Heart rate drifted easing across the past 6 minutes to 96.0 bpm, without any notable peaks or valleys.",
+                    "ACCEL": "Accelerometer readings moved slightly and elevating through the past 6 minutes, ending at 0.01 g.",
+                    "ACT_CLASS": "Over the past 6 minutes, activity type was consistently classified as still."
+                },
+                "physio_summary_fusion": "During the past 6 minutes, EDA and PR and SkinTemp and ACCEL shifted; movement counts and MET (~0.95) suggest this is not explained by movement. EDA and PR and SkinTemp and ACCEL rose while ACCEL and ACT_COUNT showed no corresponding movement, suggesting this arousal is not explained by physical activity.",
+                "stress_score": 5,
+                "stress_level": "Moderate stress",
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: The syllabus is already tough, but the previous year's questions are what make me lose confidence the most.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: Clarification\n\nResponse: I can understand why those papers are making you feel anxious. Sometimes, seeing difficult questions makes us doubt ourselves before we've even had the chance to prepare fully. When you looked at the previous year's paper, what worried you the most? Was it the difficulty of the questions, the unfamiliar topics, or the amount of time needed to solve them?<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: The syllabus is already tough, but the previous year's questions are what make me lose confidence the most.\nPhysiological Signals: During the past 6 minutes, EDA and PR and SkinTemp and ACCEL shifted; movement counts and MET (~0.95) suggest this is not explained by movement. EDA and PR and SkinTemp and ACCEL rose while ACCEL and ACT_COUNT showed no corresponding movement, suggesting this arousal is not explained by physical activity. Also, Over the past 6 minutes, peripheral temperature stayed easing, around 33.32 degC. Alongside this, Skin conductance drifted growing across the past 6 minutes to 0.27 uS, without any notable peaks or valleys. Meanwhile, Heart rate drifted easing across the past 6 minutes to 96.0 bpm, without any notable peaks or valleys. Alongside this, Accelerometer readings moved slightly and elevating through the past 6 minutes, ending at 0.01 g. On top of that, Over the past 6 minutes, activity type was consistently classified as still. Alongside this, Over the past 6 minutes, with activity count at 14.0, the composite score reaches 5, classified as Moderate stress.\n\n### Response:\nStrategy: Clarification\n\nResponse: I can understand why those papers are making you feel anxious. Sometimes, seeing difficult questions makes us doubt ourselves before we've even had the chance to prepare fully. When you looked at the previous year's paper, what worried you the most? Was it the difficulty of the questions, the unfamiliar topics, or the amount of time needed to solve them?<EOS>"
+            },
+            {
+                "timestamp": "2026-07-13T16:31:00",
+                "participant_full_id": "2753-1-1-0000",
+                "user_text": "I know the topics, but I last studied them about one and a half years ago, so I have to revise everything. On top of that, the questions are really tough.",
+                "ai_text": "I can see why you're feeling overwhelmed. You're not starting from the beginningâyou've learned these topics beforeâbut after such a long gap, it probably feels like you're rebuilding your confidence from scratch. That's a very different challenge from learning something new. When you solve those difficult questions, do you usually get stuck because you can't remember the concepts, or because you don't know how to apply them?",
+                "context": "",
+                "strategy": "Clarification",
+                "raw_physio": {
+                    "EDA": [
+                        0.28,
+                        0.29
+                    ],
+                    "PR": [
+                        96.0,
+                        103.0
+                    ],
+                    "SkinTemp": [
+                        33.27,
+                        33.22
+                    ],
+                    "ACCEL": [
+                        0.007,
+                        0.007
+                    ],
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": [
+                        23.0,
+                        15.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "PR": "Over the past 6 minutes, cardiac pace upward sharply, now near 103.0 bpm.",
+                    "SkinTemp": "Skin temperature showed a dropping pattern across the past 6 minutes, with mildly fluctuating change, now 33.22 degC.",
+                    "EDA": "Skin conductance levels stayed growing over the past 6 minutes, near 0.29 uS.",
+                    "ACCEL": "Movement levels drifted elevating across the past 6 minutes to 0.01 g, showing a single sustained rise with no reversal.",
+                    "ACT_CLASS": "A transition from still to generic occurred within the past 6 minutes."
+                },
+                "physio_summary_fusion": "Over the past 6 minutes, the combined signal (EDA and PR and SkinTemp and ACCEL) showed shifted, with movement generic, not explained by movement. Arousal markers rose without any matching rise in movement, indicating the shift is likely psychological rather than exertional.",
+                "stress_score": 5,
+                "stress_level": "Moderate stress",
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I know the topics, but I last studied them about one and a half years ago, so I have to revise everything. On top of that, the questions are really tough.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: Clarification\n\nResponse: I can see why you're feeling overwhelmed. You're not starting from the beginningâyou've learned these topics beforeâbut after such a long gap, it probably feels like you're rebuilding your confidence from scratch. That's a very different challenge from learning something new. When you solve those difficult questions, do you usually get stuck because you can't remember the concepts, or because you don't know how to apply them?<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I know the topics, but I last studied them about one and a half years ago, so I have to revise everything. On top of that, the questions are really tough.\nPhysiological Signals: Over the past 6 minutes, the combined signal (EDA and PR and SkinTemp and ACCEL) showed shifted, with movement generic, not explained by movement. Arousal markers rose without any matching rise in movement, indicating the shift is likely psychological rather than exertional. Meanwhile, Over the past 6 minutes, cardiac pace upward sharply, now near 103.0 bpm. Alongside this, Skin temperature showed a dropping pattern across the past 6 minutes, with mildly fluctuating change, now 33.22 degC. Alongside this, Skin conductance levels stayed growing over the past 6 minutes, near 0.29 uS. Further, Movement levels drifted elevating across the past 6 minutes to 0.01 g, showing a single sustained rise with no reversal. In parallel, A transition from still to generic occurred within the past 6 minutes. In parallel, Combining the signals above with an activity count of 15.0, the resulting score over the past 6 minutes is 5 - Moderate stress.\n\n### Response:\nStrategy: Clarification\n\nResponse: I can see why you're feeling overwhelmed. You're not starting from the beginningâyou've learned these topics beforeâbut after such a long gap, it probably feels like you're rebuilding your confidence from scratch. That's a very different challenge from learning something new. When you solve those difficult questions, do you usually get stuck because you can't remember the concepts, or because you don't know how to apply them?<EOS>"
+            },
+            {
+                "timestamp": "2026-07-13T16:33:00",
+                "participant_full_id": "2753-1-1-0000",
+                "user_text": "Sometimes I get stuck because I can't remember the concepts, and other times I don't know how to apply them to the questions.",
+                "ai_text": "Thank you for explaining that. It helps me understand your situation much better. It sounds like you're facing two challenges at the same time: recalling concepts after a long gap and learning how to apply them to difficult problems. That's actually a common experience in competitive exams. When you can't solve a question, what do you usually do? Do you keep trying for a while, or do you check the solution fairly quickly?",
+                "context": "",
+                "strategy": "Clarification",
+                "raw_physio": {
+                    "EDA": [
+                        0.29,
+                        0.29,
+                        0.3
+                    ],
+                    "PR": [
+                        94.0,
+                        96.0,
+                        92.0
+                    ],
+                    "SkinTemp": [
+                        33.18,
+                        33.16,
+                        33.15
+                    ],
+                    "ACCEL": [
+                        0.003,
+                        0.001,
+                        0.002
+                    ],
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": [
+                        1.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "PR": "A downward pulse rate pattern emerged over the past 6 minutes, mildly fluctuating, reaching 92.0 bpm.",
+                    "SkinTemp": "Surface temperature easing moderately over the past 6 minutes, now 33.15 degC, without any notable peaks or valleys.",
+                    "EDA": "A increasing EDA pattern was observed over the past 6 minutes, smooth, reaching 0.3 uS.",
+                    "ACCEL": "A decreasing movement pattern was observed over the past 6 minutes, smooth, reaching 0.0 g.",
+                    "ACT_CLASS": "During the past 6 minutes, movement classification changed from still to still."
+                },
+                "physio_summary_fusion": "Over the past 6 minutes, EDA and PR and SkinTemp and ACCEL shifted, while movement remained still (sedentary intensity), suggesting the change is not explained by movement. EDA and PR and SkinTemp and ACCEL increased while the participant remained sedentary, so the change cannot be attributed to physical exertion.",
+                "stress_score": 5,
+                "stress_level": "Moderate stress",
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Sometimes I get stuck because I can't remember the concepts, and other times I don't know how to apply them to the questions.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: Clarification\n\nResponse: Thank you for explaining that. It helps me understand your situation much better. It sounds like you're facing two challenges at the same time: recalling concepts after a long gap and learning how to apply them to difficult problems. That's actually a common experience in competitive exams. When you can't solve a question, what do you usually do? Do you keep trying for a while, or do you check the solution fairly quickly?<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Sometimes I get stuck because I can't remember the concepts, and other times I don't know how to apply them to the questions.\nPhysiological Signals: Over the past 6 minutes, EDA and PR and SkinTemp and ACCEL shifted, while movement remained still (sedentary intensity), suggesting the change is not explained by movement. EDA and PR and SkinTemp and ACCEL increased while the participant remained sedentary, so the change cannot be attributed to physical exertion. Further, A downward pulse rate pattern emerged over the past 6 minutes, mildly fluctuating, reaching 92.0 bpm. Surface temperature easing moderately over the past 6 minutes, now 33.15 degC, without any notable peaks or valleys. In parallel, A increasing EDA pattern was observed over the past 6 minutes, smooth, reaching 0.3 uS. Simultaneously, A decreasing movement pattern was observed over the past 6 minutes, smooth, reaching 0.0 g. Further, During the past 6 minutes, movement classification changed from still to still. Meanwhile, The stress score for the past 6 minutes is 5 (activity count: 1.0), pointing to Moderate stress.\n\n### Response:\nStrategy: Clarification\n\nResponse: Thank you for explaining that. It helps me understand your situation much better. It sounds like you're facing two challenges at the same time: recalling concepts after a long gap and learning how to apply them to difficult problems. That's actually a common experience in competitive exams. When you can't solve a question, what do you usually do? Do you keep trying for a while, or do you check the solution fairly quickly?<EOS>"
+            },
+            {
+                "timestamp": "2026-07-13T16:36:00",
+                "participant_full_id": "2753-1-1-0000",
+                "user_text": "First, I try to figure it out on my own. If I still can't solve it, then I look at the solution.",
+                "ai_text": "I actually think that's a healthy way to study. You're giving yourself the opportunity to think through the problem instead of depending on the solution immediately, and that's how problem-solving skills improve over time. After you read the solution, do you usually understand why that approach works, or do you sometimes still feel confused?",
+                "context": "",
+                "strategy": "Strength-Based Reflection",
+                "raw_physio": {
+                    "EDA": [
+                        0.32,
+                        0.32
+                    ],
+                    "PR": [
+                        96.0,
+                        97.0
+                    ],
+                    "SkinTemp": [
+                        33.16,
+                        33.17
+                    ],
+                    "ACCEL": [
+                        0.001,
+                        0.017
+                    ],
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": [
+                        0.0,
+                        52.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "SkinTemp": "Skin temperature showed a dropping pattern across the past 6 minutes, with smooth change, now 33.17 degC.",
+                    "EDA": "Over the past 6 minutes, electrodermal activity moved slightly in a elevating direction, from 0.28 to 0.32 uS.",
+                    "ACCEL": "Motion intensity climbing slightly during the past 6 minutes, reaching 0.02 g.",
+                    "PR": "Beats per minute growing slightly over the past 6 minutes, now 97.0, without any notable peaks or valleys.",
+                    "ACT_CLASS": "Over the past 6 minutes, a shift from generic to still was recorded."
+                },
+                "physio_summary_fusion": "Across the past 6 minutes, EDA and PR and SkinTemp and ACCEL shifted; posture stayed reclining/lying throughout, likely activity-related. EDA and PR and SkinTemp and ACCEL rose in step with heightened motion, indicating the signal is at least partly explained by movement rather than stress alone.",
+                "stress_score": 4,
+                "stress_level": "Moderate stress",
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: First, I try to figure it out on my own. If I still can't solve it, then I look at the solution.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: Strength-Based Reflection\n\nResponse: I actually think that's a healthy way to study. You're giving yourself the opportunity to think through the problem instead of depending on the solution immediately, and that's how problem-solving skills improve over time. After you read the solution, do you usually understand why that approach works, or do you sometimes still feel confused?<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: First, I try to figure it out on my own. If I still can't solve it, then I look at the solution.\nPhysiological Signals: Across the past 6 minutes, EDA and PR and SkinTemp and ACCEL shifted; posture stayed reclining/lying throughout, likely activity-related. EDA and PR and SkinTemp and ACCEL rose in step with heightened motion, indicating the signal is at least partly explained by movement rather than stress alone. Additionally, Skin temperature showed a dropping pattern across the past 6 minutes, with smooth change, now 33.17 degC. On top of that, Over the past 6 minutes, electrodermal activity moved slightly in a elevating direction, from 0.28 to 0.32 uS. Motion intensity climbing slightly during the past 6 minutes, reaching 0.02 g. At the same time, Beats per minute growing slightly over the past 6 minutes, now 97.0, without any notable peaks or valleys. Notably, Over the past 6 minutes, a shift from generic to still was recorded. Alongside this, Combining the signals above with an activity count of 52.0, the resulting score over the past 6 minutes is 4 - Moderate stress.\n\n### Response:\nStrategy: Strength-Based Reflection\n\nResponse: I actually think that's a healthy way to study. You're giving yourself the opportunity to think through the problem instead of depending on the solution immediately, and that's how problem-solving skills improve over time. After you read the solution, do you usually understand why that approach works, or do you sometimes still feel confused?<EOS>"
+            },
+            {
+                "timestamp": "2026-07-13T16:38:00",
+                "participant_full_id": "2753-1-1-0000",
+                "user_text": "Yes, I understand the solutions after I read them. Another problem is that I can't give enough time to my preparation.",
+                "ai_text": "I think I'm beginning to see the bigger picture. It doesn't sound like your main difficulty is understanding the subjects. You already have the ability to understand them once you revise. The bigger challenge seems to be finding enough uninterrupted time to study consistently. What's taking up most of your time these days? Is it your research, your TA work, or something else?",
+                "context": "",
+                "strategy": "Reflective Statements",
+                "raw_physio": {
+                    "EDA": [
+                        0.32,
+                        0.33,
+                        0.34
+                    ],
+                    "PR": [
+                        98.0,
+                        95.0,
+                        102.0
+                    ],
+                    "SkinTemp": [
+                        33.15,
+                        33.13,
+                        33.12
+                    ],
+                    "ACCEL": [
+                        0.007,
+                        0.004,
+                        0.002
+                    ],
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": [
+                        19.0,
+                        9.0,
+                        0.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "PR": "Heart rate increasing sharply during the past 6 minutes, reaching 102.0 bpm.",
+                    "EDA": "A growing EDA pattern was observed over the past 6 minutes, smooth, reaching 0.34 uS.",
+                    "SkinTemp": "A downward skin temperature pattern was observed over the past 6 minutes, smooth, reaching 33.12 degC.",
+                    "ACCEL": "Overall movement (accelerometer) decreasing slightly over the past 6 minutes, moving from 0.0 to 0.0 g.",
+                    "ACT_CLASS": "Activity classification remained still throughout the past 6 minutes."
+                },
+                "physio_summary_fusion": "Over the past 6 minutes, considering MET levels near 0.95 and still movement, EDA and PR and SkinTemp and ACCEL shifted, not explained by movement. EDA and PR and SkinTemp and ACCEL rose while ACCEL and ACT_COUNT showed no corresponding movement, suggesting this arousal is not explained by physical activity.",
+                "stress_score": 5,
+                "stress_level": "Moderate stress",
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Yes, I understand the solutions after I read them. Another problem is that I can't give enough time to my preparation.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: Reflective Statements\n\nResponse: I think I'm beginning to see the bigger picture. It doesn't sound like your main difficulty is understanding the subjects. You already have the ability to understand them once you revise. The bigger challenge seems to be finding enough uninterrupted time to study consistently. What's taking up most of your time these days? Is it your research, your TA work, or something else?<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Yes, I understand the solutions after I read them. Another problem is that I can't give enough time to my preparation.\nPhysiological Signals: Over the past 6 minutes, considering MET levels near 0.95 and still movement, EDA and PR and SkinTemp and ACCEL shifted, not explained by movement. EDA and PR and SkinTemp and ACCEL rose while ACCEL and ACT_COUNT showed no corresponding movement, suggesting this arousal is not explained by physical activity. Also, Heart rate increasing sharply during the past 6 minutes, reaching 102.0 bpm. Also, A growing EDA pattern was observed over the past 6 minutes, smooth, reaching 0.34 uS. Notably, A downward skin temperature pattern was observed over the past 6 minutes, smooth, reaching 33.12 degC. Overall movement (accelerometer) decreasing slightly over the past 6 minutes, moving from 0.0 to 0.0 g. At the same time, Activity classification remained still throughout the past 6 minutes. At the same time, The stress score for the past 6 minutes is 5 (activity count: 0.0), pointing to Moderate stress.\n\n### Response:\nStrategy: Reflective Statements\n\nResponse: I think I'm beginning to see the bigger picture. It doesn't sound like your main difficulty is understanding the subjects. You already have the ability to understand them once you revise. The bigger challenge seems to be finding enough uninterrupted time to study consistently. What's taking up most of your time these days? Is it your research, your TA work, or something else?<EOS>"
+            },
+            {
+                "timestamp": "2026-07-13T16:41:00",
+                "participant_full_id": "2753-1-1-0000",
+                "user_text": "My research and TA work take up most of my time.",
+                "ai_text": "That gives me a much clearer picture of your situation. You're not just preparing for a difficult examâyou're also trying to manage research, TA responsibilities, and everything else that comes with being a PhD student. Anyone in your position would find it difficult to devote enough time to exam preparation. Do you feel your biggest challenge is finding enough study hours, or is it staying mentally focused after finishing your research and TA work?",
+                "context": "",
+                "strategy": "Emotional Validation",
+                "raw_physio": {
+                    "EDA": [
+                        0.36,
+                        0.36
+                    ],
+                    "PR": [
+                        93.0,
+                        97.0
+                    ],
+                    "SkinTemp": [
+                        33.11,
+                        33.1
+                    ],
+                    "ACCEL": [
+                        0.002,
+                        0.005
+                    ],
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": [
+                        0.0,
+                        12.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "EDA": "During the past 6 minutes, EDA registered a growing shift to 0.36 uS, with showing a single sustained rise with no reversal.",
+                    "SkinTemp": "Skin temperature moved slightly in a falling direction over the past 6 minutes, from 33.16 to 33.1 degC.",
+                    "PR": "Pulse rate showed a increasing trend across the past 6 minutes, with mildly fluctuating variation, now 97.0 bpm.",
+                    "ACCEL": "Across the past 6 minutes, movement levels held increasing, near 0.01 g.",
+                    "ACT_CLASS": "Throughout the past 6 minutes, the recorded activity class stayed still."
+                },
+                "physio_summary_fusion": "Over the past 6 minutes, physiological signals (EDA and PR and SkinTemp and ACCEL) shifted, with activity remaining still - not explained by movement. EDA and PR and SkinTemp and ACCEL increased while the participant remained sedentary, so the change cannot be attributed to physical exertion.",
+                "stress_score": 5,
+                "stress_level": "Moderate stress",
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: My research and TA work take up most of my time.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: Emotional Validation\n\nResponse: That gives me a much clearer picture of your situation. You're not just preparing for a difficult examâyou're also trying to manage research, TA responsibilities, and everything else that comes with being a PhD student. Anyone in your position would find it difficult to devote enough time to exam preparation. Do you feel your biggest challenge is finding enough study hours, or is it staying mentally focused after finishing your research and TA work?<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: My research and TA work take up most of my time.\nPhysiological Signals: Over the past 6 minutes, physiological signals (EDA and PR and SkinTemp and ACCEL) shifted, with activity remaining still - not explained by movement. EDA and PR and SkinTemp and ACCEL increased while the participant remained sedentary, so the change cannot be attributed to physical exertion. Alongside this, During the past 6 minutes, EDA registered a growing shift to 0.36 uS, with showing a single sustained rise with no reversal. Further, Skin temperature moved slightly in a falling direction over the past 6 minutes, from 33.16 to 33.1 degC. In parallel, Pulse rate showed a increasing trend across the past 6 minutes, with mildly fluctuating variation, now 97.0 bpm. Alongside this, Across the past 6 minutes, movement levels held increasing, near 0.01 g. Meanwhile, Throughout the past 6 minutes, the recorded activity class stayed still. Meanwhile, Factoring in an activity count of 12.0, the composite indicator over the past 6 minutes reads 5, suggesting Moderate stress.\n\n### Response:\nStrategy: Emotional Validation\n\nResponse: That gives me a much clearer picture of your situation. You're not just preparing for a difficult examâyou're also trying to manage research, TA responsibilities, and everything else that comes with being a PhD student. Anyone in your position would find it difficult to devote enough time to exam preparation. Do you feel your biggest challenge is finding enough study hours, or is it staying mentally focused after finishing your research and TA work?<EOS>"
+            },
+            {
+                "timestamp": "2026-07-13T16:43:00",
+                "participant_full_id": "2753-1-1-0000",
+                "user_text": "Both. They're completely different kinds of work, so switching from one to the other is really difficult.",
+                "ai_text": "That makes a lot of sense. Research requires one kind of thinking, while preparing for a comprehensive exam requires another. Constantly switching between them can be mentally exhausting, even if you're motivated to study. It's not just about the number of hours you haveâit's also about how much mental energy is left at the end of the day. Have you been able to set aside any fixed study time for the exam each day, or does your research schedule keep changing?",
+                "context": "",
+                "strategy": "Emotional Validation",
+                "raw_physio": {
+                    "EDA": [
+                        0.37,
+                        0.37,
+                        0.38
+                    ],
+                    "PR": [
+                        94.0,
+                        94.0,
+                        93.0
+                    ],
+                    "SkinTemp": [
+                        33.1,
+                        33.13,
+                        33.15
+                    ],
+                    "ACCEL": [
+                        0.002,
+                        0.015,
+                        0.008
+                    ],
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": [
+                        0.0,
+                        17.0,
+                        21.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "PR": "Pulse rate dropping moderately across the past 6 minutes, showing mildly fluctuating activity, now 93.0 bpm.",
+                    "EDA": "Skin conductance drifted growing across the past 6 minutes to 0.38 uS, without any notable peaks or valleys.",
+                    "ACCEL": "Accelerometer output increasing slightly across the past 6 minutes, showing smooth activity, now 0.01 g.",
+                    "SkinTemp": "During the past 6 minutes, skin temperature registered a dropping shift to 33.15 degC, without any notable peaks or valleys.",
+                    "ACT_CLASS": "The participant stayed still for the duration of the past 6 minutes."
+                },
+                "physio_summary_fusion": "Over the past 6 minutes, EDA and PR and SkinTemp and ACCEL shifted, occurring with reliable and still movement, not explained by movement. Movement stayed minimal while EDA and PR and SkinTemp and ACCEL rose, pointing toward a stress response rather than exertion.",
+                "stress_score": 4,
+                "stress_level": "Moderate stress",
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Both. They're completely different kinds of work, so switching from one to the other is really difficult.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: Emotional Validation\n\nResponse: That makes a lot of sense. Research requires one kind of thinking, while preparing for a comprehensive exam requires another. Constantly switching between them can be mentally exhausting, even if you're motivated to study. It's not just about the number of hours you haveâit's also about how much mental energy is left at the end of the day. Have you been able to set aside any fixed study time for the exam each day, or does your research schedule keep changing?<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Both. They're completely different kinds of work, so switching from one to the other is really difficult.\nPhysiological Signals: Over the past 6 minutes, EDA and PR and SkinTemp and ACCEL shifted, occurring with reliable and still movement, not explained by movement. Movement stayed minimal while EDA and PR and SkinTemp and ACCEL rose, pointing toward a stress response rather than exertion. Alongside this, Pulse rate dropping moderately across the past 6 minutes, showing mildly fluctuating activity, now 93.0 bpm. At the same time, Skin conductance drifted growing across the past 6 minutes to 0.38 uS, without any notable peaks or valleys. Notably, Accelerometer output increasing slightly across the past 6 minutes, showing smooth activity, now 0.01 g. At the same time, During the past 6 minutes, skin temperature registered a dropping shift to 33.15 degC, without any notable peaks or valleys. Alongside this, The participant stayed still for the duration of the past 6 minutes. Meanwhile, The stress score for the past 6 minutes is 4 (activity count: 21.0), pointing to Moderate stress.\n\n### Response:\nStrategy: Emotional Validation\n\nResponse: That makes a lot of sense. Research requires one kind of thinking, while preparing for a comprehensive exam requires another. Constantly switching between them can be mentally exhausting, even if you're motivated to study. It's not just about the number of hours you haveâit's also about how much mental energy is left at the end of the day. Have you been able to set aside any fixed study time for the exam each day, or does your research schedule keep changing?<EOS>"
+            },
+            {
+                "timestamp": "2026-07-13T16:46:00",
+                "participant_full_id": "2753-1-1-0000",
+                "user_text": "I have to set aside a fixed time for this exam; otherwise, it won't be possible to prepare properly.",
+                "ai_text": "I think you've already identified an important solution. You're not saying that you can't studyâyou've realized that unless you protect a fixed time for exam preparation, research will naturally take over your day. That's an important insight because it gives you something practical to work on. If you could reserve one uninterrupted study session every day, what time do you think would be the most realistic?",
+                "context": "",
+                "strategy": "Encouragement",
+                "raw_physio": {
+                    "EDA": [
+                        0.39,
+                        0.4,
+                        0.41
+                    ],
+                    "PR": [
+                        101.0,
+                        108.0,
+                        114.0
+                    ],
+                    "SkinTemp": [
+                        33.17,
+                        33.18,
+                        33.17
+                    ],
+                    "ACCEL": [
+                        0.016,
+                        0.101,
+                        0.057
+                    ],
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": [
+                        54.0,
+                        122.0,
+                        57.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "PR": "Over the past 6 minutes, heart rate remained upward near 114.0 beats per minute.",
+                    "ACCEL": "Over the past 6 minutes, motion intensity stayed rising, around 0.06 g.",
+                    "EDA": "Over the past 6 minutes, electrodermal activity moved slightly in a growing direction, from 0.36 to 0.41 uS.",
+                    "SkinTemp": "Over the past 6 minutes, skin temperature remained rising, staying close to 33.17 degC.",
+                    "ACT_CLASS": "Activity type moved from still to generic across the past 6 minutes."
+                },
+                "physio_summary_fusion": "Across the past 6 minutes, EDA and PR and SkinTemp and ACCEL rose; posture stayed reclining/lying throughout, likely activity-related. EDA and PR and SkinTemp and ACCEL rose in step with heightened motion, indicating the signal is at least partly explained by movement rather than stress alone.",
+                "stress_score": 4,
+                "stress_level": "Moderate stress",
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I have to set aside a fixed time for this exam; otherwise, it won't be possible to prepare properly.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: Encouragement\n\nResponse: I think you've already identified an important solution. You're not saying that you can't studyâyou've realized that unless you protect a fixed time for exam preparation, research will naturally take over your day. That's an important insight because it gives you something practical to work on. If you could reserve one uninterrupted study session every day, what time do you think would be the most realistic?<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I have to set aside a fixed time for this exam; otherwise, it won't be possible to prepare properly.\nPhysiological Signals: Across the past 6 minutes, EDA and PR and SkinTemp and ACCEL rose; posture stayed reclining/lying throughout, likely activity-related. EDA and PR and SkinTemp and ACCEL rose in step with heightened motion, indicating the signal is at least partly explained by movement rather than stress alone. At the same time, Over the past 6 minutes, heart rate remained upward near 114.0 beats per minute. Alongside this, Over the past 6 minutes, motion intensity stayed rising, around 0.06 g. In parallel, Over the past 6 minutes, electrodermal activity moved slightly in a growing direction, from 0.36 to 0.41 uS. On top of that, Over the past 6 minutes, skin temperature remained rising, staying close to 33.17 degC. At the same time, Activity type moved from still to generic across the past 6 minutes. Further, Movement count of 57.0 contributes to a combined stress score of 4 over the past 6 minutes, consistent with Moderate stress.\n\n### Response:\nStrategy: Encouragement\n\nResponse: I think you've already identified an important solution. You're not saying that you can't studyâyou've realized that unless you protect a fixed time for exam preparation, research will naturally take over your day. That's an important insight because it gives you something practical to work on. If you could reserve one uninterrupted study session every day, what time do you think would be the most realistic?<EOS>"
+            },
+            {
+                "timestamp": "2026-07-13T16:49:00",
+                "participant_full_id": "2753-1-1-0000",
+                "user_text": "The whole day goes into research work, handling interns, and doing other tasks that my professor assigns me.",
+                "ai_text": "I can understand why you're feeling stretched so thin. You're carrying responsibilities in several different directions at once, and each one demands your attention. It's understandable that you're finding it hard to make consistent progress on exam preparation. Does your professor know that you're preparing for this comprehensive exam, or does he expect you to manage everything at the same time?",
+                "context": "",
+                "strategy": "Emotional Validation",
+                "raw_physio": {
+                    "EDA": [
+                        0.41,
+                        0.42
+                    ],
+                    "PR": [
+                        112.0,
+                        108.0
+                    ],
+                    "SkinTemp": [
+                        33.2,
+                        33.22
+                    ],
+                    "ACCEL": [
+                        0.147,
+                        0.018
+                    ],
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": [
+                        141.0,
+                        51.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "PR": "Heart rate rising sharply during the past 6 minutes, reaching 108.0 bpm.",
+                    "SkinTemp": "Across the past 6 minutes, peripheral temperature trended growing from 33.1 to 33.22 degC.",
+                    "ACCEL": "Motion intensity rising moderately during the past 6 minutes, reaching 0.02 g.",
+                    "EDA": "Over the past 6 minutes, electrodermal activity rising slightly, moving from 0.37 to 0.42 uS.",
+                    "ACT_CLASS": "The activity label changed from still to generic within the past 6 minutes."
+                },
+                "physio_summary_fusion": "Across the past 6 minutes, taking reclining/lying posture and MPA intensity into account, EDA and PR and SkinTemp and ACCEL rose, likely activity-related. EDA and PR and SkinTemp and ACCEL climbed while movement also increased, suggesting the change may be confounded by physical activity.",
+                "stress_score": 4,
+                "stress_level": "Moderate stress",
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: The whole day goes into research work, handling interns, and doing other tasks that my professor assigns me.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: Emotional Validation\n\nResponse: I can understand why you're feeling stretched so thin. You're carrying responsibilities in several different directions at once, and each one demands your attention. It's understandable that you're finding it hard to make consistent progress on exam preparation. Does your professor know that you're preparing for this comprehensive exam, or does he expect you to manage everything at the same time?<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: The whole day goes into research work, handling interns, and doing other tasks that my professor assigns me.\nPhysiological Signals: Across the past 6 minutes, taking reclining/lying posture and MPA intensity into account, EDA and PR and SkinTemp and ACCEL rose, likely activity-related. EDA and PR and SkinTemp and ACCEL climbed while movement also increased, suggesting the change may be confounded by physical activity. In parallel, Heart rate rising sharply during the past 6 minutes, reaching 108.0 bpm. Alongside this, Across the past 6 minutes, peripheral temperature trended growing from 33.1 to 33.22 degC. Alongside this, Motion intensity rising moderately during the past 6 minutes, reaching 0.02 g. Also, Over the past 6 minutes, electrodermal activity rising slightly, moving from 0.37 to 0.42 uS. Simultaneously, The activity label changed from still to generic within the past 6 minutes. Additionally, With activity count at 51.0, the composite stress score for the past 6 minutes is 4, indicating Moderate stress.\n\n### Response:\nStrategy: Emotional Validation\n\nResponse: I can understand why you're feeling stretched so thin. You're carrying responsibilities in several different directions at once, and each one demands your attention. It's understandable that you're finding it hard to make consistent progress on exam preparation. Does your professor know that you're preparing for this comprehensive exam, or does he expect you to manage everything at the same time?<EOS>"
+            },
+            {
+                "timestamp": "2026-07-13T16:51:00",
+                "participant_full_id": "2753-1-1-0000",
+                "user_text": "Yes, he knows because it's the comprehensive exam for PhD students at our institute.",
+                "ai_text": "That makes your situation even more challenging. Since your professor knows about the exam, you probably hoped you'd have a little more space to prepare. Instead, it feels like you're expected to maintain the same workload while getting ready for one of the most important exams in your PhD. Have you ever thought about asking if some of your responsibilities could be reduced until the exam is over, or do you feel that isn't really possible?",
+                "context": "",
+                "strategy": "Reflective Statements",
+                "raw_physio": {
+                    "EDA": [
+                        0.43,
+                        0.44,
+                        0.44
+                    ],
+                    "PR": [
+                        100.0,
+                        101.0,
+                        104.0
+                    ],
+                    "SkinTemp": [
+                        33.22,
+                        33.23,
+                        33.23
+                    ],
+                    "ACCEL": [
+                        0.027,
+                        0.069,
+                        0.052
+                    ],
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": [
+                        58.0,
+                        123.0,
+                        116.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "ACCEL": "Accelerometer readings moved moderately and climbing through the past 6 minutes, ending at 0.05 g.",
+                    "PR": "Pulse rate showed a elevating trend across the past 6 minutes, with highly fluctuating variation, now 104.0 bpm.",
+                    "EDA": "Over the past 6 minutes, sweat-gland activity (EDA) upward slightly, now near 0.44 uS.",
+                    "SkinTemp": "A increasing skin temperature pattern was observed over the past 6 minutes, smooth, reaching 33.23 degC.",
+                    "ACT_CLASS": "The generic state held steady for the past 6 minutes."
+                },
+                "physio_summary_fusion": "Over the past 6 minutes, EDA and PR and SkinTemp and ACCEL rose against a backdrop of generic activity and some walking activity, likely activity-related. Because both arousal and activity increased together, this pattern is more consistent with exertion than emotional stress.",
+                "stress_score": 2,
+                "stress_level": "Mild stress",
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Yes, he knows because it's the comprehensive exam for PhD students at our institute.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: Reflective Statements\n\nResponse: That makes your situation even more challenging. Since your professor knows about the exam, you probably hoped you'd have a little more space to prepare. Instead, it feels like you're expected to maintain the same workload while getting ready for one of the most important exams in your PhD. Have you ever thought about asking if some of your responsibilities could be reduced until the exam is over, or do you feel that isn't really possible?<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Yes, he knows because it's the comprehensive exam for PhD students at our institute.\nPhysiological Signals: Over the past 6 minutes, EDA and PR and SkinTemp and ACCEL rose against a backdrop of generic activity and some walking activity, likely activity-related. Because both arousal and activity increased together, this pattern is more consistent with exertion than emotional stress. Simultaneously, Accelerometer readings moved moderately and climbing through the past 6 minutes, ending at 0.05 g. Additionally, Pulse rate showed a elevating trend across the past 6 minutes, with highly fluctuating variation, now 104.0 bpm. Notably, Over the past 6 minutes, sweat-gland activity (EDA) upward slightly, now near 0.44 uS. A increasing skin temperature pattern was observed over the past 6 minutes, smooth, reaching 33.23 degC. Also, The generic state held steady for the past 6 minutes. On top of that, Combining the signals above with an activity count of 116.0, the resulting score over the past 6 minutes is 2 - Mild stress.\n\n### Response:\nStrategy: Reflective Statements\n\nResponse: That makes your situation even more challenging. Since your professor knows about the exam, you probably hoped you'd have a little more space to prepare. Instead, it feels like you're expected to maintain the same workload while getting ready for one of the most important exams in your PhD. Have you ever thought about asking if some of your responsibilities could be reduced until the exam is over, or do you feel that isn't really possible?<EOS>"
+            },
+            {
+                "timestamp": "2026-07-13T16:54:00",
+                "participant_full_id": "2753-1-1-0000",
+                "user_text": "I think I should tell him, but I don't think he'll understand. He told us to make a schedule.",
+                "ai_text": "I understand why you're hesitant. It sounds like you're worried that even if you explain your situation, the expectation will still be to manage everything according to a schedule instead of reducing your workload. That uncertainty can make you feel like you're carrying this pressure alone. When your professor suggested making a schedule, do you think he wanted you to prioritize the exam, or did he still expect you to complete all of your research and TA work as usual?",
+                "context": "",
+                "strategy": "Emotional Validation",
+                "raw_physio": {
+                    "EDA": [
+                        0.45,
+                        0.45
+                    ],
+                    "PR": [
+                        103.0,
+                        91.0
+                    ],
+                    "SkinTemp": [
+                        33.22,
+                        33.22
+                    ],
+                    "ACCEL": [
+                        0.03,
+                        0.014
+                    ],
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": [
+                        39.0,
+                        28.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "PR": "Across the past 6 minutes, pulse rate held dropping, staying close to 91.0 bpm.",
+                    "ACCEL": "Over the past 6 minutes, physical activity intensity declining sharply, now near 0.01 g.",
+                    "EDA": "Across the past 6 minutes, electrodermal activity showed a elevating pattern, settling around 0.45 uS.",
+                    "SkinTemp": "During the past 6 minutes, skin temperature registered a increasing shift to 33.22 degC, without any notable peaks or valleys.",
+                    "ACT_CLASS": "A shift occurred over the past 6 minutes: activity went from generic to still."
+                },
+                "physio_summary_fusion": "Across the past 6 minutes, EDA and PR and SkinTemp and ACCEL shifted; posture stayed reclining/lying throughout, not explained by movement. EDA and PR and SkinTemp and ACCEL increased even as the body stayed still, a pattern more consistent with emotional than physical arousal.",
+                "stress_score": 4,
+                "stress_level": "Moderate stress",
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I think I should tell him, but I don't think he'll understand. He told us to make a schedule.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: Emotional Validation\n\nResponse: I understand why you're hesitant. It sounds like you're worried that even if you explain your situation, the expectation will still be to manage everything according to a schedule instead of reducing your workload. That uncertainty can make you feel like you're carrying this pressure alone. When your professor suggested making a schedule, do you think he wanted you to prioritize the exam, or did he still expect you to complete all of your research and TA work as usual?<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I think I should tell him, but I don't think he'll understand. He told us to make a schedule.\nPhysiological Signals: Across the past 6 minutes, EDA and PR and SkinTemp and ACCEL shifted; posture stayed reclining/lying throughout, not explained by movement. EDA and PR and SkinTemp and ACCEL increased even as the body stayed still, a pattern more consistent with emotional than physical arousal. Also, Across the past 6 minutes, pulse rate held dropping, staying close to 91.0 bpm. Meanwhile, Over the past 6 minutes, physical activity intensity declining sharply, now near 0.01 g. Alongside this, Across the past 6 minutes, electrodermal activity showed a elevating pattern, settling around 0.45 uS. Further, During the past 6 minutes, skin temperature registered a increasing shift to 33.22 degC, without any notable peaks or valleys. Also, A shift occurred over the past 6 minutes: activity went from generic to still. In parallel, Factoring in an activity count of 28.0, the composite indicator over the past 6 minutes reads 4, suggesting Moderate stress.\n\n### Response:\nStrategy: Emotional Validation\n\nResponse: I understand why you're hesitant. It sounds like you're worried that even if you explain your situation, the expectation will still be to manage everything according to a schedule instead of reducing your workload. That uncertainty can make you feel like you're carrying this pressure alone. When your professor suggested making a schedule, do you think he wanted you to prioritize the exam, or did he still expect you to complete all of your research and TA work as usual?<EOS>"
+            },
+            {
+                "timestamp": "2026-07-13T16:56:00",
+                "participant_full_id": "2753-1-1-0000",
+                "user_text": "He still expects me to complete all of those tasks. He regularly asks about my exam preparation, and that's what I find most frustrating. Since studying doesn't produce visible progress every day, I don't know how to show him what I've accomplished. If I study for only two or three hours a day, I can't say that I've completely finished a topic.",
+                "ai_text": "I think I understand what's bothering you the most now. It isn't only the workloadâit's that you're being asked to show daily progress in something that doesn't always have immediate, visible results. Research often has deliverables you can point to, but studying is different. Sometimes you spend hours revising concepts or solving a few difficult problems, and from the outside it may not look like much, even though you've learned a lot. It also sounds like you're caught between two expectations. On one hand, you need to prepare for a high-stakes exam. On the other, you feel responsible for meeting all of your research and TA commitments. That's a difficult position to be in. When your professor asks about your preparation, do you feel he's checking whether you're studying at all, or does it feel like he's expecting measurable daily progress?",
+                "context": "",
+                "strategy": "Reflective Statements",
+                "raw_physio": {
+                    "EDA": [
+                        0.46,
+                        0.47,
+                        0.47
+                    ],
+                    "PR": [
+                        93.0,
+                        102.0,
+                        92.0
+                    ],
+                    "SkinTemp": [
+                        33.24,
+                        33.27,
+                        33.27
+                    ],
+                    "ACCEL": [
+                        0.018,
+                        0.022,
+                        0.008
+                    ],
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": [
+                        37.0,
+                        51.0,
+                        13.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "PR": "Across the past 6 minutes, heart rate trended declining from 100.0 to 92.0 bpm.",
+                    "ACCEL": "Motion intensity decreasing moderately during the past 6 minutes, reaching 0.01 g.",
+                    "EDA": "EDA levels moved slightly and rising through the past 6 minutes, ending at 0.47 uS.",
+                    "SkinTemp": "Across the past 6 minutes, skin temperature held increasing near 33.27 degC.",
+                    "ACT_CLASS": "Over the past 6 minutes, activity transitioned from generic toward walking."
+                },
+                "physio_summary_fusion": "Across the past 6 minutes, wear-quality was reliable; within that context, EDA and PR and SkinTemp and ACCEL shifted, not explained by movement. EDA and PR and SkinTemp and ACCEL increased while the participant remained sedentary, so the change cannot be attributed to physical exertion.",
+                "stress_score": 5,
+                "stress_level": "Moderate stress",
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: He still expects me to complete all of those tasks. He regularly asks about my exam preparation, and that's what I find most frustrating. Since studying doesn't produce visible progress every day, I don't know how to show him what I've accomplished. If I study for only two or three hours a day, I can't say that I've completely finished a topic.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: Reflective Statements\n\nResponse: I think I understand what's bothering you the most now. It isn't only the workloadâit's that you're being asked to show daily progress in something that doesn't always have immediate, visible results. Research often has deliverables you can point to, but studying is different. Sometimes you spend hours revising concepts or solving a few difficult problems, and from the outside it may not look like much, even though you've learned a lot. It also sounds like you're caught between two expectations. On one hand, you need to prepare for a high-stakes exam. On the other, you feel responsible for meeting all of your research and TA commitments. That's a difficult position to be in. When your professor asks about your preparation, do you feel he's checking whether you're studying at all, or does it feel like he's expecting measurable daily progress?<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: He still expects me to complete all of those tasks. He regularly asks about my exam preparation, and that's what I find most frustrating. Since studying doesn't produce visible progress every day, I don't know how to show him what I've accomplished. If I study for only two or three hours a day, I can't say that I've completely finished a topic.\nPhysiological Signals: Across the past 6 minutes, wear-quality was reliable; within that context, EDA and PR and SkinTemp and ACCEL shifted, not explained by movement. EDA and PR and SkinTemp and ACCEL increased while the participant remained sedentary, so the change cannot be attributed to physical exertion. On top of that, Across the past 6 minutes, heart rate trended declining from 100.0 to 92.0 bpm. Additionally, Motion intensity decreasing moderately during the past 6 minutes, reaching 0.01 g. On top of that, EDA levels moved slightly and rising through the past 6 minutes, ending at 0.47 uS. Across the past 6 minutes, skin temperature held increasing near 33.27 degC. Meanwhile, Over the past 6 minutes, activity transitioned from generic toward walking. Simultaneously, Movement count of 13.0 contributes to a combined stress score of 5 over the past 6 minutes, consistent with Moderate stress.\n\n### Response:\nStrategy: Reflective Statements\n\nResponse: I think I understand what's bothering you the most now. It isn't only the workloadâit's that you're being asked to show daily progress in something that doesn't always have immediate, visible results. Research often has deliverables you can point to, but studying is different. Sometimes you spend hours revising concepts or solving a few difficult problems, and from the outside it may not look like much, even though you've learned a lot. It also sounds like you're caught between two expectations. On one hand, you need to prepare for a high-stakes exam. On the other, you feel responsible for meeting all of your research and TA commitments. That's a difficult position to be in. When your professor asks about your preparation, do you feel he's checking whether you're studying at all, or does it feel like he's expecting measurable daily progress?<EOS>"
+            },
+            {
+                "timestamp": "2026-07-13T16:59:00",
+                "participant_full_id": "2753-1-1-0000",
+                "user_text": "I don't like this kind of daily checking. If it were once a week instead, that would be fine for me.",
+                "ai_text": "That makes a lot of sense. Weekly check-ins would give you enough time to make meaningful progress, while daily check-ins can make it feel as though you have to prove yourself every single day. Studying isn't like completing a research task where the outcome is immediately visible. Sometimes real progress happens quietly over several days. I also wonder if those daily questions are making it harder to focus because they're always in the back of your mind. Instead of simply learning, you may be thinking, 'What will I say tomorrow if I'm asked again?' That kind of pressure can make studying feel like something you have to report on rather than something you're doing for yourself. If the check-ins were weekly instead of daily, do you think you'd feel more relaxed and be able to focus better?",
+                "context": "",
+                "strategy": "Emotional Validation",
+                "raw_physio": {
+                    "EDA": [
+                        0.47,
+                        0.47
+                    ],
+                    "PR": [
+                        96.0,
+                        105.0
+                    ],
+                    "SkinTemp": [
+                        33.27,
+                        33.28
+                    ],
+                    "ACCEL": [
+                        0.014,
+                        0.012
+                    ],
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": [
+                        24.0,
+                        48.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "ACCEL": "During the past 6 minutes, movement registered a downward shift to 0.01 g, without any notable peaks or valleys.",
+                    "PR": "Heart rate drifted rising across the past 6 minutes to 105.0 bpm, without any notable peaks or valleys.",
+                    "SkinTemp": "Skin temperature moved slightly in a increasing direction over the past 6 minutes, from 33.22 to 33.28 degC.",
+                    "EDA": "Over the past 6 minutes, electrodermal activity moved slightly in a increasing direction, from 0.45 to 0.47 uS.",
+                    "ACT_CLASS": "Activity type moved from still to still across the past 6 minutes."
+                },
+                "physio_summary_fusion": "Over the past 6 minutes, step count suggests minimal walking; EDA and PR and SkinTemp and ACCEL shifted, a response that is likely activity-related. The rise in EDA and PR and SkinTemp and ACCEL coincided with elevated ACT_COUNT, making it difficult to separate physical exertion from emotional stress.",
+                "stress_score": 4,
+                "stress_level": "Moderate stress",
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I don't like this kind of daily checking. If it were once a week instead, that would be fine for me.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: Emotional Validation\n\nResponse: That makes a lot of sense. Weekly check-ins would give you enough time to make meaningful progress, while daily check-ins can make it feel as though you have to prove yourself every single day. Studying isn't like completing a research task where the outcome is immediately visible. Sometimes real progress happens quietly over several days. I also wonder if those daily questions are making it harder to focus because they're always in the back of your mind. Instead of simply learning, you may be thinking, 'What will I say tomorrow if I'm asked again?' That kind of pressure can make studying feel like something you have to report on rather than something you're doing for yourself. If the check-ins were weekly instead of daily, do you think you'd feel more relaxed and be able to focus better?<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I don't like this kind of daily checking. If it were once a week instead, that would be fine for me.\nPhysiological Signals: Over the past 6 minutes, step count suggests minimal walking; EDA and PR and SkinTemp and ACCEL shifted, a response that is likely activity-related. The rise in EDA and PR and SkinTemp and ACCEL coincided with elevated ACT_COUNT, making it difficult to separate physical exertion from emotional stress. Further, During the past 6 minutes, movement registered a downward shift to 0.01 g, without any notable peaks or valleys. Heart rate drifted rising across the past 6 minutes to 105.0 bpm, without any notable peaks or valleys. Meanwhile, Skin temperature moved slightly in a increasing direction over the past 6 minutes, from 33.22 to 33.28 degC. Simultaneously, Over the past 6 minutes, electrodermal activity moved slightly in a increasing direction, from 0.45 to 0.47 uS. At the same time, Activity type moved from still to still across the past 6 minutes. Additionally, Factoring in an activity count of 48.0, the composite indicator over the past 6 minutes reads 4, suggesting Moderate stress.\n\n### Response:\nStrategy: Emotional Validation\n\nResponse: That makes a lot of sense. Weekly check-ins would give you enough time to make meaningful progress, while daily check-ins can make it feel as though you have to prove yourself every single day. Studying isn't like completing a research task where the outcome is immediately visible. Sometimes real progress happens quietly over several days. I also wonder if those daily questions are making it harder to focus because they're always in the back of your mind. Instead of simply learning, you may be thinking, 'What will I say tomorrow if I'm asked again?' That kind of pressure can make studying feel like something you have to report on rather than something you're doing for yourself. If the check-ins were weekly instead of daily, do you think you'd feel more relaxed and be able to focus better?<EOS>"
+            },
+            {
+                "timestamp": "2026-07-13T17:01:00",
+                "participant_full_id": "2753-1-1-0000",
+                "user_text": "Yeah. I'm already feeling tense because I don't have much time left. If I study every topic carefully and thoroughly, it would probably take me more than a year. But I have only one and a half months.",
+                "ai_text": "I think this is the heart of your anxiety. In your mind, you're comparing one year's worth of preparation with only one and a half months of time. Anyone facing that comparison would feel overwhelmed. It isn't that you're unwilling to work hardâit's that the amount of time you believe you need doesn't match the time you actually have. When we keep thinking about everything that's left to study, it's easy to feel as though we're making no progress at all. That thought can become more exhausting than the studying itself. Can I ask one thing? When you say it would take a year, is that because you want to understand every topic perfectly, or because the syllabus genuinely feels too large to finish in one and a half months?",
+                "context": "",
+                "strategy": "Emotional Validation",
+                "raw_physio": {
+                    "EDA": [
+                        0.48,
+                        0.49,
+                        0.49
+                    ],
+                    "PR": [
+                        99.0,
+                        98.0,
+                        95.0
+                    ],
+                    "SkinTemp": [
+                        33.29,
+                        33.29,
+                        33.29
+                    ],
+                    "ACCEL": [
+                        0.015,
+                        0.014,
+                        0.007
+                    ],
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": [
+                        48.0,
+                        33.0,
+                        14.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "PR": "Pulse rate showed a rising trend across the past 6 minutes, with highly fluctuating variation, now 95.0 bpm.",
+                    "ACCEL": "A decreasing movement pattern was observed over the past 6 minutes, smooth, reaching 0.01 g.",
+                    "EDA": "Across the past 6 minutes, EDA trended elevating from 0.46 to 0.49 uS.",
+                    "SkinTemp": "During the past 6 minutes, skin temperature registered a upward shift to 33.29 degC, showing a single sustained rise with no reversal.",
+                    "ACT_CLASS": "Activity state evolved from walking to walking during the past 6 minutes."
+                },
+                "physio_summary_fusion": "Over the past 6 minutes, EDA and PR and SkinTemp and ACCEL shifted against a backdrop of walking activity and minimal walking, not explained by movement. EDA and PR and SkinTemp and ACCEL rose while ACCEL and ACT_COUNT showed no corresponding movement, suggesting this arousal is not explained by physical activity.",
+                "stress_score": 5,
+                "stress_level": "Moderate stress",
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Yeah. I'm already feeling tense because I don't have much time left. If I study every topic carefully and thoroughly, it would probably take me more than a year. But I have only one and a half months.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: Emotional Validation\n\nResponse: I think this is the heart of your anxiety. In your mind, you're comparing one year's worth of preparation with only one and a half months of time. Anyone facing that comparison would feel overwhelmed. It isn't that you're unwilling to work hardâit's that the amount of time you believe you need doesn't match the time you actually have. When we keep thinking about everything that's left to study, it's easy to feel as though we're making no progress at all. That thought can become more exhausting than the studying itself. Can I ask one thing? When you say it would take a year, is that because you want to understand every topic perfectly, or because the syllabus genuinely feels too large to finish in one and a half months?<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Yeah. I'm already feeling tense because I don't have much time left. If I study every topic carefully and thoroughly, it would probably take me more than a year. But I have only one and a half months.\nPhysiological Signals: Over the past 6 minutes, EDA and PR and SkinTemp and ACCEL shifted against a backdrop of walking activity and minimal walking, not explained by movement. EDA and PR and SkinTemp and ACCEL rose while ACCEL and ACT_COUNT showed no corresponding movement, suggesting this arousal is not explained by physical activity. Further, Pulse rate showed a rising trend across the past 6 minutes, with highly fluctuating variation, now 95.0 bpm. Additionally, A decreasing movement pattern was observed over the past 6 minutes, smooth, reaching 0.01 g. Meanwhile, Across the past 6 minutes, EDA trended elevating from 0.46 to 0.49 uS. Alongside this, During the past 6 minutes, skin temperature registered a upward shift to 33.29 degC, showing a single sustained rise with no reversal. Alongside this, Activity state evolved from walking to walking during the past 6 minutes. In parallel, The stress score for the past 6 minutes is 5 (activity count: 14.0), pointing to Moderate stress.\n\n### Response:\nStrategy: Emotional Validation\n\nResponse: I think this is the heart of your anxiety. In your mind, you're comparing one year's worth of preparation with only one and a half months of time. Anyone facing that comparison would feel overwhelmed. It isn't that you're unwilling to work hardâit's that the amount of time you believe you need doesn't match the time you actually have. When we keep thinking about everything that's left to study, it's easy to feel as though we're making no progress at all. That thought can become more exhausting than the studying itself. Can I ask one thing? When you say it would take a year, is that because you want to understand every topic perfectly, or because the syllabus genuinely feels too large to finish in one and a half months?<EOS>"
+            },
+            {
+                "timestamp": "2026-07-13T17:04:00",
+                "participant_full_id": "2753-1-1-0000",
+                "user_text": "Can you help me create a study schedule?",
+                "ai_text": "Absolutely. I'd be happy to help you. From everything you've shared, I don't think your biggest challenge is your abilityâit's that your time is being divided between your comprehensive exam, research, TA responsibilities, and your professor's expectations. The schedule has to fit your real life, not an ideal one. To create a realistic plan, I need to understand your daily routine. What time do you usually wake up and go to bed? What does a typical day look like for you?",
+                "context": "",
+                "strategy": "Collaborative Problem Solving",
+                "raw_physio": {
+                    "EDA": [
+                        0.49,
+                        0.5
+                    ],
+                    "PR": [
+                        96.0,
+                        97.0
+                    ],
+                    "SkinTemp": [
+                        33.32,
+                        33.33
+                    ],
+                    "ACCEL": [
+                        0.025,
+                        0.035
+                    ],
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": [
+                        47.0,
+                        52.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "ACCEL": "Accelerometer readings showed a increasing pattern across the past 6 minutes, with mildly fluctuating variation, now 0.04 g.",
+                    "EDA": "Electrodermal readings rising slightly across the past 6 minutes to 0.5 uS, without any notable peaks or valleys.",
+                    "SkinTemp": "Skin temperature drifted rising across the past 6 minutes to 33.33 degC, without any notable peaks or valleys.",
+                    "PR": "Beats per minute elevating slightly over the past 6 minutes, now 97.0, without any notable peaks or valleys.",
+                    "ACT_CLASS": "During the past 6 minutes, movement classification changed from still to walking."
+                },
+                "physio_summary_fusion": "Over the past 6 minutes, EDA and PR and SkinTemp and ACCEL rose, while movement remained walking (LPA intensity), suggesting the change is likely activity-related. EDA and PR and SkinTemp and ACCEL rose in step with heightened motion, indicating the signal is at least partly explained by movement rather than stress alone.",
+                "stress_score": 4,
+                "stress_level": "Moderate stress",
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Can you help me create a study schedule?\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: Collaborative Problem Solving\n\nResponse: Absolutely. I'd be happy to help you. From everything you've shared, I don't think your biggest challenge is your abilityâit's that your time is being divided between your comprehensive exam, research, TA responsibilities, and your professor's expectations. The schedule has to fit your real life, not an ideal one. To create a realistic plan, I need to understand your daily routine. What time do you usually wake up and go to bed? What does a typical day look like for you?<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Can you help me create a study schedule?\nPhysiological Signals: Over the past 6 minutes, EDA and PR and SkinTemp and ACCEL rose, while movement remained walking (LPA intensity), suggesting the change is likely activity-related. EDA and PR and SkinTemp and ACCEL rose in step with heightened motion, indicating the signal is at least partly explained by movement rather than stress alone. At the same time, Accelerometer readings showed a increasing pattern across the past 6 minutes, with mildly fluctuating variation, now 0.04 g. Meanwhile, Electrodermal readings rising slightly across the past 6 minutes to 0.5 uS, without any notable peaks or valleys. Skin temperature drifted rising across the past 6 minutes to 33.33 degC, without any notable peaks or valleys. Additionally, Beats per minute elevating slightly over the past 6 minutes, now 97.0, without any notable peaks or valleys. During the past 6 minutes, movement classification changed from still to walking. Notably, Movement count of 52.0 contributes to a combined stress score of 4 over the past 6 minutes, consistent with Moderate stress.\n\n### Response:\nStrategy: Collaborative Problem Solving\n\nResponse: Absolutely. I'd be happy to help you. From everything you've shared, I don't think your biggest challenge is your abilityâit's that your time is being divided between your comprehensive exam, research, TA responsibilities, and your professor's expectations. The schedule has to fit your real life, not an ideal one. To create a realistic plan, I need to understand your daily routine. What time do you usually wake up and go to bed? What does a typical day look like for you?<EOS>"
+            },
+            {
+                "timestamp": "2026-07-13T17:06:00",
+                "participant_full_id": "2753-1-1-0000",
+                "user_text": "I wake up at 9:00 AM and usually go to bed around 1:30 AM. I have to be in the lab from 11:00 AM to 1:30 PM. Then I have lunch from 1:30 PM to 2:30 PM, and I'm back in the lab until 5:30 PM. I go for a walk from 5:30 PM to 6:00 PM, then return to the lab until 8:30 PM. I have dinner from 8:30 PM to 9:30 PM. I think I should schedule my study time after dinner.",
+                "ai_text": "Thank you for explaining your routine so clearly. Looking at your schedule, I think studying only after dinner may not be the best option because by then you've already spent almost ten hours on research and lab work. Your mind is probably quite tired. Instead, I'd suggest protecting your study time rather than leaving it to whatever energy remains at the end of the day. Even one focused session in the morning and another at night would be much more effective than trying to study only when you're exhausted. During your lab hours, are you continuously busy, or do you sometimes have short breaks that you could use for quick revision?",
+                "context": "",
+                "strategy": "Collaborative Problem Solving",
+                "raw_physio": {
+                    "EDA": [
+                        0.5,
+                        0.51,
+                        0.51
+                    ],
+                    "PR": [
+                        94.0,
+                        105.0,
+                        91.0
+                    ],
+                    "SkinTemp": [
+                        33.33,
+                        33.32,
+                        33.3
+                    ],
+                    "ACCEL": [
+                        0.014,
+                        0.033,
+                        0.029
+                    ],
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": [
+                        53.0,
+                        52.0,
+                        30.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "PR": "The pulse signal was downward for the past 6 minutes, highly fluctuating, around 91.0 bpm.",
+                    "ACCEL": "Accelerometer output upward slightly across the past 6 minutes, showing mildly fluctuating activity, now 0.03 g.",
+                    "EDA": "The electrodermal signal was increasing for the past 6 minutes, showing smooth behavior around 0.51 uS.",
+                    "SkinTemp": "Over the past 6 minutes, peripheral temperature stayed climbing, around 33.3 degC.",
+                    "ACT_CLASS": "Activity classification remained walking throughout the past 6 minutes."
+                },
+                "physio_summary_fusion": "Across the past 6 minutes, EDA and PR and SkinTemp and ACCEL shifted while the participant was awake, likely activity-related. The rise in EDA and PR and SkinTemp and ACCEL coincided with elevated ACT_COUNT, making it difficult to separate physical exertion from emotional stress.",
+                "stress_score": 4,
+                "stress_level": "Moderate stress",
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I wake up at 9:00 AM and usually go to bed around 1:30 AM. I have to be in the lab from 11:00 AM to 1:30 PM. Then I have lunch from 1:30 PM to 2:30 PM, and I'm back in the lab until 5:30 PM. I go for a walk from 5:30 PM to 6:00 PM, then return to the lab until 8:30 PM. I have dinner from 8:30 PM to 9:30 PM. I think I should schedule my study time after dinner.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: Collaborative Problem Solving\n\nResponse: Thank you for explaining your routine so clearly. Looking at your schedule, I think studying only after dinner may not be the best option because by then you've already spent almost ten hours on research and lab work. Your mind is probably quite tired. Instead, I'd suggest protecting your study time rather than leaving it to whatever energy remains at the end of the day. Even one focused session in the morning and another at night would be much more effective than trying to study only when you're exhausted. During your lab hours, are you continuously busy, or do you sometimes have short breaks that you could use for quick revision?<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I wake up at 9:00 AM and usually go to bed around 1:30 AM. I have to be in the lab from 11:00 AM to 1:30 PM. Then I have lunch from 1:30 PM to 2:30 PM, and I'm back in the lab until 5:30 PM. I go for a walk from 5:30 PM to 6:00 PM, then return to the lab until 8:30 PM. I have dinner from 8:30 PM to 9:30 PM. I think I should schedule my study time after dinner.\nPhysiological Signals: Across the past 6 minutes, EDA and PR and SkinTemp and ACCEL shifted while the participant was awake, likely activity-related. The rise in EDA and PR and SkinTemp and ACCEL coincided with elevated ACT_COUNT, making it difficult to separate physical exertion from emotional stress. In parallel, The pulse signal was downward for the past 6 minutes, highly fluctuating, around 91.0 bpm. Meanwhile, Accelerometer output upward slightly across the past 6 minutes, showing mildly fluctuating activity, now 0.03 g. Also, The electrodermal signal was increasing for the past 6 minutes, showing smooth behavior around 0.51 uS. Meanwhile, Over the past 6 minutes, peripheral temperature stayed climbing, around 33.3 degC. Additionally, Activity classification remained walking throughout the past 6 minutes. The stress score for the past 6 minutes is 4 (activity count: 30.0), pointing to Moderate stress.\n\n### Response:\nStrategy: Collaborative Problem Solving\n\nResponse: Thank you for explaining your routine so clearly. Looking at your schedule, I think studying only after dinner may not be the best option because by then you've already spent almost ten hours on research and lab work. Your mind is probably quite tired. Instead, I'd suggest protecting your study time rather than leaving it to whatever energy remains at the end of the day. Even one focused session in the morning and another at night would be much more effective than trying to study only when you're exhausted. During your lab hours, are you continuously busy, or do you sometimes have short breaks that you could use for quick revision?<EOS>"
+            },
+            {
+                "timestamp": "2026-07-13T17:09:00",
+                "participant_full_id": "2753-1-1-0000",
+                "user_text": "Yeah, I'm continuously busy during my lab hours.",
+                "ai_text": "That actually makes planning much easier because now we know we shouldn't depend on finding free time during the day. Instead, we'll build a schedule around your fixed responsibilities. A routine like this could work: 10:00â10:50 AM: Study new concepts. 11:00 AMâ8:30 PM: Lab, research, TA work, lunch, and walk. 9:30â11:00 PM: Continue studying the same subject. 11:15 PMâ12:30 AM: Solve previous year's questions. 12:30â1:00 AM: Revise mistakes and prepare notes. This gives you around 3â3.5 hours of focused study every day, which is realistic alongside your research. Can I ask one more thing? How many subjects are included in your comprehensive exam?",
+                "context": "",
+                "strategy": "Collaborative Problem Solving",
+                "raw_physio": {
+                    "EDA": [
+                        0.51,
+                        0.53
+                    ],
+                    "PR": [
+                        96.0,
+                        97.0
+                    ],
+                    "SkinTemp": [
+                        33.27,
+                        33.23
+                    ],
+                    "ACCEL": [
+                        0.057,
+                        0.093
+                    ],
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": [
+                        72.0,
+                        127.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "ACCEL": "The motion signal was growing for the past 6 minutes, highly fluctuating, around 0.09 g.",
+                    "SkinTemp": "A downward skin temperature pattern was observed over the past 6 minutes, smooth, reaching 33.23 degC.",
+                    "EDA": "Skin conductance drifted growing across the past 6 minutes to 0.53 uS, showing a single sustained rise with no reversal.",
+                    "PR": "A elevating pulse rate pattern emerged over the past 6 minutes, highly fluctuating, reaching 97.0 bpm.",
+                    "ACT_CLASS": "A change in activity was noted over the past 6 minutes, moving from walking to generic."
+                },
+                "physio_summary_fusion": "During the past 6 minutes, EDA and PR and SkinTemp and ACCEL shifted; since movement stayed generic with MET near 3.28, this arousal appears likely activity-related. Because both arousal and activity increased together, this pattern is more consistent with exertion than emotional stress.",
+                "stress_score": 2,
+                "stress_level": "Mild stress",
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Yeah, I'm continuously busy during my lab hours.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: Collaborative Problem Solving\n\nResponse: That actually makes planning much easier because now we know we shouldn't depend on finding free time during the day. Instead, we'll build a schedule around your fixed responsibilities. A routine like this could work: 10:00â10:50 AM: Study new concepts. 11:00 AMâ8:30 PM: Lab, research, TA work, lunch, and walk. 9:30â11:00 PM: Continue studying the same subject. 11:15 PMâ12:30 AM: Solve previous year's questions. 12:30â1:00 AM: Revise mistakes and prepare notes. This gives you around 3â3.5 hours of focused study every day, which is realistic alongside your research. Can I ask one more thing? How many subjects are included in your comprehensive exam?<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Yeah, I'm continuously busy during my lab hours.\nPhysiological Signals: During the past 6 minutes, EDA and PR and SkinTemp and ACCEL shifted; since movement stayed generic with MET near 3.28, this arousal appears likely activity-related. Because both arousal and activity increased together, this pattern is more consistent with exertion than emotional stress. Alongside this, The motion signal was growing for the past 6 minutes, highly fluctuating, around 0.09 g. Additionally, A downward skin temperature pattern was observed over the past 6 minutes, smooth, reaching 33.23 degC. Alongside this, Skin conductance drifted growing across the past 6 minutes to 0.53 uS, showing a single sustained rise with no reversal. Also, A elevating pulse rate pattern emerged over the past 6 minutes, highly fluctuating, reaching 97.0 bpm. Also, A change in activity was noted over the past 6 minutes, moving from walking to generic. Notably, Movement count of 127.0 contributes to a combined stress score of 2 over the past 6 minutes, consistent with Mild stress.\n\n### Response:\nStrategy: Collaborative Problem Solving\n\nResponse: That actually makes planning much easier because now we know we shouldn't depend on finding free time during the day. Instead, we'll build a schedule around your fixed responsibilities. A routine like this could work: 10:00â10:50 AM: Study new concepts. 11:00 AMâ8:30 PM: Lab, research, TA work, lunch, and walk. 9:30â11:00 PM: Continue studying the same subject. 11:15 PMâ12:30 AM: Solve previous year's questions. 12:30â1:00 AM: Revise mistakes and prepare notes. This gives you around 3â3.5 hours of focused study every day, which is realistic alongside your research. Can I ask one more thing? How many subjects are included in your comprehensive exam?<EOS>"
+            },
+            {
+                "timestamp": "2026-07-13T17:11:00",
+                "participant_full_id": "2753-1-1-0000",
+                "user_text": "There are six subjects in the comprehensive exam.",
+                "ai_text": "Six subjects in one and a half months is definitely challenging, but it's not impossible if you prepare strategically instead of trying to master every topic. I'd divide your preparation into three phases: Phase 1: Cover the complete syllabus. Phase 2: Focus on previous year's questions and problem-solving. Phase 3: Revise weak topics and take mock tests. The goal is coverage first, perfection later. That way you'll enter the exam having seen every important topic at least once. Would you mind sharing the syllabus? Once I see it, I can suggest how to divide the subjects over the next six weeks.",
+                "context": "",
+                "strategy": "Collaborative Problem Solving",
+                "raw_physio": {
+                    "EDA": [
+                        0.55,
+                        0.55,
+                        0.55
+                    ],
+                    "PR": [
+                        100.0,
+                        101.0,
+                        96.0
+                    ],
+                    "SkinTemp": [
+                        33.18,
+                        33.13,
+                        33.09
+                    ],
+                    "ACCEL": [
+                        0.052,
+                        0.154,
+                        0.011
+                    ],
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": [
+                        90.0,
+                        120.0,
+                        27.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "SkinTemp": "Skin temperature moved moderately in a decreasing direction over the past 6 minutes, from 33.33 to 33.09 degC.",
+                    "EDA": "EDA held rising through the past 6 minutes, close to 0.55 uS.",
+                    "PR": "Pulse readings moved slightly and increasing through the past 6 minutes, ending at 96.0 bpm.",
+                    "ACCEL": "Accelerometer readings moved slightly and declining through the past 6 minutes, ending at 0.01 g.",
+                    "ACT_CLASS": "Over the past 6 minutes, the participant's activity changed from walking to generic."
+                },
+                "physio_summary_fusion": "Over the past 6 minutes, the combined signal (EDA and PR and SkinTemp and ACCEL) showed shifted, with movement generic, not explained by movement. EDA and PR and SkinTemp and ACCEL increased while the participant remained sedentary, so the change cannot be attributed to physical exertion.",
+                "stress_score": 4,
+                "stress_level": "Moderate stress",
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: There are six subjects in the comprehensive exam.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: Collaborative Problem Solving\n\nResponse: Six subjects in one and a half months is definitely challenging, but it's not impossible if you prepare strategically instead of trying to master every topic. I'd divide your preparation into three phases: Phase 1: Cover the complete syllabus. Phase 2: Focus on previous year's questions and problem-solving. Phase 3: Revise weak topics and take mock tests. The goal is coverage first, perfection later. That way you'll enter the exam having seen every important topic at least once. Would you mind sharing the syllabus? Once I see it, I can suggest how to divide the subjects over the next six weeks.<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: There are six subjects in the comprehensive exam.\nPhysiological Signals: Over the past 6 minutes, the combined signal (EDA and PR and SkinTemp and ACCEL) showed shifted, with movement generic, not explained by movement. EDA and PR and SkinTemp and ACCEL increased while the participant remained sedentary, so the change cannot be attributed to physical exertion. Also, Skin temperature moved moderately in a decreasing direction over the past 6 minutes, from 33.33 to 33.09 degC. Notably, EDA held rising through the past 6 minutes, close to 0.55 uS. On top of that, Pulse readings moved slightly and increasing through the past 6 minutes, ending at 96.0 bpm. At the same time, Accelerometer readings moved slightly and declining through the past 6 minutes, ending at 0.01 g. Additionally, Over the past 6 minutes, the participant's activity changed from walking to generic. Meanwhile, Over the past 6 minutes, with activity count at 27.0, the composite score reaches 4, classified as Moderate stress.\n\n### Response:\nStrategy: Collaborative Problem Solving\n\nResponse: Six subjects in one and a half months is definitely challenging, but it's not impossible if you prepare strategically instead of trying to master every topic. I'd divide your preparation into three phases: Phase 1: Cover the complete syllabus. Phase 2: Focus on previous year's questions and problem-solving. Phase 3: Revise weak topics and take mock tests. The goal is coverage first, perfection later. That way you'll enter the exam having seen every important topic at least once. Would you mind sharing the syllabus? Once I see it, I can suggest how to divide the subjects over the next six weeks.<EOS>"
+            },
+            {
+                "timestamp": "2026-07-13T17:14:00",
+                "participant_full_id": "2753-1-1-0000",
+                "user_text": "(Explains the six subjects and the complete syllabus for Groups A, B, and C.)",
+                "ai_text": "Thank you for sharing the syllabus. I went through it carefully, and I noticed something important. When you said earlier, 'It would take me more than a year to prepare,' I think you were imagining mastering every topic in detail. But for a comprehensive exam, your goal is different. You don't need perfectionâyou need a strong understanding of the important concepts and enough practice to answer questions confidently. Here's how I'd organize the next 45 days: Weeks 1â3: Complete the syllabus across all six subjects. Weeks 4â5: Solve previous year's questions and strengthen weak areas. Week 6: Full revision and mock tests. The goal is coverage first, perfection later.",
+                "context": "",
+                "strategy": "Encouragement",
+                "raw_physio": {
+                    "EDA": [
+                        0.56,
+                        0.58
+                    ],
+                    "PR": [
+                        97.0,
+                        93.0
+                    ],
+                    "SkinTemp": [
+                        33.07,
+                        33.07
+                    ],
+                    "ACCEL": [
+                        0.005,
+                        0.016
+                    ],
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": [
+                        4.0,
+                        38.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "ACCEL": "Body movement moved moderately in a declining direction over the past 6 minutes, from 0.06 to 0.02 g.",
+                    "SkinTemp": "The temperature signal was downward for the past 6 minutes, mildly fluctuating, around 33.07 degC.",
+                    "EDA": "Over the past 6 minutes, sweat-gland activity (EDA) increasing moderately, now near 0.58 uS.",
+                    "PR": "Across the past 6 minutes, heart rate trended dropping from 96.0 to 93.0 bpm.",
+                    "ACT_CLASS": "Over the past 6 minutes, a shift from generic to walking was recorded."
+                },
+                "physio_summary_fusion": "Across the past 6 minutes, EDA and PR and SkinTemp and ACCEL moved in a shifted direction while the participant stayed walking, indicating the response is likely activity-related. EDA and PR and SkinTemp and ACCEL rose in step with heightened motion, indicating the signal is at least partly explained by movement rather than stress alone.",
+                "stress_score": 4,
+                "stress_level": "Moderate stress",
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: (Explains the six subjects and the complete syllabus for Groups A, B, and C.)\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: Encouragement\n\nResponse: Thank you for sharing the syllabus. I went through it carefully, and I noticed something important. When you said earlier, 'It would take me more than a year to prepare,' I think you were imagining mastering every topic in detail. But for a comprehensive exam, your goal is different. You don't need perfectionâyou need a strong understanding of the important concepts and enough practice to answer questions confidently. Here's how I'd organize the next 45 days: Weeks 1â3: Complete the syllabus across all six subjects. Weeks 4â5: Solve previous year's questions and strengthen weak areas. Week 6: Full revision and mock tests. The goal is coverage first, perfection later.<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: (Explains the six subjects and the complete syllabus for Groups A, B, and C.)\nPhysiological Signals: Across the past 6 minutes, EDA and PR and SkinTemp and ACCEL moved in a shifted direction while the participant stayed walking, indicating the response is likely activity-related. EDA and PR and SkinTemp and ACCEL rose in step with heightened motion, indicating the signal is at least partly explained by movement rather than stress alone. At the same time, Body movement moved moderately in a declining direction over the past 6 minutes, from 0.06 to 0.02 g. Additionally, The temperature signal was downward for the past 6 minutes, mildly fluctuating, around 33.07 degC. On top of that, Over the past 6 minutes, sweat-gland activity (EDA) increasing moderately, now near 0.58 uS. Meanwhile, Across the past 6 minutes, heart rate trended dropping from 96.0 to 93.0 bpm. On top of that, Over the past 6 minutes, a shift from generic to walking was recorded. Also, Combining the signals above with an activity count of 38.0, the resulting score over the past 6 minutes is 4 - Moderate stress.\n\n### Response:\nStrategy: Encouragement\n\nResponse: Thank you for sharing the syllabus. I went through it carefully, and I noticed something important. When you said earlier, 'It would take me more than a year to prepare,' I think you were imagining mastering every topic in detail. But for a comprehensive exam, your goal is different. You don't need perfectionâyou need a strong understanding of the important concepts and enough practice to answer questions confidently. Here's how I'd organize the next 45 days: Weeks 1â3: Complete the syllabus across all six subjects. Weeks 4â5: Solve previous year's questions and strengthen weak areas. Week 6: Full revision and mock tests. The goal is coverage first, perfection later.<EOS>"
+            },
+            {
+                "timestamp": "2026-07-13T17:17:00",
+                "participant_full_id": "2753-1-1-0000",
+                "user_text": "Thank you.",
+                "ai_text": "You're very welcome. I'm really glad you shared all of this with me instead of carrying it by yourself. From everything you've shared, it seems your biggest challenge isn't your abilityâit's balancing exam preparation with research, TA responsibilities, and limited time. Try measuring success by whether you completed today's study plan rather than whether you've finished the entire syllabus. Small, consistent progress will add up over the next six weeks. I believe you can get through this, and whenever you need help with a topic or simply someone to talk to, I'll be here.",
+                "context": "",
+                "strategy": "Encouragement",
+                "raw_physio": {
+                    "EDA": 0.58,
+                    "PR": 97.0,
+                    "SkinTemp": 33.08,
+                    "ACCEL": 0.023,
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": 34.0
+                },
+                "physio_summary_per_channel": {
+                    "ACCEL": "No notable change in motion (0.02 g) was detected over the past 6 minutes; the source data was coarse.",
+                    "PR": "No notable pulse rate change was detected over the past 6 minutes; pulse rate held near 97.0 bpm, and the source data was coarse.",
+                    "SkinTemp": "Skin temperature held at a similar level (33.08 degC) across the past 6 minutes, based on limited resolution data.",
+                    "EDA": "Over the past 6 minutes, EDA held near a constant value (0.58 uS), derived from a single aggregated reading.",
+                    "ACT_CLASS": "Over the past 6 minutes, activity transitioned from generic toward walking."
+                },
+                "physio_summary_fusion": "Signals stayed at a broadly similar level across the past 6 minutes; finer trend detail was not available for this window, though the overall pattern appears likely activity-related.",
+                "stress_score": 4,
+                "stress_level": "Moderate stress",
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Thank you.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: Encouragement\n\nResponse: You're very welcome. I'm really glad you shared all of this with me instead of carrying it by yourself. From everything you've shared, it seems your biggest challenge isn't your abilityâit's balancing exam preparation with research, TA responsibilities, and limited time. Try measuring success by whether you completed today's study plan rather than whether you've finished the entire syllabus. Small, consistent progress will add up over the next six weeks. I believe you can get through this, and whenever you need help with a topic or simply someone to talk to, I'll be here.<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Thank you.\nPhysiological Signals: Signals stayed at a broadly similar level across the past 6 minutes; finer trend detail was not available for this window, though the overall pattern appears likely activity-related. Notably, No notable change in motion (0.02 g) was detected over the past 6 minutes; the source data was coarse. Notably, No notable pulse rate change was detected over the past 6 minutes; pulse rate held near 97.0 bpm, and the source data was coarse. Notably, Skin temperature held at a similar level (33.08 degC) across the past 6 minutes, based on limited resolution data. Further, Over the past 6 minutes, EDA held near a constant value (0.58 uS), derived from a single aggregated reading. In parallel, Over the past 6 minutes, activity transitioned from generic toward walking. In parallel, The stress score for the past 6 minutes is 4 (activity count: 34.0), pointing to Moderate stress.\n\n### Response:\nStrategy: Encouragement\n\nResponse: You're very welcome. I'm really glad you shared all of this with me instead of carrying it by yourself. From everything you've shared, it seems your biggest challenge isn't your abilityâit's balancing exam preparation with research, TA responsibilities, and limited time. Try measuring success by whether you completed today's study plan rather than whether you've finished the entire syllabus. Small, consistent progress will add up over the next six weeks. I believe you can get through this, and whenever you need help with a topic or simply someone to talk to, I'll be here.<EOS>"
+            }
+        ]
+    }
+]
