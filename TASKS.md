@@ -21,7 +21,7 @@ real JSON to work against from the first commit rather than mocking it.
 - [x] Report intervals that disagree with the 1-2-3-...-6 scheme
 - [x] Fifth graph switched to ACT_COUNT per Stiti, 15 Aug
 - [x] Support `public/data/context_names.json` for scenario names
-- [ ] Drop in the context-name mapping when Stiti shares the Google doc
+- [x] Context names in place for all 40 contexts (context_names.json)
 - [ ] Re-run `npm run data` whenever Stiti sends updated JSON
 
 Run it with `npm run data` (or `python3 scripts/build_data.py`). No dependencies

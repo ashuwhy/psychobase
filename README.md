@@ -70,9 +70,12 @@ Shapes are declared in `src/types.ts`. That file and the script change together.
   named ACT_CLASS as the fifth, but it holds category strings rather than
   numbers, and Stiti confirmed ACT_COUNT instead. ACT_CLASS still ships inside
   `series` for anyone who wants to annotate with it.
-- Context display names come from `public/data/context_names.json`, a
-  context_id -> name mapping. Stiti is sharing the names in a Google doc; until
-  that file exists the cards fall back to the participant id.
+- Context display names come from `public/data/context_names.json`, which covers
+  all 40 contexts. The source is CHAT_DATA_WITH_PHYSIOLOGICAL_SIGNAL(EMBRACE_PLUS).docx,
+  where the label appears variously as "Context:", "Scenario:" or
+  "Context (2 words):"; a few names in the file are shortened from the long
+  descriptions that document carries. Cards fall back to the participant id for
+  any context missing from the file.
 - All 749 turns yield an interval from their summary text.
 - Some turns state a look-back that doesn't follow the 1-2-3-...-6 scheme. Per
   Stiti we highlight exactly what the summary text says; `interval_mismatches`
