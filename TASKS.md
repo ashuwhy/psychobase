@@ -33,12 +33,12 @@ beyond the standard library.
 
 Screen 1, plus the loading layer everyone else uses.
 
-- [ ] Fetch and render `index.json` as cards - **nothing hard-coded**, the brief
+- [x] Fetch and render `index.json` as cards - **nothing hard-coded**, the brief
       is explicit that contexts come from the file
-- [ ] Each card: context name (`name`, falls back to participant id until
+- [x] Each card: context name (`name`, falls back to participant id until
       Stiti's mapping arrives), context id, turn count, date/duration
-- [ ] Click routes to `/context/:contextId`
-- [ ] Loading and error states (a missing context file must not blank the page)
+- [x] Click routes to `/context/:contextId`
+- [x] Loading and error states (a missing context file must not blank the page)
 
 Done when: adding a new participant JSON and re-running `npm run data` makes a
 new card appear with no code change.

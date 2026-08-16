@@ -19,3 +19,9 @@ export async function loadContext(contextId: string): Promise<ContextData> {
   if (!res.ok) throw new Error(`Could not load context ${contextId} (${res.status})`);
   return res.json();
 }
+
+/** Looks up one row of the index by context id, for the participant list screen. */
+export async function loadContextSummary(contextId: string): Promise<ContextSummary | undefined> {
+  const index = await loadContextIndex();
+  return index.find((c) => c.context_id === contextId);
+}
