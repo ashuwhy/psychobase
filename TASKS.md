@@ -63,7 +63,7 @@ ACT_CLASS.
 Done when: clicking any turn moves the band on all five charts to the same range
 in one render.
 
-## Task D - Conversation panel, shell and state (Nitesh)
+## Task D - Conversation panel, shell and state (Nithish)
 
 `src/pages/ConversationView.tsx`, `src/components/TurnList.tsx`, `src/styles.css`
 
