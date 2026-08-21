@@ -11,6 +11,15 @@ import {
 import type { Interval, Point, SignalMeta } from "../types";
 import { toMs, formatClock } from "../lib/time";
 
+/** Small readings (0.006 g) need decimals that a pulse rate (101 bpm) does not. */
+function formatValue(value: number): string {
+  const magnitude = Math.abs(value);
+  if (magnitude === 0) return "0";
+  if (magnitude < 0.1) return value.toFixed(3);
+  if (magnitude < 10) return value.toFixed(2);
+  return value.toFixed(0);
+}
+
 export interface SignalChartProps {
   meta: SignalMeta;
   points: Point[];
@@ -28,12 +37,19 @@ export default function SignalChart({ meta, points, domain, interval }: SignalCh
   const xMin = toMs(domain[0]);
   const xMax = toMs(domain[1]);
 
+  // A few participants have a channel that was never recorded - say so rather
+  // than drawing an empty pair of axes.
+  const hasData = chartData.some((d) => d.v !== null);
+
   return (
     <figure className="chart">
       <figcaption style={{ margin: "0 0 0.5rem", fontWeight: 600, fontSize: "0.9rem" }}>
         {meta.label} <span style={{ fontWeight: 400, color: "#5d6b73" }}>({meta.unit})</span>
       </figcaption>
 
+      {!hasData ? (
+        <p className="chart-empty">Not recorded for this conversation</p>
+      ) : (
       <ResponsiveContainer width="100%" height={170}>
         <LineChart data={chartData} margin={{ top: 4, right: 16, left: 0, bottom: 0 }}>
           <CartesianGrid strokeDasharray="3 3" stroke="#dfe4e7" />
@@ -52,7 +68,7 @@ export default function SignalChart({ meta, points, domain, interval }: SignalCh
           {/* Y axis: shows value + unit */}
           <YAxis
             tick={{ fontSize: 11 }}
-            tickFormatter={(v: number) => `${v}`}
+            tickFormatter={formatValue}
             width={55}
             label={{ value: meta.unit, angle: -90, position: "insideLeft", fontSize: 11, fill: "#5d6b73" }}
           />
@@ -60,8 +76,8 @@ export default function SignalChart({ meta, points, domain, interval }: SignalCh
           {/* Hover tooltip: shows exact time and value */}
           <Tooltip
             labelFormatter={(ms: number) => formatClock(new Date(ms).toISOString())}
-            formatter={(value: number | null) => [
-              value !== null ? `${value} ${meta.unit}` : "N/A",
+            formatter={(value) => [
+              typeof value === "number" ? `${formatValue(value)} ${meta.unit}` : "not recorded",
               meta.label,
             ]}
           />
@@ -91,6 +107,7 @@ export default function SignalChart({ meta, points, domain, interval }: SignalCh
           />
         </LineChart>
       </ResponsiveContainer>
+      )}
     </figure>
   );
 }

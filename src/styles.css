@@ -288,3 +288,13 @@ body {
   overflow-wrap: anywhere;
   line-height: 1.35;
 }
+
+/* Shown when a signal was never recorded for a participant - PR is missing in a
+   few contexts, and an empty pair of axes reads as a bug rather than as absence. */
+.chart-empty {
+  margin: 0;
+  padding: 2rem 0;
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
