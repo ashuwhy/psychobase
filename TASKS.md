@@ -51,14 +51,14 @@ The heart of the app. One chart per entry in `ContextData.signals` - EDA, PR,
 SkinTemp, ACCEL, ACT_COUNT. Stiti confirmed ACT_COUNT as the fifth graph, not
 ACT_CLASS.
 
-- [ ] Line chart per signal over the **whole** conversation
-- [ ] Every chart uses the same X domain from `ContextData.domain`, so the five
+- [x] Line chart per signal over the **whole** conversation
+- [x] Every chart uses the same X domain from `ContextData.domain`, so the five
       stay vertically aligned
-- [ ] X axis timestamps, Y axis value + unit from `SignalMeta`
-- [ ] Hover tooltip with exact timestamp and value
-- [ ] **Translucent band** for the selected turn's interval, full chart height,
+- [x] X axis timestamps, Y axis value + unit from `SignalMeta`
+- [x] Hover tooltip with exact timestamp and value
+- [x] **Translucent band** for the selected turn's interval, full chart height,
       identical range on all five
-- [ ] `v: null` breaks the line - it must not plot as zero
+- [x] `v: null` breaks the line - it must not plot as zero
 
 Done when: clicking any turn moves the band on all five charts to the same range
 in one render.
