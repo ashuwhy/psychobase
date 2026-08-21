@@ -93,6 +93,29 @@ def clean(value):
     return value
 
 
+def jsonable(value):
+    """Strip NaN and infinities anywhere in the structure, not just in readings.
+
+    Python writes float('nan') as a bare NaN, which JSON.parse rejects outright,
+    taking the whole page down with "Unexpected token 'N'". The source files
+    carry NaN in more than the signal arrays - participant_full_id is NaN for
+    the second session of 11_2, for instance - so the whole payload is walked
+    rather than trusting field-by-field cleaning.
+    """
+    if isinstance(value, float):
+        return value if value == value and value not in (float("inf"), float("-inf")) else None
+    if isinstance(value, dict):
+        return {k: jsonable(v) for k, v in value.items()}
+    if isinstance(value, (list, tuple)):
+        return [jsonable(v) for v in value]
+    return value
+
+
+def dump(payload, path, **kwargs):
+    """Write JSON, refusing to emit anything JSON.parse would reject."""
+    path.write_text(json.dumps(jsonable(payload), allow_nan=False, **kwargs), encoding="utf-8")
+
+
 def lookback_minutes(summary_text):
     """Minutes the summary looks back over, or None when it cannot be read."""
     if not summary_text:
@@ -207,7 +230,10 @@ def build_context(csv_path, json_path):
         turns.append({
             "turn": i,
             "timestamp": turn["timestamp"],
-            "participant_full_id": turn.get("participant_full_id", ""),
+            # NaN where a session has no id (11_2's second session). The field is
+            # a string downstream, so make it an empty one rather than a null.
+            "participant_full_id": (turn.get("participant_full_id")
+                                    if isinstance(turn.get("participant_full_id"), str) else ""),
             "user_text": turn.get("user_text", ""),
             "ai_text": turn.get("ai_text", ""),
             "strategy": (turn.get("strategy") or "").strip(),
@@ -283,7 +309,7 @@ def main():
     index = []
     for cid, csv_path, json_path, base_id, is_modified in contexts:
         context = build_context(csv_path, json_path)
-        (OUT / f"{cid}.json").write_text(json.dumps(context), encoding="utf-8")
+        dump(context, OUT / f"{cid}.json")
         # A modified variant inherits the original's scenario name, marked so the
         # two are distinguishable on the selection screen.
         name = names.get(cid) or names.get(base_id, "")
@@ -302,7 +328,7 @@ def main():
         print(f"  {cid:<14} {len(context['turns']):>3} turns, "
               f"{len(context['series']['EDA']):>3} EDA points"
               + (f", {mismatched} off the 1-2-3-..-6 scheme" if mismatched else ""))
-    (OUT / "index.json").write_text(json.dumps(index, indent=1), encoding="utf-8")
+    dump(index, OUT / "index.json", indent=1)
     n_mod = sum(1 for row in index if row["modified"])
     print(f"\n{len(index)} contexts ({len(index) - n_mod} original, {n_mod} modified) -> {OUT}")
     if skipped:

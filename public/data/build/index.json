@@ -20,7 +20,7 @@
  {
   "context_id": "1-modified",
   "name": "Health Anxiety (modified)",
-  "participant_id": 1,
+  "participant_id": "",
   "turn_count": 30,
   "modified": true,
   "start": "2026-05-22T19:00:30",
@@ -92,7 +92,7 @@
  {
   "context_id": "8",
   "name": "Athletic Balance",
-  "participant_id": 8,
+  "participant_id": "",
   "turn_count": 18,
   "modified": false,
   "start": "2026-07-09T18:00:30",
@@ -101,7 +101,7 @@
  {
   "context_id": "8-modified",
   "name": "Athletic Balance (modified)",
-  "participant_id": 8,
+  "participant_id": "",
   "turn_count": 18,
   "modified": true,
   "start": "2026-07-09T18:00:30",
