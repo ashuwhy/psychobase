@@ -3,9 +3,12 @@ dist/
 .DS_Store
 *.local
 .vite/
+.playwright-mcp/
 
 # Source datasets are versioned so everyone is provably on the same data -
 # the repo is private and limited to the four of us plus Stiti.
-# The build output is derived from them, so it is not versioned: run
-# `npm run data` after cloning. See public/data/README.md.
-public/data/build/
+#
+# public/data/build/ is versioned too, even though `npm run data` generates it.
+# The Vercel build runs vite only, not the Python step, so the deployed site
+# serves these files straight out of public/. Re-run `npm run data` and commit
+# the result whenever the source data changes.
