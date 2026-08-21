@@ -207,38 +207,82 @@ def context_names():
     return json.loads(path.read_text(encoding="utf-8"))
 
 
+def discover():
+    """Pair every CSV with its JSON, keeping originals and modified versions apart.
+
+    Stiti sends two kinds of file per participant:
+
+      participantGrouped8data.csv                 + output_participantGrouped8data_full_data.json
+      participantGrouped8data_modified_phyS.csv   + output_participantGrouped8data_modified_phyS_full_data.json
+
+    The modified ones are better regenerations of a conversation we already have.
+    They are additional contexts rather than replacements - the brief is to add
+    them without removing the originals - so a modified variant gets its own
+    context id, "8-modified", and the original "8" is left alone. The modifier
+    suffix varies (_modified, _modified_phyS, _modified_phyS_context), so it is
+    captured rather than hard-coded.
+    """
+    csvs, jsons = {}, {}
+    for path in RAW.glob("participantGrouped*.csv"):
+        m = re.match(r"participantGrouped(.+?)data(_modified[a-zA-Z_]*)?\.csv$", path.name)
+        if m:
+            csvs[(m.group(1), bool(m.group(2)))] = path
+    for path in JSON_DIR.glob("output_participantGrouped*.json"):
+        m = re.match(r"output_participantGrouped(.+?)data(_modified[a-zA-Z_]*)?_full_data\.json$",
+                     path.name)
+        if m:
+            jsons[(m.group(1), bool(m.group(2)))] = path
+
+    contexts, skipped = [], []
+    for key in sorted(csvs, key=lambda k: (natural(k[0]), k[1])):
+        pid, is_modified = key
+        if key not in jsons:
+            skipped.append(pid + ("-modified" if is_modified else ""))
+            continue
+        contexts.append((pid + ("-modified" if is_modified else ""), csvs[key], jsons[key],
+                         pid, is_modified))
+    return contexts, skipped
+
+
+def natural(pid):
+    """'11_1' -> (11, 1) so contexts sort 8, 11, 11_1 rather than lexically."""
+    return tuple(int(part) for part in pid.split("_"))
+
+
 def main():
     OUT.mkdir(parents=True, exist_ok=True)
     names = context_names()
+    contexts, skipped = discover()
     index = []
-    for csv_path in sorted(RAW.glob("participantGrouped*data.csv")):
-        cid = csv_path.stem.replace("participantGrouped", "").replace("data", "")
-        json_path = JSON_DIR / f"output_participantGrouped{cid}data_full_data.json"
-        if not json_path.exists():
-            print(f"  skip {cid}: no matching JSON")
-            continue
+    for cid, csv_path, json_path, base_id, is_modified in contexts:
         context = build_context(csv_path, json_path)
         (OUT / f"{cid}.json").write_text(json.dumps(context), encoding="utf-8")
-        unreadable = sum(1 for t in context["turns"]
-                         if not t["interval"] or t["interval"]["source"] != "summary")
-        mismatched = len(context["interval_mismatches"])
+        # A modified variant inherits the original's scenario name, marked so the
+        # two are distinguishable on the selection screen.
+        name = names.get(cid) or names.get(base_id, "")
+        if is_modified and name:
+            name += " (modified)"
         index.append({
             "context_id": cid,
-            "name": names.get(cid, ""),
+            "name": name,
             "participant_id": context["turns"][0]["participant_full_id"] if context["turns"] else "",
             "turn_count": len(context["turns"]),
+            "modified": is_modified,
             "start": context["domain"][0],
             "end": context["domain"][1],
         })
-        print(f"  {cid}: {len(context['turns'])} turns, "
-              f"{len(context['series']['EDA'])} EDA points"
-              + (f", {unreadable} without a summary interval" if unreadable else "")
+        mismatched = len(context["interval_mismatches"])
+        print(f"  {cid:<14} {len(context['turns']):>3} turns, "
+              f"{len(context['series']['EDA']):>3} EDA points"
               + (f", {mismatched} off the 1-2-3-..-6 scheme" if mismatched else ""))
     (OUT / "index.json").write_text(json.dumps(index, indent=1), encoding="utf-8")
-    named = sum(1 for row in index if row["name"])
-    print(f"\n{len(index)} contexts -> {OUT}")
-    if not named:
-        print("  no context_names.json yet - cards will fall back to participant id")
+    n_mod = sum(1 for row in index if row["modified"])
+    print(f"\n{len(index)} contexts ({len(index) - n_mod} original, {n_mod} modified) -> {OUT}")
+    if skipped:
+        print(f"  skipped, no matching JSON: {', '.join(skipped)}")
+    unnamed = [row["context_id"] for row in index if not row["name"]]
+    if unnamed:
+        print(f"  no context name yet: {', '.join(unnamed)}")
 
 
 if __name__ == "__main__":

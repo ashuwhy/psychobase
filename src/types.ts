@@ -11,8 +11,14 @@ export interface ContextSummary {
   context_id: string;
   participant_id: string;
   turn_count: number;
-  /** Scenario name from Stiti's mapping; "" until context_names.json exists. */
+  /** Scenario name from context_names.json, with "(modified)" appended for variants. */
   name: string;
+  /**
+   * True for a rewritten version of a conversation that also exists as an
+   * original - same participant and timestamps, better-worded dialogue. Both
+   * are listed; use this to badge or group them on the selection screen.
+   */
+  modified: boolean;
   /** ISO timestamps bounding the whole conversation. */
   start: string;
   end: string;

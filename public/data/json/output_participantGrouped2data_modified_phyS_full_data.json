@@ -1,0 +1,1259 @@
+[
+    {
+        "session_id": "2",
+        "person_id": "2",
+        "turns": [
+            {
+                "timestamp": "2026-03-22T12:40:00",
+                "participant_full_id": "2",
+                "user_text": "I don't know why my mind feels so restless today.",
+                "ai_text": "It sounds like something has been sitting in the back of your mind for a while. You don't have to explain everything at once. What is the main thought that keeps coming back?",
+                "context": "",
+                "strategy": "",
+                "raw_physio": {
+                    "EDA": [
+                        0.01,
+                        0.01,
+                        0.01,
+                        0.03
+                    ],
+                    "PR": [
+                        89.0,
+                        94.0,
+                        97.0,
+                        97.0
+                    ],
+                    "SkinTemp": [
+                        33.81,
+                        33.85,
+                        33.91,
+                        34.0
+                    ],
+                    "ACCEL": [
+                        0.025,
+                        0.011,
+                        0.014,
+                        0.013
+                    ],
+                    "PRV": [
+                        42.0,
+                        38.0,
+                        33.0,
+                        30.0
+                    ],
+                    "RESP": [
+                        13.0,
+                        12.0,
+                        13.0,
+                        12.0
+                    ],
+                    "ACT_COUNT": [
+                        59.0,
+                        60.0,
+                        76.0,
+                        65.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "EDA": "Over the first minute, electrodermal activity moved sharply in a increasing direction, from 0.01 to 0.03 uS.",
+                    "PR": "The pulse signal was rising for the first minute, highly fluctuating, around 97.0 bpm.",
+                    "SkinTemp": "Over the first minute, skin temperature remained growing, staying close to 34.0 degC.",
+                    "ACCEL": "Accelerometer output falling moderately across the first minute, showing mildly fluctuating activity, now 0.01 g.",
+                    "ACT_CLASS": "Over the first minute, activity type was consistently classified as [walking, walking, walking, walking].",
+                    "PRV": "Pulse rate variability downward sharply over the first minute, moving from 42.0 to 30.0 ms, suggesting reduced autonomic response.",
+                    "RESP": "During the first minute, breathing registered a downward shift to 12.0 breaths per minute, without any notable peaks or valleys."
+                },
+                "physio_summary_fusion": "During the first minute, EDA and PR and SkinTemp and ACCEL and PRV and RESP shifted while activity intensity stayed [LPA, sedentary, sedentary, sedentary], not explained by movement. EDA and PR and SkinTemp and ACCEL and PRV and RESP rose while ACCEL and ACT_COUNT showed no corresponding movement, suggesting this arousal is not explained by physical activity.",
+                "stress_score": 6,
+                "stress_level": "High stress",
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I don't know why my mind feels so restless today.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: \n\nResponse: It sounds like something has been sitting in the back of your mind for a while. You don't have to explain everything at once. What is the main thought that keeps coming back?<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I don't know why my mind feels so restless today.\nPhysiological Signals: During the first minute, EDA and PR and SkinTemp and ACCEL and PRV and RESP shifted while activity intensity stayed [LPA, sedentary, sedentary, sedentary], not explained by movement. EDA and PR and SkinTemp and ACCEL and PRV and RESP rose while ACCEL and ACT_COUNT showed no corresponding movement, suggesting this arousal is not explained by physical activity. Also, Over the first minute, electrodermal activity moved sharply in a increasing direction, from 0.01 to 0.03 uS. On top of that, The pulse signal was rising for the first minute, highly fluctuating, around 97.0 bpm. Further, Over the first minute, skin temperature remained growing, staying close to 34.0 degC. Notably, Accelerometer output falling moderately across the first minute, showing mildly fluctuating activity, now 0.01 g. In parallel, Over the first minute, activity type was consistently classified as [walking, walking, walking, walking]. Simultaneously, Pulse rate variability downward sharply over the first minute, moving from 42.0 to 30.0 ms, suggesting reduced autonomic response. In parallel, During the first minute, breathing registered a downward shift to 12.0 breaths per minute, without any notable peaks or valleys. At the same time, Combining the signals above with an activity count of 65.0, the resulting score over the first minute is 6 - High stress.\n\n### Response:\nStrategy: \n\nResponse: It sounds like something has been sitting in the back of your mind for a while. You don't have to explain everything at once. What is the main thought that keeps coming back?<EOS>"
+            },
+            {
+                "timestamp": "2026-03-22T12:44:00",
+                "participant_full_id": "2",
+                "user_text": "My family is talking about my marriage, and I recently started talking to someone they suggested.",
+                "ai_text": "I see. And when you think about this person now, what are you feeling most strongly — interest, uncertainty, pressure, or something else?",
+                "context": "",
+                "strategy": "",
+                "raw_physio": {
+                    "EDA": [
+                        0.01,
+                        0.01,
+                        0.01,
+                        0.03
+                    ],
+                    "PR": [
+                        96.0,
+                        83.0,
+                        81.0,
+                        92.0
+                    ],
+                    "SkinTemp": [
+                        34.12,
+                        34.21,
+                        34.23,
+                        34.2
+                    ],
+                    "ACCEL": [
+                        0.02,
+                        0.024,
+                        0.048,
+                        0.032
+                    ],
+                    "PRV": [
+                        48.0,
+                        46.0,
+                        45.0,
+                        47.0
+                    ],
+                    "RESP": [
+                        14.0,
+                        15.0,
+                        16.0,
+                        16.0
+                    ],
+                    "ACT_COUNT": [
+                        71.0,
+                        39.0,
+                        93.0,
+                        55.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "SkinTemp": "A climbing skin temperature pattern was observed over the past 4 minutes, highly fluctuating, reaching 34.2 degC.",
+                    "EDA": "The electrodermal signal was growing for the past 4 minutes, showing highly fluctuating behavior around 0.03 uS.",
+                    "PR": "Pulse rate increasing moderately across the past 4 minutes, showing highly fluctuating activity, now 92.0 bpm.",
+                    "ACCEL": "Overall movement (accelerometer) growing moderately over the past 4 minutes, moving from 0.03 to 0.03 g.",
+                    "ACT_CLASS": "During the past 4 minutes, movement classification changed from [walking, walking, walking, walking] to [walking, still, generic, generic].",
+                    "PRV": "PRV moved moderately in a increasing direction across the past 4 minutes, ending at 47.0 ms.",
+                    "RESP": "Over the past 4 minutes, breathing rate remained elevating, near 16.0 breaths per minute."
+                },
+                "physio_summary_fusion": "Over the past 4 minutes, EDA and PR and SkinTemp and ACCEL and PRV and RESP rose, occurring with reliable and [walking, still, generic, generic] movement, not explained by movement. Movement stayed minimal while EDA and PR and SkinTemp and ACCEL and PRV and RESP rose, pointing toward a stress response rather than exertion.",
+                "stress_score": 5,
+                "stress_level": "Moderate stress",
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: My family is talking about my marriage, and I recently started talking to someone they suggested.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: \n\nResponse: I see. And when you think about this person now, what are you feeling most strongly — interest, uncertainty, pressure, or something else?<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: My family is talking about my marriage, and I recently started talking to someone they suggested.\nPhysiological Signals: Over the past 4 minutes, EDA and PR and SkinTemp and ACCEL and PRV and RESP rose, occurring with reliable and [walking, still, generic, generic] movement, not explained by movement. Movement stayed minimal while EDA and PR and SkinTemp and ACCEL and PRV and RESP rose, pointing toward a stress response rather than exertion. Alongside this, A climbing skin temperature pattern was observed over the past 4 minutes, highly fluctuating, reaching 34.2 degC. Further, The electrodermal signal was growing for the past 4 minutes, showing highly fluctuating behavior around 0.03 uS. Simultaneously, Pulse rate increasing moderately across the past 4 minutes, showing highly fluctuating activity, now 92.0 bpm. Further, Overall movement (accelerometer) growing moderately over the past 4 minutes, moving from 0.03 to 0.03 g. On top of that, During the past 4 minutes, movement classification changed from [walking, walking, walking, walking] to [walking, still, generic, generic]. In parallel, PRV moved moderately in a increasing direction across the past 4 minutes, ending at 47.0 ms. Notably, Over the past 4 minutes, breathing rate remained elevating, near 16.0 breaths per minute. Notably, Movement count of 55.0 contributes to a combined stress score of 5 over the past 4 minutes, consistent with Moderate stress.\n\n### Response:\nStrategy: \n\nResponse: I see. And when you think about this person now, what are you feeling most strongly — interest, uncertainty, pressure, or something else?<EOS>"
+            },
+            {
+                "timestamp": "2026-03-22T12:48:00",
+                "participant_full_id": "2",
+                "user_text": "Mostly uncertainty. When I first met him, I thought maybe I should give it a chance.",
+                "ai_text": "That makes sense. Meeting someone for the first time and imagining a future with them are very different experiences. It's quite normal for your feelings to become clearer only after you start interacting more.",
+                "context": "",
+                "strategy": "",
+                "raw_physio": {
+                    "EDA": [
+                        0.01,
+                        0.02,
+                        0.02,
+                        0.03
+                    ],
+                    "PR": [
+                        80.0,
+                        88.0,
+                        93.0,
+                        94.0
+                    ],
+                    "SkinTemp": [
+                        34.17,
+                        34.13,
+                        34.09,
+                        34.11
+                    ],
+                    "ACCEL": [
+                        0.031,
+                        0.05,
+                        0.014,
+                        0.014
+                    ],
+                    "PRV": [
+                        48.0,
+                        46.0,
+                        45.0,
+                        47.0
+                    ],
+                    "RESP": [
+                        13.0,
+                        12.0,
+                        13.0,
+                        12.0
+                    ],
+                    "ACT_COUNT": [
+                        43.0,
+                        67.0,
+                        90.0,
+                        83.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "EDA": "Electrodermal activity remained elevating across the past 6 minutes, staying near 0.03 uS.",
+                    "ACCEL": "Over the past 6 minutes, motion intensity stayed falling, around 0.01 g.",
+                    "PR": "Pulse rate showed a dropping trend across the past 6 minutes, with highly fluctuating variation, now 94.0 bpm.",
+                    "SkinTemp": "Skin temperature moved slightly in a decreasing direction over the past 6 minutes, from 34.12 to 34.11 degC.",
+                    "ACT_CLASS": "Over the past 6 minutes, activity transitioned from [walking, still, generic, generic] toward [still, generic, walking, walking].",
+                    "PRV": "Over the past 6 minutes, PRV showed a dropping pattern, now near 47.0 ms, indicating reduced regulation.",
+                    "RESP": "The respiratory signal was dropping for the past 6 minutes, highly fluctuating, around 12.0 breaths per minute."
+                },
+                "physio_summary_fusion": "Over the past 6 minutes, the combined signal (EDA and PR and SkinTemp and ACCEL and PRV and RESP) showed shifted, with movement [still, generic, walking, walking], likely activity-related. EDA and PR and SkinTemp and ACCEL and PRV and RESP rose alongside increased movement, so the change is likely activity-related rather than a pure stress response.",
+                "stress_score": 4,
+                "stress_level": "Moderate stress",
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Mostly uncertainty. When I first met him, I thought maybe I should give it a chance.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: \n\nResponse: That makes sense. Meeting someone for the first time and imagining a future with them are very different experiences. It's quite normal for your feelings to become clearer only after you start interacting more.<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Mostly uncertainty. When I first met him, I thought maybe I should give it a chance.\nPhysiological Signals: Over the past 6 minutes, the combined signal (EDA and PR and SkinTemp and ACCEL and PRV and RESP) showed shifted, with movement [still, generic, walking, walking], likely activity-related. EDA and PR and SkinTemp and ACCEL and PRV and RESP rose alongside increased movement, so the change is likely activity-related rather than a pure stress response. Additionally, Electrodermal activity remained elevating across the past 6 minutes, staying near 0.03 uS. On top of that, Over the past 6 minutes, motion intensity stayed falling, around 0.01 g. On top of that, Pulse rate showed a dropping trend across the past 6 minutes, with highly fluctuating variation, now 94.0 bpm. At the same time, Skin temperature moved slightly in a decreasing direction over the past 6 minutes, from 34.12 to 34.11 degC. Additionally, Over the past 6 minutes, activity transitioned from [walking, still, generic, generic] toward [still, generic, walking, walking]. Additionally, Over the past 6 minutes, PRV showed a dropping pattern, now near 47.0 ms, indicating reduced regulation. Additionally, The respiratory signal was dropping for the past 6 minutes, highly fluctuating, around 12.0 breaths per minute. Alongside this, Over the past 6 minutes, with activity count at 83.0, the composite score reaches 4, classified as Moderate stress.\n\n### Response:\nStrategy: \n\nResponse: That makes sense. Meeting someone for the first time and imagining a future with them are very different experiences. It's quite normal for your feelings to become clearer only after you start interacting more.<EOS>"
+            },
+            {
+                "timestamp": "2026-03-22T12:52:00",
+                "participant_full_id": "2",
+                "user_text": "We have been talking for almost a week now. Sometimes the conversations are okay, but most of the time I don't really want to continue talking.",
+                "ai_text": "That difference is worth noticing. When you don't feel like continuing, is it because the conversations are boring, because something he says bothers you, or because you simply don't feel a connection?",
+                "context": "",
+                "strategy": "",
+                "raw_physio": {
+                    "EDA": [
+                        0.01,
+                        0.02,
+                        0.02,
+                        0.01
+                    ],
+                    "PR": [
+                        96.0,
+                        90.0,
+                        90.0,
+                        91.0
+                    ],
+                    "SkinTemp": [
+                        34.18,
+                        34.27,
+                        34.32,
+                        34.34
+                    ],
+                    "ACCEL": [
+                        0.013,
+                        0.013,
+                        0.016,
+                        0.058
+                    ],
+                    "PRV": [
+                        48.0,
+                        46.0,
+                        45.0,
+                        47.0
+                    ],
+                    "RESP": [
+                        13.0,
+                        12.0,
+                        13.0,
+                        12.0
+                    ],
+                    "ACT_COUNT": [
+                        69.0,
+                        62.0,
+                        86.0,
+                        81.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "PR": "Pulse rate climbing sharply over the past 6 minutes, moving from 80.0 to 91.0 bpm.",
+                    "ACCEL": "Over the past 6 minutes, physical motion remained climbing, staying close to 0.06 g.",
+                    "SkinTemp": "Across the past 6 minutes, skin temperature held increasing near 34.34 degC.",
+                    "EDA": "Across the past 6 minutes, EDA trended dropping from 0.01 to 0.01 uS.",
+                    "ACT_CLASS": "Activity classification shifted from [still, generic, walking, walking] to [walking, walking, walking, walking] during the past 6 minutes.",
+                    "PRV": "PRV moved slightly in a falling direction across the past 6 minutes, ending at 47.0 ms.",
+                    "RESP": "Respiratory rate decreasing moderately over the past 6 minutes, moving from 13.0 to 12.0 breaths per minute."
+                },
+                "physio_summary_fusion": "Across the past 6 minutes, wear-quality was reliable; within that context, EDA and PR and SkinTemp and ACCEL and PRV and RESP shifted, likely activity-related. Because both arousal and activity increased together, this pattern is more consistent with exertion than emotional stress.",
+                "stress_score": 2,
+                "stress_level": "Mild stress",
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: We have been talking for almost a week now. Sometimes the conversations are okay, but most of the time I don't really want to continue talking.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: \n\nResponse: That difference is worth noticing. When you don't feel like continuing, is it because the conversations are boring, because something he says bothers you, or because you simply don't feel a connection?<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: We have been talking for almost a week now. Sometimes the conversations are okay, but most of the time I don't really want to continue talking.\nPhysiological Signals: Across the past 6 minutes, wear-quality was reliable; within that context, EDA and PR and SkinTemp and ACCEL and PRV and RESP shifted, likely activity-related. Because both arousal and activity increased together, this pattern is more consistent with exertion than emotional stress. Additionally, Pulse rate climbing sharply over the past 6 minutes, moving from 80.0 to 91.0 bpm. Alongside this, Over the past 6 minutes, physical motion remained climbing, staying close to 0.06 g. Simultaneously, Across the past 6 minutes, skin temperature held increasing near 34.34 degC. Simultaneously, Across the past 6 minutes, EDA trended dropping from 0.01 to 0.01 uS. In parallel, Activity classification shifted from [still, generic, walking, walking] to [walking, walking, walking, walking] during the past 6 minutes. On top of that, PRV moved slightly in a falling direction across the past 6 minutes, ending at 47.0 ms. Further, Respiratory rate decreasing moderately over the past 6 minutes, moving from 13.0 to 12.0 breaths per minute. Also, Combining the signals above with an activity count of 81.0, the resulting score over the past 6 minutes is 2 - Mild stress.\n\n### Response:\nStrategy: \n\nResponse: That difference is worth noticing. When you don't feel like continuing, is it because the conversations are boring, because something he says bothers you, or because you simply don't feel a connection?<EOS>"
+            },
+            {
+                "timestamp": "2026-03-22T12:56:00",
+                "participant_full_id": "2",
+                "user_text": "I think I just don't feel connected. He isn't a bad person.",
+                "ai_text": "Those two things can exist together. Someone can be kind, responsible, and generally good, while still not being someone you naturally connect with. You don't have to find a fault in him to explain your lack of interest.",
+                "context": "",
+                "strategy": "",
+                "raw_physio": {
+                    "EDA": [
+                        0.02,
+                        0.01,
+                        0.01,
+                        0.01
+                    ],
+                    "PR": [
+                        83.0,
+                        83.0,
+                        90.0,
+                        85.0
+                    ],
+                    "SkinTemp": [
+                        34.31,
+                        34.23,
+                        34.18,
+                        34.18
+                    ],
+                    "ACCEL": [
+                        0.032,
+                        0.012,
+                        0.017,
+                        0.014
+                    ],
+                    "PRV": [
+                        48.0,
+                        46.0,
+                        45.0,
+                        47.0
+                    ],
+                    "RESP": [
+                        14.0,
+                        15.0,
+                        16.0,
+                        16.0
+                    ],
+                    "ACT_COUNT": [
+                        45.0,
+                        13.0,
+                        58.0,
+                        73.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "PR": "Pulse rate downward sharply across the past 6 minutes, showing highly fluctuating activity, now 85.0 bpm.",
+                    "ACCEL": "Motion intensity climbing slightly during the past 6 minutes, reaching 0.01 g.",
+                    "EDA": "Over the past 6 minutes, sweat-gland activity (EDA) falling slightly, now near 0.01 uS.",
+                    "SkinTemp": "Skin temperature drifted steady across the past 6 minutes to 34.18 degC, without any notable peaks or valleys.",
+                    "ACT_CLASS": "Over the past 6 minutes, a shift from [walking, walking, walking, walking] to [generic, still, walking, walking] was recorded.",
+                    "PRV": "PRV drifted declining across the past 6 minutes to 47.0 ms, suggesting reduced nervous system balance.",
+                    "RESP": "Over the past 6 minutes, breathing rate remained elevating, near 16.0 breaths per minute."
+                },
+                "physio_summary_fusion": "Across the past 6 minutes, taking reclining/lying posture and [MPA, LPA, sedentary, sedentary] intensity into account, EDA and PR and ACCEL and PRV and RESP shifted, not clearly linked to physical activity. The relationship between EDA and PR and ACCEL and PRV and RESP and movement was inconsistent over the past 6 minutes, making the source of change unclear.",
+                "stress_score": 1,
+                "stress_level": null,
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I think I just don't feel connected. He isn't a bad person.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: \n\nResponse: Those two things can exist together. Someone can be kind, responsible, and generally good, while still not being someone you naturally connect with. You don't have to find a fault in him to explain your lack of interest.<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I think I just don't feel connected. He isn't a bad person.\nPhysiological Signals: Across the past 6 minutes, taking reclining/lying posture and [MPA, LPA, sedentary, sedentary] intensity into account, EDA and PR and ACCEL and PRV and RESP shifted, not clearly linked to physical activity. The relationship between EDA and PR and ACCEL and PRV and RESP and movement was inconsistent over the past 6 minutes, making the source of change unclear. Pulse rate downward sharply across the past 6 minutes, showing highly fluctuating activity, now 85.0 bpm. Simultaneously, Motion intensity climbing slightly during the past 6 minutes, reaching 0.01 g. Simultaneously, Over the past 6 minutes, sweat-gland activity (EDA) falling slightly, now near 0.01 uS. Simultaneously, Skin temperature drifted steady across the past 6 minutes to 34.18 degC, without any notable peaks or valleys. In parallel, Over the past 6 minutes, a shift from [walking, walking, walking, walking] to [generic, still, walking, walking] was recorded. Additionally, PRV drifted declining across the past 6 minutes to 47.0 ms, suggesting reduced nervous system balance. Meanwhile, Over the past 6 minutes, breathing rate remained elevating, near 16.0 breaths per minute.\n\n### Response:\nStrategy: \n\nResponse: Those two things can exist together. Someone can be kind, responsible, and generally good, while still not being someone you naturally connect with. You don't have to find a fault in him to explain your lack of interest.<EOS>"
+            },
+            {
+                "timestamp": "2026-03-22T13:00:00",
+                "participant_full_id": "2",
+                "user_text": "But that makes me feel guilty. What if I'm rejecting someone who is actually good?",
+                "ai_text": "You are not doing something wrong simply because your feelings aren't developing. A relationship isn't a reward for being a good person. Both people need to feel comfortable and willing to move forward.",
+                "context": "",
+                "strategy": "",
+                "raw_physio": {
+                    "EDA": [
+                        0.02,
+                        0.03,
+                        0.04,
+                        0.05
+                    ],
+                    "PR": [
+                        94.0,
+                        87.0,
+                        81.0,
+                        88.0
+                    ],
+                    "SkinTemp": [
+                        34.24,
+                        34.29,
+                        34.28,
+                        34.26
+                    ],
+                    "ACCEL": [
+                        0.016,
+                        0.033,
+                        0.011,
+                        0.015
+                    ],
+                    "PRV": [
+                        48.0,
+                        46.0,
+                        45.0,
+                        47.0
+                    ],
+                    "RESP": [
+                        13.0,
+                        12.0,
+                        13.0,
+                        12.0
+                    ],
+                    "ACT_COUNT": [
+                        87.0,
+                        63.0,
+                        37.0,
+                        79.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "EDA": "Over the past 6 minutes, electrodermal activity increasing sharply, moving from 0.02 to 0.05 uS.",
+                    "ACCEL": "Accelerometer readings moved sharply and decreasing through the past 6 minutes, ending at 0.01 g.",
+                    "PR": "A increasing pulse rate pattern emerged over the past 6 minutes, highly fluctuating, reaching 88.0 bpm.",
+                    "SkinTemp": "Over the past 6 minutes, peripheral warmth dropping slightly, now near 34.26 degC.",
+                    "ACT_CLASS": "A transition from [generic, still, walking, walking] to [walking, generic, walking, walking] occurred within the past 6 minutes.",
+                    "PRV": "The variability signal was decreasing for the past 6 minutes, mildly fluctuating, around 47.0 ms.",
+                    "RESP": "Breathing rate falling sharply during the past 6 minutes, ending at 12.0 breaths per minute."
+                },
+                "physio_summary_fusion": "Across the past 6 minutes, EDA and PR and SkinTemp and ACCEL and PRV and RESP together shifted while activity stayed [walking, generic, walking, walking] - this pattern is likely activity-related. Because both arousal and activity increased together, this pattern is more consistent with exertion than emotional stress.",
+                "stress_score": 2,
+                "stress_level": "Mild stress",
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: But that makes me feel guilty. What if I'm rejecting someone who is actually good?\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: \n\nResponse: You are not doing something wrong simply because your feelings aren't developing. A relationship isn't a reward for being a good person. Both people need to feel comfortable and willing to move forward.<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: But that makes me feel guilty. What if I'm rejecting someone who is actually good?\nPhysiological Signals: Across the past 6 minutes, EDA and PR and SkinTemp and ACCEL and PRV and RESP together shifted while activity stayed [walking, generic, walking, walking] - this pattern is likely activity-related. Because both arousal and activity increased together, this pattern is more consistent with exertion than emotional stress. Alongside this, Over the past 6 minutes, electrodermal activity increasing sharply, moving from 0.02 to 0.05 uS. On top of that, Accelerometer readings moved sharply and decreasing through the past 6 minutes, ending at 0.01 g. Additionally, A increasing pulse rate pattern emerged over the past 6 minutes, highly fluctuating, reaching 88.0 bpm. Meanwhile, Over the past 6 minutes, peripheral warmth dropping slightly, now near 34.26 degC. Additionally, A transition from [generic, still, walking, walking] to [walking, generic, walking, walking] occurred within the past 6 minutes. At the same time, The variability signal was decreasing for the past 6 minutes, mildly fluctuating, around 47.0 ms. Also, Breathing rate falling sharply during the past 6 minutes, ending at 12.0 breaths per minute. Also, Over the past 6 minutes, with activity count at 79.0, the composite score reaches 2, classified as Mild stress.\n\n### Response:\nStrategy: \n\nResponse: You are not doing something wrong simply because your feelings aren't developing. A relationship isn't a reward for being a good person. Both people need to feel comfortable and willing to move forward.<EOS>"
+            },
+            {
+                "timestamp": "2026-03-22T13:04:00",
+                "participant_full_id": "2",
+                "user_text": "Another thing bothers me. Whenever I disagree with him, he immediately says that I'm right.",
+                "ai_text": "I can understand why that catches your attention. It could mean he's trying to be considerate, but it could also mean he's avoiding disagreement or trying too hard to appear compatible. Have you noticed this happening repeatedly?",
+                "context": "",
+                "strategy": "",
+                "raw_physio": {
+                    "EDA": [
+                        0.02,
+                        0.01,
+                        0.01,
+                        0.04
+                    ],
+                    "PR": [
+                        89.0,
+                        86.0,
+                        80.0,
+                        92.0
+                    ],
+                    "SkinTemp": [
+                        34.23,
+                        34.22,
+                        34.2,
+                        34.16
+                    ],
+                    "ACCEL": [
+                        0.016,
+                        0.023,
+                        0.025,
+                        0.009
+                    ],
+                    "PRV": [
+                        42.0,
+                        38.0,
+                        33.0,
+                        30.0
+                    ],
+                    "RESP": [
+                        13.0,
+                        12.0,
+                        13.0,
+                        12.0
+                    ],
+                    "ACT_COUNT": [
+                        77.0,
+                        68.0,
+                        39.0,
+                        30.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "EDA": "Skin conductance levels stayed rising over the past 6 minutes, near 0.04 uS.",
+                    "ACCEL": "Across the past 6 minutes, movement levels held falling, near 0.01 g.",
+                    "SkinTemp": "Skin temperature moved moderately in a easing direction over the past 6 minutes, from 34.24 to 34.16 degC.",
+                    "PR": "Pulse rate downward moderately across the past 6 minutes, showing highly fluctuating activity, now 92.0 bpm.",
+                    "ACT_CLASS": "Activity type moved from [walking, generic, walking, walking] to [generic, walking, generic, generic] across the past 6 minutes.",
+                    "PRV": "PRV drifted easing across the past 6 minutes to 30.0 ms, suggesting reduced nervous system balance.",
+                    "RESP": "During the past 6 minutes, breathing registered a declining shift to 12.0 breaths per minute, without any notable peaks or valleys."
+                },
+                "physio_summary_fusion": "During the past 6 minutes, EDA and PR and SkinTemp and ACCEL and PRV and RESP shifted while activity intensity stayed [sedentary, LPA, LPA, sedentary], not explained by movement. EDA and PR and SkinTemp and ACCEL and PRV and RESP increased while the participant remained sedentary, so the change cannot be attributed to physical exertion.",
+                "stress_score": 6,
+                "stress_level": "High stress",
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Another thing bothers me. Whenever I disagree with him, he immediately says that I'm right.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: \n\nResponse: I can understand why that catches your attention. It could mean he's trying to be considerate, but it could also mean he's avoiding disagreement or trying too hard to appear compatible. Have you noticed this happening repeatedly?<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Another thing bothers me. Whenever I disagree with him, he immediately says that I'm right.\nPhysiological Signals: During the past 6 minutes, EDA and PR and SkinTemp and ACCEL and PRV and RESP shifted while activity intensity stayed [sedentary, LPA, LPA, sedentary], not explained by movement. EDA and PR and SkinTemp and ACCEL and PRV and RESP increased while the participant remained sedentary, so the change cannot be attributed to physical exertion. On top of that, Skin conductance levels stayed rising over the past 6 minutes, near 0.04 uS. On top of that, Across the past 6 minutes, movement levels held falling, near 0.01 g. Additionally, Skin temperature moved moderately in a easing direction over the past 6 minutes, from 34.24 to 34.16 degC. Also, Pulse rate downward moderately across the past 6 minutes, showing highly fluctuating activity, now 92.0 bpm. At the same time, Activity type moved from [walking, generic, walking, walking] to [generic, walking, generic, generic] across the past 6 minutes. Notably, PRV drifted easing across the past 6 minutes to 30.0 ms, suggesting reduced nervous system balance. In parallel, During the past 6 minutes, breathing registered a declining shift to 12.0 breaths per minute, without any notable peaks or valleys. Notably, Movement count of 30.0 contributes to a combined stress score of 6 over the past 6 minutes, consistent with High stress.\n\n### Response:\nStrategy: \n\nResponse: I can understand why that catches your attention. It could mean he's trying to be considerate, but it could also mean he's avoiding disagreement or trying too hard to appear compatible. Have you noticed this happening repeatedly?<EOS>"
+            },
+            {
+                "timestamp": "2026-03-22T13:08:00",
+                "participant_full_id": "2",
+                "user_text": "Yes. Almost every time. Even when I say something strongly, he just agrees.",
+                "ai_text": "Repeated agreement can sometimes make it difficult to understand what a person genuinely thinks. Healthy communication usually has room for respectful differences too. You may simply be looking for a sense that you're getting to know his actual personality.",
+                "context": "",
+                "strategy": "",
+                "raw_physio": {
+                    "EDA": [
+                        0.02,
+                        0.02,
+                        0.02,
+                        0.04
+                    ],
+                    "PR": [
+                        82.0,
+                        82.0,
+                        79.0,
+                        92.0
+                    ],
+                    "SkinTemp": [
+                        34.12,
+                        34.06,
+                        34.02,
+                        33.99
+                    ],
+                    "ACCEL": [
+                        0.02,
+                        0.012,
+                        0.007,
+                        0.008
+                    ],
+                    "PRV": [
+                        48.0,
+                        46.0,
+                        45.0,
+                        47.0
+                    ],
+                    "RESP": [
+                        14.0,
+                        15.0,
+                        16.0,
+                        16.0
+                    ],
+                    "ACT_COUNT": [
+                        54.0,
+                        39.0,
+                        19.0,
+                        55.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "EDA": "Skin conductance rising sharply during the past 6 minutes, reaching 0.04 uS.",
+                    "SkinTemp": "The temperature signal was dropping for the past 6 minutes, mildly fluctuating, around 33.99 degC.",
+                    "ACCEL": "Over the past 6 minutes, motion intensity stayed falling, around 0.01 g.",
+                    "PR": "Pulse rate climbing moderately over the past 6 minutes, moving from 89.0 to 92.0 bpm.",
+                    "ACT_CLASS": "The activity label changed from [generic, walking, generic, generic] to [generic, generic, still, generic] within the past 6 minutes.",
+                    "PRV": "The variability signal was growing for the past 6 minutes, highly fluctuating, around 47.0 ms.",
+                    "RESP": "Breathing rate climbing sharply during the past 6 minutes, ending at 16.0 breaths per minute."
+                },
+                "physio_summary_fusion": "During the past 6 minutes, EDA and PR and SkinTemp and ACCEL and PRV and RESP shifted; movement counts and MET (~0.95) suggest this is not explained by movement. Arousal markers rose without any matching rise in movement, indicating the shift is likely psychological rather than exertional.",
+                "stress_score": 5,
+                "stress_level": "Moderate stress",
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Yes. Almost every time. Even when I say something strongly, he just agrees.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: \n\nResponse: Repeated agreement can sometimes make it difficult to understand what a person genuinely thinks. Healthy communication usually has room for respectful differences too. You may simply be looking for a sense that you're getting to know his actual personality.<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Yes. Almost every time. Even when I say something strongly, he just agrees.\nPhysiological Signals: During the past 6 minutes, EDA and PR and SkinTemp and ACCEL and PRV and RESP shifted; movement counts and MET (~0.95) suggest this is not explained by movement. Arousal markers rose without any matching rise in movement, indicating the shift is likely psychological rather than exertional. Skin conductance rising sharply during the past 6 minutes, reaching 0.04 uS. At the same time, The temperature signal was dropping for the past 6 minutes, mildly fluctuating, around 33.99 degC. Alongside this, Over the past 6 minutes, motion intensity stayed falling, around 0.01 g. Meanwhile, Pulse rate climbing moderately over the past 6 minutes, moving from 89.0 to 92.0 bpm. In parallel, The activity label changed from [generic, walking, generic, generic] to [generic, generic, still, generic] within the past 6 minutes. Further, The variability signal was growing for the past 6 minutes, highly fluctuating, around 47.0 ms. Additionally, Breathing rate climbing sharply during the past 6 minutes, ending at 16.0 breaths per minute. Also, Over the past 6 minutes, with activity count at 55.0, the composite score reaches 5, classified as Moderate stress.\n\n### Response:\nStrategy: \n\nResponse: Repeated agreement can sometimes make it difficult to understand what a person genuinely thinks. Healthy communication usually has room for respectful differences too. You may simply be looking for a sense that you're getting to know his actual personality.<EOS>"
+            },
+            {
+                "timestamp": "2026-03-22T13:12:00",
+                "participant_full_id": "2",
+                "user_text": "Exactly. I feel like I don't know what his real opinion is.",
+                "ai_text": "That uncertainty can make it difficult to build trust. It doesn't automatically mean he's pretending, but your discomfort is telling you that you need more clarity before becoming emotionally involved.",
+                "context": "",
+                "strategy": "",
+                "raw_physio": {
+                    "EDA": [
+                        0.02,
+                        0.02,
+                        0.02,
+                        0.04
+                    ],
+                    "PR": [
+                        81.0,
+                        81.0,
+                        82.0,
+                        92.0
+                    ],
+                    "SkinTemp": [
+                        33.96,
+                        33.94,
+                        33.91,
+                        33.88
+                    ],
+                    "ACCEL": [
+                        0.013,
+                        0.015,
+                        0.015,
+                        0.022
+                    ],
+                    "PRV": [
+                        48.0,
+                        46.0,
+                        45.0,
+                        47.0
+                    ],
+                    "RESP": [
+                        13.0,
+                        12.0,
+                        13.0,
+                        12.0
+                    ],
+                    "ACT_COUNT": [
+                        44.0,
+                        26.0,
+                        19.0,
+                        55.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "EDA": "Over the past 6 minutes, sweat-gland activity (EDA) upward sharply, now near 0.04 uS.",
+                    "PR": "Heart rate climbing sharply during the past 6 minutes, reaching 92.0 bpm.",
+                    "SkinTemp": "Across the past 6 minutes, peripheral temperature trended easing from 34.12 to 33.88 degC.",
+                    "ACCEL": "Accelerometer readings showed a elevating pattern across the past 6 minutes, with mildly fluctuating variation, now 0.02 g.",
+                    "ACT_CLASS": "Activity type moved from [generic, generic, still, generic] to [generic, generic, walking, generic] across the past 6 minutes.",
+                    "PRV": "PRV declining slightly during the past 6 minutes, with mildly fluctuating variation, now 47.0 ms.",
+                    "RESP": "Across the past 6 minutes, respiratory rate held decreasing, close to 12.0 breaths per minute."
+                },
+                "physio_summary_fusion": "During the past 6 minutes, the participant was awake alongside [generic, generic, walking, generic] movement, EDA and PR and SkinTemp and ACCEL and PRV and RESP shifted, not explained by movement. Despite little to no movement recorded, EDA and PR and SkinTemp and ACCEL and PRV and RESP climbed noticeably - this decoupling from activity strengthens the case for a stress-driven response.",
+                "stress_score": 4,
+                "stress_level": "Moderate stress",
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Exactly. I feel like I don't know what his real opinion is.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: \n\nResponse: That uncertainty can make it difficult to build trust. It doesn't automatically mean he's pretending, but your discomfort is telling you that you need more clarity before becoming emotionally involved.<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Exactly. I feel like I don't know what his real opinion is.\nPhysiological Signals: During the past 6 minutes, the participant was awake alongside [generic, generic, walking, generic] movement, EDA and PR and SkinTemp and ACCEL and PRV and RESP shifted, not explained by movement. Despite little to no movement recorded, EDA and PR and SkinTemp and ACCEL and PRV and RESP climbed noticeably - this decoupling from activity strengthens the case for a stress-driven response. Also, Over the past 6 minutes, sweat-gland activity (EDA) upward sharply, now near 0.04 uS. Meanwhile, Heart rate climbing sharply during the past 6 minutes, reaching 92.0 bpm. Notably, Across the past 6 minutes, peripheral temperature trended easing from 34.12 to 33.88 degC. Accelerometer readings showed a elevating pattern across the past 6 minutes, with mildly fluctuating variation, now 0.02 g. Simultaneously, Activity type moved from [generic, generic, still, generic] to [generic, generic, walking, generic] across the past 6 minutes. Further, PRV declining slightly during the past 6 minutes, with mildly fluctuating variation, now 47.0 ms. Meanwhile, Across the past 6 minutes, respiratory rate held decreasing, close to 12.0 breaths per minute. With activity count at 55.0, the composite stress score for the past 6 minutes is 4, indicating Moderate stress.\n\n### Response:\nStrategy: \n\nResponse: That uncertainty can make it difficult to build trust. It doesn't automatically mean he's pretending, but your discomfort is telling you that you need more clarity before becoming emotionally involved.<EOS>"
+            },
+            {
+                "timestamp": "2026-03-22T13:16:00",
+                "participant_full_id": "2",
+                "user_text": "He also told me that he doesn't drink or smoke and never has. I told him I've tried drinking before, and he suddenly said he was completely fine with it.",
+                "ai_text": "That doesn't necessarily prove that he's being dishonest. He may genuinely be accepting of different choices even though he doesn't make those choices himself. The important thing is whether his acceptance feels genuine to you or whether it seems like he's changing his position just to agree with you.",
+                "context": "",
+                "strategy": "",
+                "raw_physio": {
+                    "EDA": [
+                        0.03,
+                        0.03,
+                        0.02,
+                        0.02
+                    ],
+                    "PR": [
+                        85.0,
+                        89.0,
+                        87.0,
+                        92.0
+                    ],
+                    "SkinTemp": [
+                        33.85,
+                        33.84,
+                        33.86,
+                        33.88
+                    ],
+                    "ACCEL": [
+                        0.01,
+                        0.02,
+                        0.025,
+                        0.018
+                    ],
+                    "PRV": [
+                        48.0,
+                        46.0,
+                        45.0,
+                        47.0
+                    ],
+                    "RESP": [
+                        13.0,
+                        12.0,
+                        13.0,
+                        12.0
+                    ],
+                    "ACT_COUNT": [
+                        32.0,
+                        88.0,
+                        93.0,
+                        73.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "PR": "Over the past 6 minutes, heart rate remained climbing near 92.0 beats per minute.",
+                    "SkinTemp": "A decreasing skin temperature pattern was observed over the past 6 minutes, mildly fluctuating, reaching 33.88 degC.",
+                    "ACCEL": "Over the past 6 minutes, motion intensity stayed increasing, around 0.02 g.",
+                    "EDA": "Across the past 6 minutes, electrodermal activity showed a easing pattern, settling around 0.02 uS.",
+                    "ACT_CLASS": "Activity classification shifted from [generic, generic, walking, generic] to [walking, walking, walking, walking] during the past 6 minutes.",
+                    "PRV": "Across the past 6 minutes, pulse rate variability remained dropping, near 47.0 ms.",
+                    "RESP": "Respiratory rate drifted falling across the past 6 minutes to 12.0 breaths per minute, without any notable peaks or valleys."
+                },
+                "physio_summary_fusion": "During the past 6 minutes, EDA and PR and SkinTemp and ACCEL and PRV and RESP shifted while activity intensity stayed [sedentary, sedentary, LPA, sedentary], likely activity-related. Because both arousal and activity increased together, this pattern is more consistent with exertion than emotional stress.",
+                "stress_score": 2,
+                "stress_level": "Mild stress",
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: He also told me that he doesn't drink or smoke and never has. I told him I've tried drinking before, and he suddenly said he was completely fine with it.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: \n\nResponse: That doesn't necessarily prove that he's being dishonest. He may genuinely be accepting of different choices even though he doesn't make those choices himself. The important thing is whether his acceptance feels genuine to you or whether it seems like he's changing his position just to agree with you.<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: He also told me that he doesn't drink or smoke and never has. I told him I've tried drinking before, and he suddenly said he was completely fine with it.\nPhysiological Signals: During the past 6 minutes, EDA and PR and SkinTemp and ACCEL and PRV and RESP shifted while activity intensity stayed [sedentary, sedentary, LPA, sedentary], likely activity-related. Because both arousal and activity increased together, this pattern is more consistent with exertion than emotional stress. Also, Over the past 6 minutes, heart rate remained climbing near 92.0 beats per minute. At the same time, A decreasing skin temperature pattern was observed over the past 6 minutes, mildly fluctuating, reaching 33.88 degC. Also, Over the past 6 minutes, motion intensity stayed increasing, around 0.02 g. Alongside this, Across the past 6 minutes, electrodermal activity showed a easing pattern, settling around 0.02 uS. In parallel, Activity classification shifted from [generic, generic, walking, generic] to [walking, walking, walking, walking] during the past 6 minutes. Further, Across the past 6 minutes, pulse rate variability remained dropping, near 47.0 ms. Additionally, Respiratory rate drifted falling across the past 6 minutes to 12.0 breaths per minute, without any notable peaks or valleys. Additionally, Combining the signals above with an activity count of 73.0, the resulting score over the past 6 minutes is 2 - Mild stress.\n\n### Response:\nStrategy: \n\nResponse: That doesn't necessarily prove that he's being dishonest. He may genuinely be accepting of different choices even though he doesn't make those choices himself. The important thing is whether his acceptance feels genuine to you or whether it seems like he's changing his position just to agree with you.<EOS>"
+            },
+            {
+                "timestamp": "2026-03-22T13:20:00",
+                "participant_full_id": "2",
+                "user_text": "That's exactly what I can't figure out. Maybe I'm just overanalyzing everything.",
+                "ai_text": "It's possible that you're analyzing small details because you're already uncertain about the relationship. Instead of deciding whether each behavior is a red flag, look at the overall pattern: after talking to him, do you usually feel relaxed and interested, or tense and eager to withdraw?",
+                "context": "",
+                "strategy": "",
+                "raw_physio": {
+                    "EDA": [
+                        0.02,
+                        0.02,
+                        0.02,
+                        0.02
+                    ],
+                    "PR": [
+                        90.0,
+                        82.0,
+                        82.0,
+                        81.0
+                    ],
+                    "SkinTemp": [
+                        33.89,
+                        33.91,
+                        33.91,
+                        33.89
+                    ],
+                    "ACCEL": [
+                        0.038,
+                        0.02,
+                        0.02,
+                        0.034
+                    ],
+                    "PRV": [
+                        48.0,
+                        46.0,
+                        45.0,
+                        47.0
+                    ],
+                    "RESP": [
+                        14.0,
+                        15.0,
+                        16.0,
+                        16.0
+                    ],
+                    "ACT_COUNT": [
+                        94.0,
+                        57.0,
+                        84.0,
+                        59.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "ACCEL": "A rising movement pattern was observed over the past 6 minutes, highly fluctuating, reaching 0.03 g.",
+                    "EDA": "EDA levels moved moderately and easing through the past 6 minutes, ending at 0.02 uS.",
+                    "PR": "Pulse rate falling moderately over the past 6 minutes, moving from 85.0 to 81.0 bpm.",
+                    "SkinTemp": "During the past 6 minutes, skin temperature registered a growing shift to 33.89 degC, without any notable peaks or valleys.",
+                    "ACT_CLASS": "A change in activity was noted over the past 6 minutes, moving from [walking, walking, walking, walking] to [generic, generic, generic, generic].",
+                    "PRV": "PRV decreasing slightly during the past 6 minutes, with mildly fluctuating variation, now 47.0 ms.",
+                    "RESP": "Over the past 6 minutes, breathing rate remained upward, near 16.0 breaths per minute."
+                },
+                "physio_summary_fusion": "Over the past 6 minutes, considering MET levels near 1.83 and [generic, generic, generic, generic] movement, EDA and PR and SkinTemp and ACCEL and PRV and RESP shifted, not clearly linked to physical activity. Neither EDA and PR and SkinTemp and ACCEL and PRV and RESP nor movement showed a notable change, so no clear stress or activity signal is present here.",
+                "stress_score": 1,
+                "stress_level": null,
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: That's exactly what I can't figure out. Maybe I'm just overanalyzing everything.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: \n\nResponse: It's possible that you're analyzing small details because you're already uncertain about the relationship. Instead of deciding whether each behavior is a red flag, look at the overall pattern: after talking to him, do you usually feel relaxed and interested, or tense and eager to withdraw?<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: That's exactly what I can't figure out. Maybe I'm just overanalyzing everything.\nPhysiological Signals: Over the past 6 minutes, considering MET levels near 1.83 and [generic, generic, generic, generic] movement, EDA and PR and SkinTemp and ACCEL and PRV and RESP shifted, not clearly linked to physical activity. Neither EDA and PR and SkinTemp and ACCEL and PRV and RESP nor movement showed a notable change, so no clear stress or activity signal is present here. Alongside this, A rising movement pattern was observed over the past 6 minutes, highly fluctuating, reaching 0.03 g. In parallel, EDA levels moved moderately and easing through the past 6 minutes, ending at 0.02 uS. In parallel, Pulse rate falling moderately over the past 6 minutes, moving from 85.0 to 81.0 bpm. In parallel, During the past 6 minutes, skin temperature registered a growing shift to 33.89 degC, without any notable peaks or valleys. Alongside this, A change in activity was noted over the past 6 minutes, moving from [walking, walking, walking, walking] to [generic, generic, generic, generic]. PRV decreasing slightly during the past 6 minutes, with mildly fluctuating variation, now 47.0 ms. Simultaneously, Over the past 6 minutes, breathing rate remained upward, near 16.0 breaths per minute.\n\n### Response:\nStrategy: \n\nResponse: It's possible that you're analyzing small details because you're already uncertain about the relationship. Instead of deciding whether each behavior is a red flag, look at the overall pattern: after talking to him, do you usually feel relaxed and interested, or tense and eager to withdraw?<EOS>"
+            },
+            {
+                "timestamp": "2026-03-22T13:24:00",
+                "participant_full_id": "2",
+                "user_text": "Mostly I feel relieved when the conversation ends.",
+                "ai_text": "That's an important observation. You don't need to turn that feeling into a final decision immediately, but it deserves to be taken seriously rather than dismissed as meaningless overthinking.",
+                "context": "",
+                "strategy": "",
+                "raw_physio": {
+                    "EDA": [
+                        0.03,
+                        0.03,
+                        0.03,
+                        0.03
+                    ],
+                    "PR": [
+                        82.0,
+                        82.0,
+                        83.0,
+                        82.0
+                    ],
+                    "SkinTemp": [
+                        33.85,
+                        33.81,
+                        33.77,
+                        33.74
+                    ],
+                    "ACCEL": [
+                        0.026,
+                        0.008,
+                        0.007,
+                        0.03
+                    ],
+                    "PRV": [
+                        48.0,
+                        46.0,
+                        45.0,
+                        47.0
+                    ],
+                    "RESP": [
+                        13.0,
+                        12.0,
+                        13.0,
+                        12.0
+                    ],
+                    "ACT_COUNT": [
+                        39.0,
+                        33.0,
+                        17.0,
+                        39.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "PR": "A easing pulse rate pattern emerged over the past 6 minutes, mildly fluctuating, reaching 82.0 bpm.",
+                    "EDA": "Skin conductance drifted upward across the past 6 minutes to 0.03 uS, showing a single sustained rise with no reversal.",
+                    "SkinTemp": "Across the past 6 minutes, skin temperature held easing near 33.74 degC.",
+                    "ACCEL": "Accelerometer output easing moderately across the past 6 minutes, showing highly fluctuating activity, now 0.03 g.",
+                    "ACT_CLASS": "Over the past 6 minutes, a shift from [generic, generic, generic, generic] to [still, walking, walking, generic] was recorded.",
+                    "PRV": "Over the past 6 minutes, autonomic variability stayed decreasing, close to 47.0 ms.",
+                    "RESP": "Respiratory rate drifted easing across the past 6 minutes to 12.0 breaths per minute, without any notable peaks or valleys."
+                },
+                "physio_summary_fusion": "Across the past 6 minutes, EDA and PR and SkinTemp and ACCEL and PRV and RESP together shifted while activity stayed [still, walking, walking, generic] - this pattern is likely activity-related. EDA and PR and SkinTemp and ACCEL and PRV and RESP rose in step with heightened motion, indicating the signal is at least partly explained by movement rather than stress alone.",
+                "stress_score": 2,
+                "stress_level": "Mild stress",
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Mostly I feel relieved when the conversation ends.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: \n\nResponse: That's an important observation. You don't need to turn that feeling into a final decision immediately, but it deserves to be taken seriously rather than dismissed as meaningless overthinking.<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Mostly I feel relieved when the conversation ends.\nPhysiological Signals: Across the past 6 minutes, EDA and PR and SkinTemp and ACCEL and PRV and RESP together shifted while activity stayed [still, walking, walking, generic] - this pattern is likely activity-related. EDA and PR and SkinTemp and ACCEL and PRV and RESP rose in step with heightened motion, indicating the signal is at least partly explained by movement rather than stress alone. Alongside this, A easing pulse rate pattern emerged over the past 6 minutes, mildly fluctuating, reaching 82.0 bpm. In parallel, Skin conductance drifted upward across the past 6 minutes to 0.03 uS, showing a single sustained rise with no reversal. Additionally, Across the past 6 minutes, skin temperature held easing near 33.74 degC. On top of that, Accelerometer output easing moderately across the past 6 minutes, showing highly fluctuating activity, now 0.03 g. Also, Over the past 6 minutes, a shift from [generic, generic, generic, generic] to [still, walking, walking, generic] was recorded. In parallel, Over the past 6 minutes, autonomic variability stayed decreasing, close to 47.0 ms. In parallel, Respiratory rate drifted easing across the past 6 minutes to 12.0 breaths per minute, without any notable peaks or valleys. Movement count of 39.0 contributes to a combined stress score of 2 over the past 6 minutes, consistent with Mild stress.\n\n### Response:\nStrategy: \n\nResponse: That's an important observation. You don't need to turn that feeling into a final decision immediately, but it deserves to be taken seriously rather than dismissed as meaningless overthinking.<EOS>"
+            },
+            {
+                "timestamp": "2026-03-22T13:28:00",
+                "participant_full_id": "2",
+                "user_text": "He keeps asking to talk because he says we need time to understand each other.",
+                "ai_text": "His desire to spend more time getting to know you is understandable. At the same time, your comfort matters just as much. You shouldn't have to keep extending conversations simply because he wants the connection to develop faster.",
+                "context": "",
+                "strategy": "",
+                "raw_physio": {
+                    "EDA": [
+                        0.03,
+                        0.04,
+                        0.05
+                    ],
+                    "PR": [
+                        88.0,
+                        90.0,
+                        92.0
+                    ],
+                    "SkinTemp": null,
+                    "ACCEL": null,
+                    "PRV": [
+                        42.0,
+                        37.0,
+                        33.0
+                    ],
+                    "RESP": [
+                        13.0,
+                        12.0,
+                        12.0
+                    ],
+                    "ACT_COUNT": [
+                        47.0,
+                        47.0,
+                        47.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "EDA": "Skin conductance levels stayed elevating over the past 6 minutes, near 0.05 uS.",
+                    "PR": "Pulse rate showed a climbing trend across the past 6 minutes, with highly fluctuating variation, now 92.0 bpm.",
+                    "SkinTemp": "Over the past 6 minutes, peripheral temperature stayed falling, around 33.74 degC.",
+                    "ACCEL": "Over the past 6 minutes, motion intensity stayed increasing, around 0.03 g.",
+                    "ACT_CLASS": "Activity type moved from [still, walking, walking, generic] to [walking, nan, nan] across the past 6 minutes.",
+                    "PRV": "PRV moved sharply in a downward direction across the past 6 minutes, ending at 33.0 ms.",
+                    "RESP": "RESP showed a easing trend across the past 6 minutes, with mildly fluctuating pattern, now 12.0 breaths per minute."
+                },
+                "physio_summary_fusion": "During the past 6 minutes, with body position reclining/lying and the participant was awake, EDA and PR and SkinTemp and ACCEL and PRV and RESP shifted, not explained by movement. Arousal markers rose without any matching rise in movement, indicating the shift is likely psychological rather than exertional.",
+                "stress_score": 6,
+                "stress_level": "High stress",
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: He keeps asking to talk because he says we need time to understand each other.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: \n\nResponse: His desire to spend more time getting to know you is understandable. At the same time, your comfort matters just as much. You shouldn't have to keep extending conversations simply because he wants the connection to develop faster.<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: He keeps asking to talk because he says we need time to understand each other.\nPhysiological Signals: During the past 6 minutes, with body position reclining/lying and the participant was awake, EDA and PR and SkinTemp and ACCEL and PRV and RESP shifted, not explained by movement. Arousal markers rose without any matching rise in movement, indicating the shift is likely psychological rather than exertional. At the same time, Skin conductance levels stayed elevating over the past 6 minutes, near 0.05 uS. Also, Pulse rate showed a climbing trend across the past 6 minutes, with highly fluctuating variation, now 92.0 bpm. Notably, Over the past 6 minutes, peripheral temperature stayed falling, around 33.74 degC. Over the past 6 minutes, motion intensity stayed increasing, around 0.03 g. Alongside this, Activity type moved from [still, walking, walking, generic] to [walking, nan, nan] across the past 6 minutes. In parallel, PRV moved sharply in a downward direction across the past 6 minutes, ending at 33.0 ms. Alongside this, RESP showed a easing trend across the past 6 minutes, with mildly fluctuating pattern, now 12.0 breaths per minute. The stress score for the past 6 minutes is 6 (activity count: 47.0), pointing to High stress.\n\n### Response:\nStrategy: \n\nResponse: His desire to spend more time getting to know you is understandable. At the same time, your comfort matters just as much. You shouldn't have to keep extending conversations simply because he wants the connection to develop faster.<EOS>"
+            }
+        ]
+    },
+    {
+        "session_id": "2_1",
+        "person_id": "2_1",
+        "turns": [
+            {
+                "timestamp": "2026-03-22T13:28:03",
+                "participant_full_id": "2_1",
+                "user_text": "I actually have enough free time to talk, but I keep finding reasons not to.",
+                "ai_text": "That may be giving you useful information. If time isn't the main obstacle and you're still naturally avoiding the conversations, the issue may be your level of interest rather than your schedule. You don't have to criticize yourself for noticing that.",
+                "context": "",
+                "strategy": "",
+                "raw_physio": {
+                    "EDA": [
+                        0.02,
+                        0.02,
+                        0.02,
+                        0.02
+                    ],
+                    "PR": [
+                        94.0,
+                        87.0,
+                        81.0,
+                        88.0
+                    ],
+                    "SkinTemp": [
+                        34.24,
+                        34.29,
+                        34.28,
+                        34.26
+                    ],
+                    "ACCEL": [
+                        0.016,
+                        0.033,
+                        0.011,
+                        0.015
+                    ],
+                    "PRV": [
+                        48.0,
+                        46.0,
+                        45.0,
+                        47.0
+                    ],
+                    "RESP": [
+                        13.0,
+                        12.0,
+                        13.0,
+                        12.0
+                    ],
+                    "ACT_COUNT": [
+                        87.0,
+                        63.0,
+                        37.0,
+                        79.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "PR": "Over the first minute, heart rate remained decreasing near 88.0 beats per minute.",
+                    "SkinTemp": "Skin temperature climbing slightly over the first minute, moving from 34.24 to 34.26 degC.",
+                    "ACCEL": "A downward movement pattern was observed over the first minute, highly fluctuating, reaching 0.01 g.",
+                    "EDA": "Over the first minute, sweat-gland activity (EDA) downward slightly, now near 0.02 uS.",
+                    "ACT_CLASS": "The [walking, generic, walking, walking] state held steady for the first minute.",
+                    "PRV": "During the first minute, PRV registered a dropping shift to 47.0 ms, pointing to reduced recovery capacity.",
+                    "RESP": "Across the first minute, respiratory rate held falling, close to 12.0 breaths per minute."
+                },
+                "physio_summary_fusion": "Over the first minute, the combined signal (EDA and PR and SkinTemp and ACCEL and PRV and RESP) showed shifted, with movement [walking, generic, walking, walking], not clearly linked to physical activity. The relationship between EDA and PR and SkinTemp and ACCEL and PRV and RESP and movement was inconsistent over the first minute, making the source of change unclear.",
+                "stress_score": 0,
+                "stress_level": null,
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I actually have enough free time to talk, but I keep finding reasons not to.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: \n\nResponse: That may be giving you useful information. If time isn't the main obstacle and you're still naturally avoiding the conversations, the issue may be your level of interest rather than your schedule. You don't have to criticize yourself for noticing that.<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I actually have enough free time to talk, but I keep finding reasons not to.\nPhysiological Signals: Over the first minute, the combined signal (EDA and PR and SkinTemp and ACCEL and PRV and RESP) showed shifted, with movement [walking, generic, walking, walking], not clearly linked to physical activity. The relationship between EDA and PR and SkinTemp and ACCEL and PRV and RESP and movement was inconsistent over the first minute, making the source of change unclear. Further, Over the first minute, heart rate remained decreasing near 88.0 beats per minute. In parallel, Skin temperature climbing slightly over the first minute, moving from 34.24 to 34.26 degC. Also, A downward movement pattern was observed over the first minute, highly fluctuating, reaching 0.01 g. Also, Over the first minute, sweat-gland activity (EDA) downward slightly, now near 0.02 uS. Meanwhile, The [walking, generic, walking, walking] state held steady for the first minute. During the first minute, PRV registered a dropping shift to 47.0 ms, pointing to reduced recovery capacity. Notably, Across the first minute, respiratory rate held falling, close to 12.0 breaths per minute.\n\n### Response:\nStrategy: \n\nResponse: That may be giving you useful information. If time isn't the main obstacle and you're still naturally avoiding the conversations, the issue may be your level of interest rather than your schedule. You don't have to criticize yourself for noticing that.<EOS>"
+            }
+        ]
+    },
+    {
+        "session_id": "nan",
+        "person_id": "nan",
+        "turns": [
+            {
+                "timestamp": "2026-03-22T13:28:07",
+                "participant_full_id": NaN,
+                "user_text": "Then should I stop talking to him now?",
+                "ai_text": "You don't necessarily have to make an immediate decision tonight. If you're genuinely uncertain, you could have a few shorter conversations and pay attention to how you feel rather than trying to convince yourself to like him.",
+                "context": "",
+                "strategy": "",
+                "raw_physio": {
+                    "EDA": [
+                        0.01,
+                        0.02,
+                        0.02,
+                        0.03
+                    ],
+                    "PR": [
+                        80.0,
+                        88.0,
+                        93.0,
+                        94.0
+                    ],
+                    "SkinTemp": [
+                        34.17,
+                        34.13,
+                        34.09,
+                        34.11
+                    ],
+                    "ACCEL": [
+                        0.031,
+                        0.05,
+                        0.014,
+                        0.014
+                    ],
+                    "PRV": [
+                        48.0,
+                        46.0,
+                        45.0,
+                        47.0
+                    ],
+                    "RESP": [
+                        13.0,
+                        12.0,
+                        13.0,
+                        12.0
+                    ],
+                    "ACT_COUNT": [
+                        43.0,
+                        67.0,
+                        90.0,
+                        83.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "PR": "Pulse rate increasing sharply over the first minute, moving from 80.0 to 94.0 bpm.",
+                    "EDA": "EDA levels moved sharply and climbing through the first minute, ending at 0.03 uS.",
+                    "ACCEL": "Across the first minute, movement levels held declining, near 0.01 g.",
+                    "SkinTemp": "Skin temperature showed a dropping pattern across the first minute, with smooth change, now 34.11 degC.",
+                    "ACT_CLASS": "Consistent [still, generic, walking, walking] classification was recorded across the first minute.",
+                    "PRV": "During the first minute, PRV registered a declining shift to 47.0 ms, pointing to reduced recovery capacity.",
+                    "RESP": "RESP showed a downward trend across the first minute, with mildly fluctuating pattern, now 12.0 breaths per minute."
+                },
+                "physio_summary_fusion": "Over the first minute, step count suggests some walking activity; EDA and PR and SkinTemp and ACCEL and PRV and RESP shifted, a response that is likely activity-related. EDA and PR and SkinTemp and ACCEL and PRV and RESP rose alongside increased movement, so the change is likely activity-related rather than a pure stress response.",
+                "stress_score": 4,
+                "stress_level": "Moderate stress",
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Then should I stop talking to him now?\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: \n\nResponse: You don't necessarily have to make an immediate decision tonight. If you're genuinely uncertain, you could have a few shorter conversations and pay attention to how you feel rather than trying to convince yourself to like him.<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Then should I stop talking to him now?\nPhysiological Signals: Over the first minute, step count suggests some walking activity; EDA and PR and SkinTemp and ACCEL and PRV and RESP shifted, a response that is likely activity-related. EDA and PR and SkinTemp and ACCEL and PRV and RESP rose alongside increased movement, so the change is likely activity-related rather than a pure stress response. Pulse rate increasing sharply over the first minute, moving from 80.0 to 94.0 bpm. EDA levels moved sharply and climbing through the first minute, ending at 0.03 uS. At the same time, Across the first minute, movement levels held declining, near 0.01 g. In parallel, Skin temperature showed a dropping pattern across the first minute, with smooth change, now 34.11 degC. Also, Consistent [still, generic, walking, walking] classification was recorded across the first minute. On top of that, During the first minute, PRV registered a declining shift to 47.0 ms, pointing to reduced recovery capacity. In parallel, RESP showed a downward trend across the first minute, with mildly fluctuating pattern, now 12.0 breaths per minute. Additionally, Over the first minute, with activity count at 83.0, the composite score reaches 4, classified as Moderate stress.\n\n### Response:\nStrategy: \n\nResponse: You don't necessarily have to make an immediate decision tonight. If you're genuinely uncertain, you could have a few shorter conversations and pay attention to how you feel rather than trying to convince yourself to like him.<EOS>"
+            },
+            {
+                "timestamp": "2026-03-22T13:28:11",
+                "participant_full_id": NaN,
+                "user_text": "What should I actually observe during those conversations?",
+                "ai_text": "Keep it simple. Notice whether you feel comfortable expressing disagreement, whether he shares his own thoughts honestly, whether you enjoy talking without forcing it, and whether you feel curious to know him better.",
+                "context": "",
+                "strategy": "",
+                "raw_physio": {
+                    "EDA": [
+                        0.03,
+                        0.03,
+                        0.03,
+                        0.03
+                    ],
+                    "PR": [
+                        82.0,
+                        82.0,
+                        83.0,
+                        82.0
+                    ],
+                    "SkinTemp": [
+                        33.85,
+                        33.81,
+                        33.77,
+                        33.74
+                    ],
+                    "ACCEL": [
+                        0.026,
+                        0.008,
+                        0.007,
+                        0.03
+                    ],
+                    "PRV": [
+                        48.0,
+                        46.0,
+                        45.0,
+                        47.0
+                    ],
+                    "RESP": [
+                        13.0,
+                        12.0,
+                        13.0,
+                        12.0
+                    ],
+                    "ACT_COUNT": [
+                        39.0,
+                        33.0,
+                        17.0,
+                        39.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "SkinTemp": "Across the first minute, peripheral temperature trended falling from 34.17 to 33.74 degC.",
+                    "EDA": "A increasing EDA pattern was observed over the first minute, highly fluctuating, reaching 0.03 uS.",
+                    "PR": "Pulse rate moved moderately in a upward direction over the first minute, from 80.0 to 82.0 bpm.",
+                    "ACCEL": "Across the first minute, overall motion trended easing from 0.03 to 0.03 g.",
+                    "ACT_CLASS": "During the first minute, activity moved away from [still, generic, walking, walking], becoming [still, walking, walking, generic].",
+                    "PRV": "PRV decreasing slightly during the first minute, with mildly fluctuating variation, now 47.0 ms.",
+                    "RESP": "Respiratory rate drifted downward across the first minute to 12.0 breaths per minute, without any notable peaks or valleys."
+                },
+                "physio_summary_fusion": "Over the first minute, considering MET levels near 1.42 and [still, walking, walking, generic] movement, EDA and PR and SkinTemp and ACCEL and PRV and RESP shifted, likely activity-related. Because both arousal and activity increased together, this pattern is more consistent with exertion than emotional stress.",
+                "stress_score": 2,
+                "stress_level": "Mild stress",
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: What should I actually observe during those conversations?\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: \n\nResponse: Keep it simple. Notice whether you feel comfortable expressing disagreement, whether he shares his own thoughts honestly, whether you enjoy talking without forcing it, and whether you feel curious to know him better.<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: What should I actually observe during those conversations?\nPhysiological Signals: Over the first minute, considering MET levels near 1.42 and [still, walking, walking, generic] movement, EDA and PR and SkinTemp and ACCEL and PRV and RESP shifted, likely activity-related. Because both arousal and activity increased together, this pattern is more consistent with exertion than emotional stress. Meanwhile, Across the first minute, peripheral temperature trended falling from 34.17 to 33.74 degC. Also, A increasing EDA pattern was observed over the first minute, highly fluctuating, reaching 0.03 uS. Further, Pulse rate moved moderately in a upward direction over the first minute, from 80.0 to 82.0 bpm. Alongside this, Across the first minute, overall motion trended easing from 0.03 to 0.03 g. Meanwhile, During the first minute, activity moved away from [still, generic, walking, walking], becoming [still, walking, walking, generic]. Further, PRV decreasing slightly during the first minute, with mildly fluctuating variation, now 47.0 ms. Notably, Respiratory rate drifted downward across the first minute to 12.0 breaths per minute, without any notable peaks or valleys. Meanwhile, The stress score for the first minute is 2 (activity count: 39.0), pointing to Mild stress.\n\n### Response:\nStrategy: \n\nResponse: Keep it simple. Notice whether you feel comfortable expressing disagreement, whether he shares his own thoughts honestly, whether you enjoy talking without forcing it, and whether you feel curious to know him better.<EOS>"
+            },
+            {
+                "timestamp": "2026-03-22T13:28:15",
+                "participant_full_id": NaN,
+                "user_text": "And if I still feel the same after that?",
+                "ai_text": "Then you can accept that the connection may simply not be right for you. You don't need a dramatic reason or proof that he is a bad person. “He is a good person, but I don't feel this is right for me” can be a complete and honest conclusion.",
+                "context": "",
+                "strategy": "",
+                "raw_physio": {
+                    "EDA": [
+                        0.03,
+                        0.03,
+                        0.03,
+                        0.03
+                    ],
+                    "PR": [
+                        82.0,
+                        82.0,
+                        83.0,
+                        82.0
+                    ],
+                    "SkinTemp": [
+                        33.85,
+                        33.81,
+                        33.77,
+                        33.74
+                    ],
+                    "ACCEL": [
+                        0.026,
+                        0.008,
+                        0.007,
+                        0.03
+                    ],
+                    "PRV": [
+                        48.0,
+                        46.0,
+                        45.0,
+                        47.0
+                    ],
+                    "RESP": [
+                        13.0,
+                        12.0,
+                        13.0,
+                        12.0
+                    ],
+                    "ACT_COUNT": [
+                        39.0,
+                        33.0,
+                        17.0,
+                        39.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "SkinTemp": "Skin temperature drifted falling across the first minute to 33.74 degC, without any notable peaks or valleys.",
+                    "EDA": "Across the first minute, electrodermal activity showed a elevating pattern, settling around 0.03 uS.",
+                    "PR": "Pulse rate increasing moderately across the first minute, showing highly fluctuating activity, now 82.0 bpm.",
+                    "ACCEL": "Movement levels drifted falling across the first minute to 0.03 g, without any notable peaks or valleys.",
+                    "ACT_CLASS": "Over the first minute, the participant's activity changed from [still, generic, walking, walking] to [still, walking, walking, generic].",
+                    "PRV": "During the first minute, PRV registered a dropping shift to 47.0 ms, pointing to reduced recovery capacity.",
+                    "RESP": "Breathing rate dropping moderately during the first minute, ending at 12.0 breaths per minute."
+                },
+                "physio_summary_fusion": "Over the first minute, EDA and PR and SkinTemp and ACCEL and PRV and RESP shifted, with minimal walking and [sedentary, sedentary, sedentary, LPA] intensity noted, likely activity-related. EDA and PR and SkinTemp and ACCEL and PRV and RESP climbed while movement also increased, suggesting the change may be confounded by physical activity.",
+                "stress_score": 2,
+                "stress_level": "Mild stress",
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: And if I still feel the same after that?\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: \n\nResponse: Then you can accept that the connection may simply not be right for you. You don't need a dramatic reason or proof that he is a bad person. “He is a good person, but I don't feel this is right for me” can be a complete and honest conclusion.<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: And if I still feel the same after that?\nPhysiological Signals: Over the first minute, EDA and PR and SkinTemp and ACCEL and PRV and RESP shifted, with minimal walking and [sedentary, sedentary, sedentary, LPA] intensity noted, likely activity-related. EDA and PR and SkinTemp and ACCEL and PRV and RESP climbed while movement also increased, suggesting the change may be confounded by physical activity. In parallel, Skin temperature drifted falling across the first minute to 33.74 degC, without any notable peaks or valleys. Alongside this, Across the first minute, electrodermal activity showed a elevating pattern, settling around 0.03 uS. In parallel, Pulse rate increasing moderately across the first minute, showing highly fluctuating activity, now 82.0 bpm. Further, Movement levels drifted falling across the first minute to 0.03 g, without any notable peaks or valleys. Further, Over the first minute, the participant's activity changed from [still, generic, walking, walking] to [still, walking, walking, generic]. Also, During the first minute, PRV registered a dropping shift to 47.0 ms, pointing to reduced recovery capacity. Additionally, Breathing rate dropping moderately during the first minute, ending at 12.0 breaths per minute. Notably, Over the first minute, with activity count at 39.0, the composite score reaches 2, classified as Mild stress.\n\n### Response:\nStrategy: \n\nResponse: Then you can accept that the connection may simply not be right for you. You don't need a dramatic reason or proof that he is a bad person. “He is a good person, but I don't feel this is right for me” can be a complete and honest conclusion.<EOS>"
+            },
+            {
+                "timestamp": "2026-03-22T13:28:19",
+                "participant_full_id": NaN,
+                "user_text": "I think that makes me feel less guilty.",
+                "ai_text": "I'm glad. Try not to make this decision while you're mentally exhausted or caught in repetitive thoughts. Give yourself some quiet time, write down what you genuinely feel, and separate your own feelings from what you think you should feel because your family or the other person expects it.",
+                "context": "",
+                "strategy": "",
+                "raw_physio": {
+                    "EDA": [
+                        0.03,
+                        0.03,
+                        0.03,
+                        0.03
+                    ],
+                    "PR": [
+                        82.0,
+                        82.0,
+                        83.0,
+                        82.0
+                    ],
+                    "SkinTemp": [
+                        33.85,
+                        33.81,
+                        33.77,
+                        33.74
+                    ],
+                    "ACCEL": [
+                        0.026,
+                        0.008,
+                        0.007,
+                        0.03
+                    ],
+                    "PRV": [
+                        48.0,
+                        46.0,
+                        45.0,
+                        47.0
+                    ],
+                    "RESP": [
+                        13.0,
+                        12.0,
+                        13.0,
+                        12.0
+                    ],
+                    "ACT_COUNT": [
+                        39.0,
+                        33.0,
+                        17.0,
+                        39.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "SkinTemp": "Skin temperature showed a declining pattern across the first minute, with highly fluctuating change, now 33.74 degC.",
+                    "EDA": "The sympathetic arousal marker (EDA) rising sharply over the first minute, now 0.03 uS.",
+                    "PR": "During the first minute, heart rate registered a growing shift to 82.0 bpm, without any notable peaks or valleys.",
+                    "ACCEL": "Accelerometer output easing slightly across the first minute, showing highly fluctuating activity, now 0.03 g.",
+                    "ACT_CLASS": "A change in activity was noted over the first minute, moving from [still, generic, walking, walking] to [still, walking, walking, generic].",
+                    "PRV": "Over the first minute, PRV showed a downward pattern, now near 47.0 ms, indicating reduced regulation.",
+                    "RESP": "Across the first minute, respiratory rate held decreasing, close to 12.0 breaths per minute."
+                },
+                "physio_summary_fusion": "During the first minute, physiological arousal (EDA and PR and SkinTemp and ACCEL and PRV and RESP) shifted; given [still, walking, walking, generic] movement and reclining/lying posture, this appears likely activity-related. EDA and PR and SkinTemp and ACCEL and PRV and RESP rose alongside increased movement, so the change is likely activity-related rather than a pure stress response.",
+                "stress_score": 2,
+                "stress_level": "Mild stress",
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I think that makes me feel less guilty.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: \n\nResponse: I'm glad. Try not to make this decision while you're mentally exhausted or caught in repetitive thoughts. Give yourself some quiet time, write down what you genuinely feel, and separate your own feelings from what you think you should feel because your family or the other person expects it.<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I think that makes me feel less guilty.\nPhysiological Signals: During the first minute, physiological arousal (EDA and PR and SkinTemp and ACCEL and PRV and RESP) shifted; given [still, walking, walking, generic] movement and reclining/lying posture, this appears likely activity-related. EDA and PR and SkinTemp and ACCEL and PRV and RESP rose alongside increased movement, so the change is likely activity-related rather than a pure stress response. Also, Skin temperature showed a declining pattern across the first minute, with highly fluctuating change, now 33.74 degC. Additionally, The sympathetic arousal marker (EDA) rising sharply over the first minute, now 0.03 uS. Also, During the first minute, heart rate registered a growing shift to 82.0 bpm, without any notable peaks or valleys. Also, Accelerometer output easing slightly across the first minute, showing highly fluctuating activity, now 0.03 g. In parallel, A change in activity was noted over the first minute, moving from [still, generic, walking, walking] to [still, walking, walking, generic]. In parallel, Over the first minute, PRV showed a downward pattern, now near 47.0 ms, indicating reduced regulation. Meanwhile, Across the first minute, respiratory rate held decreasing, close to 12.0 breaths per minute. Meanwhile, With activity count at 39.0, the composite stress score for the first minute is 2, indicating Mild stress.\n\n### Response:\nStrategy: \n\nResponse: I'm glad. Try not to make this decision while you're mentally exhausted or caught in repetitive thoughts. Give yourself some quiet time, write down what you genuinely feel, and separate your own feelings from what you think you should feel because your family or the other person expects it.<EOS>"
+            },
+            {
+                "timestamp": "2026-03-22T13:28:23",
+                "participant_full_id": NaN,
+                "user_text": "Thank you. I think I need to slow down instead of forcing myself to decide.",
+                "ai_text": "That sounds like a healthy approach. You don't have to rush toward a yes or a no just to end the uncertainty. Give yourself enough space to understand what you actually want, and let your decision come from clarity rather than guilt or pressure.",
+                "context": "",
+                "strategy": "",
+                "raw_physio": {
+                    "EDA": [
+                        0.02,
+                        0.02,
+                        0.02,
+                        0.02
+                    ],
+                    "PR": [
+                        84.0,
+                        77.0,
+                        81.0,
+                        88.0
+                    ],
+                    "SkinTemp": [
+                        34.24,
+                        34.29,
+                        34.28,
+                        34.26
+                    ],
+                    "ACCEL": [
+                        0.016,
+                        0.033,
+                        0.011,
+                        0.015
+                    ],
+                    "PRV": [
+                        48.0,
+                        46.0,
+                        45.0,
+                        47.0
+                    ],
+                    "RESP": [
+                        13.0,
+                        12.0,
+                        13.0,
+                        12.0
+                    ],
+                    "ACT_COUNT": [
+                        87.0,
+                        63.0,
+                        37.0,
+                        79.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "PR": "Over the first minute, heart rate remained growing near 88.0 beats per minute.",
+                    "ACCEL": "Over the first minute, motion intensity stayed decreasing, around 0.01 g.",
+                    "EDA": "Electrodermal readings rising moderately across the first minute to 0.02 uS, without any notable peaks or valleys.",
+                    "SkinTemp": "Over the first minute, peripheral temperature stayed rising, around 34.26 degC.",
+                    "ACT_CLASS": "A transition from [still, generic, walking, walking] to [walking, generic, walking, walking] occurred within the first minute.",
+                    "PRV": "PRV easing slightly during the first minute, with mildly fluctuating variation, now 47.0 ms.",
+                    "RESP": "During the first minute, breathing registered a easing shift to 12.0 breaths per minute, without any notable peaks or valleys."
+                },
+                "physio_summary_fusion": "Over the first minute, EDA and PR and SkinTemp and ACCEL and PRV and RESP shifted, occurring with reliable and [walking, generic, walking, walking] movement, likely activity-related. EDA and PR and SkinTemp and ACCEL and PRV and RESP climbed while movement also increased, suggesting the change may be confounded by physical activity.",
+                "stress_score": 2,
+                "stress_level": "Mild stress",
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Thank you. I think I need to slow down instead of forcing myself to decide.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: \n\nResponse: That sounds like a healthy approach. You don't have to rush toward a yes or a no just to end the uncertainty. Give yourself enough space to understand what you actually want, and let your decision come from clarity rather than guilt or pressure.<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Thank you. I think I need to slow down instead of forcing myself to decide.\nPhysiological Signals: Over the first minute, EDA and PR and SkinTemp and ACCEL and PRV and RESP shifted, occurring with reliable and [walking, generic, walking, walking] movement, likely activity-related. EDA and PR and SkinTemp and ACCEL and PRV and RESP climbed while movement also increased, suggesting the change may be confounded by physical activity. Simultaneously, Over the first minute, heart rate remained growing near 88.0 beats per minute. Alongside this, Over the first minute, motion intensity stayed decreasing, around 0.01 g. Additionally, Electrodermal readings rising moderately across the first minute to 0.02 uS, without any notable peaks or valleys. In parallel, Over the first minute, peripheral temperature stayed rising, around 34.26 degC. In parallel, A transition from [still, generic, walking, walking] to [walking, generic, walking, walking] occurred within the first minute. At the same time, PRV easing slightly during the first minute, with mildly fluctuating variation, now 47.0 ms. On top of that, During the first minute, breathing registered a easing shift to 12.0 breaths per minute, without any notable peaks or valleys. Simultaneously, Movement count of 79.0 contributes to a combined stress score of 2 over the first minute, consistent with Mild stress.\n\n### Response:\nStrategy: \n\nResponse: That sounds like a healthy approach. You don't have to rush toward a yes or a no just to end the uncertainty. Give yourself enough space to understand what you actually want, and let your decision come from clarity rather than guilt or pressure.<EOS>"
+            }
+        ]
+    }
+]

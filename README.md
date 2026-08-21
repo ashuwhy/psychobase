@@ -64,8 +64,17 @@ Shapes are declared in `src/types.ts`. That file and the script change together.
 
 ## Data notes
 
-- 40 contexts build successfully. CSVs 23, 23_1, 24 and 25 have no matching
-  JSON; Stiti confirmed we skip those for now.
+- 54 contexts build: 44 originals and 10 modified variants. Participants 23,
+  23_1, 24 and 25 previously had a CSV but no JSON; the 21 Aug drop supplied
+  theirs, so nothing is skipped any more.
+- **Modified variants.** Stiti sends better-written versions of some
+  conversations, named `..._modified_phyS[_context]`. Same participant, same
+  timestamps and same scenario, but the dialogue is rephrased - "I've been
+  struggling to perform well in athletics" becomes "My regional trials are in
+  three days and I can't stop shaking". They are additions, not replacements, so
+  each gets its own context id (`8-modified`) and appears alongside the original
+  with "(modified)" appended to the name. The pipeline pairs files by suffix, so
+  a new variant needs no code change.
 - The five charted signals are EDA, PR, SkinTemp, ACCEL and ACT_COUNT. The brief
   named ACT_CLASS as the fifth, but it holds category strings rather than
   numbers, and Stiti confirmed ACT_COUNT instead. ACT_CLASS still ships inside
