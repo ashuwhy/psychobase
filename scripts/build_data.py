@@ -113,6 +113,34 @@ def physio_summary(turn):
     return match.group(1).strip() if match else ""
 
 
+def row_windows(rows):
+    """Work out the real [start, end] each CSV row covers.
+
+    Two shapes turn up in the supplied files. Most rows carry an explicit range,
+    "19:33:00-19:34:00". Others carry a single timestamp, "18:00:00", and still
+    hold several samples - participant 8 has three per row, three minutes apart.
+    Treating those as zero-length would stamp every sample in the row on the same
+    instant, stacking points on top of each other and flattening the trend, so a
+    row with no end borrows the next row's start. The final row reuses the median
+    gap, since there is nothing after it to measure against.
+    """
+    starts, ends = [], []
+    for row in rows:
+        start, end = parse_range(row["timestamp"])
+        starts.append(start)
+        ends.append(end if end > start else None)
+
+    gaps = [(starts[i + 1] - starts[i]).total_seconds()
+            for i in range(len(starts) - 1) if starts[i + 1] > starts[i]]
+    median_gap = sorted(gaps)[len(gaps) // 2] if gaps else 60.0
+
+    for i, end in enumerate(ends):
+        if end is None:
+            nxt = starts[i + 1] if i + 1 < len(starts) else None
+            ends[i] = nxt if nxt and nxt > starts[i] else starts[i] + timedelta(seconds=median_gap)
+    return list(zip(starts, ends))
+
+
 def build_series(rows):
     """Flatten per-row sample arrays onto a real time axis.
 
@@ -122,8 +150,7 @@ def build_series(rows):
     """
     channels = SIGNALS + EXTRA_SERIES
     series = {s["key"]: [] for s in channels}
-    for row in rows:
-        start, end = parse_range(row["timestamp"])
+    for row, (start, end) in zip(rows, row_windows(rows)):
         span = (end - start).total_seconds()
         for signal in channels:
             values = parse_array(row.get(signal["key"], ""))
@@ -168,7 +195,7 @@ def build_context(csv_path, json_path):
             interval = {"start": start.isoformat(), "end": end.isoformat(),
                         "minutes": minutes, "source": "summary"}
         elif i - 1 < len(rows):
-            start, end = parse_range(rows[i - 1]["timestamp"])
+            start, end = row_windows(rows)[i - 1]
             interval = {"start": start.isoformat(), "end": end.isoformat(),
                         "minutes": round((end - start).total_seconds() / 60),
                         "source": "csv_row"}
