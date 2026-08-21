@@ -99,4 +99,8 @@ Done when: selecting a turn highlights it in the list and drives the graphs.
 - **Few points per signal.** Some contexts have only ~20 samples across an hour.
   Show the markers, not just the line, or the charts look empty.
 - **Categorical NaN.** Some rows carry `nan` inside the arrays; the pipeline
-  converts them to `null`.
+  converts them to `null`. As of the 21 Aug data there are no nulls left in any
+  charted channel, so the null-breaking and not-recorded paths in SignalChart are
+  defensive rather than exercised - keep them, but do not assume they are tested.
+- **Run `npm run typecheck` before pushing.** The dev server does not typecheck,
+  so a type error in a component shows up only in `npm run build`.
