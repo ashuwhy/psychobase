@@ -8,6 +8,18 @@
   --line: #dfe4e7;
   --accent: #0e6e75;
   --highlight: rgba(14, 110, 117, 0.12);
+
+  /* One tint per block in a turn card, each a different hue family so the three
+     read apart at a glance rather than as shades of the same colour. Each is
+     paired with a left rule of the same hue, so the grouping survives greyscale
+     printing and colour-blindness - the colour is a reinforcement, not the only
+     signal. Kept pale so body text keeps its contrast against them. */
+  --user-tint: #eef1f4;
+  --user-rule: #8a99a5;
+  --ai-tint: #e6f2f2;
+  --ai-rule: var(--accent);
+  --physio-tint: #fbf3e8;
+  --physio-rule: #b3803a;
 }
 
 * { box-sizing: border-box; }
@@ -182,21 +194,28 @@ body {
 /* Distinct tints per block so user text, AI response and the physio summary
    stay visually separate at a glance while scanning a card. */
 .turn-card-user {
-  background: rgba(14, 110, 117, 0.08);
+  background: var(--user-tint);
+  border-left: 3px solid var(--user-rule);
 }
 
 .turn-card-strategy {
-  background: rgba(93, 107, 115, 0.08);
+  /* A label rather than a third voice - it gets no tint of its own so the
+     three content blocks stay the thing the eye lands on. */
   font-size: 0.8rem;
+  padding-top: 0.15rem;
+  padding-bottom: 0.15rem;
+  color: var(--muted);
 }
 
 .turn-card-ai {
-  background: rgba(88, 183, 189, 0.12);
+  background: var(--ai-tint);
+  border-left: 3px solid var(--ai-rule);
 }
 
 .turn-card-physio {
-  background: rgba(179, 57, 46, 0.06);
-  color: var(--muted);
+  background: var(--physio-tint);
+  border-left: 3px solid var(--physio-rule);
+  font-size: 0.82rem;
 }
 
 .turn-card-footer {

@@ -25,13 +25,18 @@ export default function ConversationView() {
   const [error, setError] = useState<string | null>(null);
   const [selectedTurn, setSelectedTurn] = useState<number | null>(null);
 
+  // The route names which variant to show - "8" or "8-modified". Loading the
+  // context id instead would always render the original, so a context with both
+  // variants showed the same conversation for either card.
+  const variantId = participantId ?? contextId;
+
   useEffect(() => {
-    if (!contextId) return;
+    if (!variantId) return;
     let cancelled = false;
     setData(undefined);
     setError(null);
     setSelectedTurn(null);
-    loadContext(contextId)
+    loadContext(variantId)
       .then((ctx) => {
         if (cancelled) return;
         setData(ctx);
@@ -45,7 +50,7 @@ export default function ConversationView() {
     return () => {
       cancelled = true;
     };
-  }, [contextId]);
+  }, [variantId]);
 
   const selectedInterval = useMemo(() => {
     if (!data || selectedTurn === null) return null;
