@@ -61,23 +61,38 @@ export default function ContextList() {
     <main className="page">
       <h1 className="page-title">Context</h1>
       <div className="card-grid">
-        {contexts.map((ctx) => (
-          <article
-            key={ctx.context_id}
-            className="context-card"
-            role="button"
-            tabIndex={0}
-            onClick={() => navigate(`/context/${ctx.context_id}`)}
-            onKeyDown={(e) => {
-              if (e.key === "Enter" || e.key === " ") {
-                e.preventDefault();
-                navigate(`/context/${ctx.context_id}`);
-              }
-            }}
-          >
-            <span className="context-card-name">{ctx.name || ctx.participant_id}</span>
-          </article>
-        ))}
+        {contexts.map((ctx) => {
+          const primary = ctx.variants[0];
+          const label = ctx.name || ctx.context_id;
+          return (
+            <article
+              key={ctx.context_id}
+              className="context-card"
+              role="button"
+              tabIndex={0}
+              onClick={() => navigate(`/context/${ctx.context_id}`)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  e.preventDefault();
+                  navigate(`/context/${ctx.context_id}`);
+                }
+              }}
+            >
+              <span className="context-card-avatar" aria-hidden="true">
+                {label.charAt(0).toUpperCase()}
+              </span>
+              <span className="context-card-name">{label}</span>
+              {primary && (
+                <span className="context-card-sub">
+                  {primary.turn_count} turns · {new Date(primary.start).toLocaleDateString()}
+                </span>
+              )}
+              {ctx.variants.length > 1 && (
+                <span className="context-card-badge">2 versions</span>
+              )}
+            </article>
+          );
+        })}
       </div>
     </main>
   );

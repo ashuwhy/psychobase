@@ -57,8 +57,11 @@ intervals in the frontend**; read `turn.interval`.
 
 `scripts/build_data.py` writes to `public/data/build/`:
 
-- `index.json` - every context, for the selection screen
-- `<context_id>.json` - `signals`, `domain`, `series`, `turns` for one context
+- `index.json` - one row per participant/context, for the selection screen.
+  A context with a modified rewrite carries both as `variants` on the same
+  row rather than appearing twice.
+- `<variant_id>.json` - `signals`, `domain`, `series`, `turns` for one
+  variant (`8`, `8-modified`, ...)
 
 Shapes are declared in `src/types.ts`. That file and the script change together.
 
@@ -72,9 +75,14 @@ Shapes are declared in `src/types.ts`. That file and the script change together.
   timestamps and same scenario, but the dialogue is rephrased - "I've been
   struggling to perform well in athletics" becomes "My regional trials are in
   three days and I can't stop shaking". They are additions, not replacements, so
-  each gets its own context id (`8-modified`) and appears alongside the original
-  with "(modified)" appended to the name. The pipeline pairs files by suffix, so
-  a new variant needs no code change.
+  each variant gets its own build output (`8-modified.json`), but the
+  selection screen shows one card per context - `index.json` groups the
+  original and modified variant together (`variants: [...]`) rather than
+  listing them as two separate contexts. Pairing is by *exact* suffix (CSV
+  `_modified_phyS.csv` only matches JSON `_modified_phyS_full_data.json`, not
+  a same-participant file with a different suffix), so a mismatched pair is
+  reported as skipped instead of silently guessed at. A new variant needs no
+  code change.
 - The five charted signals are EDA, PR, SkinTemp, ACCEL and ACT_COUNT. The brief
   named ACT_CLASS as the fifth, but it holds category strings rather than
   numbers, and Stiti confirmed ACT_COUNT instead. ACT_CLASS still ships inside

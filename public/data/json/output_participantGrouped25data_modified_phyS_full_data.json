@@ -1,920 +1,920 @@
 [
-    {
-        "session_id": "2753-1-1",
-        "person_id": "2753",
-        "turns": [
-            {
-                "timestamp": "2026-08-10T16:30:00",
-                "participant_full_id": "2753-1-1-0002",
-                "user_text": "I completed my internship at a really good tech company, and now I'm waiting for my pre-placement offer. It's already been a month, and I still haven't heard anything. I'm getting really stressed because I don't know what is going to happen.",
-                "ai_text": "That kind of waiting can be really difficult, especially when you've already invested so much effort into the internship. A month without an update leaves you stuck between hope and uncertainty, which can make your mind constantly search for answers. Right now, the uncertainty itself may be causing more stress than anything you actually know about the decision.",
-                "context": "",
-                "strategy": "Emotional Validation, Reflective Statements",
-                "raw_physio": {
-                    "EDA": [
-                        0.172,
-                        0.15,
-                        0.152,
-                        0.137
-                    ],
-                    "PR": [
-                        83.1,
-                        87.8,
-                        92.6,
-                        97.3
-                    ],
-                    "SkinTemp": [
-                        28.66,
-                        29.07,
-                        29.31,
-                        29.21
-                    ],
-                    "ACCEL": [
-                        0.05,
-                        0.098,
-                        0.083,
-                        0.036
-                    ],
-                    "PRV": null,
-                    "RESP": [
-                        11.43,
-                        13.46,
-                        15.5,
-                        17.53
-                    ],
-                    "ACT_COUNT": [
-                        63.6,
-                        65.5,
-                        67.3,
-                        69.2
-                    ]
-                },
-                "physio_summary_per_channel": {
-                    "PR": "Pulse rate rising sharply over the first minute, moving from 83.1 to 97.3 bpm.",
-                    "SkinTemp": "Across the first minute, peripheral temperature trended rising from 28.66 to 29.21 degC.",
-                    "ACCEL": "Across the first minute, overall motion trended decreasing from 0.05 to 0.04 g.",
-                    "EDA": "A downward EDA pattern was observed over the first minute, smooth, reaching 0.14 uS.",
-                    "ACT_CLASS": "Activity level held steady at still across the first minute.",
-                    "RESP": "Over the first minute, breathing pace rising sharply, now near 17.53 breaths per minute."
-                },
-                "physio_summary_fusion": "Over the first minute, the combined signal (EDA and PR and SkinTemp and ACCEL and RESP) showed shifted, with movement still, likely activity-related. EDA and PR and SkinTemp and ACCEL and RESP rose in step with heightened motion, indicating the signal is at least partly explained by movement rather than stress alone.",
-                "stress_score": 3,
-                "stress_level": "Mild stress",
-                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I completed my internship at a really good tech company, and now I'm waiting for my pre-placement offer. It's already been a month, and I still haven't heard anything. I'm getting really stressed because I don't know what is going to happen.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: Emotional Validation, Reflective Statements\n\nResponse: That kind of waiting can be really difficult, especially when you've already invested so much effort into the internship. A month without an update leaves you stuck between hope and uncertainty, which can make your mind constantly search for answers. Right now, the uncertainty itself may be causing more stress than anything you actually know about the decision.<EOS>",
-                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I completed my internship at a really good tech company, and now I'm waiting for my pre-placement offer. It's already been a month, and I still haven't heard anything. I'm getting really stressed because I don't know what is going to happen.\nPhysiological Signals: Over the first minute, the combined signal (EDA and PR and SkinTemp and ACCEL and RESP) showed shifted, with movement still, likely activity-related. EDA and PR and SkinTemp and ACCEL and RESP rose in step with heightened motion, indicating the signal is at least partly explained by movement rather than stress alone. Notably, Pulse rate rising sharply over the first minute, moving from 83.1 to 97.3 bpm. Also, Across the first minute, peripheral temperature trended rising from 28.66 to 29.21 degC. Meanwhile, Across the first minute, overall motion trended decreasing from 0.05 to 0.04 g. At the same time, A downward EDA pattern was observed over the first minute, smooth, reaching 0.14 uS. Further, Activity level held steady at still across the first minute. Notably, Over the first minute, breathing pace rising sharply, now near 17.53 breaths per minute. Further, Factoring in an activity count of 69.2, the composite indicator over the first minute reads 3, suggesting Mild stress.\n\n### Response:\nStrategy: Emotional Validation, Reflective Statements\n\nResponse: That kind of waiting can be really difficult, especially when you've already invested so much effort into the internship. A month without an update leaves you stuck between hope and uncertainty, which can make your mind constantly search for answers. Right now, the uncertainty itself may be causing more stress than anything you actually know about the decision.<EOS>"
-            },
-            {
-                "timestamp": "2026-08-10T16:34:00",
-                "participant_full_id": "2753-1-1-0002",
-                "user_text": "Yes, exactly. I keep thinking that if they were going to give me the offer, they would have told me by now. The longer they take, the more I feel like something is wrong.",
-                "ai_text": "I can understand why the delay is starting to feel like a bad sign. When something matters this much, silence can easily feel like an answer even when it isn't one. The delay tells you that you haven't received a decision yet; it doesn't tell you what that decision will be. Try to separate what you actually know from what anxiety is predicting.",
-                "context": "",
-                "strategy": "Emotional Validation, Reframe Negative Thoughts",
-                "raw_physio": {
-                    "EDA": [
-                        0.21,
-                        0.228,
-                        0.23,
-                        0.227,
-                        0.152
-                    ],
-                    "PR": [
-                        80.2,
-                        83.5,
-                        86.8,
-                        90.0,
-                        93.3
-                    ],
-                    "SkinTemp": [
-                        29.23,
-                        29.28,
-                        29.62,
-                        29.56,
-                        29.52
-                    ],
-                    "ACCEL": [
-                        0.092,
-                        0.052,
-                        0.068,
-                        0.029,
-                        0.006
-                    ],
-                    "PRV": null,
-                    "RESP": [
-                        11.51,
-                        12.04,
-                        12.58,
-                        13.12,
-                        13.65
-                    ],
-                    "ACT_COUNT": [
-                        77.8,
-                        67.5,
-                        57.2,
-                        46.9,
-                        36.6
-                    ]
-                },
-                "physio_summary_per_channel": {
-                    "ACCEL": "Over the past 4 minutes, physical activity intensity dropping sharply, now near 0.01 g.",
-                    "PR": "The pulse signal was upward for the past 4 minutes, highly fluctuating, around 93.3 bpm.",
-                    "SkinTemp": "Across the past 4 minutes, skin temperature held upward near 29.52 degC.",
-                    "EDA": "Over the past 4 minutes, sweat-gland activity (EDA) falling slightly, now near 0.15 uS.",
-                    "ACT_CLASS": "For the past 4 minutes, the participant's activity did not shift from still.",
-                    "RESP": "RESP showed a increasing trend across the past 4 minutes, with highly fluctuating pattern, now 13.65 breaths per minute."
-                },
-                "physio_summary_fusion": "Over the past 4 minutes, EDA and PR and SkinTemp and ACCEL and RESP shifted, with some walking activity and sedentary intensity noted, not explained by movement. EDA and PR and SkinTemp and ACCEL and RESP increased while the participant remained sedentary, so the change cannot be attributed to physical exertion.",
-                "stress_score": 2,
-                "stress_level": "Mild stress",
-                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Yes, exactly. I keep thinking that if they were going to give me the offer, they would have told me by now. The longer they take, the more I feel like something is wrong.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: Emotional Validation, Reframe Negative Thoughts\n\nResponse: I can understand why the delay is starting to feel like a bad sign. When something matters this much, silence can easily feel like an answer even when it isn't one. The delay tells you that you haven't received a decision yet; it doesn't tell you what that decision will be. Try to separate what you actually know from what anxiety is predicting.<EOS>",
-                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Yes, exactly. I keep thinking that if they were going to give me the offer, they would have told me by now. The longer they take, the more I feel like something is wrong.\nPhysiological Signals: Over the past 4 minutes, EDA and PR and SkinTemp and ACCEL and RESP shifted, with some walking activity and sedentary intensity noted, not explained by movement. EDA and PR and SkinTemp and ACCEL and RESP increased while the participant remained sedentary, so the change cannot be attributed to physical exertion. Further, Over the past 4 minutes, physical activity intensity dropping sharply, now near 0.01 g. Alongside this, The pulse signal was upward for the past 4 minutes, highly fluctuating, around 93.3 bpm. Meanwhile, Across the past 4 minutes, skin temperature held upward near 29.52 degC. At the same time, Over the past 4 minutes, sweat-gland activity (EDA) falling slightly, now near 0.15 uS. In parallel, For the past 4 minutes, the participant's activity did not shift from still. RESP showed a increasing trend across the past 4 minutes, with highly fluctuating pattern, now 13.65 breaths per minute. The stress score for the past 4 minutes is 2 (activity count: 36.6), pointing to Mild stress.\n\n### Response:\nStrategy: Emotional Validation, Reframe Negative Thoughts\n\nResponse: I can understand why the delay is starting to feel like a bad sign. When something matters this much, silence can easily feel like an answer even when it isn't one. The delay tells you that you haven't received a decision yet; it doesn't tell you what that decision will be. Try to separate what you actually know from what anxiety is predicting.<EOS>"
-            },
-            {
-                "timestamp": "2026-08-10T16:39:00",
-                "participant_full_id": "2753-1-1-0002",
-                "user_text": "I know that makes sense, but I still keep checking my email every few minutes. Even when I know there probably won't be anything, I still check.",
-                "ai_text": "That repeated checking makes sense because it gives you a small sense of control over something you can't actually control. But I can imagine how exhausting it is to keep your attention fixed on your inbox all day. Maybe decide on a few specific times to check instead, so the offer doesn't get to occupy every quiet moment you have.",
-                "context": "",
-                "strategy": "Normalize Experiences, Stress Management",
-                "raw_physio": {
-                    "EDA": [
-                        0.161,
-                        0.156,
-                        0.161,
-                        0.117
-                    ],
-                    "PR": [
-                        75.4,
-                        80.9,
-                        86.5,
-                        92.0
-                    ],
-                    "SkinTemp": [
-                        29.92,
-                        29.76,
-                        29.4,
-                        29.19
-                    ],
-                    "ACCEL": [
-                        0.002,
-                        0.003,
-                        0.015,
-                        0.002
-                    ],
-                    "PRV": null,
-                    "RESP": [
-                        12.96,
-                        14.38,
-                        15.81,
-                        17.23
-                    ],
-                    "ACT_COUNT": [
-                        56.5,
-                        52.8,
-                        49.1,
-                        45.4
-                    ]
-                },
-                "physio_summary_per_channel": {
-                    "ACCEL": "A downward movement pattern was observed over the past 6 minutes, highly fluctuating, reaching 0.0 g.",
-                    "EDA": "EDA levels moved sharply and decreasing through the past 6 minutes, ending at 0.12 uS.",
-                    "PR": "Beats per minute elevating sharply over the past 6 minutes, now 92.0, without any notable peaks or valleys.",
-                    "SkinTemp": "Surface temperature falling slightly over the past 6 minutes, now 29.19 degC, without any notable peaks or valleys.",
-                    "ACT_CLASS": "Over the past 6 minutes, still activity was sustained without interruption.",
-                    "RESP": "Respiratory rate drifted growing across the past 6 minutes to 17.23 breaths per minute, without any notable peaks or valleys."
-                },
-                "physio_summary_fusion": "Over the past 6 minutes, EDA and PR and SkinTemp and ACCEL and RESP shifted, occurring with reliable and still movement, not explained by movement. Despite little to no movement recorded, EDA and PR and SkinTemp and ACCEL and RESP climbed noticeably - this decoupling from activity strengthens the case for a stress-driven response.",
-                "stress_score": 3,
-                "stress_level": "Mild stress",
-                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I know that makes sense, but I still keep checking my email every few minutes. Even when I know there probably won't be anything, I still check.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: Normalize Experiences, Stress Management\n\nResponse: That repeated checking makes sense because it gives you a small sense of control over something you can't actually control. But I can imagine how exhausting it is to keep your attention fixed on your inbox all day. Maybe decide on a few specific times to check instead, so the offer doesn't get to occupy every quiet moment you have.<EOS>",
-                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I know that makes sense, but I still keep checking my email every few minutes. Even when I know there probably won't be anything, I still check.\nPhysiological Signals: Over the past 6 minutes, EDA and PR and SkinTemp and ACCEL and RESP shifted, occurring with reliable and still movement, not explained by movement. Despite little to no movement recorded, EDA and PR and SkinTemp and ACCEL and RESP climbed noticeably - this decoupling from activity strengthens the case for a stress-driven response. At the same time, A downward movement pattern was observed over the past 6 minutes, highly fluctuating, reaching 0.0 g. Meanwhile, EDA levels moved sharply and decreasing through the past 6 minutes, ending at 0.12 uS. Additionally, Beats per minute elevating sharply over the past 6 minutes, now 92.0, without any notable peaks or valleys. Also, Surface temperature falling slightly over the past 6 minutes, now 29.19 degC, without any notable peaks or valleys. Additionally, Over the past 6 minutes, still activity was sustained without interruption. Respiratory rate drifted growing across the past 6 minutes to 17.23 breaths per minute, without any notable peaks or valleys. Notably, Combining the signals above with an activity count of 45.4, the resulting score over the past 6 minutes is 3 - Mild stress.\n\n### Response:\nStrategy: Normalize Experiences, Stress Management\n\nResponse: That repeated checking makes sense because it gives you a small sense of control over something you can't actually control. But I can imagine how exhausting it is to keep your attention fixed on your inbox all day. Maybe decide on a few specific times to check instead, so the offer doesn't get to occupy every quiet moment you have.<EOS>"
-            },
-            {
-                "timestamp": "2026-08-10T16:43:00",
-                "participant_full_id": "2753-1-1-0002",
-                "user_text": "The waiting has also made me think about everything I did during the internship. I keep remembering mistakes and wondering if those things affected my chances.",
-                "ai_text": "It sounds like your mind is going backward through the internship looking for clues about the outcome. That's understandable when you don't have any new information, but anxiety tends to make small mistakes feel much more significant than they actually were. You probably had many ordinary and successful moments too, but right now your mind is giving the mistakes most of the attention.",
-                "context": "",
-                "strategy": "Reflective Statements, Reframe Negative Thoughts",
-                "raw_physio": {
-                    "EDA": [
-                        0.197,
-                        0.172,
-                        0.175,
-                        0.185,
-                        0.177
-                    ],
-                    "PR": [
-                        78.0,
-                        82.1,
-                        86.2,
-                        90.4,
-                        94.5
-                    ],
-                    "SkinTemp": [
-                        29.23,
-                        29.9,
-                        29.65,
-                        29.48,
-                        29.64
-                    ],
-                    "ACCEL": [
-                        0.007,
-                        0.011,
-                        0.003,
-                        0.005,
-                        0.004
-                    ],
-                    "PRV": null,
-                    "RESP": [
-                        10.9,
-                        11.0,
-                        11.1,
-                        11.2,
-                        11.3
-                    ],
-                    "ACT_COUNT": [
-                        44.9,
-                        51.6,
-                        58.3,
-                        65.0,
-                        71.7
-                    ]
-                },
-                "physio_summary_per_channel": {
-                    "PR": "Pulse readings moved sharply and rising through the past 6 minutes, ending at 94.5 bpm.",
-                    "SkinTemp": "Skin temperature moved slightly in a dropping direction over the past 6 minutes, from 29.92 to 29.64 degC.",
-                    "EDA": "During the past 6 minutes, EDA registered a climbing shift to 0.18 uS, with without any notable peaks or valleys.",
-                    "ACCEL": "Body movement moved slightly in a climbing direction over the past 6 minutes, from 0.0 to 0.0 g.",
-                    "ACT_CLASS": "Over the past 6 minutes, activity transitioned from still toward generic.",
-                    "RESP": "During the past 6 minutes, breathing registered a dropping shift to 11.3 breaths per minute, without any notable peaks or valleys."
-                },
-                "physio_summary_fusion": "Across the past 6 minutes, EDA and PR and SkinTemp and ACCEL and RESP showed a shifted pattern, occurring while the participant was generic and positioned reclining/lying, likely activity-related. EDA and PR and SkinTemp and ACCEL and RESP climbed while movement also increased, suggesting the change may be confounded by physical activity.",
-                "stress_score": 4,
-                "stress_level": "Moderate stress",
-                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: The waiting has also made me think about everything I did during the internship. I keep remembering mistakes and wondering if those things affected my chances.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: Reflective Statements, Reframe Negative Thoughts\n\nResponse: It sounds like your mind is going backward through the internship looking for clues about the outcome. That's understandable when you don't have any new information, but anxiety tends to make small mistakes feel much more significant than they actually were. You probably had many ordinary and successful moments too, but right now your mind is giving the mistakes most of the attention.<EOS>",
-                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: The waiting has also made me think about everything I did during the internship. I keep remembering mistakes and wondering if those things affected my chances.\nPhysiological Signals: Across the past 6 minutes, EDA and PR and SkinTemp and ACCEL and RESP showed a shifted pattern, occurring while the participant was generic and positioned reclining/lying, likely activity-related. EDA and PR and SkinTemp and ACCEL and RESP climbed while movement also increased, suggesting the change may be confounded by physical activity. Also, Pulse readings moved sharply and rising through the past 6 minutes, ending at 94.5 bpm. Additionally, Skin temperature moved slightly in a dropping direction over the past 6 minutes, from 29.92 to 29.64 degC. On top of that, During the past 6 minutes, EDA registered a climbing shift to 0.18 uS, with without any notable peaks or valleys. Further, Body movement moved slightly in a climbing direction over the past 6 minutes, from 0.0 to 0.0 g. On top of that, Over the past 6 minutes, activity transitioned from still toward generic. In parallel, During the past 6 minutes, breathing registered a dropping shift to 11.3 breaths per minute, without any notable peaks or valleys. Additionally, Over the past 6 minutes, with activity count at 71.7, the composite score reaches 4, classified as Moderate stress.\n\n### Response:\nStrategy: Reflective Statements, Reframe Negative Thoughts\n\nResponse: It sounds like your mind is going backward through the internship looking for clues about the outcome. That's understandable when you don't have any new information, but anxiety tends to make small mistakes feel much more significant than they actually were. You probably had many ordinary and successful moments too, but right now your mind is giving the mistakes most of the attention.<EOS>"
-            },
-            {
-                "timestamp": "2026-08-10T16:48:00",
-                "participant_full_id": "2753-1-1-0002",
-                "user_text": "Yes, and I keep comparing myself with the other interns. Some of them were extremely good, and I start wondering whether I was actually good enough.",
-                "ai_text": "Being surrounded by talented people can easily make you question yourself, especially when you're waiting for an evaluation. But their strengths don't cancel out what you brought to the internship. You were selected for the internship, completed it, and are now waiting for a potential full-time opportunity. That's already evidence that you belonged in that environment.",
-                "context": "",
-                "strategy": "Affirmation, Provide Different Perspectives",
-                "raw_physio": {
-                    "EDA": [
-                        0.335,
-                        0.362,
-                        0.32,
-                        0.257
-                    ],
-                    "PR": [
-                        78.0,
-                        87.3,
-                        96.7,
-                        106.0
-                    ],
-                    "SkinTemp": [
-                        30.26,
-                        29.61,
-                        29.85,
-                        30.37
-                    ],
-                    "ACCEL": [
-                        0.006,
-                        0.004,
-                        0.001,
-                        0.004
-                    ],
-                    "PRV": null,
-                    "RESP": [
-                        11.53,
-                        13.54,
-                        15.55,
-                        17.56
-                    ],
-                    "ACT_COUNT": [
-                        54.0,
-                        51.6,
-                        49.3,
-                        46.9
-                    ]
-                },
-                "physio_summary_per_channel": {
-                    "PR": "Heart rate rising sharply during the past 6 minutes, reaching 106.0 bpm.",
-                    "SkinTemp": "Surface temperature climbing sharply over the past 6 minutes, now 30.37 degC, without any notable peaks or valleys.",
-                    "EDA": "EDA held growing through the past 6 minutes, close to 0.26 uS.",
-                    "ACCEL": "Accelerometer readings showed a easing pattern across the past 6 minutes, with smooth variation, now 0.0 g.",
-                    "ACT_CLASS": "Over the past 6 minutes, generic activity was sustained without interruption.",
-                    "RESP": "Across the past 6 minutes, respiratory rate held climbing, close to 17.56 breaths per minute."
-                },
-                "physio_summary_fusion": "Over the past 6 minutes, EDA and PR and SkinTemp and ACCEL and RESP shifted against a backdrop of generic activity and minimal walking, not explained by movement. EDA and PR and SkinTemp and ACCEL and RESP rose while ACCEL and ACT_COUNT showed no corresponding movement, suggesting this arousal is not explained by physical activity.",
-                "stress_score": 5,
-                "stress_level": "Moderate stress",
-                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Yes, and I keep comparing myself with the other interns. Some of them were extremely good, and I start wondering whether I was actually good enough.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: Affirmation, Provide Different Perspectives\n\nResponse: Being surrounded by talented people can easily make you question yourself, especially when you're waiting for an evaluation. But their strengths don't cancel out what you brought to the internship. You were selected for the internship, completed it, and are now waiting for a potential full-time opportunity. That's already evidence that you belonged in that environment.<EOS>",
-                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Yes, and I keep comparing myself with the other interns. Some of them were extremely good, and I start wondering whether I was actually good enough.\nPhysiological Signals: Over the past 6 minutes, EDA and PR and SkinTemp and ACCEL and RESP shifted against a backdrop of generic activity and minimal walking, not explained by movement. EDA and PR and SkinTemp and ACCEL and RESP rose while ACCEL and ACT_COUNT showed no corresponding movement, suggesting this arousal is not explained by physical activity. Heart rate rising sharply during the past 6 minutes, reaching 106.0 bpm. Surface temperature climbing sharply over the past 6 minutes, now 30.37 degC, without any notable peaks or valleys. EDA held growing through the past 6 minutes, close to 0.26 uS. Also, Accelerometer readings showed a easing pattern across the past 6 minutes, with smooth variation, now 0.0 g. Notably, Over the past 6 minutes, generic activity was sustained without interruption. Also, Across the past 6 minutes, respiratory rate held climbing, close to 17.56 breaths per minute. Meanwhile, Factoring in an activity count of 46.9, the composite indicator over the past 6 minutes reads 5, suggesting Moderate stress.\n\n### Response:\nStrategy: Affirmation, Provide Different Perspectives\n\nResponse: Being surrounded by talented people can easily make you question yourself, especially when you're waiting for an evaluation. But their strengths don't cancel out what you brought to the internship. You were selected for the internship, completed it, and are now waiting for a potential full-time opportunity. That's already evidence that you belonged in that environment.<EOS>"
-            },
-            {
-                "timestamp": "2026-08-10T16:52:00",
-                "participant_full_id": "2753-1-1-0002",
-                "user_text": "I think the offer feels so important because if I get it, I won't have to worry about placements anymore. If I don't, I'll have to start preparing again from scratch.",
-                "ai_text": "That makes the uncertainty feel much heavier because the offer represents security, not just another job opportunity. You're probably imagining how much easier everything would feel if you had that certainty. It's completely understandable to want that, but even if you have to prepare again, it wouldn't mean you're starting from zero. You'd be going into the process with valuable internship experience behind you.",
-                "context": "",
-                "strategy": "Emotional Validation, Provide Different Perspectives",
-                "raw_physio": {
-                    "EDA": [
-                        0.288,
-                        0.268,
-                        0.286,
-                        0.268,
-                        0.253
-                    ],
-                    "PR": [
-                        79.1,
-                        85.3,
-                        91.4,
-                        97.6,
-                        103.8
-                    ],
-                    "SkinTemp": [
-                        30.47,
-                        30.27,
-                        30.26,
-                        30.28,
-                        30.23
-                    ],
-                    "ACCEL": [
-                        0.002,
-                        0.004,
-                        0.003,
-                        0.001,
-                        0.005
-                    ],
-                    "PRV": null,
-                    "RESP": [
-                        10.08,
-                        10.84,
-                        11.61,
-                        12.37,
-                        13.13
-                    ],
-                    "ACT_COUNT": [
-                        61.0,
-                        64.1,
-                        67.2,
-                        70.2,
-                        73.3
-                    ]
-                },
-                "physio_summary_per_channel": {
-                    "PR": "Beats per minute growing sharply over the past 6 minutes, now 103.8, without any notable peaks or valleys.",
-                    "EDA": "Over the past 6 minutes, sweat-gland activity (EDA) easing sharply, now near 0.25 uS.",
-                    "ACCEL": "Movement levels drifted dropping across the past 6 minutes to 0.01 g, without any notable peaks or valleys.",
-                    "SkinTemp": "Over the past 6 minutes, peripheral temperature stayed consistent, around 30.23 degC.",
-                    "ACT_CLASS": "Over the past 6 minutes, the participant's activity changed from generic to still.",
-                    "RESP": "Over the past 6 minutes, breathing rate remained climbing, near 13.13 breaths per minute."
-                },
-                "physio_summary_fusion": "During the past 6 minutes, EDA and PR and ACCEL and RESP shifted; movement counts and MET (~0.9) suggest this is likely activity-related. Because both arousal and activity increased together, this pattern is more consistent with exertion than emotional stress.",
-                "stress_score": 2,
-                "stress_level": "Mild stress",
-                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I think the offer feels so important because if I get it, I won't have to worry about placements anymore. If I don't, I'll have to start preparing again from scratch.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: Emotional Validation, Provide Different Perspectives\n\nResponse: That makes the uncertainty feel much heavier because the offer represents security, not just another job opportunity. You're probably imagining how much easier everything would feel if you had that certainty. It's completely understandable to want that, but even if you have to prepare again, it wouldn't mean you're starting from zero. You'd be going into the process with valuable internship experience behind you.<EOS>",
-                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I think the offer feels so important because if I get it, I won't have to worry about placements anymore. If I don't, I'll have to start preparing again from scratch.\nPhysiological Signals: During the past 6 minutes, EDA and PR and ACCEL and RESP shifted; movement counts and MET (~0.9) suggest this is likely activity-related. Because both arousal and activity increased together, this pattern is more consistent with exertion than emotional stress. Further, Beats per minute growing sharply over the past 6 minutes, now 103.8, without any notable peaks or valleys. Notably, Over the past 6 minutes, sweat-gland activity (EDA) easing sharply, now near 0.25 uS. Alongside this, Movement levels drifted dropping across the past 6 minutes to 0.01 g, without any notable peaks or valleys. In parallel, Over the past 6 minutes, peripheral temperature stayed consistent, around 30.23 degC. Over the past 6 minutes, the participant's activity changed from generic to still. At the same time, Over the past 6 minutes, breathing rate remained climbing, near 13.13 breaths per minute. Also, Movement count of 73.3 contributes to a combined stress score of 2 over the past 6 minutes, consistent with Mild stress.\n\n### Response:\nStrategy: Emotional Validation, Provide Different Perspectives\n\nResponse: That makes the uncertainty feel much heavier because the offer represents security, not just another job opportunity. You're probably imagining how much easier everything would feel if you had that certainty. It's completely understandable to want that, but even if you have to prepare again, it wouldn't mean you're starting from zero. You'd be going into the process with valuable internship experience behind you.<EOS>"
-            },
-            {
-                "timestamp": "2026-08-10T16:57:00",
-                "participant_full_id": "2753-1-1-0002",
-                "user_text": "That's true, but sometimes I feel like I'm already experiencing the disappointment before anything has even happened.",
-                "ai_text": "That's a really important thing to notice. Your mind is trying to protect you by preparing for the possibility of rejection, but in doing that, you're experiencing the pain of an outcome that hasn't happened. You don't have to choose between being hopeful and being prepared right now. You can leave the outcome undecided and just deal with what is actually in front of you today.",
-                "context": "",
-                "strategy": "Reflective Statements, Normalize Experiences",
-                "raw_physio": {
-                    "EDA": [
-                        0.3,
-                        0.318,
-                        0.318,
-                        0.265
-                    ],
-                    "PR": [
-                        83.8,
-                        87.1,
-                        90.3,
-                        93.6
-                    ],
-                    "SkinTemp": [
-                        30.06,
-                        30.0,
-                        30.13,
-                        30.61
-                    ],
-                    "ACCEL": [
-                        0.004,
-                        0.006,
-                        0.003,
-                        0.004
-                    ],
-                    "PRV": null,
-                    "RESP": [
-                        12.33,
-                        14.05,
-                        15.76,
-                        17.48
-                    ],
-                    "ACT_COUNT": [
-                        57.1,
-                        57.5,
-                        58.0,
-                        58.4
-                    ]
-                },
-                "physio_summary_per_channel": {
-                    "PR": "Pulse rate growing sharply across the past 6 minutes, showing highly fluctuating activity, now 93.6 bpm.",
-                    "EDA": "EDA levels moved slightly and decreasing through the past 6 minutes, ending at 0.27 uS.",
-                    "SkinTemp": "Skin temperature showed a upward pattern across the past 6 minutes, with mildly fluctuating change, now 30.61 degC.",
-                    "ACCEL": "Overall movement (accelerometer) growing slightly over the past 6 minutes, moving from 0.0 to 0.0 g.",
-                    "ACT_CLASS": "Activity classification showed no change over the past 6 minutes, staying still.",
-                    "RESP": "During the past 6 minutes, breathing registered a rising shift to 17.48 breaths per minute, without any notable peaks or valleys."
-                },
-                "physio_summary_fusion": "Across the past 6 minutes, EDA and PR and SkinTemp and ACCEL and RESP together shifted while activity stayed still - this pattern is likely activity-related. EDA and PR and SkinTemp and ACCEL and RESP rose alongside increased movement, so the change is likely activity-related rather than a pure stress response.",
-                "stress_score": 3,
-                "stress_level": "Mild stress",
-                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: That's true, but sometimes I feel like I'm already experiencing the disappointment before anything has even happened.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: Reflective Statements, Normalize Experiences\n\nResponse: That's a really important thing to notice. Your mind is trying to protect you by preparing for the possibility of rejection, but in doing that, you're experiencing the pain of an outcome that hasn't happened. You don't have to choose between being hopeful and being prepared right now. You can leave the outcome undecided and just deal with what is actually in front of you today.<EOS>",
-                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: That's true, but sometimes I feel like I'm already experiencing the disappointment before anything has even happened.\nPhysiological Signals: Across the past 6 minutes, EDA and PR and SkinTemp and ACCEL and RESP together shifted while activity stayed still - this pattern is likely activity-related. EDA and PR and SkinTemp and ACCEL and RESP rose alongside increased movement, so the change is likely activity-related rather than a pure stress response. Simultaneously, Pulse rate growing sharply across the past 6 minutes, showing highly fluctuating activity, now 93.6 bpm. On top of that, EDA levels moved slightly and decreasing through the past 6 minutes, ending at 0.27 uS. Meanwhile, Skin temperature showed a upward pattern across the past 6 minutes, with mildly fluctuating change, now 30.61 degC. At the same time, Overall movement (accelerometer) growing slightly over the past 6 minutes, moving from 0.0 to 0.0 g. Activity classification showed no change over the past 6 minutes, staying still. On top of that, During the past 6 minutes, breathing registered a rising shift to 17.48 breaths per minute, without any notable peaks or valleys. Additionally, Factoring in an activity count of 58.4, the composite indicator over the past 6 minutes reads 3, suggesting Mild stress.\n\n### Response:\nStrategy: Reflective Statements, Normalize Experiences\n\nResponse: That's a really important thing to notice. Your mind is trying to protect you by preparing for the possibility of rejection, but in doing that, you're experiencing the pain of an outcome that hasn't happened. You don't have to choose between being hopeful and being prepared right now. You can leave the outcome undecided and just deal with what is actually in front of you today.<EOS>"
-            },
-            {
-                "timestamp": "2026-08-10T17:01:00",
-                "participant_full_id": "2753-1-1-0002",
-                "user_text": "I've also started feeling guilty whenever I relax. I think I should be preparing for placements instead of watching something or taking a break.",
-                "ai_text": "It sounds like the uncertainty has turned even your breaks into something you feel you need to justify. Preparing can definitely help you feel more secure, but you don't need to be productive every minute to prove that you're taking your future seriously. A small amount of preparation each day could be enough while still giving yourself permission to rest.",
-                "context": "",
-                "strategy": "Reframe Negative Thoughts, Collaborative Planning",
-                "raw_physio": {
-                    "EDA": [
-                        0.209,
-                        0.225,
-                        0.203,
-                        0.232,
-                        0.139
-                    ],
-                    "PR": [
-                        75.0,
-                        79.8,
-                        84.6,
-                        89.4,
-                        94.2
-                    ],
-                    "SkinTemp": [
-                        30.33,
-                        30.7,
-                        30.22,
-                        30.24,
-                        30.74
-                    ],
-                    "ACCEL": [
-                        0.008,
-                        0.003,
-                        0.008,
-                        0.004,
-                        0.003
-                    ],
-                    "PRV": null,
-                    "RESP": [
-                        11.65,
-                        11.76,
-                        11.88,
-                        11.99,
-                        12.1
-                    ],
-                    "ACT_COUNT": [
-                        72.9,
-                        63.2,
-                        53.4,
-                        43.6,
-                        33.9
-                    ]
-                },
-                "physio_summary_per_channel": {
-                    "EDA": "Across the past 6 minutes, electrodermal activity showed a dropping pattern, settling around 0.14 uS.",
-                    "PR": "Beats per minute elevating sharply over the past 6 minutes, now 94.2, without any notable peaks or valleys.",
-                    "SkinTemp": "Skin temperature moved moderately in a climbing direction over the past 6 minutes, from 30.06 to 30.74 degC.",
-                    "ACCEL": "During the past 6 minutes, movement registered a falling shift to 0.0 g, without any notable peaks or valleys.",
-                    "ACT_CLASS": "The still state held steady for the past 6 minutes.",
-                    "RESP": "Over the past 6 minutes, breathing pace easing slightly, now near 12.1 breaths per minute."
-                },
-                "physio_summary_fusion": "During the past 6 minutes, with body position reclining/lying and the participant was awake, EDA and PR and SkinTemp and ACCEL and RESP shifted, not explained by movement. EDA and PR and SkinTemp and ACCEL and RESP rose while ACCEL and ACT_COUNT showed no corresponding movement, suggesting this arousal is not explained by physical activity.",
-                "stress_score": 2,
-                "stress_level": "Mild stress",
-                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I've also started feeling guilty whenever I relax. I think I should be preparing for placements instead of watching something or taking a break.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: Reframe Negative Thoughts, Collaborative Planning\n\nResponse: It sounds like the uncertainty has turned even your breaks into something you feel you need to justify. Preparing can definitely help you feel more secure, but you don't need to be productive every minute to prove that you're taking your future seriously. A small amount of preparation each day could be enough while still giving yourself permission to rest.<EOS>",
-                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I've also started feeling guilty whenever I relax. I think I should be preparing for placements instead of watching something or taking a break.\nPhysiological Signals: During the past 6 minutes, with body position reclining/lying and the participant was awake, EDA and PR and SkinTemp and ACCEL and RESP shifted, not explained by movement. EDA and PR and SkinTemp and ACCEL and RESP rose while ACCEL and ACT_COUNT showed no corresponding movement, suggesting this arousal is not explained by physical activity. Further, Across the past 6 minutes, electrodermal activity showed a dropping pattern, settling around 0.14 uS. At the same time, Beats per minute elevating sharply over the past 6 minutes, now 94.2, without any notable peaks or valleys. Alongside this, Skin temperature moved moderately in a climbing direction over the past 6 minutes, from 30.06 to 30.74 degC. On top of that, During the past 6 minutes, movement registered a falling shift to 0.0 g, without any notable peaks or valleys. Notably, The still state held steady for the past 6 minutes. Over the past 6 minutes, breathing pace easing slightly, now near 12.1 breaths per minute. Notably, The stress score for the past 6 minutes is 2 (activity count: 33.9), pointing to Mild stress.\n\n### Response:\nStrategy: Reframe Negative Thoughts, Collaborative Planning\n\nResponse: It sounds like the uncertainty has turned even your breaks into something you feel you need to justify. Preparing can definitely help you feel more secure, but you don't need to be productive every minute to prove that you're taking your future seriously. A small amount of preparation each day could be enough while still giving yourself permission to rest.<EOS>"
-            },
-            {
-                "timestamp": "2026-08-10T17:06:00",
-                "participant_full_id": "2753-1-1-0002",
-                "user_text": "The problem is that everyone around me thinks I'll get the offer. I haven't really told them how anxious I actually am because I don't want to disappoint them.",
-                "ai_text": "That can feel surprisingly lonely â having people believe in you while you're privately worrying that things might not work out. You don't have to protect everyone from your uncertainty by pretending you're completely confident. Even telling one person you trust that the waiting has been difficult could give you a place to put some of that pressure down.",
-                "context": "",
-                "strategy": "Empathetic Statements, Emotional Validation",
-                "raw_physio": {
-                    "EDA": [
-                        0.223,
-                        0.234,
-                        0.241,
-                        0.149
-                    ],
-                    "PR": [
-                        82.3,
-                        86.9,
-                        91.6,
-                        96.2
-                    ],
-                    "SkinTemp": [
-                        30.09,
-                        30.35,
-                        30.79,
-                        30.11
-                    ],
-                    "ACCEL": [
-                        0.003,
-                        0.007,
-                        0.006,
-                        0.003
-                    ],
-                    "PRV": null,
-                    "RESP": [
-                        12.53,
-                        14.12,
-                        15.72,
-                        17.31
-                    ],
-                    "ACT_COUNT": [
-                        46.5,
-                        42.5,
-                        38.4,
-                        34.4
-                    ]
-                },
-                "physio_summary_per_channel": {
-                    "PR": "Heart rate growing sharply during the past 6 minutes, reaching 96.2 bpm.",
-                    "EDA": "Electrodermal activity remained decreasing across the past 6 minutes, staying near 0.15 uS.",
-                    "SkinTemp": "A decreasing skin temperature pattern was observed over the past 6 minutes, mildly fluctuating, reaching 30.11 degC.",
-                    "ACCEL": "Across the past 6 minutes, movement levels held easing, near 0.0 g.",
-                    "ACT_CLASS": "Activity type persisted as still through the past 6 minutes.",
-                    "RESP": "Respiratory rate drifted upward across the past 6 minutes to 17.31 breaths per minute, without any notable peaks or valleys."
-                },
-                "physio_summary_fusion": "Across the past 6 minutes, taking reclining/lying posture and sedentary intensity into account, EDA and PR and SkinTemp and ACCEL and RESP shifted, not explained by movement. Movement stayed minimal while EDA and PR and SkinTemp and ACCEL and RESP rose, pointing toward a stress response rather than exertion.",
-                "stress_score": 3,
-                "stress_level": "Mild stress",
-                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: The problem is that everyone around me thinks I'll get the offer. I haven't really told them how anxious I actually am because I don't want to disappoint them.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: Empathetic Statements, Emotional Validation\n\nResponse: That can feel surprisingly lonely â having people believe in you while you're privately worrying that things might not work out. You don't have to protect everyone from your uncertainty by pretending you're completely confident. Even telling one person you trust that the waiting has been difficult could give you a place to put some of that pressure down.<EOS>",
-                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: The problem is that everyone around me thinks I'll get the offer. I haven't really told them how anxious I actually am because I don't want to disappoint them.\nPhysiological Signals: Across the past 6 minutes, taking reclining/lying posture and sedentary intensity into account, EDA and PR and SkinTemp and ACCEL and RESP shifted, not explained by movement. Movement stayed minimal while EDA and PR and SkinTemp and ACCEL and RESP rose, pointing toward a stress response rather than exertion. Additionally, Heart rate growing sharply during the past 6 minutes, reaching 96.2 bpm. Also, Electrodermal activity remained decreasing across the past 6 minutes, staying near 0.15 uS. Further, A decreasing skin temperature pattern was observed over the past 6 minutes, mildly fluctuating, reaching 30.11 degC. At the same time, Across the past 6 minutes, movement levels held easing, near 0.0 g. Meanwhile, Activity type persisted as still through the past 6 minutes. At the same time, Respiratory rate drifted upward across the past 6 minutes to 17.31 breaths per minute, without any notable peaks or valleys. Meanwhile, Over the past 6 minutes, with activity count at 34.4, the composite score reaches 3, classified as Mild stress.\n\n### Response:\nStrategy: Empathetic Statements, Emotional Validation\n\nResponse: That can feel surprisingly lonely â having people believe in you while you're privately worrying that things might not work out. You don't have to protect everyone from your uncertainty by pretending you're completely confident. Even telling one person you trust that the waiting has been difficult could give you a place to put some of that pressure down.<EOS>"
-            },
-            {
-                "timestamp": "2026-08-10T17:10:00",
-                "participant_full_id": "2753-1-1-0002",
-                "user_text": "Sometimes I also take the silence personally. I start thinking maybe my manager saw something lacking in me that I didn't notice.",
-                "ai_text": "I understand why your mind goes there when you're waiting for feedback about something so important. But company decisions can depend on many things beyond one person's performance, including approvals, timelines, hiring plans, and available positions. You don't have enough information right now to turn the silence into a judgment about your abilities.",
-                "context": "",
-                "strategy": "Reflective Statements, Reframe Negative Thoughts",
-                "raw_physio": {
-                    "EDA": [
-                        0.274,
-                        0.274,
-                        0.273,
-                        0.236,
-                        0.212
-                    ],
-                    "PR": [
-                        73.9,
-                        80.0,
-                        86.1,
-                        92.1,
-                        98.2
-                    ],
-                    "SkinTemp": [
-                        30.4,
-                        30.74,
-                        30.78,
-                        30.13,
-                        30.67
-                    ],
-                    "ACCEL": [
-                        0.004,
-                        0.021,
-                        0.015,
-                        0.062,
-                        0.038
-                    ],
-                    "PRV": null,
-                    "RESP": [
-                        11.75,
-                        11.82,
-                        11.89,
-                        11.97,
-                        12.04
-                    ],
-                    "ACT_COUNT": [
-                        61.5,
-                        55.2,
-                        48.9,
-                        42.5,
-                        36.2
-                    ]
-                },
-                "physio_summary_per_channel": {
-                    "PR": "Over the past 6 minutes, cardiac pace upward sharply, now near 98.2 bpm.",
-                    "ACCEL": "Accelerometer readings showed a rising pattern across the past 6 minutes, with highly fluctuating variation, now 0.04 g.",
-                    "SkinTemp": "Across the past 6 minutes, skin temperature held increasing near 30.67 degC.",
-                    "EDA": "EDA held dropping through the past 6 minutes, close to 0.21 uS.",
-                    "ACT_CLASS": "No change in activity state was observed over the past 6 minutes; it remained still.",
-                    "RESP": "Respiratory rate decreasing slightly over the past 6 minutes, moving from 12.53 to 12.04 breaths per minute."
-                },
-                "physio_summary_fusion": "Across the past 6 minutes, EDA and PR and SkinTemp and ACCEL and RESP moved in a shifted direction while the participant stayed still, indicating the response is not explained by movement. EDA and PR and SkinTemp and ACCEL and RESP increased even as the body stayed still, a pattern more consistent with emotional than physical arousal.",
-                "stress_score": 2,
-                "stress_level": "Mild stress",
-                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Sometimes I also take the silence personally. I start thinking maybe my manager saw something lacking in me that I didn't notice.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: Reflective Statements, Reframe Negative Thoughts\n\nResponse: I understand why your mind goes there when you're waiting for feedback about something so important. But company decisions can depend on many things beyond one person's performance, including approvals, timelines, hiring plans, and available positions. You don't have enough information right now to turn the silence into a judgment about your abilities.<EOS>",
-                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Sometimes I also take the silence personally. I start thinking maybe my manager saw something lacking in me that I didn't notice.\nPhysiological Signals: Across the past 6 minutes, EDA and PR and SkinTemp and ACCEL and RESP moved in a shifted direction while the participant stayed still, indicating the response is not explained by movement. EDA and PR and SkinTemp and ACCEL and RESP increased even as the body stayed still, a pattern more consistent with emotional than physical arousal. Alongside this, Over the past 6 minutes, cardiac pace upward sharply, now near 98.2 bpm. Further, Accelerometer readings showed a rising pattern across the past 6 minutes, with highly fluctuating variation, now 0.04 g. Notably, Across the past 6 minutes, skin temperature held increasing near 30.67 degC. Notably, EDA held dropping through the past 6 minutes, close to 0.21 uS. Alongside this, No change in activity state was observed over the past 6 minutes; it remained still. Alongside this, Respiratory rate decreasing slightly over the past 6 minutes, moving from 12.53 to 12.04 breaths per minute. Combining the signals above with an activity count of 36.2, the resulting score over the past 6 minutes is 2 - Mild stress.\n\n### Response:\nStrategy: Reflective Statements, Reframe Negative Thoughts\n\nResponse: I understand why your mind goes there when you're waiting for feedback about something so important. But company decisions can depend on many things beyond one person's performance, including approvals, timelines, hiring plans, and available positions. You don't have enough information right now to turn the silence into a judgment about your abilities.<EOS>"
-            },
-            {
-                "timestamp": "2026-08-10T17:15:00",
-                "participant_full_id": "2753-1-1-0002",
-                "user_text": "I guess I've started treating the offer as proof that my internship was successful. If I don't get it, I'll probably feel like I wasn't good enough.",
-                "ai_text": "I think that's one of the hardest parts of this for you. The offer has started carrying the meaning of \"I did well,\" when those are actually two different things. Your internship gave you experience, skills, and the opportunity to work in a demanding environment, regardless of the final decision. The outcome can matter to you without becoming a verdict on your ability.",
-                "context": "",
-                "strategy": "Reflective Statements, Affirmation",
-                "raw_physio": {
-                    "EDA": [
-                        0.255,
-                        0.242,
-                        0.24,
-                        0.171
-                    ],
-                    "PR": [
-                        81.6,
-                        85.3,
-                        89.1,
-                        92.8
-                    ],
-                    "SkinTemp": [
-                        30.16,
-                        30.73,
-                        30.51,
-                        30.56
-                    ],
-                    "ACCEL": [
-                        0.027,
-                        0.008,
-                        0.003,
-                        0.003
-                    ],
-                    "PRV": null,
-                    "RESP": [
-                        11.62,
-                        13.6,
-                        15.59,
-                        17.57
-                    ],
-                    "ACT_COUNT": [
-                        78.5,
-                        64.9,
-                        51.4,
-                        37.8
-                    ]
-                },
-                "physio_summary_per_channel": {
-                    "PR": "Pulse rate rising sharply over the past 6 minutes, moving from 73.9 to 92.8 bpm.",
-                    "EDA": "EDA levels moved sharply and easing through the past 6 minutes, ending at 0.17 uS.",
-                    "SkinTemp": "Skin temperature upward slightly over the past 6 minutes, moving from 30.4 to 30.56 degC.",
-                    "ACCEL": "Overall movement (accelerometer) declining slightly over the past 6 minutes, moving from 0.0 to 0.0 g.",
-                    "ACT_CLASS": "The recorded state shifted from still to generic over the past 6 minutes.",
-                    "RESP": "Respiratory rate moved sharply in a upward direction over the past 6 minutes, now 17.57."
-                },
-                "physio_summary_fusion": "Over the past 6 minutes, the combined signal (EDA and PR and SkinTemp and ACCEL and RESP) showed shifted, with movement generic, not explained by movement. Despite little to no movement recorded, EDA and PR and SkinTemp and ACCEL and RESP climbed noticeably - this decoupling from activity strengthens the case for a stress-driven response.",
-                "stress_score": 3,
-                "stress_level": "Mild stress",
-                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I guess I've started treating the offer as proof that my internship was successful. If I don't get it, I'll probably feel like I wasn't good enough.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: Reflective Statements, Affirmation\n\nResponse: I think that's one of the hardest parts of this for you. The offer has started carrying the meaning of \"I did well,\" when those are actually two different things. Your internship gave you experience, skills, and the opportunity to work in a demanding environment, regardless of the final decision. The outcome can matter to you without becoming a verdict on your ability.<EOS>",
-                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I guess I've started treating the offer as proof that my internship was successful. If I don't get it, I'll probably feel like I wasn't good enough.\nPhysiological Signals: Over the past 6 minutes, the combined signal (EDA and PR and SkinTemp and ACCEL and RESP) showed shifted, with movement generic, not explained by movement. Despite little to no movement recorded, EDA and PR and SkinTemp and ACCEL and RESP climbed noticeably - this decoupling from activity strengthens the case for a stress-driven response. Simultaneously, Pulse rate rising sharply over the past 6 minutes, moving from 73.9 to 92.8 bpm. Simultaneously, EDA levels moved sharply and easing through the past 6 minutes, ending at 0.17 uS. Skin temperature upward slightly over the past 6 minutes, moving from 30.4 to 30.56 degC. Additionally, Overall movement (accelerometer) declining slightly over the past 6 minutes, moving from 0.0 to 0.0 g. Also, The recorded state shifted from still to generic over the past 6 minutes. Simultaneously, Respiratory rate moved sharply in a upward direction over the past 6 minutes, now 17.57. Meanwhile, With activity count at 37.8, the composite stress score for the past 6 minutes is 3, indicating Mild stress.\n\n### Response:\nStrategy: Reflective Statements, Affirmation\n\nResponse: I think that's one of the hardest parts of this for you. The offer has started carrying the meaning of \"I did well,\" when those are actually two different things. Your internship gave you experience, skills, and the opportunity to work in a demanding environment, regardless of the final decision. The outcome can matter to you without becoming a verdict on your ability.<EOS>"
-            },
-            {
-                "timestamp": "2026-08-10T17:19:00",
-                "participant_full_id": "2753-1-1-0002",
-                "user_text": "I still really want the offer though. I don't want to convince myself that I don't care just so I can stop feeling anxious.",
-                "ai_text": "You don't have to convince yourself not to care. Of course you want it, and there's nothing wrong with hoping strongly for something you've worked hard for. The goal isn't to make the outcome meaningless; it's to keep the uncertainty from taking over your entire day. You can want the offer deeply and still take care of yourself while you wait.",
-                "context": "",
-                "strategy": "Emotional Validation, Normalize Experiences",
-                "raw_physio": {
-                    "EDA": [
-                        0.368,
-                        0.329,
-                        0.322,
-                        0.317,
-                        0.249
-                    ],
-                    "PR": [
-                        83.9,
-                        87.4,
-                        90.8,
-                        94.3,
-                        97.8
-                    ],
-                    "SkinTemp": [
-                        30.7,
-                        30.92,
-                        30.98,
-                        31.1,
-                        31.29
-                    ],
-                    "ACCEL": [
-                        0.003,
-                        0.003,
-                        0.003,
-                        0.005,
-                        0.003
-                    ],
-                    "PRV": null,
-                    "RESP": [
-                        10.66,
-                        11.45,
-                        12.23,
-                        13.02,
-                        13.81
-                    ],
-                    "ACT_COUNT": [
-                        65.2,
-                        62.6,
-                        60.0,
-                        57.3,
-                        54.7
-                    ]
-                },
-                "physio_summary_per_channel": {
-                    "PR": "Beats per minute upward sharply over the past 6 minutes, now 97.8, without any notable peaks or valleys.",
-                    "SkinTemp": "Temperature readings moved sharply and growing through the past 6 minutes, ending at 31.29 degC.",
-                    "ACCEL": "Accelerometer output dropping moderately across the past 6 minutes, showing mildly fluctuating activity, now 0.0 g.",
-                    "EDA": "The electrodermal signal was downward for the past 6 minutes, showing highly fluctuating behavior around 0.25 uS.",
-                    "ACT_CLASS": "A shift occurred over the past 6 minutes: activity went from generic to still.",
-                    "RESP": "Over the past 6 minutes, breathing rate remained climbing, near 13.81 breaths per minute."
-                },
-                "physio_summary_fusion": "Across the past 6 minutes, taking reclining/lying posture and LPA intensity into account, EDA and PR and SkinTemp and ACCEL and RESP shifted, likely activity-related. The rise in EDA and PR and SkinTemp and ACCEL and RESP coincided with elevated ACT_COUNT, making it difficult to separate physical exertion from emotional stress.",
-                "stress_score": 2,
-                "stress_level": "Mild stress",
-                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I still really want the offer though. I don't want to convince myself that I don't care just so I can stop feeling anxious.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: Emotional Validation, Normalize Experiences\n\nResponse: You don't have to convince yourself not to care. Of course you want it, and there's nothing wrong with hoping strongly for something you've worked hard for. The goal isn't to make the outcome meaningless; it's to keep the uncertainty from taking over your entire day. You can want the offer deeply and still take care of yourself while you wait.<EOS>",
-                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I still really want the offer though. I don't want to convince myself that I don't care just so I can stop feeling anxious.\nPhysiological Signals: Across the past 6 minutes, taking reclining/lying posture and LPA intensity into account, EDA and PR and SkinTemp and ACCEL and RESP shifted, likely activity-related. The rise in EDA and PR and SkinTemp and ACCEL and RESP coincided with elevated ACT_COUNT, making it difficult to separate physical exertion from emotional stress. Beats per minute upward sharply over the past 6 minutes, now 97.8, without any notable peaks or valleys. Also, Temperature readings moved sharply and growing through the past 6 minutes, ending at 31.29 degC. In parallel, Accelerometer output dropping moderately across the past 6 minutes, showing mildly fluctuating activity, now 0.0 g. Alongside this, The electrodermal signal was downward for the past 6 minutes, showing highly fluctuating behavior around 0.25 uS. On top of that, A shift occurred over the past 6 minutes: activity went from generic to still. Notably, Over the past 6 minutes, breathing rate remained climbing, near 13.81 breaths per minute. Also, Movement count of 54.7 contributes to a combined stress score of 2 over the past 6 minutes, consistent with Mild stress.\n\n### Response:\nStrategy: Emotional Validation, Normalize Experiences\n\nResponse: You don't have to convince yourself not to care. Of course you want it, and there's nothing wrong with hoping strongly for something you've worked hard for. The goal isn't to make the outcome meaningless; it's to keep the uncertainty from taking over your entire day. You can want the offer deeply and still take care of yourself while you wait.<EOS>"
-            },
-            {
-                "timestamp": "2026-08-10T17:24:00",
-                "participant_full_id": "2753-1-1-0002",
-                "user_text": "Maybe I should start preparing for placements again, but part of me feels like doing that means I'm accepting that I won't get the offer.",
-                "ai_text": "Preparing doesn't mean you've given up on the offer. It simply means you're taking care of the part of your future that is still within your control. You can keep hoping for the offer while quietly building a backup plan. Having another option may actually make the waiting feel less frightening.",
-                "context": "",
-                "strategy": "Reframe Negative Thoughts, Suggest Options",
-                "raw_physio": {
-                    "EDA": [
-                        0.231,
-                        0.214,
-                        0.227,
-                        0.179
-                    ],
-                    "PR": [
-                        73.7,
-                        83.6,
-                        93.5,
-                        103.4
-                    ],
-                    "SkinTemp": [
-                        31.06,
-                        30.76,
-                        31.41,
-                        31.63
-                    ],
-                    "ACCEL": [
-                        0.003,
-                        0.004,
-                        0.012,
-                        0.003
-                    ],
-                    "PRV": null,
-                    "RESP": [
-                        12.5,
-                        14.19,
-                        15.89,
-                        17.58
-                    ],
-                    "ACT_COUNT": [
-                        71.6,
-                        60.2,
-                        48.8,
-                        37.4
-                    ]
-                },
-                "physio_summary_per_channel": {
-                    "EDA": "EDA held downward through the past 6 minutes, close to 0.18 uS.",
-                    "PR": "A climbing pulse rate pattern emerged over the past 6 minutes, highly fluctuating, reaching 103.4 bpm.",
-                    "SkinTemp": "Skin temperature moved sharply in a upward direction over the past 6 minutes, from 30.7 to 31.63 degC.",
-                    "ACCEL": "Accelerometer readings moved slightly and decreasing through the past 6 minutes, ending at 0.0 g.",
-                    "ACT_CLASS": "Activity classification showed no change over the past 6 minutes, staying still.",
-                    "RESP": "The respiratory signal was increasing for the past 6 minutes, highly fluctuating, around 17.58 breaths per minute."
-                },
-                "physio_summary_fusion": "During the past 6 minutes, EDA and PR and SkinTemp and ACCEL and RESP shifted while activity intensity stayed sedentary, not explained by movement. Despite little to no movement recorded, EDA and PR and SkinTemp and ACCEL and RESP climbed noticeably - this decoupling from activity strengthens the case for a stress-driven response.",
-                "stress_score": 3,
-                "stress_level": "Mild stress",
-                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Maybe I should start preparing for placements again, but part of me feels like doing that means I'm accepting that I won't get the offer.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: Reframe Negative Thoughts, Suggest Options\n\nResponse: Preparing doesn't mean you've given up on the offer. It simply means you're taking care of the part of your future that is still within your control. You can keep hoping for the offer while quietly building a backup plan. Having another option may actually make the waiting feel less frightening.<EOS>",
-                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Maybe I should start preparing for placements again, but part of me feels like doing that means I'm accepting that I won't get the offer.\nPhysiological Signals: During the past 6 minutes, EDA and PR and SkinTemp and ACCEL and RESP shifted while activity intensity stayed sedentary, not explained by movement. Despite little to no movement recorded, EDA and PR and SkinTemp and ACCEL and RESP climbed noticeably - this decoupling from activity strengthens the case for a stress-driven response. Meanwhile, EDA held downward through the past 6 minutes, close to 0.18 uS. Simultaneously, A climbing pulse rate pattern emerged over the past 6 minutes, highly fluctuating, reaching 103.4 bpm. Further, Skin temperature moved sharply in a upward direction over the past 6 minutes, from 30.7 to 31.63 degC. Further, Accelerometer readings moved slightly and decreasing through the past 6 minutes, ending at 0.0 g. Activity classification showed no change over the past 6 minutes, staying still. The respiratory signal was increasing for the past 6 minutes, highly fluctuating, around 17.58 breaths per minute. At the same time, Combining the signals above with an activity count of 37.4, the resulting score over the past 6 minutes is 3 - Mild stress.\n\n### Response:\nStrategy: Reframe Negative Thoughts, Suggest Options\n\nResponse: Preparing doesn't mean you've given up on the offer. It simply means you're taking care of the part of your future that is still within your control. You can keep hoping for the offer while quietly building a backup plan. Having another option may actually make the waiting feel less frightening.<EOS>"
-            },
-            {
-                "timestamp": "2026-08-10T17:28:00",
-                "participant_full_id": "2753-1-1-0002",
-                "user_text": "That actually makes me feel a little better. I think I've been acting like I have to either believe I'll get the offer or prepare for rejection.",
-                "ai_text": "You don't have to choose between those two extremes. You can be hopeful without being completely dependent on the outcome, and you can prepare without assuming the worst. For now, it might help to think of it as keeping two doors open rather than deciding which one you'll walk through.",
-                "context": "",
-                "strategy": "Provide Different Perspectives, Affirmation",
-                "raw_physio": {
-                    "EDA": [
-                        0.18,
-                        0.18,
-                        0.178,
-                        0.19,
-                        0.145
-                    ],
-                    "PR": [
-                        72.6,
-                        77.8,
-                        82.9,
-                        88.0,
-                        93.2
-                    ],
-                    "SkinTemp": [
-                        30.96,
-                        31.08,
-                        31.5,
-                        31.67,
-                        31.7
-                    ],
-                    "ACCEL": [
-                        0.008,
-                        0.006,
-                        0.061,
-                        0.022,
-                        0.005
-                    ],
-                    "PRV": null,
-                    "RESP": [
-                        11.38,
-                        11.87,
-                        12.35,
-                        12.84,
-                        13.32
-                    ],
-                    "ACT_COUNT": [
-                        66.1,
-                        64.5,
-                        62.8,
-                        61.2,
-                        59.6
-                    ]
-                },
-                "physio_summary_per_channel": {
-                    "PR": "Pulse readings moved sharply and increasing through the past 6 minutes, ending at 93.2 bpm.",
-                    "EDA": "EDA dropping sharply over the past 6 minutes, with mildly fluctuating fluctuation, now at 0.14 uS.",
-                    "SkinTemp": "Skin temperature showed a elevating pattern across the past 6 minutes, with mildly fluctuating change, now 31.7 degC.",
-                    "ACCEL": "Accelerometer readings showed a climbing pattern across the past 6 minutes, with highly fluctuating variation, now 0.01 g.",
-                    "ACT_CLASS": "Activity classification remained still throughout the past 6 minutes.",
-                    "RESP": "Respiratory rate climbing moderately over the past 6 minutes, moving from 12.5 to 13.32 breaths per minute."
-                },
-                "physio_summary_fusion": "Across the past 6 minutes, EDA and PR and SkinTemp and ACCEL and RESP shifted while the participant was awake, likely activity-related. EDA and PR and SkinTemp and ACCEL and RESP rose alongside increased movement, so the change is likely activity-related rather than a pure stress response.",
-                "stress_score": 2,
-                "stress_level": "Mild stress",
-                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: That actually makes me feel a little better. I think I've been acting like I have to either believe I'll get the offer or prepare for rejection.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: Provide Different Perspectives, Affirmation\n\nResponse: You don't have to choose between those two extremes. You can be hopeful without being completely dependent on the outcome, and you can prepare without assuming the worst. For now, it might help to think of it as keeping two doors open rather than deciding which one you'll walk through.<EOS>",
-                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: That actually makes me feel a little better. I think I've been acting like I have to either believe I'll get the offer or prepare for rejection.\nPhysiological Signals: Across the past 6 minutes, EDA and PR and SkinTemp and ACCEL and RESP shifted while the participant was awake, likely activity-related. EDA and PR and SkinTemp and ACCEL and RESP rose alongside increased movement, so the change is likely activity-related rather than a pure stress response. On top of that, Pulse readings moved sharply and increasing through the past 6 minutes, ending at 93.2 bpm. Additionally, EDA dropping sharply over the past 6 minutes, with mildly fluctuating fluctuation, now at 0.14 uS. Meanwhile, Skin temperature showed a elevating pattern across the past 6 minutes, with mildly fluctuating change, now 31.7 degC. Further, Accelerometer readings showed a climbing pattern across the past 6 minutes, with highly fluctuating variation, now 0.01 g. Also, Activity classification remained still throughout the past 6 minutes. Respiratory rate climbing moderately over the past 6 minutes, moving from 12.5 to 13.32 breaths per minute. At the same time, Factoring in an activity count of 59.6, the composite indicator over the past 6 minutes reads 2, suggesting Mild stress.\n\n### Response:\nStrategy: Provide Different Perspectives, Affirmation\n\nResponse: You don't have to choose between those two extremes. You can be hopeful without being completely dependent on the outcome, and you can prepare without assuming the worst. For now, it might help to think of it as keeping two doors open rather than deciding which one you'll walk through.<EOS>"
-            },
-            {
-                "timestamp": "2026-08-10T17:33:00",
-                "participant_full_id": "2753-1-1-0002",
-                "user_text": "I think I'll start preparing again tomorrow, but I'll also try to stop checking my email constantly. I still feel anxious, but I don't feel as helpless as I did earlier.",
-                "ai_text": "I'm glad you feel a little less helpless. You don't need to make the anxiety disappear before you can move forward; you just need to stop letting it decide everything you do. Keep hoping for the offer, prepare for what comes next, and let the company's timeline remain outside your control. Whatever answer eventually comes, you'll be better off knowing you kept moving forward while you waited.",
-                "context": "",
-                "strategy": "Affirmation, Stress Management",
-                "raw_physio": {
-                    "EDA": 0.154,
-                    "PR": 92.5,
-                    "SkinTemp": 31.15,
-                    "ACCEL": 0.002,
-                    "PRV": null,
-                    "RESP": 16.0,
-                    "ACT_COUNT": 45.2
-                },
-                "physio_summary_per_channel": {
-                    "PR": "Pulse rate stayed at a comparable level (92.5 bpm) over the past 6 minutes, based on limited resolution data.",
-                    "EDA": "Electrodermal activity remained at a similar level (0.15 uS) across the past 6 minutes, based on limited resolution data.",
-                    "SkinTemp": "Temperature appeared flat over the past 6 minutes, holding near 31.15 degC; this reflects an averaged reading rather than fine detail.",
-                    "ACCEL": "Accelerometer output appeared flat over the past 6 minutes, holding near 0.0 g, reflecting an averaged reading.",
-                    "ACT_CLASS": "During the past 6 minutes, movement classification changed from still to generic.",
-                    "RESP": "Across the past 6 minutes, respiratory rate held growing, close to 16.0 breaths per minute."
-                },
-                "physio_summary_fusion": "Over the past 6 minutes, physiological data held near constant values sourced from aggregated readings, appearing not explained by movement.",
-                "stress_score": 3,
-                "stress_level": "Mild stress",
-                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I think I'll start preparing again tomorrow, but I'll also try to stop checking my email constantly. I still feel anxious, but I don't feel as helpless as I did earlier.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: Affirmation, Stress Management\n\nResponse: I'm glad you feel a little less helpless. You don't need to make the anxiety disappear before you can move forward; you just need to stop letting it decide everything you do. Keep hoping for the offer, prepare for what comes next, and let the company's timeline remain outside your control. Whatever answer eventually comes, you'll be better off knowing you kept moving forward while you waited.<EOS>",
-                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I think I'll start preparing again tomorrow, but I'll also try to stop checking my email constantly. I still feel anxious, but I don't feel as helpless as I did earlier.\nPhysiological Signals: Over the past 6 minutes, physiological data held near constant values sourced from aggregated readings, appearing not explained by movement. Notably, Pulse rate stayed at a comparable level (92.5 bpm) over the past 6 minutes, based on limited resolution data. Alongside this, Electrodermal activity remained at a similar level (0.15 uS) across the past 6 minutes, based on limited resolution data. Alongside this, Temperature appeared flat over the past 6 minutes, holding near 31.15 degC; this reflects an averaged reading rather than fine detail. Alongside this, Accelerometer output appeared flat over the past 6 minutes, holding near 0.0 g, reflecting an averaged reading. Alongside this, During the past 6 minutes, movement classification changed from still to generic. On top of that, Across the past 6 minutes, respiratory rate held growing, close to 16.0 breaths per minute. At the same time, The stress score for the past 6 minutes is 3 (activity count: 45.2), pointing to Mild stress.\n\n### Response:\nStrategy: Affirmation, Stress Management\n\nResponse: I'm glad you feel a little less helpless. You don't need to make the anxiety disappear before you can move forward; you just need to stop letting it decide everything you do. Keep hoping for the offer, prepare for what comes next, and let the company's timeline remain outside your control. Whatever answer eventually comes, you'll be better off knowing you kept moving forward while you waited.<EOS>"
-            }
-        ]
-    }
+  {
+    "session_id": "2753-1-1",
+    "person_id": "2753",
+    "turns": [
+      {
+        "timestamp": "2026-08-10T16:30:00",
+        "participant_full_id": "2753-1-1-0002",
+        "user_text": "I completed my internship at a really good tech company, and now I'm waiting for my pre-placement offer. It's already been a month, and I still haven't heard anything. I'm getting really stressed because I don't know what is going to happen.",
+        "ai_text": "That kind of waiting can be really difficult, especially when you've already invested so much effort into the internship. A month without an update leaves you stuck between hope and uncertainty, which can make your mind constantly search for answers. Right now, the uncertainty itself may be causing more stress than anything you actually know about the decision.",
+        "context": "",
+        "strategy": "Emotional Validation, Reflective Statements",
+        "raw_physio": {
+          "EDA": [
+            0.172,
+            0.15,
+            0.152,
+            0.137
+          ],
+          "PR": [
+            83.1,
+            87.8,
+            92.6,
+            97.3
+          ],
+          "SkinTemp": [
+            28.66,
+            29.07,
+            29.31,
+            29.21
+          ],
+          "ACCEL": [
+            0.05,
+            0.098,
+            0.083,
+            0.036
+          ],
+          "PRV": null,
+          "RESP": [
+            11.43,
+            13.46,
+            15.5,
+            17.53
+          ],
+          "ACT_COUNT": [
+            63.6,
+            65.5,
+            67.3,
+            69.2
+          ]
+        },
+        "physio_summary_per_channel": {
+          "PR": "Heart rate drifted elevating across the first minute to 97.3 bpm, showing a single sustained rise with no reversal.",
+          "SkinTemp": "Across the first minute, skin temperature held rising near 29.21 degC.",
+          "ACCEL": "The motion signal was easing for the first minute, highly fluctuating, around 0.04 g.",
+          "EDA": "The electrodermal signal was easing for the first minute, showing smooth behavior around 0.14 uS.",
+          "ACT_CLASS": "For the first minute, the participant's activity did not shift from still.",
+          "RESP": "Respiratory rate moved sharply in a increasing direction over the first minute, now 17.53."
+        },
+        "physio_summary_fusion": "Over the first minute, EDA and PR and SkinTemp and ACCEL and RESP shifted, with some walking activity and sedentary intensity noted, likely activity-related. EDA and PR and SkinTemp and ACCEL and RESP rose alongside increased movement, so the change is likely activity-related rather than a pure stress response.",
+        "stress_score": 3,
+        "stress_level": "Mild stress",
+        "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I completed my internship at a really good tech company, and now I'm waiting for my pre-placement offer. It's already been a month, and I still haven't heard anything. I'm getting really stressed because I don't know what is going to happen.\n\n### Response:\nStrategy: Emotional Validation, Reflective Statements\n\nResponse: That kind of waiting can be really difficult, especially when you've already invested so much effort into the internship. A month without an update leaves you stuck between hope and uncertainty, which can make your mind constantly search for answers. Right now, the uncertainty itself may be causing more stress than anything you actually know about the decision.<EOS>",
+        "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I completed my internship at a really good tech company, and now I'm waiting for my pre-placement offer. It's already been a month, and I still haven't heard anything. I'm getting really stressed because I don't know what is going to happen.\nPhysiological Signals: Over the first minute, EDA and PR and SkinTemp and ACCEL and RESP shifted, with some walking activity and sedentary intensity noted, likely activity-related. EDA and PR and SkinTemp and ACCEL and RESP rose alongside increased movement, so the change is likely activity-related rather than a pure stress response. Notably, Heart rate drifted elevating across the first minute to 97.3 bpm, showing a single sustained rise with no reversal. Also, Across the first minute, skin temperature held rising near 29.21 degC. The motion signal was easing for the first minute, highly fluctuating, around 0.04 g. Alongside this, The electrodermal signal was easing for the first minute, showing smooth behavior around 0.14 uS. Meanwhile, For the first minute, the participant's activity did not shift from still. Additionally, Respiratory rate moved sharply in a increasing direction over the first minute, now 17.53. On top of that, Factoring in an activity count of 69.2, the composite indicator over the first minute reads 3, suggesting Mild stress.\n\n### Response:\nStrategy: Emotional Validation, Reflective Statements\n\nResponse: That kind of waiting can be really difficult, especially when you've already invested so much effort into the internship. A month without an update leaves you stuck between hope and uncertainty, which can make your mind constantly search for answers. Right now, the uncertainty itself may be causing more stress than anything you actually know about the decision.<EOS>"
+      },
+      {
+        "timestamp": "2026-08-10T16:34:00",
+        "participant_full_id": "2753-1-1-0002",
+        "user_text": "Yes, exactly. I keep thinking that if they were going to give me the offer, they would have told me by now. The longer they take, the more I feel like something is wrong.",
+        "ai_text": "I can understand why the delay is starting to feel like a bad sign. When something matters this much, silence can easily feel like an answer even when it isn't one. The delay tells you that you haven't received a decision yet; it doesn't tell you what that decision will be. Try to separate what you actually know from what anxiety is predicting.",
+        "context": "",
+        "strategy": "Emotional Validation, Reframe Negative Thoughts",
+        "raw_physio": {
+          "EDA": [
+            0.21,
+            0.228,
+            0.23,
+            0.227,
+            0.152
+          ],
+          "PR": [
+            80.2,
+            83.5,
+            86.8,
+            90.0,
+            93.3
+          ],
+          "SkinTemp": [
+            29.23,
+            29.28,
+            29.62,
+            29.56,
+            29.52
+          ],
+          "ACCEL": [
+            0.092,
+            0.052,
+            0.068,
+            0.029,
+            0.006
+          ],
+          "PRV": null,
+          "RESP": [
+            11.51,
+            12.04,
+            12.58,
+            13.12,
+            13.65
+          ],
+          "ACT_COUNT": [
+            77.8,
+            67.5,
+            57.2,
+            46.9,
+            36.6
+          ]
+        },
+        "physio_summary_per_channel": {
+          "ACCEL": "During the past 4 minutes, movement registered a easing shift to 0.01 g, without any notable peaks or valleys.",
+          "PR": "The pulse signal was elevating for the past 4 minutes, highly fluctuating, around 93.3 bpm.",
+          "SkinTemp": "Temperature readings moved moderately and rising through the past 4 minutes, ending at 29.52 degC.",
+          "EDA": "Across the past 4 minutes, EDA trended easing from 0.17 to 0.15 uS.",
+          "ACT_CLASS": "Over the past 4 minutes, activity type was consistently classified as still.",
+          "RESP": "Respiratory rate drifted rising across the past 4 minutes to 13.65 breaths per minute, without any notable peaks or valleys."
+        },
+        "physio_summary_fusion": "During the past 4 minutes, EDA and PR and SkinTemp and ACCEL and RESP shifted while activity intensity stayed sedentary, not explained by movement. EDA and PR and SkinTemp and ACCEL and RESP increased while the participant remained sedentary, so the change cannot be attributed to physical exertion.",
+        "stress_score": 2,
+        "stress_level": "Mild stress",
+        "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Yes, exactly. I keep thinking that if they were going to give me the offer, they would have told me by now. The longer they take, the more I feel like something is wrong.\n\n### Response:\nStrategy: Emotional Validation, Reframe Negative Thoughts\n\nResponse: I can understand why the delay is starting to feel like a bad sign. When something matters this much, silence can easily feel like an answer even when it isn't one. The delay tells you that you haven't received a decision yet; it doesn't tell you what that decision will be. Try to separate what you actually know from what anxiety is predicting.<EOS>",
+        "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Yes, exactly. I keep thinking that if they were going to give me the offer, they would have told me by now. The longer they take, the more I feel like something is wrong.\nPhysiological Signals: During the past 4 minutes, EDA and PR and SkinTemp and ACCEL and RESP shifted while activity intensity stayed sedentary, not explained by movement. EDA and PR and SkinTemp and ACCEL and RESP increased while the participant remained sedentary, so the change cannot be attributed to physical exertion. On top of that, During the past 4 minutes, movement registered a easing shift to 0.01 g, without any notable peaks or valleys. Further, The pulse signal was elevating for the past 4 minutes, highly fluctuating, around 93.3 bpm. In parallel, Temperature readings moved moderately and rising through the past 4 minutes, ending at 29.52 degC. Across the past 4 minutes, EDA trended easing from 0.17 to 0.15 uS. Simultaneously, Over the past 4 minutes, activity type was consistently classified as still. Respiratory rate drifted rising across the past 4 minutes to 13.65 breaths per minute, without any notable peaks or valleys. Notably, Over the past 4 minutes, with activity count at 36.6, the composite score reaches 2, classified as Mild stress.\n\n### Response:\nStrategy: Emotional Validation, Reframe Negative Thoughts\n\nResponse: I can understand why the delay is starting to feel like a bad sign. When something matters this much, silence can easily feel like an answer even when it isn't one. The delay tells you that you haven't received a decision yet; it doesn't tell you what that decision will be. Try to separate what you actually know from what anxiety is predicting.<EOS>"
+      },
+      {
+        "timestamp": "2026-08-10T16:39:00",
+        "participant_full_id": "2753-1-1-0002",
+        "user_text": "I know that makes sense, but I still keep checking my email every few minutes. Even when I know there probably won't be anything, I still check.",
+        "ai_text": "That repeated checking makes sense because it gives you a small sense of control over something you can't actually control. But I can imagine how exhausting it is to keep your attention fixed on your inbox all day. Maybe decide on a few specific times to check instead, so the offer doesn't get to occupy every quiet moment you have.",
+        "context": "",
+        "strategy": "Normalize Experiences, Stress Management",
+        "raw_physio": {
+          "EDA": [
+            0.161,
+            0.156,
+            0.161,
+            0.117
+          ],
+          "PR": [
+            75.4,
+            80.9,
+            86.5,
+            92.0
+          ],
+          "SkinTemp": [
+            29.92,
+            29.76,
+            29.4,
+            29.19
+          ],
+          "ACCEL": [
+            0.002,
+            0.003,
+            0.015,
+            0.002
+          ],
+          "PRV": null,
+          "RESP": [
+            12.96,
+            14.38,
+            15.81,
+            17.23
+          ],
+          "ACT_COUNT": [
+            56.5,
+            52.8,
+            49.1,
+            45.4
+          ]
+        },
+        "physio_summary_per_channel": {
+          "ACCEL": "Over the past 6 minutes, physical activity intensity downward sharply, now near 0.0 g.",
+          "EDA": "The electrodermal signal was downward for the past 6 minutes, showing highly fluctuating behavior around 0.12 uS.",
+          "PR": "Heart rate climbing sharply during the past 6 minutes, reaching 92.0 bpm.",
+          "SkinTemp": "The temperature signal was easing for the past 6 minutes, mildly fluctuating, around 29.19 degC.",
+          "ACT_CLASS": "The state remained still across the full span of the past 6 minutes.",
+          "RESP": "During the past 6 minutes, breathing registered a upward shift to 17.23 breaths per minute, without any notable peaks or valleys."
+        },
+        "physio_summary_fusion": "Over the past 6 minutes, the combined signal (EDA and PR and SkinTemp and ACCEL and RESP) showed shifted, with movement still, not explained by movement. EDA and PR and SkinTemp and ACCEL and RESP increased even as the body stayed still, a pattern more consistent with emotional than physical arousal.",
+        "stress_score": 3,
+        "stress_level": "Mild stress",
+        "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I know that makes sense, but I still keep checking my email every few minutes. Even when I know there probably won't be anything, I still check.\n\n### Response:\nStrategy: Normalize Experiences, Stress Management\n\nResponse: That repeated checking makes sense because it gives you a small sense of control over something you can't actually control. But I can imagine how exhausting it is to keep your attention fixed on your inbox all day. Maybe decide on a few specific times to check instead, so the offer doesn't get to occupy every quiet moment you have.<EOS>",
+        "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I know that makes sense, but I still keep checking my email every few minutes. Even when I know there probably won't be anything, I still check.\nPhysiological Signals: Over the past 6 minutes, the combined signal (EDA and PR and SkinTemp and ACCEL and RESP) showed shifted, with movement still, not explained by movement. EDA and PR and SkinTemp and ACCEL and RESP increased even as the body stayed still, a pattern more consistent with emotional than physical arousal. Further, Over the past 6 minutes, physical activity intensity downward sharply, now near 0.0 g. Notably, The electrodermal signal was downward for the past 6 minutes, showing highly fluctuating behavior around 0.12 uS. On top of that, Heart rate climbing sharply during the past 6 minutes, reaching 92.0 bpm. Alongside this, The temperature signal was easing for the past 6 minutes, mildly fluctuating, around 29.19 degC. The state remained still across the full span of the past 6 minutes. In parallel, During the past 6 minutes, breathing registered a upward shift to 17.23 breaths per minute, without any notable peaks or valleys. On top of that, With activity count at 45.4, the composite stress score for the past 6 minutes is 3, indicating Mild stress.\n\n### Response:\nStrategy: Normalize Experiences, Stress Management\n\nResponse: That repeated checking makes sense because it gives you a small sense of control over something you can't actually control. But I can imagine how exhausting it is to keep your attention fixed on your inbox all day. Maybe decide on a few specific times to check instead, so the offer doesn't get to occupy every quiet moment you have.<EOS>"
+      },
+      {
+        "timestamp": "2026-08-10T16:43:00",
+        "participant_full_id": "2753-1-1-0002",
+        "user_text": "The waiting has also made me think about everything I did during the internship. I keep remembering mistakes and wondering if those things affected my chances.",
+        "ai_text": "It sounds like your mind is going backward through the internship looking for clues about the outcome. That's understandable when you don't have any new information, but anxiety tends to make small mistakes feel much more significant than they actually were. You probably had many ordinary and successful moments too, but right now your mind is giving the mistakes most of the attention.",
+        "context": "",
+        "strategy": "Reflective Statements, Reframe Negative Thoughts",
+        "raw_physio": {
+          "EDA": [
+            0.197,
+            0.172,
+            0.175,
+            0.185,
+            0.177
+          ],
+          "PR": [
+            78.0,
+            82.1,
+            86.2,
+            90.4,
+            94.5
+          ],
+          "SkinTemp": [
+            29.23,
+            29.9,
+            29.65,
+            29.48,
+            29.64
+          ],
+          "ACCEL": [
+            0.007,
+            0.011,
+            0.003,
+            0.005,
+            0.004
+          ],
+          "PRV": null,
+          "RESP": [
+            10.9,
+            11.0,
+            11.1,
+            11.2,
+            11.3
+          ],
+          "ACT_COUNT": [
+            44.9,
+            51.6,
+            58.3,
+            65.0,
+            71.7
+          ]
+        },
+        "physio_summary_per_channel": {
+          "PR": "Across the past 6 minutes, pulse rate held elevating, staying close to 94.5 bpm.",
+          "SkinTemp": "A dropping skin temperature pattern was observed over the past 6 minutes, mildly fluctuating, reaching 29.64 degC.",
+          "EDA": "Arousal-linked skin conductance upward slightly across the past 6 minutes, now 0.18 uS.",
+          "ACCEL": "Accelerometer output elevating slightly across the past 6 minutes, showing smooth activity, now 0.0 g.",
+          "ACT_CLASS": "Movement classification transitioned to generic from still over the past 6 minutes.",
+          "RESP": "Respiratory rate moved moderately in a downward direction over the past 6 minutes, now 11.3."
+        },
+        "physio_summary_fusion": "Over the past 6 minutes, step count suggests minimal walking; EDA and PR and SkinTemp and ACCEL and RESP shifted, a response that is likely activity-related. Because both arousal and activity increased together, this pattern is more consistent with exertion than emotional stress.",
+        "stress_score": 4,
+        "stress_level": "Moderate stress",
+        "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: The waiting has also made me think about everything I did during the internship. I keep remembering mistakes and wondering if those things affected my chances.\n\n### Response:\nStrategy: Reflective Statements, Reframe Negative Thoughts\n\nResponse: It sounds like your mind is going backward through the internship looking for clues about the outcome. That's understandable when you don't have any new information, but anxiety tends to make small mistakes feel much more significant than they actually were. You probably had many ordinary and successful moments too, but right now your mind is giving the mistakes most of the attention.<EOS>",
+        "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: The waiting has also made me think about everything I did during the internship. I keep remembering mistakes and wondering if those things affected my chances.\nPhysiological Signals: Over the past 6 minutes, step count suggests minimal walking; EDA and PR and SkinTemp and ACCEL and RESP shifted, a response that is likely activity-related. Because both arousal and activity increased together, this pattern is more consistent with exertion than emotional stress. Notably, Across the past 6 minutes, pulse rate held elevating, staying close to 94.5 bpm. Alongside this, A dropping skin temperature pattern was observed over the past 6 minutes, mildly fluctuating, reaching 29.64 degC. Arousal-linked skin conductance upward slightly across the past 6 minutes, now 0.18 uS. In parallel, Accelerometer output elevating slightly across the past 6 minutes, showing smooth activity, now 0.0 g. Alongside this, Movement classification transitioned to generic from still over the past 6 minutes. Respiratory rate moved moderately in a downward direction over the past 6 minutes, now 11.3. In parallel, The stress score for the past 6 minutes is 4 (activity count: 71.7), pointing to Moderate stress.\n\n### Response:\nStrategy: Reflective Statements, Reframe Negative Thoughts\n\nResponse: It sounds like your mind is going backward through the internship looking for clues about the outcome. That's understandable when you don't have any new information, but anxiety tends to make small mistakes feel much more significant than they actually were. You probably had many ordinary and successful moments too, but right now your mind is giving the mistakes most of the attention.<EOS>"
+      },
+      {
+        "timestamp": "2026-08-10T16:48:00",
+        "participant_full_id": "2753-1-1-0002",
+        "user_text": "Yes, and I keep comparing myself with the other interns. Some of them were extremely good, and I start wondering whether I was actually good enough.",
+        "ai_text": "Being surrounded by talented people can easily make you question yourself, especially when you're waiting for an evaluation. But their strengths don't cancel out what you brought to the internship. You were selected for the internship, completed it, and are now waiting for a potential full-time opportunity. That's already evidence that you belonged in that environment.",
+        "context": "",
+        "strategy": "Affirmation, Provide Different Perspectives",
+        "raw_physio": {
+          "EDA": [
+            0.335,
+            0.362,
+            0.32,
+            0.257
+          ],
+          "PR": [
+            78.0,
+            87.3,
+            96.7,
+            106.0
+          ],
+          "SkinTemp": [
+            30.26,
+            29.61,
+            29.85,
+            30.37
+          ],
+          "ACCEL": [
+            0.006,
+            0.004,
+            0.001,
+            0.004
+          ],
+          "PRV": null,
+          "RESP": [
+            11.53,
+            13.54,
+            15.55,
+            17.56
+          ],
+          "ACT_COUNT": [
+            54.0,
+            51.6,
+            49.3,
+            46.9
+          ]
+        },
+        "physio_summary_per_channel": {
+          "PR": "Pulse rate increasing sharply over the past 6 minutes, moving from 78.0 to 106.0 bpm.",
+          "SkinTemp": "Temperature readings moved sharply and climbing through the past 6 minutes, ending at 30.37 degC.",
+          "EDA": "During the past 6 minutes, EDA registered a upward shift to 0.26 uS, with without any notable peaks or valleys.",
+          "ACCEL": "Movement levels drifted easing across the past 6 minutes to 0.0 g, without any notable peaks or valleys.",
+          "ACT_CLASS": "The state remained generic across the full span of the past 6 minutes.",
+          "RESP": "Over the past 6 minutes, breathing pace climbing sharply, now near 17.56 breaths per minute."
+        },
+        "physio_summary_fusion": "Over the past 6 minutes, EDA and PR and SkinTemp and ACCEL and RESP shifted, while movement remained generic (LPA intensity), suggesting the change is not explained by movement. EDA and PR and SkinTemp and ACCEL and RESP increased even as the body stayed still, a pattern more consistent with emotional than physical arousal.",
+        "stress_score": 5,
+        "stress_level": "Moderate stress",
+        "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Yes, and I keep comparing myself with the other interns. Some of them were extremely good, and I start wondering whether I was actually good enough.\n\n### Response:\nStrategy: Affirmation, Provide Different Perspectives\n\nResponse: Being surrounded by talented people can easily make you question yourself, especially when you're waiting for an evaluation. But their strengths don't cancel out what you brought to the internship. You were selected for the internship, completed it, and are now waiting for a potential full-time opportunity. That's already evidence that you belonged in that environment.<EOS>",
+        "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Yes, and I keep comparing myself with the other interns. Some of them were extremely good, and I start wondering whether I was actually good enough.\nPhysiological Signals: Over the past 6 minutes, EDA and PR and SkinTemp and ACCEL and RESP shifted, while movement remained generic (LPA intensity), suggesting the change is not explained by movement. EDA and PR and SkinTemp and ACCEL and RESP increased even as the body stayed still, a pattern more consistent with emotional than physical arousal. Simultaneously, Pulse rate increasing sharply over the past 6 minutes, moving from 78.0 to 106.0 bpm. On top of that, Temperature readings moved sharply and climbing through the past 6 minutes, ending at 30.37 degC. In parallel, During the past 6 minutes, EDA registered a upward shift to 0.26 uS, with without any notable peaks or valleys. Meanwhile, Movement levels drifted easing across the past 6 minutes to 0.0 g, without any notable peaks or valleys. Meanwhile, The state remained generic across the full span of the past 6 minutes. Additionally, Over the past 6 minutes, breathing pace climbing sharply, now near 17.56 breaths per minute. In parallel, Factoring in an activity count of 46.9, the composite indicator over the past 6 minutes reads 5, suggesting Moderate stress.\n\n### Response:\nStrategy: Affirmation, Provide Different Perspectives\n\nResponse: Being surrounded by talented people can easily make you question yourself, especially when you're waiting for an evaluation. But their strengths don't cancel out what you brought to the internship. You were selected for the internship, completed it, and are now waiting for a potential full-time opportunity. That's already evidence that you belonged in that environment.<EOS>"
+      },
+      {
+        "timestamp": "2026-08-10T16:52:00",
+        "participant_full_id": "2753-1-1-0002",
+        "user_text": "I think the offer feels so important because if I get it, I won't have to worry about placements anymore. If I don't, I'll have to start preparing again from scratch.",
+        "ai_text": "That makes the uncertainty feel much heavier because the offer represents security, not just another job opportunity. You're probably imagining how much easier everything would feel if you had that certainty. It's completely understandable to want that, but even if you have to prepare again, it wouldn't mean you're starting from zero. You'd be going into the process with valuable internship experience behind you.",
+        "context": "",
+        "strategy": "Emotional Validation, Provide Different Perspectives",
+        "raw_physio": {
+          "EDA": [
+            0.288,
+            0.268,
+            0.286,
+            0.268,
+            0.253
+          ],
+          "PR": [
+            79.1,
+            85.3,
+            91.4,
+            97.6,
+            103.8
+          ],
+          "SkinTemp": [
+            30.47,
+            30.27,
+            30.26,
+            30.28,
+            30.23
+          ],
+          "ACCEL": [
+            0.002,
+            0.004,
+            0.003,
+            0.001,
+            0.005
+          ],
+          "PRV": null,
+          "RESP": [
+            10.08,
+            10.84,
+            11.61,
+            12.37,
+            13.13
+          ],
+          "ACT_COUNT": [
+            61.0,
+            64.1,
+            67.2,
+            70.2,
+            73.3
+          ]
+        },
+        "physio_summary_per_channel": {
+          "PR": "Heart rate drifted increasing across the past 6 minutes to 103.8 bpm, without any notable peaks or valleys.",
+          "EDA": "Over the past 6 minutes, electrodermal activity moved sharply in a decreasing direction, from 0.34 to 0.25 uS.",
+          "ACCEL": "The motion signal was dropping for the past 6 minutes, smooth, around 0.01 g.",
+          "SkinTemp": "Skin temperature unchanged slightly over the past 6 minutes, moving from 30.26 to 30.23 degC.",
+          "ACT_CLASS": "A change in activity was noted over the past 6 minutes, moving from generic to still.",
+          "RESP": "RESP showed a upward trend across the past 6 minutes, with highly fluctuating pattern, now 13.13 breaths per minute."
+        },
+        "physio_summary_fusion": "Over the past 6 minutes, EDA and PR and ACCEL and RESP shifted against a backdrop of still activity and minimal walking, likely activity-related. EDA and PR and ACCEL and RESP rose alongside increased movement, so the change is likely activity-related rather than a pure stress response.",
+        "stress_score": 2,
+        "stress_level": "Mild stress",
+        "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I think the offer feels so important because if I get it, I won't have to worry about placements anymore. If I don't, I'll have to start preparing again from scratch.\n\n### Response:\nStrategy: Emotional Validation, Provide Different Perspectives\n\nResponse: That makes the uncertainty feel much heavier because the offer represents security, not just another job opportunity. You're probably imagining how much easier everything would feel if you had that certainty. It's completely understandable to want that, but even if you have to prepare again, it wouldn't mean you're starting from zero. You'd be going into the process with valuable internship experience behind you.<EOS>",
+        "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I think the offer feels so important because if I get it, I won't have to worry about placements anymore. If I don't, I'll have to start preparing again from scratch.\nPhysiological Signals: Over the past 6 minutes, EDA and PR and ACCEL and RESP shifted against a backdrop of still activity and minimal walking, likely activity-related. EDA and PR and ACCEL and RESP rose alongside increased movement, so the change is likely activity-related rather than a pure stress response. Additionally, Heart rate drifted increasing across the past 6 minutes to 103.8 bpm, without any notable peaks or valleys. Also, Over the past 6 minutes, electrodermal activity moved sharply in a decreasing direction, from 0.34 to 0.25 uS. Further, The motion signal was dropping for the past 6 minutes, smooth, around 0.01 g. Skin temperature unchanged slightly over the past 6 minutes, moving from 30.26 to 30.23 degC. Additionally, A change in activity was noted over the past 6 minutes, moving from generic to still. Meanwhile, RESP showed a upward trend across the past 6 minutes, with highly fluctuating pattern, now 13.13 breaths per minute. At the same time, Movement count of 73.3 contributes to a combined stress score of 2 over the past 6 minutes, consistent with Mild stress.\n\n### Response:\nStrategy: Emotional Validation, Provide Different Perspectives\n\nResponse: That makes the uncertainty feel much heavier because the offer represents security, not just another job opportunity. You're probably imagining how much easier everything would feel if you had that certainty. It's completely understandable to want that, but even if you have to prepare again, it wouldn't mean you're starting from zero. You'd be going into the process with valuable internship experience behind you.<EOS>"
+      },
+      {
+        "timestamp": "2026-08-10T16:57:00",
+        "participant_full_id": "2753-1-1-0002",
+        "user_text": "That's true, but sometimes I feel like I'm already experiencing the disappointment before anything has even happened.",
+        "ai_text": "That's a really important thing to notice. Your mind is trying to protect you by preparing for the possibility of rejection, but in doing that, you're experiencing the pain of an outcome that hasn't happened. You don't have to choose between being hopeful and being prepared right now. You can leave the outcome undecided and just deal with what is actually in front of you today.",
+        "context": "",
+        "strategy": "Reflective Statements, Normalize Experiences",
+        "raw_physio": {
+          "EDA": [
+            0.3,
+            0.318,
+            0.318,
+            0.265
+          ],
+          "PR": [
+            83.8,
+            87.1,
+            90.3,
+            93.6
+          ],
+          "SkinTemp": [
+            30.06,
+            30.0,
+            30.13,
+            30.61
+          ],
+          "ACCEL": [
+            0.004,
+            0.006,
+            0.003,
+            0.004
+          ],
+          "PRV": null,
+          "RESP": [
+            12.33,
+            14.05,
+            15.76,
+            17.48
+          ],
+          "ACT_COUNT": [
+            57.1,
+            57.5,
+            58.0,
+            58.4
+          ]
+        },
+        "physio_summary_per_channel": {
+          "PR": "Pulse rate increasing sharply across the past 6 minutes, showing highly fluctuating activity, now 93.6 bpm.",
+          "EDA": "Electrodermal readings falling slightly across the past 6 minutes to 0.27 uS, without any notable peaks or valleys.",
+          "SkinTemp": "Across the past 6 minutes, skin temperature held elevating near 30.61 degC.",
+          "ACCEL": "Across the past 6 minutes, overall motion trended increasing from 0.0 to 0.0 g.",
+          "ACT_CLASS": "The participant stayed still for the duration of the past 6 minutes.",
+          "RESP": "Over the past 6 minutes, breathing rate remained climbing, near 17.48 breaths per minute."
+        },
+        "physio_summary_fusion": "Across the past 6 minutes, EDA and PR and SkinTemp and ACCEL and RESP showed a shifted pattern, occurring while the participant was still and positioned reclining/lying, likely activity-related. EDA and PR and SkinTemp and ACCEL and RESP rose in step with heightened motion, indicating the signal is at least partly explained by movement rather than stress alone.",
+        "stress_score": 3,
+        "stress_level": "Mild stress",
+        "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: That's true, but sometimes I feel like I'm already experiencing the disappointment before anything has even happened.\n\n### Response:\nStrategy: Reflective Statements, Normalize Experiences\n\nResponse: That's a really important thing to notice. Your mind is trying to protect you by preparing for the possibility of rejection, but in doing that, you're experiencing the pain of an outcome that hasn't happened. You don't have to choose between being hopeful and being prepared right now. You can leave the outcome undecided and just deal with what is actually in front of you today.<EOS>",
+        "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: That's true, but sometimes I feel like I'm already experiencing the disappointment before anything has even happened.\nPhysiological Signals: Across the past 6 minutes, EDA and PR and SkinTemp and ACCEL and RESP showed a shifted pattern, occurring while the participant was still and positioned reclining/lying, likely activity-related. EDA and PR and SkinTemp and ACCEL and RESP rose in step with heightened motion, indicating the signal is at least partly explained by movement rather than stress alone. Further, Pulse rate increasing sharply across the past 6 minutes, showing highly fluctuating activity, now 93.6 bpm. Also, Electrodermal readings falling slightly across the past 6 minutes to 0.27 uS, without any notable peaks or valleys. Also, Across the past 6 minutes, skin temperature held elevating near 30.61 degC. Simultaneously, Across the past 6 minutes, overall motion trended increasing from 0.0 to 0.0 g. At the same time, The participant stayed still for the duration of the past 6 minutes. In parallel, Over the past 6 minutes, breathing rate remained climbing, near 17.48 breaths per minute. In parallel, Factoring in an activity count of 58.4, the composite indicator over the past 6 minutes reads 3, suggesting Mild stress.\n\n### Response:\nStrategy: Reflective Statements, Normalize Experiences\n\nResponse: That's a really important thing to notice. Your mind is trying to protect you by preparing for the possibility of rejection, but in doing that, you're experiencing the pain of an outcome that hasn't happened. You don't have to choose between being hopeful and being prepared right now. You can leave the outcome undecided and just deal with what is actually in front of you today.<EOS>"
+      },
+      {
+        "timestamp": "2026-08-10T17:01:00",
+        "participant_full_id": "2753-1-1-0002",
+        "user_text": "I've also started feeling guilty whenever I relax. I think I should be preparing for placements instead of watching something or taking a break.",
+        "ai_text": "It sounds like the uncertainty has turned even your breaks into something you feel you need to justify. Preparing can definitely help you feel more secure, but you don't need to be productive every minute to prove that you're taking your future seriously. A small amount of preparation each day could be enough while still giving yourself permission to rest.",
+        "context": "",
+        "strategy": "Reframe Negative Thoughts, Collaborative Planning",
+        "raw_physio": {
+          "EDA": [
+            0.209,
+            0.225,
+            0.203,
+            0.232,
+            0.139
+          ],
+          "PR": [
+            75.0,
+            79.8,
+            84.6,
+            89.4,
+            94.2
+          ],
+          "SkinTemp": [
+            30.33,
+            30.7,
+            30.22,
+            30.24,
+            30.74
+          ],
+          "ACCEL": [
+            0.008,
+            0.003,
+            0.008,
+            0.004,
+            0.003
+          ],
+          "PRV": null,
+          "RESP": [
+            11.65,
+            11.76,
+            11.88,
+            11.99,
+            12.1
+          ],
+          "ACT_COUNT": [
+            72.9,
+            63.2,
+            53.4,
+            43.6,
+            33.9
+          ]
+        },
+        "physio_summary_per_channel": {
+          "EDA": "The electrodermal signal was decreasing for the past 6 minutes, showing highly fluctuating behavior around 0.14 uS.",
+          "PR": "Over the past 6 minutes, heart rate stayed increasing around 94.2 beats per minute.",
+          "SkinTemp": "Over the past 6 minutes, peripheral temperature stayed elevating, around 30.74 degC.",
+          "ACCEL": "Accelerometer readings moved slightly and downward through the past 6 minutes, ending at 0.0 g.",
+          "ACT_CLASS": "The state remained still across the full span of the past 6 minutes.",
+          "RESP": "Breathing rate dropping slightly during the past 6 minutes, ending at 12.1 breaths per minute."
+        },
+        "physio_summary_fusion": "Across the past 6 minutes, taking reclining/lying posture and sedentary intensity into account, EDA and PR and SkinTemp and ACCEL and RESP shifted, not explained by movement. EDA and PR and SkinTemp and ACCEL and RESP rose while ACCEL and ACT_COUNT showed no corresponding movement, suggesting this arousal is not explained by physical activity.",
+        "stress_score": 2,
+        "stress_level": "Mild stress",
+        "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I've also started feeling guilty whenever I relax. I think I should be preparing for placements instead of watching something or taking a break.\n\n### Response:\nStrategy: Reframe Negative Thoughts, Collaborative Planning\n\nResponse: It sounds like the uncertainty has turned even your breaks into something you feel you need to justify. Preparing can definitely help you feel more secure, but you don't need to be productive every minute to prove that you're taking your future seriously. A small amount of preparation each day could be enough while still giving yourself permission to rest.<EOS>",
+        "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I've also started feeling guilty whenever I relax. I think I should be preparing for placements instead of watching something or taking a break.\nPhysiological Signals: Across the past 6 minutes, taking reclining/lying posture and sedentary intensity into account, EDA and PR and SkinTemp and ACCEL and RESP shifted, not explained by movement. EDA and PR and SkinTemp and ACCEL and RESP rose while ACCEL and ACT_COUNT showed no corresponding movement, suggesting this arousal is not explained by physical activity. Simultaneously, The electrodermal signal was decreasing for the past 6 minutes, showing highly fluctuating behavior around 0.14 uS. Additionally, Over the past 6 minutes, heart rate stayed increasing around 94.2 beats per minute. Simultaneously, Over the past 6 minutes, peripheral temperature stayed elevating, around 30.74 degC. At the same time, Accelerometer readings moved slightly and downward through the past 6 minutes, ending at 0.0 g. Notably, The state remained still across the full span of the past 6 minutes. On top of that, Breathing rate dropping slightly during the past 6 minutes, ending at 12.1 breaths per minute. Notably, Combining the signals above with an activity count of 33.9, the resulting score over the past 6 minutes is 2 - Mild stress.\n\n### Response:\nStrategy: Reframe Negative Thoughts, Collaborative Planning\n\nResponse: It sounds like the uncertainty has turned even your breaks into something you feel you need to justify. Preparing can definitely help you feel more secure, but you don't need to be productive every minute to prove that you're taking your future seriously. A small amount of preparation each day could be enough while still giving yourself permission to rest.<EOS>"
+      },
+      {
+        "timestamp": "2026-08-10T17:06:00",
+        "participant_full_id": "2753-1-1-0002",
+        "user_text": "The problem is that everyone around me thinks I'll get the offer. I haven't really told them how anxious I actually am because I don't want to disappoint them.",
+        "ai_text": "That can feel surprisingly lonely \u00e2\u0080\u0094 having people believe in you while you're privately worrying that things might not work out. You don't have to protect everyone from your uncertainty by pretending you're completely confident. Even telling one person you trust that the waiting has been difficult could give you a place to put some of that pressure down.",
+        "context": "",
+        "strategy": "Empathetic Statements, Emotional Validation",
+        "raw_physio": {
+          "EDA": [
+            0.223,
+            0.234,
+            0.241,
+            0.149
+          ],
+          "PR": [
+            82.3,
+            86.9,
+            91.6,
+            96.2
+          ],
+          "SkinTemp": [
+            30.09,
+            30.35,
+            30.79,
+            30.11
+          ],
+          "ACCEL": [
+            0.003,
+            0.007,
+            0.006,
+            0.003
+          ],
+          "PRV": null,
+          "RESP": [
+            12.53,
+            14.12,
+            15.72,
+            17.31
+          ],
+          "ACT_COUNT": [
+            46.5,
+            42.5,
+            38.4,
+            34.4
+          ]
+        },
+        "physio_summary_per_channel": {
+          "PR": "Pulse rate moved sharply in a increasing direction over the past 6 minutes, from 75.0 to 96.2 bpm.",
+          "EDA": "A decreasing EDA pattern was observed over the past 6 minutes, mildly fluctuating, reaching 0.15 uS.",
+          "SkinTemp": "Skin temperature drifted declining across the past 6 minutes to 30.11 degC, without any notable peaks or valleys.",
+          "ACCEL": "Accelerometer output declining slightly across the past 6 minutes, showing smooth activity, now 0.0 g.",
+          "ACT_CLASS": "For the past 6 minutes, the participant's activity did not shift from still.",
+          "RESP": "Over the past 6 minutes, breathing pace upward sharply, now near 17.31 breaths per minute."
+        },
+        "physio_summary_fusion": "During the past 6 minutes, EDA and PR and SkinTemp and ACCEL and RESP shifted; movement counts and MET (~0.9) suggest this is not explained by movement. EDA and PR and SkinTemp and ACCEL and RESP increased while the participant remained sedentary, so the change cannot be attributed to physical exertion.",
+        "stress_score": 3,
+        "stress_level": "Mild stress",
+        "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: The problem is that everyone around me thinks I'll get the offer. I haven't really told them how anxious I actually am because I don't want to disappoint them.\n\n### Response:\nStrategy: Empathetic Statements, Emotional Validation\n\nResponse: That can feel surprisingly lonely \u00e2\u0080\u0094 having people believe in you while you're privately worrying that things might not work out. You don't have to protect everyone from your uncertainty by pretending you're completely confident. Even telling one person you trust that the waiting has been difficult could give you a place to put some of that pressure down.<EOS>",
+        "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: The problem is that everyone around me thinks I'll get the offer. I haven't really told them how anxious I actually am because I don't want to disappoint them.\nPhysiological Signals: During the past 6 minutes, EDA and PR and SkinTemp and ACCEL and RESP shifted; movement counts and MET (~0.9) suggest this is not explained by movement. EDA and PR and SkinTemp and ACCEL and RESP increased while the participant remained sedentary, so the change cannot be attributed to physical exertion. Meanwhile, Pulse rate moved sharply in a increasing direction over the past 6 minutes, from 75.0 to 96.2 bpm. Additionally, A decreasing EDA pattern was observed over the past 6 minutes, mildly fluctuating, reaching 0.15 uS. Also, Skin temperature drifted declining across the past 6 minutes to 30.11 degC, without any notable peaks or valleys. Further, Accelerometer output declining slightly across the past 6 minutes, showing smooth activity, now 0.0 g. Additionally, For the past 6 minutes, the participant's activity did not shift from still. Additionally, Over the past 6 minutes, breathing pace upward sharply, now near 17.31 breaths per minute. Notably, Factoring in an activity count of 34.4, the composite indicator over the past 6 minutes reads 3, suggesting Mild stress.\n\n### Response:\nStrategy: Empathetic Statements, Emotional Validation\n\nResponse: That can feel surprisingly lonely \u00e2\u0080\u0094 having people believe in you while you're privately worrying that things might not work out. You don't have to protect everyone from your uncertainty by pretending you're completely confident. Even telling one person you trust that the waiting has been difficult could give you a place to put some of that pressure down.<EOS>"
+      },
+      {
+        "timestamp": "2026-08-10T17:10:00",
+        "participant_full_id": "2753-1-1-0002",
+        "user_text": "Sometimes I also take the silence personally. I start thinking maybe my manager saw something lacking in me that I didn't notice.",
+        "ai_text": "I understand why your mind goes there when you're waiting for feedback about something so important. But company decisions can depend on many things beyond one person's performance, including approvals, timelines, hiring plans, and available positions. You don't have enough information right now to turn the silence into a judgment about your abilities.",
+        "context": "",
+        "strategy": "Reflective Statements, Reframe Negative Thoughts",
+        "raw_physio": {
+          "EDA": [
+            0.274,
+            0.274,
+            0.273,
+            0.236,
+            0.212
+          ],
+          "PR": [
+            73.9,
+            80.0,
+            86.1,
+            92.1,
+            98.2
+          ],
+          "SkinTemp": [
+            30.4,
+            30.74,
+            30.78,
+            30.13,
+            30.67
+          ],
+          "ACCEL": [
+            0.004,
+            0.021,
+            0.015,
+            0.062,
+            0.038
+          ],
+          "PRV": null,
+          "RESP": [
+            11.75,
+            11.82,
+            11.89,
+            11.97,
+            12.04
+          ],
+          "ACT_COUNT": [
+            61.5,
+            55.2,
+            48.9,
+            42.5,
+            36.2
+          ]
+        },
+        "physio_summary_per_channel": {
+          "PR": "Over the past 6 minutes, heart rate stayed rising around 98.2 beats per minute.",
+          "ACCEL": "Over the past 6 minutes, physical activity intensity upward sharply, now near 0.04 g.",
+          "SkinTemp": "Over the past 6 minutes, peripheral temperature stayed climbing, around 30.67 degC.",
+          "EDA": "The sympathetic arousal marker (EDA) decreasing slightly over the past 6 minutes, now 0.21 uS.",
+          "ACT_CLASS": "The still state held steady for the past 6 minutes.",
+          "RESP": "Across the past 6 minutes, respiratory rate held downward, close to 12.04 breaths per minute."
+        },
+        "physio_summary_fusion": "During the past 6 minutes, EDA and PR and SkinTemp and ACCEL and RESP shifted, occurring alongside still movement and some walking activity, suggesting this is not explained by movement. Movement stayed minimal while EDA and PR and SkinTemp and ACCEL and RESP rose, pointing toward a stress response rather than exertion.",
+        "stress_score": 2,
+        "stress_level": "Mild stress",
+        "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Sometimes I also take the silence personally. I start thinking maybe my manager saw something lacking in me that I didn't notice.\n\n### Response:\nStrategy: Reflective Statements, Reframe Negative Thoughts\n\nResponse: I understand why your mind goes there when you're waiting for feedback about something so important. But company decisions can depend on many things beyond one person's performance, including approvals, timelines, hiring plans, and available positions. You don't have enough information right now to turn the silence into a judgment about your abilities.<EOS>",
+        "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Sometimes I also take the silence personally. I start thinking maybe my manager saw something lacking in me that I didn't notice.\nPhysiological Signals: During the past 6 minutes, EDA and PR and SkinTemp and ACCEL and RESP shifted, occurring alongside still movement and some walking activity, suggesting this is not explained by movement. Movement stayed minimal while EDA and PR and SkinTemp and ACCEL and RESP rose, pointing toward a stress response rather than exertion. Notably, Over the past 6 minutes, heart rate stayed rising around 98.2 beats per minute. Alongside this, Over the past 6 minutes, physical activity intensity upward sharply, now near 0.04 g. Meanwhile, Over the past 6 minutes, peripheral temperature stayed climbing, around 30.67 degC. At the same time, The sympathetic arousal marker (EDA) decreasing slightly over the past 6 minutes, now 0.21 uS. On top of that, The still state held steady for the past 6 minutes. At the same time, Across the past 6 minutes, respiratory rate held downward, close to 12.04 breaths per minute. At the same time, With activity count at 36.2, the composite stress score for the past 6 minutes is 2, indicating Mild stress.\n\n### Response:\nStrategy: Reflective Statements, Reframe Negative Thoughts\n\nResponse: I understand why your mind goes there when you're waiting for feedback about something so important. But company decisions can depend on many things beyond one person's performance, including approvals, timelines, hiring plans, and available positions. You don't have enough information right now to turn the silence into a judgment about your abilities.<EOS>"
+      },
+      {
+        "timestamp": "2026-08-10T17:15:00",
+        "participant_full_id": "2753-1-1-0002",
+        "user_text": "I guess I've started treating the offer as proof that my internship was successful. If I don't get it, I'll probably feel like I wasn't good enough.",
+        "ai_text": "I think that's one of the hardest parts of this for you. The offer has started carrying the meaning of \"I did well,\" when those are actually two different things. Your internship gave you experience, skills, and the opportunity to work in a demanding environment, regardless of the final decision. The outcome can matter to you without becoming a verdict on your ability.",
+        "context": "",
+        "strategy": "Reflective Statements, Affirmation",
+        "raw_physio": {
+          "EDA": [
+            0.255,
+            0.242,
+            0.24,
+            0.171
+          ],
+          "PR": [
+            81.6,
+            85.3,
+            89.1,
+            92.8
+          ],
+          "SkinTemp": [
+            30.16,
+            30.73,
+            30.51,
+            30.56
+          ],
+          "ACCEL": [
+            0.027,
+            0.008,
+            0.003,
+            0.003
+          ],
+          "PRV": null,
+          "RESP": [
+            11.62,
+            13.6,
+            15.59,
+            17.57
+          ],
+          "ACT_COUNT": [
+            78.5,
+            64.9,
+            51.4,
+            37.8
+          ]
+        },
+        "physio_summary_per_channel": {
+          "PR": "During the past 6 minutes, heart rate registered a growing shift to 92.8 bpm, without any notable peaks or valleys.",
+          "EDA": "A decreasing EDA pattern was observed over the past 6 minutes, mildly fluctuating, reaching 0.17 uS.",
+          "SkinTemp": "A increasing skin temperature pattern was observed over the past 6 minutes, mildly fluctuating, reaching 30.56 degC.",
+          "ACCEL": "Across the past 6 minutes, movement levels held dropping, near 0.0 g.",
+          "ACT_CLASS": "Over the past 6 minutes, activity transitioned from still toward generic.",
+          "RESP": "Breathing rate rising sharply during the past 6 minutes, ending at 17.57 breaths per minute."
+        },
+        "physio_summary_fusion": "Over the past 6 minutes, EDA and PR and SkinTemp and ACCEL and RESP shifted, while movement remained generic (sedentary intensity), suggesting the change is not explained by movement. Despite little to no movement recorded, EDA and PR and SkinTemp and ACCEL and RESP climbed noticeably - this decoupling from activity strengthens the case for a stress-driven response.",
+        "stress_score": 3,
+        "stress_level": "Mild stress",
+        "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I guess I've started treating the offer as proof that my internship was successful. If I don't get it, I'll probably feel like I wasn't good enough.\n\n### Response:\nStrategy: Reflective Statements, Affirmation\n\nResponse: I think that's one of the hardest parts of this for you. The offer has started carrying the meaning of \"I did well,\" when those are actually two different things. Your internship gave you experience, skills, and the opportunity to work in a demanding environment, regardless of the final decision. The outcome can matter to you without becoming a verdict on your ability.<EOS>",
+        "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I guess I've started treating the offer as proof that my internship was successful. If I don't get it, I'll probably feel like I wasn't good enough.\nPhysiological Signals: Over the past 6 minutes, EDA and PR and SkinTemp and ACCEL and RESP shifted, while movement remained generic (sedentary intensity), suggesting the change is not explained by movement. Despite little to no movement recorded, EDA and PR and SkinTemp and ACCEL and RESP climbed noticeably - this decoupling from activity strengthens the case for a stress-driven response. Further, During the past 6 minutes, heart rate registered a growing shift to 92.8 bpm, without any notable peaks or valleys. Further, A decreasing EDA pattern was observed over the past 6 minutes, mildly fluctuating, reaching 0.17 uS. On top of that, A increasing skin temperature pattern was observed over the past 6 minutes, mildly fluctuating, reaching 30.56 degC. Further, Across the past 6 minutes, movement levels held dropping, near 0.0 g. Meanwhile, Over the past 6 minutes, activity transitioned from still toward generic. Meanwhile, Breathing rate rising sharply during the past 6 minutes, ending at 17.57 breaths per minute. In parallel, Movement count of 37.8 contributes to a combined stress score of 3 over the past 6 minutes, consistent with Mild stress.\n\n### Response:\nStrategy: Reflective Statements, Affirmation\n\nResponse: I think that's one of the hardest parts of this for you. The offer has started carrying the meaning of \"I did well,\" when those are actually two different things. Your internship gave you experience, skills, and the opportunity to work in a demanding environment, regardless of the final decision. The outcome can matter to you without becoming a verdict on your ability.<EOS>"
+      },
+      {
+        "timestamp": "2026-08-10T17:19:00",
+        "participant_full_id": "2753-1-1-0002",
+        "user_text": "I still really want the offer though. I don't want to convince myself that I don't care just so I can stop feeling anxious.",
+        "ai_text": "You don't have to convince yourself not to care. Of course you want it, and there's nothing wrong with hoping strongly for something you've worked hard for. The goal isn't to make the outcome meaningless; it's to keep the uncertainty from taking over your entire day. You can want the offer deeply and still take care of yourself while you wait.",
+        "context": "",
+        "strategy": "Emotional Validation, Normalize Experiences",
+        "raw_physio": {
+          "EDA": [
+            0.368,
+            0.329,
+            0.322,
+            0.317,
+            0.249
+          ],
+          "PR": [
+            83.9,
+            87.4,
+            90.8,
+            94.3,
+            97.8
+          ],
+          "SkinTemp": [
+            30.7,
+            30.92,
+            30.98,
+            31.1,
+            31.29
+          ],
+          "ACCEL": [
+            0.003,
+            0.003,
+            0.003,
+            0.005,
+            0.003
+          ],
+          "PRV": null,
+          "RESP": [
+            10.66,
+            11.45,
+            12.23,
+            13.02,
+            13.81
+          ],
+          "ACT_COUNT": [
+            65.2,
+            62.6,
+            60.0,
+            57.3,
+            54.7
+          ]
+        },
+        "physio_summary_per_channel": {
+          "PR": "Across the past 6 minutes, heart rate trended increasing from 81.6 to 97.8 bpm.",
+          "SkinTemp": "Skin temperature showed a climbing pattern across the past 6 minutes, with mildly fluctuating change, now 31.29 degC.",
+          "ACCEL": "Across the past 6 minutes, overall motion trended declining from 0.03 to 0.0 g.",
+          "EDA": "Across the past 6 minutes, electrodermal activity showed a falling pattern, settling around 0.25 uS.",
+          "ACT_CLASS": "The recorded state shifted from generic to still over the past 6 minutes.",
+          "RESP": "RESP showed a growing trend across the past 6 minutes, with highly fluctuating pattern, now 13.81 breaths per minute."
+        },
+        "physio_summary_fusion": "Over the past 6 minutes, physiological signals (EDA and PR and SkinTemp and ACCEL and RESP) shifted, with activity remaining still - likely activity-related. Because both arousal and activity increased together, this pattern is more consistent with exertion than emotional stress.",
+        "stress_score": 2,
+        "stress_level": "Mild stress",
+        "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I still really want the offer though. I don't want to convince myself that I don't care just so I can stop feeling anxious.\n\n### Response:\nStrategy: Emotional Validation, Normalize Experiences\n\nResponse: You don't have to convince yourself not to care. Of course you want it, and there's nothing wrong with hoping strongly for something you've worked hard for. The goal isn't to make the outcome meaningless; it's to keep the uncertainty from taking over your entire day. You can want the offer deeply and still take care of yourself while you wait.<EOS>",
+        "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I still really want the offer though. I don't want to convince myself that I don't care just so I can stop feeling anxious.\nPhysiological Signals: Over the past 6 minutes, physiological signals (EDA and PR and SkinTemp and ACCEL and RESP) shifted, with activity remaining still - likely activity-related. Because both arousal and activity increased together, this pattern is more consistent with exertion than emotional stress. Alongside this, Across the past 6 minutes, heart rate trended increasing from 81.6 to 97.8 bpm. On top of that, Skin temperature showed a climbing pattern across the past 6 minutes, with mildly fluctuating change, now 31.29 degC. Meanwhile, Across the past 6 minutes, overall motion trended declining from 0.03 to 0.0 g. At the same time, Across the past 6 minutes, electrodermal activity showed a falling pattern, settling around 0.25 uS. Alongside this, The recorded state shifted from generic to still over the past 6 minutes. Meanwhile, RESP showed a growing trend across the past 6 minutes, with highly fluctuating pattern, now 13.81 breaths per minute. Notably, With activity count at 54.7, the composite stress score for the past 6 minutes is 2, indicating Mild stress.\n\n### Response:\nStrategy: Emotional Validation, Normalize Experiences\n\nResponse: You don't have to convince yourself not to care. Of course you want it, and there's nothing wrong with hoping strongly for something you've worked hard for. The goal isn't to make the outcome meaningless; it's to keep the uncertainty from taking over your entire day. You can want the offer deeply and still take care of yourself while you wait.<EOS>"
+      },
+      {
+        "timestamp": "2026-08-10T17:24:00",
+        "participant_full_id": "2753-1-1-0002",
+        "user_text": "Maybe I should start preparing for placements again, but part of me feels like doing that means I'm accepting that I won't get the offer.",
+        "ai_text": "Preparing doesn't mean you've given up on the offer. It simply means you're taking care of the part of your future that is still within your control. You can keep hoping for the offer while quietly building a backup plan. Having another option may actually make the waiting feel less frightening.",
+        "context": "",
+        "strategy": "Reframe Negative Thoughts, Suggest Options",
+        "raw_physio": {
+          "EDA": [
+            0.231,
+            0.214,
+            0.227,
+            0.179
+          ],
+          "PR": [
+            73.7,
+            83.6,
+            93.5,
+            103.4
+          ],
+          "SkinTemp": [
+            31.06,
+            30.76,
+            31.41,
+            31.63
+          ],
+          "ACCEL": [
+            0.003,
+            0.004,
+            0.012,
+            0.003
+          ],
+          "PRV": null,
+          "RESP": [
+            12.5,
+            14.19,
+            15.89,
+            17.58
+          ],
+          "ACT_COUNT": [
+            71.6,
+            60.2,
+            48.8,
+            37.4
+          ]
+        },
+        "physio_summary_per_channel": {
+          "EDA": "Skin conductance drifted declining across the past 6 minutes to 0.18 uS, without any notable peaks or valleys.",
+          "PR": "Pulse rate increasing sharply across the past 6 minutes, showing highly fluctuating activity, now 103.4 bpm.",
+          "SkinTemp": "Skin temperature moved sharply in a rising direction over the past 6 minutes, from 30.7 to 31.63 degC.",
+          "ACCEL": "Accelerometer output downward slightly across the past 6 minutes, showing smooth activity, now 0.0 g.",
+          "ACT_CLASS": "No change in activity state was observed over the past 6 minutes; it remained still.",
+          "RESP": "Respiratory rate moved sharply in a rising direction over the past 6 minutes, now 17.58."
+        },
+        "physio_summary_fusion": "Over the past 6 minutes, EDA and PR and SkinTemp and ACCEL and RESP shifted, while movement remained still (sedentary intensity), suggesting the change is not explained by movement. Despite little to no movement recorded, EDA and PR and SkinTemp and ACCEL and RESP climbed noticeably - this decoupling from activity strengthens the case for a stress-driven response.",
+        "stress_score": 3,
+        "stress_level": "Mild stress",
+        "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Maybe I should start preparing for placements again, but part of me feels like doing that means I'm accepting that I won't get the offer.\n\n### Response:\nStrategy: Reframe Negative Thoughts, Suggest Options\n\nResponse: Preparing doesn't mean you've given up on the offer. It simply means you're taking care of the part of your future that is still within your control. You can keep hoping for the offer while quietly building a backup plan. Having another option may actually make the waiting feel less frightening.<EOS>",
+        "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Maybe I should start preparing for placements again, but part of me feels like doing that means I'm accepting that I won't get the offer.\nPhysiological Signals: Over the past 6 minutes, EDA and PR and SkinTemp and ACCEL and RESP shifted, while movement remained still (sedentary intensity), suggesting the change is not explained by movement. Despite little to no movement recorded, EDA and PR and SkinTemp and ACCEL and RESP climbed noticeably - this decoupling from activity strengthens the case for a stress-driven response. Simultaneously, Skin conductance drifted declining across the past 6 minutes to 0.18 uS, without any notable peaks or valleys. At the same time, Pulse rate increasing sharply across the past 6 minutes, showing highly fluctuating activity, now 103.4 bpm. At the same time, Skin temperature moved sharply in a rising direction over the past 6 minutes, from 30.7 to 31.63 degC. Also, Accelerometer output downward slightly across the past 6 minutes, showing smooth activity, now 0.0 g. Additionally, No change in activity state was observed over the past 6 minutes; it remained still. Notably, Respiratory rate moved sharply in a rising direction over the past 6 minutes, now 17.58. Further, Combining the signals above with an activity count of 37.4, the resulting score over the past 6 minutes is 3 - Mild stress.\n\n### Response:\nStrategy: Reframe Negative Thoughts, Suggest Options\n\nResponse: Preparing doesn't mean you've given up on the offer. It simply means you're taking care of the part of your future that is still within your control. You can keep hoping for the offer while quietly building a backup plan. Having another option may actually make the waiting feel less frightening.<EOS>"
+      },
+      {
+        "timestamp": "2026-08-10T17:28:00",
+        "participant_full_id": "2753-1-1-0002",
+        "user_text": "That actually makes me feel a little better. I think I've been acting like I have to either believe I'll get the offer or prepare for rejection.",
+        "ai_text": "You don't have to choose between those two extremes. You can be hopeful without being completely dependent on the outcome, and you can prepare without assuming the worst. For now, it might help to think of it as keeping two doors open rather than deciding which one you'll walk through.",
+        "context": "",
+        "strategy": "Provide Different Perspectives, Affirmation",
+        "raw_physio": {
+          "EDA": [
+            0.18,
+            0.18,
+            0.178,
+            0.19,
+            0.145
+          ],
+          "PR": [
+            72.6,
+            77.8,
+            82.9,
+            88.0,
+            93.2
+          ],
+          "SkinTemp": [
+            30.96,
+            31.08,
+            31.5,
+            31.67,
+            31.7
+          ],
+          "ACCEL": [
+            0.008,
+            0.006,
+            0.061,
+            0.022,
+            0.005
+          ],
+          "PRV": null,
+          "RESP": [
+            11.38,
+            11.87,
+            12.35,
+            12.84,
+            13.32
+          ],
+          "ACT_COUNT": [
+            66.1,
+            64.5,
+            62.8,
+            61.2,
+            59.6
+          ]
+        },
+        "physio_summary_per_channel": {
+          "PR": "Pulse rate moved sharply in a elevating direction over the past 6 minutes, from 73.7 to 93.2 bpm.",
+          "EDA": "Over the past 6 minutes, electrodermal activity moved sharply in a declining direction, from 0.23 to 0.14 uS.",
+          "SkinTemp": "Surface temperature elevating moderately over the past 6 minutes, now 31.7 degC, without any notable peaks or valleys.",
+          "ACCEL": "Overall movement (accelerometer) increasing slightly over the past 6 minutes, moving from 0.0 to 0.01 g.",
+          "ACT_CLASS": "Activity type persisted as still through the past 6 minutes.",
+          "RESP": "The respiratory signal was growing for the past 6 minutes, highly fluctuating, around 13.32 breaths per minute."
+        },
+        "physio_summary_fusion": "Over the past 6 minutes, step count suggests some walking activity; EDA and PR and SkinTemp and ACCEL and RESP shifted, a response that is likely activity-related. EDA and PR and SkinTemp and ACCEL and RESP rose alongside increased movement, so the change is likely activity-related rather than a pure stress response.",
+        "stress_score": 2,
+        "stress_level": "Mild stress",
+        "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: That actually makes me feel a little better. I think I've been acting like I have to either believe I'll get the offer or prepare for rejection.\n\n### Response:\nStrategy: Provide Different Perspectives, Affirmation\n\nResponse: You don't have to choose between those two extremes. You can be hopeful without being completely dependent on the outcome, and you can prepare without assuming the worst. For now, it might help to think of it as keeping two doors open rather than deciding which one you'll walk through.<EOS>",
+        "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: That actually makes me feel a little better. I think I've been acting like I have to either believe I'll get the offer or prepare for rejection.\nPhysiological Signals: Over the past 6 minutes, step count suggests some walking activity; EDA and PR and SkinTemp and ACCEL and RESP shifted, a response that is likely activity-related. EDA and PR and SkinTemp and ACCEL and RESP rose alongside increased movement, so the change is likely activity-related rather than a pure stress response. Notably, Pulse rate moved sharply in a elevating direction over the past 6 minutes, from 73.7 to 93.2 bpm. At the same time, Over the past 6 minutes, electrodermal activity moved sharply in a declining direction, from 0.23 to 0.14 uS. Further, Surface temperature elevating moderately over the past 6 minutes, now 31.7 degC, without any notable peaks or valleys. Simultaneously, Overall movement (accelerometer) increasing slightly over the past 6 minutes, moving from 0.0 to 0.01 g. At the same time, Activity type persisted as still through the past 6 minutes. Notably, The respiratory signal was growing for the past 6 minutes, highly fluctuating, around 13.32 breaths per minute. Additionally, Factoring in an activity count of 59.6, the composite indicator over the past 6 minutes reads 2, suggesting Mild stress.\n\n### Response:\nStrategy: Provide Different Perspectives, Affirmation\n\nResponse: You don't have to choose between those two extremes. You can be hopeful without being completely dependent on the outcome, and you can prepare without assuming the worst. For now, it might help to think of it as keeping two doors open rather than deciding which one you'll walk through.<EOS>"
+      },
+      {
+        "timestamp": "2026-08-10T17:33:00",
+        "participant_full_id": "2753-1-1-0002",
+        "user_text": "I think I'll start preparing again tomorrow, but I'll also try to stop checking my email constantly. I still feel anxious, but I don't feel as helpless as I did earlier.",
+        "ai_text": "I'm glad you feel a little less helpless. You don't need to make the anxiety disappear before you can move forward; you just need to stop letting it decide everything you do. Keep hoping for the offer, prepare for what comes next, and let the company's timeline remain outside your control. Whatever answer eventually comes, you'll be better off knowing you kept moving forward while you waited.",
+        "context": "",
+        "strategy": "Affirmation, Stress Management",
+        "raw_physio": {
+          "EDA": 0.154,
+          "PR": 92.5,
+          "SkinTemp": 31.15,
+          "ACCEL": 0.002,
+          "PRV": null,
+          "RESP": 16.0,
+          "ACT_COUNT": 45.2
+        },
+        "physio_summary_per_channel": {
+          "PR": "No notable pulse rate change was detected over the past 6 minutes; pulse rate held near 92.5 bpm, and the source data was coarse.",
+          "EDA": "Electrodermal activity remained at a similar level (0.15 uS) across the past 6 minutes, based on limited resolution data.",
+          "SkinTemp": "No notable skin temperature shift was detected over the past 6 minutes; temperature held near 31.15 degC, and the data was coarse.",
+          "ACCEL": "Over the past 6 minutes, movement intensity stayed near a constant value (0.0 g) from a single aggregated point.",
+          "ACT_CLASS": "The activity label changed from still to generic within the past 6 minutes.",
+          "RESP": "RESP showed a growing trend across the past 6 minutes, with highly fluctuating pattern, now 16.0 breaths per minute."
+        },
+        "physio_summary_fusion": "Over the past 6 minutes, physiological data held near constant values sourced from aggregated readings, appearing not explained by movement.",
+        "stress_score": 3,
+        "stress_level": "Mild stress",
+        "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I think I'll start preparing again tomorrow, but I'll also try to stop checking my email constantly. I still feel anxious, but I don't feel as helpless as I did earlier.\n\n### Response:\nStrategy: Affirmation, Stress Management\n\nResponse: I'm glad you feel a little less helpless. You don't need to make the anxiety disappear before you can move forward; you just need to stop letting it decide everything you do. Keep hoping for the offer, prepare for what comes next, and let the company's timeline remain outside your control. Whatever answer eventually comes, you'll be better off knowing you kept moving forward while you waited.<EOS>",
+        "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I think I'll start preparing again tomorrow, but I'll also try to stop checking my email constantly. I still feel anxious, but I don't feel as helpless as I did earlier.\nPhysiological Signals: Over the past 6 minutes, physiological data held near constant values sourced from aggregated readings, appearing not explained by movement. On top of that, No notable pulse rate change was detected over the past 6 minutes; pulse rate held near 92.5 bpm, and the source data was coarse. Simultaneously, Electrodermal activity remained at a similar level (0.15 uS) across the past 6 minutes, based on limited resolution data. Meanwhile, No notable skin temperature shift was detected over the past 6 minutes; temperature held near 31.15 degC, and the data was coarse. Further, Over the past 6 minutes, movement intensity stayed near a constant value (0.0 g) from a single aggregated point. Alongside this, The activity label changed from still to generic within the past 6 minutes. Meanwhile, RESP showed a growing trend across the past 6 minutes, with highly fluctuating pattern, now 16.0 breaths per minute. Alongside this, With activity count at 45.2, the composite stress score for the past 6 minutes is 3, indicating Mild stress.\n\n### Response:\nStrategy: Affirmation, Stress Management\n\nResponse: I'm glad you feel a little less helpless. You don't need to make the anxiety disappear before you can move forward; you just need to stop letting it decide everything you do. Keep hoping for the offer, prepare for what comes next, and let the company's timeline remain outside your control. Whatever answer eventually comes, you'll be better off knowing you kept moving forward while you waited.<EOS>"
+      }
+    ]
+  }
 ]

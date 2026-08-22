@@ -99,19 +99,25 @@ body {
   .charts-panel { overflow-y: visible; }
 }
 
-/* One turn card in the conversation panel. */
+/* One turn card in the conversation panel. Odd/even turns get a faint
+   alternating tint so a long list reads as distinct rows rather than one
+   unbroken block, the way a striped table does. */
 .turn-card {
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
   text-align: left;
-  background: var(--bg);
+  background: var(--panel);
   border: 1px solid var(--line);
   border-left: 3px solid transparent;
   border-radius: 10px;
   padding: 0.85rem 0.95rem;
   cursor: pointer;
   transition: border-color 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
+}
+
+.turn-card:not(.turn-card--active):nth-child(even) {
+  background: var(--bg);
 }
 
 .turn-card:hover {
@@ -159,6 +165,8 @@ body {
   font-size: 0.88rem;
   line-height: 1.4;
   color: var(--ink);
+  padding: 0.5rem 0.6rem;
+  border-radius: 8px;
 }
 
 .turn-card-label {
@@ -171,7 +179,23 @@ body {
   margin-bottom: 0.15rem;
 }
 
+/* Distinct tints per block so user text, AI response and the physio summary
+   stay visually separate at a glance while scanning a card. */
+.turn-card-user {
+  background: rgba(14, 110, 117, 0.08);
+}
+
+.turn-card-strategy {
+  background: rgba(93, 107, 115, 0.08);
+  font-size: 0.8rem;
+}
+
+.turn-card-ai {
+  background: rgba(88, 183, 189, 0.12);
+}
+
 .turn-card-physio {
+  background: rgba(179, 57, 46, 0.06);
   color: var(--muted);
 }
 
@@ -237,21 +261,23 @@ body {
 
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 1.1rem;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 1.25rem;
 }
 
 .context-card {
   position: relative;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 0.55rem;
   text-align: center;
-  min-height: 108px;
-  background: var(--panel);
+  min-height: 132px;
+  background: linear-gradient(165deg, var(--panel) 60%, #f1fbfb 100%);
   border: 1px solid var(--line);
-  border-radius: 14px;
-  padding: 1.4rem 1.2rem;
+  border-radius: 16px;
+  padding: 1.6rem 1.3rem 1.3rem;
   cursor: pointer;
   overflow: hidden;
   box-shadow: 0 1px 2px rgba(16, 24, 28, 0.04);
@@ -262,7 +288,7 @@ body {
   content: "";
   position: absolute;
   inset: 0 0 auto 0;
-  height: 3px;
+  height: 4px;
   background: linear-gradient(90deg, var(--accent), #58b7bd);
   opacity: 0;
   transition: opacity 0.16s ease;
@@ -270,9 +296,9 @@ body {
 
 .context-card:hover,
 .context-card:focus-visible {
-  transform: translateY(-3px);
+  transform: translateY(-4px);
   border-color: transparent;
-  box-shadow: 0 10px 24px rgba(16, 24, 28, 0.1);
+  box-shadow: 0 14px 28px rgba(16, 24, 28, 0.12);
   outline: none;
 }
 
@@ -281,12 +307,49 @@ body {
   opacity: 1;
 }
 
+.context-card-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), #58b7bd);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.context-card--modified .context-card-avatar {
+  background: linear-gradient(135deg, #b3392e, #e08a4f);
+}
+
 .context-card-name {
   font-size: 1.05rem;
   font-weight: 600;
   color: var(--ink);
   overflow-wrap: anywhere;
   line-height: 1.35;
+}
+
+.context-card-sub {
+  font-size: 0.78rem;
+  color: var(--muted);
+  overflow-wrap: anywhere;
+}
+
+.context-card-badge {
+  position: absolute;
+  top: 0.85rem;
+  right: 0.85rem;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--accent);
+  background: var(--highlight);
+  border-radius: 999px;
+  padding: 0.2rem 0.6rem;
 }
 
 /* Shown when a signal was never recorded for a participant - PR is missing in a

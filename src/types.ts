@@ -5,23 +5,32 @@
  * Change this file and the script together, never one alone.
  */
 
-/** One row of public/data/build/index.json - the context selection screen. */
-export interface ContextSummary {
-  /** "11_1", "8", "22_1" - matches the build/<context_id>.json filename. */
-  context_id: string;
+/**
+ * One participant variant within a context - the original conversation, or a
+ * rewritten "Modified" version of it. `id` matches the build/<id>.json
+ * filename to fetch with loadContext.
+ */
+export interface ContextVariant {
+  id: string;
+  label: "Original" | "Modified";
   participant_id: string;
   turn_count: number;
-  /** Scenario name from context_names.json, with "(modified)" appended for variants. */
-  name: string;
-  /**
-   * True for a rewritten version of a conversation that also exists as an
-   * original - same participant and timestamps, better-worded dialogue. Both
-   * are listed; use this to badge or group them on the selection screen.
-   */
-  modified: boolean;
-  /** ISO timestamps bounding the whole conversation. */
+  /** ISO timestamps bounding this variant's conversation. */
   start: string;
   end: string;
+}
+
+/**
+ * One row of public/data/build/index.json - the context selection screen.
+ * `context_id` is the base participant id ("11_1", "8", "22_1"); a context
+ * with a modified rewrite carries both variants here rather than appearing
+ * twice in the index.
+ */
+export interface ContextSummary {
+  context_id: string;
+  /** Scenario name from context_names.json. */
+  name: string;
+  variants: ContextVariant[];
 }
 
 export type SignalKind = "numeric" | "categorical";

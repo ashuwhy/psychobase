@@ -91,11 +91,12 @@ export default function ConversationView() {
     <main className="layout">
       <section className="conversation-panel">
         <header className="conversation-panel-header">
-          <Link to="/" className="back-link">
+          <Link to={`/context/${contextId}`} className="back-link">
             ← Context
           </Link>
           <h1 className="conversation-title">
-            {participantId ?? data.turns[0]?.participant_full_id ?? contextId}
+            {data.turns[0]?.participant_full_id || contextId}
+            {participantId?.endsWith("-modified") && " (Modified)"}
           </h1>
           <p className="conversation-subtitle">{data.turns.length} turns</p>
         </header>

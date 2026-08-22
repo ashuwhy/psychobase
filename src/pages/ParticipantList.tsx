@@ -4,14 +4,13 @@ import { loadContextSummary } from "../lib/data";
 import type { ContextSummary } from "../types";
 
 /**
- * Screen 2: the participant(s) inside one context. Each context currently
- * holds exactly one participant, but the screen is built to list more if a
- * context ever gets multiple.
+ * Screen 2: the variant(s) inside one context - the original conversation,
+ * plus a "Modified" rewrite when one exists, rather than the two appearing
+ * as separate cards on the context selection screen.
  *
  * OWNER: task B.
- * Done when: the single participant renders as a card from the context's
- * index entry and clicking it routes to
- * /context/:contextId/participant/:participantId.
+ * Done when: each variant renders as a card from the context's index entry
+ * and clicking one routes to /context/:contextId/participant/:variantId.
  */
 export default function ParticipantList() {
   const { contextId } = useParams<{ contextId: string }>();
@@ -78,22 +77,31 @@ export default function ParticipantList() {
       <Link to="/" className="back-link">
         ← Context
       </Link>
-      <h1 className="page-title">{summary.name || summary.participant_id}</h1>
+      <h1 className="page-title">{summary.name || summary.context_id}</h1>
       <div className="card-grid">
-        <article
-          className="context-card"
-          role="button"
-          tabIndex={0}
-          onClick={() => navigate(`/context/${summary.context_id}/participant/${summary.participant_id}`)}
-          onKeyDown={(e) => {
-            if (e.key === "Enter" || e.key === " ") {
-              e.preventDefault();
-              navigate(`/context/${summary.context_id}/participant/${summary.participant_id}`);
-            }
-          }}
-        >
-          <span className="context-card-name">{summary.participant_id}</span>
-        </article>
+        {summary.variants.map((variant) => (
+          <article
+            key={variant.id}
+            className={`context-card${variant.label === "Modified" ? " context-card--modified" : ""}`}
+            role="button"
+            tabIndex={0}
+            onClick={() => navigate(`/context/${summary.context_id}/participant/${variant.id}`)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                navigate(`/context/${summary.context_id}/participant/${variant.id}`);
+              }
+            }}
+          >
+            <span className="context-card-avatar" aria-hidden="true">
+              {variant.label.charAt(0)}
+            </span>
+            <span className="context-card-name">{variant.label}</span>
+            <span className="context-card-sub">
+              {variant.participant_id || summary.context_id} · {variant.turn_count} turns
+            </span>
+          </article>
+        ))}
       </div>
     </main>
   );

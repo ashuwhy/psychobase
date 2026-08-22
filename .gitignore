@@ -4,6 +4,7 @@ dist/
 *.local
 .vite/
 .playwright-mcp/
+*.tsbuildinfo
 
 # Source datasets are versioned so everyone is provably on the same data -
 # the repo is private and limited to the four of us plus Stiti.

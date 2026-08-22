@@ -2,487 +2,697 @@
  {
   "context_id": "0",
   "name": "Career Doubts",
-  "participant_id": "2753-1-1-0005",
-  "turn_count": 18,
-  "modified": false,
-  "start": "2026-06-03T15:40:30",
-  "end": "2026-06-03T16:32:30"
+  "variants": [
+   {
+    "id": "0",
+    "label": "Original",
+    "participant_id": "2753-1-1-0005",
+    "turn_count": 18,
+    "start": "2026-06-03T15:40:30",
+    "end": "2026-06-03T16:32:30"
+   }
+  ]
  },
  {
   "context_id": "1",
   "name": "Health Anxiety",
-  "participant_id": "2753-1-1-0000",
-  "turn_count": 30,
-  "modified": false,
-  "start": "2026-05-22T19:00:30",
-  "end": "2026-05-22T19:59:30"
- },
- {
-  "context_id": "1-modified",
-  "name": "Health Anxiety (modified)",
-  "participant_id": "",
-  "turn_count": 30,
-  "modified": true,
-  "start": "2026-05-22T19:00:30",
-  "end": "2026-05-22T19:59:30"
+  "variants": [
+   {
+    "id": "1",
+    "label": "Original",
+    "participant_id": "2753-1-1-0000",
+    "turn_count": 30,
+    "start": "2026-05-22T19:00:30",
+    "end": "2026-05-22T19:59:30"
+   },
+   {
+    "id": "1-modified",
+    "label": "Modified",
+    "participant_id": "",
+    "turn_count": 30,
+    "start": "2026-05-22T19:00:30",
+    "end": "2026-05-22T19:59:30"
+   }
+  ]
  },
  {
   "context_id": "2",
   "name": "Arranged Marriage",
-  "participant_id": "2753-1-1-0000",
-  "turn_count": 13,
-  "modified": false,
-  "start": "2026-03-22T12:40:30",
-  "end": "2026-03-22T13:27:30"
- },
- {
-  "context_id": "2-modified",
-  "name": "Arranged Marriage (modified)",
-  "participant_id": "2",
-  "turn_count": 19,
-  "modified": true,
-  "start": "2026-03-22T12:40:30",
-  "end": "2026-03-22T13:31:53"
+  "variants": [
+   {
+    "id": "2",
+    "label": "Original",
+    "participant_id": "2753-1-1-0000",
+    "turn_count": 13,
+    "start": "2026-03-22T12:40:30",
+    "end": "2026-03-22T13:27:30"
+   },
+   {
+    "id": "2-modified",
+    "label": "Modified",
+    "participant_id": "2",
+    "turn_count": 19,
+    "start": "2026-03-22T12:40:30",
+    "end": "2026-03-22T13:31:53"
+   }
+  ]
  },
  {
   "context_id": "3",
   "name": "Anger Anxiety",
-  "participant_id": "2753-1-1-0005",
-  "turn_count": 17,
-  "modified": false,
-  "start": "2026-05-19T17:12:00",
-  "end": "2026-05-19T20:41:30"
+  "variants": [
+   {
+    "id": "3",
+    "label": "Original",
+    "participant_id": "2753-1-1-0005",
+    "turn_count": 17,
+    "start": "2026-05-19T17:12:00",
+    "end": "2026-05-19T20:41:30"
+   }
+  ]
  },
  {
   "context_id": "4",
   "name": "Low Mood",
-  "participant_id": "2753-1-1-0000",
-  "turn_count": 21,
-  "modified": false,
-  "start": "2026-05-04T16:05:30",
-  "end": "2026-05-04T16:25:30"
+  "variants": [
+   {
+    "id": "4",
+    "label": "Original",
+    "participant_id": "2753-1-1-0000",
+    "turn_count": 21,
+    "start": "2026-05-04T16:05:30",
+    "end": "2026-05-04T16:25:30"
+   }
+  ]
  },
  {
   "context_id": "5",
   "name": "Workload Stress",
-  "participant_id": "2753-1-1-0000",
-  "turn_count": 16,
-  "modified": false,
-  "start": "2026-03-22T19:05:30",
-  "end": "2026-03-22T20:34:30"
+  "variants": [
+   {
+    "id": "5",
+    "label": "Original",
+    "participant_id": "2753-1-1-0000",
+    "turn_count": 16,
+    "start": "2026-03-22T19:05:30",
+    "end": "2026-03-22T20:34:30"
+   }
+  ]
  },
  {
   "context_id": "6",
   "name": "Daughter's Future",
-  "participant_id": "2753-1-1-0000",
-  "turn_count": 50,
-  "modified": false,
-  "start": "2026-05-31T16:00:30",
-  "end": "2026-05-31T17:39:30"
+  "variants": [
+   {
+    "id": "6",
+    "label": "Original",
+    "participant_id": "2753-1-1-0000",
+    "turn_count": 50,
+    "start": "2026-05-31T16:00:30",
+    "end": "2026-05-31T17:39:30"
+   }
+  ]
  },
  {
   "context_id": "7",
   "name": "Sleep Issues",
-  "participant_id": "2753-1-1-0006",
-  "turn_count": 11,
-  "modified": false,
-  "start": "2026-07-07T19:30:30",
-  "end": "2026-07-07T19:51:00"
+  "variants": [
+   {
+    "id": "7",
+    "label": "Original",
+    "participant_id": "2753-1-1-0006",
+    "turn_count": 11,
+    "start": "2026-07-07T19:30:30",
+    "end": "2026-07-07T19:51:00"
+   }
+  ]
  },
  {
   "context_id": "8",
   "name": "Athletic Balance",
-  "participant_id": "",
-  "turn_count": 18,
-  "modified": false,
-  "start": "2026-07-09T18:00:30",
-  "end": "2026-07-09T18:53:15"
- },
- {
-  "context_id": "8-modified",
-  "name": "Athletic Balance (modified)",
-  "participant_id": "",
-  "turn_count": 18,
-  "modified": true,
-  "start": "2026-07-09T18:00:30",
-  "end": "2026-07-09T18:53:15"
+  "variants": [
+   {
+    "id": "8",
+    "label": "Original",
+    "participant_id": "",
+    "turn_count": 18,
+    "start": "2026-07-09T18:00:30",
+    "end": "2026-07-09T18:53:15"
+   },
+   {
+    "id": "8-modified",
+    "label": "Modified",
+    "participant_id": "",
+    "turn_count": 18,
+    "start": "2026-07-09T18:00:30",
+    "end": "2026-07-09T18:53:15"
+   }
+  ]
  },
  {
   "context_id": "9",
   "name": "Final-Year Project",
-  "participant_id": "2753-1-1-0006",
-  "turn_count": 18,
-  "modified": false,
-  "start": "2026-07-09T19:43:30",
-  "end": "2026-07-09T20:18:30"
+  "variants": [
+   {
+    "id": "9",
+    "label": "Original",
+    "participant_id": "2753-1-1-0006",
+    "turn_count": 18,
+    "start": "2026-07-09T19:43:30",
+    "end": "2026-07-09T20:18:30"
+   }
+  ]
  },
  {
   "context_id": "10",
   "name": "New Beginnings",
-  "participant_id": "2753-1-1-0005",
-  "turn_count": 24,
-  "modified": false,
-  "start": "2026-07-16T14:55:30",
-  "end": "2026-07-16T15:15:30"
+  "variants": [
+   {
+    "id": "10",
+    "label": "Original",
+    "participant_id": "2753-1-1-0005",
+    "turn_count": 24,
+    "start": "2026-07-16T14:55:30",
+    "end": "2026-07-16T15:15:30"
+   }
+  ]
  },
  {
   "context_id": "10_1",
   "name": "Fresh Journey",
-  "participant_id": "2753-1-1-0005",
-  "turn_count": 21,
-  "modified": false,
-  "start": "2026-07-16T14:55:15",
-  "end": "2026-07-16T15:20:30"
+  "variants": [
+   {
+    "id": "10_1",
+    "label": "Original",
+    "participant_id": "2753-1-1-0005",
+    "turn_count": 21,
+    "start": "2026-07-16T14:55:15",
+    "end": "2026-07-16T15:20:30"
+   }
+  ]
  },
  {
   "context_id": "10_2",
   "name": "Uncertain Future",
-  "participant_id": "2753-1-1-0005",
-  "turn_count": 13,
-  "modified": false,
-  "start": "2026-07-16T16:00:24",
-  "end": "2026-07-16T16:52:00"
+  "variants": [
+   {
+    "id": "10_2",
+    "label": "Original",
+    "participant_id": "2753-1-1-0005",
+    "turn_count": 13,
+    "start": "2026-07-16T16:00:24",
+    "end": "2026-07-16T16:52:00"
+   }
+  ]
  },
  {
   "context_id": "11",
   "name": "Unrequited Feelings",
-  "participant_id": "2753-1-1-0000",
-  "turn_count": 16,
-  "modified": false,
-  "start": "2026-05-04T19:10:15",
-  "end": "2026-05-04T19:30:30"
+  "variants": [
+   {
+    "id": "11",
+    "label": "Original",
+    "participant_id": "2753-1-1-0000",
+    "turn_count": 16,
+    "start": "2026-05-04T19:10:15",
+    "end": "2026-05-04T19:30:30"
+   }
+  ]
  },
  {
   "context_id": "11_1",
   "name": "Emotional Confusion",
-  "participant_id": "2753-1-1-0000",
-  "turn_count": 15,
-  "modified": false,
-  "start": "2026-05-04T19:33:15",
-  "end": "2026-05-04T20:00:30"
- },
- {
-  "context_id": "11_1-modified",
-  "name": "Emotional Confusion (modified)",
-  "participant_id": "11_1",
-  "turn_count": 15,
-  "modified": true,
-  "start": "2026-05-04T19:33:15",
-  "end": "2026-05-04T20:01:00"
+  "variants": [
+   {
+    "id": "11_1",
+    "label": "Original",
+    "participant_id": "2753-1-1-0000",
+    "turn_count": 15,
+    "start": "2026-05-04T19:33:15",
+    "end": "2026-05-04T20:00:30"
+   },
+   {
+    "id": "11_1-modified",
+    "label": "Modified",
+    "participant_id": "11_1",
+    "turn_count": 15,
+    "start": "2026-05-04T19:33:15",
+    "end": "2026-05-04T20:01:00"
+   }
+  ]
  },
  {
   "context_id": "11_2",
   "name": "Losing Identity",
-  "participant_id": "2753-1-1-0000",
-  "turn_count": 10,
-  "modified": false,
-  "start": "2026-05-04T19:10:20",
-  "end": "2026-05-04T19:28:30"
+  "variants": [
+   {
+    "id": "11_2",
+    "label": "Original",
+    "participant_id": "2753-1-1-0000",
+    "turn_count": 10,
+    "start": "2026-05-04T19:10:20",
+    "end": "2026-05-04T19:28:30"
+   }
+  ]
  },
  {
   "context_id": "11_3",
   "name": "Emotional Backup",
-  "participant_id": "2753-1-1-0000",
-  "turn_count": 11,
-  "modified": false,
-  "start": "2026-05-04T19:33:20",
-  "end": "2026-05-04T20:01:00"
+  "variants": [
+   {
+    "id": "11_3",
+    "label": "Original",
+    "participant_id": "2753-1-1-0000",
+    "turn_count": 11,
+    "start": "2026-05-04T19:33:20",
+    "end": "2026-05-04T20:01:00"
+   }
+  ]
  },
  {
   "context_id": "12",
   "name": "Presentation Anxiety",
-  "participant_id": "2753-1-1-0000",
-  "turn_count": 27,
-  "modified": false,
-  "start": "2026-05-04T16:42:15",
-  "end": "2026-05-04T17:10:30"
+  "variants": [
+   {
+    "id": "12",
+    "label": "Original",
+    "participant_id": "2753-1-1-0000",
+    "turn_count": 27,
+    "start": "2026-05-04T16:42:15",
+    "end": "2026-05-04T17:10:30"
+   }
+  ]
  },
  {
   "context_id": "12_1",
   "name": "Research Confidence",
-  "participant_id": "2753-1-1-0000",
-  "turn_count": 16,
-  "modified": false,
-  "start": "2026-05-04T17:11:30",
-  "end": "2026-05-04T17:42:00"
+  "variants": [
+   {
+    "id": "12_1",
+    "label": "Original",
+    "participant_id": "2753-1-1-0000",
+    "turn_count": 16,
+    "start": "2026-05-04T17:11:30",
+    "end": "2026-05-04T17:42:00"
+   }
+  ]
  },
  {
   "context_id": "12_2",
   "name": "Meeting Pressure",
-  "participant_id": "2753-1-1-0000",
-  "turn_count": 16,
-  "modified": false,
-  "start": "2026-05-04T16:42:15",
-  "end": "2026-05-04T17:00:30"
+  "variants": [
+   {
+    "id": "12_2",
+    "label": "Original",
+    "participant_id": "2753-1-1-0000",
+    "turn_count": 16,
+    "start": "2026-05-04T16:42:15",
+    "end": "2026-05-04T17:00:30"
+   }
+  ]
  },
  {
   "context_id": "13",
   "name": "Neighborhood Tragedy",
-  "participant_id": "2753-1-1-0000",
-  "turn_count": 19,
-  "modified": false,
-  "start": "2026-07-17T20:00:15",
-  "end": "2026-07-17T20:30:30"
+  "variants": [
+   {
+    "id": "13",
+    "label": "Original",
+    "participant_id": "2753-1-1-0000",
+    "turn_count": 19,
+    "start": "2026-07-17T20:00:15",
+    "end": "2026-07-17T20:30:30"
+   }
+  ]
  },
  {
   "context_id": "13_1",
   "name": "Family Misfortune",
-  "participant_id": "2753-1-1-0000",
-  "turn_count": 11,
-  "modified": false,
-  "start": "2026-07-17T20:00:30",
-  "end": "2026-07-17T20:31:30"
+  "variants": [
+   {
+    "id": "13_1",
+    "label": "Original",
+    "participant_id": "2753-1-1-0000",
+    "turn_count": 11,
+    "start": "2026-07-17T20:00:30",
+    "end": "2026-07-17T20:31:30"
+   }
+  ]
  },
  {
   "context_id": "13_2",
   "name": "Neighborhood Emergency",
-  "participant_id": "2753-1-1-0000",
-  "turn_count": 16,
-  "modified": false,
-  "start": "2026-07-17T20:30:30",
-  "end": "2026-07-17T21:01:00"
+  "variants": [
+   {
+    "id": "13_2",
+    "label": "Original",
+    "participant_id": "2753-1-1-0000",
+    "turn_count": 16,
+    "start": "2026-07-17T20:30:30",
+    "end": "2026-07-17T21:01:00"
+   }
+  ]
  },
  {
   "context_id": "14",
   "name": "Community Crisis",
-  "participant_id": "2753-1-1-0000",
-  "turn_count": 12,
-  "modified": false,
-  "start": "2026-07-17T20:30:20",
-  "end": "2026-07-17T21:01:00"
+  "variants": [
+   {
+    "id": "14",
+    "label": "Original",
+    "participant_id": "2753-1-1-0000",
+    "turn_count": 12,
+    "start": "2026-07-17T20:30:20",
+    "end": "2026-07-17T21:01:00"
+   }
+  ]
  },
  {
   "context_id": "15",
   "name": "Exam Anxiety",
-  "participant_id": "2753-1-1-0000",
-  "turn_count": 25,
-  "modified": false,
-  "start": "2026-07-13T16:18:30",
-  "end": "2026-07-13T17:18:00"
+  "variants": [
+   {
+    "id": "15",
+    "label": "Original",
+    "participant_id": "2753-1-1-0000",
+    "turn_count": 25,
+    "start": "2026-07-13T16:18:30",
+    "end": "2026-07-13T17:18:00"
+   }
+  ]
  },
  {
   "context_id": "15_1",
   "name": "Academic Pressure",
-  "participant_id": "2753-1-1-0000",
-  "turn_count": 44,
-  "modified": false,
-  "start": "2026-07-13T16:17:30",
-  "end": "2026-07-13T17:17:00"
+  "variants": [
+   {
+    "id": "15_1",
+    "label": "Original",
+    "participant_id": "2753-1-1-0000",
+    "turn_count": 44,
+    "start": "2026-07-13T16:17:30",
+    "end": "2026-07-13T17:17:00"
+   }
+  ]
  },
  {
   "context_id": "16",
   "name": "Family Concerns",
-  "participant_id": "2753-1-1-0000",
-  "turn_count": 26,
-  "modified": false,
-  "start": "2026-07-20T15:30:15",
-  "end": "2026-07-20T16:10:30"
+  "variants": [
+   {
+    "id": "16",
+    "label": "Original",
+    "participant_id": "2753-1-1-0000",
+    "turn_count": 26,
+    "start": "2026-07-20T15:30:15",
+    "end": "2026-07-20T16:10:30"
+   }
+  ]
  },
  {
   "context_id": "16_1",
   "name": "Family Responsibility",
-  "participant_id": "2753-1-1-0000",
-  "turn_count": 28,
-  "modified": false,
-  "start": "2026-07-20T16:00:15",
-  "end": "2026-07-20T16:40:30"
+  "variants": [
+   {
+    "id": "16_1",
+    "label": "Original",
+    "participant_id": "2753-1-1-0000",
+    "turn_count": 28,
+    "start": "2026-07-20T16:00:15",
+    "end": "2026-07-20T16:40:30"
+   }
+  ]
  },
  {
   "context_id": "17",
   "name": "Returning to Hostel",
-  "participant_id": "2753-1-1-0000",
-  "turn_count": 25,
-  "modified": false,
-  "start": "2026-07-27T19:30:30",
-  "end": "2026-07-27T20:31:30"
+  "variants": [
+   {
+    "id": "17",
+    "label": "Original",
+    "participant_id": "2753-1-1-0000",
+    "turn_count": 25,
+    "start": "2026-07-27T19:30:30",
+    "end": "2026-07-27T20:31:30"
+   }
+  ]
  },
  {
   "context_id": "17_1",
   "name": "Long Bus Journey",
-  "participant_id": "2753-1-1-0000",
-  "turn_count": 20,
-  "modified": false,
-  "start": "2026-07-27T15:30:30",
-  "end": "2026-07-27T16:00:00"
+  "variants": [
+   {
+    "id": "17_1",
+    "label": "Original",
+    "participant_id": "2753-1-1-0000",
+    "turn_count": 20,
+    "start": "2026-07-27T15:30:30",
+    "end": "2026-07-27T16:00:00"
+   }
+  ]
  },
  {
   "context_id": "17_2",
   "name": "Leaving Home",
-  "participant_id": "2753-1-1-0000",
-  "turn_count": 21,
-  "modified": false,
-  "start": "2026-07-27T11:30:30",
-  "end": "2026-07-27T12:31:30"
- },
- {
-  "context_id": "17_2-modified",
-  "name": "Leaving Home (modified)",
-  "participant_id": "2753-1-1-0000",
-  "turn_count": 21,
-  "modified": true,
-  "start": "2026-07-27T11:30:30",
-  "end": "2026-07-27T12:31:30"
+  "variants": [
+   {
+    "id": "17_2",
+    "label": "Original",
+    "participant_id": "2753-1-1-0000",
+    "turn_count": 21,
+    "start": "2026-07-27T11:30:30",
+    "end": "2026-07-27T12:31:30"
+   },
+   {
+    "id": "17_2-modified",
+    "label": "Modified",
+    "participant_id": "2753-1-1-0000",
+    "turn_count": 21,
+    "start": "2026-07-27T11:30:30",
+    "end": "2026-07-27T12:31:30"
+   }
+  ]
  },
  {
   "context_id": "18",
   "name": "Government Office",
-  "participant_id": "2753-1-1-0005",
-  "turn_count": 27,
-  "modified": false,
-  "start": "2026-07-25T23:10:30",
-  "end": "2026-07-26T00:00:00"
- },
- {
-  "context_id": "18-modified",
-  "name": "Government Office (modified)",
-  "participant_id": "2753-1-1-0005",
-  "turn_count": 27,
-  "modified": true,
-  "start": "2026-07-25T23:10:30",
-  "end": "2026-07-26T00:00:00"
+  "variants": [
+   {
+    "id": "18",
+    "label": "Original",
+    "participant_id": "2753-1-1-0005",
+    "turn_count": 27,
+    "start": "2026-07-25T23:10:30",
+    "end": "2026-07-26T00:00:00"
+   },
+   {
+    "id": "18-modified",
+    "label": "Modified",
+    "participant_id": "2753-1-1-0005",
+    "turn_count": 27,
+    "start": "2026-07-25T23:10:30",
+    "end": "2026-07-26T00:00:00"
+   }
+  ]
  },
  {
   "context_id": "18_1",
   "name": "Family Argument",
-  "participant_id": "2753-1-1-0005",
-  "turn_count": 17,
-  "modified": false,
-  "start": "2026-07-25T23:25:30",
-  "end": "2026-07-26T00:32:00"
+  "variants": [
+   {
+    "id": "18_1",
+    "label": "Original",
+    "participant_id": "2753-1-1-0005",
+    "turn_count": 17,
+    "start": "2026-07-25T23:25:30",
+    "end": "2026-07-26T00:32:00"
+   }
+  ]
  },
  {
   "context_id": "19",
   "name": "Study Planning",
-  "participant_id": "2753-1-1-0006",
-  "turn_count": 13,
-  "modified": false,
-  "start": "2026-06-26T15:00:30",
-  "end": "2026-06-26T15:29:40"
+  "variants": [
+   {
+    "id": "19",
+    "label": "Original",
+    "participant_id": "2753-1-1-0006",
+    "turn_count": 13,
+    "start": "2026-06-26T15:00:30",
+    "end": "2026-06-26T15:29:40"
+   }
+  ]
  },
  {
   "context_id": "19_1",
   "name": "Competitive Learning",
-  "participant_id": "2753-1-1-0006",
-  "turn_count": 15,
-  "modified": false,
-  "start": "2026-06-26T15:00:30",
-  "end": "2026-06-26T15:29:00"
+  "variants": [
+   {
+    "id": "19_1",
+    "label": "Original",
+    "participant_id": "2753-1-1-0006",
+    "turn_count": 15,
+    "start": "2026-06-26T15:00:30",
+    "end": "2026-06-26T15:29:00"
+   }
+  ]
  },
  {
   "context_id": "19_2",
   "name": "Balancing Goals",
-  "participant_id": "2753-1-1-0006",
-  "turn_count": 19,
-  "modified": false,
-  "start": "2026-06-26T15:00:30",
-  "end": "2026-06-26T15:28:00"
+  "variants": [
+   {
+    "id": "19_2",
+    "label": "Original",
+    "participant_id": "2753-1-1-0006",
+    "turn_count": 19,
+    "start": "2026-06-26T15:00:30",
+    "end": "2026-06-26T15:28:00"
+   }
+  ]
  },
  {
   "context_id": "20",
   "name": "Internship Prep",
-  "participant_id": "2753-1-1-0006",
-  "turn_count": 9,
-  "modified": false,
-  "start": "2026-06-26T16:00:30",
-  "end": "2026-06-26T16:26:30"
+  "variants": [
+   {
+    "id": "20",
+    "label": "Original",
+    "participant_id": "2753-1-1-0006",
+    "turn_count": 9,
+    "start": "2026-06-26T16:00:30",
+    "end": "2026-06-26T16:26:30"
+   }
+  ]
  },
  {
   "context_id": "21",
   "name": "Identity Reflection",
-  "participant_id": "2753-1-1-0006",
-  "turn_count": 6,
-  "modified": false,
-  "start": "2026-06-25T13:01:30",
-  "end": "2026-06-25T13:30:30"
+  "variants": [
+   {
+    "id": "21",
+    "label": "Original",
+    "participant_id": "2753-1-1-0006",
+    "turn_count": 6,
+    "start": "2026-06-25T13:01:30",
+    "end": "2026-06-25T13:30:30"
+   }
+  ]
  },
  {
   "context_id": "22",
   "name": "Overstimulation Recovery",
-  "participant_id": "2753-1-1-0006",
-  "turn_count": 6,
-  "modified": false,
-  "start": "2026-06-26T14:21:30",
-  "end": "2026-06-26T15:03:00"
+  "variants": [
+   {
+    "id": "22",
+    "label": "Original",
+    "participant_id": "2753-1-1-0006",
+    "turn_count": 6,
+    "start": "2026-06-26T14:21:30",
+    "end": "2026-06-26T15:03:00"
+   }
+  ]
  },
  {
   "context_id": "22_1",
   "name": "Late-Night Scrolling",
-  "participant_id": "2753-1-1-0006",
-  "turn_count": 9,
-  "modified": false,
-  "start": "2026-06-26T14:15:30",
-  "end": "2026-06-26T14:46:00"
+  "variants": [
+   {
+    "id": "22_1",
+    "label": "Original",
+    "participant_id": "2753-1-1-0006",
+    "turn_count": 9,
+    "start": "2026-06-26T14:15:30",
+    "end": "2026-06-26T14:46:00"
+   }
+  ]
  },
  {
   "context_id": "23",
   "name": "Teaching Assistant Nerves",
-  "participant_id": "2753-1-1-0002",
-  "turn_count": 16,
-  "modified": false,
-  "start": "2026-08-03T14:00:30",
-  "end": "2026-08-03T15:02:00"
- },
- {
-  "context_id": "23-modified",
-  "name": "Teaching Assistant Nerves (modified)",
-  "participant_id": "2753-1-1-0002",
-  "turn_count": 16,
-  "modified": true,
-  "start": "2026-08-03T14:00:30",
-  "end": "2026-08-03T15:02:00"
+  "variants": [
+   {
+    "id": "23",
+    "label": "Original",
+    "participant_id": "2753-1-1-0002",
+    "turn_count": 16,
+    "start": "2026-08-03T14:00:30",
+    "end": "2026-08-03T15:02:00"
+   },
+   {
+    "id": "23-modified",
+    "label": "Modified",
+    "participant_id": "2753-1-1-0002",
+    "turn_count": 16,
+    "start": "2026-08-03T14:00:30",
+    "end": "2026-08-03T15:02:00"
+   }
+  ]
  },
  {
   "context_id": "23_1",
   "name": "Teaching Pressure",
-  "participant_id": "2753-1-1-0002",
-  "turn_count": 11,
-  "modified": false,
-  "start": "2026-08-03T13:57:30",
-  "end": "2026-08-03T14:15:00"
- },
- {
-  "context_id": "23_1-modified",
-  "name": "Teaching Pressure (modified)",
-  "participant_id": "2753-1-1-0002",
-  "turn_count": 11,
-  "modified": true,
-  "start": "2026-08-03T13:57:30",
-  "end": "2026-08-03T14:15:00"
+  "variants": [
+   {
+    "id": "23_1",
+    "label": "Original",
+    "participant_id": "2753-1-1-0002",
+    "turn_count": 11,
+    "start": "2026-08-03T13:57:30",
+    "end": "2026-08-03T14:15:00"
+   },
+   {
+    "id": "23_1-modified",
+    "label": "Modified",
+    "participant_id": "2753-1-1-0002",
+    "turn_count": 11,
+    "start": "2026-08-03T13:57:30",
+    "end": "2026-08-03T14:15:00"
+   }
+  ]
  },
  {
   "context_id": "24",
   "name": "Competing Deadlines",
-  "participant_id": "2753-1-1-0002",
-  "turn_count": 15,
-  "modified": false,
-  "start": "2026-08-05T17:00:30",
-  "end": "2026-08-05T18:15:00"
- },
- {
-  "context_id": "24-modified",
-  "name": "Competing Deadlines (modified)",
-  "participant_id": "2753-1-1-0002",
-  "turn_count": 15,
-  "modified": true,
-  "start": "2026-08-05T17:00:30",
-  "end": "2026-08-05T18:14:30"
+  "variants": [
+   {
+    "id": "24",
+    "label": "Original",
+    "participant_id": "2753-1-1-0002",
+    "turn_count": 15,
+    "start": "2026-08-05T17:00:30",
+    "end": "2026-08-05T18:15:00"
+   },
+   {
+    "id": "24-modified",
+    "label": "Modified",
+    "participant_id": "2753-1-1-0002",
+    "turn_count": 15,
+    "start": "2026-08-05T17:00:30",
+    "end": "2026-08-05T18:14:30"
+   }
+  ]
  },
  {
   "context_id": "25",
   "name": "Awaiting Placement Offer",
-  "participant_id": "2753-1-1-0002",
-  "turn_count": 15,
-  "modified": false,
-  "start": "2026-08-10T16:30:30",
-  "end": "2026-08-10T17:35:30"
- },
- {
-  "context_id": "25-modified",
-  "name": "Awaiting Placement Offer (modified)",
-  "participant_id": "2753-1-1-0002",
-  "turn_count": 15,
-  "modified": true,
-  "start": "2026-08-10T16:30:30",
-  "end": "2026-08-10T17:35:30"
+  "variants": [
+   {
+    "id": "25",
+    "label": "Original",
+    "participant_id": "2753-1-1-0002",
+    "turn_count": 15,
+    "start": "2026-08-10T16:30:30",
+    "end": "2026-08-10T17:35:30"
+   },
+   {
+    "id": "25-modified",
+    "label": "Modified",
+    "participant_id": "2753-1-1-0002",
+    "turn_count": 15,
+    "start": "2026-08-10T16:30:30",
+    "end": "2026-08-10T17:35:30"
+   }
+  ]
  }
 ]

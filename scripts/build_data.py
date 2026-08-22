@@ -274,21 +274,29 @@ def discover():
     context id, "8-modified", and the original "8" is left alone. The modifier
     suffix varies (_modified, _modified_phyS, _modified_phyS_context), so it is
     captured rather than hard-coded.
+
+    Pairing is by the *exact* suffix, not just "is this modified or not" -
+    participant 1 once had a CSV suffixed "_modified" matched against a JSON
+    suffixed "_modified_phyS" purely because both were "modified", which
+    silently paired files that were never meant to go together. Exact-suffix
+    matching means a suffix with no counterpart on the other side is reported
+    as skipped instead of guessed at.
     """
     csvs, jsons = {}, {}
     for path in RAW.glob("participantGrouped*.csv"):
         m = re.match(r"participantGrouped(.+?)data(_modified[a-zA-Z_]*)?\.csv$", path.name)
         if m:
-            csvs[(m.group(1), bool(m.group(2)))] = path
+            csvs[(m.group(1), m.group(2) or "")] = path
     for path in JSON_DIR.glob("output_participantGrouped*.json"):
         m = re.match(r"output_participantGrouped(.+?)data(_modified[a-zA-Z_]*)?_full_data\.json$",
                      path.name)
         if m:
-            jsons[(m.group(1), bool(m.group(2)))] = path
+            jsons[(m.group(1), m.group(2) or "")] = path
 
     contexts, skipped = [], []
     for key in sorted(csvs, key=lambda k: (natural(k[0]), k[1])):
-        pid, is_modified = key
+        pid, suffix = key
+        is_modified = bool(suffix)
         if key not in jsons:
             skipped.append(pid + ("-modified" if is_modified else ""))
             continue
@@ -306,34 +314,43 @@ def main():
     OUT.mkdir(parents=True, exist_ok=True)
     names = context_names()
     contexts, skipped = discover()
-    index = []
+
+    # One index row per base participant, holding both variants, rather than a
+    # separate top-level card for "8" and "8-modified" - they are the same
+    # conversation, so the selection screen should not show it twice.
+    groups = {}
     for cid, csv_path, json_path, base_id, is_modified in contexts:
         context = build_context(csv_path, json_path)
         dump(context, OUT / f"{cid}.json")
-        # A modified variant inherits the original's scenario name, marked so the
-        # two are distinguishable on the selection screen.
-        name = names.get(cid) or names.get(base_id, "")
-        if is_modified and name:
-            name += " (modified)"
-        index.append({
-            "context_id": cid,
-            "name": name,
+        variant = {
+            "id": cid,
+            "label": "Modified" if is_modified else "Original",
             "participant_id": context["turns"][0]["participant_full_id"] if context["turns"] else "",
             "turn_count": len(context["turns"]),
-            "modified": is_modified,
             "start": context["domain"][0],
             "end": context["domain"][1],
-        })
+        }
+        group = groups.setdefault(base_id, {"context_id": base_id, "name": names.get(base_id, ""),
+                                             "variants": []})
+        group["variants"].append(variant)
         mismatched = len(context["interval_mismatches"])
         print(f"  {cid:<14} {len(context['turns']):>3} turns, "
               f"{len(context['series']['EDA']):>3} EDA points"
               + (f", {mismatched} off the 1-2-3-..-6 scheme" if mismatched else ""))
+
+    index = [groups[pid] for pid in sorted(groups, key=natural)]
+    for group in index:
+        group["variants"].sort(key=lambda v: v["label"] != "Original")
     dump(index, OUT / "index.json", indent=1)
-    n_mod = sum(1 for row in index if row["modified"])
-    print(f"\n{len(index)} contexts ({len(index) - n_mod} original, {n_mod} modified) -> {OUT}")
+
+    n_contexts = len(index)
+    n_variants = sum(len(g["variants"]) for g in index)
+    n_mod = sum(1 for g in index for v in g["variants"] if v["label"] == "Modified")
+    print(f"\n{n_contexts} contexts, {n_variants} variants "
+          f"({n_variants - n_mod} original, {n_mod} modified) -> {OUT}")
     if skipped:
         print(f"  skipped, no matching JSON: {', '.join(skipped)}")
-    unnamed = [row["context_id"] for row in index if not row["name"]]
+    unnamed = [g["context_id"] for g in index if not g["name"]]
     if unnamed:
         print(f"  no context name yet: {', '.join(unnamed)}")
 
