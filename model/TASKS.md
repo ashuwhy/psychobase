@@ -46,10 +46,10 @@ until there is a training script. Both pairs work at once so neither waits.
 - [ ] Baseline configuration: one model, one format, one method, fixed seed,
       fixed hyperparameters - the thing every experiment is a diff against
 - [ ] Results table with the schema below, one row per run
-- [ ] Confirm what hardware we actually have (see Open questions) - it sets the
-      ceiling on model size for everyone
+- [ ] Chase CSE server access (see Still open) - it sets the ceiling on model
+      size for everyone, so it blocks model selection more than anything else
 
-### Siddaarth - evaluation harness
+### Nithish - evaluation harness
 
 - [ ] Takes a model's generated responses on the test split, returns the six
       parameters, reproducible between people and across days
@@ -60,7 +60,7 @@ until there is a training script. Both pairs work at once so neither waits.
       disagrees wildly with the Google Doc rows for the same responses, the
       harness is wrong and everything downstream inherits that
 
-### Nithish - training pipeline and data formatting
+### Siddaarth - training pipeline and data formatting
 
 - [ ] Get one model training end to end on the baseline configuration first -
       this unblocks Krishna as much as yourself
@@ -87,7 +87,7 @@ until there is a training script. Both pairs work at once so neither waits.
 
 ## Once the foundation lands - model selection
 
-Split between Ashutosh and Siddaarth, 1-2 models each, all on the baseline
+Split between Ashutosh and Nithish, 1-2 models each, all on the baseline
 format and method so the model is the only thing that changed. Verify what is
 current before committing - this list moves quickly:
 
@@ -100,11 +100,13 @@ current before committing - this list moves quickly:
 Record VRAM, training time and inference latency per model. A model we cannot
 run on the hardware we have is not a candidate however well it scores.
 
-**The hypothesis worth testing directly:** at ~2,000 samples a fully fine-tuned
-1B model will likely beat a LoRA-adapted 7B, because LoRA updates very few
-parameters relative to how far this task sits from pretraining. That is the
-reasoning behind this whole phase, so it deserves a measurement rather than an
-assumption.
+**The reasoning behind the phase:** at ~2,000 samples, LoRA on a 7B model
+updates very few parameters relative to how far this task sits from
+pretraining, which is why it learns so little. A smaller model fully fine-tuned
+gets far more of its weights moved by the same data. We are not asked to prove
+that against 7B, but it is worth keeping in mind when reading the table - if the
+smallest model with the most trainable parameters wins, that is the effect
+showing up.
 
 ---
 
@@ -118,16 +120,22 @@ otherwise someone retries it by accident in a fortnight.
 
 ---
 
-## Open questions - worth settling before Monday
+## Settled with Stiti, 28 Aug
 
-- **Hardware.** What are we training on - Colab, a lab machine, personal GPUs?
-  This decides whether 3B full fine-tuning is even reachable, and everyone needs
-  the same answer before picking models.
-- **Is the training data the updated JSON?** Task 5 wrote our verified summaries
-  and responses into `training_string_case2` for some participants but not all.
-  Training on a mix of old and new text would confound every result in the
-  table. Confirm with Stiti which files are the training set.
-- **Does the baseline get re-run?** For the comparison to include "what we had
-  before", Llama 7B + LoRA needs scoring through the same harness on the same
-  split. Without it we can show which new configuration is best, but not that
-  any of them beat what we started with.
+- **Training data: the `Modified_JSON` folder only** - the same set the website
+  is built from, which is already in this repository at
+  `website/public/data/json/`. Nothing else, so we are not training on a mix of
+  old and re-verified text.
+- **No Llama 7B versus new comparison is required.** The task is to find a
+  replacement for 7B because it is too large, not to prove an improvement over
+  it. So we compare candidates against each other and against our own baseline
+  configuration - the 7B numbers are not needed, which saves a slow run.
+
+## Still open
+
+- **Hardware.** CSE server access is being requested - a form from the softie
+  office, signed by sir. Until it comes through, nobody can train a 3B model.
+  Everything in Day 1 except training runs on a laptop, so start there rather
+  than waiting: splits, the harness, the data formatting variants and the
+  training script can all be written and tested on CPU with a tiny model, then
+  pointed at the server when access lands.
