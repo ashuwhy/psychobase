@@ -1,0 +1,76 @@
+{
+  "_comment": [
+    "The pinned baseline. Every experiment is one deliberate change from this,",
+    "with everything else identical, so a difference in the results table can be",
+    "attributed to the thing that was changed. Do not edit these values to chase",
+    "a better number - make a new config, give it a run_id, and record both rows.",
+    "",
+    "Chosen before server access landed, so it is deliberately the configuration",
+    "most likely to run anywhere: 1.7B fully fine-tuned fits a single 24GB card",
+    "in bf16 with gradient checkpointing and an 8-bit optimiser."
+  ],
+
+  "run_id": "baseline",
+  "seed": 20260828,
+
+  "model": {
+    "name": "Qwen/Qwen3-1.7B-Instruct",
+    "why": [
+      "Small enough to FULLY fine-tune, which is the point of this phase - LoRA",
+      "on 7B updates too few parameters for ~700 training conversations' worth",
+      "of turns to move the model far from its pretraining.",
+      "Apache 2.0, so no license friction for a university project.",
+      "Strong instruction following at its size, which matters because the model",
+      "must emit a Strategy line and a Response in a fixed shape."
+    ],
+    "dtype": "bfloat16",
+    "max_seq_len": 2048
+  },
+
+  "data": {
+    "splits": "model/splits.json",
+    "loader": "model/scripts/dataset.py",
+    "format": "interleaved",
+    "format_note": [
+      "case1 (text only) immediately followed by case2 (text + physiological",
+      "summary) for the same turn. Chosen as the baseline because it is the",
+      "arrangement that most obviously teaches the model that the physiological",
+      "summary is optional context for the same input, rather than a different",
+      "kind of example. Batched and randomised are the experiment."
+    ]
+  },
+
+  "finetune": {
+    "method": "full",
+    "learning_rate": 1e-5,
+    "lr_scheduler": "cosine",
+    "warmup_ratio": 0.03,
+    "epochs": 3,
+    "per_device_batch_size": 2,
+    "gradient_accumulation_steps": 8,
+    "effective_batch_size": 16,
+    "weight_decay": 0.0,
+    "gradient_checkpointing": true,
+    "optimizer": "adamw_8bit",
+    "notes": [
+      "1e-5 rather than the 2e-4 usual for LoRA - full fine-tuning moves every",
+      "weight, so the LoRA learning rate would wreck the model at this data size.",
+      "3 epochs on 1420 training strings is roughly 265 optimiser steps at an",
+      "effective batch of 16. Watch validation loss: with data this small,",
+      "overfitting after epoch 2 is the expected failure, not the exception."
+    ]
+  },
+
+  "evaluation": {
+    "split": "test",
+    "harness": "model/scripts/evaluate.py",
+    "harness_owner": "Nithish",
+    "parameters": ["empathy", "specificity", "strategy_faithfulness",
+                   "physio_grounding", "fluency", "safety"],
+    "generation": {
+      "temperature": 0.0,
+      "max_new_tokens": 300,
+      "note": "Greedy for scoring. Two runs of the same checkpoint must give the same score, or the table is measuring sampling noise."
+    }
+  }
+}

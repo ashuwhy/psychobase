@@ -1,0 +1,118 @@
+{
+  "seed": 20260828,
+  "group_by": "participant",
+  "generated_from": "website/public/data/json",
+  "totals": {
+    "conversations": 55,
+    "groups": 26,
+    "turns": 1023,
+    "training_strings": 2046
+  },
+  "splits": {
+    "train": {
+      "turns": 710,
+      "share": 0.694,
+      "groups": [
+        "0",
+        "1",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "2",
+        "20",
+        "22",
+        "23",
+        "24",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8"
+      ],
+      "conversations": [
+        "0",
+        "1",
+        "1-modified",
+        "1-modified-phyS",
+        "10",
+        "10_1",
+        "10_2",
+        "11",
+        "11_1",
+        "11_1-modified-phyS-context",
+        "11_2",
+        "11_3",
+        "12",
+        "12_1",
+        "12_2",
+        "13",
+        "13_1",
+        "13_2",
+        "14",
+        "15",
+        "15_1",
+        "2",
+        "2-modified-phyS",
+        "20",
+        "22",
+        "22_1",
+        "23",
+        "23-modified-phyS",
+        "23_1",
+        "23_1-modified-phyS",
+        "24",
+        "24-modified-phyS",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "8-modified-phyS"
+      ]
+    },
+    "validation": {
+      "turns": 158,
+      "share": 0.1544,
+      "groups": [
+        "17",
+        "19",
+        "21",
+        "9"
+      ],
+      "conversations": [
+        "17",
+        "17_1",
+        "17_2",
+        "17_2-modified-phyS-context",
+        "19",
+        "19_1",
+        "19_2",
+        "21",
+        "9"
+      ]
+    },
+    "test": {
+      "turns": 155,
+      "share": 0.1515,
+      "groups": [
+        "16",
+        "18",
+        "25"
+      ],
+      "conversations": [
+        "16",
+        "16_1",
+        "18",
+        "18-modified-phyS-context",
+        "18_1",
+        "25",
+        "25-modified-phyS"
+      ]
+    }
+  }
+}

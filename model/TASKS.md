@@ -39,15 +39,30 @@ test set into training and every model looks better than it is.
 Nothing can be measured until the foundation exists, and nothing can be trained
 until there is a training script. Both pairs work at once so neither waits.
 
-### Ashutosh - splits, baseline, results table
+### Ashutosh - splits, baseline, results table - DONE, waiting on server
 
-- [ ] Conversation-level train / validation / test split, written to disk as a
-      list of which conversation ids are in which split, and committed
-- [ ] Baseline configuration: one model, one format, one method, fixed seed,
-      fixed hyperparameters - the thing every experiment is a diff against
-- [ ] Results table with the schema below, one row per run
-- [ ] Chase CSE server access (see Still open) - it sets the ceiling on model
-      size for everyone, so it blocks model selection more than anything else
+- [x] Conversation-level split, frozen in `splits.json`, 69/15/15 by turns
+      (`scripts/make_splits.py`)
+- [x] Shared loader `scripts/dataset.py` - import this rather than reading the
+      JSON directory, or we end up with four loaders that disagree
+- [x] Baseline configuration in `configs/baseline.json`
+- [x] Results table in `RESULTS.md`
+- [ ] Chase CSE server access - it sets the ceiling on model size for everyone,
+      so it blocks model selection more than anything else
+
+Three things the split work turned up, all worth knowing before you train:
+
+- **`person_id` is useless for grouping.** It reads 2753 on 43 of the 55 files,
+  so it is a device or batch identifier, not a person. Grouping is by
+  participant number instead.
+- **Participant 1 has two modified generations** (`_modified` and
+  `_modified_phyS`) which differ in `training_string_case2` on all 30 turns.
+  Both are in the training split so nothing leaks, but training on both
+  duplicates that conversation. Worth asking Stiti which one counts.
+- **11, 11_1, 11_2 and 11_3 are one participant across four sessions**, so they
+  travel together. That is the conservative choice; it costs split granularity
+  (26 groups, not 55) and the alternative is available behind
+  `--group-by file` if we decide the finer split is worth the leakage risk.
 
 ### Nithish - evaluation harness
 
