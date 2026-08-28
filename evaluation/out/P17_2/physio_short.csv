@@ -1,0 +1,106 @@
+turn,shortened_physio_signals
+1,"Physiological Signals: The first minute has pulse lifting a few beats and motion spiking then falling back, with conductance at the floor and temperature flat; generic activity and counts near 139.0 reflect the bus moving off rather than the user.
+PR: 75.0 -> 79.0 bpm, increasing, first minute.
+ACCEL: 0.033 -> 0.036 g, flat with a mid-window peak at 0.081, first minute.
+EDA: 0.01 -> 0.0 uS, flat, first minute.
+Stress score: -2 (qualitative label not reported).<EOS>"
+2,"EDA: steady near 0.0 uS, flat, past 3 minutes.
+PR: 79.0 -> 76.0 bpm, decreasing, past 3 minutes.
+ACCEL: 0.079 -> 0.028 g, decreasing, past 3 minutes.
+Stress score: 0 (qualitative label not reported).
+Physiological Signals: Pulse settles and motion drops away as the count eases 139.0 to 86.0 under generic activity, temperature barely moving; nothing here marks the moment he describes.<EOS>"
+3,"Stress score: 0 (qualitative label not reported).
+Physiological Signals: Pulse falls eleven beats to 70.0 while motion stays light and the count drops to 66.0, generic activity throughout with temperature flat and conductance at the floor; the body is settling into the journey.
+PR: 81.0 -> 70.0 bpm, decreasing, these 6 minutes.
+EDA: 0.0 -> 0.01 uS, flat, these 6 minutes.
+ACCEL: 0.027 -> 0.025 g, flat, these 6 minutes.<EOS>"
+4,"Physiological Signals: Pulse climbs eight beats while motion doubles and the count sits high near 137.0 under generic activity; with temperature easing and conductance at zero, the bus accounts for much of the movement but not the cardiac rise.
+PR: 80.0 -> 88.0 bpm, increasing, this 6-minute window.
+Stress score: -2 (qualitative label not reported).
+ACCEL: 0.025 -> 0.051 g, increasing, this 6-minute window.
+EDA: 0.01 -> 0.0 uS, flat, this 6-minute window.<EOS>"
+5,"ACCEL: 0.081 -> 0.074 g, flat, over the last 6 minutes.
+PR: 92.0 -> 93.0 bpm, flat, over the last 6 minutes.
+EDA: steady near 0.01 uS, flat, over the last 6 minutes.
+Physiological Signals: Pulse holds in the low nineties, its highest sustained level so far, with motion steady and the count at 144.0; generic activity and falling temperature, conductance at the floor throughout.
+Stress score: 2 (Mild stress).<EOS>"
+6,"Physiological Signals: Pulse stays in the low nineties while motion eases slightly and the count remains high near 147.0 under generic activity; temperature is flat and conductance at the floor, a steady window overall.
+Stress score: 0 (qualitative label not reported).
+EDA: 0.0 -> 0.01 uS, flat, this 6-minute stretch.
+ACCEL: 0.067 -> 0.066 g, flat, this 6-minute stretch.
+PR: 93.0 -> 94.0 bpm, flat, this 6-minute stretch.<EOS>"
+7,"PR: 87.0 -> 83.0 bpm, decreasing, during these 6 minutes.
+ACCEL: 0.112 -> 0.089 g, decreasing, during these 6 minutes.
+EDA: steady near 0.0 uS, flat, during these 6 minutes.
+Stress score: -2 (qualitative label not reported).
+Physiological Signals: Motion opens at its session peak of 0.112 g and eases while pulse comes down four beats; generic activity with the count around 143.0 keeps this within what a moving bus produces.<EOS>"
+8,"Physiological Signals: Motion collapses from 0.075 g to 0.014 g and the count falls 144.0 to 32.0 while pulse drops seven beats, generic activity with temperature rising; the bus has quietened and the body has followed.
+EDA: steady near 0.0 uS, flat, preceding 6 minutes.
+Stress score: 0 (qualitative label not reported).
+PR: 83.0 -> 76.0 bpm, decreasing, preceding 6 minutes.
+ACCEL: 0.075 -> 0.014 g, decreasing, preceding 6 minutes.<EOS>"
+9,"Stress score: -2 (qualitative label not reported).
+PR: 75.0 -> 76.0 bpm, flat, in this 6-minute span.
+EDA: 0.0 -> 0.01 uS, flat, in this 6-minute span.
+ACCEL: 0.002 -> 0.032 g, increasing, in this 6-minute span.
+Physiological Signals: Pulse sits at its session low in the mid-seventies as generic turns to still, then motion picks up late with the count jumping 1.0 to 104.0; temperature holds flat and conductance stays at the floor.<EOS>"
+10,"Physiological Signals: Pulse is steady in the high seventies while motion drifts up and the count stays near 144.0 under generic activity, temperature slowly rising; a calm window by every measure available.
+EDA: 0.0 -> 0.01 uS, flat, through the past 6 minutes.
+PR: 77.0 -> 78.0 bpm, flat, through the past 6 minutes.
+Stress score: 0 (qualitative label not reported).
+ACCEL: 0.04 -> 0.054 g, increasing, through the past 6 minutes.<EOS>"
+11,"PR: 76.0 -> 80.0 bpm, increasing, over these 6 minutes.
+ACCEL: 0.073 -> 0.065 g, flat with a mid-window peak at 0.11, over these 6 minutes.
+Stress score: 0 (qualitative label not reported).
+EDA: steady near 0.01 uS, flat, over these 6 minutes.
+Physiological Signals: A small pulse rise alongside a mid-window motion peak, with the count high at 148.0 as still turns to walking; temperature is at its session high and conductance remains at the floor.<EOS>"
+12,"Physiological Signals: Pulse holds flat at 77.0 bpm with motion and count both easing under generic activity, temperature unchanged and conductance at zero; nothing in this window moves in either direction.
+Stress score: -2 (qualitative label not reported).
+EDA: 0.01 -> 0.0 uS, flat, last 6 minutes.
+ACCEL: 0.062 -> 0.051 g, decreasing, last 6 minutes.
+PR: steady near 77.0 bpm, flat, last 6 minutes.<EOS>"
+13,"EDA: steady near 0.01 uS, flat, this six-minute window.
+PR: 76.0 -> 73.0 bpm, decreasing, this six-minute window.
+ACCEL: 0.008 -> 0.004 g, decreasing, this six-minute window.
+Stress score: 1 (qualitative label not reported).
+Physiological Signals: Motion falls to almost nothing and the count drops 45.0 to 9.0 as walking gives way to still, pulse easing with it; the bus has evidently steadied, and temperature holds flat.<EOS>"
+14,"Physiological Signals: Pulse eases into the mid-seventies with motion negligible and the count back to 0.0 as generic turns to still; temperature edges up and conductance stays at the floor, the quietest window yet.
+PR: 76.0 -> 74.0 bpm, decreasing, these 6 minutes.
+EDA: steady near 0.01 uS, flat, these 6 minutes.
+Stress score: 1 (qualitative label not reported).
+ACCEL: 0.003 -> 0.002 g, flat, these 6 minutes.<EOS>"
+15,"Stress score: 2 (Mild stress).
+Physiological Signals: Pulse creeps up three beats while motion and count stay near zero under still activity, temperature slipping slightly; with no movement at all, even that small rise stands on its own.
+ACCEL: 0.002 -> 0.004 g, flat, six-minute window.
+EDA: steady near 0.01 uS, flat, six-minute window.
+PR: 75.0 -> 78.0 bpm, increasing, six-minute window.<EOS>"
+16,"PR: 79.0 -> 77.0 bpm, decreasing, in these 6 minutes.
+EDA: steady near 0.01 uS, flat, in these 6 minutes.
+ACCEL: 0.005 -> 0.006 g, flat, in these 6 minutes.
+Physiological Signals: Everything holds still - pulse easing slightly, motion minimal, the count between 12.0 and 18.0, temperature flat; still activity throughout with conductance at the floor.
+Stress score: 1 (qualitative label not reported).<EOS>"
+17,"Physiological Signals: Pulse opens at 90.0 bpm and comes down seven beats across the window while motion halves and the count eases 42.0 to 30.0; still turns to walking, temperature climbs, and conductance stays at the floor.
+Stress score: 0 (qualitative label not reported).
+PR: 90.0 -> 83.0 bpm, decreasing, over the preceding 6 minutes.
+EDA: 0.0 -> 0.01 uS, flat, over the preceding 6 minutes.
+ACCEL: 0.014 -> 0.007 g, decreasing, over the preceding 6 minutes.<EOS>"
+18,"EDA: steady near 0.01 uS, flat, during this window.
+ACCEL: 0.006 -> 0.019 g, increasing, during this window.
+PR: 83.0 -> 84.0 bpm, flat, during this window.
+Stress score: 0 (qualitative label not reported).
+Physiological Signals: Motion picks up threefold from a very low base and the count climbs 16.0 to 42.0 while pulse holds steady; still activity with temperature continuing to rise.<EOS>"
+19,"Physiological Signals: Pulse settles into the high seventies while motion falls away and the count drops 31.0 to 8.0 as walking turns still; temperature climbs steadily and conductance remains at the floor.
+PR: 80.0 -> 78.0 bpm, decreasing, this 6-minute span.
+Stress score: 3 (Mild stress).
+ACCEL: 0.007 -> 0.004 g, decreasing, this 6-minute span.
+EDA: 0.0 -> 0.01 uS, flat, this 6-minute span.<EOS>"
+20,"Stress score: 0 (qualitative label not reported).
+ACCEL: 0.003 -> 0.012 g, increasing, past 6 minutes.
+PR: 78.0 -> 80.0 bpm, flat, past 6 minutes.
+EDA: steady near 0.01 uS, flat, past 6 minutes.
+Physiological Signals: Motion and count both rise late in the window, 3.0 up to 64.0, while pulse barely moves and temperature reaches its session high of 35.08 degC; still activity throughout.<EOS>"
+21,"Physiological Signals: The closing window offers single aggregated values only - pulse at 79.0 bpm, motion at 0.024 g, temperature at its peak - with still becoming walking on a moderate count of 88.0.
+EDA: steady near 0.01 uS, flat, final 6 minutes.
+PR: steady near 79.0 bpm, flat, final 6 minutes.
+Stress score: 2 (Mild stress).
+ACCEL: steady near 0.024 g, flat, final 6 minutes.<EOS>"

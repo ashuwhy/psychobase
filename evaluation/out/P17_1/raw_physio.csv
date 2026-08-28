@@ -1,0 +1,21 @@
+turn,session_id,timestamp,EDA_uS,PR_bpm,SkinTemp_degC,ACCEL_g,ACT_COUNT,ACT_CLASS,stress_score,stress_level
+1,2753-1-1,2026-07-27T15:30:00,not reported,100.0,32.71,0.099,139.0,The generic state held steady for the first minute.,0,not reported
+2,2753-1-1,2026-07-27T15:31:00,0.0,91.0 -> 100.0,32.85 -> 33.04,0.084 -> 0.027,108.0 -> 31.0,The state remained generic across the full span of the past 1 minute.,2,Mild stress
+3,2753-1-1,2026-07-27T15:33:00,not reported,98.0,33.21,0.042,46.0,Activity level held steady at generic across the past 3 minutes.,2,Mild stress
+4,2753-1-1,2026-07-27T15:34:00,0.0,111.0 -> 116.0,33.49 -> 33.69,0.044 -> 0.016,99.0 -> 60.0,Activity classification remained generic throughout the past 4 minutes.,2,Mild stress
+5,2753-1-1,2026-07-27T15:36:00,0.01,104.0,33.87,0.029,40.0,The activity label changed from generic to still within the past 6 minutes.,4,Moderate stress
+6,2753-1-1,2026-07-27T15:37:00,0.01,105.0 -> 103.0,34.01 -> 34.14,0.025 -> 0.039,82.0 -> 60.0,"A change in activity was noted over the past 6 minutes, moving from generic to generic.",4,Moderate stress
+7,2753-1-1,2026-07-27T15:39:00,0.01,109.0 -> 105.0,34.26 -> 34.36,0.041 -> 0.011,59.0 -> 48.0,"Over the past 6 minutes, activity transitioned from generic toward walking.",4,Moderate stress
+8,2753-1-1,2026-07-27T15:41:00,0.01,102.0,34.43,0.033,72.0,A shift occurred over the past 6 minutes: activity went from still to walking.,2,Mild stress
+9,2753-1-1,2026-07-27T15:42:00,0.01,109.0,34.49 -> 34.57,0.024 -> 0.013,86.0 -> 18.0,"During the past 6 minutes, movement classification changed from still to walking.",3,Mild stress
+10,2753-1-1,2026-07-27T15:44:00,0.01,104.0,34.66,0.009,24.0,Activity state evolved from walking to still during the past 6 minutes.,2,Mild stress
+11,2753-1-1,2026-07-27T15:45:00,0.01,120.0 -> 140.0,34.69 -> 34.67,0.083 -> 0.025,109.0 -> 79.0,Activity type moved from walking to generic across the past 6 minutes.,2,Mild stress
+12,2753-1-1,2026-07-27T15:47:00,0.01,118.0,34.56,0.046,72.0,The activity label changed from walking to generic within the past 6 minutes.,2,Mild stress
+13,2753-1-1,2026-07-27T15:48:00,0.01,114.0 -> 107.0,34.44 -> 34.35,0.033 -> 0.086,66.0 -> 142.0,"A change in activity was noted over the past 6 minutes, moving from walking to walking.",0,not reported
+14,2753-1-1,2026-07-27T15:50:00,0.0,104.0 -> 100.0,34.22 -> 34.07,0.115 -> 0.046,110.0 -> 134.0,Activity classification shifted from still to walking during the past 6 minutes.,0,not reported
+15,2753-1-1,2026-07-27T15:52:00,0.01,92.0,33.95,0.066,120.0,"During the past 6 minutes, movement classification changed from generic to generic.",0,not reported
+16,2753-1-1,2026-07-27T15:53:00,0.01,99.0 -> 109.0,33.84,0.051 -> 0.002,83.0 -> 0.0,"Over the past 6 minutes, the participant's activity changed from generic to walking.",3,Mild stress
+17,2753-1-1,2026-07-27T15:55:00,0.02,107.0,33.93,0.002,1.0,Activity type moved from walking to still across the past 6 minutes.,6,High stress
+18,2753-1-1,2026-07-27T15:56:00,0.02,111.0 -> 115.0,33.98 -> 33.92,0.021 -> 0.007,32.0 -> 16.0,"Over the past 6 minutes, a shift from walking to walking was recorded.",5,Moderate stress
+19,2753-1-1,2026-07-27T15:58:00,0.02,108.0,33.89,0.012,27.0,"During the past 6 minutes, activity moved away from generic, becoming walking.",4,Moderate stress
+20,2753-1-1,2026-07-27T15:59:00,0.02,112.0,33.92,0.018,62.0,"A change in activity was noted over the past 6 minutes, moving from walking to walking.",4,Moderate stress

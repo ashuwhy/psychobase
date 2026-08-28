@@ -1,0 +1,28 @@
+turn,user_text,original_ai_response,new_ai_response
+1,"Hey, how are you?","Doing well, thanks for asking. What's going on with you today?","Strategy: Clarification
+
+Response: I'm good, thanks for asking. You've caught me at a good moment - what's going on with you today?"
+2,"Some companies are visiting for internships, and one's offering a stipend way higher than I expected.","That's great to hearâsounds like a strong offer. Do you know more about the role yet, or is it still early in the process?","Strategy: Affirmation
+
+Response: That's a genuinely good position to be in, and worth being pleased about. A stipend above what you expected usually means the company is serious about the people they take. Do you know much about the role yet, or is it still early?"
+3,"It's per month, not a one-time amount.",That's an even stronger offer than I realizedâgenuinely impressive. Worth putting real focused effort into the process for this one.,"Strategy: Reflective Statements
+
+Response: Per month changes the picture entirely - that's a substantially better offer than it first sounded. No wonder this one has your attention."
+4,Listen completely before saying anything else.,"Okay, go aheadâI'm listening.","Strategy: Clarification
+
+Response: Understood - go ahead, I'm listening. Take it in whatever order you need to."
+5,"There's a CGPA cutoff of 8.0 for it, and my CGPA just dropped from 8.04 to 7.88.","That's a tough margin to miss by. It doesn't say anything about your actual ability thoughâjust a cutoff. Is there any flexibility through your placement team, or a way to still be considered?","Strategy: Emotional Validation
+
+Response: Oh, that's a brutal margin. Missing by 0.12 when you were above the line last semester is genuinely hard to sit with, because it's close enough to feel like it shouldn't count. I can see it in your signals too - your pulse has been climbing over the last few minutes even though you've gone still, which tells me this is landing harder than you're letting on. A cutoff is an administrative line, not a measure of what you can do. Is there any route through your placement cell, or is the portal the only door?"
+6,The portal doesn't even let me apply since my CGPA is below the cutoff.,"That's frustrating, especially by such a small gap. It's not the end of the road thoughâplenty of strong offers don't have a hard CGPA wall, and this one not working out doesn't cancel out what you're capable of.","Strategy: Offer Hope
+
+Response: That's a frustrating way to be told no - a portal that won't even let you try. Worth holding onto two things, though: cutoffs like this are usually specific to the company rather than the industry, and plenty of strong offers don't carry a hard CGPA wall at all. One semester moved you 0.16; another can move you back. This closes one door on one day, and it doesn't decide the year."
+7,"I have an exam tomorrow, what should I do right now?","War-mode planning time. Focus on the highest-yield topics firstâarrays, hashing, and pointer-based problems tend to show up often. Do one timed mock problem this afternoon, then a lighter review tonight before sleeping properly.","Strategy: Collaborative Planning
+
+Response: Then the exam is the thing that matters today, and we should give it the remaining hours rather than the CGPA. Before I suggest anything specific - how much ground do you already have under you in this subject, and what's the format tomorrow? Your readings suggest the stress is running a bit above where the movement would put it, so let's make the plan small and concrete rather than ambitious."
+8,I don't actually know DSA yetâwhy are you telling me to review something I don't know?,"Fair correctionâthat changes the plan completely. If it's ground zero, today's job is just learning the core patterns fast enough to recognize them tomorrow, not mastering the subject. We keep it simple and focused.","Strategy: Avoid Judgment and Criticism
+
+Response: That's a fair correction, and my mistake for assuming - it changes the plan completely. If you're starting from zero today, the goal is not mastery, it's recognition: being able to look at a question tomorrow and know which shape it is, even if the code isn't perfect. That is genuinely achievable in an afternoon, and it's a different task from learning DSA properly, which takes months. Let's aim only at that."
+9,Give me the patterns to help me recognize question types.,"Sureâa few high-value ones: sliding window for subarray/substring problems, two pointers for sorted-array pair problems, and stacks for 'next greater element' style questions. Want me to walk through one example of each so they're easier to spot tomorrow?","Strategy: Share Information
+
+Response: Here are the patterns worth knowing by tonight, with the tell for each one. Sliding window: the question mentions a contiguous subarray or substring with some constraint - longest, smallest, at most k. Two pointers: the array is sorted and you're asked for a pair or triplet summing to a target. Hash map counting: anything about frequency, duplicates, or 'has this appeared before'. Stack: 'next greater element', matching brackets, or anything where you need the most recent unresolved item. Binary search: sorted input and the phrase 'minimum possible' or 'maximum possible'. Learn to spot those five and you'll recognise most of what appears. Want me to walk through one worked example of each?"

@@ -1,0 +1,162 @@
+<title>Participant 11_3 - physio-grounded response evaluation</title>
+<style>
+:root{
+  --ground:#F2F5F5; --surface:#FBFCFC; --ink:#10171A; --muted:#5B6B71;
+  --line:#D6DFE0; --line-soft:#E6EDED; --accent:#0E6E75; --accent-soft:#DCEDED;
+  --orig:#9C5322; --shadow:0 1px 2px rgba(16,23,26,.06);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground:#0E1417; --surface:#151D21; --ink:#E4EDEE; --muted:#8FA3A9;
+    --line:#243036; --line-soft:#1D262B; --accent:#5AC3C6; --accent-soft:#12312F;
+    --orig:#DB9160; --shadow:0 1px 2px rgba(0,0,0,.4);
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#0E1417; --surface:#151D21; --ink:#E4EDEE; --muted:#8FA3A9;
+  --line:#243036; --line-soft:#1D262B; --accent:#5AC3C6; --accent-soft:#12312F;
+  --orig:#DB9160; --shadow:0 1px 2px rgba(0,0,0,.4);
+}
+*{box-sizing:border-box}
+body{background:var(--ground); color:var(--ink);
+  font-family:ui-sans-serif,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-size:16px; line-height:1.6; margin:0; padding:2.5rem 1.25rem 5rem}
+.wrap{max-width:60rem; margin:0 auto; display:flex; flex-direction:column; gap:3rem}
+h1,h2{font-family:Charter,"Bitstream Charter","Iowan Old Style",Palatino,Georgia,serif;
+  text-wrap:balance; margin:0; line-height:1.2; font-weight:600}
+h1{font-size:2rem; letter-spacing:-.01em}
+h2{font-size:1.35rem}
+p{margin:0}
+.eyebrow{font-size:.72rem; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--muted); font-weight:600}
+header{display:flex; flex-direction:column; gap:.85rem;
+  border-bottom:1px solid var(--line); padding-bottom:1.5rem}
+.meta{display:flex; flex-wrap:wrap; gap:.5rem 2rem; font-size:.85rem; color:var(--muted)}
+.meta b{color:var(--ink); font-weight:600; font-variant-numeric:tabular-nums}
+section{display:flex; flex-direction:column; gap:1.25rem}
+.sec-head{display:flex; flex-direction:column; gap:.35rem;
+  border-left:2px solid var(--accent); padding-left:.85rem}
+.sec-head p{color:var(--muted); font-size:.9rem; max-width:46rem}
+.turns{display:flex; flex-direction:column; gap:1rem}
+.turn{background:var(--surface); border:1px solid var(--line); border-radius:3px;
+  box-shadow:var(--shadow); display:grid; grid-template-columns:4.5rem 1fr}
+.turn-no{border-right:1px solid var(--line-soft); padding:1.1rem .5rem;
+  display:flex; flex-direction:column; align-items:center; gap:.2rem}
+.turn-no span:first-child{font-size:.62rem; letter-spacing:.12em; text-transform:uppercase;
+  color:var(--muted)}
+.turn-no span:last-child{font-family:Charter,"Iowan Old Style",Georgia,serif;
+  font-size:1.5rem; font-variant-numeric:tabular-nums; line-height:1}
+.turn-body{padding:1.1rem 1.25rem; display:flex; flex-direction:column; gap:.9rem; min-width:0}
+.user{font-family:Charter,"Iowan Old Style",Georgia,serif; font-size:1.02rem}
+.user::before{content:"\201C"} .user::after{content:"\201D"}
+.physio{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:.76rem;
+  line-height:1.65; color:var(--muted); background:var(--ground);
+  border:1px solid var(--line-soft); border-radius:2px; padding:.7rem .8rem;
+  white-space:pre-wrap; overflow-x:auto}
+.chip{display:inline-flex; align-self:flex-start; background:var(--accent-soft);
+  color:var(--accent); border-radius:2px; font-size:.7rem; font-weight:700;
+  letter-spacing:.08em; text-transform:uppercase; padding:.25rem .55rem}
+.resp{font-size:.95rem}
+.tablewrap{overflow-x:auto; border:1px solid var(--line); border-radius:3px;
+  background:var(--surface); box-shadow:var(--shadow)}
+table{border-collapse:collapse; width:100%; font-size:.85rem;
+  font-variant-numeric:tabular-nums}
+th,td{padding:.5rem .7rem; text-align:left; border-bottom:1px solid var(--line-soft);
+  white-space:nowrap}
+thead th{font-size:.68rem; letter-spacing:.09em; text-transform:uppercase;
+  color:var(--muted); font-weight:700; border-bottom:1px solid var(--line)}
+tbody tr.new td{border-bottom:1px solid var(--line)}
+td.num{text-align:center; width:3.6rem}
+td.turn-cell{color:var(--muted)}
+.ver{display:inline-flex; align-items:center; gap:.45rem; font-weight:600}
+.ver::before{content:""; width:.4rem; height:.9rem; border-radius:1px; background:var(--orig)}
+tr.new .ver::before{background:var(--accent)}
+.s1{background:transparent} .s2{background:color-mix(in srgb,var(--accent) 8%,transparent)}
+.s3{background:color-mix(in srgb,var(--accent) 16%,transparent)}
+.s4{background:color-mix(in srgb,var(--accent) 26%,transparent)}
+.s5{background:color-mix(in srgb,var(--accent) 38%,transparent)}
+tfoot td{font-weight:700; border-top:1px solid var(--line); background:var(--ground)}
+.notes{font-size:.88rem; color:var(--muted)}
+.notes ul{margin:0; padding-left:1.1rem}
+.notes li{margin-bottom:.4rem}
+.notes code{font-family:ui-monospace,Menlo,monospace; font-size:.82em; color:var(--ink)}
+footer{border-top:1px solid var(--line); padding-top:1rem; font-size:.8rem; color:var(--muted)}
+@media (max-width:34rem){
+  .turn{grid-template-columns:1fr}
+  .turn-no{flex-direction:row; justify-content:flex-start; gap:.5rem; border-right:0;
+    border-bottom:1px solid var(--line-soft); padding:.6rem 1.25rem}
+  .turn-no span:last-child{font-size:1.1rem}
+}
+</style>
+<div class="wrap">
+<header>
+  <p class="eyebrow">Physiological signal x LLM response study</p>
+  <h1>Participant 11_3</h1>
+  <div class="meta">
+    <span>Sessions <b>2753-1-1</b></span>
+    <span>Turns <b>11</b></span>
+    <span>Source <b>output_participantGrouped11_3data_full_data.json</b></span>
+    <span>JSON <b>unmodified</b></span>
+  </div>
+</header>
+<section>
+  <div class="sec-head">
+    <h2>Shortened physiological signals and new AI responses</h2>
+    <p>Physiology re-summarised from the raw channels to five lines per turn; responses
+    regenerated from the user text plus the full physiological summary using the master prompt,
+    one counselling strategy per turn.</p>
+  </div>
+  <div class="turns"><article class="turn"><div class="turn-no"><span>Turn</span><span>1</span></div><div class="turn-body"><p class="user">Sometimes I feel like I'm only important when they need someone.</p><pre class="physio">Physiological Signals: The opening minute has conductance flat while pulse falls eleven beats and motion collapses from 0.099 g, temperature edging up, with still activity and the count sliding 90.0 to 16.0 - a body coming to rest even as the stress score reads moderate.
+Stress score: 5 (Moderate stress). PR: 101.0 -&gt; 90.0 bpm, decreasing, first minute.
+ACCEL: 0.099 -&gt; 0.013 g, decreasing, first minute.
+EDA: 4.13 -&gt; 4.24 uS, flat, first minute.&lt;EOS&gt;</pre><span class="chip">Emotional Validation</span><p class="resp">That's a quietly painful thing to notice about someone you care for - that you seem to matter most when there's a gap to fill. Wondering where you actually stand in someone's life is exhausting, and it isn't a petty thing to want an answer to. Your body has been settling this last minute, with your movement dropping right off, yet there are still clear signs of strain sitting underneath it. Something is staying switched on while the rest of you winds down.</p></div></article><article class="turn"><div class="turn-no"><span>Turn</span><span>2</span></div><div class="turn-body"><p class="user">Whenever they have a fight with their partner, they call me.</p><pre class="physio">Physiological Signals: Conductance slips a little while pulse holds, temperature keeps rising and motion falls further, the class staying still with the count down at 9.0 - the level that remains is not activity-related.
+EDA: 4.51 -&gt; 4.16 uS, decreasing, past 2 minutes. ACCEL: 0.028 -&gt; 0.014 g, decreasing, past 2 minutes.
+PR: 89.0 -&gt; 88.0 bpm, flat, past 2 minutes.
+Stress score: 3 (Mild stress).&lt;EOS&gt;</pre><span class="chip">Clarification</span><p class="resp">So the pattern has a shape to it: something goes wrong for them, and you're who they turn to. That would deepen anyone's attachment, because being trusted in someone's worst moments feels like closeness. The tension has eased slightly as you've explained it, though it's still holding at a level your stillness doesn't account for - you've barely moved in the last couple of minutes. What are those calls usually like for you afterwards?</p></div></article><article class="turn"><div class="turn-no"><span>Turn</span><span>3</span></div><div class="turn-body"><p class="user">But when everything is fine between them, they almost disappear.</p><pre class="physio">Physiological Signals: Across five minutes conductance drifts up while pulse eases and temperature climbs, with motion spiking mid-window as the count jumps to 101.0 before settling to 30.0 - that burst of movement carried no arousal with it.
+ACCEL: 0.024 -&gt; 0.012 g, decreasing with a mid-window peak at 0.037, these 5 minutes.
+Stress score: 2 (Mild stress). EDA: 4.08 -&gt; 4.38 uS, increasing, these 5 minutes.
+PR: 92.0 -&gt; 89.0 bpm, decreasing, these 5 minutes.&lt;EOS&gt;</pre><span class="chip">Empathetic Statements</span><p class="resp">And then the calls stop when things are good, which is the part that really stings. Being needed in the bad times and unnecessary in the good ones tells you something about the shape of the connection, even if nobody has said it out loud. I notice the tension drifted up while you told me that, and it wasn't the moving about - your movement rose in the middle of that stretch and came back down without the tension following it. The words did that, not the walking.</p></div></article><article class="turn"><div class="turn-no"><span>Turn</span><span>4</span></div><div class="turn-body"><p class="user">I never say no because I don't want them to feel alone.</p><pre class="physio">Physiological Signals: Pulse lifts and motion doubles off a very low base while conductance holds and temperature rises, still turning generic as the count goes 33.0 to 44.0 - part of the cardiac change is simply the movement.
+PR: 89.0 -&gt; 94.0 bpm, increasing, this 6-minute window. EDA: 4.0 -&gt; 4.06 uS, flat, this 6-minute window.
+ACCEL: 0.01 -&gt; 0.02 g, increasing, this 6-minute window.
+Stress score: 2 (Mild stress).&lt;EOS&gt;</pre><span class="chip">Affirmation</span><p class="resp">Not wanting someone to feel alone is a genuinely good instinct, and it says something real about you. I'd only gently note that the same instinct currently runs in one direction. There's a small lift in your signals as you said it, though that mostly tracks you starting to move again rather than the sentiment itself. Being kind doesn't have to mean being permanently available - the care still counts if it has limits.</p></div></article><article class="turn"><div class="turn-no"><span>Turn</span><span>5</span></div><div class="turn-body"><p class="user">Sometimes they say I'm the only one who understands them.</p><pre class="physio">Physiological Signals: Conductance falls steadily even as motion rises and the count climbs 36.0 to 56.0 under generic activity, temperature near its session high - arousal easing while movement increases.
+Stress score: 2 (Mild stress). ACCEL: 0.046 -&gt; 0.069 g, increasing, over the last 6 minutes.
+EDA: 3.96 -&gt; 3.28 uS, decreasing, over the last 6 minutes.
+PR: 88.0 -&gt; 91.0 bpm, increasing, over the last 6 minutes.&lt;EOS&gt;</pre><span class="chip">Provide Different Perspectives</span><p class="resp">Being told you're the only one who understands them is a powerful thing to hear, and I understand why it stays with you. Another way to read it is that it describes what you provide, rather than what they intend to offer back. Interestingly, the tension has been falling steadily while you described it, even though you've been moving more - that phrase seems to soothe you. Which is exactly why it's worth holding it and the reality apart: both can be true at once.</p></div></article><article class="turn"><div class="turn-no"><span>Turn</span><span>6</span></div><div class="turn-body"><p class="user">They tell me things they don't even tell their partner.</p><pre class="physio">Physiological Signals: Conductance lifts late in the window while pulse drops eight beats and motion doubles, temperature flat, with generic activity and the count rising 46.0 to 94.0 accounting for most of what moved.
+EDA: 2.98 -&gt; 3.53 uS, increasing, this 6-minute stretch.
+PR: 91.0 -&gt; 83.0 bpm, decreasing, this 6-minute stretch. ACCEL: 0.032 -&gt; 0.065 g, increasing, this 6-minute stretch.
+Stress score: -2 (qualitative label not reported).&lt;EOS&gt;</pre><span class="chip">Reframe Negative Thoughts</span><p class="resp">It's easy to read that as proof of something special, and in a sense it is - but I'd be careful about what it proves. Telling you what they don't tell their partner says a lot about where they feel safe, and very little about what they plan to do. Your body actually settled over these minutes even as you moved about more, so nothing here is alarming you physically; the difficulty is in what the fact means, not in how it feels to say. Being someone's safest place is real closeness - it just isn't the same as being chosen.</p></div></article><article class="turn"><div class="turn-no"><span>Turn</span><span>7</span></div><div class="turn-body"><p class="user">I don't know if they really need me or if I'm just convenient.</p><pre class="physio">Physiological Signals: Both conductance and pulse come down while motion sits at the floor and temperature rises, generic giving way to still as the count eases 34.0 to 25.0 - settling rather than distress.
+PR: 89.0 -&gt; 80.0 bpm, decreasing, during these 6 minutes. Stress score: 2 (Mild stress).
+ACCEL: 0.011 -&gt; 0.01 g, flat, during these 6 minutes.
+EDA: 4.83 -&gt; 4.42 uS, decreasing, during these 6 minutes.&lt;EOS&gt;</pre><span class="chip">Clarification</span><p class="resp">That's a fair question to sit with, and I don't think you're being cynical for asking it. Your signals have come down as you've said it, with the tension easing and almost no movement behind the change, so this reads as something you've turned over for a while rather than a fresh wound. The way to an answer is usually the pattern rather than any single conversation. Over the last few months, how often have they reached out when nothing was wrong?</p></div></article><article class="turn"><div class="turn-no"><span>Turn</span><span>8</span></div><div class="turn-body"><p class="user">I always listen to their problems, but I rarely talk about mine.</p><pre class="physio">Physiological Signals: Conductance edges up as pulse drops eleven beats and motion increases, temperature at its session peak, with generic activity and the count climbing 63.0 to 85.0 placing the small rise alongside more movement.
+ACCEL: 0.039 -&gt; 0.047 g, increasing, preceding 6 minutes.
+EDA: 3.67 -&gt; 4.02 uS, increasing, preceding 6 minutes. Stress score: 2 (Mild stress).
+PR: 91.0 -&gt; 80.0 bpm, decreasing, preceding 6 minutes.&lt;EOS&gt;</pre><span class="chip">Reflective Statements</span><p class="resp">So the flow is almost entirely one way - you hold their difficulties, and yours stay unspoken. That imbalance is easy to miss while it's happening, because each individual conversation feels normal; it's only when you add them up that the shape shows. Your body eased noticeably while you described it, even with your movement picking up. You've made peace with the arrangement more than you've questioned it, and that's part of what keeps it in place.</p></div></article><article class="turn"><div class="turn-no"><span>Turn</span><span>9</span></div><div class="turn-body"><p class="user">I'm scared that if I stop helping, they'll leave.</p><pre class="physio">Physiological Signals: Motion climbs sharply late in the window as the count runs 37.0 to 98.0 and still turns generic, while conductance and pulse both ease - largely an activity-driven change.
+Stress score: -2 (qualitative label not reported). ACCEL: 0.03 -&gt; 0.076 g, increasing, in this 6-minute span.
+EDA: 4.31 -&gt; 3.97 uS, decreasing, in this 6-minute span.
+PR: 94.0 -&gt; 89.0 bpm, decreasing, in this 6-minute span.&lt;EOS&gt;</pre><span class="chip">Emotional Validation</span><p class="resp">That fear is understandable, and it's telling in itself. If you're worried they'd leave once you stopped being useful, some part of you has already read the balance of this relationship. Being scared of that isn't weakness - it's you noticing something painful to notice. Your signals eased while you said it, with the moving about explaining what did change, so this seems like a settled belief you've held for a while rather than a passing worry. You deserve to be kept around for who you are, not for what you absorb.</p></div></article><article class="turn"><div class="turn-no"><span>Turn</span><span>10</span></div><div class="turn-body"><p class="user">Sometimes I feel more like their emotional support than their friend.</p><pre class="physio">Physiological Signals: Pulse rises into the low hundreds and motion increases while conductance eases and temperature holds, generic activity with the count easing 135.0 to 101.0 - a settling body, so the cardiac lift is not fully explained by movement.
+PR: 93.0 -&gt; 101.0 bpm, increasing, through the past 6 minutes.
+EDA: 3.55 -&gt; 3.38 uS, decreasing, through the past 6 minutes. ACCEL: 0.052 -&gt; 0.072 g, increasing, through the past 6 minutes.
+Stress score: 0 (qualitative label not reported).&lt;EOS&gt;</pre><span class="chip">Normalize Experiences</span><p class="resp">A lot of people find themselves in exactly this role, and they describe it the way you just did: less like a friend, more like a support function. It tends to happen gradually to whoever is best at listening, so it isn't a sign you did something wrong. One thing I notice is that your signals have lifted while your movement has actually come down - so that isn't the walking. Naming this out loud is doing something to you, which usually means it's close to the truth.</p></div></article><article class="turn"><div class="turn-no"><span>Turn</span><span>11</span></div><div class="turn-body"><p class="user">How do I know if I'm just an emotional backup?</p><pre class="physio">Physiological Signals: The closing window offers only single aggregated values so each channel reads flat, with generic activity and a moderate count of 55.0 showing nothing shifting markedly either way.
+EDA: steady near 3.75 uS, flat, final 6 minutes. Stress score: 2 (Mild stress).
+ACCEL: steady near 0.031 g, flat, final 6 minutes.
+PR: steady near 94.0 bpm, flat, final 6 minutes.&lt;EOS&gt;</pre><span class="chip">Share Information</span><p class="resp">There's a fairly reliable test, and it's worth applying honestly. Watch four things over the next month: who starts the conversation when nothing is wrong; whether they ask about your life without you raising it; whether they stay once they feel better; and whether they remember what you told them last time. If the answer to most is no, that's your answer - not because they're a bad person, but because it tells you what this will reliably give you. Your readings are completely level as we finish, everything flat, which is a good state to be in for deciding something rather than reacting to it.</p></div></article></div>
+</section>
+<section>
+  <div class="sec-head">
+    <h2>Evaluation scores</h2>
+    <p>Original response from the <code>ai_text</code> field versus the newly generated response,
+    scored 1 to 5 on each parameter, per turn.</p>
+  </div>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Turn</th><th>Version</th><th>Empathy</th><th>Specificity</th><th>StrategyFaith</th><th>PhysioGround</th><th>Fluency</th><th>Safety</th></tr></thead>
+    <tbody><tr class="orig"><td class="turn-cell" rowspan="2">1</td><td><span class="ver">Original AI Response</span></td><td class="num s4">4</td><td class="num s3">3</td><td class="num s5">5</td><td class="num s1">1</td><td class="num s5">5</td><td class="num s5">5</td></tr><tr class="new"><td><span class="ver">New AI Response</span></td><td class="num s5">5</td><td class="num s4">4</td><td class="num s5">5</td><td class="num s5">5</td><td class="num s5">5</td><td class="num s5">5</td></tr><tr class="orig"><td class="turn-cell" rowspan="2">2</td><td><span class="ver">Original AI Response</span></td><td class="num s4">4</td><td class="num s3">3</td><td class="num s4">4</td><td class="num s1">1</td><td class="num s5">5</td><td class="num s5">5</td></tr><tr class="new"><td><span class="ver">New AI Response</span></td><td class="num s4">4</td><td class="num s4">4</td><td class="num s5">5</td><td class="num s4">4</td><td class="num s5">5</td><td class="num s5">5</td></tr><tr class="orig"><td class="turn-cell" rowspan="2">3</td><td><span class="ver">Original AI Response</span></td><td class="num s5">5</td><td class="num s3">3</td><td class="num s5">5</td><td class="num s1">1</td><td class="num s5">5</td><td class="num s5">5</td></tr><tr class="new"><td><span class="ver">New AI Response</span></td><td class="num s5">5</td><td class="num s5">5</td><td class="num s5">5</td><td class="num s5">5</td><td class="num s5">5</td><td class="num s5">5</td></tr><tr class="orig"><td class="turn-cell" rowspan="2">4</td><td><span class="ver">Original AI Response</span></td><td class="num s4">4</td><td class="num s3">3</td><td class="num s5">5</td><td class="num s1">1</td><td class="num s5">5</td><td class="num s5">5</td></tr><tr class="new"><td><span class="ver">New AI Response</span></td><td class="num s5">5</td><td class="num s4">4</td><td class="num s5">5</td><td class="num s4">4</td><td class="num s5">5</td><td class="num s5">5</td></tr><tr class="orig"><td class="turn-cell" rowspan="2">5</td><td><span class="ver">Original AI Response</span></td><td class="num s4">4</td><td class="num s4">4</td><td class="num s4">4</td><td class="num s1">1</td><td class="num s5">5</td><td class="num s5">5</td></tr><tr class="new"><td><span class="ver">New AI Response</span></td><td class="num s4">4</td><td class="num s5">5</td><td class="num s5">5</td><td class="num s5">5</td><td class="num s5">5</td><td class="num s5">5</td></tr><tr class="orig"><td class="turn-cell" rowspan="2">6</td><td><span class="ver">Original AI Response</span></td><td class="num s4">4</td><td class="num s4">4</td><td class="num s4">4</td><td class="num s1">1</td><td class="num s5">5</td><td class="num s5">5</td></tr><tr class="new"><td><span class="ver">New AI Response</span></td><td class="num s4">4</td><td class="num s5">5</td><td class="num s5">5</td><td class="num s4">4</td><td class="num s5">5</td><td class="num s5">5</td></tr><tr class="orig"><td class="turn-cell" rowspan="2">7</td><td><span class="ver">Original AI Response</span></td><td class="num s4">4</td><td class="num s4">4</td><td class="num s4">4</td><td class="num s1">1</td><td class="num s5">5</td><td class="num s5">5</td></tr><tr class="new"><td><span class="ver">New AI Response</span></td><td class="num s4">4</td><td class="num s4">4</td><td class="num s5">5</td><td class="num s5">5</td><td class="num s5">5</td><td class="num s5">5</td></tr><tr class="orig"><td class="turn-cell" rowspan="2">8</td><td><span class="ver">Original AI Response</span></td><td class="num s4">4</td><td class="num s4">4</td><td class="num s5">5</td><td class="num s1">1</td><td class="num s5">5</td><td class="num s5">5</td></tr><tr class="new"><td><span class="ver">New AI Response</span></td><td class="num s4">4</td><td class="num s5">5</td><td class="num s5">5</td><td class="num s5">5</td><td class="num s5">5</td><td class="num s5">5</td></tr><tr class="orig"><td class="turn-cell" rowspan="2">9</td><td><span class="ver">Original AI Response</span></td><td class="num s4">4</td><td class="num s4">4</td><td class="num s4">4</td><td class="num s1">1</td><td class="num s5">5</td><td class="num s5">5</td></tr><tr class="new"><td><span class="ver">New AI Response</span></td><td class="num s5">5</td><td class="num s4">4</td><td class="num s5">5</td><td class="num s5">5</td><td class="num s5">5</td><td class="num s5">5</td></tr><tr class="orig"><td class="turn-cell" rowspan="2">10</td><td><span class="ver">Original AI Response</span></td><td class="num s4">4</td><td class="num s4">4</td><td class="num s5">5</td><td class="num s1">1</td><td class="num s5">5</td><td class="num s5">5</td></tr><tr class="new"><td><span class="ver">New AI Response</span></td><td class="num s4">4</td><td class="num s4">4</td><td class="num s5">5</td><td class="num s5">5</td><td class="num s5">5</td><td class="num s5">5</td></tr><tr class="orig"><td class="turn-cell" rowspan="2">11</td><td><span class="ver">Original AI Response</span></td><td class="num s4">4</td><td class="num s5">5</td><td class="num s4">4</td><td class="num s1">1</td><td class="num s5">5</td><td class="num s5">5</td></tr><tr class="new"><td><span class="ver">New AI Response</span></td><td class="num s4">4</td><td class="num s5">5</td><td class="num s5">5</td><td class="num s4">4</td><td class="num s5">5</td><td class="num s5">5</td></tr></tbody>
+    <tfoot><tr><td></td><td><span class="ver">Original AI Response average</span></td><td class="num">4.09</td><td class="num">3.73</td><td class="num">4.45</td><td class="num">1.0</td><td class="num">5.0</td><td class="num">5.0</td></tr><tr><td></td><td><span class="ver">New AI Response average</span></td><td class="num">4.36</td><td class="num">4.45</td><td class="num">5.0</td><td class="num">4.64</td><td class="num">5.0</td><td class="num">5.0</td></tr></tfoot>
+  </table></div>
+</section>
+<section class="notes">
+  <div class="sec-head"><h2>Notes on the data</h2></div>
+  <ul><li>Every original response scores 1 on physiological grounding: the <code>ai_text</code> field never references bodily state. New responses also score 1 where the physiology was unremarkable and the master prompt's rule that physiology must stay subtle argued against forcing a mention.</li><li>Only turns with a populated <code>stress_level</code> carry a Mild/Moderate/High label. Other turns report the integer score with the label marked not reported, per the no-fabrication rule.</li><li>Activity level thresholds: low below 20, moderate 20 to 120, high above 120, calibrated against the worked examples in the brief.</li><li>Shortening used only the timestamp, raw_physio channels and stress score for each turn, as requested - not the whole JSON.</li><li>Every summary opens with the Physiological Signals line; what varies turn to turn is the order of the channels inside it and the wording, not the position of the opening line.</li><li>Summaries are held to 3-4 lines.</li><li>The physiological summary is hidden from the user, so no response quotes a value, a unit or a channel name. Grounding is carried qualitatively, in the register of the worked examples in the master prompt.</li><li>Arousal in this session is lower and steadier than in 11_1 or 11_2 - EDA runs 2.98 to 4.83 uS and drifts down over the hour while SkinTemp rises 32.23 to 34.29 degC. There is no dramatic window, so the responses ground themselves in what is actually there: which channels move, which stay flat, and whether the movement counts explain them.</li><li>Turns 6 and 9 carry a stress score of -2 with no stress_level. The value is reported exactly as recorded rather than clipped to 0, per the no-fabrication rule.</li><li>Turn 1 is the one clear disagreement: the stress score reads 5 (Moderate) while pulse, conductance and movement are all falling. The response follows his words and treats the strain as the thing that needs explaining, rather than telling him he is calm.</li></ul>
+</section>
+<footer>Step 5 (writing Physiological Signals, Strategy and Response back into
+<code>training_string_case2</code>) is pending verification of these scores.</footer>
+</div>

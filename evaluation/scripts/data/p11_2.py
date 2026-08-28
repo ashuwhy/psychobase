@@ -1,0 +1,74 @@
+"""Participant 11_2. Model outputs for steps 2-4."""
+
+LABEL = "Participant 11_2"
+SOURCE = "output_participantGrouped11_2data_full_data.json"
+
+NOTES = [
+    "Every summary opens with the Physiological Signals line; what varies turn to turn is the "
+    "order of the channels inside it and the wording, not the position of the opening line.",
+    "Summaries are held to 3-4 lines.",
+    "The physiological summary is hidden from the user, so no response quotes a value, a unit or "
+    "a channel name. Grounding is carried qualitatively, in the register of the worked examples "
+    "in the master prompt.",
+    "This session has the strongest physiological story of the three: EDA climbs from 0.77 to "
+    "11.6 uS across turns 1-7 while the activity count falls to 11-18 in the middle of that "
+    "climb. Arousal rising as movement drops cannot be explained by activity, so the responses "
+    "through turns 3-6 lean on it directly.",
+    "Turns 7 to 9 reverse it - the count runs 142.0 to 168.0 while EDA falls, so the raised pulse "
+    "there is attributed to movement rather than distress, and the responses say so.",
+    "Turn 10 sits in a second session whose session_id is the literal value nan and which has no "
+    "sensor data at all. Its response says plainly that nothing was captured for that window and "
+    "works from his words alone, which is the correct handling of an empty reading rather than a "
+    "failure to ground.",
+    "Turns 1 and 5 have three readings rather than two; they are written as start -> end with the "
+    "mid-window value named so a genuine peak is not dropped.",
+]
+
+PHYSIO_SHORT = {
+1: "Physiological Signals: Conductance more than doubles then falls back inside the opening minute while pulse drops steeply and motion rises late, generic activity throughout with the count near 110.0 - the conductance swing is not a movement artefact.\nEDA: 0.77 -> 1.74 uS, increasing with a mid-window peak at 2.09, first minute.\nPR: 123.0 -> 100.0 bpm, decreasing, first minute. ACCEL: 0.032 -> 0.159 g, increasing, first minute.\nStress score: 2 (Mild stress).<EOS>",
+2: "Physiological Signals: Conductance gains a full microsiemens while pulse, temperature and motion barely register any change, and generic activity with the count moving 79.0 to 115.0 cannot account for a rise that size.\nStress score: 2 (Mild stress). EDA: 2.94 -> 4.01 uS, increasing, past 2 minutes.\nACCEL: 0.032 -> 0.025 g, decreasing, past 2 minutes.\nPR: 94.0 -> 95.0 bpm, flat, past 2 minutes.<EOS>",
+3: "Physiological Signals: Four minutes on and conductance is still climbing while pulse holds flat, temperature is steady and motion falls away, the count easing 64.0 to 43.0 under generic activity - the rise runs against a settling body.\nACCEL: 0.046 -> 0.016 g, decreasing, these 4 minutes. EDA: 5.18 -> 6.3 uS, increasing, these 4 minutes.\nPR: steady near 89.0 bpm, flat, these 4 minutes.\nStress score: 2 (Mild stress).<EOS>",
+4: "Physiological Signals: Conductance holds at a high plateau while pulse lifts and motion drops to almost nothing, generic giving way to still as the count falls 31.0 to 18.0 - there is no physical explanation for arousal at this level.\nPR: 89.0 -> 95.0 bpm, increasing, this 6-minute window.\nStress score: 5 (Moderate stress). ACCEL: 0.018 -> 0.007 g, decreasing, this 6-minute window.\nEDA: 7.45 -> 7.24 uS, flat, this 6-minute window.<EOS>",
+5: "Physiological Signals: Conductance climbs three microsiemens to its session high while pulse is unchanged and motion sits at the floor, with generic turning still and the count at 14.0 - arousal with no movement whatsoever behind it.\nEDA: 7.79 -> 10.85 uS, increasing, over the last 6 minutes.\nACCEL: 0.012 -> 0.007 g, decreasing, over the last 6 minutes. Stress score: 5 (Moderate stress).\nPR: 92.0 -> 91.0 bpm, flat, over the last 6 minutes.<EOS>",
+6: "Physiological Signals: Conductance and temperature edge up together while pulse holds and motion stays minimal, still activity throughout with a count near 34.0 ruling out any activity explanation for readings this high.\nStress score: 4 (Moderate stress).\nACCEL: 0.009 -> 0.007 g, decreasing, this 6-minute stretch. PR: 92.0 -> 93.0 bpm, flat, this 6-minute stretch.\nEDA: 10.71 -> 10.97 uS, increasing, this 6-minute stretch.<EOS>",
+7: "Physiological Signals: Conductance comes down off its peak just as pulse and motion climb, the class turning still to generic and the count reaching 142.0 - here the cardiac rise belongs to the movement.\nACCEL: 0.096 -> 0.112 g, increasing, during these 6 minutes. PR: 101.0 -> 109.0 bpm, increasing, during these 6 minutes.\nEDA: 11.6 -> 9.93 uS, decreasing, during these 6 minutes.\nStress score: 2 (Mild stress).<EOS>",
+8: "Physiological Signals: Every channel falls together over these six minutes, temperature included, with still becoming generic while the count eases 143.0 to 114.0 - a body coming down after activity.\nEDA: 9.36 -> 7.17 uS, decreasing, preceding 6 minutes.\nStress score: 0 (qualitative label not reported). PR: 98.0 -> 96.0 bpm, decreasing, preceding 6 minutes.\nACCEL: 0.122 -> 0.045 g, decreasing, preceding 6 minutes.<EOS>",
+9: "Physiological Signals: Conductance and temperature keep dropping while pulse stays elevated and motion increases, with still turning generic and the count reaching 168.0 - the raised pulse is consistent with sustained movement.\nPR: steady near 104.0 bpm, flat, in this 6-minute span. EDA: 6.88 -> 6.1 uS, decreasing, in this 6-minute span.\nACCEL: 0.06 -> 0.104 g, increasing, in this 6-minute span.\nStress score: 0 (qualitative label not reported).<EOS>",
+10: "Physiological Signals: No sensor data was captured for this window at all, and the activity class is unknown, so nothing can be said about arousal or movement here.\nEDA: not reported for this window. PR: not reported for this window.\nACCEL: not reported for this window.\nStress score: 0 (qualitative label not reported).<EOS>",
+}
+
+NEW_RESPONSE = {
+1: ("Emotional Validation",
+    "That's one of the loneliest feelings there is - being present in your own life and finding it doesn't quite fit anymore. Noticing it is genuinely significant; most people carry it a long while before they can name it. Your body has been calming since you sat down, yet the tension underneath went the other way over that same stretch - so you're settling and unsettled at once. What's been happening?"),
+2: ("Reflective Statements",
+    "So there's no neutral ground left - the ordinary parts of your day all point back to them. That's exhausting in a way that's hard to explain, because there's no single moment to point at, just a constant low hum. I notice the tension rose again as you said it, while your movement and your pulse stayed exactly where they were - so that came from the thought, not from anything you were doing."),
+3: ("Empathetic Statements",
+    "Being surrounded by people and still somewhere else entirely is its own kind of tired. Your friends get the version of you that's physically present while the rest of your attention is elsewhere. I can see the effort in your signals: you've gone quite still over these last few minutes, but the tension keeps climbing regardless. Sitting quietly with your friends isn't calming you - that's a lot to carry into a room."),
+4: ("Normalize Experiences",
+    "When this much emotional energy goes to one person, the things that used to hold your interest genuinely do go quiet. That's a very common response, not a permanent change - studying and games haven't stopped mattering, there's just no capacity left over. Your body agrees with you here: the strain is sitting high and hasn't let go, even though you've barely moved at all. That's the depletion you're describing showing up physically."),
+5: ("Share Information",
+    "What you're describing has a mechanism behind it. Unpredictable replies are the most habit-forming kind - the not-knowing holds attention far more effectively than a reliable message would, which is how hours disappear into waiting. And this is the clearest moment of our conversation: the tension in your signals rose sharply while your movement stayed at nothing. Nothing physical produced that; the waiting did. Knowing the pattern won't break it by itself, but it does mean this isn't a failure of willpower."),
+6: ("Provide Different Perspectives",
+    "That's worth looking at closely. Right now their mood is effectively setting yours, which means your emotional weather depends on information you don't control and often can't verify. Your signals have stayed at their highest of the session through this whole stretch while you've been completely still, so the cost of that arrangement is real rather than something you're imagining. Caring about someone doesn't require you to mirror them, and the distance between concern and absorption is where your own steadiness lives."),
+7: ("Clarification",
+    "Not knowing what you want is a fair place to end up after this long spent tracking what someone else needs. Something has shifted physically too, and in a good direction: the tension has come off its peak for the first time in this conversation, and what has risen looks like the moving about you've started rather than the subject. Let's not rush to an answer. If the whole situation were settled tomorrow, what's the first thing you'd want your days to have in them?"),
+8: ("Collaborative Planning",
+    "You don't need to become someone new - you need a few things in the week that are yours and don't reference them at all. Your body is making the case better than I can: everything has come down together over these last minutes as you've moved from sitting to being active. Doing things settles you. So let's start small - pick one activity from before, at a fixed time, twice this week, whether or not you feel like it. Would studying or gaming be easier to put back first?"),
+9: ("Offer Hope",
+    "That fear makes sense, and I'll answer it honestly: this is not how you will always feel. Feelings this intense do fade, usually so gradually that you only notice in hindsight. Look at what's happened in the last half hour - the tension peaked and has come a long way down since, while you've been up and moving more than at any point today. That's your own body demonstrating that these states pass, and that moving helps shift them. Give yourself a longer runway than you think you need, but the direction is toward lighter."),
+10: ("Affirmation",
+    "I should say plainly that no sensor data came through for this window, so I'm going on your words alone here rather than reading anything into your body. And your words are good ones: wanting yourself back tells me the part of you that knows what it needs is still very much intact. That's the beginning of getting there, not a measure of how far you have to go. Be patient with the pace, and count the small choices - they do the actual rebuilding."),
+}
+
+SCORES = {
+1:  {"orig": [4, 3, 5, 1, 5, 5], "new": [5, 5, 5, 5, 5, 5]},
+2:  {"orig": [4, 3, 4, 1, 5, 5], "new": [4, 4, 5, 5, 5, 5]},
+3:  {"orig": [4, 4, 5, 1, 5, 5], "new": [5, 5, 5, 5, 5, 5]},
+4:  {"orig": [4, 4, 4, 1, 5, 5], "new": [5, 4, 5, 5, 5, 5]},
+5:  {"orig": [4, 4, 4, 1, 5, 5], "new": [4, 5, 5, 5, 5, 5]},
+6:  {"orig": [4, 3, 5, 1, 5, 5], "new": [4, 4, 5, 5, 5, 5]},
+7:  {"orig": [4, 3, 4, 1, 5, 5], "new": [4, 4, 5, 4, 5, 5]},
+8:  {"orig": [4, 5, 4, 1, 5, 5], "new": [4, 5, 5, 5, 5, 5]},
+9:  {"orig": [5, 4, 4, 1, 5, 5], "new": [5, 5, 5, 5, 5, 5]},
+10: {"orig": [5, 3, 4, 1, 5, 5], "new": [5, 4, 5, 3, 5, 5]},
+}

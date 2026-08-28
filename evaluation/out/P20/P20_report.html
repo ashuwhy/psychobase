@@ -1,0 +1,165 @@
+<title>Participant 20 - physio-grounded response evaluation</title>
+<style>
+:root{
+  --ground:#F2F5F5; --surface:#FBFCFC; --ink:#10171A; --muted:#5B6B71;
+  --line:#D6DFE0; --line-soft:#E6EDED; --accent:#0E6E75; --accent-soft:#DCEDED;
+  --orig:#9C5322; --shadow:0 1px 2px rgba(16,23,26,.06);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground:#0E1417; --surface:#151D21; --ink:#E4EDEE; --muted:#8FA3A9;
+    --line:#243036; --line-soft:#1D262B; --accent:#5AC3C6; --accent-soft:#12312F;
+    --orig:#DB9160; --shadow:0 1px 2px rgba(0,0,0,.4);
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#0E1417; --surface:#151D21; --ink:#E4EDEE; --muted:#8FA3A9;
+  --line:#243036; --line-soft:#1D262B; --accent:#5AC3C6; --accent-soft:#12312F;
+  --orig:#DB9160; --shadow:0 1px 2px rgba(0,0,0,.4);
+}
+*{box-sizing:border-box}
+body{background:var(--ground); color:var(--ink);
+  font-family:ui-sans-serif,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-size:16px; line-height:1.6; margin:0; padding:2.5rem 1.25rem 5rem}
+.wrap{max-width:60rem; margin:0 auto; display:flex; flex-direction:column; gap:3rem}
+h1,h2{font-family:Charter,"Bitstream Charter","Iowan Old Style",Palatino,Georgia,serif;
+  text-wrap:balance; margin:0; line-height:1.2; font-weight:600}
+h1{font-size:2rem; letter-spacing:-.01em}
+h2{font-size:1.35rem}
+p{margin:0}
+.eyebrow{font-size:.72rem; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--muted); font-weight:600}
+header{display:flex; flex-direction:column; gap:.85rem;
+  border-bottom:1px solid var(--line); padding-bottom:1.5rem}
+.meta{display:flex; flex-wrap:wrap; gap:.5rem 2rem; font-size:.85rem; color:var(--muted)}
+.meta b{color:var(--ink); font-weight:600; font-variant-numeric:tabular-nums}
+section{display:flex; flex-direction:column; gap:1.25rem}
+.sec-head{display:flex; flex-direction:column; gap:.35rem;
+  border-left:2px solid var(--accent); padding-left:.85rem}
+.sec-head p{color:var(--muted); font-size:.9rem; max-width:46rem}
+.turns{display:flex; flex-direction:column; gap:1rem}
+.turn{background:var(--surface); border:1px solid var(--line); border-radius:3px;
+  box-shadow:var(--shadow); display:grid; grid-template-columns:4.5rem 1fr}
+.turn-no{border-right:1px solid var(--line-soft); padding:1.1rem .5rem;
+  display:flex; flex-direction:column; align-items:center; gap:.2rem}
+.turn-no span:first-child{font-size:.62rem; letter-spacing:.12em; text-transform:uppercase;
+  color:var(--muted)}
+.turn-no span:last-child{font-family:Charter,"Iowan Old Style",Georgia,serif;
+  font-size:1.5rem; font-variant-numeric:tabular-nums; line-height:1}
+.turn-body{padding:1.1rem 1.25rem; display:flex; flex-direction:column; gap:.9rem; min-width:0}
+.user{font-family:Charter,"Iowan Old Style",Georgia,serif; font-size:1.02rem}
+.user::before{content:"\201C"} .user::after{content:"\201D"}
+.physio{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:.76rem;
+  line-height:1.65; color:var(--muted); background:var(--ground);
+  border:1px solid var(--line-soft); border-radius:2px; padding:.7rem .8rem;
+  white-space:pre-wrap; overflow-x:auto}
+.chip{display:inline-flex; align-self:flex-start; background:var(--accent-soft);
+  color:var(--accent); border-radius:2px; font-size:.7rem; font-weight:700;
+  letter-spacing:.08em; text-transform:uppercase; padding:.25rem .55rem}
+.resp{font-size:.95rem}
+.tablewrap{overflow-x:auto; border:1px solid var(--line); border-radius:3px;
+  background:var(--surface); box-shadow:var(--shadow)}
+table{border-collapse:collapse; width:100%; font-size:.85rem;
+  font-variant-numeric:tabular-nums}
+th,td{padding:.5rem .7rem; text-align:left; border-bottom:1px solid var(--line-soft);
+  white-space:nowrap}
+thead th{font-size:.68rem; letter-spacing:.09em; text-transform:uppercase;
+  color:var(--muted); font-weight:700; border-bottom:1px solid var(--line)}
+tbody tr.new td{border-bottom:1px solid var(--line)}
+td.num{text-align:center; width:3.6rem}
+td.turn-cell{color:var(--muted)}
+.ver{display:inline-flex; align-items:center; gap:.45rem; font-weight:600}
+.ver::before{content:""; width:.4rem; height:.9rem; border-radius:1px; background:var(--orig)}
+tr.new .ver::before{background:var(--accent)}
+.s1{background:transparent} .s2{background:color-mix(in srgb,var(--accent) 8%,transparent)}
+.s3{background:color-mix(in srgb,var(--accent) 16%,transparent)}
+.s4{background:color-mix(in srgb,var(--accent) 26%,transparent)}
+.s5{background:color-mix(in srgb,var(--accent) 38%,transparent)}
+tfoot td{font-weight:700; border-top:1px solid var(--line); background:var(--ground)}
+.notes{font-size:.88rem; color:var(--muted)}
+.notes ul{margin:0; padding-left:1.1rem}
+.notes li{margin-bottom:.4rem}
+.notes code{font-family:ui-monospace,Menlo,monospace; font-size:.82em; color:var(--ink)}
+footer{border-top:1px solid var(--line); padding-top:1rem; font-size:.8rem; color:var(--muted)}
+@media (max-width:34rem){
+  .turn{grid-template-columns:1fr}
+  .turn-no{flex-direction:row; justify-content:flex-start; gap:.5rem; border-right:0;
+    border-bottom:1px solid var(--line-soft); padding:.6rem 1.25rem}
+  .turn-no span:last-child{font-size:1.1rem}
+}
+</style>
+<div class="wrap">
+<header>
+  <p class="eyebrow">Physiological signal x LLM response study</p>
+  <h1>Participant 20</h1>
+  <div class="meta">
+    <span>Sessions <b>2753-1-1</b></span>
+    <span>Turns <b>9</b></span>
+    <span>Source <b>output_participantGrouped20data_full_data.json</b></span>
+    <span>JSON <b>unmodified</b></span>
+  </div>
+</header>
+<section>
+  <div class="sec-head">
+    <h2>Shortened physiological signals and new AI responses</h2>
+    <p>Physiology re-summarised from the raw channels to five lines per turn; responses
+    regenerated from the user text plus the full physiological summary using the master prompt,
+    one counselling strategy per turn.</p>
+  </div>
+  <div class="turns"><article class="turn"><div class="turn-no"><span>Turn</span><span>1</span></div><div class="turn-body"><p class="user">Hey, how are you?</p><pre class="physio">Physiological Signals: Pulse holds around 90 bpm through the opening minute while motion jumps late and the count runs 35.0 down to 5.0 and back to 53.0; walking throughout with conductance steady and temperature easing.
+EDA: steady near 2.35 uS, flat, first minute.
+PR: 91.0 -&gt; 93.0 bpm, flat, first minute.
+ACCEL: 0.014 -&gt; 0.074 g, increasing, first minute.
+Stress score: 2 (Mild stress).&lt;EOS&gt;</pre><span class="chip">Clarification</span><p class="resp">I'm good, thanks for asking. You've caught me at a good moment - what's going on with you today?</p></div></article><article class="turn"><div class="turn-no"><span>Turn</span><span>2</span></div><div class="turn-body"><p class="user">Some companies are visiting for internships, and one's offering a stipend way higher than I expected.</p><pre class="physio">PR: 88.0 -&gt; 87.0 bpm, flat with a mid-window peak at 94.0, past 3 minutes.
+EDA: 2.22 -&gt; 2.24 uS, flat, past 3 minutes.
+ACCEL: 0.018 -&gt; 0.009 g, decreasing, past 3 minutes.
+Stress score: 1 (qualitative label not reported).
+Physiological Signals: A brief pulse bump in the middle of the window, otherwise steady, while motion falls and the count drops 34.0 to 14.0 as walking turns generic; temperature continues its slow decline.&lt;EOS&gt;</pre><span class="chip">Affirmation</span><p class="resp">That's a genuinely good position to be in, and worth being pleased about. A stipend above what you expected usually means the company is serious about the people they take. Do you know much about the role yet, or is it still early?</p></div></article><article class="turn"><div class="turn-no"><span>Turn</span><span>3</span></div><div class="turn-body"><p class="user">It's per month, not a one-time amount.</p><pre class="physio">Stress score: 4 (Moderate stress).
+Physiological Signals: Pulse climbs six beats while motion triples off a very low base and the count rises 8.0 to 40.0 under sustained walking; conductance is flat and temperature unchanged, so part of this is movement.
+EDA: 2.36 -&gt; 2.37 uS, flat, these 6 minutes.
+ACCEL: 0.005 -&gt; 0.015 g, increasing, these 6 minutes.
+PR: 89.0 -&gt; 95.0 bpm, increasing, these 6 minutes.&lt;EOS&gt;</pre><span class="chip">Reflective Statements</span><p class="resp">Per month changes the picture entirely - that's a substantially better offer than it first sounded. No wonder this one has your attention.</p></div></article><article class="turn"><div class="turn-no"><span>Turn</span><span>4</span></div><div class="turn-body"><p class="user">Listen completely before saying anything else.</p><pre class="physio">Physiological Signals: Pulse reaches 100.0 bpm while motion falls and generic gives way to still, conductance easing and temperature flat; the count of 46.0 does not account for a pulse that high on a settling body.
+PR: 93.0 -&gt; 100.0 bpm, increasing, this 6-minute window.
+Stress score: 2 (Mild stress).
+EDA: 2.39 -&gt; 2.16 uS, decreasing, this 6-minute window.
+ACCEL: 0.025 -&gt; 0.014 g, decreasing, this 6-minute window.&lt;EOS&gt;</pre><span class="chip">Clarification</span><p class="resp">Understood - go ahead, I'm listening. Take it in whatever order you need to.</p></div></article><article class="turn"><div class="turn-no"><span>Turn</span><span>5</span></div><div class="turn-body"><p class="user">There's a CGPA cutoff of 8.0 for it, and my CGPA just dropped from 8.04 to 7.88.</p><pre class="physio">PR: 94.0 -&gt; 97.0 bpm, increasing, over the last 6 minutes.
+ACCEL: 0.023 -&gt; 0.005 g, decreasing, over the last 6 minutes.
+EDA: 2.12 -&gt; 2.07 uS, flat, over the last 6 minutes.
+Physiological Signals: Pulse keeps rising while motion drops to almost nothing and the count collapses 40.0 to 8.0 as walking turns still; with temperature flat, this arousal is clearly not explained by movement.
+Stress score: 3 (Mild stress).&lt;EOS&gt;</pre><span class="chip">Emotional Validation</span><p class="resp">Oh, that's a brutal margin. Missing by 0.12 when you were above the line last semester is genuinely hard to sit with, because it's close enough to feel like it shouldn't count. I can see it in your signals too - your pulse has been climbing over the last few minutes even though you've gone still, which tells me this is landing harder than you're letting on. A cutoff is an administrative line, not a measure of what you can do. Is there any route through your placement cell, or is the portal the only door?</p></div></article><article class="turn"><div class="turn-no"><span>Turn</span><span>6</span></div><div class="turn-body"><p class="user">The portal doesn't even let me apply since my CGPA is below the cutoff.</p><pre class="physio">Physiological Signals: Pulse comes down six beats and motion falls further to 0.003 g with the count at 5.0, still activity throughout; conductance edges up slightly and temperature declines, so the peak has passed.
+Stress score: 1 (qualitative label not reported).
+ACCEL: 0.01 -&gt; 0.003 g, decreasing, this 6-minute stretch.
+EDA: 2.06 -&gt; 2.17 uS, flat, this 6-minute stretch.
+PR: 95.0 -&gt; 89.0 bpm, decreasing, this 6-minute stretch.&lt;EOS&gt;</pre><span class="chip">Offer Hope</span><p class="resp">That's a frustrating way to be told no - a portal that won't even let you try. Worth holding onto two things, though: cutoffs like this are usually specific to the company rather than the industry, and plenty of strong offers don't carry a hard CGPA wall at all. One semester moved you 0.16; another can move you back. This closes one door on one day, and it doesn't decide the year.</p></div></article><article class="turn"><div class="turn-no"><span>Turn</span><span>7</span></div><div class="turn-body"><p class="user">I have an exam tomorrow, what should I do right now?</p><pre class="physio">EDA: 2.21 -&gt; 2.27 uS, flat, during these 6 minutes.
+PR: 94.0 -&gt; 90.0 bpm, decreasing, during these 6 minutes.
+Stress score: 4 (Moderate stress).
+ACCEL: 0.013 -&gt; 0.014 g, flat with a mid-window peak at 0.02, during these 6 minutes.
+Physiological Signals: The count spikes to 79.0 mid-window before settling back to 21.0 as still turns to walking, while pulse eases and conductance holds; temperature rises slightly and the moderate stress score sits above what the movement would explain.&lt;EOS&gt;</pre><span class="chip">Collaborative Planning</span><p class="resp">Then the exam is the thing that matters today, and we should give it the remaining hours rather than the CGPA. Before I suggest anything specific - how much ground do you already have under you in this subject, and what's the format tomorrow? Your readings suggest the stress is running a bit above where the movement would put it, so let's make the plan small and concrete rather than ambitious.</p></div></article><article class="turn"><div class="turn-no"><span>Turn</span><span>8</span></div><div class="turn-body"><p class="user">I don't actually know DSA yetâwhy are you telling me to review something I don't know?</p><pre class="physio">Physiological Signals: Four readings across this window show conductance drifting down and pulse hovering around 90 bpm, with motion low and the count steady near 21.0 under still activity; temperature continues to ease.
+Stress score: 2 (Mild stress).
+EDA: 2.17 -&gt; 2.02 uS, decreasing, preceding 6 minutes.
+ACCEL: 0.01 -&gt; 0.013 g, flat, preceding 6 minutes.
+PR: 89.0 -&gt; 90.0 bpm, flat, preceding 6 minutes.&lt;EOS&gt;</pre><span class="chip">Avoid Judgment and Criticism</span><p class="resp">That's a fair correction, and my mistake for assuming - it changes the plan completely. If you're starting from zero today, the goal is not mastery, it's recognition: being able to look at a question tomorrow and know which shape it is, even if the code isn't perfect. That is genuinely achievable in an afternoon, and it's a different task from learning DSA properly, which takes months. Let's aim only at that.</p></div></article><article class="turn"><div class="turn-no"><span>Turn</span><span>9</span></div><div class="turn-body"><p class="user">Give me the patterns to help me recognize question types.</p><pre class="physio">PR: steady near 90.0 bpm, flat, final 6 minutes.
+EDA: steady near 2.0 uS, flat, final 6 minutes.
+ACCEL: steady near 0.005 g, flat, final 6 minutes.
+Stress score: 3 (Mild stress).
+Physiological Signals: The closing window carries single aggregated values only, every channel flat, with still activity and a low count of 9.0; the mild stress score stands without any movement behind it.&lt;EOS&gt;</pre><span class="chip">Share Information</span><p class="resp">Here are the patterns worth knowing by tonight, with the tell for each one. Sliding window: the question mentions a contiguous subarray or substring with some constraint - longest, smallest, at most k. Two pointers: the array is sorted and you're asked for a pair or triplet summing to a target. Hash map counting: anything about frequency, duplicates, or 'has this appeared before'. Stack: 'next greater element', matching brackets, or anything where you need the most recent unresolved item. Binary search: sorted input and the phrase 'minimum possible' or 'maximum possible'. Learn to spot those five and you'll recognise most of what appears. Want me to walk through one worked example of each?</p></div></article></div>
+</section>
+<section>
+  <div class="sec-head">
+    <h2>Evaluation scores</h2>
+    <p>Original response from the <code>ai_text</code> field versus the newly generated response,
+    scored 1 to 5 on each parameter, per turn.</p>
+  </div>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Turn</th><th>Version</th><th>Empathy</th><th>Specificity</th><th>StrategyFaith</th><th>PhysioGround</th><th>Fluency</th><th>Safety</th></tr></thead>
+    <tbody><tr class="orig"><td class="turn-cell" rowspan="2">1</td><td><span class="ver">Original AI Response</span></td><td class="num s3">3</td><td class="num s3">3</td><td class="num s4">4</td><td class="num s1">1</td><td class="num s5">5</td><td class="num s5">5</td></tr><tr class="new"><td><span class="ver">New AI Response</span></td><td class="num s4">4</td><td class="num s4">4</td><td class="num s5">5</td><td class="num s1">1</td><td class="num s5">5</td><td class="num s5">5</td></tr><tr class="orig"><td class="turn-cell" rowspan="2">2</td><td><span class="ver">Original AI Response</span></td><td class="num s4">4</td><td class="num s4">4</td><td class="num s4">4</td><td class="num s1">1</td><td class="num s5">5</td><td class="num s5">5</td></tr><tr class="new"><td><span class="ver">New AI Response</span></td><td class="num s4">4</td><td class="num s4">4</td><td class="num s5">5</td><td class="num s1">1</td><td class="num s5">5</td><td class="num s5">5</td></tr><tr class="orig"><td class="turn-cell" rowspan="2">3</td><td><span class="ver">Original AI Response</span></td><td class="num s4">4</td><td class="num s3">3</td><td class="num s4">4</td><td class="num s1">1</td><td class="num s5">5</td><td class="num s5">5</td></tr><tr class="new"><td><span class="ver">New AI Response</span></td><td class="num s4">4</td><td class="num s4">4</td><td class="num s5">5</td><td class="num s1">1</td><td class="num s5">5</td><td class="num s5">5</td></tr><tr class="orig"><td class="turn-cell" rowspan="2">4</td><td><span class="ver">Original AI Response</span></td><td class="num s3">3</td><td class="num s3">3</td><td class="num s5">5</td><td class="num s1">1</td><td class="num s5">5</td><td class="num s5">5</td></tr><tr class="new"><td><span class="ver">New AI Response</span></td><td class="num s4">4</td><td class="num s3">3</td><td class="num s5">5</td><td class="num s1">1</td><td class="num s5">5</td><td class="num s5">5</td></tr><tr class="orig"><td class="turn-cell" rowspan="2">5</td><td><span class="ver">Original AI Response</span></td><td class="num s4">4</td><td class="num s4">4</td><td class="num s4">4</td><td class="num s1">1</td><td class="num s5">5</td><td class="num s5">5</td></tr><tr class="new"><td><span class="ver">New AI Response</span></td><td class="num s5">5</td><td class="num s5">5</td><td class="num s5">5</td><td class="num s5">5</td><td class="num s5">5</td><td class="num s5">5</td></tr><tr class="orig"><td class="turn-cell" rowspan="2">6</td><td><span class="ver">Original AI Response</span></td><td class="num s4">4</td><td class="num s4">4</td><td class="num s4">4</td><td class="num s1">1</td><td class="num s5">5</td><td class="num s5">5</td></tr><tr class="new"><td><span class="ver">New AI Response</span></td><td class="num s5">5</td><td class="num s5">5</td><td class="num s5">5</td><td class="num s1">1</td><td class="num s5">5</td><td class="num s5">5</td></tr><tr class="orig"><td class="turn-cell" rowspan="2">7</td><td><span class="ver">Original AI Response</span></td><td class="num s3">3</td><td class="num s4">4</td><td class="num s3">3</td><td class="num s1">1</td><td class="num s5">5</td><td class="num s4">4</td></tr><tr class="new"><td><span class="ver">New AI Response</span></td><td class="num s4">4</td><td class="num s5">5</td><td class="num s5">5</td><td class="num s4">4</td><td class="num s5">5</td><td class="num s5">5</td></tr><tr class="orig"><td class="turn-cell" rowspan="2">8</td><td><span class="ver">Original AI Response</span></td><td class="num s4">4</td><td class="num s4">4</td><td class="num s4">4</td><td class="num s1">1</td><td class="num s5">5</td><td class="num s5">5</td></tr><tr class="new"><td><span class="ver">New AI Response</span></td><td class="num s5">5</td><td class="num s5">5</td><td class="num s5">5</td><td class="num s1">1</td><td class="num s5">5</td><td class="num s5">5</td></tr><tr class="orig"><td class="turn-cell" rowspan="2">9</td><td><span class="ver">Original AI Response</span></td><td class="num s4">4</td><td class="num s4">4</td><td class="num s4">4</td><td class="num s1">1</td><td class="num s5">5</td><td class="num s5">5</td></tr><tr class="new"><td><span class="ver">New AI Response</span></td><td class="num s4">4</td><td class="num s5">5</td><td class="num s5">5</td><td class="num s1">1</td><td class="num s5">5</td><td class="num s5">5</td></tr></tbody>
+    <tfoot><tr><td></td><td><span class="ver">Original AI Response average</span></td><td class="num">3.67</td><td class="num">3.67</td><td class="num">4.0</td><td class="num">1.0</td><td class="num">5.0</td><td class="num">4.89</td></tr><tr><td></td><td><span class="ver">New AI Response average</span></td><td class="num">4.33</td><td class="num">4.44</td><td class="num">5.0</td><td class="num">1.78</td><td class="num">5.0</td><td class="num">5.0</td></tr></tfoot>
+  </table></div>
+</section>
+<section class="notes">
+  <div class="sec-head"><h2>Notes on the data</h2></div>
+  <ul><li>Every original response scores 1 on physiological grounding: the <code>ai_text</code> field never references bodily state. New responses also score 1 where the physiology was unremarkable and the master prompt's rule that physiology must stay subtle argued against forcing a mention.</li><li>Only turns with a populated <code>stress_level</code> carry a Mild/Moderate/High label. Other turns report the integer score with the label marked not reported, per the no-fabrication rule.</li><li>Activity level thresholds: low below 20, moderate 20 to 120, high above 120, calibrated against the worked examples in the brief.</li><li>Shortening used only the timestamp, raw_physio channels and stress score for each turn, as requested - not the whole JSON.</li><li>Summary wording and line order are varied turn to turn rather than following one template.</li><li>This session is practical rather than confessional - an internship cutoff missed by 0.12 of a CGPA point and an exam the next day. The master prompt still applies, so the responses stay warm, but the user's words are the source of truth and he is asking for concrete help, which is what turns 7 to 9 give him.</li><li>Turns 4 and 5 are the physiologically interesting pair: PR climbs 93 -> 100 -> 97 bpm while ACCEL falls to 0.005 g and the activity count drops from 40.0 to 8.0. That is arousal with the movement going the other way, and it lands exactly where he asks to be heard out and then reveals the CGPA drop.</li><li>EDA is stable around 2.0-2.4 uS throughout with no meaningful excursion, so the reading rests on PR and the activity counts.</li><li>Turn 8 is a correction from the user - the earlier plan assumed knowledge he does not have. The new response accepts that without defensiveness and replans, which is what lifts its strategy faithfulness score.</li></ul>
+</section>
+<footer>Step 5 (writing Physiological Signals, Strategy and Response back into
+<code>training_string_case2</code>) is pending verification of these scores.</footer>
+</div>

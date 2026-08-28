@@ -1,0 +1,41 @@
+turn,shortened_physio_signals
+1,"Physiological Signals: Conductance more than doubles then falls back inside the opening minute while pulse drops steeply and motion rises late, generic activity throughout with the count near 110.0 - the conductance swing is not a movement artefact.
+EDA: 0.77 -> 1.74 uS, increasing with a mid-window peak at 2.09, first minute.
+PR: 123.0 -> 100.0 bpm, decreasing, first minute. ACCEL: 0.032 -> 0.159 g, increasing, first minute.
+Stress score: 2 (Mild stress).<EOS>"
+2,"Physiological Signals: Conductance gains a full microsiemens while pulse, temperature and motion barely register any change, and generic activity with the count moving 79.0 to 115.0 cannot account for a rise that size.
+Stress score: 2 (Mild stress). EDA: 2.94 -> 4.01 uS, increasing, past 2 minutes.
+ACCEL: 0.032 -> 0.025 g, decreasing, past 2 minutes.
+PR: 94.0 -> 95.0 bpm, flat, past 2 minutes.<EOS>"
+3,"Physiological Signals: Four minutes on and conductance is still climbing while pulse holds flat, temperature is steady and motion falls away, the count easing 64.0 to 43.0 under generic activity - the rise runs against a settling body.
+ACCEL: 0.046 -> 0.016 g, decreasing, these 4 minutes. EDA: 5.18 -> 6.3 uS, increasing, these 4 minutes.
+PR: steady near 89.0 bpm, flat, these 4 minutes.
+Stress score: 2 (Mild stress).<EOS>"
+4,"Physiological Signals: Conductance holds at a high plateau while pulse lifts and motion drops to almost nothing, generic giving way to still as the count falls 31.0 to 18.0 - there is no physical explanation for arousal at this level.
+PR: 89.0 -> 95.0 bpm, increasing, this 6-minute window.
+Stress score: 5 (Moderate stress). ACCEL: 0.018 -> 0.007 g, decreasing, this 6-minute window.
+EDA: 7.45 -> 7.24 uS, flat, this 6-minute window.<EOS>"
+5,"Physiological Signals: Conductance climbs three microsiemens to its session high while pulse is unchanged and motion sits at the floor, with generic turning still and the count at 14.0 - arousal with no movement whatsoever behind it.
+EDA: 7.79 -> 10.85 uS, increasing, over the last 6 minutes.
+ACCEL: 0.012 -> 0.007 g, decreasing, over the last 6 minutes. Stress score: 5 (Moderate stress).
+PR: 92.0 -> 91.0 bpm, flat, over the last 6 minutes.<EOS>"
+6,"Physiological Signals: Conductance and temperature edge up together while pulse holds and motion stays minimal, still activity throughout with a count near 34.0 ruling out any activity explanation for readings this high.
+Stress score: 4 (Moderate stress).
+ACCEL: 0.009 -> 0.007 g, decreasing, this 6-minute stretch. PR: 92.0 -> 93.0 bpm, flat, this 6-minute stretch.
+EDA: 10.71 -> 10.97 uS, increasing, this 6-minute stretch.<EOS>"
+7,"Physiological Signals: Conductance comes down off its peak just as pulse and motion climb, the class turning still to generic and the count reaching 142.0 - here the cardiac rise belongs to the movement.
+ACCEL: 0.096 -> 0.112 g, increasing, during these 6 minutes. PR: 101.0 -> 109.0 bpm, increasing, during these 6 minutes.
+EDA: 11.6 -> 9.93 uS, decreasing, during these 6 minutes.
+Stress score: 2 (Mild stress).<EOS>"
+8,"Physiological Signals: Every channel falls together over these six minutes, temperature included, with still becoming generic while the count eases 143.0 to 114.0 - a body coming down after activity.
+EDA: 9.36 -> 7.17 uS, decreasing, preceding 6 minutes.
+Stress score: 0 (qualitative label not reported). PR: 98.0 -> 96.0 bpm, decreasing, preceding 6 minutes.
+ACCEL: 0.122 -> 0.045 g, decreasing, preceding 6 minutes.<EOS>"
+9,"Physiological Signals: Conductance and temperature keep dropping while pulse stays elevated and motion increases, with still turning generic and the count reaching 168.0 - the raised pulse is consistent with sustained movement.
+PR: steady near 104.0 bpm, flat, in this 6-minute span. EDA: 6.88 -> 6.1 uS, decreasing, in this 6-minute span.
+ACCEL: 0.06 -> 0.104 g, increasing, in this 6-minute span.
+Stress score: 0 (qualitative label not reported).<EOS>"
+10,"Physiological Signals: No sensor data was captured for this window at all, and the activity class is unknown, so nothing can be said about arousal or movement here.
+EDA: not reported for this window. PR: not reported for this window.
+ACCEL: not reported for this window.
+Stress score: 0 (qualitative label not reported).<EOS>"

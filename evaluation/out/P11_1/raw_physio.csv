@@ -1,0 +1,16 @@
+turn,session_id,timestamp,EDA_uS,PR_bpm,SkinTemp_degC,ACCEL_g,ACT_COUNT,ACT_CLASS,stress_score,stress_level
+1,2753-1-1,2026-05-04T19:33:00,4.13 -> 3.99,101.0 -> 92.0,32.23 -> 32.32,0.099 -> 0.03,90.0 -> 37.0,"For the first minute, the participant's activity did not shift from generic.",2,Mild stress
+2,2753-1-1,2026-05-04T19:34:00,4.24 -> 4.51,90.0 -> 89.0,32.44 -> 32.6,0.013 -> 0.028,16.0 -> 27.0,"A change in activity was noted over the past 1 minute, moving from generic to still.",2,Mild stress
+3,2753-1-1,2026-05-04T19:36:00,4.11 -> 4.16,88.0 -> 89.0,32.76 -> 32.94,0.019 -> 0.014,29.0 -> 9.0,"Over the past 3 minutes, the participant's activity changed from generic to still.",3,Mild stress
+4,2753-1-1,2026-05-04T19:38:00,4.08 -> 4.35,92.0 -> 87.0,33.05 -> 33.19,0.024 -> 0.037,36.0 -> 101.0,"Over the past 5 minutes, a shift from generic to generic was recorded.",0,not reported
+5,2753-1-1,2026-05-04T19:40:00,4.38 -> 4.0,89.0,33.34 -> 33.44,0.012 -> 0.01,30.0 -> 33.0,"During the past 6 minutes, activity moved away from still, becoming generic.",0,not reported
+6,2753-1-1,2026-05-04T19:42:00,4.06 -> 3.96,94.0 -> 88.0,33.57 -> 33.73,0.02 -> 0.046,44.0 -> 36.0,"A change in activity was noted over the past 6 minutes, moving from still to generic.",0,not reported
+7,2753-1-1,2026-05-04T19:44:00,3.59 -> 3.28,91.0,33.79 -> 33.84,0.03 -> 0.069,22.0 -> 56.0,"During the past 6 minutes, activity moved away from generic, becoming still.",2,Mild stress
+8,2753-1-1,2026-05-04T19:46:00,2.98 -> 2.99,91.0 -> 92.0,33.87 -> 33.91,0.032 -> 0.026,46.0 -> 52.0,"Over the past 6 minutes, the participant's activity changed from generic to generic.",2,Mild stress
+9,2753-1-1,2026-05-04T19:48:00,3.53 -> 4.83,83.0 -> 89.0,33.99 -> 33.83,0.065 -> 0.011,94.0 -> 34.0,The activity label changed from generic to generic within the past 6 minutes.,2,Mild stress
+10,2753-1-1,2026-05-04T19:50:00,4.42 -> 3.67,80.0 -> 91.0,34.08 -> 34.2,0.01 -> 0.039,25.0 -> 63.0,"During the past 6 minutes, activity moved away from still, becoming generic.",4,Moderate stress
+11,2753-1-1,2026-05-04T19:52:00,3.65 -> 4.02,90.0 -> 80.0,34.24 -> 34.29,0.067 -> 0.047,101.0 -> 85.0,Activity remained categorized as generic over the past 6 minutes.,2,Mild stress
+12,2753-1-1,2026-05-04T19:54:00,4.31 -> 3.97,94.0 -> 90.0,34.27 -> 34.22,0.03 -> 0.019,37.0,"During the past 6 minutes, activity moved away from generic, becoming still.",4,Moderate stress
+13,2753-1-1,2026-05-04T19:56:00,3.97 -> 3.55,89.0 -> 93.0,34.23,0.076 -> 0.052,98.0 -> 135.0,A shift occurred over the past 6 minutes: activity went from generic to generic.,0,not reported
+14,2753-1-1,2026-05-04T19:58:00,3.38,101.0,34.22,0.072,101.0,Activity classification shifted from generic to generic during the past 6 minutes.,0,not reported
+15,2753-1-1,2026-05-04T20:00:00,3.75,94.0,34.18,0.031,55.0,"Over the past 6 minutes, the participant's activity changed from still to generic.",2,Mild stress

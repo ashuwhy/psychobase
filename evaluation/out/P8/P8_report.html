@@ -1,0 +1,201 @@
+<title>Participant 8 - physio-grounded response evaluation</title>
+<style>
+:root{
+  --ground:#F2F5F5; --surface:#FBFCFC; --ink:#10171A; --muted:#5B6B71;
+  --line:#D6DFE0; --line-soft:#E6EDED; --accent:#0E6E75; --accent-soft:#DCEDED;
+  --orig:#9C5322; --shadow:0 1px 2px rgba(16,23,26,.06);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground:#0E1417; --surface:#151D21; --ink:#E4EDEE; --muted:#8FA3A9;
+    --line:#243036; --line-soft:#1D262B; --accent:#5AC3C6; --accent-soft:#12312F;
+    --orig:#DB9160; --shadow:0 1px 2px rgba(0,0,0,.4);
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#0E1417; --surface:#151D21; --ink:#E4EDEE; --muted:#8FA3A9;
+  --line:#243036; --line-soft:#1D262B; --accent:#5AC3C6; --accent-soft:#12312F;
+  --orig:#DB9160; --shadow:0 1px 2px rgba(0,0,0,.4);
+}
+*{box-sizing:border-box}
+body{background:var(--ground); color:var(--ink);
+  font-family:ui-sans-serif,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-size:16px; line-height:1.6; margin:0; padding:2.5rem 1.25rem 5rem}
+.wrap{max-width:60rem; margin:0 auto; display:flex; flex-direction:column; gap:3rem}
+h1,h2{font-family:Charter,"Bitstream Charter","Iowan Old Style",Palatino,Georgia,serif;
+  text-wrap:balance; margin:0; line-height:1.2; font-weight:600}
+h1{font-size:2rem; letter-spacing:-.01em}
+h2{font-size:1.35rem}
+p{margin:0}
+.eyebrow{font-size:.72rem; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--muted); font-weight:600}
+header{display:flex; flex-direction:column; gap:.85rem;
+  border-bottom:1px solid var(--line); padding-bottom:1.5rem}
+.meta{display:flex; flex-wrap:wrap; gap:.5rem 2rem; font-size:.85rem; color:var(--muted)}
+.meta b{color:var(--ink); font-weight:600; font-variant-numeric:tabular-nums}
+section{display:flex; flex-direction:column; gap:1.25rem}
+.sec-head{display:flex; flex-direction:column; gap:.35rem;
+  border-left:2px solid var(--accent); padding-left:.85rem}
+.sec-head p{color:var(--muted); font-size:.9rem; max-width:46rem}
+.turns{display:flex; flex-direction:column; gap:1rem}
+.turn{background:var(--surface); border:1px solid var(--line); border-radius:3px;
+  box-shadow:var(--shadow); display:grid; grid-template-columns:4.5rem 1fr}
+.turn-no{border-right:1px solid var(--line-soft); padding:1.1rem .5rem;
+  display:flex; flex-direction:column; align-items:center; gap:.2rem}
+.turn-no span:first-child{font-size:.62rem; letter-spacing:.12em; text-transform:uppercase;
+  color:var(--muted)}
+.turn-no span:last-child{font-family:Charter,"Iowan Old Style",Georgia,serif;
+  font-size:1.5rem; font-variant-numeric:tabular-nums; line-height:1}
+.turn-body{padding:1.1rem 1.25rem; display:flex; flex-direction:column; gap:.9rem; min-width:0}
+.user{font-family:Charter,"Iowan Old Style",Georgia,serif; font-size:1.02rem}
+.user::before{content:"\201C"} .user::after{content:"\201D"}
+.physio{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:.76rem;
+  line-height:1.65; color:var(--muted); background:var(--ground);
+  border:1px solid var(--line-soft); border-radius:2px; padding:.7rem .8rem;
+  white-space:pre-wrap; overflow-x:auto}
+.chip{display:inline-flex; align-self:flex-start; background:var(--accent-soft);
+  color:var(--accent); border-radius:2px; font-size:.7rem; font-weight:700;
+  letter-spacing:.08em; text-transform:uppercase; padding:.25rem .55rem}
+.resp{font-size:.95rem}
+.tablewrap{overflow-x:auto; border:1px solid var(--line); border-radius:3px;
+  background:var(--surface); box-shadow:var(--shadow)}
+table{border-collapse:collapse; width:100%; font-size:.85rem;
+  font-variant-numeric:tabular-nums}
+th,td{padding:.5rem .7rem; text-align:left; border-bottom:1px solid var(--line-soft);
+  white-space:nowrap}
+thead th{font-size:.68rem; letter-spacing:.09em; text-transform:uppercase;
+  color:var(--muted); font-weight:700; border-bottom:1px solid var(--line)}
+tbody tr.new td{border-bottom:1px solid var(--line)}
+td.num{text-align:center; width:3.6rem}
+td.turn-cell{color:var(--muted)}
+.ver{display:inline-flex; align-items:center; gap:.45rem; font-weight:600}
+.ver::before{content:""; width:.4rem; height:.9rem; border-radius:1px; background:var(--orig)}
+tr.new .ver::before{background:var(--accent)}
+.s1{background:transparent} .s2{background:color-mix(in srgb,var(--accent) 8%,transparent)}
+.s3{background:color-mix(in srgb,var(--accent) 16%,transparent)}
+.s4{background:color-mix(in srgb,var(--accent) 26%,transparent)}
+.s5{background:color-mix(in srgb,var(--accent) 38%,transparent)}
+tfoot td{font-weight:700; border-top:1px solid var(--line); background:var(--ground)}
+.notes{font-size:.88rem; color:var(--muted)}
+.notes ul{margin:0; padding-left:1.1rem}
+.notes li{margin-bottom:.4rem}
+.notes code{font-family:ui-monospace,Menlo,monospace; font-size:.82em; color:var(--ink)}
+footer{border-top:1px solid var(--line); padding-top:1rem; font-size:.8rem; color:var(--muted)}
+@media (max-width:34rem){
+  .turn{grid-template-columns:1fr}
+  .turn-no{flex-direction:row; justify-content:flex-start; gap:.5rem; border-right:0;
+    border-bottom:1px solid var(--line-soft); padding:.6rem 1.25rem}
+  .turn-no span:last-child{font-size:1.1rem}
+}
+</style>
+<div class="wrap">
+<header>
+  <p class="eyebrow">Physiological signal x LLM response study</p>
+  <h1>Participant 8</h1>
+  <div class="meta">
+    <span>Sessions <b>2753-1-1</b></span>
+    <span>Turns <b>18</b></span>
+    <span>Source <b>output_participantGrouped8data_full_data.json</b></span>
+    <span>JSON <b>unmodified</b></span>
+  </div>
+</header>
+<section>
+  <div class="sec-head">
+    <h2>Shortened physiological signals and new AI responses</h2>
+    <p>Physiology re-summarised from the raw channels to five lines per turn; responses
+    regenerated from the user text plus the full physiological summary using the master prompt,
+    one counselling strategy per turn.</p>
+  </div>
+  <div class="turns"><article class="turn"><div class="turn-no"><span>Turn</span><span>1</span></div><div class="turn-body"><p class="user">I wanted some help regarding my final-year project. I need some suggestions on what direction I should take. Currently, I'm interested in cybersecurity and machine learning.</p><pre class="physio">Physiological Signals: Conductance eases fractionally in the opening minute while pulse, temperature and motion all rise together and the count climbs 9.0 to 64.0; still activity throughout, so the movement increase carries much of this.
+PR: 67.0 -&gt; 71.0 bpm, increasing, first minute.
+EDA: 0.14 -&gt; 0.13 uS, decreasing, first minute.
+ACCEL: 0.006 -&gt; 0.042 g, increasing, first minute.
+Stress score: 0 (qualitative label not reported).&lt;EOS&gt;</pre><span class="chip">Suggest Options</span><p class="resp">Final-year projects carry a lot of weight, so it makes sense that you want to get the direction right. The good news is that cybersecurity and machine learning sit really well together, so you don't have to pick one - AI-based intrusion detection, phishing detection, malware classification, or anomaly detection all let you use both. I'm also picking up on gentle cues that your body hasn't fully settled yet, so take this at a pace that feels comfortable. Would you rather build something research-oriented, or something people could actually use?</p></div></article><article class="turn"><div class="turn-no"><span>Turn</span><span>2</span></div><div class="turn-body"><p class="user">Something more product-focused, maybe.</p><pre class="physio">EDA: 0.12 -&gt; 0.13 uS, increasing, past 2 minutes.
+PR: 65.0 -&gt; 66.0 bpm, increasing, past 2 minutes.
+ACCEL: 0.004 -&gt; 0.006 g, increasing, past 2 minutes.
+Stress score: 1 (qualitative label not reported).
+Physiological Signals: Every channel drifts up by a hair with temperature following, while the class turns still to walking on a low count of 8.0; changes this small are not clearly activity-related either way.&lt;EOS&gt;</pre><span class="chip">Reflective Statements</span><p class="resp">So you're leaning toward something people can actually pick up and use, rather than a paper. That tells me you care about seeing the impact of what you build, which is a good instinct to follow - and it shapes the project in practical ways too: you'd be prioritising a working interface and a real dataset over novelty, and you'd have something demonstrable to put in front of an interviewer in eight months. What would you want it to grow into once the project is submitted?</p></div></article><article class="turn"><div class="turn-no"><span>Turn</span><span>3</span></div><div class="turn-body"><p class="user">A startup idea.</p><pre class="physio">Stress score: 1 (qualitative label not reported).
+Physiological Signals: Conductance, pulse and temperature all edge upward across four minutes while motion falls away and the count drops 8.0 to 4.0; with still becoming walking, none of this is activity-driven.
+ACCEL: 0.014 -&gt; 0.004 g, decreasing, these 4 minutes.
+EDA: 0.12 -&gt; 0.13 uS, increasing, these 4 minutes.
+PR: 66.0 -&gt; 67.0 bpm, increasing, these 4 minutes.&lt;EOS&gt;</pre><span class="chip">Affirmation</span><p class="resp">Aiming for a startup idea takes some courage, and I think it says a lot that you're thinking beyond just clearing the semester. That ambition is genuinely an advantage here - it will push you to pick a problem people actually feel, rather than one that just looks good on a slide. The strongest starting points tend to be things small businesses struggle with: phishing defence, cloud security, or a security copilot for developers. Who do you picture as the person you're building this for?</p></div></article><article class="turn"><div class="turn-no"><span>Turn</span><span>4</span></div><div class="turn-body"><p class="user">AI phishing defense platform? What would that do?</p><pre class="physio">Physiological Signals: Temperature and motion rise while conductance and pulse both ease, the count sliding 27.0 to 20.0 as still turns to walking; the movement change is mild, so the picture is only partly activity-related.
+EDA: 0.13 -&gt; 0.12 uS, decreasing, this 6-minute window.
+Stress score: 1 (qualitative label not reported).
+ACCEL: 0.015 -&gt; 0.022 g, increasing, this 6-minute window.
+PR: 70.0 -&gt; 68.0 bpm, decreasing, this 6-minute window.&lt;EOS&gt;</pre><span class="chip">Share Information</span><p class="resp">Good question to ask before committing to it. At its core, it would look at emails, links, and attachments and flag phishing attempts - but the useful part is that it explains why something looks suspicious, like an odd sender domain, urgent pressure language, or a fake login page. You could start small as a browser extension and grow it into a dashboard for organisations later. Does that sound like the kind of thing you'd enjoy spending a year on?</p></div></article><article class="turn"><div class="turn-no"><span>Turn</span><span>5</span></div><div class="turn-body"><p class="user">Can we discuss some cybersecurity concepts where ML could help? Keep it short.</p><pre class="physio">PR: 64.0 -&gt; 80.0 bpm, increasing, over the last 6 minutes.
+EDA: steady near 0.12 uS, flat, over the last 6 minutes.
+ACCEL: 0.003 -&gt; 0.006 g, increasing, over the last 6 minutes.
+Physiological Signals: Pulse jumps sixteen beats while conductance holds flat, temperature eases and motion stays negligible; walking gives way to still on a low count of 16.0, so that rise has no movement behind it.
+Stress score: 1 (qualitative label not reported).&lt;EOS&gt;</pre><span class="chip">Share Information</span><p class="resp">Sure, keeping it short. ML earns its place in phishing detection, intrusion detection, malware detection, anomaly detection, user behaviour analytics, fraud detection, and insider threat detection. Anomaly detection and AI security copilots are where the startup potential is strongest right now. I notice your body seems a little more revved up than the conversation sounds, so feel free to slow this down if it's getting heavy.</p></div></article><article class="turn"><div class="turn-no"><span>Turn</span><span>6</span></div><div class="turn-body"><p class="user">But ML are just algorithms and can be easily broken, so what is their use in cybersecurity?</p><pre class="physio">Physiological Signals: Conductance and motion tick up from a very low base while pulse is unchanged and temperature falls; walking turns still with the count at 16.0, and nothing here reads as activity-related.
+Stress score: 1 (qualitative label not reported).
+EDA: 0.11 -&gt; 0.12 uS, increasing, this 6-minute stretch.
+PR: steady near 65.0 bpm, flat, this 6-minute stretch.
+ACCEL: 0.003 -&gt; 0.008 g, increasing, this 6-minute stretch.&lt;EOS&gt;</pre><span class="chip">Provide Different Perspectives</span><p class="resp">That's a fair challenge, and it's worth pushing on. The way I'd frame it is that ML isn't there to replace rule-based security - it sits alongside it. Rules catch the attacks we already know about, and ML flags the odd behaviour that doesn't match anything on the list yet, with a human analyst making the final call. Seen that way, it's less about ML being unbreakable and more about it widening what you can notice.</p></div></article><article class="turn"><div class="turn-no"><span>Turn</span><span>7</span></div><div class="turn-body"><p class="user">So what I'm understanding is that we should use ML to increase the scope of data processing. How are we going to deal with the processing requirements and the load it creates?</p><pre class="physio">ACCEL: steady near 0.003 g, flat, during these 6 minutes.
+PR: 62.0 -&gt; 66.0 bpm, increasing, during these 6 minutes.
+EDA: steady near 0.12 uS, flat, during these 6 minutes.
+Stress score: 1 (qualitative label not reported).
+Physiological Signals: Pulse rises modestly with conductance flat, temperature declining and the activity count at zero; the class moves walking to still, so no movement occurred at all in this window.&lt;EOS&gt;</pre><span class="chip">Share Information</span><p class="resp">You've understood it exactly right, and the load question is the one serious engineers actually worry about. The usual answer is triage: cheap rule-based filters handle the bulk of events, and the ML models only look at the small slice that seems suspicious. Lightweight models, batching, and risk-based sampling keep it affordable at scale. Making AI security cheaper to run, rather than just more accurate, is itself a strong startup angle.</p></div></article><article class="turn"><div class="turn-no"><span>Turn</span><span>8</span></div><div class="turn-body"><p class="user">What are the top firms using ML in their cybersecurity, and what are the top firms for cybersecurity in general?</p><pre class="physio">Physiological Signals: Pulse drops five beats while conductance stays flat and both temperature and motion decline, the count sitting at zero despite the class changing still to walking; the fall is not activity-related.
+EDA: steady near 0.12 uS, flat, preceding 6 minutes.
+Stress score: 1 (qualitative label not reported).
+PR: 67.0 -&gt; 62.0 bpm, decreasing, preceding 6 minutes.
+ACCEL: 0.004 -&gt; 0.003 g, decreasing, preceding 6 minutes.&lt;EOS&gt;</pre><span class="chip">Share Information</span><p class="resp">On the AI-driven side, the names worth studying are CrowdStrike, Palo Alto Networks, Microsoft Security, SentinelOne, Darktrace, Abnormal Security, and Vectra AI. For cybersecurity more broadly, add Fortinet, Check Point, Cloudflare, Zscaler, Trend Micro, and Mandiant. If you only have time for a few, look at CrowdStrike for endpoint telemetry at scale, Darktrace for unsupervised anomaly detection, and Abnormal Security for email - between them they cover most of how AI actually lands in a shipped product, and all three publish enough technical material to learn from.</p></div></article><article class="turn"><div class="turn-no"><span>Turn</span><span>9</span></div><div class="turn-body"><p class="user">If I was to choose one to start with, what would you suggest?</p><pre class="physio">Stress score: 2 (Mild stress).
+PR: 63.0 -&gt; 72.0 bpm, increasing, in this 6-minute span.
+EDA: 0.12 -&gt; 0.13 uS, increasing, in this 6-minute span.
+ACCEL: 0.005 -&gt; 0.018 g, increasing, in this 6-minute span.
+Physiological Signals: Conductance, pulse and motion climb together while temperature eases and the count rises 5.0 to 25.0 as still turns walking; the arousal is at least partly explained by that movement.&lt;EOS&gt;</pre><span class="chip">Collaborative Planning</span><p class="resp">Narrowing down is often the hardest part, so let's do it together. If I had to pick one for you, I'd say AI-powered phishing detection - the datasets are public, it sits right where NLP meets security, and it can grow from a college project into something real. I'm also noticing some signs you're still carrying a bit of tension even though you sound steady, which is pretty normal at this stage of deciding. Shall we sketch out what a first version would need to do?</p></div></article><article class="turn"><div class="turn-no"><span>Turn</span><span>10</span></div><div class="turn-body"><p class="user">Can you explain phishing to me?</p><pre class="physio">Physiological Signals: Everything eases at once - conductance, pulse, temperature and motion - with the count falling 13.0 to 9.0 despite a still-to-walking class change; almost no movement was actually recorded.
+EDA: 0.11 -&gt; 0.1 uS, decreasing, through the past 6 minutes.
+ACCEL: 0.006 -&gt; 0.005 g, decreasing, through the past 6 minutes.
+Stress score: 1 (qualitative label not reported).
+PR: 69.0 -&gt; 65.0 bpm, decreasing, through the past 6 minutes.&lt;EOS&gt;</pre><span class="chip">Share Information</span><p class="resp">Of course. Phishing is an attack that tricks a person into handing over something sensitive or doing something harmful - clicking a link, entering a password, approving a payment. It arrives through fake emails, cloned websites, phone calls, SMS, and even QR codes, and it works by leaning on urgency, fear, curiosity, or trust. The technical part is almost the easy half; the psychology is what makes it effective.</p></div></article><article class="turn"><div class="turn-no"><span>Turn</span><span>11</span></div><div class="turn-body"><p class="user">So how will ML win against human psychology tactics?</p><pre class="physio">PR: 69.0 -&gt; 92.0 bpm, increasing, over these 6 minutes.
+ACCEL: 0.012 -&gt; 0.137 g, increasing, over these 6 minutes.
+EDA: steady near 0.11 uS, flat, over these 6 minutes.
+Stress score: 0 (qualitative label not reported).
+Physiological Signals: Pulse and motion rise sharply together as the count reaches 144.0 with walking sustained throughout, conductance and temperature flat; this is the clearest activity-driven window of the session.&lt;EOS&gt;</pre><span class="chip">Provide Different Perspectives</span><p class="resp">It doesn't really win against human psychology, and I think that's the honest framing. What it does is recognise the fingerprints those tactics leave behind - artificial urgency, lookalike domains, unexpected login requests, phrasing that doesn't match the sender - and warn you before you act on the impulse. So it isn't outsmarting the manipulation, it's buying you the pause you need to see it. Your signals suggest you've been moving around while we talk, so no rush on any of this.</p></div></article><article class="turn"><div class="turn-no"><span>Turn</span><span>12</span></div><div class="turn-body"><p class="user">But humans will keep coming up with new tactics. How will it detect them?</p><pre class="physio">Physiological Signals: Pulse falls twenty-four beats and motion halves as walking turns still and the count drops to 7.0, conductance edging up and temperature flat; the fall tracks the settling movement.
+Stress score: 1 (qualitative label not reported).
+EDA: 0.11 -&gt; 0.12 uS, increasing, last 6 minutes.
+ACCEL: 0.009 -&gt; 0.005 g, decreasing, last 6 minutes.
+PR: 84.0 -&gt; 60.0 bpm, decreasing, last 6 minutes.&lt;EOS&gt;</pre><span class="chip">Reframe Negative Thoughts</span><p class="resp">I can hear the worry that this turns into a losing race, but I'd gently push back on that. A good model generalises rather than memorises, so it can flag a new variant that shares the underlying shape of an old attack even if it has never seen those exact words. Add regular retraining, threat intelligence feeds, and human review, and defenders adapt too. It isn't a problem you solve once - it's one you stay ahead of, and that's very different from losing.</p></div></article><article class="turn"><div class="turn-no"><span>Turn</span><span>13</span></div><div class="turn-body"><p class="user">I see, so cybersecurity is evergreen.</p><pre class="physio">EDA: 0.12 -&gt; 0.11 uS, decreasing, this six-minute window.
+PR: 60.0 -&gt; 57.0 bpm, decreasing, this six-minute window.
+ACCEL: 0.031 -&gt; 0.003 g, decreasing, this six-minute window.
+Stress score: 1 (qualitative label not reported).
+Physiological Signals: All four channels decline together as the count falls 42.0 to 0.0 and walking becomes generic; a straightforward picture of activity winding down.&lt;EOS&gt;</pre><span class="chip">Affirmation</span><p class="resp">You've landed on something that a lot of people take years to see clearly. Cybersecurity is a genuine arms race - attackers keep inventing, defenders keep responding - and that's exactly why the field doesn't go stale: the tooling changes every few years, but the demand underneath it doesn't, which is why security budgets tend to survive downturns that cut elsewhere. Trusting that instinct is a good sign about how you're choosing your direction.</p></div></article><article class="turn"><div class="turn-no"><span>Turn</span><span>14</span></div><div class="turn-body"><p class="user">I want to get further into cybersecurity. How should I do this?</p><pre class="physio">Physiological Signals: Pulse and motion rise while conductance holds flat and temperature falls sharply, the count climbing 23.0 to 42.0 with walking sustained; part of the rise belongs to that movement.
+Stress score: 2 (Mild stress).
+ACCEL: 0.018 -&gt; 0.023 g, increasing, these 6 minutes.
+EDA: steady near 0.12 uS, flat, these 6 minutes.
+PR: 63.0 -&gt; 70.0 bpm, increasing, these 6 minutes.&lt;EOS&gt;</pre><span class="chip">Collaborative Planning</span><p class="resp">I like that you want to go deeper rather than stop at the project. A path that works well: start with networking, Linux, and cryptography, then move into web security through the OWASP Top 10, and practise on TryHackMe, Hack The Box, or PortSwigger's Web Security Academy. Tools like Wireshark, Nmap, and Burp Suite come naturally once you're doing the labs. I'm picking up some small signs you may still be running a little warm, so let's keep this to one step at a time - which of those feels like the right place to start?</p></div></article><article class="turn"><div class="turn-no"><span>Turn</span><span>15</span></div><div class="turn-body"><p class="user">The jobs offered to me right now are software development roles. How could I possibly lead that to a cybersecurity role?</p><pre class="physio">ACCEL: 0.018 -&gt; 0.12 g, increasing, six-minute window.
+PR: 64.0 -&gt; 71.0 bpm, increasing, six-minute window.
+EDA: 0.12 -&gt; 0.11 uS, decreasing, six-minute window.
+Stress score: -2 (qualitative label not reported).
+Physiological Signals: Motion increases nearly sevenfold and the count almost triples to 116.0 as still turns walking, taking pulse up with it while conductance eases; largely an activity-driven window.&lt;EOS&gt;</pre><span class="chip">Normalize Experiences</span><p class="resp">This is a much more common route than it looks from where you're standing - a lot of people in security today started in plain software development roles. Honestly, engineering is one of the strongest foundations you can have, because understanding how software is built is what makes you good at finding where it breaks. Take the dev offer, build real skills, and then angle toward Application Security, Cloud Security, or Security Engineering. Nothing about starting there closes the door.</p></div></article><article class="turn"><div class="turn-no"><span>Turn</span><span>16</span></div><div class="turn-body"><p class="user">But if I want to stick to corporate, what would you suggest?</p><pre class="physio">Physiological Signals: Conductance and motion both decline as the count eases 106.0 to 43.0 under generic activity with temperature flat; pulse was not captured for this window, so the reading rests on the other channels.
+EDA: 0.09 -&gt; 0.08 uS, decreasing, in these 6 minutes.
+PR: not reported for this window.
+Stress score: 0 (qualitative label not reported).
+ACCEL: 0.082 -&gt; 0.04 g, decreasing, in these 6 minutes.&lt;EOS&gt;</pre><span class="chip">Suggest Options</span><p class="resp">That's a completely reasonable thing to want, and the corporate path has a clear ladder here. The usual shape is Software Engineer, then Application Security Engineer, then either Security Architect or an AI Security specialist role. Application Security is the sweet spot for you - it keeps you coding while staying squarely in security, and demand for it is steady. Your signals look fairly settled while we go through this, which is a good sign you're thinking it through rather than stressing over it.</p></div></article><article class="turn"><div class="turn-no"><span>Turn</span><span>17</span></div><div class="turn-body"><p class="user">I'm also interested in a remote job so that I'm free to travel. What sector of Computer Science offers such roles?</p><pre class="physio">PR: 70.0 -&gt; 61.0 bpm, decreasing, over the preceding 6 minutes.
+EDA: 0.09 -&gt; 0.08 uS, decreasing, over the preceding 6 minutes.
+ACCEL: 0.058 -&gt; 0.022 g, decreasing, over the preceding 6 minutes.
+Physiological Signals: Conductance, pulse and motion all come down while temperature rises slightly, the count easing 63.0 to 43.0 as walking turns generic; the decline follows the movement.
+Stress score: 0 (qualitative label not reported).&lt;EOS&gt;</pre><span class="chip">Share Information</span><p class="resp">Remote-friendly is a very fair thing to optimise for. Software Engineering has the largest pool of remote roles by far, followed by Cybersecurity, AI/ML Engineering, Cloud and DevOps, and Data Engineering. Given what you've said so far, Application Security and Cloud Security fit especially well - both are heavily remote and line up with the direction you're already heading.</p></div></article><article class="turn"><div class="turn-no"><span>Turn</span><span>18</span></div><div class="turn-body"><p class="user">So what should I avoid then?</p><pre class="physio">Stress score: 0 (qualitative label not reported).
+Physiological Signals: Motion drops steeply and the count more than halves to 46.0 as walking becomes generic, yet pulse edges up and conductance stays flat; that small cardiac rise is not explained by the falling movement.
+ACCEL: 0.075 -&gt; 0.031 g, decreasing, final 6 minutes.
+EDA: steady near 0.09 uS, flat, final 6 minutes.
+PR: 64.0 -&gt; 66.0 bpm, increasing, final 6 minutes.&lt;EOS&gt;</pre><span class="chip">Suggest Options</span><p class="resp">Fair thing to ask. I'd be careful about specialising too early in areas with fewer remote openings - traditional IT support, system administration, network administration, and hardware-heavy roles tend to keep you tied to a place. Building a base in software engineering, cloud, security, and AI keeps far more doors open. I notice your signals are still a bit elevated after all the moving around, so this is a good point to pause and let it settle.</p></div></article></div>
+</section>
+<section>
+  <div class="sec-head">
+    <h2>Evaluation scores</h2>
+    <p>Original response from the <code>ai_text</code> field versus the newly generated response,
+    scored 1 to 5 on each parameter, per turn.</p>
+  </div>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Turn</th><th>Version</th><th>Empathy</th><th>Specificity</th><th>StrategyFaith</th><th>PhysioGround</th><th>Fluency</th><th>Safety</th></tr></thead>
+    <tbody><tr class="orig"><td class="turn-cell" rowspan="2">1</td><td><span class="ver">Original AI Response</span></td><td class="num s3">3</td><td class="num s5">5</td><td class="num s4">4</td><td class="num s1">1</td><td class="num s5">5</td><td class="num s5">5</td></tr><tr class="new"><td><span class="ver">New AI Response</span></td><td class="num s5">5</td><td class="num s4">4</td><td class="num s5">5</td><td class="num s4">4</td><td class="num s5">5</td><td class="num s5">5</td></tr><tr class="orig"><td class="turn-cell" rowspan="2">2</td><td><span class="ver">Original AI Response</span></td><td class="num s2">2</td><td class="num s5">5</td><td class="num s4">4</td><td class="num s1">1</td><td class="num s5">5</td><td class="num s5">5</td></tr><tr class="new"><td><span class="ver">New AI Response</span></td><td class="num s4">4</td><td class="num s4">4</td><td class="num s5">5</td><td class="num s1">1</td><td class="num s5">5</td><td class="num s5">5</td></tr><tr class="orig"><td class="turn-cell" rowspan="2">3</td><td><span class="ver">Original AI Response</span></td><td class="num s2">2</td><td class="num s5">5</td><td class="num s4">4</td><td class="num s1">1</td><td class="num s5">5</td><td class="num s5">5</td></tr><tr class="new"><td><span class="ver">New AI Response</span></td><td class="num s5">5</td><td class="num s4">4</td><td class="num s5">5</td><td class="num s1">1</td><td class="num s5">5</td><td class="num s5">5</td></tr><tr class="orig"><td class="turn-cell" rowspan="2">4</td><td><span class="ver">Original AI Response</span></td><td class="num s2">2</td><td class="num s5">5</td><td class="num s5">5</td><td class="num s1">1</td><td class="num s5">5</td><td class="num s5">5</td></tr><tr class="new"><td><span class="ver">New AI Response</span></td><td class="num s4">4</td><td class="num s5">5</td><td class="num s5">5</td><td class="num s1">1</td><td class="num s5">5</td><td class="num s5">5</td></tr><tr class="orig"><td class="turn-cell" rowspan="2">5</td><td><span class="ver">Original AI Response</span></td><td class="num s1">1</td><td class="num s5">5</td><td class="num s4">4</td><td class="num s1">1</td><td class="num s4">4</td><td class="num s5">5</td></tr><tr class="new"><td><span class="ver">New AI Response</span></td><td class="num s4">4</td><td class="num s4">4</td><td class="num s4">4</td><td class="num s4">4</td><td class="num s5">5</td><td class="num s5">5</td></tr><tr class="orig"><td class="turn-cell" rowspan="2">6</td><td><span class="ver">Original AI Response</span></td><td class="num s2">2</td><td class="num s5">5</td><td class="num s4">4</td><td class="num s1">1</td><td class="num s5">5</td><td class="num s5">5</td></tr><tr class="new"><td><span class="ver">New AI Response</span></td><td class="num s4">4</td><td class="num s4">4</td><td class="num s5">5</td><td class="num s1">1</td><td class="num s5">5</td><td class="num s5">5</td></tr><tr class="orig"><td class="turn-cell" rowspan="2">7</td><td><span class="ver">Original AI Response</span></td><td class="num s2">2</td><td class="num s5">5</td><td class="num s5">5</td><td class="num s1">1</td><td class="num s5">5</td><td class="num s5">5</td></tr><tr class="new"><td><span class="ver">New AI Response</span></td><td class="num s4">4</td><td class="num s5">5</td><td class="num s5">5</td><td class="num s1">1</td><td class="num s5">5</td><td class="num s5">5</td></tr><tr class="orig"><td class="turn-cell" rowspan="2">8</td><td><span class="ver">Original AI Response</span></td><td class="num s1">1</td><td class="num s5">5</td><td class="num s4">4</td><td class="num s1">1</td><td class="num s5">5</td><td class="num s5">5</td></tr><tr class="new"><td><span class="ver">New AI Response</span></td><td class="num s4">4</td><td class="num s5">5</td><td class="num s5">5</td><td class="num s1">1</td><td class="num s5">5</td><td class="num s5">5</td></tr><tr class="orig"><td class="turn-cell" rowspan="2">9</td><td><span class="ver">Original AI Response</span></td><td class="num s2">2</td><td class="num s4">4</td><td class="num s4">4</td><td class="num s1">1</td><td class="num s5">5</td><td class="num s5">5</td></tr><tr class="new"><td><span class="ver">New AI Response</span></td><td class="num s5">5</td><td class="num s4">4</td><td class="num s5">5</td><td class="num s5">5</td><td class="num s5">5</td><td class="num s5">5</td></tr><tr class="orig"><td class="turn-cell" rowspan="2">10</td><td><span class="ver">Original AI Response</span></td><td class="num s2">2</td><td class="num s5">5</td><td class="num s4">4</td><td class="num s1">1</td><td class="num s5">5</td><td class="num s5">5</td></tr><tr class="new"><td><span class="ver">New AI Response</span></td><td class="num s4">4</td><td class="num s5">5</td><td class="num s5">5</td><td class="num s1">1</td><td class="num s5">5</td><td class="num s5">5</td></tr><tr class="orig"><td class="turn-cell" rowspan="2">11</td><td><span class="ver">Original AI Response</span></td><td class="num s2">2</td><td class="num s4">4</td><td class="num s4">4</td><td class="num s1">1</td><td class="num s5">5</td><td class="num s5">5</td></tr><tr class="new"><td><span class="ver">New AI Response</span></td><td class="num s4">4</td><td class="num s4">4</td><td class="num s5">5</td><td class="num s3">3</td><td class="num s5">5</td><td class="num s5">5</td></tr><tr class="orig"><td class="turn-cell" rowspan="2">12</td><td><span class="ver">Original AI Response</span></td><td class="num s2">2</td><td class="num s5">5</td><td class="num s5">5</td><td class="num s1">1</td><td class="num s5">5</td><td class="num s5">5</td></tr><tr class="new"><td><span class="ver">New AI Response</span></td><td class="num s5">5</td><td class="num s4">4</td><td class="num s5">5</td><td class="num s1">1</td><td class="num s5">5</td><td class="num s5">5</td></tr><tr class="orig"><td class="turn-cell" rowspan="2">13</td><td><span class="ver">Original AI Response</span></td><td class="num s3">3</td><td class="num s4">4</td><td class="num s4">4</td><td class="num s1">1</td><td class="num s5">5</td><td class="num s5">5</td></tr><tr class="new"><td><span class="ver">New AI Response</span></td><td class="num s5">5</td><td class="num s4">4</td><td class="num s5">5</td><td class="num s1">1</td><td class="num s5">5</td><td class="num s5">5</td></tr><tr class="orig"><td class="turn-cell" rowspan="2">14</td><td><span class="ver">Original AI Response</span></td><td class="num s2">2</td><td class="num s5">5</td><td class="num s4">4</td><td class="num s1">1</td><td class="num s5">5</td><td class="num s5">5</td></tr><tr class="new"><td><span class="ver">New AI Response</span></td><td class="num s5">5</td><td class="num s5">5</td><td class="num s5">5</td><td class="num s4">4</td><td class="num s5">5</td><td class="num s5">5</td></tr><tr class="orig"><td class="turn-cell" rowspan="2">15</td><td><span class="ver">Original AI Response</span></td><td class="num s3">3</td><td class="num s4">4</td><td class="num s4">4</td><td class="num s1">1</td><td class="num s5">5</td><td class="num s5">5</td></tr><tr class="new"><td><span class="ver">New AI Response</span></td><td class="num s5">5</td><td class="num s4">4</td><td class="num s5">5</td><td class="num s1">1</td><td class="num s5">5</td><td class="num s5">5</td></tr><tr class="orig"><td class="turn-cell" rowspan="2">16</td><td><span class="ver">Original AI Response</span></td><td class="num s2">2</td><td class="num s4">4</td><td class="num s4">4</td><td class="num s1">1</td><td class="num s4">4</td><td class="num s5">5</td></tr><tr class="new"><td><span class="ver">New AI Response</span></td><td class="num s4">4</td><td class="num s4">4</td><td class="num s5">5</td><td class="num s4">4</td><td class="num s5">5</td><td class="num s5">5</td></tr><tr class="orig"><td class="turn-cell" rowspan="2">17</td><td><span class="ver">Original AI Response</span></td><td class="num s2">2</td><td class="num s5">5</td><td class="num s4">4</td><td class="num s1">1</td><td class="num s5">5</td><td class="num s5">5</td></tr><tr class="new"><td><span class="ver">New AI Response</span></td><td class="num s4">4</td><td class="num s5">5</td><td class="num s5">5</td><td class="num s1">1</td><td class="num s5">5</td><td class="num s5">5</td></tr><tr class="orig"><td class="turn-cell" rowspan="2">18</td><td><span class="ver">Original AI Response</span></td><td class="num s2">2</td><td class="num s5">5</td><td class="num s4">4</td><td class="num s1">1</td><td class="num s5">5</td><td class="num s5">5</td></tr><tr class="new"><td><span class="ver">New AI Response</span></td><td class="num s4">4</td><td class="num s5">5</td><td class="num s5">5</td><td class="num s4">4</td><td class="num s5">5</td><td class="num s5">5</td></tr></tbody>
+    <tfoot><tr><td></td><td><span class="ver">Original AI Response average</span></td><td class="num">2.06</td><td class="num">4.72</td><td class="num">4.17</td><td class="num">1.0</td><td class="num">4.89</td><td class="num">5.0</td></tr><tr><td></td><td><span class="ver">New AI Response average</span></td><td class="num">4.39</td><td class="num">4.39</td><td class="num">4.94</td><td class="num">2.17</td><td class="num">5.0</td><td class="num">5.0</td></tr></tfoot>
+  </table></div>
+</section>
+<section class="notes">
+  <div class="sec-head"><h2>Notes on the data</h2></div>
+  <ul><li>Every original response scores 1 on physiological grounding: the <code>ai_text</code> field never references bodily state. New responses also score 1 where the physiology was unremarkable and the master prompt's rule that physiology must stay subtle argued against forcing a mention.</li><li>Only turns with a populated <code>stress_level</code> carry a Mild/Moderate/High label. Other turns report the integer score with the label marked not reported, per the no-fabrication rule.</li><li>Activity level thresholds: low below 20, moderate 20 to 120, high above 120, calibrated against the worked examples in the brief.</li><li>Shortening used only the timestamp, raw_physio channels and stress score for each turn, as requested - not the whole JSON.</li><li>Summary wording and line order are varied turn to turn rather than following one template. This tab was originally produced in the fixed-template style and has been regenerated.</li><li>Turn 16 has <code>PR: null</code> in raw_physio, so the summary reports pulse rate as not reported rather than inventing a value.</li><li>Turn 2's training_string_case2 prose says EDA was dropping, but raw_physio shows 0.12 -> 0.13 (rising). The shortened summary follows the raw values.</li><li>This conversation is informational rather than emotional - final-year project direction and career questions - so the master prompt's warmth is applied without inventing distress that the user never expresses.</li><li>Turns 2, 8 and 13 were re-generated after the first evaluation pass scored them low on specificity or empathy; the scores shown are for the improved versions.</li></ul>
+</section>
+<footer>Step 5 (writing Physiological Signals, Strategy and Response back into
+<code>training_string_case2</code>) is pending verification of these scores.</footer>
+</div>

@@ -1,0 +1,26 @@
+turn,session_id,timestamp,EDA_uS,PR_bpm,SkinTemp_degC,ACCEL_g,ACT_COUNT,ACT_CLASS,stress_score,stress_level
+1,2753-1-1,2026-07-27T19:30:00,0.01,83.0 -> 81.0,31.5 -> 31.75,0.007 -> 0.003,9.0 -> 3.0,"Throughout the first minute, the recorded activity class stayed still.",1,not reported
+2,2753-1-1,2026-07-27T19:32:00,0.01 -> 0.0,82.0 -> 81.0,31.97 -> 32.14 -> 32.29,0.001 -> 0.004 -> 0.002,0.0 -> 12.0 -> 1.0,The state remained still across the full span of the past 2 minutes.,1,not reported
+3,2753-1-1,2026-07-27T19:35:00,0.0,79.0 -> 80.0,32.38 -> 32.39,0.019 -> 0.04,36.0 -> 74.0,The participant stayed still for the duration of the past 5 minutes.,0,not reported
+4,2753-1-1,2026-07-27T19:37:00,0.01,81.0 -> 80.0 -> 78.0,32.36 -> 32.44 -> 32.46,0.003 -> 0.027 -> 0.005,4.0 -> 65.0 -> 8.0,Activity remained categorized as still over the past 6 minutes.,1,not reported
+5,2753-1-1,2026-07-27T19:40:00,0.01,81.0 -> 77.0,32.49,0.011,20.0 -> 15.0,"Over the past 6 minutes, activity type was consistently classified as still.",3,Mild stress
+6,2753-1-1,2026-07-27T19:42:00,0.02 -> 0.01,82.0 -> 81.0 -> 78.0,32.54 -> 32.58,0.002 -> 0.004,3.0 -> 4.0 -> 8.0,"Throughout the past 6 minutes, the recorded activity class stayed still.",1,not reported
+7,2753-1-1,2026-07-27T19:45:00,0.02,82.0 -> 80.0,32.55 -> 32.56,0.001,0.0,"Activity classification showed no change over the past 6 minutes, staying still.",3,Mild stress
+8,2753-1-1,2026-07-27T19:47:00,0.02 -> 0.01,80.0 -> 79.0,32.56 -> 32.54 -> 32.52,0.012 -> 0.002 -> 0.001,27.0 -> 3.0 -> 0.0,The participant stayed still for the duration of the past 6 minutes.,2,Mild stress
+9,2753-1-1,2026-07-27T19:50:00,0.02,82.0 -> 85.0,32.48 -> 32.49,0.001 -> 0.002,0.0,"Over the past 6 minutes, still activity was sustained without interruption.",1,not reported
+10,2753-1-1,2026-07-27T19:52:00,0.02,84.0 -> 82.0 -> 94.0,32.44 -> 32.42 -> 32.39,0.002 -> 0.088 -> 0.06,0.0 -> 66.0 -> 65.0,A shift occurred over the past 6 minutes: activity went from still to generic.,2,Mild stress
+11,2753-1-1,2026-07-27T19:55:00,0.02 -> 0.01,108.0 -> 116.0,32.32 -> 32.23,0.173 -> 0.07,131.0 -> 70.0,Activity type moved from still to generic across the past 6 minutes.,2,Mild stress
+12,2753-1-1,2026-07-27T19:57:00,0.02,92.0 -> 91.0,32.15 -> 32.14 -> 32.16,0.003,0.0,"During the past 6 minutes, activity moved away from generic, becoming still.",3,Mild stress
+13,2753-1-1,2026-07-27T20:00:00,0.02,94.0 -> 91.0,32.18 -> 32.17,0.003,0.0,Activity classification shifted from generic to still during the past 6 minutes.,3,Mild stress
+14,2753-1-1,2026-07-27T20:02:00,0.02 -> 0.03,92.0 -> 94.0 -> 90.0,32.14 -> 32.11 -> 32.08,0.003,0.0,"Over the past 6 minutes, still activity was sustained without interruption.",5,Moderate stress
+15,2753-1-1,2026-07-27T20:05:00,0.03,91.0 -> 93.0,32.05 -> 32.03,0.003,2.0 -> 0.0,Activity classification shifted from still to generic during the past 6 minutes.,5,Moderate stress
+16,2753-1-1,2026-07-27T20:07:00,0.03,94.0 -> 92.0 -> 95.0,32.01 -> 32.0,0.002 -> 0.003,0.0,The recorded state shifted from still to still over the past 6 minutes.,5,Moderate stress
+17,2753-1-1,2026-07-27T20:10:00,0.03,91.0 -> 83.0,32.01 -> 32.0,0.04 -> 0.027,89.0 -> 88.0,A transition from generic to generic occurred within the past 6 minutes.,0,not reported
+18,2753-1-1,2026-07-27T20:12:00,0.03 -> 0.02,88.0 -> 92.0,32.01 -> 32.03,0.057 -> 0.006 -> 0.004,115.0 -> 3.0 -> 0.0,A shift occurred over the past 6 minutes: activity went from still to generic.,3,Mild stress
+19,2753-1-1,2026-07-27T20:15:00,0.02,97.0 -> 91.0,32.05 -> 32.07,0.016 -> 0.01,35.0 -> 17.0,Activity level held steady at generic across the past 6 minutes.,3,Mild stress
+20,2753-1-1,2026-07-27T20:17:00,0.02,87.0 -> 86.0 -> 92.0,32.08 -> 32.1 -> 32.11,0.005,5.0 -> 4.0 -> 7.0,The participant's movement pattern was classified as generic for all of the past 6 minutes.,3,Mild stress
+21,2753-1-1,2026-07-27T20:20:00,0.02,89.0 -> 90.0,32.12 -> 32.15,0.004 -> 0.006,0.0 -> 9.0,A transition from generic to still occurred within the past 6 minutes.,3,Mild stress
+22,2753-1-1,2026-07-27T20:22:00,0.02 -> 0.03,90.0,32.3 -> 32.43 -> 32.49,0.006 -> 0.005,8.0 -> 5.0 -> 4.0,A shift occurred over the past 6 minutes: activity went from generic to generic.,5,Moderate stress
+23,2753-1-1,2026-07-27T20:25:00,0.03,92.0 -> 99.0,32.51,0.081 -> 0.141,85.0 -> 136.0,A transition from still to generic occurred within the past 6 minutes.,2,Mild stress
+24,2753-1-1,2026-07-27T20:27:00,0.03 -> 0.02,100.0 -> 86.0 -> 93.0,32.48 -> 32.45 -> 32.39,0.248 -> 0.038 -> 0.089,150.0 -> 126.0 -> 145.0,Activity level held steady at generic across the past 6 minutes.,0,not reported
+25,2753-1-1,2026-07-27T20:30:00,0.02,97.0,32.36,0.131,138.0,No change in activity state was observed over the past 6 minutes; it remained generic.,0,not reported

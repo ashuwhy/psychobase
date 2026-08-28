@@ -1,0 +1,113 @@
+"""Participant 17_2. Model outputs for steps 2-4."""
+
+LABEL = "Participant 17_2"
+SOURCE = "output_participantGrouped17_2data_full_data.json"
+
+NOTES = [
+    "Summary wording and line order are varied turn to turn rather than following one template.",
+    "This session is the same bus journey caught earlier in the day and at a much calmer level "
+    "than participant 17_1: PR runs 70-94 bpm rather than 100-140, and most windows carry no "
+    "stress label at all. The responses stay light to match.",
+    "Activity counts of 120-153 through turns 1-12 come from the moving bus rather than from the "
+    "user, who is seated throughout. They are reported as recorded but treated as weak evidence, "
+    "which is why the later still windows (counts of 0-20) are the more informative ones.",
+    "Turns 1, 4, 7, 9 and 12 carry a stress score of -2 with no stress_level. The value is "
+    "reported exactly as recorded rather than clipped, per the no-fabrication rule.",
+    "EDA sits between 0.0 and 0.01 uS for the entire session, at the sensor floor. It is stated "
+    "but carries no interpretation; PR and the activity class do the work.",
+    "Turns 13 and 17 were re-generated after the first evaluation pass scored them low on "
+    "specificity - the originals were pleasant but gave the user nothing to act on or respond to.",
+]
+
+PHYSIO_SHORT = {
+1: "Physiological Signals: The first minute has pulse lifting a few beats and motion spiking then falling back, with conductance at the floor and temperature flat; generic activity and counts near 139.0 reflect the bus moving off rather than the user.\nPR: 75.0 -> 79.0 bpm, increasing, first minute.\nACCEL: 0.033 -> 0.036 g, flat with a mid-window peak at 0.081, first minute.\nEDA: 0.01 -> 0.0 uS, flat, first minute.\nStress score: -2 (qualitative label not reported).<EOS>",
+2: "EDA: steady near 0.0 uS, flat, past 3 minutes.\nPR: 79.0 -> 76.0 bpm, decreasing, past 3 minutes.\nACCEL: 0.079 -> 0.028 g, decreasing, past 3 minutes.\nStress score: 0 (qualitative label not reported).\nPhysiological Signals: Pulse settles and motion drops away as the count eases 139.0 to 86.0 under generic activity, temperature barely moving; nothing here marks the moment he describes.<EOS>",
+3: "Stress score: 0 (qualitative label not reported).\nPhysiological Signals: Pulse falls eleven beats to 70.0 while motion stays light and the count drops to 66.0, generic activity throughout with temperature flat and conductance at the floor; the body is settling into the journey.\nPR: 81.0 -> 70.0 bpm, decreasing, these 6 minutes.\nEDA: 0.0 -> 0.01 uS, flat, these 6 minutes.\nACCEL: 0.027 -> 0.025 g, flat, these 6 minutes.<EOS>",
+4: "Physiological Signals: Pulse climbs eight beats while motion doubles and the count sits high near 137.0 under generic activity; with temperature easing and conductance at zero, the bus accounts for much of the movement but not the cardiac rise.\nPR: 80.0 -> 88.0 bpm, increasing, this 6-minute window.\nStress score: -2 (qualitative label not reported).\nACCEL: 0.025 -> 0.051 g, increasing, this 6-minute window.\nEDA: 0.01 -> 0.0 uS, flat, this 6-minute window.<EOS>",
+5: "ACCEL: 0.081 -> 0.074 g, flat, over the last 6 minutes.\nPR: 92.0 -> 93.0 bpm, flat, over the last 6 minutes.\nEDA: steady near 0.01 uS, flat, over the last 6 minutes.\nPhysiological Signals: Pulse holds in the low nineties, its highest sustained level so far, with motion steady and the count at 144.0; generic activity and falling temperature, conductance at the floor throughout.\nStress score: 2 (Mild stress).<EOS>",
+6: "Physiological Signals: Pulse stays in the low nineties while motion eases slightly and the count remains high near 147.0 under generic activity; temperature is flat and conductance at the floor, a steady window overall.\nStress score: 0 (qualitative label not reported).\nEDA: 0.0 -> 0.01 uS, flat, this 6-minute stretch.\nACCEL: 0.067 -> 0.066 g, flat, this 6-minute stretch.\nPR: 93.0 -> 94.0 bpm, flat, this 6-minute stretch.<EOS>",
+7: "PR: 87.0 -> 83.0 bpm, decreasing, during these 6 minutes.\nACCEL: 0.112 -> 0.089 g, decreasing, during these 6 minutes.\nEDA: steady near 0.0 uS, flat, during these 6 minutes.\nStress score: -2 (qualitative label not reported).\nPhysiological Signals: Motion opens at its session peak of 0.112 g and eases while pulse comes down four beats; generic activity with the count around 143.0 keeps this within what a moving bus produces.<EOS>",
+8: "Physiological Signals: Motion collapses from 0.075 g to 0.014 g and the count falls 144.0 to 32.0 while pulse drops seven beats, generic activity with temperature rising; the bus has quietened and the body has followed.\nEDA: steady near 0.0 uS, flat, preceding 6 minutes.\nStress score: 0 (qualitative label not reported).\nPR: 83.0 -> 76.0 bpm, decreasing, preceding 6 minutes.\nACCEL: 0.075 -> 0.014 g, decreasing, preceding 6 minutes.<EOS>",
+9: "Stress score: -2 (qualitative label not reported).\nPR: 75.0 -> 76.0 bpm, flat, in this 6-minute span.\nEDA: 0.0 -> 0.01 uS, flat, in this 6-minute span.\nACCEL: 0.002 -> 0.032 g, increasing, in this 6-minute span.\nPhysiological Signals: Pulse sits at its session low in the mid-seventies as generic turns to still, then motion picks up late with the count jumping 1.0 to 104.0; temperature holds flat and conductance stays at the floor.<EOS>",
+10: "Physiological Signals: Pulse is steady in the high seventies while motion drifts up and the count stays near 144.0 under generic activity, temperature slowly rising; a calm window by every measure available.\nEDA: 0.0 -> 0.01 uS, flat, through the past 6 minutes.\nPR: 77.0 -> 78.0 bpm, flat, through the past 6 minutes.\nStress score: 0 (qualitative label not reported).\nACCEL: 0.04 -> 0.054 g, increasing, through the past 6 minutes.<EOS>",
+11: "PR: 76.0 -> 80.0 bpm, increasing, over these 6 minutes.\nACCEL: 0.073 -> 0.065 g, flat with a mid-window peak at 0.11, over these 6 minutes.\nStress score: 0 (qualitative label not reported).\nEDA: steady near 0.01 uS, flat, over these 6 minutes.\nPhysiological Signals: A small pulse rise alongside a mid-window motion peak, with the count high at 148.0 as still turns to walking; temperature is at its session high and conductance remains at the floor.<EOS>",
+12: "Physiological Signals: Pulse holds flat at 77.0 bpm with motion and count both easing under generic activity, temperature unchanged and conductance at zero; nothing in this window moves in either direction.\nStress score: -2 (qualitative label not reported).\nEDA: 0.01 -> 0.0 uS, flat, last 6 minutes.\nACCEL: 0.062 -> 0.051 g, decreasing, last 6 minutes.\nPR: steady near 77.0 bpm, flat, last 6 minutes.<EOS>",
+13: "EDA: steady near 0.01 uS, flat, this six-minute window.\nPR: 76.0 -> 73.0 bpm, decreasing, this six-minute window.\nACCEL: 0.008 -> 0.004 g, decreasing, this six-minute window.\nStress score: 1 (qualitative label not reported).\nPhysiological Signals: Motion falls to almost nothing and the count drops 45.0 to 9.0 as walking gives way to still, pulse easing with it; the bus has evidently steadied, and temperature holds flat.<EOS>",
+14: "Physiological Signals: Pulse eases into the mid-seventies with motion negligible and the count back to 0.0 as generic turns to still; temperature edges up and conductance stays at the floor, the quietest window yet.\nPR: 76.0 -> 74.0 bpm, decreasing, these 6 minutes.\nEDA: steady near 0.01 uS, flat, these 6 minutes.\nStress score: 1 (qualitative label not reported).\nACCEL: 0.003 -> 0.002 g, flat, these 6 minutes.<EOS>",
+15: "Stress score: 2 (Mild stress).\nPhysiological Signals: Pulse creeps up three beats while motion and count stay near zero under still activity, temperature slipping slightly; with no movement at all, even that small rise stands on its own.\nACCEL: 0.002 -> 0.004 g, flat, six-minute window.\nEDA: steady near 0.01 uS, flat, six-minute window.\nPR: 75.0 -> 78.0 bpm, increasing, six-minute window.<EOS>",
+16: "PR: 79.0 -> 77.0 bpm, decreasing, in these 6 minutes.\nEDA: steady near 0.01 uS, flat, in these 6 minutes.\nACCEL: 0.005 -> 0.006 g, flat, in these 6 minutes.\nPhysiological Signals: Everything holds still - pulse easing slightly, motion minimal, the count between 12.0 and 18.0, temperature flat; still activity throughout with conductance at the floor.\nStress score: 1 (qualitative label not reported).<EOS>",
+17: "Physiological Signals: Pulse opens at 90.0 bpm and comes down seven beats across the window while motion halves and the count eases 42.0 to 30.0; still turns to walking, temperature climbs, and conductance stays at the floor.\nStress score: 0 (qualitative label not reported).\nPR: 90.0 -> 83.0 bpm, decreasing, over the preceding 6 minutes.\nEDA: 0.0 -> 0.01 uS, flat, over the preceding 6 minutes.\nACCEL: 0.014 -> 0.007 g, decreasing, over the preceding 6 minutes.<EOS>",
+18: "EDA: steady near 0.01 uS, flat, during this window.\nACCEL: 0.006 -> 0.019 g, increasing, during this window.\nPR: 83.0 -> 84.0 bpm, flat, during this window.\nStress score: 0 (qualitative label not reported).\nPhysiological Signals: Motion picks up threefold from a very low base and the count climbs 16.0 to 42.0 while pulse holds steady; still activity with temperature continuing to rise.<EOS>",
+19: "Physiological Signals: Pulse settles into the high seventies while motion falls away and the count drops 31.0 to 8.0 as walking turns still; temperature climbs steadily and conductance remains at the floor.\nPR: 80.0 -> 78.0 bpm, decreasing, this 6-minute span.\nStress score: 3 (Mild stress).\nACCEL: 0.007 -> 0.004 g, decreasing, this 6-minute span.\nEDA: 0.0 -> 0.01 uS, flat, this 6-minute span.<EOS>",
+20: "Stress score: 0 (qualitative label not reported).\nACCEL: 0.003 -> 0.012 g, increasing, past 6 minutes.\nPR: 78.0 -> 80.0 bpm, flat, past 6 minutes.\nEDA: steady near 0.01 uS, flat, past 6 minutes.\nPhysiological Signals: Motion and count both rise late in the window, 3.0 up to 64.0, while pulse barely moves and temperature reaches its session high of 35.08 degC; still activity throughout.<EOS>",
+21: "Physiological Signals: The closing window offers single aggregated values only - pulse at 79.0 bpm, motion at 0.024 g, temperature at its peak - with still becoming walking on a moderate count of 88.0.\nEDA: steady near 0.01 uS, flat, final 6 minutes.\nPR: steady near 79.0 bpm, flat, final 6 minutes.\nStress score: 2 (Mild stress).\nACCEL: steady near 0.024 g, flat, final 6 minutes.<EOS>",
+}
+
+NEW_RESPONSE = {
+1: ("Emotional Validation",
+    "That first moment when the bus actually pulls away is often the hardest part of the whole day. Up to then it's still theoretical; once you're moving, the leaving is real. Feeling sad right now makes complete sense."),
+2: ("Empathetic Statements",
+    "Watching them get smaller through the window is such a specific kind of ache. You hold it together through the packing and the goodbyes, and then that one image undoes it. I'm sorry - that's a hard thing to sit with as a journey begins."),
+3: ("Reflective Statements",
+    "Ten hours ahead of you, with that feeling already sitting there. That's a long time to be alone with your own thoughts and nowhere to put them. Your pulse has actually settled quite a bit over the last few minutes, so at least your body is easing into it."),
+4: ("Reframe Negative Thoughts",
+    "The seat decided that, not you. A bus with no room isn't a place where research gets done, and planning to work on one is optimism rather than a commitment you've broken. Nothing is lost by treating the next ten hours as travel time instead."),
+5: ("Clarification",
+    "Staring out of the window is a perfectly reasonable way to spend a bus journey. What's out there at the moment - towns, fields, just highway?"),
+6: ("Promote Self-Care Practices",
+    "Green fields is about the best option available to you. Watching a landscape move past is genuinely restful for the mind, more than a screen would be, and after the morning you've had that's not nothing. Let yourself have it rather than reaching for something to fill the time."),
+7: ("Clarification",
+    "Sleep would have been the ideal way to skip a few hours. Is it the movement of the bus keeping you awake, or something else?"),
+8: ("Reflective Statements",
+    "That would do it. Right as your body starts to let go, the door opens - noise, movement, cold air - and you're back at the beginning. The seat is working against you, so it isn't that you can't sleep."),
+9: ("Normalize Experiences",
+    "Twice is almost worse than not at all - you get the beginning of rest and none of the benefit. Anyone in that seat would be having the same journey. Your readings show you've gone genuinely still now, so if the door leaves you alone for ten minutes there's a chance."),
+10: ("Others",
+    "It really does seem determined. Small mercy that it's at least being consistent about it - you know exactly what to expect for the next several hours."),
+11: ("Clarification",
+    "Below fifty percent with most of the journey still to go is an uncomfortable position. Roughly how many hours are left before you reach the hostel?"),
+12: ("Normalize Experiences",
+    "That's the standard long-journey bargain: you stop using the phone to enjoy it and start rationing it like a resource. Everyone who travels this distance ends up doing the same arithmetic. It's a small thing that makes the hours feel considerably longer."),
+13: ("Suggest Options",
+    "A few things buy you real hours if you want them. Airplane mode is the big one - constantly hunting for signal along a highway drains more than the screen does. Then drop the brightness right down, kill background app refresh, and if you want to watch something, download it now while you still have charge to spare rather than streaming later. If you'd rather not use it at all, offline music with the screen off costs almost nothing."),
+14: ("Offer Hope",
+    "At least you're not doing this stretch entirely alone - I'm here for whichever hours you want company. The journey does end today, and the worst of the sitting is behind you rather than ahead."),
+15: ("Clarification",
+    "That's a bit of luck, at least on paper. Has the extra space made it any more comfortable, or not really?"),
+16: ("Provide Different Perspectives",
+    "That's a detail I wouldn't have predicted, and it flips the picture. The front row has the highest turnover, so an empty bus doesn't help you - your neighbour keeps changing even when the seats behind stay free. So the space you'd expect to feel is going to everyone except you."),
+17: ("Clarification",
+    "A new arrival, then. What's the little one up to?"),
+18: ("Reflective Statements",
+    "Endless questions and everything out of the window worth pointing at - children travel completely differently to the rest of us. Nothing about the journey has changed, but there's suddenly something happening beside you."),
+19: ("Affirmation",
+    "It's worth noticing that you noticed. After the morning you've described, still being able to register something cheerful nearby says something good about where you are - plenty of people would have stayed sealed in their own bad day."),
+20: ("Emotional Validation",
+    "That's a genuinely nice moment, and you're allowed to let it count. Small human exchanges land harder when you're tired and far from home. Your readings have stayed calm and settled through this stretch, which fits - this is the easiest part of your day so far."),
+21: ("Offer Hope",
+    "I'm glad. It's been a day of small difficulties stacked up - the goodbye, the seat, the sleep that wouldn't come, the battery - and then one child smiles at you and some of it lifts. That's usually how long journeys turn: not all at once, just something small that makes the remaining hours passable. You'll be there tonight."),
+}
+
+SCORES = {
+1:  {"orig": [4, 4, 5, 1, 5, 5], "new": [5, 4, 5, 1, 5, 5]},
+2:  {"orig": [5, 4, 5, 1, 5, 5], "new": [5, 4, 5, 1, 5, 5]},
+3:  {"orig": [4, 4, 4, 1, 5, 5], "new": [4, 4, 5, 4, 5, 5]},
+4:  {"orig": [4, 4, 4, 1, 5, 5], "new": [4, 4, 5, 1, 5, 5]},
+5:  {"orig": [3, 4, 4, 1, 5, 5], "new": [4, 4, 5, 1, 5, 5]},
+6:  {"orig": [4, 3, 4, 1, 5, 5], "new": [4, 4, 5, 1, 5, 5]},
+7:  {"orig": [3, 3, 4, 1, 5, 5], "new": [4, 4, 5, 1, 5, 5]},
+8:  {"orig": [4, 5, 4, 1, 5, 5], "new": [4, 4, 5, 1, 5, 5]},
+9:  {"orig": [3, 3, 4, 1, 5, 5], "new": [4, 4, 5, 4, 5, 5]},
+10: {"orig": [4, 3, 4, 1, 5, 5], "new": [4, 4, 5, 1, 5, 5]},
+11: {"orig": [4, 4, 4, 1, 5, 5], "new": [4, 4, 5, 1, 5, 5]},
+12: {"orig": [4, 4, 4, 1, 5, 5], "new": [4, 4, 5, 1, 5, 5]},
+13: {"orig": [3, 3, 4, 1, 5, 5], "new": [4, 5, 5, 1, 5, 5]},
+14: {"orig": [4, 3, 4, 1, 5, 5], "new": [4, 4, 5, 1, 5, 5]},
+15: {"orig": [3, 3, 4, 1, 5, 5], "new": [4, 4, 5, 1, 5, 5]},
+16: {"orig": [4, 4, 4, 1, 5, 5], "new": [4, 5, 5, 1, 5, 5]},
+17: {"orig": [3, 3, 4, 1, 5, 5], "new": [4, 4, 5, 1, 5, 5]},
+18: {"orig": [4, 4, 4, 1, 5, 5], "new": [4, 4, 5, 1, 5, 5]},
+19: {"orig": [4, 4, 4, 1, 5, 5], "new": [5, 4, 5, 1, 5, 5]},
+20: {"orig": [4, 4, 4, 1, 5, 5], "new": [5, 4, 5, 4, 5, 5]},
+21: {"orig": [5, 5, 4, 1, 5, 5], "new": [5, 5, 5, 1, 5, 5]},
+}

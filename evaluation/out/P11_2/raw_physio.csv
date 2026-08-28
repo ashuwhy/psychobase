@@ -1,0 +1,11 @@
+turn,session_id,timestamp,EDA_uS,PR_bpm,SkinTemp_degC,ACCEL_g,ACT_COUNT,ACT_CLASS,stress_score,stress_level
+1,2753-1-1,2026-05-04T19:10:00,0.77 -> 2.09 -> 1.74,123.0 -> 94.0 -> 100.0,33.31 -> 33.28,0.032 -> 0.031 -> 0.159,106.0 -> 99.0 -> 114.0,The state remained generic across the full span of the first minute.,2,Mild stress
+2,2753-1-1,2026-05-04T19:12:00,2.94 -> 4.01,94.0 -> 95.0,33.23 -> 33.21,0.032 -> 0.025,79.0 -> 115.0,Activity classification remained generic throughout the past 2 minutes.,2,Mild stress
+3,2753-1-1,2026-05-04T19:14:00,5.18 -> 6.3,89.0,33.18 -> 33.2,0.046 -> 0.016,64.0 -> 43.0,The participant stayed generic for the duration of the past 4 minutes.,2,Mild stress
+4,2753-1-1,2026-05-04T19:16:00,7.45 -> 7.24,89.0 -> 95.0,33.19 -> 33.15,0.018 -> 0.007,31.0 -> 18.0,"Over the past 6 minutes, activity transitioned from generic toward still.",5,Moderate stress
+5,2753-1-1,2026-05-04T19:18:00,7.79 -> 9.28 -> 10.85,92.0 -> 91.0,33.18 -> 33.16 -> 33.33,0.012 -> 0.006 -> 0.007,16.0 -> 11.0 -> 14.0,The activity label changed from generic to still within the past 6 minutes.,5,Moderate stress
+6,2753-1-1,2026-05-04T19:21:00,10.71 -> 10.97,92.0 -> 93.0,33.54 -> 33.7,0.009 -> 0.007,31.0 -> 34.0,"Throughout the past 6 minutes, the recorded activity class stayed still.",4,Moderate stress
+7,2753-1-1,2026-05-04T19:23:00,11.6 -> 9.93,101.0 -> 109.0,33.81,0.096 -> 0.112,99.0 -> 142.0,The activity label changed from still to generic within the past 6 minutes.,2,Mild stress
+8,2753-1-1,2026-05-04T19:25:00,9.36 -> 7.17,98.0 -> 96.0,33.59 -> 33.29,0.122 -> 0.045,143.0 -> 114.0,"Over the past 6 minutes, a shift from still to generic was recorded.",0,not reported
+9,2753-1-1,2026-05-04T19:27:00,6.88 -> 6.1,104.0,32.95 -> 32.62,0.06 -> 0.104,150.0 -> 168.0,"During the past 6 minutes, activity moved away from still, becoming generic.",0,not reported
+10,nan,2026-05-04T19:29:00,not reported,not reported,not reported,not reported,not reported,No change in activity state was observed over the first minute; it remained unknown.,0,not reported

@@ -1,0 +1,19 @@
+turn,session_id,timestamp,EDA_uS,PR_bpm,SkinTemp_degC,ACCEL_g,ACT_COUNT,ACT_CLASS,stress_score,stress_level
+1,2753-1-1,2026-07-09T19:43:00,0.14 -> 0.13,67.0 -> 71.0,30.16,0.006 -> 0.042,9.0 -> 64.0,"Over the first minute, still activity was sustained without interruption.",0,not reported
+2,2753-1-1,2026-07-09T19:45:00,0.12 -> 0.13,65.0 -> 66.0,30.13 -> 30.17,0.004 -> 0.006,4.0 -> 8.0,"During the past 2 minutes, activity moved away from still, becoming walking.",1,not reported
+3,2753-1-1,2026-07-09T19:47:00,0.12 -> 0.13,66.0 -> 67.0,30.21 -> 30.32,0.014 -> 0.004,8.0 -> 4.0,"Over the past 4 minutes, activity transitioned from still toward walking.",1,not reported
+4,2753-1-1,2026-07-09T19:49:00,0.13 -> 0.12,70.0 -> 68.0,30.54 -> 30.73,0.015 -> 0.022,27.0 -> 20.0,"A change in activity was noted over the past 6 minutes, moving from still to walking.",1,not reported
+5,2753-1-1,2026-07-09T19:51:00,0.12,64.0 -> 80.0,30.71 -> 30.63,0.003 -> 0.006,1.0 -> 16.0,Activity classification shifted from walking to still during the past 6 minutes.,1,not reported
+6,2753-1-1,2026-07-09T19:53:00,0.11 -> 0.12,65.0,30.55 -> 30.45,0.003 -> 0.008,5.0 -> 16.0,"Over the past 6 minutes, a shift from walking to still was recorded.",1,not reported
+7,2753-1-1,2026-07-09T19:55:00,0.12,62.0 -> 66.0,30.38 -> 30.29,0.003,0.0,"Over the past 6 minutes, activity transitioned from walking toward still.",1,not reported
+8,2753-1-1,2026-07-09T19:57:00,0.12,67.0 -> 62.0,30.19 -> 30.12,0.004 -> 0.003,0.0,The activity label changed from still to walking within the past 6 minutes.,1,not reported
+9,2753-1-1,2026-07-09T19:59:00,0.12 -> 0.13,63.0 -> 72.0,30.05 -> 29.98,0.005 -> 0.018,5.0 -> 25.0,"Across the past 6 minutes, the participant's classification changed: still to walking.",2,Mild stress
+10,2753-1-1,2026-07-09T20:01:00,0.11 -> 0.1,69.0 -> 65.0,29.87 -> 29.85,0.006 -> 0.005,13.0 -> 9.0,A transition from still to walking occurred within the past 6 minutes.,1,not reported
+11,2753-1-1,2026-07-09T20:03:00,0.11,69.0 -> 92.0,29.8,0.012 -> 0.137,18.0 -> 144.0,The participant's movement pattern was classified as walking for all of the past 6 minutes.,0,not reported
+12,2753-1-1,2026-07-09T20:05:00,0.11 -> 0.12,84.0 -> 60.0,29.67,0.009 -> 0.005,11.0 -> 7.0,Activity type moved from walking to still across the past 6 minutes.,1,not reported
+13,2753-1-1,2026-07-09T20:07:00,0.12 -> 0.11,60.0 -> 57.0,29.72 -> 29.55,0.031 -> 0.003,42.0 -> 0.0,Activity classification shifted from walking to generic during the past 6 minutes.,1,not reported
+14,2753-1-1,2026-07-09T20:09:00,0.12,63.0 -> 70.0,29.5 -> 29.15,0.018 -> 0.023,23.0 -> 42.0,The activity label changed from walking to walking within the past 6 minutes.,2,Mild stress
+15,2753-1-1,2026-07-09T20:11:00,0.12 -> 0.11,64.0 -> 71.0,29.14 -> 29.24,0.018 -> 0.12,40.0 -> 116.0,"During the past 6 minutes, activity moved away from still, becoming walking.",-2,not reported
+16,2753-1-1,2026-07-09T20:13:00,0.09 -> 0.08,not reported,29.13,0.082 -> 0.04,106.0 -> 43.0,"During the past 6 minutes, movement classification changed from generic to generic.",0,not reported
+17,2753-1-1,2026-07-09T20:15:00,0.09 -> 0.08,70.0 -> 61.0,29.19 -> 29.28,0.058 -> 0.022,63.0 -> 43.0,Activity state evolved from walking to generic during the past 6 minutes.,0,not reported
+18,2753-1-1,2026-07-09T20:17:00,0.09,64.0 -> 66.0,29.31 -> 29.32,0.075 -> 0.031,115.0 -> 46.0,Activity type moved from walking to generic across the past 6 minutes.,0,not reported

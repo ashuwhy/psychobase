@@ -1,0 +1,547 @@
+[
+    {
+        "session_id": "2753-1-1",
+        "person_id": "2753",
+        "turns": [
+            {
+                "timestamp": "2026-05-04T19:10:00",
+                "participant_full_id": "2753-1-1-0000",
+                "user_text": "Actually, I am stuck in a situation.",
+                "ai_text": "I'm sorry you're feeling this way. It sounds like you're carrying something that's making it hard to see a way forward right now. Feeling stuck often comes from facing uncertainty or too many emotions at once. If you'd like, tell me what's been happening, and we'll work through it together one step at a time.",
+                "context": "",
+                "strategy": "Emotional Validation",
+                "raw_physio": {
+                    "EDA": [
+                        0.77,
+                        2.09
+                    ],
+                    "PR": [
+                        123.0,
+                        94.0
+                    ],
+                    "SkinTemp": [
+                        33.31,
+                        33.28
+                    ],
+                    "ACCEL": [
+                        0.032,
+                        0.031
+                    ],
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": [
+                        106.0,
+                        99.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "PR": "Across the first minute, pulse rate held downward, staying close to 94.0 bpm.",
+                    "EDA": "Skin conductance drifted elevating across the first minute to 2.09 uS, showing a single sustained rise with no reversal.",
+                    "SkinTemp": "Skin temperature showed a dropping pattern across the first minute, with smooth change, now 33.28 degC.",
+                    "ACCEL": "Over the first minute, physical activity intensity dropping slightly, now near 0.03 g.",
+                    "ACT_CLASS": "Activity classification showed no change over the first minute, staying generic."
+                },
+                "physio_summary_fusion": "Over the first minute, physiological signals (EDA and PR and SkinTemp and ACCEL) shifted, with activity remaining generic - likely activity-related. The rise in EDA and PR and SkinTemp and ACCEL coincided with elevated ACT_COUNT, making it difficult to separate physical exertion from emotional stress.",
+                "stress_score": 2,
+                "stress_level": "Mild stress",
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Actually, I am stuck in a situation.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: Emotional Validation\n\nResponse: I'm sorry you're feeling this way. It sounds like you're carrying something that's making it hard to see a way forward right now. Feeling stuck often comes from facing uncertainty or too many emotions at once. If you'd like, tell me what's been happening, and we'll work through it together one step at a time.<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Actually, I am stuck in a situation.\nPhysiological Signals: Conductance more than doubles inside the opening minute while pulse drops steeply and both temperature and motion stay put, the class holding generic with counts easing 106.0 to 99.0 - movement does not account for it.\nEDA: 0.77 -> 2.09 uS, increasing, first minute.\nPR: 123.0 -> 94.0 bpm, decreasing, first minute. ACCEL: 0.032 -> 0.031 g, flat, first minute.\nStress score: 2 (Mild stress).\n\n### Response:\nStrategy: Emotional Validation\n\nResponse: I'm really glad you said that out loud, even if you don't have the words for it yet. Feeling stuck usually means you've been carrying something heavy on your own for a while, and that takes a toll. I'm also picking up on signs that your body hasn't fully settled either, which fits what you're describing. Take your time and tell me what's been going on.<EOS>"
+            },
+            {
+                "timestamp": "2026-05-04T19:11:00",
+                "participant_full_id": "2753-1-1-0000",
+                "user_text": "What I'm about to tell you is about something that I don't know if I should even call a relationship.",
+                "ai_text": "That's completely okay. Sometimes connections don't fit into clear labels, and that uncertainty itself can be confusing. You don't need to decide what to call it right now. Just tell me what happened, and we'll understand it together without judging or rushing to define it.",
+                "context": "",
+                "strategy": "Clarification",
+                "raw_physio": {
+                    "EDA": 1.74,
+                    "PR": 100.0,
+                    "SkinTemp": 33.28,
+                    "ACCEL": 0.159,
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": 114.0
+                },
+                "physio_summary_per_channel": {
+                    "ACCEL": "No notable change in motion (0.16 g) was detected over the past 1 minute; the source data was coarse.",
+                    "PR": "Pulse rate stayed at a comparable level (100.0 bpm) over the past 1 minute, based on limited resolution data.",
+                    "EDA": "Skin conductance showed no notable change over the past 1 minute, staying around 1.74 uS; the underlying data was coarse.",
+                    "SkinTemp": "Temperature appeared flat over the past 1 minute, holding near 33.28 degC; this reflects an averaged reading rather than fine detail.",
+                    "ACT_CLASS": "The participant stayed generic for the duration of the past 1 minute."
+                },
+                "physio_summary_fusion": "Overall physiological readings appeared flat over the past 1 minute, reflecting averaged rather than fine-grained data; the pattern is likely activity-related.",
+                "stress_score": 2,
+                "stress_level": "Mild stress",
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: What I'm about to tell you is about something that I don't know if I should even call a relationship.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: Clarification\n\nResponse: That's completely okay. Sometimes connections don't fit into clear labels, and that uncertainty itself can be confusing. You don't need to decide what to call it right now. Just tell me what happened, and we'll understand it together without judging or rushing to define it.<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: What I'm about to tell you is about something that I don't know if I should even call a relationship.\nPhysiological Signals: Only coarse single-point readings exist for this minute so every channel reads flat, with generic activity and a count of 114.0 making what movement there is look ordinary.\nStress score: 2 (Mild stress). EDA: steady near 1.74 uS, flat, past 1 minute.\nACCEL: steady near 0.159 g, flat, past 1 minute.\nPR: steady near 100.0 bpm, flat, past 1 minute.\n\n### Response:\nStrategy: Clarification\n\nResponse: It doesn't need a name for it to matter, and you don't have to define it before you talk about it. Plenty of connections sit in that in-between space where the labels just don't fit, and that ambiguity is its own kind of hard. I'm picking up gentle signs that you're holding a bit more tension than usual as you start, which is understandable before saying something out loud for the first time. Tell me what's been happening between you two, and we can look at it together without deciding what it should be called.<EOS>"
+            },
+            {
+                "timestamp": "2026-05-04T19:12:00",
+                "participant_full_id": "2753-1-1-0000",
+                "user_text": "I like someone who is already with someone else.",
+                "ai_text": "That sounds like a painful place to be. It's natural to develop feelings for someone, even when the situation is complicated. You may be feeling torn between what your heart wants and what you know is real. Take your time with these emotions, and try not to let them push you into decisions you might regret.",
+                "context": "",
+                "strategy": "Emotional Validation",
+                "raw_physio": {
+                    "EDA": 2.94,
+                    "PR": 94.0,
+                    "SkinTemp": 33.23,
+                    "ACCEL": 0.032,
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": 79.0
+                },
+                "physio_summary_per_channel": {
+                    "PR": "Pulse rate stayed close to 94.0 bpm through the past 2 minutes, though only a coarse reading was available.",
+                    "EDA": "Electrodermal activity remained at a similar level (2.94 uS) across the past 2 minutes, based on limited resolution data.",
+                    "SkinTemp": "Skin temperature held at a similar level (33.23 degC) across the past 2 minutes, based on limited resolution data.",
+                    "ACCEL": "Accelerometer output appeared flat over the past 2 minutes, holding near 0.03 g, reflecting an averaged reading.",
+                    "ACT_CLASS": "Activity remained categorized as generic over the past 2 minutes."
+                },
+                "physio_summary_fusion": "Across the past 2 minutes, the available signals showed no notable change, though resolution was limited; taken together, this appears not explained by movement.",
+                "stress_score": 4,
+                "stress_level": "Moderate stress",
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I like someone who is already with someone else.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: Emotional Validation\n\nResponse: That sounds like a painful place to be. It's natural to develop feelings for someone, even when the situation is complicated. You may be feeling torn between what your heart wants and what you know is real. Take your time with these emotions, and try not to let them push you into decisions you might regret.<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I like someone who is already with someone else.\nPhysiological Signals: Two minutes in, conductance sits far above where the session opened while pulse, temperature and motion stay level, activity generic and movement minimal - the elevation has no physical explanation.\nPR: steady near 94.0 bpm, flat, across these 2 minutes. Stress score: 4 (Moderate stress).\nEDA: steady near 2.94 uS, flat, across these 2 minutes.\nACCEL: steady near 0.032 g, flat, across these 2 minutes.\n\n### Response:\nStrategy: Avoid Judgment and Criticism\n\nResponse: Thank you for trusting me with that. Feelings don't check whether someone is available before they show up, so there's nothing here for you to be ashamed of. What I notice is that your body seems to be holding a fair amount of tension even though you're sitting fairly still, which tells me this has been weighing on you. What's it been like for you, carrying this?<EOS>"
+            },
+            {
+                "timestamp": "2026-05-04T19:14:00",
+                "participant_full_id": "2753-1-1-0000",
+                "user_text": "I try to keep my distance from that person, but they always find a way to reconnect with me.",
+                "ai_text": "That sounds emotionally confusing. It seems like every time you try to move on, their actions make it difficult to let go, which can keep your feelings alive. It's understandable that you're feeling stuck between wanting distance and being pulled back in. It may help to notice whether their actions match the kind of relationship you truly want.",
+                "context": "",
+                "strategy": "Emotional Validation",
+                "raw_physio": {
+                    "EDA": [
+                        4.01,
+                        5.18
+                    ],
+                    "PR": [
+                        95.0,
+                        89.0
+                    ],
+                    "SkinTemp": [
+                        33.21,
+                        33.18
+                    ],
+                    "ACCEL": [
+                        0.025,
+                        0.046
+                    ],
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": [
+                        115.0,
+                        64.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "PR": "Over the past 4 minutes, pulse rate held near a constant value (89.0 bpm) from a single aggregated point.",
+                    "EDA": "Over the past 4 minutes, EDA held near a constant value (5.18 uS), derived from a single aggregated reading.",
+                    "SkinTemp": "Temperature appeared flat over the past 4 minutes, holding near 33.18 degC; this reflects an averaged reading rather than fine detail.",
+                    "ACCEL": "Over the past 4 minutes, movement intensity stayed near a constant value (0.05 g) from a single aggregated point.",
+                    "ACT_CLASS": "Consistent generic classification was recorded across the past 4 minutes."
+                },
+                "physio_summary_fusion": "Over the past 4 minutes, physiological data held near constant values sourced from aggregated readings, appearing likely activity-related.",
+                "stress_score": 2,
+                "stress_level": "Mild stress",
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I try to keep my distance from that person, but they always find a way to reconnect with me.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: Emotional Validation\n\nResponse: That sounds emotionally confusing. It seems like every time you try to move on, their actions make it difficult to let go, which can keep your feelings alive. It's understandable that you're feeling stuck between wanting distance and being pulled back in. It may help to notice whether their actions match the kind of relationship you truly want.<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I try to keep my distance from that person, but they always find a way to reconnect with me.\nPhysiological Signals: Conductance keeps climbing while pulse settles and temperature slips, and the count actually falls 115.0 to 64.0 under a generic class - the arousal runs against the movement rather than with it.\nEDA: 4.01 -> 5.18 uS, increasing, through the last 4 minutes.\nACCEL: 0.025 -> 0.046 g, increasing, through the last 4 minutes. Stress score: 2 (Mild stress).\nPR: 95.0 -> 89.0 bpm, decreasing, through the last 4 minutes.\n\n### Response:\nStrategy: Reflective Statements\n\nResponse: So you do try to step back, and then something pulls you right back in - and it isn't really coming from you. That must make it very hard to get any distance, because every time you start to settle, the situation reopens. Your signals suggest that unsettled feeling is showing up physically too, even while you've been sitting quietly. What usually happens when they reach out?<EOS>"
+            },
+            {
+                "timestamp": "2026-05-04T19:15:00",
+                "participant_full_id": "2753-1-1-0000",
+                "user_text": "That person knows I like them. Even after everything, they still call me, and I can't stop myself from going back.",
+                "ai_text": "That sounds really difficult. When someone you care about continues to stay in touch, it's natural for your feelings to become stronger, especially if you still have hope. It seems like you're caught between protecting your heart and wanting to stay connected. Ask yourself whether these interactions bring you peace or make it harder to move forward.",
+                "context": "",
+                "strategy": "Gentle Reflection",
+                "raw_physio": {
+                    "EDA": 6.3,
+                    "PR": 89.0,
+                    "SkinTemp": 33.2,
+                    "ACCEL": 0.016,
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": 43.0
+                },
+                "physio_summary_per_channel": {
+                    "PR": "Pulse rate stayed at a comparable level (89.0 bpm) over the past 5 minutes, based on limited resolution data.",
+                    "EDA": "Skin conductance showed no notable change over the past 5 minutes, staying around 6.3 uS; the underlying data was coarse.",
+                    "ACCEL": "Motion levels stayed close to 0.02 g through the past 5 minutes, though only a coarse reading was available.",
+                    "SkinTemp": "Skin temperature stayed close to 33.2 degC through the past 5 minutes, though only a coarse reading was available.",
+                    "ACT_CLASS": "Activity level held steady at generic across the past 5 minutes."
+                },
+                "physio_summary_fusion": "Across the past 5 minutes, the available signals showed no notable change, though resolution was limited; taken together, this appears not explained by movement.",
+                "stress_score": 2,
+                "stress_level": "Mild stress",
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: That person knows I like them. Even after everything, they still call me, and I can't stop myself from going back.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: Gentle Reflection\n\nResponse: That sounds really difficult. When someone you care about continues to stay in touch, it's natural for your feelings to become stronger, especially if you still have hope. It seems like you're caught between protecting your heart and wanting to stay connected. Ask yourself whether these interactions bring you peace or make it harder to move forward.<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: That person knows I like them. Even after everything, they still call me, and I can't stop myself from going back.\nPhysiological Signals: Five minutes in, conductance has risen again while pulse, temperature and motion sit still, the class generic with the count down to 43.0 - this continued climb is not something movement explains.\nACCEL: steady near 0.016 g, flat, over these 5 minutes.\nStress score: 2 (Mild stress). EDA: steady near 6.3 uS, flat, over these 5 minutes.\nPR: steady near 89.0 bpm, flat, over these 5 minutes.\n\n### Response:\nStrategy: Emotional Validation\n\nResponse: That's such a painful position to be in, and I don't think it means you're weak. When someone knows how you feel and still keeps calling, the door never fully closes, and hope is very hard to switch off. I can see some signs that you're still carrying that tension in your body right now, without much movement to explain it. It makes sense that you go back.<EOS>"
+            },
+            {
+                "timestamp": "2026-05-04T19:16:00",
+                "participant_full_id": "2753-1-1-0000",
+                "user_text": "My feelings became stronger because we were very good friends before all of this.",
+                "ai_text": "That makes a lot of sense. When a strong friendship already exists, romantic feelings can grow even deeper because of the trust and comfort you shared. It sounds like you're grieving both your feelings and the possibility of losing someone who has been important in your life.",
+                "context": "",
+                "strategy": "Emotional Validation",
+                "raw_physio": {
+                    "EDA": 7.45,
+                    "PR": 89.0,
+                    "SkinTemp": 33.19,
+                    "ACCEL": 0.018,
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": 31.0
+                },
+                "physio_summary_per_channel": {
+                    "PR": "No notable pulse rate change was detected over the past 6 minutes; pulse rate held near 89.0 bpm, and the source data was coarse.",
+                    "EDA": "EDA appeared flat over the past 6 minutes, holding near 7.45 uS; this reflects an averaged reading rather than fine-grained detail.",
+                    "ACCEL": "No notable change in motion (0.02 g) was detected over the past 6 minutes; the source data was coarse.",
+                    "SkinTemp": "No notable skin temperature shift was detected over the past 6 minutes; temperature held near 33.19 degC, and the data was coarse.",
+                    "ACT_CLASS": "Over the past 6 minutes, a shift from generic to still was recorded."
+                },
+                "physio_summary_fusion": "Over the past 6 minutes, physiological data held near constant values sourced from aggregated readings, appearing not explained by movement.",
+                "stress_score": 2,
+                "stress_level": "Mild stress",
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: My feelings became stronger because we were very good friends before all of this.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: Emotional Validation\n\nResponse: That makes a lot of sense. When a strong friendship already exists, romantic feelings can grow even deeper because of the trust and comfort you shared. It sounds like you're grieving both your feelings and the possibility of losing someone who has been important in your life.<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: My feelings became stronger because we were very good friends before all of this.\nPhysiological Signals: Conductance is higher still across this stretch while pulse and motion hold and temperature barely shifts, the class moving generic to still with the count down at 31.0 - no part of this is activity-driven.\nEDA: steady near 7.45 uS, flat, this 6-minute stretch.\nPR: steady near 89.0 bpm, flat, this 6-minute stretch. ACCEL: steady near 0.018 g, flat, this 6-minute stretch.\nStress score: 2 (Mild stress).\n\n### Response:\nStrategy: Normalize Experiences\n\nResponse: That makes complete sense. Feelings that grow out of a real friendship tend to run deeper than ones that start with attraction, because there's already trust and history underneath them. As you go back over how it began, your physical response stays fairly level - this part seems to be settled history for you rather than the raw bit. A lot of people find this exact situation the hardest kind to move through, precisely because the friendship was genuine. You're not being dramatic about this.<EOS>"
+            },
+            {
+                "timestamp": "2026-05-04T19:18:00",
+                "participant_full_id": "2753-1-1-0000",
+                "user_text": "We spent a lot of time together, and that's how my feelings became stronger.",
+                "ai_text": "That explains why your feelings grew so deeply. Spending so much time together naturally creates a strong emotional bond. Sometimes, it's not only the person we miss, but also the closeness and connection we shared with them.",
+                "context": "",
+                "strategy": "Reflective Statements",
+                "raw_physio": {
+                    "EDA": [
+                        7.24,
+                        7.79
+                    ],
+                    "PR": [
+                        95.0,
+                        92.0
+                    ],
+                    "SkinTemp": [
+                        33.15,
+                        33.18
+                    ],
+                    "ACCEL": [
+                        0.007,
+                        0.012
+                    ],
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": [
+                        18.0,
+                        16.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "EDA": "Over the past 6 minutes, EDA held near a constant value (7.79 uS), derived from a single aggregated reading.",
+                    "ACCEL": "Movement intensity held at a similar level (0.01 g) across the past 6 minutes, based on limited resolution data.",
+                    "PR": "Over the past 6 minutes, pulse rate held near a constant value (92.0 bpm) from a single aggregated point.",
+                    "SkinTemp": "Skin temperature stayed close to 33.18 degC through the past 6 minutes, though only a coarse reading was available.",
+                    "ACT_CLASS": "During the past 6 minutes, movement classification changed from generic to still."
+                },
+                "physio_summary_fusion": "Given the coarse resolution over the past 6 minutes, signals held broadly steady; the combined pattern reads as not explained by movement.",
+                "stress_score": 5,
+                "stress_level": "Moderate stress",
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: We spent a lot of time together, and that's how my feelings became stronger.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: Reflective Statements\n\nResponse: That explains why your feelings grew so deeply. Spending so much time together naturally creates a strong emotional bond. Sometimes, it's not only the person we miss, but also the closeness and connection we shared with them.<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: We spent a lot of time together, and that's how my feelings became stronger.\nPhysiological Signals: Conductance rises as pulse eases and temperature holds, with the class shifting generic to still and counts down at 18.0 then 16.0 - arousal arriving without any movement behind it.\nStress score: 5 (Moderate stress). PR: 95.0 -> 92.0 bpm, decreasing, during the past 6 minutes.\nEDA: 7.24 -> 7.79 uS, increasing, during the past 6 minutes.\nACCEL: 0.007 -> 0.012 g, increasing, during the past 6 minutes.\n\n### Response:\nStrategy: Empathetic Statements\n\nResponse: I can hear how much of your life that person occupied. Hours of conversation, the person you told things to first, the one whose name came up in every plan - when someone is woven through your days like that, the closeness stops feeling like a choice and starts feeling like the shape of your life. So what you're grieving isn't only them; it's your own routine, and the version of your days that had them in it. And this one isn't settled history - as you revisit those hours the tension edges up rather than easing, with you sitting almost completely still. That's a real loss, and it's fair to feel it as one.<EOS>"
+            },
+            {
+                "timestamp": "2026-05-04T19:19:00",
+                "participant_full_id": "2753-1-1-0000",
+                "user_text": "The same thing keeps happening, and that's why I'm confused about it.",
+                "ai_text": "I can understand why you're confused. When the same pattern repeats, it's hard to know what it really means or how you should respond. Looking at the pattern instead of individual moments may help you understand the situation more clearly.",
+                "context": "",
+                "strategy": "Emotional Validation",
+                "raw_physio": {
+                    "EDA": 9.28,
+                    "PR": 92.0,
+                    "SkinTemp": 33.16,
+                    "ACCEL": 0.006,
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": 11.0
+                },
+                "physio_summary_per_channel": {
+                    "EDA": "Skin conductance showed no notable change over the past 6 minutes, staying around 9.28 uS; the underlying data was coarse.",
+                    "ACCEL": "Accelerometer output appeared flat over the past 6 minutes, holding near 0.01 g, reflecting an averaged reading.",
+                    "PR": "Pulse rate stayed at a comparable level (92.0 bpm) over the past 6 minutes, based on limited resolution data.",
+                    "SkinTemp": "Over the past 6 minutes, skin temperature stayed near a constant value (33.16 degC) from a single aggregated point.",
+                    "ACT_CLASS": "Over the past 6 minutes, a shift from generic to still was recorded."
+                },
+                "physio_summary_fusion": "Over the past 6 minutes, physiological data held near constant values sourced from aggregated readings, appearing not explained by movement.",
+                "stress_score": 5,
+                "stress_level": "Moderate stress",
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: The same thing keeps happening, and that's why I'm confused about it.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: Emotional Validation\n\nResponse: I can understand why you're confused. When the same pattern repeats, it's hard to know what it really means or how you should respond. Looking at the pattern instead of individual moments may help you understand the situation more clearly.<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: The same thing keeps happening, and that's why I'm confused about it.\nPhysiological Signals: A fresh conductance high for the session with pulse, temperature and motion all flat beneath it, the class gone generic to still on a count of 11.0 - no physical driver for the change.\nACCEL: steady near 0.006 g, flat, in the last 6 minutes. EDA: steady near 9.28 uS, flat, in the last 6 minutes.\nPR: steady near 92.0 bpm, flat, in the last 6 minutes.\nStress score: 5 (Moderate stress).\n\n### Response:\nStrategy: Reflective Statements\n\nResponse: So it isn't one confusing moment, it's the same loop coming around again, and that repetition is what's leaving you unsure of what to believe. That confusion is doing something to you physically as well - your body is showing a fair bit of tension even though you've barely moved. Would it help to look at the pattern rather than each individual incident?<EOS>"
+            },
+            {
+                "timestamp": "2026-05-04T19:20:00",
+                "participant_full_id": "2753-1-1-0000",
+                "user_text": "I think that person is only with me because it benefits them.",
+                "ai_text": "That thought can be very painful. It sounds like you're questioning whether the care you receive is genuine or only there when they need something. Pay attention to the overall pattern of their actions, because your feelings and needs matter too.",
+                "context": "",
+                "strategy": "Emotional Validation",
+                "raw_physio": {
+                    "EDA": 10.85,
+                    "PR": 91.0,
+                    "SkinTemp": 33.33,
+                    "ACCEL": 0.007,
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": 14.0
+                },
+                "physio_summary_per_channel": {
+                    "EDA": "EDA appeared flat over the past 6 minutes, holding near 10.85 uS; this reflects an averaged reading rather than fine-grained detail.",
+                    "ACCEL": "Over the past 6 minutes, movement intensity stayed near a constant value (0.01 g) from a single aggregated point.",
+                    "PR": "No notable pulse rate change was detected over the past 6 minutes; pulse rate held near 91.0 bpm, and the source data was coarse.",
+                    "SkinTemp": "No notable skin temperature shift was detected over the past 6 minutes; temperature held near 33.33 degC, and the data was coarse.",
+                    "ACT_CLASS": "During the past 6 minutes, movement classification changed from generic to still."
+                },
+                "physio_summary_fusion": "Given the coarse resolution over the past 6 minutes, signals held broadly steady; the combined pattern reads as not explained by movement.",
+                "stress_score": 5,
+                "stress_level": "Moderate stress",
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I think that person is only with me because it benefits them.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: Emotional Validation\n\nResponse: That thought can be very painful. It sounds like you're questioning whether the care you receive is genuine or only there when they need something. Pay attention to the overall pattern of their actions, because your feelings and needs matter too.<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I think that person is only with me because it benefits them.\nPhysiological Signals: Conductance has pushed past ten while pulse holds and temperature edges up, still activity on a count of 14.0 meaning nothing physical is producing this.\nStress score: 5 (Moderate stress).\nEDA: steady near 10.85 uS, flat, across this 6-minute window. ACCEL: steady near 0.007 g, flat, across this 6-minute window.\nPR: steady near 91.0 bpm, flat, across this 6-minute window.\n\n### Response:\nStrategy: Emotional Validation\n\nResponse: That's a hard thing to let yourself think, and an even harder one to say. Wondering whether the care you get is real or convenient is exhausting, because it makes you question every kind moment too. Your signals show quite a lot of arousal right now with almost no movement behind it, which fits how heavy this question is. Whatever the answer turns out to be, what you give in a relationship deserves to be met.<EOS>"
+            },
+            {
+                "timestamp": "2026-05-04T19:22:00",
+                "participant_full_id": "2753-1-1-0000",
+                "user_text": "Because they know everything about how I feel, why do they still try to balance their relationship with their partner and their connection with me?",
+                "ai_text": "I can understand why that hurts. When someone knows your feelings but continues to stay emotionally close while remaining with their partner, it can create confusing mixed signals. Whatever their reasons, it's important to think about whether this situation is helping you grow or keeping you emotionally stuck.",
+                "context": "",
+                "strategy": "Clarification",
+                "raw_physio": {
+                    "EDA": [
+                        10.71,
+                        10.97
+                    ],
+                    "PR": [
+                        92.0,
+                        93.0
+                    ],
+                    "SkinTemp": [
+                        33.54,
+                        33.7
+                    ],
+                    "ACCEL": [
+                        0.009,
+                        0.007
+                    ],
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": [
+                        31.0,
+                        34.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "SkinTemp": "Over the past 6 minutes, skin temperature stayed near a constant value (33.7 degC) from a single aggregated point.",
+                    "EDA": "Over the past 6 minutes, EDA held near a constant value (10.97 uS), derived from a single aggregated reading.",
+                    "PR": "Pulse rate stayed close to 93.0 bpm through the past 6 minutes, though only a coarse reading was available.",
+                    "ACCEL": "No notable change in motion (0.01 g) was detected over the past 6 minutes; the source data was coarse.",
+                    "ACT_CLASS": "Activity level held steady at still across the past 6 minutes."
+                },
+                "physio_summary_fusion": "Over the past 6 minutes, physiological data held near constant values sourced from aggregated readings, appearing not explained by movement.",
+                "stress_score": 4,
+                "stress_level": "Moderate stress",
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Because they know everything about how I feel, why do they still try to balance their relationship with their partner and their connection with me?\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: Clarification\n\nResponse: I can understand why that hurts. When someone knows your feelings but continues to stay emotionally close while remaining with their partner, it can create confusing mixed signals. Whatever their reasons, it's important to think about whether this situation is helping you grow or keeping you emotionally stuck.<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Because they know everything about how I feel, why do they still try to balance their relationship with their partner and their connection with me?\nPhysiological Signals: Conductance and temperature drift up together over these six minutes while pulse is unchanged and motion falls, the class staying still with the count near 34.0 - the elevation is not movement-related.\nPR: 92.0 -> 93.0 bpm, flat, over these 6 minutes.\nACCEL: 0.009 -> 0.007 g, decreasing, over these 6 minutes. Stress score: 4 (Moderate stress).\nEDA: 10.71 -> 10.97 uS, increasing, over these 6 minutes.\n\n### Response:\nStrategy: Provide Different Perspectives\n\nResponse: I understand why that stings. One way to look at it is that they may be managing their own comfort rather than making a choice about you at all - which is not a kindness, even if it isn't meant as cruelty. That framing doesn't excuse it, but it may take some of the weight off you, because it means their behaviour is about them, not about your worth. Your body is showing a steady level of tension while we talk through this, so go gently.<EOS>"
+            },
+            {
+                "timestamp": "2026-05-04T19:23:00",
+                "participant_full_id": "2753-1-1-0000",
+                "user_text": "I was the class representative, and I also helped that person with their studies and attendance.",
+                "ai_text": "It sounds like you invested a lot of your time and energy into supporting them. When you've consistently been there for someone, it's natural to hope that your care would be valued in return. Looking back now, it's understandable that you're questioning whether the relationship was truly balanced.",
+                "context": "",
+                "strategy": "Reflective Statements",
+                "raw_physio": {
+                    "EDA": 11.6,
+                    "PR": 101.0,
+                    "SkinTemp": 33.81,
+                    "ACCEL": 0.096,
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": 99.0
+                },
+                "physio_summary_per_channel": {
+                    "ACCEL": "Movement intensity held at a similar level (0.1 g) across the past 6 minutes, based on limited resolution data.",
+                    "SkinTemp": "No notable skin temperature shift was detected over the past 6 minutes; temperature held near 33.81 degC, and the data was coarse.",
+                    "EDA": "Electrodermal activity remained at a similar level (11.6 uS) across the past 6 minutes, based on limited resolution data.",
+                    "PR": "Pulse rate stayed at a comparable level (101.0 bpm) over the past 6 minutes, based on limited resolution data.",
+                    "ACT_CLASS": "Activity state evolved from still to generic during the past 6 minutes."
+                },
+                "physio_summary_fusion": "Across the past 6 minutes, the available signals showed no notable change, though resolution was limited; taken together, this appears likely activity-related.",
+                "stress_score": 2,
+                "stress_level": "Mild stress",
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I was the class representative, and I also helped that person with their studies and attendance.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: Reflective Statements\n\nResponse: It sounds like you invested a lot of your time and energy into supporting them. When you've consistently been there for someone, it's natural to hope that your care would be valued in return. Looking back now, it's understandable that you're questioning whether the relationship was truly balanced.<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I was the class representative, and I also helped that person with their studies and attendance.\nPhysiological Signals: The session peak for conductance, with pulse, temperature and motion all lifted alongside it as the class turns still to generic and the count returns to 99.0 - part of this rise is genuinely activity-related.\nEDA: steady near 11.6 uS, flat, last 6 minutes. Stress score: 2 (Mild stress).\nACCEL: steady near 0.096 g, flat, last 6 minutes.\nPR: steady near 101.0 bpm, flat, last 6 minutes.\n\n### Response:\nStrategy: Affirmation\n\nResponse: You showed up for that person consistently, as class representative and as a friend, and that says something real about the kind of person you are. Being reliable and generous like that is not a mistake, even when it isn't returned in the way you hoped. Your signals are running at their highest of this conversation as you look back on it, though you've been moving about too, so I'd hold that lightly - what matters is that recalling it clearly costs you something. Please don't let this situation convince you that caring was the wrong thing to do.<EOS>"
+            },
+            {
+                "timestamp": "2026-05-04T19:24:00",
+                "participant_full_id": "2753-1-1-0000",
+                "user_text": "I love spending time with that person, but not like this. I don't like it when they talk to their partner in front of me.",
+                "ai_text": "That sounds very painful. Seeing someone you care about share that closeness with their partner can deeply hurt, especially when your feelings are still strong. It's okay to admit that this situation is affecting you, because your emotions deserve care too.",
+                "context": "",
+                "strategy": "Emotional Validation",
+                "raw_physio": {
+                    "EDA": 9.93,
+                    "PR": 109.0,
+                    "SkinTemp": 33.81,
+                    "ACCEL": 0.112,
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": 142.0
+                },
+                "physio_summary_per_channel": {
+                    "ACCEL": "Motion levels stayed close to 0.11 g through the past 6 minutes, though only a coarse reading was available.",
+                    "SkinTemp": "Skin temperature stayed close to 33.81 degC through the past 6 minutes, though only a coarse reading was available.",
+                    "PR": "Pulse rate stayed close to 109.0 bpm through the past 6 minutes, though only a coarse reading was available.",
+                    "EDA": "EDA appeared flat over the past 6 minutes, holding near 9.93 uS; this reflects an averaged reading rather than fine-grained detail.",
+                    "ACT_CLASS": "Movement classification transitioned to generic from still over the past 6 minutes."
+                },
+                "physio_summary_fusion": "Given the coarse resolution over the past 6 minutes, signals held broadly steady; the combined pattern reads as likely activity-related.",
+                "stress_score": 2,
+                "stress_level": "Mild stress",
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I love spending time with that person, but not like this. I don't like it when they talk to their partner in front of me.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: Emotional Validation\n\nResponse: That sounds very painful. Seeing someone you care about share that closeness with their partner can deeply hurt, especially when your feelings are still strong. It's okay to admit that this situation is affecting you, because your emotions deserve care too.<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: I love spending time with that person, but not like this. I don't like it when they talk to their partner in front of me.\nPhysiological Signals: Conductance comes off its peak while pulse climbs and motion increases, the class moving still to generic on a high count of 142.0 - the cardiac rise is mostly the walking rather than the topic.\nACCEL: steady near 0.112 g, flat, six-minute window.\nEDA: steady near 9.93 uS, flat, six-minute window. Stress score: 2 (Mild stress).\nPR: steady near 109.0 bpm, flat, six-minute window.\n\n### Response:\nStrategy: Empathetic Statements\n\nResponse: That would hurt anyone. Being in the room while they turn to their partner puts you in a position where you're expected to be fine, and you're not fine, and you can't say so. Your signals have been running high through this conversation, so this clearly isn't a small thing you're just imagining. You're allowed to find that unbearable.<EOS>"
+            },
+            {
+                "timestamp": "2026-05-04T19:26:00",
+                "participant_full_id": "2753-1-1-0000",
+                "user_text": "What should I do now?",
+                "ai_text": "From everything you've shared, this connection seems to be bringing you more confusion than peace. You can't control their choices, but you can protect your own emotional well-being. If staying close keeps reopening the same wound, creating some distance may be the kindest choice you can make for yourself.",
+                "context": "",
+                "strategy": "Gentle Guidance",
+                "raw_physio": {
+                    "EDA": [
+                        9.36,
+                        7.17
+                    ],
+                    "PR": [
+                        98.0,
+                        96.0
+                    ],
+                    "SkinTemp": [
+                        33.59,
+                        33.29
+                    ],
+                    "ACCEL": [
+                        0.122,
+                        0.045
+                    ],
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": [
+                        143.0,
+                        114.0
+                    ]
+                },
+                "physio_summary_per_channel": {
+                    "EDA": "Electrodermal activity remained at a similar level (7.17 uS) across the past 6 minutes, based on limited resolution data.",
+                    "ACCEL": "No notable change in motion (0.04 g) was detected over the past 6 minutes; the source data was coarse.",
+                    "PR": "No notable pulse rate change was detected over the past 6 minutes; pulse rate held near 96.0 bpm, and the source data was coarse.",
+                    "SkinTemp": "Over the past 6 minutes, skin temperature stayed near a constant value (33.29 degC) from a single aggregated point.",
+                    "ACT_CLASS": "Over the past 6 minutes, activity transitioned from still toward generic."
+                },
+                "physio_summary_fusion": "Signals stayed at a broadly similar level across the past 6 minutes; finer trend detail was not available for this window, though the overall pattern appears likely activity-related.",
+                "stress_score": 0,
+                "stress_level": null,
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: What should I do now?\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: Gentle Guidance\n\nResponse: From everything you've shared, this connection seems to be bringing you more confusion than peace. You can't control their choices, but you can protect your own emotional well-being. If staying close keeps reopening the same wound, creating some distance may be the kindest choice you can make for yourself.<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: What should I do now?\nPhysiological Signals: Every channel comes down together, temperature included, as the class runs still to generic and the count eases 143.0 to 114.0 - a body settling after movement.\nEDA: 9.36 -> 7.17 uS, decreasing, over the preceding 6 minutes.\nStress score: 0 (qualitative label not reported). ACCEL: 0.122 -> 0.045 g, decreasing, over the preceding 6 minutes.\nPR: 98.0 -> 96.0 bpm, decreasing, over the preceding 6 minutes.\n\n### Response:\nStrategy: Collaborative Planning\n\nResponse: Let's think about it together rather than me handing you a rule. From everything you've said, this connection is costing you more peace than it gives you, and you can't change their choices - only how much access they have to your time. One option is a defined break, where you don't respond for a set period and see how you feel by the end of it. Your body has started to settle over these last few minutes, which makes this a better moment to decide something than the middle of the conversation was. Would something like that feel possible, or too big a step right now?<EOS>"
+            },
+            {
+                "timestamp": "2026-05-04T19:27:00",
+                "participant_full_id": "2753-1-1-0000",
+                "user_text": "How can I control my feelings? Can you tell me?",
+                "ai_text": "You don't have to control your feelingsâyou only need to control what you do with them. Accept that your emotions are real, but don't let them decide every action you take. Healing is gradual, and every small step you take toward your own well-being will help.",
+                "context": "",
+                "strategy": "Gentle Guidance",
+                "raw_physio": {
+                    "EDA": 6.88,
+                    "PR": 104.0,
+                    "SkinTemp": 32.95,
+                    "ACCEL": 0.06,
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": 150.0
+                },
+                "physio_summary_per_channel": {
+                    "SkinTemp": "No notable skin temperature shift was detected over the past 6 minutes; temperature held near 32.95 degC, and the data was coarse.",
+                    "EDA": "Electrodermal activity stayed close to 6.88 uS through the past 6 minutes, though only a coarse reading was available.",
+                    "PR": "Over the past 6 minutes, pulse rate held near a constant value (104.0 bpm) from a single aggregated point.",
+                    "ACCEL": "Over the past 6 minutes, movement intensity stayed near a constant value (0.06 g) from a single aggregated point.",
+                    "ACT_CLASS": "The activity label changed from still to generic within the past 6 minutes."
+                },
+                "physio_summary_fusion": "Across the past 6 minutes, the available signals showed no notable change, though resolution was limited; taken together, this appears likely activity-related.",
+                "stress_score": 0,
+                "stress_level": null,
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: How can I control my feelings? Can you tell me?\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: Gentle Guidance\n\nResponse: You don't have to control your feelingsâyou only need to control what you do with them. Accept that your emotions are real, but don't let them decide every action you take. Healing is gradual, and every small step you take toward your own well-being will help.<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: How can I control my feelings? Can you tell me?\nPhysiological Signals: Conductance keeps falling while pulse lifts and temperature drops, the class moving still to generic on a high count of 150.0 - the cardiac rise looks activity-driven rather than emotional.\nPR: steady near 104.0 bpm, flat, in this 6-minute span. ACCEL: steady near 0.06 g, flat, in this 6-minute span.\nEDA: steady near 6.88 uS, flat, in this 6-minute span.\nStress score: 0 (qualitative label not reported).\n\n### Response:\nStrategy: Stress Management\n\nResponse: You can't switch feelings off, and trying usually makes them louder. What you can manage is what you do while they're there. Three things that tend to work: leave the phone face down and out of reach for an hour after a call, so the urge to reply has to pass on its own; slow your breathing out longer than you breathe in for two minutes when the wave hits; and get moving rather than sitting with it. That last one suits you especially - your readings show your pulse is already up from moving about, and walking a strong feeling off is far easier than thinking it away.<EOS>"
+            },
+            {
+                "timestamp": "2026-05-04T19:28:00",
+                "participant_full_id": "2753-1-1-0000",
+                "user_text": "It's also affecting my studies.",
+                "ai_text": "I'm sorry you're going through this. Strong emotions can make it difficult to focus because your mind keeps returning to the same thoughts. Instead of forcing yourself to study for hours, begin with short, focused sessions. Small progress each day is enough while you're healing.",
+                "context": "",
+                "strategy": "Gentle Guidance",
+                "raw_physio": {
+                    "EDA": 6.1,
+                    "PR": 104.0,
+                    "SkinTemp": 32.62,
+                    "ACCEL": 0.104,
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": 168.0
+                },
+                "physio_summary_per_channel": {
+                    "SkinTemp": "Temperature appeared flat over the past 6 minutes, holding near 32.62 degC; this reflects an averaged reading rather than fine detail.",
+                    "ACCEL": "Motion levels stayed close to 0.1 g through the past 6 minutes, though only a coarse reading was available.",
+                    "EDA": "Skin conductance showed no notable change over the past 6 minutes, staying around 6.1 uS; the underlying data was coarse.",
+                    "PR": "Pulse rate stayed at a comparable level (104.0 bpm) over the past 6 minutes, based on limited resolution data.",
+                    "ACT_CLASS": "Across the past 6 minutes, the participant's classification changed: still to generic."
+                },
+                "physio_summary_fusion": "Given the coarse resolution over the past 6 minutes, signals held broadly steady; the combined pattern reads as likely activity-related.",
+                "stress_score": 0,
+                "stress_level": null,
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: It's also affecting my studies.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: Gentle Guidance\n\nResponse: I'm sorry you're going through this. Strong emotions can make it difficult to focus because your mind keeps returning to the same thoughts. Instead of forcing yourself to study for hours, begin with short, focused sessions. Small progress each day is enough while you're healing.<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: It's also affecting my studies.\nPhysiological Signals: Conductance eases further while pulse stays up and motion rises, with still turning generic and the count at 168.0, the highest of the session - sustained movement accounts for the elevated pulse.\nStress score: 0 (qualitative label not reported).\nACCEL: steady near 0.104 g, flat, through these 6 minutes. PR: steady near 104.0 bpm, flat, through these 6 minutes.\nEDA: steady near 6.1 uS, flat, through these 6 minutes.\n\n### Response:\nStrategy: Promote Self-Care Practices\n\nResponse: That's worth taking seriously, because your studies are the part of this you can still protect. Try short, contained sessions rather than long ones - twenty-five minutes with your phone in another room does more right now than an evening of half-attention. Sleep and food matter more than usual while you're carrying this. Your signals are still running fairly high, though you've been moving about a good deal, so don't read that as a warning sign - just a reason not to sit down to a long study session tonight expecting it to go well. Small consistent progress is genuinely enough at the moment.<EOS>"
+            },
+            {
+                "timestamp": "2026-05-04T19:30:00",
+                "participant_full_id": "2753-1-1-0000",
+                "user_text": "Thank you.",
+                "ai_text": "You're welcome. Thank you for trusting me with something so personal. Your feelings are real, and it's okay that healing is taking time. Be kind to yourself, keep taking small steps forward, and remember that you deserve a relationship where your care, effort, and feelings are returned with the same honesty and clarity.",
+                "context": "",
+                "strategy": "Encouragement",
+                "raw_physio": {
+                    "EDA": 5.48,
+                    "PR": 104.0,
+                    "SkinTemp": 32.42,
+                    "ACCEL": 0.111,
+                    "PRV": null,
+                    "RESP": null,
+                    "ACT_COUNT": 151.0
+                },
+                "physio_summary_per_channel": {
+                    "SkinTemp": "Over the past 6 minutes, skin temperature stayed near a constant value (32.42 degC) from a single aggregated point.",
+                    "EDA": "Over the past 6 minutes, EDA held near a constant value (5.48 uS), derived from a single aggregated reading.",
+                    "PR": "Heart rate appeared flat across the past 6 minutes, holding near 104.0 bpm; that time pulse rate is 104.0 bpm from a coarse, averaged reading.",
+                    "ACCEL": "Movement intensity held at a similar level (0.11 g) across the past 6 minutes, based on limited resolution data.",
+                    "ACT_CLASS": "Activity classification showed no change over the past 6 minutes, staying generic."
+                },
+                "physio_summary_fusion": "Over the past 6 minutes, physiological data held near constant values sourced from aggregated readings, appearing not clearly linked to physical activity.",
+                "stress_score": 0,
+                "stress_level": null,
+                "training_string_case1": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Thank you.\nPhysiological Signals: Not Available\n\n### Response:\nStrategy: Encouragement\n\nResponse: You're welcome. Thank you for trusting me with something so personal. Your feelings are real, and it's okay that healing is taking time. Be kind to yourself, keep taking small steps forward, and remember that you deserve a relationship where your care, effort, and feelings are returned with the same honesty and clarity.<EOS>",
+                "training_string_case2": "### Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary - including the comparison sentence describing whether their signals suggest emotional or physical arousal - to select an appropriate support strategy and respond accordingly. If no physiological signal summary is provided, base your analysis on the user's message alone.\n\n### Input:\nText: Thank you.\nPhysiological Signals: The closing window has conductance still settling, pulse and motion level and temperature drifting down, generic activity near a count of 151.0 placing the readings within what the movement would produce.\nEDA: steady near 5.48 uS, flat, final 6 minutes.\nACCEL: steady near 0.111 g, flat, final 6 minutes. Stress score: 0 (qualitative label not reported).\nPR: steady near 104.0 bpm, flat, final 6 minutes.\n\n### Response:\nStrategy: Offer Hope\n\nResponse: Thank you for trusting me with all of that - it wasn't a small thing to say out loud. This won't feel this sharp forever; the intensity does fade, usually before you notice it happening. Your readings have settled quite a bit since we started talking, which is a small sign of that in itself. Be patient with yourself, and hold out for someone who meets your care with the same clarity you give.<EOS>"
+            }
+        ]
+    }
+]

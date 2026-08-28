@@ -1,0 +1,13 @@
+turn,session_id,timestamp,EDA_uS,PR_bpm,SkinTemp_degC,ACCEL_g,ACT_COUNT,ACT_CLASS,stress_score,stress_level
+1,2753-1-1,2026-07-17T20:30:00,3.27 -> 3.95 -> 3.93,102.0 -> 99.0 -> 98.0,34.54 -> 34.56 -> 34.59,0.025 -> 0.041 -> 0.036,34.0 -> 67.0 -> 28.0,The state remained walking across the full span of the first minute.,4,Moderate stress
+2,2753-1-1,2026-07-17T20:32:00,3.6 -> 3.64 -> 4.39,100.0 -> 101.0 -> 94.0,34.65 -> 34.69 -> 34.7,0.043 -> 0.026 -> 0.028,54.0 -> 59.0 -> 41.0,"Across the past 2 minutes, the participant's classification changed: walking to generic.",4,Moderate stress
+3,2753-1-1,2026-07-17T20:35:00,3.7 -> 3.44 -> 3.2,107.0 -> 100.0 -> 104.0,34.71 -> 34.75 -> 34.8,0.037 -> 0.06 -> 0.033,35.0 -> 56.0 -> 41.0,The activity label changed from walking to walking within the past 5 minutes.,2,Mild stress
+4,2753-1-1,2026-07-17T20:38:00,3.02 -> 2.93,102.0 -> 99.0,34.86 -> 34.9,0.054 -> 0.031,43.0 -> 75.0,Activity type moved from generic to walking across the past 6 minutes.,2,Mild stress
+5,2753-1-1,2026-07-17T20:40:00,2.73 -> 2.7 -> 2.59,102.0 -> 103.0 -> 100.0,34.94 -> 34.97 -> 34.99,0.036 -> 0.056 -> 0.032,35.0 -> 79.0 -> 39.0,"Over the past 6 minutes, walking activity was sustained without interruption.",2,Mild stress
+6,2753-1-1,2026-07-17T20:43:00,2.62 -> 2.44 -> 2.61,100.0 -> 107.0 -> 102.0,35.02 -> 35.03 -> 34.98,0.032 -> 0.076 -> 0.064,48.0 -> 110.0 -> 72.0,"During the past 6 minutes, movement classification changed from walking to generic.",2,Mild stress
+7,2753-1-1,2026-07-17T20:46:00,2.76 -> 2.81 -> 2.9,97.0 -> 100.0 -> 99.0,34.88 -> 34.85 -> 34.78,0.03 -> 0.035 -> 0.093,32.0 -> 40.0 -> 64.0,"Over the past 6 minutes, a shift from walking to walking was recorded.",4,Moderate stress
+8,2753-1-1,2026-07-17T20:49:00,2.95 -> 3.04,101.0 -> 98.0,34.74 -> 34.7,0.09 -> 0.123,76.0 -> 96.0,The activity label changed from generic to generic within the past 6 minutes.,2,Mild stress
+9,2753-1-1,2026-07-17T20:51:00,3.15 -> 3.25 -> 3.43,102.0 -> 103.0 -> 99.0,34.63 -> 34.58 -> 34.51,0.073 -> 0.081 -> 0.07,54.0 -> 76.0 -> 114.0,"During the past 6 minutes, movement classification changed from walking to generic.",2,Mild stress
+10,2753-1-1,2026-07-17T20:54:00,4.02 -> 4.13 -> 3.94,98.0 -> 91.0 -> 94.0,34.45 -> 34.42 -> 34.4,0.035 -> 0.026 -> 0.011,48.0 -> 37.0 -> 25.0,Consistent generic classification was recorded across the past 6 minutes.,4,Moderate stress
+11,2753-1-1,2026-07-17T20:57:00,3.6 -> 3.43,98.0 -> 96.0,34.42 -> 34.49,0.033 -> 0.024,33.0 -> 37.0,The activity label changed from generic to walking within the past 6 minutes.,4,Moderate stress
+12,2753-1-1,2026-07-17T21:00:00,3.37,94.0,34.58,0.05,59.0,"During the past 6 minutes, movement classification changed from generic to generic.",2,Mild stress

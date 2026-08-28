@@ -1,105 +1,89 @@
-# Physiological Conversation Visualisation
+# psychobase
 
-Select a conversation context, read it turn by turn, and see the physiological
-signals recorded alongside it. Clicking a turn highlights the time interval that
-turn's physiological summary describes, on all five graphs at once.
+A multi-modal emotional support chatbot that reads the user's words **and** their
+physiological signals. A wearable streams EDA, pulse rate, skin temperature and
+movement; a stress detector watches that stream; when it fires, the user is
+offered a conversation with a chatbot that can see both what they typed and what
+their body is doing.
 
-## Setup
+This repository holds everything: the data, the response-generation and scoring
+work, the visualisation site, and the model training that comes next.
+
+```
+psychobase/
+├── docs/          the brief, the architecture deck, source documents
+├── evaluation/    generating AI responses and scoring them on six parameters
+├── model/         phase 2 - replacing Llama 7B with a smaller model
+└── website/       the visualisation site (deployed)
+```
+
+---
+
+## docs/
+
+The task brief, the architecture deck (`ppt/`), and the source chat-data
+document. Start with the deck for how the pieces fit together.
+
+## evaluation/
+
+Takes a participant's conversation JSON, shortens the physiological summary for
+each turn, generates a new AI response under the master prompt, and scores the
+new response against the original on six parameters - empathy, specificity,
+strategy faithfulness, physiological grounding, fluency and safety.
 
 ```bash
-# 1. Put the supplied data in place (not committed - see .gitignore)
-#    public/data/raw_csv/   <- dataGrouped.zip
-#    public/data/json/      <- Modified_JSON.zip
-
-# 2. Build the frontend-ready JSON (standard library only, no pip install)
-python3 scripts/build_data.py
-
-# 3. Run
-npm install
-npm run dev
+cd evaluation
+python3 scripts/extract.py <participant.json> -o out   # JSON -> working CSVs
+python3 scripts/render.py P11                          # -> CSVs, markdown, HTML, docx
 ```
 
-`npm run data` re-runs step 2 after Stiti sends updated files.
+`scripts/render.py` enforces the rules agreed with Stiti, and fails the build
+rather than shipping a report that breaks them:
 
-## How the data actually works
+- the physiological summary is 3-4 lines and always opens with
+  `Physiological Signals:`
+- wording and channel order vary from turn to turn, never one template
+- responses never quote a value, a unit or a channel name - the summary is
+  hidden from the user, so grounding is qualitative
+- physiological grounding scores at least 3 on every new response
 
-Worth reading before writing any chart code - the CSV is not what it first looks
-like.
+`scripts/step5_replace.py` writes verified summaries, strategies and responses
+back into `training_string_case2` in the source JSON, which is what feeds model
+training.
 
-**The CSV is one row per conversation turn, not a stream of samples.** Its
-`timestamp` column is a *range* joined by an en-dash:
+## website/
 
+Select a conversation, read it turn by turn, and see the physiological signals
+recorded alongside it. Clicking a turn highlights the time window that turn's
+summary describes, on all five graphs at once.
+
+```bash
+cd website
+python3 scripts/build_data.py   # or npm run data - CSV + JSON -> what the site fetches
+npm install && npm run dev
 ```
-2026-05-04T19:33:00–2026-05-04T19:34:00
-```
 
-and each signal column holds a short array of samples taken inside that range:
+Details, including two things about the source data that are easy to get wrong,
+are in [website/README.md](website/README.md).
 
-```
-EDA = "[4.13, 3.99]"    PR = "[101.0, 92.0]"    ACT_CLASS = "['generic', 'still']"
-```
+Deployed from this repository. The Vercel project builds from the repo root, so
+the root `vercel.json` points the install and build commands into `website/`.
 
-`build_data.py` flattens those arrays onto a real time axis, spacing a row's
-samples evenly inside its own window, to produce one continuous series per
-signal for the whole conversation.
+## model/
 
-**The highlight interval looks backwards, and it grows.** A turn's interval is
-not its own row window. Turn 4 sits at 19:38 and its summary says "over the past
-5 minutes", so the band runs 19:33-19:38 and covers several earlier turns. That
-look-back grows through the conversation - 1, 2, 3 minutes - then holds at 6.
-This is why the intervals must be dynamic: they are the input to the highlight.
+Phase 2, agreed 28 Aug: Llama 7B is too large for ~1,000 training pairs, so we
+move to a smaller model and experiment with how the data is arranged and how we
+fine-tune. Who is doing what, and the rules that keep the results comparable,
+are in [model/TASKS.md](model/TASKS.md).
 
-The pipeline reads the minutes out of each summary, converts them to a real
-start/end pair, and hands the UI a ready-made interval. **Do not re-derive
-intervals in the frontend**; read `turn.interval`.
+---
 
-## Output
+## The data
 
-`scripts/build_data.py` writes to `public/data/build/`:
+Participant conversations and physiological recordings, supplied by Stiti. They
+live in `website/public/data/` (`json/` and `raw_csv/`) and are versioned so
+everyone works from the same copy.
 
-- `index.json` - one row per participant/context, for the selection screen.
-  A context with a modified rewrite carries both as `variants` on the same
-  row rather than appearing twice.
-- `<variant_id>.json` - `signals`, `domain`, `series`, `turns` for one
-  variant (`8`, `8-modified`, ...)
-
-Shapes are declared in `src/types.ts`. That file and the script change together.
-
-## Data notes
-
-- 54 contexts build: 44 originals and 10 modified variants. Participants 23,
-  23_1, 24 and 25 previously had a CSV but no JSON; the 21 Aug drop supplied
-  theirs, so nothing is skipped any more.
-- **Modified variants.** Stiti sends better-written versions of some
-  conversations, named `..._modified_phyS[_context]`. Same participant, same
-  timestamps and same scenario, but the dialogue is rephrased - "I've been
-  struggling to perform well in athletics" becomes "My regional trials are in
-  three days and I can't stop shaking". They are additions, not replacements, so
-  each variant gets its own build output (`8-modified.json`), but the
-  selection screen shows one card per context - `index.json` groups the
-  original and modified variant together (`variants: [...]`) rather than
-  listing them as two separate contexts. Pairing is by *exact* suffix (CSV
-  `_modified_phyS.csv` only matches JSON `_modified_phyS_full_data.json`, not
-  a same-participant file with a different suffix), so a mismatched pair is
-  reported as skipped instead of silently guessed at. A new variant needs no
-  code change.
-- The five charted signals are EDA, PR, SkinTemp, ACCEL and ACT_COUNT. The brief
-  named ACT_CLASS as the fifth, but it holds category strings rather than
-  numbers, and Stiti confirmed ACT_COUNT instead. ACT_CLASS still ships inside
-  `series` for anyone who wants to annotate with it.
-- Context display names come from `public/data/context_names.json`, which covers
-  all 40 contexts. The source is CHAT_DATA_WITH_PHYSIOLOGICAL_SIGNAL(EMBRACE_PLUS).docx,
-  where the label appears variously as "Context:", "Scenario:" or
-  "Context (2 words):"; a few names in the file are shortened from the long
-  descriptions that document carries. Cards fall back to the participant id for
-  any context missing from the file.
-- All 749 turns yield an interval from their summary text.
-- Some turns state a look-back that doesn't follow the 1-2-3-...-6 scheme. Per
-  Stiti we highlight exactly what the summary text says; `interval_mismatches`
-  lists them per context as a diagnostic only.
-- `nan` in the source becomes `null`, so charts can break the line instead of
-  plotting zero.
-
-## Who is doing what
-
-See [TASKS.md](TASKS.md).
+**This is human participant data** - real conversations about relationships,
+family, health and work. The repository is private and limited to the team. Do
+not fork it, make it public, or copy the datasets elsewhere.

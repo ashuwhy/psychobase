@@ -1,0 +1,10 @@
+turn,session_id,strategy,ai_text
+1,2753-1-1,Active Listening,"Doing well, thanks for asking. What's going on with you today?"
+2,2753-1-1,Encouragement,"That's great to hearâsounds like a strong offer. Do you know more about the role yet, or is it still early in the process?"
+3,2753-1-1,Confidence Building,That's an even stronger offer than I realizedâgenuinely impressive. Worth putting real focused effort into the process for this one.
+4,2753-1-1,Active Listening,"Okay, go aheadâI'm listening."
+5,2753-1-1,Emotional Validation,"That's a tough margin to miss by. It doesn't say anything about your actual ability thoughâjust a cutoff. Is there any flexibility through your placement team, or a way to still be considered?"
+6,2753-1-1,Hope Instillation,"That's frustrating, especially by such a small gap. It's not the end of the road thoughâplenty of strong offers don't have a hard CGPA wall, and this one not working out doesn't cancel out what you're capable of."
+7,2753-1-1,Problem Solving,"War-mode planning time. Focus on the highest-yield topics firstâarrays, hashing, and pointer-based problems tend to show up often. Do one timed mock problem this afternoon, then a lighter review tonight before sleeping properly."
+8,2753-1-1,Clarification,"Fair correctionâthat changes the plan completely. If it's ground zero, today's job is just learning the core patterns fast enough to recognize them tomorrow, not mastering the subject. We keep it simple and focused."
+9,2753-1-1,Confidence Building,"Sureâa few high-value ones: sliding window for subarray/substring problems, two pointers for sorted-array pair problems, and stacks for 'next greater element' style questions. Want me to walk through one example of each so they're easier to spot tomorrow?"
