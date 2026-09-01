@@ -46,6 +46,12 @@ OUT = ROOT / "model" / "splits.json"
 FILENAME = re.compile(
     r"output_participantGrouped(?P<pid>.+?)data(?P<mod>_modified[a-zA-Z_]*)?_full_data\.json$")
 
+# Participant 1 ships two modified generations that differ in
+# training_string_case2 on all 30 turns. Stiti chose _modified_phyS on 28 Aug,
+# so the older _modified file is left out rather than training the same
+# conversation twice on two different physiological texts.
+EXCLUDE = {"output_participantGrouped1data_modified_full_data.json"}
+
 # Proportions are of *turns*, not of conversations - conversations run from 6 to
 # 50 turns, so balancing by count would give wildly uneven splits.
 TARGET = {"train": 0.70, "validation": 0.15, "test": 0.15}
@@ -56,6 +62,8 @@ def conversations():
     """Every conversation file with its id, group, and turn count."""
     found = []
     for path in sorted(DATA.glob("output_participantGrouped*_full_data.json")):
+        if path.name in EXCLUDE:
+            continue
         m = FILENAME.match(path.name)
         if not m:
             continue

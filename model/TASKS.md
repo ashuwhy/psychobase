@@ -55,10 +55,10 @@ Three things the split work turned up, all worth knowing before you train:
 - **`person_id` is useless for grouping.** It reads 2753 on 43 of the 55 files,
   so it is a device or batch identifier, not a person. Grouping is by
   participant number instead.
-- **Participant 1 has two modified generations** (`_modified` and
-  `_modified_phyS`) which differ in `training_string_case2` on all 30 turns.
-  Both are in the training split so nothing leaks, but training on both
-  duplicates that conversation. Worth asking Stiti which one counts.
+- **Participant 1 had two modified generations.** Stiti chose `_modified_phyS`
+  on 28 Aug, so the older `_modified` file is excluded in `make_splits.py`.
+  That is why the totals are 54 conversations and 993 turns rather than 55 and
+  1023.
 - **11, 11_1, 11_2 and 11_3 are one participant across four sessions**, so they
   travel together. That is the conservative choice; it costs split granularity
   (26 groups, not 55) and the alternative is available behind
@@ -146,11 +146,31 @@ otherwise someone retries it by accident in a fortnight.
   it. So we compare candidates against each other and against our own baseline
   configuration - the 7B numbers are not needed, which saves a slow run.
 
+## Decided since, and worth reading before you train
+
+- **Participant 1 uses `_modified_phyS`** (Stiti, 28 Aug). Excluded file is
+  handled in `make_splits.py`; totals are 54 conversations, 993 turns, 1986
+  strings.
+- **Loss is masked to the completion** - from `### Response:` to `<EOS>`, prompt
+  tokens excluded. Not a style preference: the completion is 43% of a case1
+  string but 22% of a case2 string, so unmasked loss weights the two cases
+  differently by construction and confounds the formatting experiment before it
+  starts. A fixed 417-character instruction header also repeats on all 993
+  turns, and there is no reason to spend gradient on reproducing it.
+- **Kaggle cannot do bfloat16.** Its P100 and T4 cards are Pascal and Turing;
+  set fp16 there or training fails at the first step. Precision per target is in
+  `configs/baseline.json`.
+
 ## Still open
 
 - **Hardware.** CSE server access is being requested - a form from the softie
-  office, signed by sir. Until it comes through, nobody can train a 3B model.
-  Everything in Day 1 except training runs on a laptop, so start there rather
-  than waiting: splits, the harness, the data formatting variants and the
-  training script can all be written and tested on CPU with a tiny model, then
-  pointed at the server when access lands.
+  office, signed by sir. Stiti suggested Kaggle in the meantime (1 Sep), which
+  is 16GB and fp16-only, so the baseline may need a smaller model there. Prefer
+  dropping model size over switching to LoRA, so that "full fine-tuning" stays
+  the pinned method and the comparison holds.
+- **Is there a stage 1?** Siddaarth asked where the stage-1 data is. Nothing in
+  the brief or the architecture deck describes two-stage fine-tuning, and case1
+  and case2 are two views of the same turn rather than two stages. If two-stage
+  means general emotional-support pretraining before our physiological data,
+  then no stage-1 corpus was supplied and we would have to source one - a
+  question for Stiti rather than an assumption to make.

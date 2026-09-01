@@ -9,10 +9,8 @@
     "most likely to run anywhere: 1.7B fully fine-tuned fits a single 24GB card",
     "in bf16 with gradient checkpointing and an 8-bit optimiser."
   ],
-
   "run_id": "baseline",
   "seed": 20260828,
-
   "model": {
     "name": "Qwen/Qwen3-1.7B-Instruct",
     "why": [
@@ -23,10 +21,9 @@
       "Strong instruction following at its size, which matters because the model",
       "must emit a Strategy line and a Response in a fixed shape."
     ],
-    "dtype": "bfloat16",
+    "dtype": "bfloat16 on the server, float16 on Kaggle - see hardware",
     "max_seq_len": 2048
   },
-
   "data": {
     "splits": "model/splits.json",
     "loader": "model/scripts/dataset.py",
@@ -37,12 +34,22 @@
       "arrangement that most obviously teaches the model that the physiological",
       "summary is optional context for the same input, rather than a different",
       "kind of example. Batched and randomised are the experiment."
+    ],
+    "loss_on": "completion_only",
+    "loss_note": [
+      "Mask the prompt; compute loss only from '### Response:' to <EOS>.",
+      "Two reasons, the second is the one that matters for our experiment:",
+      "1. The completion is 43% of a case1 string but only 22% of a case2 string,",
+      "   and a fixed 417-character instruction header repeats on all 993 turns.",
+      "   Unmasked, most of the gradient goes into reproducing boilerplate.",
+      "2. Because that prompt/completion ratio differs between case1 and case2,",
+      "   unmasked loss weights the two cases differently by construction - which",
+      "   would confound the data-formatting comparison before it starts."
     ]
   },
-
   "finetune": {
     "method": "full",
-    "learning_rate": 1e-5,
+    "learning_rate": 1e-05,
     "lr_scheduler": "cosine",
     "warmup_ratio": 0.03,
     "epochs": 3,
@@ -60,17 +67,37 @@
       "overfitting after epoch 2 is the expected failure, not the exception."
     ]
   },
-
   "evaluation": {
     "split": "test",
     "harness": "model/scripts/evaluate.py",
     "harness_owner": "Nithish",
-    "parameters": ["empathy", "specificity", "strategy_faithfulness",
-                   "physio_grounding", "fluency", "safety"],
+    "parameters": [
+      "empathy",
+      "specificity",
+      "strategy_faithfulness",
+      "physio_grounding",
+      "fluency",
+      "safety"
+    ],
     "generation": {
       "temperature": 0.0,
       "max_new_tokens": 300,
       "note": "Greedy for scoring. Two runs of the same checkpoint must give the same score, or the table is measuring sampling noise."
+    }
+  },
+  "hardware": {
+    "target": "CSE server (pending) or Kaggle",
+    "kaggle_note": [
+      "Kaggle gives P100 or 2x T4, both 16GB and neither supports bfloat16 -",
+      "they are Pascal and Turing. Set fp16 there, not bf16, or training dies",
+      "at the first step. Full fine-tuning 1.7B in fp16 on 16GB is tight but",
+      "reachable with gradient checkpointing and an 8-bit optimiser; if it will",
+      "not fit, drop to a 0.5-1B model for the baseline rather than switching to",
+      "LoRA, so that 'full fine-tuning' stays the pinned method."
+    ],
+    "precision": {
+      "cse_server": "bfloat16",
+      "kaggle": "float16"
     }
   }
 }
