@@ -21,13 +21,16 @@ with the rest of the table and should say so in **notes**.
 
 | run_id | owner | config | model | params | format | ft method | trainable % | empathy | specificity | strategy | physio ground | fluency | safety | train time | peak VRAM | notes |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| baseline | Ashutosh | `configs/baseline.json` | Qwen3-1.7B-Instruct | 1.7B | interleaved | full | 100% | | | | | | | | | not yet run - waiting on server access |
+| baseline | Ashutosh | `configs/baseline.json` | Qwen3-1.7B | 1.72B | interleaved | full | 100% | | | | | | | 26 min | ~21GB | trained, not yet scored. eval_loss 2.083/2.144/2.360 over 3 epochs - **best is epoch 1**, weights in `runs/baseline/final` |
+| smollm2-1.7b | Ashutosh | `configs/smollm2-1.7b.json` | SmolLM2-1.7B-Instruct | 1.71B | interleaved | full | 100% | | | | | | | | | running |
+| smollm3-3b | Ashutosh | `configs/smollm3-3b.json` | SmolLM3-3B | 3.08B | interleaved | full | 100% | | | | | | | | | blocked - 37GB fp16 exceeds one 32GB V100, needs both GPUs on gnode1 |
+| llama3.2-1b | Nithish | `configs/llama3.2-1b.json` | Llama-3.2-1B-Instruct | 1.24B | interleaved | full | 100% | | | | | | | | | blocked - gated repo, needs the Llama 3.2 licence accepted on huggingface.co |
 
 ## What changes from the baseline, and who owns it
 
 | axis | values to try | owner |
 |---|---|---|
-| model | Qwen3-1.7B, SmolLM3-3B, Llama-3.2-3B, Qwen3-4B | Ashutosh, Nithish |
+| model | Qwen3-1.7B (baseline), SmolLM2-1.7B, SmolLM3-3B, Llama-3.2-1B | Ashutosh, Nithish |
 | format | interleaved (baseline), batched, randomised | Siddaarth |
 | fine-tuning | full (baseline), QLoRA, DoRA, rsLoRA, LoRA+, IA3 | Krishna |
 
@@ -38,6 +41,16 @@ the row is wasted work.
 
 With ~700 training turns, differences of a tenth of a point on a 1-5 scale are
 noise, not signal. Before claiming a configuration wins, check that the gap is
-larger than the spread you get from re-running the same configuration with a
-different seed - if nobody has measured that spread yet, it is worth one run to
-find out, because it sets the bar for every comparison after it.
+larger than the spread from re-running the same configuration.
+
+That spread now has a floor, measured rather than assumed. The baseline was run
+twice at the *same* seed and gave eval_loss 2.076 and 2.083 - a gap of 0.007
+from GPU nondeterminism alone, since atomics in the backward pass do not
+reassociate identically between runs. A different seed will be wider. Treat
+0.007 as the absolute floor below which nothing is a result, and measure the
+cross-seed spread before publishing any ranking.
+
+Every run also picks its own best epoch on validation loss rather than taking
+the last one. The baseline peaks at epoch 1 and degrades monotonically after
+(2.083 -> 2.144 -> 2.360), so **best epoch belongs in the table** - a model that
+wins only by stopping earlier is a different claim from one that wins outright.
