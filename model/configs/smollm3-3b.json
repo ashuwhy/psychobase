@@ -87,7 +87,6 @@
   "evaluation": {
     "split": "test",
     "harness": "model/scripts/evaluate.py",
-    "harness_owner": "Nithish",
     "parameters": [
       "empathy",
       "specificity",
@@ -100,7 +99,10 @@
       "temperature": 0.0,
       "max_new_tokens": 300,
       "note": "Greedy for scoring. Two runs of the same checkpoint must give the same score, or the table is measuring sampling noise."
-    }
+    },
+    "harness_assigned_to": "Nithish",
+    "harness_status": "not started - no code in the repo as of 3 Sep 2026",
+    "credit_rule": "harness_assigned_to records who the split gave it to, not who wrote it. Whoever writes it gets named in RESULTS.md as its author. Same rule as the run rows: the owner column is who did the work, not who was pencilled in for it."
   },
   "hardware": {
     "cluster": "CSE SLURM cluster, login node 10.5.18.100",

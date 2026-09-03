@@ -27,6 +27,17 @@ with the rest of the table and should say so in **notes**.
 | smollm2-1.7b-fsdp | Ashutosh | `configs/smollm2-1.7b-fsdp.json` | SmolLM2-1.7B-Instruct | 1.71B | interleaved | full | 100% | | | | | | | | | queued. Matched control for smollm3-3b: same sharding, same optimiser, same per-device batch |
 | llama3.2-1b | Ashutosh | `configs/llama3.2-1b.json` | Llama-3.2-1B-Instruct | 1.24B | interleaved | full | 100% | | | | | | | | | trained, not yet scored. eval_loss **2.162**/2.303/2.499, best epoch 1. Worst of the three and the fastest to overfit |
 
+## Credit
+
+The **owner** column is whoever actually set up and ran the row, not whoever the
+task split pencilled in for it. The five model-lane runs were all configured and
+executed by Ashutosh on the CSE cluster, including the Llama one that the
+original split had against another name.
+
+The same applies to the evaluation harness, which does not exist yet: the split
+assigned it to Nithish, and whoever writes it is credited as its author here.
+An assignment is not a contribution until there is code.
+
 ## What changes from the baseline, and who owns it
 
 | axis | values to try | owner |
@@ -34,6 +45,7 @@ with the rest of the table and should say so in **notes**.
 | model | Qwen3-1.7B (baseline), SmolLM2-1.7B, SmolLM3-3B, Llama-3.2-1B | Ashutosh |
 | format | interleaved (baseline), batched, randomised | Siddaarth |
 | fine-tuning | full (baseline), QLoRA, DoRA, rsLoRA, LoRA+, IA3 | Krishna |
+| evaluation harness | `scripts/evaluate.py` - **not started** | assigned: Nithish |
 
 Change one of these per run. Two changes in one row cannot be attributed and
 the row is wasted work.
