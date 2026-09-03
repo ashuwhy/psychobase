@@ -118,5 +118,19 @@
     "so a difference against the baseline row is attributable to the model.",
     "If you change anything else here, it is a different experiment - make",
     "another config with another run_id."
-  ]
+  ],
+  "distributed": {
+    "strategy": "fsdp",
+    "gpus": 2,
+    "wrap_layer": "SmolLM3DecoderLayer",
+    "why": [
+      "3.08B in fp16 with fp32 master weights is about 37GB and a V100 has 32.",
+      "full_shard splits optimiser state, gradients and parameters across both",
+      "cards on gnode1, which brings it to roughly 19GB each.",
+      "This is the only row in the table that is sharded. Reductions happen in a",
+      "different order than on one card, so it is not comparable to the others at",
+      "the 0.007 noise floor - irrelevant for a 3B-vs-1.7B size gap, but it",
+      "belongs in the notes column rather than being left implicit."
+    ]
+  }
 }

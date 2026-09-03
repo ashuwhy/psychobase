@@ -18,11 +18,13 @@ if [ ! -x "$VENV/bin/python" ]; then
     virtualenv --quiet -p python3.10 "$VENV"
 fi
 
-# CUDA 12.1 on the nodes, so cu121 wheels. A cu124 torch against a 12.1 driver
-# imports fine and then fails at the first kernel launch - on the GPU node,
-# after the queue wait, looking like a training bug rather than an install one.
+# The driver is 580.95, which reports CUDA 13.0, so it accepts any wheel up to
+# cu13 - /usr/local/cuda-12.1 on the login node is only the installed toolkit and
+# does not constrain this. torch 2.6 is the floor because accelerate's FSDP2 path
+# refuses to load below it, and cu124 still ships sm_70 kernels, which matters
+# because the V100s are Volta and newer CUDA builds have been dropping them.
 "$VENV/bin/pip" install -q --upgrade pip
-"$VENV/bin/pip" install -q torch --index-url https://download.pytorch.org/whl/cu121
+"$VENV/bin/pip" install -q "torch==2.6.0" --index-url https://download.pytorch.org/whl/cu124
 # bitsandbytes is not optional: the 8-bit optimiser states are the difference
 # between 26GB and 38GB for the 2B baseline, and the V100s have 32GB.
 "$VENV/bin/pip" install -q transformers accelerate bitsandbytes

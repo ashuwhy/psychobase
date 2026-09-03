@@ -18,6 +18,7 @@ the only way to catch a masking or truncation bug without burning server hours.
 
 import argparse
 import json
+import os
 import random
 import sys
 from pathlib import Path
@@ -197,13 +198,49 @@ def main():
     out = RUNS / run_id
     out.mkdir(parents=True, exist_ok=True)
 
+    # A 3B model in fp16 with fp32 master weights wants about 37GB and a V100
+    # has 32, so it only trains by sharding the optimiser state and gradients
+    # across both cards on gnode1. Sharding changes the order reductions happen
+    # in, so a sharded run is not comparable to a single-card run at the 0.007
+    # noise floor - fine for a 3B-vs-1.7B size gap, but the paper should say so.
+    shard = {}
+    if cfg.get("distributed", {}).get("strategy") == "fsdp":
+        # fsdp=True with everything in fsdp_config; passing the old space-joined
+        # string is deprecated. Activation checkpointing moves into fsdp_config
+        # too - the Trainer's own gradient_checkpointing adds a redundant
+        # AllGather in the backward pass under FSDP.
+        shard = {
+            "fsdp": True,
+            "fsdp_config": {
+                "reshard_after_forward": True,
+                "transformer_layer_cls_to_wrap": cfg["distributed"]["wrap_layer"],
+                "activation_checkpointing": True,
+            },
+        }
+        ft = dict(ft, gradient_checkpointing=False)
+        print(f"  FSDP full shard over {cfg['distributed']['gpus']} GPUs, "
+              f"wrapping {cfg['distributed']['wrap_layer']}")
+
     # transformers 5 dropped warmup_ratio; the configs still express warmup as a
     # ratio because that is the number worth comparing across runs of different
     # length, so convert it here rather than hard-coding steps per experiment.
-    per_step = ft["per_device_batch_size"] * ft["gradient_accumulation_steps"]
+    # Under torchrun every rank runs its own accumulation, so the effective batch
+    # is per_device * accum * world_size. Left alone, the 2-GPU shard would train
+    # at batch 32 against every other row's 16 and halve the step count - a size
+    # comparison confounded by batch size, which is not the experiment. Divide
+    # the accumulation instead so the effective batch is identical everywhere.
+    world = int(os.environ.get("WORLD_SIZE", "1"))
+    accum = ft["gradient_accumulation_steps"]
+    if accum % world:
+        raise SystemExit(f"gradient_accumulation_steps {accum} is not divisible by "
+                         f"WORLD_SIZE {world}; effective batch would differ from "
+                         f"the single-GPU rows and the run would not be comparable")
+    accum //= world
+    per_step = ft["per_device_batch_size"] * accum * world
     total_steps = -(-len(rows) // per_step) * ft["epochs"]
     warmup_steps = round(ft["warmup_ratio"] * total_steps)
-    print(f"  {total_steps} optimiser steps, {warmup_steps} warmup")
+    print(f"  effective batch {per_step} over {world} GPU(s), "
+          f"{total_steps} optimiser steps, {warmup_steps} warmup")
 
     model = AutoModelForCausalLM.from_pretrained(cfg["model"]["name"], dtype=load_dtype)
     params = sum(p.numel() for p in model.parameters())
@@ -232,9 +269,10 @@ def main():
             warmup_steps=warmup_steps,
             weight_decay=ft["weight_decay"],
             per_device_train_batch_size=ft["per_device_batch_size"],
-            gradient_accumulation_steps=ft["gradient_accumulation_steps"],
+            gradient_accumulation_steps=accum,
             gradient_checkpointing=ft.get("gradient_checkpointing", False),
             optim=ft.get("optimizer", "adamw_torch"),
+            **shard,
             bf16=bf16,
             fp16=not bf16 and torch.cuda.is_available(),
             logging_steps=10,
@@ -273,9 +311,14 @@ def main():
         "training_strings": len(rows),
         "dropped": dropped + unmasked,
         "precision": "bf16" if bf16 else "fp16",
+        "torch": torch.__version__,
+        "transformers": __import__("transformers").__version__,
+        "sharded": bool(shard),
         "params": params,
         "train_loss": result.training_loss,
         "optimiser_steps": total_steps,
+        "effective_batch": per_step,
+        "world_size": world,
         "eval_loss_per_epoch": [h["eval_loss"] for h in history],
         "best_epoch": best.get("epoch"),
         "best_eval_loss": best.get("eval_loss"),
