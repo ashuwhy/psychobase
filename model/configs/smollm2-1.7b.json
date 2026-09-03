@@ -66,6 +66,14 @@
       "3 epochs on 1420 training strings is roughly 265 optimiser steps at an",
       "effective batch of 16. Watch validation loss: with data this small,",
       "overfitting after epoch 2 is the expected failure, not the exception."
+    ],
+    "checkpoint_selection": [
+      "eval_loss on the validation split, at each epoch. The run keeps the best",
+      "epoch in final/, not the last one - validation loss bottoms at epoch 1 on",
+      "this corpus and rises afterwards, so the last checkpoint is the worst of",
+      "the three. epochs stays at 3 so that every run reports where its own",
+      "minimum was, rather than assuming the baseline's answer holds for a",
+      "different model."
     ]
   },
   "evaluation": {

@@ -240,7 +240,16 @@ def main():
             logging_steps=10,
             eval_strategy="epoch",
             save_strategy="epoch",
-            save_total_limit=2,
+            # Validation loss bottoms at epoch 1 on this corpus and rises after,
+            # so the last checkpoint is the worst one. Score the best instead of
+            # the newest, or the table measures how long we overtrained.
+            load_best_model_at_end=True,
+            metric_for_best_model="eval_loss",
+            greater_is_better=False,
+            # A checkpoint is 12GB. limit=1 still keeps the best alongside the
+            # most recent while training, and the loop below removes both once
+            # the best has been written to final/.
+            save_total_limit=1,
             report_to=[],
         ),
     )
@@ -249,6 +258,13 @@ def main():
     tokenizer.save_pretrained(str(out / "final"))
 
     history = [h for h in trainer.state.log_history if "eval_loss" in h]
+    best = min(history, key=lambda h: h["eval_loss"]) if history else {}
+
+    # final/ now holds the best epoch, so the numbered checkpoints are 12GB each
+    # of duplicate on a shared NFS home. Twelve planned runs would be ~430GB.
+    import shutil
+    for ckpt in out.glob("checkpoint-*"):
+        shutil.rmtree(ckpt, ignore_errors=True)
     (out / "run.json").write_text(json.dumps({
         "run_id": run_id,
         "config": str(args.config.relative_to(ROOT)),
@@ -261,8 +277,13 @@ def main():
         "train_loss": result.training_loss,
         "optimiser_steps": total_steps,
         "eval_loss_per_epoch": [h["eval_loss"] for h in history],
+        "best_epoch": best.get("epoch"),
+        "best_eval_loss": best.get("eval_loss"),
+        "epochs_run": ft["epochs"],
     }, indent=2) + "\n")
-    print(f"\n  wrote {out}/run.json - copy the numbers into model/RESULTS.md")
+    print(f"\n  best epoch {best.get('epoch')} at eval_loss "
+          f"{best.get('eval_loss')}, saved to {out}/final")
+    print(f"  wrote {out}/run.json - copy the numbers into model/RESULTS.md")
 
 
 if __name__ == "__main__":
