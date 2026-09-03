@@ -161,6 +161,41 @@ otherwise someone retries it by accident in a fortnight.
   set fp16 there or training fails at the first step. Precision per target is in
   `configs/baseline.json`.
 
+## The training script
+
+`model/scripts/train.py` runs one config and writes `model/runs/<run_id>/run.json`.
+
+    python3 model/scripts/train.py model/configs/baseline.json --smoke   # no GPU
+    python3 model/scripts/train.py model/configs/baseline.json
+
+`--smoke` tokenises everything, prints where the loss mask starts and stops, and
+exits before loading weights. Run it after every config change. Twenty seconds on
+a laptop, and the only cheap way to catch a masking bug.
+
+Do not edit train.py to get a different experiment. Copy a config, give it a new
+`run_id`, change the one field. If an experiment cannot be written as a config,
+raise it on the group rather than forking the script.
+
+Three defects found while writing it, each of which would have cost server time:
+
+- **The baseline pointed at a model that does not exist.** `Qwen/Qwen3-1.7B-Instruct`
+  is not on the Hub - Qwen3 ships one instruct repo per size with no suffix. Now
+  `Qwen/Qwen3-1.7B`.
+- **HF Trainer shuffles the training dataloader by default.** The formatting lane
+  is entirely about example order, so a shuffling sampler collapses interleaved,
+  batched and randomised into one experiment and yields three identical rows for
+  no visible reason. train.py forces a sequential sampler and disables
+  `group_by_length` for the same reason. Anyone writing their own loop needs both.
+- **27% of turns carried mojibake** - 271 of 993, 974 occurrences, an apostrophe
+  stored as 'Itâ\x80\x99s' - almost all inside `ai_text`, which is the
+  span the loss is computed on, so the model would have learned to emit the broken
+  bytes. Repaired in `dataset.py` so every lane gets it. The generator that writes
+  `website/public/data/json` still emits it and needs the same fix at source.
+
+Measured rather than assumed: the longest tokenised string is 661 tokens against
+a 2048 window, so nothing truncates today. Supervised tokens are 23% of the
+total, which is the case1/case2 asymmetry the masking decision was about.
+
 ## Still open
 
 - **Hardware.** CSE server access is being requested - a form from the softie

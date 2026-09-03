@@ -12,14 +12,16 @@
   "run_id": "baseline",
   "seed": 20260828,
   "model": {
-    "name": "Qwen/Qwen3-1.7B-Instruct",
+    "name": "Qwen/Qwen3-1.7B",
     "why": [
       "Small enough to FULLY fine-tune, which is the point of this phase - LoRA",
       "on 7B updates too few parameters for ~700 training conversations' worth",
       "of turns to move the model far from its pretraining.",
       "Apache 2.0, so no license friction for a university project.",
       "Strong instruction following at its size, which matters because the model",
-      "must emit a Strategy line and a Response in a fixed shape."
+      "must emit a Strategy line and a Response in a fixed shape.",
+      "Qwen3 ships one instruct-tuned repo per size with no -Instruct suffix;",
+      "'Qwen/Qwen3-1.7B-Instruct' does not exist on the Hub. Use Qwen/Qwen3-1.7B."
     ],
     "dtype": "bfloat16 on the server, float16 on Kaggle - see hardware",
     "max_seq_len": 2048

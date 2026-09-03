@@ -37,6 +37,27 @@ FILENAME = re.compile(
     r"output_participantGrouped(?P<pid>.+?)data(?P<mod>_modified[a-zA-Z_]*)?_full_data\.json$")
 
 
+def _demojibake(text):
+    """Undo UTF-8 that was read as latin-1 somewhere upstream.
+
+    271 of the 993 turns carry it, 974 occurrences, almost all in ai_text -
+    "It\u2019s" arrives as "It\u00e2\u0080\u0099s". That is the completion, which is
+    the span we compute loss on, so left alone the model learns to emit the
+    broken bytes. Repaired here rather than in the JSON because this loader is
+    the one thing every lane imports; the generator that wrote the files still
+    needs the same fix, see model/TASKS.md.
+
+    Only applied when the round trip is clean, so genuine accented characters
+    (a participant writing "cafe\u0301") are never mangled by the repair itself.
+    """
+    if "\u00e2" not in text and "\u00c3" not in text and "\u00c2" not in text:
+        return text
+    try:
+        return text.encode("latin-1").decode("utf-8")
+    except (UnicodeEncodeError, UnicodeDecodeError):
+        return text
+
+
 @dataclass(frozen=True)
 class Example:
     conversation: str          # "8", "8-modified", "11_1"
@@ -84,9 +105,10 @@ def load(split):
                 # measures. Louder to stop than to skip.
                 raise SystemExit(f"{cid} turn {i}: missing case1 or case2")
             examples.append(Example(
-                conversation=cid, turn=i, case1=c1, case2=c2,
-                user_text=turn.get("user_text", ""),
-                ai_text=turn.get("ai_text", ""),
+                conversation=cid, turn=i,
+                case1=_demojibake(c1), case2=_demojibake(c2),
+                user_text=_demojibake(turn.get("user_text", "")),
+                ai_text=_demojibake(turn.get("ai_text", "")),
                 strategy=(turn.get("strategy") or "").strip(),
             ))
 
@@ -112,6 +134,10 @@ def main():
               f"{len(set(e.conversation for e in ex)):>2} conversations   "
               f"mean case2 {chars:>5.0f} chars")
     print(f"\n  loaded {total} turns in total ({total * 2} strings)")
+
+    broken = sum(1 for n in ("train", "validation", "test") for e in load(n)
+                 if "\u00e2\u0080" in e.case2)
+    print(f"  mojibake after repair: {broken} turns")
 
     # The guarantee the whole table rests on.
     seen = {}
