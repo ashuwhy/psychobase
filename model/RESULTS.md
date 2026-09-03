@@ -23,7 +23,7 @@ with the rest of the table and should say so in **notes**.
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | baseline | Ashutosh | `configs/baseline.json` | Qwen3-1.7B | 1.72B | interleaved | full | 100% | | | | | | | 26 min | ~21GB | trained, not yet scored. eval_loss 2.083/2.144/2.360, **best epoch 1** |
 | smollm2-1.7b | Ashutosh | `configs/smollm2-1.7b.json` | SmolLM2-1.7B-Instruct | 1.71B | interleaved | full | 100% | | | | | | | | | trained, not yet scored. eval_loss 1.896/**1.882**/1.909, **best epoch 2**. Beats the baseline by 0.201 and overfits far less |
-| smollm3-3b | Ashutosh | `configs/smollm3-3b.json` | SmolLM3-3B | 3.08B | interleaved | full | 100% | | | | | | | | | running, FSDP over 2 V100s, adamw_torch. Compare only against smollm2-1.7b-fsdp |
+| smollm3-3b | Ashutosh | `configs/smollm3-3b.json` | SmolLM3-3B | 3.08B | interleaved | full | 100% | | | | | | | 2h00 | ~27GB/card | trained, not scored. eval_loss **1.936**/1.963/2.240, best epoch 1. FSDP over 2 V100s, adamw_torch. Compare only against smollm2-1.7b-fsdp |
 | smollm2-1.7b-fsdp | Ashutosh | `configs/smollm2-1.7b-fsdp.json` | SmolLM2-1.7B-Instruct | 1.71B | interleaved | full | 100% | | | | | | | | | queued. Matched control for smollm3-3b: same sharding, same optimiser, same per-device batch |
 | llama3.2-1b | Ashutosh | `configs/llama3.2-1b.json` | Llama-3.2-1B-Instruct | 1.24B | interleaved | full | 100% | | | | | | | | | trained, not yet scored. eval_loss **2.162**/2.303/2.499, best epoch 1. Worst of the three and the fastest to overfit |
 
@@ -82,6 +82,15 @@ participants is not an option and more epochs actively hurts.
 
 Three baseline runs across two torch versions gave 2.076, 2.083 and 2.078, so
 the 0.007 floor survived the 2.5.1 to 2.6.0 upgrade.
+
+SmolLM3-3B lands at 1.936, behind SmolLM2-1.7B at 1.882 despite 1.8x the
+parameters, and it degrades 0.30 across three epochs where SmolLM2 degrades 0.01.
+**This is not yet a size result.** FSDP forced SmolLM3 onto adamw_torch because
+bitsandbytes has no DTensor sharding rule, so it differs from the single-card
+SmolLM2 in two ways at once. `smollm2-1.7b-fsdp` runs SmolLM2 under identical
+sharding and optimiser and is the only row that makes the size comparison
+readable - near 1.88 means the size effect is real, near 1.94 means what we are
+looking at is the optimiser. Do not quote a size conclusion before it lands.
 
 Same data, same hyperparameters, same size. Qwen3 overfits 993 turns quickly and
 SmolLM2 barely does. Whatever the harness scores end up being, that difference in
