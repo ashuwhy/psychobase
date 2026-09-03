@@ -89,7 +89,7 @@ def load(split):
         raise ValueError(f"unknown split {split!r}; expected one of {list(spec['splits'])}")
     wanted = set(spec["splits"][split]["conversations"])
 
-    found, examples = set(), []
+    found, examples, unlabelled = set(), [], []
     for path in sorted(DATA.glob("output_participantGrouped*_full_data.json")):
         cid = _conversation_id(path)
         if cid not in wanted:
@@ -104,6 +104,18 @@ def load(split):
                 # ratio, which is the very thing the formatting experiment
                 # measures. Louder to stop than to skip.
                 raise SystemExit(f"{cid} turn {i}: missing case1 or case2")
+            if split == "train" and not (turn.get("strategy") or "").strip():
+                # 67 of 687 training turns have no strategy, and their training
+                # string literally reads "Strategy: \n\nResponse: ...". At 9.8%
+                # of the data that was enough for the baseline to emit a blank
+                # strategy on 138 of 155 test turns under greedy decoding - 89%,
+                # from 10% of the data. A turn with no label cannot teach
+                # strategy selection, and it actively teaches the model to skip
+                # the field, so it is dropped from training.
+                # Only from training: validation and test have no blanks at all,
+                # so nothing is removed from anything that gets scored.
+                unlabelled.append((cid, i))
+                continue
             examples.append(Example(
                 conversation=cid, turn=i,
                 case1=_demojibake(c1), case2=_demojibake(c2),
@@ -111,6 +123,10 @@ def load(split):
                 ai_text=_demojibake(turn.get("ai_text", "")),
                 strategy=(turn.get("strategy") or "").strip(),
             ))
+
+    if unlabelled:
+        print(f"  dropped {len(unlabelled)} unlabelled training turns "
+              f"(blank strategy teaches a blank Strategy line)")
 
     missing = wanted - found
     if missing:

@@ -64,8 +64,12 @@ feeling felt just really very much more most some any all thing things way ways 
 sure yes no not never always sometimes often about like as by than then there here what
 when where who how why okay sure""".split())
 
-STRATEGY_LINE = re.compile(r"strategy\s*:\s*(.+)", re.I)
-RESPONSE_LINE = re.compile(r"response\s*:\s*(.+)", re.I | re.S)
+# \s* after the colon would cross a newline, so a model that emits a bare
+# "Strategy:" followed by its response on the next line had the whole response
+# captured as its strategy - scoring it wrong AND reporting perfect format
+# compliance. The strategy is one line; only the response may span lines.
+STRATEGY_LINE = re.compile(r"strategy[ \t]*:[ \t]*([^\n]*)", re.I)
+RESPONSE_LINE = re.compile(r"response[ \t]*:[ \t]*(.+)", re.I | re.S)
 
 
 def norm_label(s):
@@ -122,11 +126,30 @@ def main():
     ap.add_argument("run_dir", type=Path, help="model/runs/<run_id>")
     ap.add_argument("--limit", type=int, help="score only the first N turns")
     ap.add_argument("--batch", type=int, default=8)
+    ap.add_argument("--regenerate", action="store_true",
+                    help="ignore an existing generations.jsonl and generate again")
     args = ap.parse_args()
 
     ckpt = args.run_dir / "final"
     if not ckpt.exists():
         raise SystemExit(f"{ckpt} does not exist - has this run finished?")
+
+    turns = load("test")
+    if args.limit:
+        turns = turns[:args.limit]
+
+    # Generation is the expensive half and the scoring is the half that changes,
+    # so a finished generations.jsonl is reused rather than recomputed. A bug in
+    # a metric should cost seconds, not another pass over 310 prompts on a GPU.
+    cache = args.run_dir / "generations.jsonl"
+    if cache.exists() and not args.regenerate:
+        records = [json.loads(l) for l in cache.read_text().splitlines() if l.strip()]
+        if len(records) == len(turns) * 2:
+            print(f"scoring {args.run_dir.name} from {cache.name} "
+                  f"({len(records)} cached generations, --regenerate to redo)")
+            return score(args.run_dir, ckpt, turns, records)
+        print(f"  {cache.name} has {len(records)} rows, expected {len(turns) * 2} "
+              f"- regenerating")
 
     import torch
     from transformers import AutoModelForCausalLM, AutoTokenizer
@@ -144,9 +167,6 @@ def main():
     if torch.cuda.is_available():
         model.cuda()
 
-    turns = load("test")
-    if args.limit:
-        turns = turns[:args.limit]
     print(f"scoring {args.run_dir.name} on {len(turns)} test turns "
           f"({len(turns) * 2} generations, both cases)")
 
@@ -171,17 +191,25 @@ def main():
         print(f"  {min(i + args.batch, len(prompts))}/{len(prompts)}", end="\r")
     print()
 
-    by_turn, records = {}, []
+    records = []
     for (e, case), gen in zip(meta, outputs):
         strat, resp = parse(gen)
-        by_turn.setdefault((e.conversation, e.turn), {})[case] = (strat, resp, gen, e)
         records.append({"conversation": e.conversation, "turn": e.turn, "case": case,
                         "reference_strategy": e.strategy, "predicted_strategy": strat,
                         "reference_response": e.ai_text, "generated_response": resp,
                         "raw": gen})
+    cache.write_text("".join(json.dumps(r) + "\n" for r in records))
+    return score(args.run_dir, ckpt, turns, records)
 
-    (args.run_dir / "generations.jsonl").write_text(
-        "".join(json.dumps(r) + "\n" for r in records))
+
+def score(run_dir, ckpt, turns, records):
+    """Metrics from generations, so a metric bug costs no GPU time to fix."""
+    index = {(e.conversation, e.turn): e for e in turns}
+    by_turn = {}
+    for r in records:
+        key = (r["conversation"], r["turn"])
+        by_turn.setdefault(key, {})[r["case"]] = (
+            r["predicted_strategy"], r["generated_response"], r["raw"], index[key])
 
     # --- metrics, case2 unless stated: that is the condition the project is about
     strat_f1, fmt_ok, reps, truncs, spec, echoes, grounded, diverged = [], 0, [], 0, [], [], 0, 0
@@ -211,8 +239,8 @@ def main():
 
     n = max(len(reps), 1)
     scores = {
-        "run_id": args.run_dir.name,
-        "checkpoint": str(ckpt.relative_to(ROOT)),
+        "run_id": run_dir.name,
+        "checkpoint": str(ckpt.resolve().relative_to(ROOT)),
         "test_turns": len(turns),
         "generation": {"temperature": 0.0, "greedy": True, "max_new_tokens": 300},
         "computed": {
@@ -232,12 +260,12 @@ def main():
                    "then fill these in. Do not compute them from word lists.",
         },
     }
-    (args.run_dir / "scores.json").write_text(json.dumps(scores, indent=2) + "\n")
+    (run_dir / "scores.json").write_text(json.dumps(scores, indent=2) + "\n")
 
-    print(f"\n  {args.run_dir.name}")
+    print(f"\n  {run_dir.name}")
     for k, v in scores["computed"].items():
         print(f"    {k:<28} {v}")
-    print(f"\n  wrote {args.run_dir}/scores.json and generations.jsonl")
+    print(f"\n  wrote {run_dir}/scores.json and generations.jsonl")
     print("  empathy and safety are null until a person or a judge scores "
           "generations.jsonl")
 
