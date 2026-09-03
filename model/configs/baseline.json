@@ -114,5 +114,6 @@
       "8-bit optimiser states are load-bearing: 26GB against 38GB for the",
       "baseline, on a 32GB card."
     ]
-  }
+  },
+  "owner": "Ashutosh"
 }

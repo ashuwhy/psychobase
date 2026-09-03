@@ -116,7 +116,7 @@
       "baseline, on a 32GB card."
     ]
   },
-  "owner": "Nithish",
+  "owner": "Ashutosh",
   "note": [
     "Model lane. Everything except model.name is identical to baseline.json,",
     "so a difference against the baseline row is attributable to the model.",
