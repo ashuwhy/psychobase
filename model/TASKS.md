@@ -34,12 +34,18 @@ test set into training and every model looks better than it is.
 
 ---
 
-## Day 1 - two pairs working in parallel
+## Where this stands, 3 Sep
 
-Nothing can be measured until the foundation exists, and nothing can be trained
-until there is a training script. Both pairs work at once so neither waits.
+The foundation, the cluster and the model lane are done. The training script,
+the submission scripts and the evaluation harness are in the repo and working.
+Four models are trained with a fifth control finishing.
 
-### Ashutosh - splits, baseline, results table - DONE, waiting on server
+What is not done is the other three lanes. Siddaarth's and Krishna's are not
+blocked by anything and have not started; the evaluation harness runs but its
+empathy and safety columns need a rubric and a human pass before the results
+table has anything in it.
+
+### Ashutosh - splits, baseline, cluster, model lane, harness - DONE
 
 - [x] Conversation-level split, frozen in `splits.json`, 69/15/15 by turns
       (`scripts/make_splits.py`)
@@ -47,8 +53,10 @@ until there is a training script. Both pairs work at once so neither waits.
       JSON directory, or we end up with four loaders that disagree
 - [x] Baseline configuration in `configs/baseline.json`
 - [x] Results table in `RESULTS.md`
-- [ ] Chase CSE server access - it sets the ceiling on model size for everyone,
-      so it blocks model selection more than anything else
+- [x] CSE server access, environment, and submission scripts - see Hardware below
+- [x] Trainer `scripts/train.py`, one config in, checkpoint plus `run.json` out
+- [x] Four model runs trained and recorded, plus a matched control
+- [x] Evaluation harness `scripts/evaluate.py`
 
 Three things the split work turned up, all worth knowing before you train:
 
@@ -61,24 +69,68 @@ Three things the split work turned up, all worth knowing before you train:
   1023.
 - **11, 11_1, 11_2 and 11_3 are one participant across four sessions**, so they
   travel together. That is the conservative choice; it costs split granularity
-  (26 groups, not 55) and the alternative is available behind
-  `--group-by file` if we decide the finer split is worth the leakage risk.
+  (26 groups, not 55). `--group-by file` still exists but is effectively closed:
+  every row in `RESULTS.md` was produced against the frozen split, and changing
+  it now invalidates all of them.
 
-### Nithish - evaluation harness
+### Model lane - four models trained, one control running
 
-- [ ] Takes a model's generated responses on the test split, returns the six
-      parameters, reproducible between people and across days
-- [ ] Reuse the rules already encoded in `evaluation/scripts/render.py` -
-      particularly that physiological grounding must be qualitative, since a
-      response that quotes values should not score well on it
-- [ ] Sanity-check it against the scores we produced by hand: if the harness
+Validation loss only. These pick checkpoints; they are not harness scores and
+they do not go in the results columns.
+
+    smollm2-1.7b   1.882  ep2   1.896 1.882 1.909   flat      +0.01
+    smollm3-3b     1.936  ep1   1.936 1.963 2.240   degrades  +0.30
+    baseline       2.078  ep1   2.078 2.140 2.360   degrades  +0.28
+    llama3.2-1b    2.162  ep1   2.162 2.303 2.499   degrades  +0.34
+
+SmolLM2-1.7B wins and barely overfits. Qwen3-1.7B is the same size to within 10M
+parameters and climbs 0.28, so on this corpus the pretraining family matters
+more than the parameter count.
+
+**Do not quote "3B is worse than 1.7B" yet.** FSDP forced SmolLM3 onto
+`adamw_torch`, because bitsandbytes has no DTensor sharding rule, so it differs
+from the single-card SmolLM2 in size *and* optimiser. `smollm2-1.7b-fsdp` runs
+SmolLM2 under identical sharding and optimiser and is the only row that makes
+the size comparison readable. Near 1.88 means the size effect is real; near 1.94
+means we are looking at the optimiser.
+
+Two more things that hold for everyone's runs:
+
+- **Every run peaks at epoch 1 or 2, never 3.** The configs select the best epoch
+  on validation loss rather than the last. Before that fix, `save_total_limit`
+  was deleting the good checkpoint and keeping the most overtrained one.
+- **The noise floor is measured, not assumed.** The same config at the same seed,
+  three times across two torch versions, gave 2.076 / 2.083 / 2.078. Nothing
+  under 0.007 is a result.
+
+### Nithish - evaluation harness - PARTLY BUILT, scoring pass outstanding
+
+`scripts/evaluate.py` was written on 3 Sep because four trained models with no
+scorer was the only thing between the project and a results table. It covers the
+four parameters that can be computed from generations. What is left is the part
+that genuinely needs a person.
+
+- [x] Takes a model's generations on the test split, greedy at temperature 0,
+      reproducible between people and across days
+- [ ] **Write the 1-5 rubric for empathy and safety.** These come out null on
+      purpose - a word-list proxy for empathy produces a number that looks like a
+      result and is not one. Without an agreed rubric two people scoring the same
+      `generations.jsonl` will not agree with each other.
+- [ ] Score `generations.jsonl` against that rubric, by hand or with a judge model
+- [ ] Sanity-check against the scores we produced by hand: if the harness
       disagrees wildly with the Google Doc rows for the same responses, the
       harness is wrong and everything downstream inherits that
+- [ ] Check `physio_grounding` against `evaluation/scripts/render.py` - grounding
+      is supposed to be qualitative, so a response that quotes raw values should
+      not score well. The current mention-rate metric does not enforce that.
 
-### Siddaarth - training pipeline and data formatting
+### Siddaarth - data formatting - NOT BLOCKED, nothing started
 
-- [ ] Get one model training end to end on the baseline configuration first -
-      this unblocks Krishna as much as yourself
+The pipeline exists and the cluster is up, so this is three sbatch commands.
+Copy `configs/baseline.json`, change `data.format`, give it a new `run_id`.
+
+- [x] One model training end to end on the baseline configuration - done, and it
+      unblocked this lane along with Krishna's
 - [ ] Then the three arrangements from the meeting, on the baseline model and
       method: interleaved (case 1, case 2, case 1...), batched (all case 1s then
       all case 2s), randomised
@@ -87,7 +139,10 @@ Three things the split work turned up, all worth knowing before you train:
       use it. If batched scores oddly high or oddly low, suspect that before
       believing the number
 
-### Krishna - fine-tuning method
+### Krishna - fine-tuning method - NOT BLOCKED, nothing started
+
+`train.py` reads `finetune.method` from the config. Same pattern: copy a config,
+change the one field, new `run_id`, sbatch it.
 
 - [ ] Alternatives to LoRA, suited to this data size:
       - full fine-tuning (viable at 1B, and the one most likely to win here)
@@ -100,11 +155,20 @@ Three things the split work turned up, all worth knowing before you train:
 
 ---
 
-## Once the foundation lands - model selection
+## Model selection - SETTLED, all four run
 
-Split between Ashutosh and Nithish, 1-2 models each, all on the baseline
-format and method so the model is the only thing that changed. Verify what is
-current before committing - this list moves quickly:
+Chosen so that every pair differs in exactly one thing: Qwen3-1.7B against
+SmolLM2-1.7B varies the family at fixed size, SmolLM2 against SmolLM3 varies size
+at fixed family, Llama-3.2-1B adds a third family and the cheapest run.
+
+    Qwen/Qwen3-1.7B                      2.03B on the Hub, 1.72B loaded, Apache 2.0
+    HuggingFaceTB/SmolLM2-1.7B-Instruct  1.71B, Apache 2.0
+    HuggingFaceTB/SmolLM3-3B             3.08B, Apache 2.0, needs both V100s
+    meta-llama/Llama-3.2-1B-Instruct     1.24B, gated, licence accepted 3 Sep
+
+Rejected: Llama-3.2-3B (gated, non-OSI licence, will not fit 32GB under full
+fine-tuning), gemma-2-2b-it (gated, licence). The original list below is kept
+only as a record of what was considered - do not train from it:
 
 - Qwen2.5 1.5B / 3B Instruct
 - Llama 3.2 1B / 3B Instruct
