@@ -9,19 +9,21 @@
     "most likely to run anywhere: 1.7B fully fine-tuned fits a single 24GB card",
     "in bf16 with gradient checkpointing and an 8-bit optimiser."
   ],
-  "run_id": "smollm3-3b",
+  "run_id": "smollm2-1.7b-fsdp",
   "seed": 20260828,
   "model": {
-    "name": "HuggingFaceTB/SmolLM3-3B",
+    "name": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
     "why": [
-      "Same family as smollm2-1.7b, so the pair isolates parameter count with",
-      "the pretraining corpus held roughly fixed - the one clean size answer",
-      "in the table. Apache 2.0, ungated.",
-      "About 20GB to fully fine-tune in bf16, so this run needs the CSE server."
+      "The controlled contrast against the baseline: 1.71B against Qwen3's",
+      "2.03B total, the closest size match available from a different family,",
+      "so what differs is the pretraining corpus rather than the capacity.",
+      "Apache 2.0 and ungated, so no access request and no license question",
+      "for a university publication.",
+      "Pairs with smollm3-3b to give a size ladder inside one family."
     ],
     "dtype": "float16 with fp32 master - no native bf16 on this cluster",
     "max_seq_len": 2048,
-    "params": "3.08B"
+    "params": "1.71B"
   },
   "data": {
     "splits": "model/splits.json",
@@ -72,16 +74,6 @@
       "the three. epochs stays at 3 so that every run reports where its own",
       "minimum was, rather than assuming the baseline's answer holds for a",
       "different model."
-    ],
-    "optimizer_why": [
-      "FSDP2 shards through DTensor and bitsandbytes.optimizer_update_32bit has no",
-      "sharding strategy registered, so adamw_8bit crashes at the first",
-      "optimizer.step() under torchrun. Full-precision Adam is the only option that",
-      "shards, and its states are sharded across both cards anyway, which is what",
-      "makes the memory work.",
-      "Compare this row against smollm2-1.7b-fsdp, not against smollm2-1.7b: the",
-      "single-card SmolLM2 uses the 8-bit optimiser and is not a controlled",
-      "comparison for size."
     ]
   },
   "evaluation": {
@@ -132,15 +124,15 @@
   "distributed": {
     "strategy": "fsdp",
     "gpus": 2,
-    "wrap_layer": "SmolLM3DecoderLayer",
+    "wrap_layer": "LlamaDecoderLayer",
     "why": [
-      "3.08B in fp16 with fp32 master weights is about 37GB and a V100 has 32.",
-      "full_shard splits optimiser state, gradients and parameters across both",
-      "cards on gnode1, which brings it to roughly 19GB each.",
-      "This is the only row in the table that is sharded. Reductions happen in a",
-      "different order than on one card, so it is not comparable to the others at",
-      "the 0.007 noise floor - irrelevant for a 3B-vs-1.7B size gap, but it",
-      "belongs in the notes column rather than being left implicit."
+      "SmolLM2 does not need sharding - it fits one card. This run exists purely",
+      "as the control for smollm3-3b: same sharding, same optimiser, same",
+      "per-device batch, so the only thing left differing between the two rows",
+      "is parameter count, which is the question the pair is supposed to answer.",
+      "smollm2-1.7b (single card, 8-bit optimiser) stays in the table as the",
+      "family contrast against the Qwen3 baseline. Two SmolLM2 rows, two",
+      "different jobs."
     ]
   }
 }
