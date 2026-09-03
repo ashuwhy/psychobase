@@ -306,6 +306,17 @@ the case2 response differs from the case1 response at all. If that is near zero,
 the model is ignoring the physiological summary, and the premise of the project
 is not being tested no matter what the other numbers say.
 
+## Cluster etiquette, learned the hard way
+
+Submit the single-GPU jobs before the two-GPU ones. A `--gres=gpu:2` job sitting
+at the head of your queue waits on `(Resources)` whenever anyone else holds one
+card on gnode1, and every single-GPU job behind it waits on `(Priority)` even
+though a card is free and idle. Three runs sat blocked for over an hour that way.
+Cancelling the two-GPU jobs started the next one within fifteen seconds.
+
+gnode1 is shared. Check `squeue -p gpupart_v100` before assuming the node is
+yours - it usually is not.
+
 ## Still open
 
 - **Hardware: settled.** SLURM cluster, login node 10.5.18.100, submit with
