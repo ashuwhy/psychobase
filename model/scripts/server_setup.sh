@@ -5,14 +5,26 @@ set -euo pipefail
 cd "$(dirname "$0")/../.."
 VENV="$HOME/.venv/psychobase"
 
-# CUDA 12.1 on the login node, so cu121 wheels. Installing a cu124 torch against
-# a 12.1 driver is the usual way this breaks: it imports fine and then fails at
-# the first kernel launch, on the GPU node, twenty minutes into a queue wait.
-if [ ! -d "$VENV" ]; then
-    python3 -m venv "$VENV"
+# python3-venv is not installed on the login node and there is no sudo, no
+# module system and no conda. pip itself works, so bootstrap virtualenv into
+# ~/.local and use that instead - it does not need ensurepip.
+if [ ! -x "$HOME/.local/bin/virtualenv" ]; then
+    pip3 install --user --quiet virtualenv
 fi
+export PATH="$HOME/.local/bin:$PATH"
+
+if [ ! -x "$VENV/bin/python" ]; then
+    rm -rf "$VENV"
+    virtualenv --quiet -p python3.10 "$VENV"
+fi
+
+# CUDA 12.1 on the nodes, so cu121 wheels. A cu124 torch against a 12.1 driver
+# imports fine and then fails at the first kernel launch - on the GPU node,
+# after the queue wait, looking like a training bug rather than an install one.
 "$VENV/bin/pip" install -q --upgrade pip
 "$VENV/bin/pip" install -q torch --index-url https://download.pytorch.org/whl/cu121
+# bitsandbytes is not optional: the 8-bit optimiser states are the difference
+# between 26GB and 38GB for the 2B baseline, and the V100s have 32GB.
 "$VENV/bin/pip" install -q transformers accelerate bitsandbytes
 
 echo "=== installed ==="

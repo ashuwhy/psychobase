@@ -1,17 +1,23 @@
 #!/usr/bin/env bash
 #SBATCH --job-name=psychobase
+#SBATCH --partition=gpupart_v100
 #SBATCH --gres=gpu:1
 #SBATCH --cpus-per-task=8
-#SBATCH --time=04:00:00
+#SBATCH --time=08:00:00
 #SBATCH --output=model/runs/slurm-%j.out
 #SBATCH --error=model/runs/slurm-%j.out
 #
 # Submit one config:
 #   sbatch model/scripts/train.sbatch model/configs/smollm2-1.7b.json
 #
-# Add --partition=<name> once cluster_probe.sh says what the partitions are
-# called. Left out deliberately rather than guessed, because a wrong partition
-# name fails at submit time with a message nobody reads carefully.
+# gpupart_v100 is gnode1, the only node on the cluster with enough memory to
+# fully fine-tune anything in our size range: 2x Tesla V100-PCIE-32GB. The other
+# partitions are P100 16GB (gnode2-5) and Quadro P4000 8GB (gnode6-8), and the
+# P4000s cannot hold a 1B model in fp16 full fine-tuning at all.
+#
+# No card here is Ampere, so bf16 is unavailable cluster-wide - compute
+# capability tops out at 7.0. Every run therefore trains fp16 with fp32 master
+# weights, about 12 bytes/param, which is what train.py selects on its own.
 set -euo pipefail
 CONFIG="${1:?usage: sbatch train.sbatch model/configs/<name>.json}"
 cd "$SLURM_SUBMIT_DIR"

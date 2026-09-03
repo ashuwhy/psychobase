@@ -161,12 +161,18 @@ def main():
                               DataCollatorForSeq2Seq)
     from torch.utils.data import SequentialSampler
 
-    bf16 = torch.cuda.is_available() and torch.cuda.is_bf16_supported()
+    # NOT torch.cuda.is_bf16_supported(): since torch 2.5 that counts *emulated*
+    # bf16 and returns True on a V100 (sm_70), which then trains through a slow
+    # software path with none of bf16's numerical benefit. Native bf16 starts at
+    # sm_80, so ask for the compute capability directly.
+    bf16 = (torch.cuda.is_available()
+            and torch.cuda.get_device_capability()[0] >= 8)
     if torch.cuda.is_available():
         free, total = torch.cuda.mem_get_info()
         print(f"  {torch.cuda.get_device_name(0)}, {total / 2**30:.0f}GB "
               f"({free / 2**30:.0f}GB free), "
-              f"{'bf16' if bf16 else 'fp16 - no bf16 on this card'}")
+              f"sm_{''.join(map(str, torch.cuda.get_device_capability()))}, "
+              f"{'bf16' if bf16 else 'fp16 - no native bf16 below sm_80'}")
 
     # bf16 can train with the weights themselves in low precision: it keeps
     # fp32's 8 exponent bits, so an optimiser update never underflows. fp16 has
@@ -178,14 +184,26 @@ def main():
 
     class NoShuffleTrainer(Trainer):
         # The whole point of the formatting lane is the ORDER of the examples.
-        # Trainer shuffles the train dataloader by default, which would collapse
-        # interleaved, batched and randomised into the same experiment and make
-        # three rows of the results table identical for no visible reason.
+        # Trainer shuffles the train dataloader by default - still true in
+        # transformers 5, whose train_sampling_strategy defaults to "random" -
+        # which would collapse interleaved, batched and randomised into the same
+        # experiment and make three rows of the results table identical for no
+        # visible reason. v5 can express this as
+        # train_sampling_strategy="sequential"; overriding the method instead
+        # keeps the script working on v4 as well, which is what Kaggle ships.
         def _get_train_sampler(self, *a, **kw):
             return SequentialSampler(self.train_dataset)
 
     out = RUNS / run_id
     out.mkdir(parents=True, exist_ok=True)
+
+    # transformers 5 dropped warmup_ratio; the configs still express warmup as a
+    # ratio because that is the number worth comparing across runs of different
+    # length, so convert it here rather than hard-coding steps per experiment.
+    per_step = ft["per_device_batch_size"] * ft["gradient_accumulation_steps"]
+    total_steps = -(-len(rows) // per_step) * ft["epochs"]
+    warmup_steps = round(ft["warmup_ratio"] * total_steps)
+    print(f"  {total_steps} optimiser steps, {warmup_steps} warmup")
 
     model = AutoModelForCausalLM.from_pretrained(cfg["model"]["name"], dtype=load_dtype)
     params = sum(p.numel() for p in model.parameters())
@@ -211,7 +229,7 @@ def main():
             num_train_epochs=ft["epochs"],
             learning_rate=ft["learning_rate"],
             lr_scheduler_type=ft["lr_scheduler"],
-            warmup_ratio=ft["warmup_ratio"],
+            warmup_steps=warmup_steps,
             weight_decay=ft["weight_decay"],
             per_device_train_batch_size=ft["per_device_batch_size"],
             gradient_accumulation_steps=ft["gradient_accumulation_steps"],
@@ -219,7 +237,6 @@ def main():
             optim=ft.get("optimizer", "adamw_torch"),
             bf16=bf16,
             fp16=not bf16 and torch.cuda.is_available(),
-            group_by_length=False,   # would reorder the stream, same trap as shuffling
             logging_steps=10,
             eval_strategy="epoch",
             save_strategy="epoch",
@@ -242,6 +259,7 @@ def main():
         "precision": "bf16" if bf16 else "fp16",
         "params": params,
         "train_loss": result.training_loss,
+        "optimiser_steps": total_steps,
         "eval_loss_per_epoch": [h["eval_loss"] for h in history],
     }, indent=2) + "\n")
     print(f"\n  wrote {out}/run.json - copy the numbers into model/RESULTS.md")
