@@ -34,9 +34,12 @@ task split pencilled in for it. The five model-lane runs were all configured and
 executed by Ashutosh on the CSE cluster, including the Llama one that the
 original split had against another name.
 
-The same applies to the evaluation harness, which does not exist yet: the split
-assigned it to Nithish, and whoever writes it is credited as its author here.
-An assignment is not a contribution until there is code.
+The same applies to the evaluation harness. It was assigned to Nithish and
+written by Ashutosh on 3 Sep - `scripts/evaluate.py`, generation plus strategy
+F1, physiological grounding, specificity and fluency - so it is credited to
+Ashutosh. The empathy and safety scoring pass has not been started and stays
+with Nithish. An assignment is not a contribution until there is code, and code
+counts for whoever wrote it.
 
 ## What changes from the baseline, and who owns it
 

@@ -45,7 +45,11 @@ blocked by anything and have not started; the evaluation harness runs but its
 empathy and safety columns need a rubric and a human pass before the results
 table has anything in it.
 
-### Ashutosh - splits, baseline, cluster, model lane, harness - DONE
+### Ashutosh - splits, baseline, cluster, model lane, eval harness - DONE
+
+Everything ticked here was built and run by Ashutosh. Where a lane was assigned
+to somebody else and the work was done here anyway, it is recorded here, and only
+the outstanding part stays under the original name.
 
 - [x] Conversation-level split, frozen in `splits.json`, 69/15/15 by turns
       (`scripts/make_splits.py`)
@@ -56,7 +60,11 @@ table has anything in it.
 - [x] CSE server access, environment, and submission scripts - see Hardware below
 - [x] Trainer `scripts/train.py`, one config in, checkpoint plus `run.json` out
 - [x] Four model runs trained and recorded, plus a matched control
-- [x] Evaluation harness `scripts/evaluate.py`
+- [x] Evaluation harness `scripts/evaluate.py` - generation, strategy F1,
+      physiological grounding, specificity and fluency, plus `evaluate.sbatch`.
+      Built 3 Sep because four trained models with no scorer was the only thing
+      standing between this project and a results table. Empathy and safety are
+      left null by design and belong to the scoring pass below.
 
 Three things the split work turned up, all worth knowing before you train:
 
@@ -103,26 +111,25 @@ Two more things that hold for everyone's runs:
   three times across two torch versions, gave 2.076 / 2.083 / 2.078. Nothing
   under 0.007 is a result.
 
-### Nithish - evaluation harness - PARTLY BUILT, scoring pass outstanding
+### Nithish - empathy and safety scoring - NOT STARTED
 
-`scripts/evaluate.py` was written on 3 Sep because four trained models with no
-scorer was the only thing between the project and a results table. It covers the
-four parameters that can be computed from generations. What is left is the part
-that genuinely needs a person.
+The harness runs and produces generations for every model. What remains is the
+half that genuinely needs a person, and none of it has been started.
 
-- [x] Takes a model's generations on the test split, greedy at temperature 0,
-      reproducible between people and across days
-- [ ] **Write the 1-5 rubric for empathy and safety.** These come out null on
-      purpose - a word-list proxy for empathy produces a number that looks like a
-      result and is not one. Without an agreed rubric two people scoring the same
-      `generations.jsonl` will not agree with each other.
+- [ ] **Write the 1-5 rubric for empathy and safety.** These come out null from
+      `evaluate.py` on purpose - a word-list proxy for empathy produces a number
+      that looks like a result and is not one. Without an agreed rubric, two
+      people scoring the same `generations.jsonl` will not agree with each other,
+      and the column is worthless either way.
 - [ ] Score `generations.jsonl` against that rubric, by hand or with a judge model
 - [ ] Sanity-check against the scores we produced by hand: if the harness
       disagrees wildly with the Google Doc rows for the same responses, the
       harness is wrong and everything downstream inherits that
-- [ ] Check `physio_grounding` against `evaluation/scripts/render.py` - grounding
-      is supposed to be qualitative, so a response that quotes raw values should
-      not score well. The current mention-rate metric does not enforce that.
+- [ ] Tighten `physio_grounding` against the rule in
+      `evaluation/scripts/render.py` - grounding is supposed to be qualitative,
+      so a response that quotes raw values should not score well. The current
+      mention-rate metric does not enforce that and needs someone who knows the
+      rendering rules to fix it.
 
 ### Siddaarth - data formatting - NOT BLOCKED, nothing started
 
