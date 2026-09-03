@@ -21,8 +21,8 @@ with the rest of the table and should say so in **notes**.
 
 | run_id | owner | config | model | params | format | ft method | trainable % | empathy | specificity | strategy | physio ground | fluency | safety | train time | peak VRAM | notes |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| baseline | Ashutosh | `configs/baseline.json` | Qwen3-1.7B | 1.72B | interleaved | full | 100% | | | | | | | 26 min | ~21GB | trained, not yet scored. eval_loss 2.083/2.144/2.360 over 3 epochs - **best is epoch 1**, weights in `runs/baseline/final` |
-| smollm2-1.7b | Ashutosh | `configs/smollm2-1.7b.json` | SmolLM2-1.7B-Instruct | 1.71B | interleaved | full | 100% | | | | | | | | | running |
+| baseline | Ashutosh | `configs/baseline.json` | Qwen3-1.7B | 1.72B | interleaved | full | 100% | | | | | | | 26 min | ~21GB | trained, not yet scored. eval_loss 2.083/2.144/2.360, **best epoch 1** |
+| smollm2-1.7b | Ashutosh | `configs/smollm2-1.7b.json` | SmolLM2-1.7B-Instruct | 1.71B | interleaved | full | 100% | | | | | | | | | trained, not yet scored. eval_loss 1.896/**1.882**/1.909, **best epoch 2**. Beats the baseline by 0.201 and overfits far less |
 | smollm3-3b | Ashutosh | `configs/smollm3-3b.json` | SmolLM3-3B | 3.08B | interleaved | full | 100% | | | | | | | | | blocked - 37GB fp16 exceeds one 32GB V100, needs both GPUs on gnode1 |
 | llama3.2-1b | Nithish | `configs/llama3.2-1b.json` | Llama-3.2-1B-Instruct | 1.24B | interleaved | full | 100% | | | | | | | | | blocked - gated repo, needs the Llama 3.2 licence accepted on huggingface.co |
 
@@ -36,6 +36,29 @@ with the rest of the table and should say so in **notes**.
 
 Change one of these per run. Two changes in one row cannot be attributed and
 the row is wasted work.
+
+## What the first two runs already say
+
+Both are trained but neither is scored yet - the numbers below are validation
+loss, which picks checkpoints, not the harness scores that fill the table.
+
+SmolLM2-1.7B beats Qwen3-1.7B by 0.201 in validation loss at nearly identical
+parameter count, 1.71B against 1.72B. That is 29x the measured noise floor, so
+it is a real difference rather than run-to-run variation.
+
+The more useful difference is the shape of the curves:
+
+    baseline  2.083  2.144  2.360     best epoch 1, degrades hard
+    smollm2   1.896  1.882  1.909     best epoch 2, nearly flat
+
+Same data, same hyperparameters, same size. Qwen3 overfits 993 turns quickly and
+SmolLM2 barely does. Whatever the harness scores end up being, that difference in
+robustness to a small corpus is worth reporting, because it is the constraint
+this whole project is working under.
+
+It also settles the epochs question empirically: the two models peak at different
+epochs, so a fixed epoch count would have read the wrong checkpoint for one of
+them. Keep `epochs: 3` and keep letting each run find its own minimum.
 
 ## Reading the table
 
