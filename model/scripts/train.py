@@ -163,8 +163,18 @@ def main():
 
     bf16 = torch.cuda.is_available() and torch.cuda.is_bf16_supported()
     if torch.cuda.is_available():
-        print(f"  {torch.cuda.get_device_name(0)}, "
-              f"{'bf16' if bf16 else 'fp16 (no bf16 on this card)'}")
+        free, total = torch.cuda.mem_get_info()
+        print(f"  {torch.cuda.get_device_name(0)}, {total / 2**30:.0f}GB "
+              f"({free / 2**30:.0f}GB free), "
+              f"{'bf16' if bf16 else 'fp16 - no bf16 on this card'}")
+
+    # bf16 can train with the weights themselves in low precision: it keeps
+    # fp32's 8 exponent bits, so an optimiser update never underflows. fp16 has
+    # 5, and full fine-tuning in pure fp16 goes to NaN somewhere in the first
+    # epoch. On an fp16 card the model therefore loads in fp32 and autocast
+    # keeps the master copy - correct, but roughly twice the memory, which is
+    # what actually decides whether a given model fits a 16GB card.
+    load_dtype = torch.bfloat16 if bf16 else torch.float32
 
     class NoShuffleTrainer(Trainer):
         # The whole point of the formatting lane is the ORDER of the examples.
@@ -177,10 +187,11 @@ def main():
     out = RUNS / run_id
     out.mkdir(parents=True, exist_ok=True)
 
-    model = AutoModelForCausalLM.from_pretrained(
-        cfg["model"]["name"],
-        dtype=torch.bfloat16 if bf16 else torch.float16,
-    )
+    model = AutoModelForCausalLM.from_pretrained(cfg["model"]["name"], dtype=load_dtype)
+    params = sum(p.numel() for p in model.parameters())
+    per_param = 6 if bf16 else 12
+    print(f"  {params / 1e9:.2f}B params, full fine-tune needs about "
+          f"{params * per_param / 2**30 + 1.8:.0f}GB")
     if ft.get("gradient_checkpointing"):
         model.gradient_checkpointing_enable()
         model.config.use_cache = False
@@ -229,6 +240,7 @@ def main():
         "training_strings": len(rows),
         "dropped": dropped + unmasked,
         "precision": "bf16" if bf16 else "fp16",
+        "params": params,
         "train_loss": result.training_loss,
         "eval_loss_per_epoch": [h["eval_loss"] for h in history],
     }, indent=2) + "\n")

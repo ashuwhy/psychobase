@@ -9,22 +9,20 @@
     "most likely to run anywhere: 1.7B fully fine-tuned fits a single 24GB card",
     "in bf16 with gradient checkpointing and an 8-bit optimiser."
   ],
-  "run_id": "baseline",
+  "run_id": "smollm3-3b",
   "seed": 20260828,
   "model": {
-    "name": "Qwen/Qwen3-1.7B",
+    "name": "HuggingFaceTB/SmolLM3-3B",
     "why": [
-      "Small enough to FULLY fine-tune, which is the point of this phase - LoRA",
-      "on 7B updates too few parameters for ~700 training conversations' worth",
-      "of turns to move the model far from its pretraining.",
-      "Apache 2.0, so no license friction for a university project.",
-      "Strong instruction following at its size, which matters because the model",
-      "must emit a Strategy line and a Response in a fixed shape.",
-      "Qwen3 ships one instruct-tuned repo per size with no -Instruct suffix;",
-      "'Qwen/Qwen3-1.7B-Instruct' does not exist on the Hub. Use Qwen/Qwen3-1.7B."
+      "Same family as smollm2-1.7b, so the pair isolates parameter count with",
+      "the pretraining corpus held roughly fixed - the one clean size answer",
+      "in the table. Apache 2.0, ungated.",
+      "About 20GB to fully fine-tune in bf16, so this run needs the CSE server.",
+      "It cannot run on Kaggle at all."
     ],
     "dtype": "bfloat16 on the server, float16 on Kaggle - see hardware",
-    "max_seq_len": 2048
+    "max_seq_len": 2048,
+    "params": "3.08B"
   },
   "data": {
     "splits": "model/splits.json",
@@ -102,6 +100,14 @@
     "precision": {
       "cse_server": "bfloat16",
       "kaggle": "float16"
-    }
-  }
+    },
+    "minimum": "24GB bf16 - server only"
+  },
+  "owner": "Ashutosh",
+  "note": [
+    "Model lane. Everything except model.name is identical to baseline.json,",
+    "so a difference against the baseline row is attributable to the model.",
+    "If you change anything else here, it is a different experiment - make",
+    "another config with another run_id."
+  ]
 }
