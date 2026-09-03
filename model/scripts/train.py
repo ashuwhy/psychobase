@@ -267,7 +267,7 @@ def main():
         shutil.rmtree(ckpt, ignore_errors=True)
     (out / "run.json").write_text(json.dumps({
         "run_id": run_id,
-        "config": str(args.config.relative_to(ROOT)),
+        "config": str(args.config.resolve().relative_to(ROOT)),
         "arrangement": data_cfg["format"],
         "loss_on": loss_on,
         "training_strings": len(rows),
