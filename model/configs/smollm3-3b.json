@@ -17,10 +17,9 @@
       "Same family as smollm2-1.7b, so the pair isolates parameter count with",
       "the pretraining corpus held roughly fixed - the one clean size answer",
       "in the table. Apache 2.0, ungated.",
-      "About 20GB to fully fine-tune in bf16, so this run needs the CSE server.",
-      "It cannot run on Kaggle at all."
+      "About 20GB to fully fine-tune in bf16, so this run needs the CSE server."
     ],
-    "dtype": "bfloat16 on the server, float16 on Kaggle - see hardware",
+    "dtype": "float16 with fp32 master - no native bf16 on this cluster",
     "max_seq_len": 2048,
     "params": "3.08B"
   },
@@ -86,22 +85,24 @@
     }
   },
   "hardware": {
-    "target": "CSE server (pending) or Kaggle",
-    "kaggle_note": [
-      "Kaggle gives P100 or 2x T4, both 16GB and neither supports bfloat16 -",
-      "they are Pascal and Turing. fp16 cannot train full fine-tuning without an",
-      "fp32 master copy of the weights (5 exponent bits, the update underflows and",
-      "the run NaNs), so the real cost on those cards is about 12 bytes/param, not",
-      "6. That puts the 2.03B baseline at roughly 26GB: it does NOT fit Kaggle.",
-      "Only Qwen3-0.6B (about 11GB) fully fine-tunes there. If the CSE server never",
-      "lands, move the whole table down to 0.6B rather than switching to LoRA, so",
-      "that 'full fine-tuning' stays the pinned method and rows stay comparable."
-    ],
-    "precision": {
-      "cse_server": "bfloat16",
-      "kaggle": "float16"
-    },
-    "minimum": "24GB bf16 - server only"
+    "cluster": "CSE SLURM cluster, login node 10.5.18.100",
+    "partition": "gpupart_v100",
+    "node": "gnode1, 2x Tesla V100-PCIE-32GB",
+    "precision": "float16 with fp32 master weights",
+    "why": [
+      "gpupart_v100 (gnode1) is the only partition that can fully fine-tune",
+      "anything in our size range. gpupart_p100 (gnode2-5) is 16GB and",
+      "gpupart_q4000 (gnode6-8) is 8GB Quadro P4000 - note that the 48-hour",
+      "partition is the 8GB one, so the longest queue is attached to the cards",
+      "that cannot hold a 1B model under full fine-tuning.",
+      "No card on the cluster is Ampere: compute capability tops out at 7.0, so",
+      "there is no native bf16 anywhere and every run pays the fp32 master copy,",
+      "about 12 bytes/param rather than 6. train.py detects this by compute",
+      "capability, not by torch.cuda.is_bf16_supported(), which returns True on",
+      "a V100 because it counts emulated bf16.",
+      "8-bit optimiser states are load-bearing: 26GB against 38GB for the",
+      "baseline, on a 32GB card."
+    ]
   },
   "owner": "Ashutosh",
   "note": [

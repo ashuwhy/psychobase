@@ -157,9 +157,10 @@ otherwise someone retries it by accident in a fortnight.
   differently by construction and confounds the formatting experiment before it
   starts. A fixed 417-character instruction header also repeats on all 993
   turns, and there is no reason to spend gradient on reproducing it.
-- **Kaggle cannot do bfloat16.** Its P100 and T4 cards are Pascal and Turing;
-  set fp16 there or training fails at the first step. Precision per target is in
-  `configs/baseline.json`.
+- **No card on the CSE cluster does bfloat16.** Compute capability tops out at
+  7.0 (V100). Every run is fp16 with fp32 master weights, about 12 bytes/param.
+  `torch.cuda.is_bf16_supported()` returns True on a V100 anyway - it counts
+  emulated bf16 - so train.py checks compute capability instead.
 
 ## The training script
 
@@ -198,11 +199,11 @@ total, which is the case1/case2 asymmetry the masking decision was about.
 
 ## Still open
 
-- **Hardware.** CSE server access is being requested - a form from the softie
-  office, signed by sir. Stiti suggested Kaggle in the meantime (1 Sep), which
-  is 16GB and fp16-only, so the baseline may need a smaller model there. Prefer
-  dropping model size over switching to LoRA, so that "full fine-tuning" stays
-  the pinned method and the comparison holds.
+- **Hardware: settled.** SLURM cluster, login node 10.5.18.100, submit with
+  `sbatch model/scripts/train.sbatch <config>`. Everything targets
+  `gpupart_v100` (gnode1, 2x V100-32GB) because the other partitions are 16GB
+  and 8GB. Environment lives at `~/.venv/psychobase`, built by
+  `model/scripts/server_setup.sh`.
 - **Is there a stage 1?** Siddaarth asked where the stage-1 data is. Nothing in
   the brief or the architecture deck describes two-stage fine-tuning, and case1
   and case2 are two views of the same turn rather than two stages. If two-stage

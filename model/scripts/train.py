@@ -189,8 +189,8 @@ def main():
         # which would collapse interleaved, batched and randomised into the same
         # experiment and make three rows of the results table identical for no
         # visible reason. v5 can express this as
-        # train_sampling_strategy="sequential"; overriding the method instead
-        # keeps the script working on v4 as well, which is what Kaggle ships.
+        # train_sampling_strategy="sequential"; overriding the method works on
+        # both v4 and v5, so it survives an environment rebuild.
         def _get_train_sampler(self, *a, **kw):
             return SequentialSampler(self.train_dataset)
 
