@@ -197,6 +197,44 @@ Measured rather than assumed: the longest tokenised string is 661 tokens against
 a 2048 window, so nothing truncates today. Supervised tokens are 23% of the
 total, which is the case1/case2 asymmetry the masking decision was about.
 
+## Evaluation harness
+
+`model/scripts/evaluate.py` scores one finished run on the frozen test split.
+
+    sbatch model/scripts/evaluate.sbatch model/runs/baseline
+    python3 model/scripts/evaluate.py model/runs/baseline --limit 20
+
+Greedy generation, temperature 0, both cases per turn, writing `scores.json` and
+`generations.jsonl` beside the checkpoint. Do not add sampling: two evaluations
+of one checkpoint must agree exactly, or a gap between two rows might be
+sampling noise instead of a difference between models.
+
+Four of the six parameters are computed:
+
+    strategy_faithfulness   F1 over normalised, multi-label strategy sets
+    physio_grounding        mention rate, plus whether the physiological summary
+                            actually changed the answer versus case1
+    specificity             non-filler content ratio, and echo of the user's own words
+    fluency                 4-gram repetition and truncation rate
+
+Two are left null on purpose. Empathy and safety need a person or a judge model,
+and a word-list proxy would produce a number that looks like a result and is not
+one. `generations.jsonl` is written for exactly that scoring pass.
+
+**The strategy labels are messy and the metric had to be built around it.** 206
+raw surface forms across 993 turns collapse to 132 once case and spacing are
+normalised; seven collisions alone cover 336 turns, including
+`Emotional Validation` against `EmotionalValidation` at 135. Exact string
+matching would have marked models wrong for whitespace. 173 turns carry two
+strategies, so this is multi-label F1, not accuracy. 67 turns have a blank
+strategy - all of them in train, none in validation or test, so test scoring is
+well defined, but that is luck rather than design.
+
+`physio_changed_answer` is the one to watch. It is the share of test turns where
+the case2 response differs from the case1 response at all. If that is near zero,
+the model is ignoring the physiological summary, and the premise of the project
+is not being tested no matter what the other numbers say.
+
 ## Still open
 
 - **Hardware: settled.** SLURM cluster, login node 10.5.18.100, submit with
@@ -204,6 +242,12 @@ total, which is the case1/case2 asymmetry the masking decision was about.
   `gpupart_v100` (gnode1, 2x V100-32GB) because the other partitions are 16GB
   and 8GB. Environment lives at `~/.venv/psychobase`, built by
   `model/scripts/server_setup.sh`.
+- **Empathy and safety need a scoring pass.** `generations.jsonl` exists for
+  every scored run and nothing reads it yet. Either a person scores 1-5 against
+  a rubric, or a judge model does with the rubric in the prompt - but the rubric
+  has to be written and agreed first, or two people scoring the same file will
+  not agree with each other.
+
 - **Is there a stage 1?** Siddaarth asked where the stage-1 data is. Nothing in
   the brief or the architecture deck describes two-stage fine-tuning, and case1
   and case2 are two views of the same turn rather than two stages. If two-stage
