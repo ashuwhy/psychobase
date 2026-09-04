@@ -334,9 +334,33 @@ way. Roughly 80% of the apparent size penalty was learning rate. Doubling the
 parameters costs four times the compute, 1h55 against 26 minutes, and needs a
 ten times smaller rate to avoid diverging.
 
-**Learning rates that matter:** 2e-5 for SmolLM2-1.7B, 2e-6 for SmolLM3-3B. Both
-are genuine minima, checked on both sides. Anyone adding a model should sweep
-before comparing - the pinned 1e-5 is not right for either.
+### Per-model learning rates
+
+Sweep before comparing. The pinned 1e-5 in `baseline.json` is not the right rate
+for any model tested so far.
+
+| model | params | best LR | best eval_loss | swept |
+|---|---|---|---|---|
+| SmolLM2-1.7B-Instruct | 1.71B | **2e-5** | 1.8753 | yes: 5e-6 / 1e-5 / 2e-5 / 4e-5 |
+| SmolLM3-3B | 3.08B | **2e-6** | 1.8988 | yes: 1e-6 / 2e-6 / 5e-6 / 1e-5 |
+| Qwen3-1.7B (baseline) | 1.72B | unknown | 2.0752 at 1e-5 | **no** |
+| Llama-3.2-1B-Instruct | 1.24B | unknown | 2.1827 at 1e-5 | **no** |
+
+Both swept models are genuine minima, checked on both sides. Bigger models want
+smaller rates: 2e-5 at 1.7B and 2e-6 at 3B, a factor of ten for under twice the
+parameters.
+
+**The two unswept rows carry a known confound and the model comparison inherits
+it.** SmolLM2 beats Qwen3 by 0.19 at 1e-5, but 1e-5 is not SmolLM2's best rate
+and nobody knows whether it is Qwen3's. The size question showed exactly how
+badly this can mislead: an untuned pair put SmolLM3-3B 0.111 behind, and tuning
+both cut that to 0.024, with an even earlier measurement pointing the opposite
+way. A 0.19 gap is large enough that tuning is unlikely to reverse it, but the
+honest position is that the model ranking rests on one untuned point per model.
+
+Closing it costs two sweeps of about three runs each, roughly two hours on an
+idle node. Until then the model comparison should be reported as "at 1e-5" the
+same way the size comparison was, rather than as a tuned result.
 
 **The one result that needs saying out loud: strategy prediction does not work.**
 Always answering "Emotional Validation" scores 0.1613 on the test split. The
