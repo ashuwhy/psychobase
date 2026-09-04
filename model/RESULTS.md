@@ -195,12 +195,53 @@ With ~700 training turns, differences of a tenth of a point on a 1-5 scale are
 noise, not signal. Before claiming a configuration wins, check that the gap is
 larger than the spread from re-running the same configuration.
 
-That spread now has a floor, measured rather than assumed. The baseline was run
-twice at the *same* seed and gave eval_loss 2.076 and 2.083 - a gap of 0.007
-from GPU nondeterminism alone, since atomics in the backward pass do not
-reassociate identically between runs. A different seed will be wider. Treat
-0.007 as the absolute floor below which nothing is a result, and measure the
-cross-seed spread before publishing any ranking.
+**The 0.007 figure quoted earlier in this file was wrong, and the real number is
+much smaller.** Three SmolLM2 runs at three different seeds:
+
+    seed 20260828   1.8833909
+    seed 20260829   1.8834101
+    seed 20260830   1.8833601
+
+Spread 5e-5, not 7e-3 - two orders of magnitude tighter. The earlier 0.007 came
+from three baseline runs that were described as same-seed replicates but were
+not: one ran on torch 2.5.1, one on 2.6.0, and one on 2.6.0 with the cleaned
+dataset. That number measured a library upgrade and a data change, not run noise.
+
+Training here is very close to deterministic, and the reason is structural. The
+seed feeds weight init, dropout and the data sampler. Full fine-tuning of a
+pretrained model initialises nothing new, SmolLM2 runs with dropout at zero, and
+the sampler is sequential because the arrangement is the experiment. Nothing is
+left for the seed to touch, so it does not touch anything.
+
+Two consequences. Differences far below 0.007 are real - the SmolLM2 advantage
+over Qwen3 is 0.19, roughly 4000x the actual noise. And **this does not transfer
+to the randomised arrangement**: that arm shuffles with the seed, so it is the
+one place where seed replicates are genuinely required, and whoever runs it
+should measure its own spread rather than borrowing this one.
+
+### Learning rate, swept rather than argued
+
+1e-5 was chosen by reasoning and never tested. Sweeping it on SmolLM2:
+
+    5e-6   1.9013   best epoch 3 of 3, still falling - undertrained
+    1e-5   1.8834   best epoch 2          the pinned value
+    2e-5   1.8761   best epoch 1          best
+    4e-5   1.9034   best epoch 1, then 2.09 and 2.38 - diverging
+
+A clean U with the minimum at 2e-5. The pinned 1e-5 is 0.0073 off it, which is
+small in absolute terms but 146x the real noise floor, so it is a genuine
+difference rather than a wobble.
+
+The shape is as informative as the winner: the optimum moves earlier as the rate
+rises. 5e-6 has not converged in three epochs, 2e-5 peaks at epoch one and then
+degrades sharply, and 4e-5 is already coming apart. That is the signature of a
+small dataset - there is not enough data to absorb a large step, and the usable
+window between undertrained and diverging is narrow.
+
+A final comparison should use 2e-5. The model ordering is unlikely to change,
+since the SmolLM2 to Qwen3 gap is 0.19 against a 0.007 tuning effect, but the
+absolute numbers in this table are from a slightly suboptimal rate and should
+say so.
 
 Every run also picks its own best epoch on validation loss rather than taking
 the last one. The baseline peaks at epoch 1 and degrades monotonically after
