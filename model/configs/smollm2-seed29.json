@@ -1,0 +1,126 @@
+{
+  "_comment": [
+    "The pinned baseline. Every experiment is one deliberate change from this,",
+    "with everything else identical, so a difference in the results table can be",
+    "attributed to the thing that was changed. Do not edit these values to chase",
+    "a better number - make a new config, give it a run_id, and record both rows.",
+    "",
+    "Chosen before server access landed, so it is deliberately the configuration",
+    "most likely to run anywhere: 1.7B fully fine-tuned fits a single 24GB card",
+    "in bf16 with gradient checkpointing and an 8-bit optimiser."
+  ],
+  "run_id": "smollm2-seed29",
+  "seed": 20260829,
+  "model": {
+    "name": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
+    "why": [
+      "The controlled contrast against the baseline: 1.71B against Qwen3's",
+      "2.03B total, the closest size match available from a different family,",
+      "so what differs is the pretraining corpus rather than the capacity.",
+      "Apache 2.0 and ungated, so no access request and no license question",
+      "for a university publication.",
+      "Pairs with smollm3-3b to give a size ladder inside one family."
+    ],
+    "dtype": "float16 with fp32 master - no native bf16 on this cluster",
+    "max_seq_len": 2048,
+    "params": "1.71B"
+  },
+  "data": {
+    "splits": "model/splits.json",
+    "loader": "model/scripts/dataset.py",
+    "format": "interleaved",
+    "format_note": [
+      "case1 (text only) immediately followed by case2 (text + physiological",
+      "summary) for the same turn. Chosen as the baseline because it is the",
+      "arrangement that most obviously teaches the model that the physiological",
+      "summary is optional context for the same input, rather than a different",
+      "kind of example. Batched and randomised are the experiment."
+    ],
+    "loss_on": "completion_only",
+    "loss_note": [
+      "Mask the prompt; compute loss only from '### Response:' to <EOS>.",
+      "Two reasons, the second is the one that matters for our experiment:",
+      "1. The completion is 43% of a case1 string but only 22% of a case2 string,",
+      "   and a fixed 417-character instruction header repeats on all 993 turns.",
+      "   Unmasked, most of the gradient goes into reproducing boilerplate.",
+      "2. Because that prompt/completion ratio differs between case1 and case2,",
+      "   unmasked loss weights the two cases differently by construction - which",
+      "   would confound the data-formatting comparison before it starts."
+    ]
+  },
+  "finetune": {
+    "method": "full",
+    "learning_rate": 1e-05,
+    "lr_scheduler": "cosine",
+    "warmup_ratio": 0.03,
+    "epochs": 3,
+    "per_device_batch_size": 2,
+    "gradient_accumulation_steps": 8,
+    "effective_batch_size": 16,
+    "weight_decay": 0.0,
+    "gradient_checkpointing": true,
+    "optimizer": "adamw_8bit",
+    "notes": [
+      "1e-5 rather than the 2e-4 usual for LoRA - full fine-tuning moves every",
+      "weight, so the LoRA learning rate would wreck the model at this data size.",
+      "3 epochs on 1420 training strings is roughly 265 optimiser steps at an",
+      "effective batch of 16. Watch validation loss: with data this small,",
+      "overfitting after epoch 2 is the expected failure, not the exception."
+    ],
+    "checkpoint_selection": [
+      "eval_loss on the validation split, at each epoch. The run keeps the best",
+      "epoch in final/, not the last one - validation loss bottoms at epoch 1 on",
+      "this corpus and rises afterwards, so the last checkpoint is the worst of",
+      "the three. epochs stays at 3 so that every run reports where its own",
+      "minimum was, rather than assuming the baseline's answer holds for a",
+      "different model."
+    ]
+  },
+  "evaluation": {
+    "split": "test",
+    "harness": "model/scripts/evaluate.py",
+    "parameters": [
+      "empathy",
+      "specificity",
+      "strategy_faithfulness",
+      "physio_grounding",
+      "fluency",
+      "safety"
+    ],
+    "generation": {
+      "temperature": 0.0,
+      "max_new_tokens": 300,
+      "note": "Greedy for scoring. Two runs of the same checkpoint must give the same score, or the table is measuring sampling noise."
+    },
+    "harness_assigned_to": "Nithish",
+    "harness_status": "not started - no code in the repo as of 3 Sep 2026",
+    "credit_rule": "harness_assigned_to records who the split gave it to, not who wrote it. Whoever writes it gets named in RESULTS.md as its author. Same rule as the run rows: the owner column is who did the work, not who was pencilled in for it."
+  },
+  "hardware": {
+    "cluster": "CSE SLURM cluster, login node 10.5.18.100",
+    "partition": "gpupart_v100",
+    "node": "gnode1, 2x Tesla V100-PCIE-32GB",
+    "precision": "float16 with fp32 master weights",
+    "why": [
+      "gpupart_v100 (gnode1) is the only partition that can fully fine-tune",
+      "anything in our size range. gpupart_p100 (gnode2-5) is 16GB and",
+      "gpupart_q4000 (gnode6-8) is 8GB Quadro P4000 - note that the 48-hour",
+      "partition is the 8GB one, so the longest queue is attached to the cards",
+      "that cannot hold a 1B model under full fine-tuning.",
+      "No card on the cluster is Ampere: compute capability tops out at 7.0, so",
+      "there is no native bf16 anywhere and every run pays the fp32 master copy,",
+      "about 12 bytes/param rather than 6. train.py detects this by compute",
+      "capability, not by torch.cuda.is_bf16_supported(), which returns True on",
+      "a V100 because it counts emulated bf16.",
+      "8-bit optimiser states are load-bearing: 26GB against 38GB for the",
+      "baseline, on a 32GB card."
+    ]
+  },
+  "owner": "Ashutosh",
+  "note": [
+    "Seed replicate of smollm2-1.7b. Identical in every other respect.",
+    "Three runs at three seeds give the cross-seed spread, which is the real",
+    "threshold for calling any difference in RESULTS.md a result. The 0.007",
+    "figure quoted so far is same-seed only and is a floor, not the bar."
+  ]
+}

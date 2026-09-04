@@ -317,6 +317,33 @@ Cancelling the two-GPU jobs started the next one within fifteen seconds.
 gnode1 is shared. Check `squeue -p gpupart_v100` before assuming the node is
 yours - it usually is not.
 
+## Model lane - what is measured and what is not
+
+Everything below is Ashutosh's lane and all of it is queued or done.
+
+**Done and scored on clean data:** Qwen3-1.7B, SmolLM2-1.7B, Llama-3.2-1B.
+SmolLM2 wins - best loss at 1.883, best specificity at 0.469, repetition 0.0005
+against the baseline's 0.014, and it never truncates.
+
+**Running:** two seed replicates and a three-point learning rate sweep on
+SmolLM2, then the 6-epoch sharded pair that settles whether SmolLM3-3B beats
+SmolLM2-1.7B on clean data.
+
+**The one result that needs saying out loud: strategy prediction does not work.**
+Always answering "Emotional Validation" scores 0.1613 on the test split. The
+Qwen3 baseline scores 0.1613 - identical, because it emits the majority label on
+every turn - and the other two score below it. Collapsing 132 labels to the top
+12 moves F1 by 0.006, so this is not label sparsity, and format compliance is
+1.0 with zero blanks, so it is not a formatting failure. The models emit a real
+strategy every time and it is the same one. 620 training turns over 37 test
+strategies is not enough to learn the mapping.
+
+Report it as a negative result. Do not let `strategy_faithfulness` appear in a
+summary as if the models can do it.
+
+**Not measured, and honest to say so:** empathy and safety, which need the rubric
+and human pass that has not started.
+
 ## Still open
 
 - **Hardware: settled.** SLURM cluster, login node 10.5.18.100, submit with

@@ -34,6 +34,21 @@ by `scripts/evaluate.py` on the frozen test split, greedy at temperature 0.
 Empathy and safety are blank because they need a rubric and a human pass, not
 because the harness failed - see the note below.
 
+### Still running, and why
+
+Three gaps were open on 4 Sep and all are now queued rather than left as
+caveats:
+
+- **Cross-seed variance** (`smollm2-seed29`, `smollm2-seed30`). The 0.007 quoted
+  as a noise floor is same-seed only, so it measures GPU nondeterminism and
+  nothing else. Three seeds give the spread that any claim in this table
+  actually has to clear.
+- **Learning rate** (`smollm2-lr5e6`, `smollm2-lr2e5`, `smollm2-lr4e5`). 1e-5 was
+  argued for and never tested. If it sits on a slope rather than at a minimum,
+  every row inherits a suboptimal configuration.
+- **Strategy labels** - done, and it produced the negative result below rather
+  than the improvement it was expected to.
+
 ### What these numbers say
 
 **SmolLM2-1.7B is the pick.** It wins specificity, physiological responsiveness
@@ -50,13 +65,32 @@ body explicitly. They are using physiology as context rather than as subject
 matter. That distinction is a finding, and it is the one worth writing up - the
 premise of the project holds, but not in the way "grounding" implies.
 
-**Strategy F1 at 0.13-0.16 is a data ceiling, not a model failure.** 620 training
-turns spread over 132 normalised strategy labels, 48 of which appear exactly
-once, and every model collapses onto "Emotional Validation" - which is the
-majority class. Reporting this as poor performance would be wrong. If strategy
-prediction matters for the paper, the labels need consolidating into a small
-closed set first, and that is a data decision for the group rather than a
-modelling problem.
+**No model learns strategy selection at all.** This was initially written up as
+a label-sparsity problem; it is not, and the correction matters more than the
+original claim.
+
+    always answering "Emotional Validation"   0.1613
+    Qwen3-1.7B baseline                       0.1613
+    SmolLM2-1.7B                              0.1570
+    Llama-3.2-1B                              0.1290
+
+A constant predictor scores 0.1613 on this test split. The baseline matches it
+to four decimal places, which is what happens when a model emits the majority
+label on every single turn, and the other two score below it. Nothing here beats
+guessing.
+
+Two checks rule out the easy explanations. Collapsing the 132 labels to the top
+12 plus "other" moves F1 by 0.006 - so the long tail of rare labels is not what
+is costing the score. And format compliance is 1.0 with zero blank strategies,
+so the models are emitting a real label every time; they are just emitting the
+same one.
+
+That makes `strategy_faithfulness` a negative result, and it should be reported
+as one. The test split carries 37 distinct strategies over 155 turns, the most
+common covering 25, and 620 training turns is not enough to learn that mapping.
+Consolidating the labels in the training data might change this, but it would
+invalidate every row in the table and is a decision for the group rather than
+something to slip in - and the top-12 evidence above says not to expect much.
 
 **Strategy F1 was 0.026 before the training data was fixed.** 67 of 687 training
 turns had a blank strategy and their training string literally taught

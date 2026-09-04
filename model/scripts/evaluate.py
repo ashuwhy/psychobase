@@ -87,6 +87,41 @@ def strategy_set(text):
     return {norm_label(p) for p in text.split(",") if norm_label(p)}
 
 
+def canon_vocab(k=12):
+    """The k most common normalised strategies across the whole corpus.
+
+    Scored F1 sits at 0.13-0.16 against 132 labels, 48 of which appear once. That
+    is mostly a label problem: a model answering "Emotional Validation" where the
+    reference says "Empathic Reflection" is not obviously wrong, and there is not
+    enough data to separate those classes anyway. Collapsing the tail into
+    "other" and scoring again says how much of the error is real disagreement
+    rather than an over-specified label set.
+
+    Scoring only. Consolidating the labels in the training strings would
+    invalidate every row in the table and is a decision for the group.
+    """
+    from collections import Counter
+    seen = Counter()
+    for split in ("train", "validation", "test"):
+        for e in load(split):
+            for part in strategy_set(e.strategy):
+                seen[part] += 1
+    return {lbl for lbl, _ in seen.most_common(k)}
+
+
+def consolidate(labels, vocab):
+    return {l if l in vocab else "other" for l in labels} or {"other"}
+
+
+def f1(ref, got):
+    if not ref and not got:
+        return None
+    inter = len(ref & got)
+    p = inter / len(got) if got else 0.0
+    r = inter / len(ref) if ref else 0.0
+    return 0.0 if p + r == 0 else 2 * p * r / (p + r)
+
+
 def parse(generated):
     """Pull the Strategy and Response back out of what the model emitted."""
     strat = STRATEGY_LINE.search(generated)
@@ -221,7 +256,15 @@ def score(run_dir, ckpt, turns, records):
             r["predicted_strategy"], r["generated_response"], r["raw"], index[key])
 
     # --- metrics, case2 unless stated: that is the condition the project is about
-    strat_f1, fmt_ok, reps, truncs, spec, echoes, grounded, diverged = [], 0, [], 0, [], [], 0, 0
+    vocab = canon_vocab()
+    # The number every strategy score has to be read against. Always answering
+    # the single most common label scores 0.16 on this test split, so a model at
+    # 0.16 has learned nothing about strategy selection. Reporting strategy F1
+    # without this alongside it invites the table to claim a capability that is
+    # not there.
+    majority = {"emotionalvalidation"}
+    strat_f1, top_f1, base_f1 = [], [], []
+    fmt_ok, reps, truncs, spec, echoes, grounded, diverged = 0, [], 0, [], [], 0, 0
     for key, cases in by_turn.items():
         if 2 not in cases:
             continue
@@ -229,10 +272,9 @@ def score(run_dir, ckpt, turns, records):
         ref = strategy_set(ex.strategy)
         got = strategy_set(strat2)
         if ref or got:
-            inter = len(ref & got)
-            p = inter / len(got) if got else 0.0
-            r = inter / len(ref) if ref else 0.0
-            strat_f1.append(0.0 if p + r == 0 else 2 * p * r / (p + r))
+            strat_f1.append(f1(ref, got))
+            top_f1.append(f1(consolidate(ref, vocab), consolidate(got, vocab)))
+            base_f1.append(f1(ref, majority))
         fmt_ok += bool(strat2 and resp2)
         reps.append(repetition(resp2))
         truncs += not raw2.rstrip().endswith((".", "!", "?", '"'))
@@ -254,6 +296,8 @@ def score(run_dir, ckpt, turns, records):
         "generation": {"temperature": 0.0, "greedy": True, "max_new_tokens": 300},
         "computed": {
             "strategy_f1": round(sum(strat_f1) / max(len(strat_f1), 1), 4),
+            "strategy_f1_top12": round(sum(top_f1) / max(len(top_f1), 1), 4),
+            "strategy_f1_majority_baseline": round(sum(base_f1) / max(len(base_f1), 1), 4),
             "format_compliance": round(fmt_ok / n, 4),
             "physio_mention_rate": round(grounded / n, 4),
             "physio_changed_answer": round(diverged / n, 4),
