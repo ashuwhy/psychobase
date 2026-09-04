@@ -142,7 +142,16 @@ def main():
     # so a finished generations.jsonl is reused rather than recomputed. A bug in
     # a metric should cost seconds, not another pass over 310 prompts on a GPU.
     cache = args.run_dir / "generations.jsonl"
-    if cache.exists() and not args.regenerate:
+    # Reusing the cache is only safe while the weights that produced it are the
+    # weights being scored. A retrained run leaves a newer checkpoint beside an
+    # older generations.jsonl, and reusing it would score the previous model and
+    # report the numbers under the new run's name - a confidently wrong result
+    # with nothing visibly broken.
+    weights = max((f.stat().st_mtime for f in ckpt.glob("*.safetensors")), default=0)
+    stale = cache.exists() and cache.stat().st_mtime < weights
+    if stale:
+        print(f"  {cache.name} predates the checkpoint - regenerating")
+    if cache.exists() and not stale and not args.regenerate:
         records = [json.loads(l) for l in cache.read_text().splitlines() if l.strip()]
         if len(records) == len(turns) * 2:
             print(f"scoring {args.run_dir.name} from {cache.name} "

@@ -19,15 +19,53 @@ with the rest of the table and should say so in **notes**.
   resumed, ran out of memory at a larger batch, validation loss still falling at
   the last epoch
 
-| run_id | owner | config | model | params | format | ft method | trainable % | empathy | specificity | strategy | physio ground | fluency | safety | train time | peak VRAM | notes |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| baseline | Ashutosh | `configs/baseline.json` | Qwen3-1.7B | 1.72B | interleaved | full | 100% | | | | | | | 26 min | ~21GB | trained, not yet scored. eval_loss 2.083/2.144/2.360, **best epoch 1** |
-| smollm2-1.7b | Ashutosh | `configs/smollm2-1.7b.json` | SmolLM2-1.7B-Instruct | 1.71B | interleaved | full | 100% | | | | | | | | | trained, not yet scored. eval_loss 1.896/**1.882**/1.909, **best epoch 2**. Beats the baseline by 0.201 and overfits far less |
-| smollm3-3b | Ashutosh | `configs/smollm3-3b.json` | SmolLM3-3B | 3.08B | interleaved | full | 100% | | | | | | | 2h00 | ~27GB/card | trained, not scored. eval_loss **1.936**/1.963/2.240, best epoch 1. FSDP over 2 V100s, adamw_torch. Compare only against smollm2-1.7b-fsdp |
-| smollm2-1.7b-fsdp | Ashutosh | `configs/smollm2-1.7b-fsdp.json` | SmolLM2-1.7B-Instruct | 1.71B | interleaved | full | 100% | | | | | | | 1h07 | ~19GB/card | trained, not scored. eval_loss 2.074/1.998/**1.989**, best epoch **3 of 3 - did not converge**. Matched control for smollm3-3b |
-| smollm2-1.7b-fsdp-e6 | Ashutosh | `configs/smollm2-1.7b-fsdp-e6.json` | SmolLM2-1.7B-Instruct | 1.71B | interleaved | full | 100% | | | | | | | | | queued, 6 epochs. Exists because the 3-epoch run never reached a minimum |
-| smollm3-3b-e6 | Ashutosh | `configs/smollm3-3b-e6.json` | SmolLM3-3B | 3.08B | interleaved | full | 100% | | | | | | | | | queued, 6 epochs. Matched partner for the above |
-| llama3.2-1b | Ashutosh | `configs/llama3.2-1b.json` | Llama-3.2-1B-Instruct | 1.24B | interleaved | full | 100% | | | | | | | | | trained, not yet scored. eval_loss **2.162**/2.303/2.499, best epoch 1. Worst of the three and the fastest to overfit |
+| run_id | owner | config | model | params | format | ft method | trainable % | empathy | specificity | strategy F1 | physio changed | fluency (rep/trunc) | safety | eval_loss | notes |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| **smollm2-1.7b** | Ashutosh | `configs/smollm2-1.7b.json` | SmolLM2-1.7B-Instruct | 1.71B | interleaved | full | 100% | pending | **0.469** | 0.157 | **0.994** | **0.0005 / 0.000** | pending | **1.883** ep2 | best row. Flat curve 1.894/1.883/1.907, no repetition, no truncation |
+| baseline | Ashutosh | `configs/baseline.json` | Qwen3-1.7B | 1.72B | interleaved | full | 100% | pending | 0.433 | **0.161** | 0.929 | 0.014 / 0.019 | pending | 2.075 ep1 | 2.075/2.186/2.330, degrades hard after epoch 1 |
+| llama3.2-1b | Ashutosh | `configs/llama3.2-1b.json` | Llama-3.2-1B-Instruct | 1.24B | interleaved | full | 100% | pending | 0.422 | 0.129 | 0.923 | 0.023 / 0.026 | pending | 2.183 ep1 | 2.183/2.371/2.558, worst on every computed metric |
+| smollm3-3b | Ashutosh | `configs/smollm3-3b.json` | SmolLM3-3B | 3.08B | interleaved | full | 100% | - | - | - | - | - | - | 1.936 ep1 | **SUPERSEDED** - trained on the unfixed data. FSDP, adamw_torch. Rerun as smollm3-3b-e6 |
+| smollm2-1.7b-fsdp | Ashutosh | `configs/smollm2-1.7b-fsdp.json` | SmolLM2-1.7B-Instruct | 1.71B | interleaved | full | 100% | - | - | - | - | - | - | 1.989 ep3/3 | **SUPERSEDED** - unfixed data, and never converged. Rerun as smollm2-1.7b-fsdp-e6 |
+| smollm2-1.7b-fsdp-e6 | Ashutosh | `configs/smollm2-1.7b-fsdp-e6.json` | SmolLM2-1.7B-Instruct | 1.71B | interleaved | full | 100% | | | | | | | | queued, 6 epochs, clean data. Matched control for the size question |
+| smollm3-3b-e6 | Ashutosh | `configs/smollm3-3b-e6.json` | SmolLM3-3B | 3.08B | interleaved | full | 100% | | | | | | | | queued, 6 epochs, clean data. Matched partner for the above |
+
+All three scored rows were retrained on the cleaned data (620 turns) and scored
+by `scripts/evaluate.py` on the frozen test split, greedy at temperature 0.
+Empathy and safety are blank because they need a rubric and a human pass, not
+because the harness failed - see the note below.
+
+### What these numbers say
+
+**SmolLM2-1.7B is the pick.** It wins specificity, physiological responsiveness
+and both fluency measures, and it is the only model with a flat loss curve. Its
+repetition rate is 0.0005 against the baseline's 0.014 and Llama's 0.023, and it
+never truncates.
+
+**The physiological signal is doing something, and it is not what the metric
+names suggest.** `physio changed` is the share of test turns where the case2
+answer differs from the case1 answer at all: 0.99 for SmolLM2, 0.92-0.93 for the
+others. So the summary almost always changes the response. But
+`physio_mention_rate` is only 0.09-0.15, meaning the models rarely talk about the
+body explicitly. They are using physiology as context rather than as subject
+matter. That distinction is a finding, and it is the one worth writing up - the
+premise of the project holds, but not in the way "grounding" implies.
+
+**Strategy F1 at 0.13-0.16 is a data ceiling, not a model failure.** 620 training
+turns spread over 132 normalised strategy labels, 48 of which appear exactly
+once, and every model collapses onto "Emotional Validation" - which is the
+majority class. Reporting this as poor performance would be wrong. If strategy
+prediction matters for the paper, the labels need consolidating into a small
+closed set first, and that is a data decision for the group rather than a
+modelling problem.
+
+**Strategy F1 was 0.026 before the training data was fixed.** 67 of 687 training
+turns had a blank strategy and their training string literally taught
+`Strategy: ` followed by nothing. Under greedy decoding, 9.8% of the data became
+89% of the behaviour: the baseline emitted no strategy on 138 of 155 test turns.
+Dropping those turns took it to 0 of 155 on all three models and moved F1 by 6x.
+Validation loss barely moved (2.078 to 2.075), which is the point - loss averaged
+over a whole response cannot see one short broken line, and only the harness
+caught it.
 
 ## Credit
 
