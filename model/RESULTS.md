@@ -26,8 +26,10 @@ with the rest of the table and should say so in **notes**.
 | llama3.2-1b | Ashutosh | `configs/llama3.2-1b.json` | Llama-3.2-1B-Instruct | 1.24B | interleaved | full | 100% | pending | 0.422 | 0.129 | 0.923 | 0.023 / 0.026 | pending | 2.183 ep1 | 2.183/2.371/2.558, worst on every computed metric |
 | smollm3-3b | Ashutosh | `configs/smollm3-3b.json` | SmolLM3-3B | 3.08B | interleaved | full | 100% | - | - | - | - | - | - | 1.936 ep1 | **SUPERSEDED** - trained on the unfixed data. FSDP, adamw_torch. Rerun as smollm3-3b-e6 |
 | smollm2-1.7b-fsdp | Ashutosh | `configs/smollm2-1.7b-fsdp.json` | SmolLM2-1.7B-Instruct | 1.71B | interleaved | full | 100% | - | - | - | - | - | - | 1.989 ep3/3 | **SUPERSEDED** - unfixed data, and never converged. Rerun as smollm2-1.7b-fsdp-e6 |
-| smollm2-1.7b-fsdp-e6 | Ashutosh | `configs/smollm2-1.7b-fsdp-e6.json` | SmolLM2-1.7B-Instruct | 1.71B | interleaved | full | 100% | | | | | | | | queued, 6 epochs, clean data. Matched control for the size question |
-| smollm3-3b-e6 | Ashutosh | `configs/smollm3-3b-e6.json` | SmolLM3-3B | 3.08B | interleaved | full | 100% | | | | | | | | queued, 6 epochs, clean data. Matched partner for the above |
+| smollm2-1.7b-1gpu | Ashutosh | `configs/smollm2-1.7b-1gpu.json` | SmolLM2-1.7B-Instruct | 1.71B | interleaved | full | 100% | | | | | | | **1.898** ep1/6 | matched size pair, single GPU, paged_adamw_8bit. 1.898/1.900/2.080/2.264/2.332/2.428 |
+| smollm3-3b-1gpu | Ashutosh | `configs/smollm3-3b-1gpu.json` | SmolLM3-3B | 3.08B | interleaved | full | 100% | | | | | | | 2.010 ep1/6 | matched partner. 2.010/2.338/2.997/3.071/3.153/3.201 - climbs 1.19, twice SmolLM2's 0.53 |
+| smollm3-3b-lr5e6 | Ashutosh | `configs/smollm3-3b-lr5e6.json` | SmolLM3-3B | 3.08B | interleaved | full | 100% | | | | | | | | running. 3B at its own learning rate, so the size claim is not confounded with tuning |
+| smollm3-3b-lr2e6 | Ashutosh | `configs/smollm3-3b-lr2e6.json` | SmolLM3-3B | 3.08B | interleaved | full | 100% | | | | | | | | running, same reason |
 
 All three scored rows were retrained on the cleaned data (620 turns) and scored
 by `scripts/evaluate.py` on the frozen test split, greedy at temperature 0.
@@ -218,6 +220,36 @@ over Qwen3 is 0.19, roughly 4000x the actual noise. And **this does not transfer
 to the randomised arrangement**: that arm shuffles with the seed, so it is the
 one place where seed replicates are genuinely required, and whoever runs it
 should measure its own spread rather than borrowing this one.
+
+### Does 3B beat 1.7B - not yet answerable, and here is why
+
+Matched at last: same single GPU, same paged_adamw_8bit, same effective batch of
+16, same six epochs, same cleaned data. No sharding, so both rows are comparable
+with the rest of the table rather than only with each other.
+
+    SmolLM2-1.7B   1.898   1.898 1.900 2.080 2.264 2.332 2.428   climbs 0.53
+    SmolLM3-3B     2.010   2.010 2.338 2.997 3.071 3.153 3.201   climbs 1.19
+
+The 1.7B model wins by 0.111, which is far above any noise floor. But the shapes
+say not to call this a size result yet. Both peak at epoch one and then degrade,
+and the larger model degrades roughly twice as fast - which is what too large a
+step looks like, not what insufficient capacity looks like. A 3B model takes
+bigger effective steps than a 1.7B at the same nominal rate, and the sweep below
+showed the usable window narrowing sharply as the rate rises: 4e-5 on the 1.7B
+produced this exact shape.
+
+So the pair currently confounds size with tuning, in the same way the earlier
+FSDP pair confounded size with the optimiser. `smollm3-3b-lr5e6` and
+`smollm3-3b-lr2e6` give the 3B model its own rate. Until they land, the
+defensible claim is narrow: **at 1e-5, SmolLM3-3B is worse than SmolLM2-1.7B and
+diverges faster.** Not "3B is worse than 1.7B".
+
+One smaller thing the pair exposed. This SmolLM2 run reaches 1.898 where the
+main-table SmolLM2 reaches 1.883, on the same data, rate and effective batch. The
+only difference is per-device batch 1 with accumulation 16 against per-device 2
+with accumulation 8. 0.015 is small but 300x the seed noise, so micro-batch shape
+is not free - worth knowing before anyone assumes accumulation is a pure
+memory-for-time trade.
 
 ### Learning rate, swept rather than argued
 
