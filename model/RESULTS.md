@@ -256,13 +256,33 @@ avoid diverging. That is a more useful claim for the paper than a ranking, and i
 would have been recorded as its opposite if the pair had been written up when the
 matched conditions superficially justified it.
 
-Two loose ends are running. 2e-6 is the best of three 3B rates but its curve
-still rises from epoch one, so it may be a point on a slope rather than the floor
-- `smollm3-3b-lr1e6` tests below it. And the 1.7B side of that comparison is at
-1e-5, which its own sweep says is not its best rate, so
-`smollm2-1.7b-1gpu-lr2e5` puts both models at their own optimum in the same
-config. Until those land, read the tie as "indistinguishable", not as a measured
-equality.
+Both loose ends are closed. 2e-6 is a genuine minimum for the 3B rather than a
+point on a slope - 1e-6 gives 1.9153, worse on both sides - and the 1.7B at its
+own best rate gives 1.8753.
+
+    SmolLM2-1.7B  lr 2e-5   1.8753    <- its optimum
+    SmolLM3-3B    lr 2e-6   1.8988    <- its optimum
+    SmolLM2-1.7B  lr 1e-5   1.8981
+    SmolLM3-3B    lr 5e-6   1.9117
+    SmolLM3-3B    lr 1e-6   1.9153
+    SmolLM3-3B    lr 1e-5   2.0096
+
+**With both models tuned, the 1.7B wins by 0.0235.** That is 470x the seed noise,
+so it is a real difference, and it is the number to quote.
+
+The arc of this measurement is worth recording, because two of its three stages
+pointed the wrong way:
+
+    FSDP pair, unmatched optimiser    3B ahead by 0.054
+    matched but untuned               1.7B ahead by 0.111
+    both tuned                        1.7B ahead by 0.024
+
+About 80% of the apparent size penalty was the learning rate, and the first
+measurement had the sign backwards. The residual is real but modest: doubling
+the parameters makes things slightly worse at four times the compute, 1h55
+against 26 minutes. On 620 turns there is nothing for the extra capacity to
+learn, so it memorises faster instead - which is what the epoch-one peak and the
+steep divergence at higher rates both show.
 
 One smaller thing the pair exposed. This SmolLM2 run reaches 1.898 where the
 main-table SmolLM2 reaches 1.883, on the same data, rate and effective batch. The

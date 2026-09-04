@@ -325,9 +325,18 @@ Everything below is Ashutosh's lane and all of it is queued or done.
 SmolLM2 wins - best loss at 1.883, best specificity at 0.469, repetition 0.0005
 against the baseline's 0.014, and it never truncates.
 
-**Running:** two seed replicates and a three-point learning rate sweep on
-SmolLM2, then the 6-epoch sharded pair that settles whether SmolLM3-3B beats
-SmolLM2-1.7B on clean data.
+**Model size: settled.** With each model at its own best learning rate,
+SmolLM2-1.7B reaches 1.8753 and SmolLM3-3B reaches 1.8988, so the smaller model
+wins by 0.0235 - real, at 470x the seed noise, but far smaller than it first
+appeared. An untuned matched pair put the gap at 0.111 and the earlier FSDP pair
+had the 3B ahead by 0.054, so two of the three measurements pointed the wrong
+way. Roughly 80% of the apparent size penalty was learning rate. Doubling the
+parameters costs four times the compute, 1h55 against 26 minutes, and needs a
+ten times smaller rate to avoid diverging.
+
+**Learning rates that matter:** 2e-5 for SmolLM2-1.7B, 2e-6 for SmolLM3-3B. Both
+are genuine minima, checked on both sides. Anyone adding a model should sweep
+before comparing - the pinned 1e-5 is not right for either.
 
 **The one result that needs saying out loud: strategy prediction does not work.**
 Always answering "Emotional Validation" scores 0.1613 on the test split. The
