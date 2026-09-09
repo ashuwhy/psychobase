@@ -1,0 +1,1 @@
+{"root":["./src/App.tsx","./src/main.tsx","./src/types.ts","./src/components/SignalChart.tsx","./src/components/TurnList.tsx","./src/lib/data.ts","./src/lib/time.ts","./src/pages/ContextList.tsx","./src/pages/ConversationView.tsx","./src/pages/ParticipantList.tsx"],"version":"5.9.3"}

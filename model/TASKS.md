@@ -138,10 +138,10 @@ Copy `configs/baseline.json`, change `data.format`, give it a new `run_id`.
 
 - [x] One model training end to end on the baseline configuration - done, and it
       unblocked this lane along with Krishna's
-- [ ] Then the three arrangements from the meeting, on the baseline model and
+- [x] Then the three arrangements from the meeting, on the baseline model and
       method: interleaved (case 1, case 2, case 1...), batched (all case 1s then
       all case 2s), randomised
-- [ ] Watch for this: the batched arrangement risks the model learning "the
+- [x] Watch for this: the batched arrangement risks the model learning "the
       physiological summary appears in the second half" rather than learning to
       use it. If batched scores oddly high or oddly low, suspect that before
       believing the number

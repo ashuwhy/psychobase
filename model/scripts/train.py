@@ -215,6 +215,15 @@ def main():
                 "reshard_after_forward": True,
                 "transformer_layer_cls_to_wrap": cfg["distributed"]["wrap_layer"],
                 "activation_checkpointing": True,
+                # Without these, every rank materialises a full fp32 copy of the
+                # model before FSDP shards it, so handle.shard() briefly needs
+                # ~1.5x the model's footprint per rank at once - OOMs on a 16GB
+                # P100 even though the sharded model fits comfortably after.
+                # cpu_ram_efficient_loading loads the full model on rank 0 only
+                # (meta device elsewhere); sync_module_states broadcasts the real
+                # shards from rank 0 instead of every rank loading its own copy.
+                "cpu_ram_efficient_loading": True,
+                "sync_module_states": True,
             },
         }
         ft = dict(ft, gradient_checkpointing=False)
@@ -242,7 +251,13 @@ def main():
     print(f"  effective batch {per_step} over {world} GPU(s), "
           f"{total_steps} optimiser steps, {warmup_steps} warmup")
 
-    model = AutoModelForCausalLM.from_pretrained(cfg["model"]["name"], dtype=load_dtype)
+    # low_cpu_mem_usage avoids fully materialising the model on every rank before
+    # FSDP shards it - without it, each rank briefly holds a full fp32 copy plus
+    # the new sharded chunk at once, which is what pushed a 16GB P100 (13GB used,
+    # 3.2GB more requested) into OOM during handle.shard() even though the final
+    # sharded footprint fits comfortably. No effect on single-GPU runs.
+    model = AutoModelForCausalLM.from_pretrained(
+        cfg["model"]["name"], dtype=load_dtype, low_cpu_mem_usage=True)
     params = sum(p.numel() for p in model.parameters())
     per_param = 6 if bf16 else 12
     print(f"  {params / 1e9:.2f}B params, full fine-tune needs about "
