@@ -79,6 +79,14 @@ the outstanding part stays under the original name.
       hide: friendship turn 7 drifts into grieving someone "after they're gone",
       and own turn 4 invents an internship the user never mentioned. Every turn
       is run alone with no history, because that is how the model was trained.
+      The same cases on the lr 1e-5 checkpoint (`*__smollm2-1.7b.csv`), run once
+      the harness favoured it: summary vs none moves the answer in 15/15, mild to
+      severe in 7/15, and the strategy moves in up to 3/15 instead of never.
+      By hand it is no cleaner, just wrong in different places: the internship
+      is gone, but friendship turn 5 (mild, severe) and turn 7 (no summary) drift
+      into grief, and teacher turn 4 invents an exam (severe) and mistakes the
+      neighbour's family for the user's own (mild). The harness favours 1e-5;
+      the hand read is a draw.
 
 Three things the split work turned up, all worth knowing before you train:
 
