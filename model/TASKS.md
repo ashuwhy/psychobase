@@ -34,16 +34,15 @@ test set into training and every model looks better than it is.
 
 ---
 
-## Where this stands, 3 Sep
+## Where this stands, 11 Sep
 
-The foundation, the cluster and the model lane are done. The training script,
-the submission scripts and the evaluation harness are in the repo and working.
-Four models are trained with a fifth control finishing.
+The foundation, the cluster, the model lane and the evaluation harness are
+done, and so is the data-formatting lane. The final model is
+SmolLM2-1.7B-Instruct, full fine-tune, interleaved, lr 2e-5
+(`configs/smollm2-1.7b-1gpu-lr2e5.json`, eval_loss 1.8753).
 
-What is not done is the other three lanes. Siddaarth's and Krishna's are not
-blocked by anything and have not started; the evaluation harness runs but its
-empathy and safety columns need a rubric and a human pass before the results
-table has anything in it.
+Not done: the fine-tuning-method lane has no runs yet, and the empathy and
+safety columns still need a rubric and a human pass.
 
 ### Ashutosh - splits, baseline, cluster, model lane, eval harness - DONE
 
@@ -65,6 +64,19 @@ the outstanding part stays under the original name.
       Built 3 Sep because four trained models with no scorer was the only thing
       standing between this project and a results table. Empathy and safety are
       left null by design and belong to the scoring pass below.
+- [x] "Model work new" task 1, the response CSV (`scripts/generate_cases.py`,
+      `generate_cases.sbatch`). Tagged to Siddaarth, Krishna and Ashutosh; all
+      45 prompts (15 supplied turns x no summary, mild, severe) plus a 7-turn own
+      conversation were generated here on 11 Sep with the final model, greedy.
+      Both CSVs are in `eval_cases/out/`. Read them with three things in mind:
+      a summary being present changes the answer in 14/15 turns, but mild to
+      severe changes it in only 6/15, and the strategy line never moves once
+      labels are normalised. The supplied summary style ("From the last 1 min,
+      PR moved...") occurs nowhere in training, so the model is reacting to a
+      summary existing more than to what it says. Two faults to own rather than
+      hide: friendship turn 7 drifts into grieving someone "after they're gone",
+      and own turn 4 invents an internship the user never mentioned. Every turn
+      is run alone with no history, because that is how the model was trained.
 
 Three things the split work turned up, all worth knowing before you train:
 
@@ -131,10 +143,10 @@ half that genuinely needs a person, and none of it has been started.
       mention-rate metric does not enforce that and needs someone who knows the
       rendering rules to fix it.
 
-### Siddaarth - data formatting - NOT BLOCKED, nothing started
+### Siddaarth - data formatting - DONE
 
-The pipeline exists and the cluster is up, so this is three sbatch commands.
-Copy `configs/baseline.json`, change `data.format`, give it a new `run_id`.
+Batched and randomised trained and scored on 10 Sep, on the baseline model and
+method. Batched 2.191, randomised 2.134, interleaved 2.075 - see `RESULTS.md`.
 
 - [x] One model training end to end on the baseline configuration - done, and it
       unblocked this lane along with Krishna's

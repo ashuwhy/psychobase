@@ -1,0 +1,293 @@
+{
+  "source": {
+    "teacher_neighbour_emergency": "evaluate_stage2_v2.py",
+    "friendship_conflict": "evaluate_stage2_friendship_conflict (1).py"
+  },
+  "scenarios": [
+    {
+      "scenario": "teacher_neighbour_emergency",
+      "group": "teacher_turn1_news",
+      "text": "I just got a call that our neighbor's family had a medical emergency, right days before their big family celebration. I don't even know what to do first.",
+      "variants": [
+        {
+          "label": "Mild stress",
+          "physio": "From the last 1 min, PR moved 72.0 to 79.0 bpm (rising), SkinTemp moved 33.30 to 33.40 degC (rising), EDA moved 0.24 to 0.29 uS (rising), ACCEL stable at 0.0 g, and movement remained still.\nLittle movement was recorded despite rising signals, so this is likely not activity-driven.\nComposite stress score: 3 (Mild stress).\nMET ~0.93, movement count 2.0, awake."
+        },
+        {
+          "label": "Severe stress",
+          "physio": "From the last 1 min, PR moved 88.0 to 104.0 bpm (rising), SkinTemp moved 33.05 to 32.70 degC (falling), EDA moved 0.31 to 0.58 uS (rising), ACCEL stable at 0.0 g, and movement remained still.\nLittle movement was recorded despite sharply rising signals, so this is likely not activity-driven.\nComposite stress score: 7 (Severe stress).\nMET ~1.0, movement count 1.0, awake."
+        },
+        {
+          "label": "No physio (fallback)",
+          "physio": "Not Available."
+        }
+      ]
+    },
+    {
+      "scenario": "teacher_neighbour_emergency",
+      "group": "teacher_turn2_overnight_support",
+      "text": "I've been at their house all night helping however I can, and I don't think I'm going to get any sleep before I have to teach tomorrow.",
+      "variants": [
+        {
+          "label": "Mild stress",
+          "physio": "From the last 1 min, PR moved 74.0 to 80.0 bpm (rising), SkinTemp moved 33.20 to 33.28 degC (rising), EDA moved 0.27 to 0.32 uS (rising), ACCEL moved 0.02 to 0.05 g (mild), and brief movement was recorded.\nSlight movement paired with rising signals suggests light activity plus some emotional arousal.\nComposite stress score: 4 (Mild stress).\nMET ~1.4, movement count 5.0, awake."
+        },
+        {
+          "label": "Severe stress",
+          "physio": "From the last 1 min, PR moved 90.0 to 109.0 bpm (rising), SkinTemp moved 32.95 to 32.55 degC (falling), EDA moved 0.34 to 0.63 uS (rising), ACCEL stable at 0.0 g, and movement remained still.\nLittle movement was recorded despite sharply rising signals late at night, so this is likely not activity-driven.\nComposite stress score: 8 (Severe stress).\nMET ~1.0, movement count 0.0, awake."
+        },
+        {
+          "label": "No physio (fallback)",
+          "physio": "Not Available."
+        }
+      ]
+    },
+    {
+      "scenario": "teacher_neighbour_emergency",
+      "group": "teacher_turn3_celebration_in_jeopardy",
+      "text": "They had been planning this family celebration for months, and now it might not even happen. It feels so unfair on top of everything else.",
+      "variants": [
+        {
+          "label": "Mild stress",
+          "physio": "From the last 1 min, PR moved 71.0 to 77.0 bpm (rising), SkinTemp moved 33.32 to 33.41 degC (rising), EDA moved 0.25 to 0.30 uS (rising), ACCEL stable at 0.0 g, and movement remained still.\nLittle movement was recorded despite rising signals, so this is likely not activity-driven.\nComposite stress score: 3 (Mild stress).\nMET ~0.94, movement count 1.0, awake."
+        },
+        {
+          "label": "Severe stress",
+          "physio": "From the last 1 min, PR moved 86.0 to 100.0 bpm (rising), SkinTemp moved 33.00 to 32.68 degC (falling), EDA moved 0.29 to 0.54 uS (rising), ACCEL stable at 0.0 g, and movement remained still.\nLittle movement was recorded despite sharply rising signals, so this is likely not activity-driven.\nComposite stress score: 6 (Severe stress).\nMET ~0.98, movement count 1.0, awake."
+        },
+        {
+          "label": "No physio (fallback)",
+          "physio": "Not Available."
+        }
+      ]
+    },
+    {
+      "scenario": "teacher_neighbour_emergency",
+      "group": "teacher_turn4_teaching_exhausted",
+      "text": "I'm standing in front of my class right now completely exhausted, trying to act normal when all I can think about is that family.",
+      "variants": [
+        {
+          "label": "Mild stress",
+          "physio": "From the last 1 min, PR moved 68.0 to 73.0 bpm (rising), SkinTemp moved 33.15 to 33.22 degC (rising), EDA moved 0.22 to 0.26 uS (rising), ACCEL moved 0.03 to 0.06 g (mild), and brief movement was recorded.\nSlight movement paired with rising signals suggests light activity plus some fatigue-related arousal.\nComposite stress score: 3 (Mild stress).\nMET ~1.3, movement count 4.0, awake."
+        },
+        {
+          "label": "Severe stress",
+          "physio": "From the last 1 min, PR moved 82.0 to 95.0 bpm (rising), SkinTemp moved 32.90 to 32.60 degC (falling), EDA moved 0.28 to 0.50 uS (rising), ACCEL stable at 0.0 g, and movement remained still.\nLittle movement was recorded despite rising signals and low prior sleep, so this is likely not activity-driven.\nComposite stress score: 6 (Severe stress).\nMET ~0.97, movement count 1.0, awake."
+        },
+        {
+          "label": "No physio (fallback)",
+          "physio": "Not Available."
+        }
+      ]
+    },
+    {
+      "scenario": "teacher_neighbour_emergency",
+      "group": "teacher_turn5_guilt_stretched_thin",
+      "text": "I feel guilty that I can't do more for them while I'm also trying to keep up with my own work and my own family at home.",
+      "variants": [
+        {
+          "label": "Mild stress",
+          "physio": "From the last 1 min, PR moved 70.0 to 75.0 bpm (rising), SkinTemp moved 33.25 to 33.33 degC (rising), EDA moved 0.24 to 0.28 uS (rising), ACCEL stable at 0.0 g, and movement remained still.\nLittle movement was recorded despite rising signals, so this is likely not activity-driven.\nComposite stress score: 3 (Mild stress).\nMET ~0.92, movement count 1.0, awake."
+        },
+        {
+          "label": "Severe stress",
+          "physio": "From the last 1 min, PR moved 84.0 to 97.0 bpm (rising), SkinTemp moved 32.98 to 32.65 degC (falling), EDA moved 0.30 to 0.56 uS (rising), ACCEL stable at 0.0 g, and movement remained still.\nLittle movement was recorded despite sharply rising signals, so this is likely not activity-driven.\nComposite stress score: 6 (Severe stress).\nMET ~0.96, movement count 0.0, awake."
+        },
+        {
+          "label": "No physio (fallback)",
+          "physio": "Not Available."
+        }
+      ]
+    },
+    {
+      "scenario": "teacher_neighbour_emergency",
+      "group": "teacher_turn6_checking_in_next_day",
+      "text": "I checked in on them again today and things seem a little more stable, but I'm still worried about what happens next.",
+      "variants": [
+        {
+          "label": "Mild stress",
+          "physio": "From the last 1 min, PR moved 69.0 to 73.0 bpm (rising), SkinTemp moved 33.34 to 33.42 degC (rising), EDA moved 0.21 to 0.25 uS (rising), ACCEL stable at 0.0 g, and movement remained still.\nLittle movement was recorded despite mildly rising signals, so this is likely not activity-driven.\nComposite stress score: 2 (Mild stress).\nMET ~0.91, movement count 1.0, awake."
+        },
+        {
+          "label": "Severe stress",
+          "physio": "From the last 1 min, PR moved 80.0 to 92.0 bpm (rising), SkinTemp moved 33.05 to 32.75 degC (falling), EDA moved 0.27 to 0.47 uS (rising), ACCEL stable at 0.0 g, and movement remained still.\nLittle movement was recorded despite rising signals, so this is likely not activity-driven.\nComposite stress score: 5 (Severe stress).\nMET ~0.95, movement count 1.0, awake."
+        },
+        {
+          "label": "No physio (fallback)",
+          "physio": "Not Available."
+        }
+      ]
+    },
+    {
+      "scenario": "teacher_neighbour_emergency",
+      "group": "teacher_turn7_end_of_week_reflection",
+      "text": "Looking back on this whole week, I don't think I really gave myself any time to process what happened. It's just hitting me now.",
+      "variants": [
+        {
+          "label": "Mild stress",
+          "physio": "From the last 1 min, PR moved 67.0 to 71.0 bpm (rising), SkinTemp moved 33.28 to 33.35 degC (rising), EDA moved 0.20 to 0.24 uS (rising), ACCEL stable at 0.0 g, and movement remained still.\nLittle movement was recorded despite mildly rising signals, so this is likely not activity-driven.\nComposite stress score: 2 (Mild stress).\nMET ~0.90, movement count 0.0, awake."
+        },
+        {
+          "label": "Severe stress",
+          "physio": "From the last 1 min, PR moved 81.0 to 93.0 bpm (rising), SkinTemp moved 32.92 to 32.62 degC (falling), EDA moved 0.28 to 0.49 uS (rising), ACCEL stable at 0.0 g, and movement remained still.\nLittle movement was recorded despite rising signals, so this is likely not activity-driven.\nComposite stress score: 5 (Severe stress).\nMET ~0.94, movement count 0.0, awake."
+        },
+        {
+          "label": "No physio (fallback)",
+          "physio": "Not Available."
+        }
+      ]
+    },
+    {
+      "scenario": "friendship_conflict",
+      "group": "friendship_turn1_felt_ignored",
+      "text": "I traveled so far to be at my best friend's wedding, and I still feel like I was completely ignored the whole time.",
+      "variants": [
+        {
+          "label": "Mild stress",
+          "physio": "From the last 1 min, PR moved 71.0 to 77.0 bpm (rising), SkinTemp moved 33.30 to 33.38 degC (rising), EDA moved 0.23 to 0.28 uS (rising), ACCEL stable at 0.0 g, and movement remained still.\nLittle movement was recorded despite rising signals, so this is likely not activity-driven.\nComposite stress score: 3 (Mild stress).\nMET ~0.93, movement count 1.0, awake."
+        },
+        {
+          "label": "Severe stress",
+          "physio": "From the last 1 min, PR moved 84.0 to 96.0 bpm (rising), SkinTemp moved 33.00 to 32.70 degC (falling), EDA moved 0.29 to 0.52 uS (rising), ACCEL stable at 0.0 g, and movement remained still.\nLittle movement was recorded despite sharply rising signals, so this is likely not activity-driven.\nComposite stress score: 6 (Severe stress).\nMET ~0.97, movement count 0.0, awake."
+        },
+        {
+          "label": "No physio (fallback)",
+          "physio": "Not Available."
+        }
+      ]
+    },
+    {
+      "scenario": "friendship_conflict",
+      "group": "friendship_turn2_family_not_acknowledged",
+      "text": "What really got to me is that my family came too, and they weren't acknowledged at all. That stung more than I expected.",
+      "variants": [
+        {
+          "label": "Mild stress",
+          "physio": "From the last 1 min, PR moved 73.0 to 79.0 bpm (rising), SkinTemp moved 33.25 to 33.33 degC (rising), EDA moved 0.25 to 0.30 uS (rising), ACCEL stable at 0.0 g, and movement remained still.\nLittle movement was recorded despite rising signals, so this is likely not activity-driven.\nComposite stress score: 3 (Mild stress).\nMET ~0.94, movement count 1.0, awake."
+        },
+        {
+          "label": "Severe stress",
+          "physio": "From the last 1 min, PR moved 87.0 to 101.0 bpm (rising), SkinTemp moved 32.95 to 32.62 degC (falling), EDA moved 0.31 to 0.57 uS (rising), ACCEL stable at 0.0 g, and movement remained still.\nLittle movement was recorded despite sharply rising signals, so this is likely not activity-driven.\nComposite stress score: 7 (Severe stress).\nMET ~0.99, movement count 0.0, awake."
+        },
+        {
+          "label": "No physio (fallback)",
+          "physio": "Not Available."
+        }
+      ]
+    },
+    {
+      "scenario": "friendship_conflict",
+      "group": "friendship_turn3_decided_to_forgive",
+      "text": "I know she was busy with the wedding, so I decided to let it go and forgive her for it.",
+      "variants": [
+        {
+          "label": "Mild stress",
+          "physio": "From the last 1 min, PR moved 68.0 to 72.0 bpm (rising), SkinTemp moved 33.35 to 33.42 degC (rising), EDA moved 0.20 to 0.24 uS (rising), ACCEL stable at 0.0 g, and movement remained still.\nLittle movement was recorded despite mildly rising signals, so this is likely not activity-driven.\nComposite stress score: 2 (Mild stress).\nMET ~0.90, movement count 0.0, awake."
+        },
+        {
+          "label": "Severe stress",
+          "physio": "From the last 1 min, PR moved 78.0 to 88.0 bpm (rising), SkinTemp moved 33.05 to 32.78 degC (falling), EDA moved 0.26 to 0.44 uS (rising), ACCEL stable at 0.0 g, and movement remained still.\nLittle movement was recorded despite rising signals, so this is likely not activity-driven.\nComposite stress score: 5 (Severe stress).\nMET ~0.95, movement count 0.0, awake."
+        },
+        {
+          "label": "No physio (fallback)",
+          "physio": "Not Available."
+        }
+      ]
+    },
+    {
+      "scenario": "friendship_conflict",
+      "group": "friendship_turn4_expressed_feelings",
+      "text": "I finally told her honestly how I felt, that I was hurt and that my family felt overlooked at the wedding.",
+      "variants": [
+        {
+          "label": "Mild stress",
+          "physio": "From the last 1 min, PR moved 74.0 to 80.0 bpm (rising), SkinTemp moved 33.22 to 33.30 degC (rising), EDA moved 0.26 to 0.31 uS (rising), ACCEL moved 0.02 to 0.04 g (mild), and brief movement was recorded.\nSlight movement paired with rising signals suggests light activity plus some emotional arousal.\nComposite stress score: 4 (Mild stress).\nMET ~1.2, movement count 3.0, awake."
+        },
+        {
+          "label": "Severe stress",
+          "physio": "From the last 1 min, PR moved 89.0 to 103.0 bpm (rising), SkinTemp moved 32.90 to 32.58 degC (falling), EDA moved 0.33 to 0.60 uS (rising), ACCEL stable at 0.0 g, and movement remained still.\nLittle movement was recorded despite sharply rising signals, so this is likely not activity-driven.\nComposite stress score: 7 (Severe stress).\nMET ~1.0, movement count 0.0, awake."
+        },
+        {
+          "label": "No physio (fallback)",
+          "physio": "Not Available."
+        }
+      ]
+    },
+    {
+      "scenario": "friendship_conflict",
+      "group": "friendship_turn5_friend_blames_them",
+      "text": "Instead of hearing me out, she just kept saying I should have gone to all the ceremonies, like that's the real problem.",
+      "variants": [
+        {
+          "label": "Mild stress",
+          "physio": "From the last 1 min, PR moved 76.0 to 83.0 bpm (rising), SkinTemp moved 33.18 to 33.26 degC (rising), EDA moved 0.28 to 0.34 uS (rising), ACCEL stable at 0.0 g, and movement remained still.\nLittle movement was recorded despite rising signals, so this is likely not activity-driven.\nComposite stress score: 4 (Mild stress).\nMET ~0.96, movement count 1.0, awake."
+        },
+        {
+          "label": "Severe stress",
+          "physio": "From the last 1 min, PR moved 92.0 to 108.0 bpm (rising), SkinTemp moved 32.85 to 32.50 degC (falling), EDA moved 0.36 to 0.65 uS (rising), ACCEL stable at 0.0 g, and movement remained still.\nLittle movement was recorded despite sharply rising signals, so this is likely not activity-driven.\nComposite stress score: 8 (Severe stress).\nMET ~1.0, movement count 0.0, awake."
+        },
+        {
+          "label": "No physio (fallback)",
+          "physio": "Not Available."
+        }
+      ]
+    },
+    {
+      "scenario": "friendship_conflict",
+      "group": "friendship_turn6_hurt_despite_forgiving",
+      "text": "I already forgave her for the wedding day itself, so it's confusing that she's still blaming me instead of talking about how I felt.",
+      "variants": [
+        {
+          "label": "Mild stress",
+          "physio": "From the last 1 min, PR moved 72.0 to 78.0 bpm (rising), SkinTemp moved 33.28 to 33.36 degC (rising), EDA moved 0.24 to 0.29 uS (rising), ACCEL stable at 0.0 g, and movement remained still.\nLittle movement was recorded despite rising signals, so this is likely not activity-driven.\nComposite stress score: 3 (Mild stress).\nMET ~0.93, movement count 0.0, awake."
+        },
+        {
+          "label": "Severe stress",
+          "physio": "From the last 1 min, PR moved 85.0 to 98.0 bpm (rising), SkinTemp moved 32.98 to 32.66 degC (falling), EDA moved 0.30 to 0.55 uS (rising), ACCEL stable at 0.0 g, and movement remained still.\nLittle movement was recorded despite sharply rising signals, so this is likely not activity-driven.\nComposite stress score: 6 (Severe stress).\nMET ~0.97, movement count 0.0, awake."
+        },
+        {
+          "label": "No physio (fallback)",
+          "physio": "Not Available."
+        }
+      ]
+    },
+    {
+      "scenario": "friendship_conflict",
+      "group": "friendship_turn7_replaying_conversation",
+      "text": "I keep replaying our conversation in my head, wondering if I explained myself wrong or if I'm overreacting to all this.",
+      "variants": [
+        {
+          "label": "Mild stress",
+          "physio": "From the last 1 min, PR moved 69.0 to 74.0 bpm (rising), SkinTemp moved 33.32 to 33.39 degC (rising), EDA moved 0.22 to 0.26 uS (rising), ACCEL stable at 0.0 g, and movement remained still.\nLittle movement was recorded despite mildly rising signals, so this is likely not activity-driven.\nComposite stress score: 3 (Mild stress).\nMET ~0.92, movement count 0.0, awake."
+        },
+        {
+          "label": "Severe stress",
+          "physio": "From the last 1 min, PR moved 81.0 to 93.0 bpm (rising), SkinTemp moved 33.02 to 32.72 degC (falling), EDA moved 0.28 to 0.49 uS (rising), ACCEL stable at 0.0 g, and movement remained still.\nLittle movement was recorded despite rising signals, so this is likely not activity-driven.\nComposite stress score: 5 (Severe stress).\nMET ~0.95, movement count 0.0, awake."
+        },
+        {
+          "label": "No physio (fallback)",
+          "physio": "Not Available."
+        }
+      ]
+    },
+    {
+      "scenario": "friendship_conflict",
+      "group": "friendship_turn8_future_uncertain",
+      "text": "I don't know where this leaves our friendship anymore, or if things can even go back to how they were before.",
+      "variants": [
+        {
+          "label": "Mild stress",
+          "physio": "From the last 1 min, PR moved 70.0 to 75.0 bpm (rising), SkinTemp moved 33.27 to 33.34 degC (rising), EDA moved 0.23 to 0.27 uS (rising), ACCEL stable at 0.0 g, and movement remained still.\nLittle movement was recorded despite mildly rising signals, so this is likely not activity-driven.\nComposite stress score: 3 (Mild stress).\nMET ~0.91, movement count 0.0, awake."
+        },
+        {
+          "label": "Severe stress",
+          "physio": "From the last 1 min, PR moved 83.0 to 95.0 bpm (rising), SkinTemp moved 32.96 to 32.64 degC (falling), EDA moved 0.29 to 0.53 uS (rising), ACCEL stable at 0.0 g, and movement remained still.\nLittle movement was recorded despite sharply rising signals, so this is likely not activity-driven.\nComposite stress score: 6 (Severe stress).\nMET ~0.96, movement count 0.0, awake."
+        },
+        {
+          "label": "No physio (fallback)",
+          "physio": "Not Available."
+        }
+      ]
+    }
+  ]
+}

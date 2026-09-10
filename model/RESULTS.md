@@ -30,8 +30,8 @@ with the rest of the table and should say so in **notes**.
 | smollm2-1.7b-fsdp | Ashutosh | `configs/smollm2-1.7b-fsdp.json` | SmolLM2-1.7B-Instruct | 1.71B | interleaved | full | 100% | - | - | - | - | - | - | 1.989 ep3/3 | **SUPERSEDED** - unfixed data, and never converged. Rerun as smollm2-1.7b-fsdp-e6 |
 | smollm2-1.7b-1gpu | Ashutosh | `configs/smollm2-1.7b-1gpu.json` | SmolLM2-1.7B-Instruct | 1.71B | interleaved | full | 100% | | | | | | | **1.898** ep1/6 | matched size pair, single GPU, paged_adamw_8bit. 1.898/1.900/2.080/2.264/2.332/2.428 |
 | smollm3-3b-1gpu | Ashutosh | `configs/smollm3-3b-1gpu.json` | SmolLM3-3B | 3.08B | interleaved | full | 100% | | | | | | | 2.010 ep1/6 | matched partner. 2.010/2.338/2.997/3.071/3.153/3.201 - climbs 1.19, twice SmolLM2's 0.53 |
-| smollm3-3b-lr5e6 | Ashutosh | `configs/smollm3-3b-lr5e6.json` | SmolLM3-3B | 3.08B | interleaved | full | 100% | | | | | | | | running. 3B at its own learning rate, so the size claim is not confounded with tuning |
-| smollm3-3b-lr2e6 | Ashutosh | `configs/smollm3-3b-lr2e6.json` | SmolLM3-3B | 3.08B | interleaved | full | 100% | | | | | | | | running, same reason |
+| smollm3-3b-lr5e6 | Ashutosh | `configs/smollm3-3b-lr5e6.json` | SmolLM3-3B | 3.08B | interleaved | full | 100% | | | | | | | 1.912 ep1 | 3B at a rate suited to its size. 1.912/2.072/2.337 |
+| smollm3-3b-lr2e6 | Ashutosh | `configs/smollm3-3b-lr2e6.json` | SmolLM3-3B | 3.08B | interleaved | full | 100% | | | | | | | 1.899 ep1 | the 3B optimum, 1e-6 is worse (1.915). 1.899/1.947/2.006 |
 
 All three scored rows were retrained on the cleaned data (620 turns) and scored
 by `scripts/evaluate.py` on the frozen test split, greedy at temperature 0.
@@ -126,7 +126,8 @@ counts for whoever wrote it.
 | model | Qwen3-1.7B (baseline), SmolLM2-1.7B, SmolLM3-3B, Llama-3.2-1B | Ashutosh |
 | format | interleaved (baseline), batched, randomised | Siddaarth |
 | fine-tuning | full (baseline), QLoRA, DoRA, rsLoRA, LoRA+, IA3 | Krishna |
-| evaluation harness | `scripts/evaluate.py` - **not started** | assigned: Nithish |
+| evaluation harness | `scripts/evaluate.py` - done | Ashutosh |
+| empathy and safety scoring | rubric plus a human or judge pass over `generations.jsonl` - not started | Nithish |
 
 Change one of these per run. Two changes in one row cannot be attributed and
 the row is wasted work.

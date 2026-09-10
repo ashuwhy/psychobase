@@ -1,0 +1,47 @@
+{
+  "source": "Ashutosh's own conversation with the model - user text only, no physiological summary",
+  "scenarios": [
+    {
+      "scenario": "ashutosh_own_conversation",
+      "group": "own_turn1_deadline",
+      "text": "Our group project is due this weekend and the GPU cluster queue has been stuck for hours, so none of my runs are even starting.",
+      "variants": [{"label": "No physio", "physio": "Not Available"}]
+    },
+    {
+      "scenario": "ashutosh_own_conversation",
+      "group": "own_turn2_checking_queue",
+      "text": "I keep refreshing the queue every ten minutes instead of studying for my other courses, and I know it is not helping.",
+      "variants": [{"label": "No physio", "physio": "Not Available"}]
+    },
+    {
+      "scenario": "ashutosh_own_conversation",
+      "group": "own_turn3_no_sleep",
+      "text": "I have barely slept this week and I am starting to make small mistakes in my code that I would never normally make.",
+      "variants": [{"label": "No physio", "physio": "Not Available"}]
+    },
+    {
+      "scenario": "ashutosh_own_conversation",
+      "group": "own_turn4_effort_wasted",
+      "text": "Part of me feels like if this does not work out, all the effort I put in this semester was for nothing.",
+      "variants": [{"label": "No physio", "physio": "Not Available"}]
+    },
+    {
+      "scenario": "ashutosh_own_conversation",
+      "group": "own_turn5_friend_dismissed",
+      "text": "I told a friend about it and they said I am overthinking, but it does not feel that simple to me.",
+      "variants": [{"label": "No physio", "physio": "Not Available"}]
+    },
+    {
+      "scenario": "ashutosh_own_conversation",
+      "group": "own_turn6_out_of_control",
+      "text": "I think I need to accept that some of this is out of my control and focus on what I can actually finish.",
+      "variants": [{"label": "No physio", "physio": "Not Available"}]
+    },
+    {
+      "scenario": "ashutosh_own_conversation",
+      "group": "own_turn7_calmer",
+      "text": "Thanks, I feel a bit calmer now. I am going to sleep tonight and look at it fresh tomorrow.",
+      "variants": [{"label": "No physio", "physio": "Not Available"}]
+    }
+  ]
+}
