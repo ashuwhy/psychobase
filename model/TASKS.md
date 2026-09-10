@@ -37,9 +37,11 @@ test set into training and every model looks better than it is.
 ## Where this stands, 11 Sep
 
 The foundation, the cluster, the model lane and the evaluation harness are
-done, and so is the data-formatting lane. The final model is
-SmolLM2-1.7B-Instruct, full fine-tune, interleaved, lr 2e-5
-(`configs/smollm2-1.7b-1gpu-lr2e5.json`, eval_loss 1.8753).
+done, and so is the data-formatting lane. The model is SmolLM2-1.7B-Instruct,
+full fine-tune, interleaved. Which checkpoint is still open: lr 2e-5
+(`configs/smollm2-1.7b-1gpu-lr2e5.json`) has the lowest eval_loss, 1.8753, but
+scored worse than the lr 1e-5 run (`smollm2-1.7b`, 1.883) on every harness
+column on 11 Sep. The harness favours the 1e-5 checkpoint - see RESULTS.md.
 
 Not done: the fine-tuning-method lane has no runs yet, and the empathy and
 safety columns still need a rubric and a human pass.
@@ -67,7 +69,7 @@ the outstanding part stays under the original name.
 - [x] "Model work new" task 1, the response CSV (`scripts/generate_cases.py`,
       `generate_cases.sbatch`). Tagged to Siddaarth, Krishna and Ashutosh; all
       45 prompts (15 supplied turns x no summary, mild, severe) plus a 7-turn own
-      conversation were generated here on 11 Sep with the final model, greedy.
+      conversation were generated here on 11 Sep with the lr 2e-5 checkpoint, greedy.
       Both CSVs are in `eval_cases/out/`. Read them with three things in mind:
       a summary being present changes the answer in 14/15 turns, but mild to
       severe changes it in only 6/15, and the strategy line never moves once

@@ -22,6 +22,7 @@ with the rest of the table and should say so in **notes**.
 | run_id | owner | config | model | params | format | ft method | trainable % | empathy | specificity | strategy F1 | physio changed | fluency (rep/trunc) | safety | eval_loss | notes |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | **smollm2-1.7b** | Ashutosh | `configs/smollm2-1.7b.json` | SmolLM2-1.7B-Instruct | 1.71B | interleaved | full | 100% | pending | **0.469** | 0.157 | **0.994** | **0.0005 / 0.000** | pending | **1.883** ep2 | best row. Flat curve 1.894/1.883/1.907, no repetition, no truncation |
+| smollm2-1.7b-1gpu-lr2e5 | Ashutosh | `configs/smollm2-1.7b-1gpu-lr2e5.json` | SmolLM2-1.7B-Instruct | 1.71B | interleaved | full | 100% | pending | 0.432 | 0.129 | 0.929 | 0.0036 / 0.0065 | pending | **1.875** ep1/3 | lowest loss of any run and worse than smollm2-1.7b on every scored column; top-12 strategy F1 is the one exception (0.207 vs 0.163). Scored on a P4000: the smollm2-1.7b-p4000check control rescored the smollm2-1.7b checkpoint there and matched its V100 row except one turn of 155 on physio changed (1.0 vs 0.994), so the gap is the checkpoint, not the card. 1.875/1.915/2.067 |
 | baseline | Ashutosh | `configs/baseline.json` | Qwen3-1.7B | 1.72B | interleaved | full | 100% | pending | 0.433 | **0.161** | 0.929 | 0.014 / 0.019 | pending | 2.075 ep1 | 2.075/2.186/2.330, degrades hard after epoch 1 |
 | baseline-batched | Siddaarth | `configs/baseline-batched.json` | Qwen3-1.7B | 1.72B | batched | full | 100% | | 0.486 | 0.181 | 1.0 | 0.001 / 0.026 | | 2.191 ep1 | strategy_f1 0.181 beats majority-baseline (0.161); physio_changed_answer=1.0 and mention_rate 0.219 - the "learning positional order" risk flagged earlier looks unfounded, model does appear to use the physio input |
 | baseline-randomised | Siddaarth | `configs/baseline-randomised.json` | Qwen3-1.7B | 1.72B | randomised | full | 100% | | 0.483 | 0.161 | 0.955 | 0.002 / 0.000 | | 2.134 ep1 | strategy_f1 ties majority-baseline exactly (no real strategy signal learned); physio_changed_answer 0.955, slightly weaker physio sensitivity than batched despite lower eval_loss |
@@ -59,6 +60,15 @@ caveats:
 and both fluency measures, and it is the only model with a flat loss curve. Its
 repetition rate is 0.0005 against the baseline's 0.014 and Llama's 0.023, and it
 never truncates.
+
+**Lower loss did not buy better answers.** `smollm2-1.7b-1gpu-lr2e5` has the
+lowest validation loss in the table, 1.875 against 1.883 for the 1e-5 run, and
+scores worse on every harness column: specificity 0.432 against 0.469, physio
+changed 0.929 against 0.994, strategy F1 0.129 against 0.157 (below the constant
+predictor), and it repeats and truncates where the 1e-5 checkpoint never does.
+The P4000 control rules out the card. A 0.008 gap in loss does not outweigh
+that, so the harness points to `smollm2-1.7b` at 1e-5, and the learning-rate
+sweep further down is a loss result, not a quality one.
 
 **The physiological signal is doing something, and it is not what the metric
 names suggest.** `physio changed` is the share of test turns where the case2
@@ -317,6 +327,9 @@ A final comparison should use 2e-5. The model ordering is unlikely to change,
 since the SmolLM2 to Qwen3 gap is 0.19 against a 0.007 tuning effect, but the
 absolute numbers in this table are from a slightly suboptimal rate and should
 say so.
+
+Scored, the harness disagreed: the 2e-5 checkpoint loses to 1e-5 on every
+column. See "Lower loss did not buy better answers" above.
 
 Every run also picks its own best epoch on validation loss rather than taking
 the last one. The baseline peaks at epoch 1 and degrades monotonically after
