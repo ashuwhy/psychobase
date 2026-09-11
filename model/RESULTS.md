@@ -67,8 +67,11 @@ scores worse on every harness column: specificity 0.432 against 0.469, physio
 changed 0.929 against 0.994, strategy F1 0.129 against 0.157 (below the constant
 predictor), and it repeats and truncates where the 1e-5 checkpoint never does.
 The P4000 control rules out the card. A 0.008 gap in loss does not outweigh
-that, so the harness points to `smollm2-1.7b` at 1e-5, and the learning-rate
-sweep further down is a loss result, not a quality one.
+that, so `smollm2-1.7b` at 1e-5 is the final checkpoint, chosen 11 Sep, and the
+learning-rate sweep further down is a loss result, not a quality one. Its fp16
+weights are on Hugging Face,
+[ashuwhy/psychobase-smollm2-1.7b](https://huggingface.co/ashuwhy/psychobase-smollm2-1.7b)
+(private).
 
 **The physiological signal is doing something, and it is not what the metric
 names suggest.** `physio changed` is the share of test turns where the case2

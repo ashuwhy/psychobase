@@ -38,10 +38,10 @@ test set into training and every model looks better than it is.
 
 The foundation, the cluster, the model lane and the evaluation harness are
 done, and so is the data-formatting lane. The model is SmolLM2-1.7B-Instruct,
-full fine-tune, interleaved. Which checkpoint is still open: lr 2e-5
-(`configs/smollm2-1.7b-1gpu-lr2e5.json`) has the lowest eval_loss, 1.8753, but
-scored worse than the lr 1e-5 run (`smollm2-1.7b`, 1.883) on every harness
-column on 11 Sep. The harness favours the 1e-5 checkpoint - see RESULTS.md.
+full fine-tune, interleaved, and the final checkpoint is lr 1e-5
+(`configs/smollm2-1.7b.json`, eval_loss 1.883), chosen on 11 Sep. lr 2e-5
+(`configs/smollm2-1.7b-1gpu-lr2e5.json`) has the lower loss, 1.8753, but scored
+worse on every harness column - see RESULTS.md.
 
 Not done: the fine-tuning-method lane has no runs yet, and the empathy and
 safety columns still need a rubric and a human pass.
@@ -103,7 +103,7 @@ Three things the split work turned up, all worth knowing before you train:
   every row in `RESULTS.md` was produced against the frozen split, and changing
   it now invalidates all of them.
 
-### Model lane - four models trained, one control running
+### Model lane - four models, 16 training runs, all finished
 
 Validation loss only. These pick checkpoints; they are not harness scores and
 they do not go in the results columns.
@@ -117,21 +117,20 @@ SmolLM2-1.7B wins and barely overfits. Qwen3-1.7B is the same size to within 10M
 parameters and climbs 0.28, so on this corpus the pretraining family matters
 more than the parameter count.
 
-**Do not quote "3B is worse than 1.7B" yet.** FSDP forced SmolLM3 onto
-`adamw_torch`, because bitsandbytes has no DTensor sharding rule, so it differs
-from the single-card SmolLM2 in size *and* optimiser. `smollm2-1.7b-fsdp` runs
-SmolLM2 under identical sharding and optimiser and is the only row that makes
-the size comparison readable. Near 1.88 means the size effect is real; near 1.94
-means we are looking at the optimiser.
+These are the first-pass numbers. The size question they left open is settled
+further down: with each model at its own best learning rate, SmolLM2-1.7B
+reaches 1.8753 and SmolLM3-3B 1.8988.
 
 Two more things that hold for everyone's runs:
 
 - **Every run peaks at epoch 1 or 2, never 3.** The configs select the best epoch
   on validation loss rather than the last. Before that fix, `save_total_limit`
   was deleting the good checkpoint and keeping the most overtrained one.
-- **The noise floor is measured, not assumed.** The same config at the same seed,
-  three times across two torch versions, gave 2.076 / 2.083 / 2.078. Nothing
-  under 0.007 is a result.
+- **The noise floor is measured, not assumed.** Three SmolLM2 seeds give
+  1.88339 / 1.88341 / 1.88336, a spread of 5e-5. The 0.007 quoted here earlier
+  came from baseline runs across a torch upgrade and a data change, so it was
+  never run noise. The randomised arrangement shuffles with the seed and is the
+  one place seed replicates are still needed.
 
 ### Nithish - empathy and safety scoring - NOT STARTED
 
@@ -192,7 +191,7 @@ at fixed family, Llama-3.2-1B adds a third family and the cheapest run.
 
     Qwen/Qwen3-1.7B                      2.03B on the Hub, 1.72B loaded, Apache 2.0
     HuggingFaceTB/SmolLM2-1.7B-Instruct  1.71B, Apache 2.0
-    HuggingFaceTB/SmolLM3-3B             3.08B, Apache 2.0, needs both V100s
+    HuggingFaceTB/SmolLM3-3B             3.08B, Apache 2.0, one V100 with paged 8-bit Adam
     meta-llama/Llama-3.2-1B-Instruct     1.24B, gated, licence accepted 3 Sep
 
 Rejected: Llama-3.2-3B (gated, non-OSI licence, will not fit 32GB under full
@@ -220,8 +219,8 @@ showing up.
 
 ## Results table - one row per run
 
-| run_id | owner | model | params | format | ft_method | trainable % | empathy | specificity | strategy | physio_ground | fluency | safety | train time | VRAM | notes |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+The table lives in `RESULTS.md`. The owner column there is who did the work,
+not who was pencilled in for it.
 
 Fill in the failures too. A configuration that did not work is a result, and
 otherwise someone retries it by accident in a fortnight.
@@ -341,11 +340,16 @@ yours - it usually is not.
 
 ## Model lane - what is measured and what is not
 
-Everything below is Ashutosh's lane and all of it is queued or done.
+Everything below is Ashutosh's lane. All of it is done except the two unswept
+learning rates further down.
 
 **Done and scored on clean data:** Qwen3-1.7B, SmolLM2-1.7B, Llama-3.2-1B.
 SmolLM2 wins - best loss at 1.883, best specificity at 0.469, repetition 0.0005
 against the baseline's 0.014, and it never truncates.
+
+The lr 2e-5 SmolLM2 checkpoint reaches lower loss, 1.8753, and still scores
+worse on every harness column: specificity 0.432, strategy F1 0.129, physio
+changed 0.929. Loss alone does not pick the checkpoint.
 
 **Model size: settled.** With each model at its own best learning rate,
 SmolLM2-1.7B reaches 1.8753 and SmolLM3-3B reaches 1.8988, so the smaller model
@@ -382,7 +386,10 @@ honest position is that the model ranking rests on one untuned point per model.
 
 Closing it costs two sweeps of about three runs each, roughly two hours on an
 idle node. Until then the model comparison should be reported as "at 1e-5" the
-same way the size comparison was, rather than as a tuned result.
+same way the size comparison was, rather than as a tuned result. Queued 11 Sep
+at the SmolLM2 sweep points: `baseline-lr5e6`, `baseline-lr2e5`,
+`baseline-lr4e5`, `llama3.2-1b-lr5e6`, `llama3.2-1b-lr2e5`, `llama3.2-1b-lr4e5`
+(jobs 27353-27358), waiting behind another user's jobs on gnode1.
 
 **The one result that needs saying out loud: strategy prediction does not work.**
 Always answering "Emotional Validation" scores 0.1613 on the test split. The
@@ -405,7 +412,19 @@ and human pass that has not started.
   `sbatch model/scripts/train.sbatch <config>`. Everything targets
   `gpupart_v100` (gnode1, 2x V100-32GB) because the other partitions are 16GB
   and 8GB. Environment lives at `~/.venv/psychobase`, built by
-  `model/scripts/server_setup.sh`.
+  `model/scripts/server_setup.sh`. Scoring and generation also fit on
+  `gpupart_q4000` (P4000, 8GB); the control `smollm2-1.7b-p4000check`
+  reproduced the V100 scores to within 0.006 on every column.
+- **Where the weights are.** The final model, `smollm2-1.7b` at lr 1e-5, is on
+  Hugging Face as a private repo,
+  [ashuwhy/psychobase-smollm2-1.7b](https://huggingface.co/ashuwhy/psychobase-smollm2-1.7b) -
+  fp16, 3.4GB, the exact model the harness scored, with a model card for the
+  prompt format and scores. Ask Ashutosh for access. `scripts/export_hf.py`
+  makes the fp16 copy from a run's `final/`. Every other checkpoint sits on the
+  cluster in Ashutosh's home, `~/psychobase/model/runs/<run_id>/final/`: about
+  6.4GB per SmolLM2 run and 12GB per SmolLM3 run, fp32. `model/runs/` is
+  gitignored and GitHub refuses files over 100MB, so no weights are in this
+  repository.
 - **Empathy and safety need a scoring pass.** `generations.jsonl` exists for
   every scored run and nothing reads it yet. Either a person scores 1-5 against
   a rubric, or a judge model does with the rubric in the prompt - but the rubric
