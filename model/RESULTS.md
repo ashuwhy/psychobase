@@ -37,7 +37,8 @@ with the rest of the table and should say so in **notes**.
 All three scored rows were retrained on the cleaned data (620 turns) and scored
 by `scripts/evaluate.py` on the frozen test split, greedy at temperature 0.
 Empathy and safety are blank because they need a rubric and a human pass, not
-because the harness failed - see the note below.
+because the harness failed - see the note below. The final model's generations
+and scores are in `results/smollm2-1.7b/`, for that pass.
 
 ### Still running, and why
 
