@@ -79,7 +79,7 @@ are in [model/TASKS.md](model/TASKS.md).
 The final model is SmolLM2-1.7B-Instruct, fully fine-tuned at lr 1e-5. It is on
 Hugging Face as
 [ashuwhy/psychobase-smollm2-1.7b](https://huggingface.co/ashuwhy/psychobase-smollm2-1.7b)
-(private, ask Ashutosh for access). Scores and the runs behind the choice are in
+(private, ask me for access). Scores and the runs behind the choice are in
 [model/RESULTS.md](model/RESULTS.md).
 
 ---

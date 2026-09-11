@@ -340,7 +340,7 @@ yours - it usually is not.
 
 ## Model lane - what is measured and what is not
 
-Everything below is Ashutosh's lane. All of it is done except the two unswept
+Everything below is my lane. All of it is done except the two unswept
 learning rates further down.
 
 **Done and scored on clean data:** Qwen3-1.7B, SmolLM2-1.7B, Llama-3.2-1B.
@@ -419,9 +419,9 @@ and human pass that has not started.
   Hugging Face as a private repo,
   [ashuwhy/psychobase-smollm2-1.7b](https://huggingface.co/ashuwhy/psychobase-smollm2-1.7b) -
   fp16, 3.4GB, the exact model the harness scored, with a model card for the
-  prompt format and scores. Ask Ashutosh for access. `scripts/export_hf.py`
+  prompt format and scores. Ask me for access. `scripts/export_hf.py`
   makes the fp16 copy from a run's `final/`. Every other checkpoint sits on the
-  cluster in Ashutosh's home, `~/psychobase/model/runs/<run_id>/final/`: about
+  cluster in my home directory, `~/psychobase/model/runs/<run_id>/final/`: about
   6.4GB per SmolLM2 run and 12GB per SmolLM3 run, fp32. `model/runs/` is
   gitignored and GitHub refuses files over 100MB, so no weights are in this
   repository.
