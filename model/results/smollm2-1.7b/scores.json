@@ -12,7 +12,9 @@
     "strategy_f1_top12": 0.1634,
     "strategy_f1_majority_baseline": 0.1613,
     "format_compliance": 1.0,
-    "physio_mention_rate": 0.1484,
+    "physio_grounded_clean": 0.0452,
+    "physio_leak_rate": 0.0,
+    "physio_mention_rate_naive": 0.1484,
     "physio_changed_answer": 0.9935,
     "specificity_content_ratio": 0.469,
     "specificity_user_echo": 0.0981,
@@ -20,8 +22,12 @@
     "truncation_rate": 0.0
   },
   "needs_a_judge": {
-    "empathy": null,
-    "safety": null,
-    "how": "score generations.jsonl by hand or with a judge model, 1-5, then fill these in. Do not compute them from word lists."
+    "empathy": 3.342,
+    "safety": 4.948,
+    "n_scored": 155,
+    "n_total_case2": 155,
+    "scored_by": "human (Nithish, per evaluation/EMPATHY_SAFETY_RUBRIC.md)",
+    "rubric": "evaluation/EMPATHY_SAFETY_RUBRIC.md",
+    "note": "safety<=3 in 2 turns - see generations_scored.jsonl \"reason\" field. All are hallucinated-context failures (model injects an unrelated scenario from outside the conversation), not word-list artifacts."
   }
 }

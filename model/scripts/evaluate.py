@@ -18,7 +18,14 @@ Four of the six parameters in the brief can be computed from the generations
 without a judge, and are:
 
     strategy_faithfulness   did the model pick the reference strategy
-    physio_grounding        did the physiological summary change the answer
+    physio_grounding        physio_grounded_clean: qualitative reference to the
+                            body with no leaked number/unit/channel name, per
+                            the rule in evaluation/scripts/render.py, alongside
+                            physio_leak_rate and physio_mention_rate_naive (the
+                            old metric, kept only for comparison - it scored a
+                            response that reads raw values back at the user as
+                            "grounded", backwards from the rule). Also: did the
+                            physiological summary change the answer
     specificity             concrete content rather than generic comfort
     fluency                 no loops, no truncation mid-sentence
 
@@ -50,9 +57,53 @@ RESPONSE_MARKER = "### Response:"
 # The physiological narration is built from these signals, so a response that
 # grounds itself in the body has to touch at least one of them. Checked against
 # the response text only, never against the prompt it was copied from.
+#
+# Kept for backward comparison only (physio_mention_rate_naive below). This is
+# the metric the brief flagged as wrong: it mixes qualitative body words
+# ("restless", "body") with the raw jargon those words exist to avoid ("bpm",
+# "degc", "electrodermal", "eda"), so a response that just reads the channel
+# values back at the user scores exactly as "grounded" as one that reflects
+# them qualitatively - the opposite of what grounding is supposed to reward.
 SIGNAL_TERMS = ("heart rate", "bpm", "temperature", "degc", "electrodermal",
                 "eda", "skin conductance", "movement", "activity", "stress",
                 "arousal", "breathing", "physical", "body", "restless", "still")
+
+# The actual rule, from evaluation/scripts/render.py: the physiological summary
+# is hidden from the user, and every worked example in the master prompt refers
+# to it qualitatively ("gentle cues", "your physical response seems fairly
+# even"). A response may reflect the physiological state but must never quote a
+# number, a unit, or a channel name back at them. render.py enforces this on
+# the hand-authored responses via LEAK_RE/BODY_RE/leaks() - duplicated here
+# rather than imported, since render.py pulls in python-docx for report
+# generation this scorer has no other reason to depend on. If the rule in
+# render.py changes, change it here too.
+LEAK_RE = re.compile(
+    r"\bEDA\b|\bPR\b|\bACCEL\b|\bbpm\b|\buS\b|\bdegC\b|conductance|microsiemens"
+    r"|accelerometer|electrodermal|skin temperature|activity count|stress score"
+)
+BODY_RE = re.compile(
+    r"\bpulse\b|heart rate|\barousal\b|\bsignals?\b|\breadings?\b|\bphysical\b|\bbody\b"
+    r"|\bmovement\b|\btension\b|\bbreathing\b", re.I)
+
+
+def physio_leaks(response):
+    """Channel jargon anywhere, or a figure quoted next to a body reference.
+
+    Mirrors render.py's leaks(): a number is only a leak when it sits beside a
+    reference to the body, so a CGPA or an OWASP list number the user quoted
+    stays clean while "your pulse dropped to 90" does not. Checked per sentence
+    so the two never get confused.
+    """
+    found = list(LEAK_RE.findall(response))
+    for sentence in re.split(r"(?<=[.!?])\s+|\s-\s", response):
+        if BODY_RE.search(sentence):
+            found += re.findall(r"\d+(?:\.\d+)?", sentence)
+    return found
+
+
+def physio_qualitative_mention(response):
+    """A soft, non-jargon reference to bodily/physiological state."""
+    return bool(BODY_RE.search(response))
 
 # Words that carry no information about this particular person's situation. A
 # response made only of these is fluent, kind, and useless, which is exactly the
@@ -264,7 +315,8 @@ def score(run_dir, ckpt, turns, records):
     # not there.
     majority = {"emotionalvalidation"}
     strat_f1, top_f1, base_f1 = [], [], []
-    fmt_ok, reps, truncs, spec, echoes, grounded, diverged = 0, [], 0, [], [], 0, 0
+    fmt_ok, reps, truncs, spec, echoes, diverged = 0, [], 0, [], [], 0
+    grounded_naive, grounded_qual, leaked = 0, 0, 0
     for key, cases in by_turn.items():
         if 2 not in cases:
             continue
@@ -281,7 +333,17 @@ def score(run_dir, ckpt, turns, records):
         s, ec = specificity(resp2, ex.user_text)
         spec.append(s)
         echoes.append(ec)
-        grounded += any(t in resp2.lower() for t in SIGNAL_TERMS)
+        # Old metric, kept only so the tightened one below can be defended
+        # against it: any signal term at all, jargon included.
+        grounded_naive += any(t in resp2.lower() for t in SIGNAL_TERMS)
+        # Tightened metric: qualitative reference to the body, with no leaked
+        # jargon or raw value. This is the one that enforces the render.py
+        # rule - a response that quotes a number or a channel name back at the
+        # user does not score as grounded no matter how directly it engages
+        # with the physiological state.
+        this_leaks = bool(physio_leaks(resp2))
+        leaked += this_leaks
+        grounded_qual += physio_qualitative_mention(resp2) and not this_leaks
         if 1 in cases:
             # If the physiological summary changes nothing, the model is ignoring
             # it - which is the single most important thing to know about a
@@ -299,7 +361,9 @@ def score(run_dir, ckpt, turns, records):
             "strategy_f1_top12": round(sum(top_f1) / max(len(top_f1), 1), 4),
             "strategy_f1_majority_baseline": round(sum(base_f1) / max(len(base_f1), 1), 4),
             "format_compliance": round(fmt_ok / n, 4),
-            "physio_mention_rate": round(grounded / n, 4),
+            "physio_grounded_clean": round(grounded_qual / n, 4),
+            "physio_leak_rate": round(leaked / n, 4),
+            "physio_mention_rate_naive": round(grounded_naive / n, 4),
             "physio_changed_answer": round(diverged / n, 4),
             "specificity_content_ratio": round(sum(spec) / n, 4),
             "specificity_user_echo": round(sum(echoes) / n, 4),
