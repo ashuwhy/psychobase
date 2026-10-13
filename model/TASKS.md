@@ -416,10 +416,11 @@ and human pass that has not started.
   `gpupart_q4000` (P4000, 8GB); the control `smollm2-1.7b-p4000check`
   reproduced the V100 scores to within 0.006 on every column.
 - **Where the weights are.** The final model, `smollm2-1.7b` at lr 1e-5, is on
-  Hugging Face as a private repo,
+  Hugging Face as a public repo,
   [ashuwhy/psychobase-smollm2-1.7b](https://huggingface.co/ashuwhy/psychobase-smollm2-1.7b) -
   fp16, 3.4GB, the exact model the harness scored, with a model card for the
-  prompt format and scores. Ask me for access. `scripts/export_hf.py`
+  prompt format and scores. No login needed; `scripts/chat.py` talks to it
+  one turn at a time. `scripts/export_hf.py`
   makes the fp16 copy from a run's `final/`. Every other checkpoint sits on the
   cluster in my home directory, `~/psychobase/model/runs/<run_id>/final/`: about
   6.4GB per SmolLM2 run and 12GB per SmolLM3 run, fp32. `model/runs/` is

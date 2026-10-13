@@ -72,7 +72,7 @@ that, so `smollm2-1.7b` at 1e-5 is the final checkpoint, chosen 11 Sep, and the
 learning-rate sweep further down is a loss result, not a quality one. Its fp16
 weights are on Hugging Face,
 [ashuwhy/psychobase-smollm2-1.7b](https://huggingface.co/ashuwhy/psychobase-smollm2-1.7b)
-(private).
+(public, no login needed).
 
 **The physiological signal is doing something, and it is not what the metric
 names suggest.** `physio changed` is the share of test turns where the case2

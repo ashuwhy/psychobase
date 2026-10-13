@@ -76,11 +76,13 @@ move to a smaller model and experiment with how the data is arranged and how we
 fine-tune. Who is doing what, and the rules that keep the results comparable,
 are in [model/TASKS.md](model/TASKS.md).
 
-The final model is SmolLM2-1.7B-Instruct, fully fine-tuned at lr 1e-5. It is on
-Hugging Face as
-[ashuwhy/psychobase-smollm2-1.7b](https://huggingface.co/ashuwhy/psychobase-smollm2-1.7b)
-(private, ask me for access). Scores and the runs behind the choice are in
-[model/RESULTS.md](model/RESULTS.md).
+The final model is SmolLM2-1.7B-Instruct, fully fine-tuned at lr 1e-5. It is public
+on Hugging Face as
+[ashuwhy/psychobase-smollm2-1.7b](https://huggingface.co/ashuwhy/psychobase-smollm2-1.7b),
+no login needed. To talk to it in a terminal, run
+`python3 model/scripts/chat.py ashuwhy/psychobase-smollm2-1.7b` from the repo
+root (`pip install torch transformers` first). Scores and the runs behind the
+choice are in [model/RESULTS.md](model/RESULTS.md).
 
 ---
 
