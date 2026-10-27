@@ -75,11 +75,16 @@ def main():
     tok.padding_side = "left"
     if tok.pad_token is None:
         tok.pad_token = tok.eos_token
-    model = AutoModelForCausalLM.from_pretrained(
-        ckpt, dtype=torch.float16 if torch.cuda.is_available() else torch.float32)
-    model.eval()
+    # Same choice as chat.py, so a CSV made on a Mac with --batch 1 is what
+    # chat.py prints for the same turn there.
     if torch.cuda.is_available():
-        model.cuda()
+        device, dtype = "cuda", torch.float16
+    elif torch.backends.mps.is_available():
+        device, dtype = "mps", torch.float16
+    else:
+        device, dtype = "cpu", torch.float32
+    model = AutoModelForCausalLM.from_pretrained(ckpt, dtype=dtype).to(device)
+    model.eval()
 
     print(f"{args.run_dir.name}: {len(prompts)} prompts from {len(groups)} groups "
           f"in {args.cases.name}")
