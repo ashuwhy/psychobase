@@ -1,0 +1,49 @@
+% title and thanks hero: what a person writes, what the wristband adds, what the model answers.
+% set once into \herobox, so both slides draw the same picture
+\begin{tikzpicture}[x=1cm,y=1cm,
+    lbl/.style={inner sep=0,font=\fontsize{5.5}{6.5}\selectfont\bfseries,text=iris}]
+  \fill[haze,rounded corners=7pt] (0,0) rectangle (10.5,-7);
+  \begin{scope}
+    \clip[rounded corners=7pt] (0,0) rectangle (10.5,-7);
+    \fill[iris!32] (1.35,.1) rectangle (2.65,-7.1);
+    \draw[iris!45,line width=.4pt] (1.35,.1) -- (1.35,-7.1) (2.65,.1) -- (2.65,-7.1);
+    \foreach \y in {-5.25,-5.8,-6.35}{\fill[haze] (2,\y) circle (.085);}
+  \end{scope}
+
+  \fill[ink,rounded corners=9pt] (.82,-1.75) rectangle (3.18,-4.45);
+  \draw[iris!70,line width=.4pt,rounded corners=6pt] (1.02,-1.95) rectangle (2.98,-4.25);
+  \node[anchor=north west,inner sep=0,text=gold,font=\fontsize{5.5}{6.5}\selectfont\bfseries] at (1.22,-2.15) {EDA};
+  \draw[gold,line width=1pt,line cap=round,line join=round] plot[smooth,tension=.6] coordinates
+    {(1.22,-3.55) (1.42,-3.47) (1.6,-3.6) (1.8,-3.33) (2,-3.2) (2.2,-3.3) (2.4,-2.95) (2.6,-2.82) (2.78,-2.68)};
+  \fill[gold] (2.78,-2.68) circle (.055);
+  \node[inner sep=0,text=white,font=\fontsize{6}{7}\selectfont] at (2,-3.92) {0.41 µS};
+
+  \node[lbl,anchor=north east] at (10,-.42) {WHAT THEY WRITE};
+  \node[anchor=north east,fill=iris,text=white,rounded corners=5pt,text width=4.1cm,inner sep=5pt,
+    font=\scriptsize,align=left] (msg) at (10,-.72) {I am having a hard time in my new job.};
+  \fill[iris] ([xshift=-4mm]msg.south east) -- ++(.22,0) -- ++(.12,-.16) -- cycle;
+
+  \node[lbl,anchor=north east] at (10,-2.02) {WHAT THE WRISTBAND ADDS};
+  \node[anchor=north east,fill=white,draw=rule,line width=.4pt,rounded corners=3pt,text width=5.05cm,
+    inner sep=5pt,font=\ttfamily\fontsize{5.5}{7.2}\selectfont,align=left] (sum) at (10,-2.32) {%
+    {\color{muted}Physiological Signals:}\\
+    {\color{saffron}\bfseries Stress score: 4 (Moderate stress).}\\
+    EDA rose, from 0.38 to 0.41 uS.\\
+    PR held steady, from 85.0 to 84.0 bpm.\\
+    {\color{muted}... three more lines}};
+  \fill[saffron] (sum.north west) ++(0,-.06) rectangle ([xshift=.07cm,yshift=.06cm]sum.south west);
+
+  \draw[saffron,line width=1pt,line cap=round,-{Stealth[length=2mm]}] plot[smooth,tension=.55] coordinates
+    {(3.18,-3.1) (3.45,-3.1) (3.65,-2.8) (3.85,-3.42) (4.05,-2.92) (4.25,-3.22) (4.42,-3.1) ($(sum.west |- 0,-3.1)+(-.03,0)$)};
+
+  \node[fill=ink,text=white,rounded corners=2pt,inner sep=3pt,font=\fontsize{5.5}{6.5}\selectfont\bfseries]
+    (llm) at (8.75,-4.62) {SmolLM2-1.7B, fine-tuned};
+  \draw[flowarrow] (sum.south -| llm) -- (llm);
+
+  \node[lbl,anchor=north west] at (4.6,-5.12) {WHAT THE MODEL ANSWERS};
+  \node[anchor=north west,fill=white,draw=rule,line width=.4pt,rounded corners=5pt,text width=4.6cm,
+    inner sep=5pt,minimum height=1.08cm,align=left,font=\fontsize{5.5}{6.8}\selectfont] (ans) at (4.6,-5.42) {%
+    {\color{saffron}\bfseries Strategy: Emotional Validation, Reflective Statements}\\[.4mm]
+    It sounds like your new job is affecting you more than you expected. [\dots] What's been the hardest part so far?};
+  \draw[flowarrow] (llm) -- (llm |- ans.north);
+\end{tikzpicture}%

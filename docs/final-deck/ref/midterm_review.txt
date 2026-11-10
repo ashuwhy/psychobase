@@ -1,0 +1,417 @@
+Term Project Review · Group 2
+
+
+
+
+PhysioBase
+Physiological-Signal-Aware Conversational Response Generation — Data Format &
+Ablation Study
+
+
+
+
+                                                                                                 Team
+
+                                                                                           B. Siddaarth
+                                                                                      Ashutosh Sharma
+                                                                                      Krishna Chaitanya
+Mentor: Sudipa Garain                                                           Nithish Kumar Mahesepu
+                                    Research Objective
+
+  Can a Chatbot That Knows What Your Body Is Doing
+                 Support You Better?
+Standard emotional-support chatbots respond only to what a person types — they have no way to
+notice that someone is tense, worn down, or escalating before they say so in words. This project
+asks whether giving a conversational model access to a person's real-time physiological state,
+not just their message, produces replies that are more attuned, more appropriately timed, and
+more consistent with how that person is actually doing.
+
+To test this, we paired a wearable sensor stream — electrodermal activity, pulse rate, skin
+temperature and movement — with real conversations, and fine-tuned a compact language model
+(SmolLM2-1.7B) to generate a supportive reply from both the user's words and a short
+physiological summary. We then compared the model's behaviour with and without that signal,
+and evaluated its responses, automatically and by hand, against the text-only alternative.
+The Idea, Illustrated
+
+From Rising Stress to a Supported Reply
+
+
+
+
+                                                              I'm anxious
+                                                              about tomorrow.
+
+                                                             That sounds
+                                                             heavy. I'm here
+     Stressed, Wearing the Watch                             with you.
+                                                                                                 Relaxed, Signal Settled
+ EDA, pulse rate and movement climb while the                                             The watch now reads a steady line — the reply
+            person is under strain.                                                               matched what they needed.
+                                                Chatting — Text and Signal, Together
+                                                  The chatbot reads the message and the
+                                                      physiological summary as one.
+System Architecture
+
+How the Pieces Connect
+                                               raw
+                Wearable Sensor                          Physio Summarizer
+              EDA · PR · SkinTemp · ACCEL                signal → text + stress score
+
+
+
+
+                                                                          merged                       SmolLM2-1.7B                         Strategy + Response
+                                                                                                           Full Fine-Tune                        to the user
+
+
+
+
+                Conversation Log                              Training Pair
+               user text (input) + strategy,         input string in, target string the loss
+                    response (target)                               trains on
+                                                                                                                       inference
+
+
+
+
+                                                                                                     User's Question + Live
+                                                                                                       Physio Summary
+                                                                                               a real, unseen message — not training data
+
+
+
+
+Only the message and physio summary are ever model input — the strategy (e.g. "Emotional Validation," "Reflective Statements") and the response are what the loss trains the
+model to predict, never something it reads. At deployment, a real person's new question and their live physio summary go in; the shaded box is the one thing we fine-tuned.
+Dataset Creation
+
+From Raw Signals to Training Pairs
+
+ 1                                                  2                                                  3                                                  4
+ Collect                                            Summarize                                          Generate & Compare                                 Score & Verify
+ Participants wore a wearable through               Raw sensor readings condensed into a               The message plus physio summary                    Each pair scored 1-5 on six
+ real supportive conversations, logging             4-5 line physiological summary                     sent to an LLM under a master                      parameters; the verified response is
+ EDA, pulse rate, skin temperature and              per turn by a dedicated prompt —                   prompt; the new strategy and                       what actually trains the model.
+ movement turn by turn.                             trend, stress score, channel values,               response is compared against
+                                                    nothing fabricated.                                the original.
+
+
+
+
+  A real physiological summary, step 2's output
+  "Physiological Signals: Over the past 1 minute, EDA, PR, SkinTemp and ACCEL held near-constant values; with low motion, this pattern appears not activity-related. Stress score: 4
+  (Moderate stress). EDA: steady near 0.08 uS, flat. PR: steady near 119.0 bpm, flat. ACCEL: steady near 0.02 g, flat. Activity level: moderate, type: generic."
+Dataset Creation · Step 4
+
+Six Parameters Decide What Makes the Dataset
+Empathy · 1–5                                                                         Specificity · 1–5
+Does the reply register this person's specific feeling, not a generic answer.         Concrete content that echoes the person's own words, not filler.
+
+
+Strategy Faithfulness · 1–5                                                           Physio Grounding · 1–5
+Does the reply actually carry out its own stated counselling strategy.                Reflects the physiological state without ever quoting a raw value.
+
+
+Fluency · 1–5                                                                         Safety · 1–5
+Natural language — no repetition loops, no truncation.                                Nothing harmful or dismissive; scored 5 by default, deducted for real issues.
+
+
+
+Scored per turn, for both the original and the new response, in a shared evaluation doc — the comparison decides which response the dataset keeps.
+Dataset Creation · The Raw JSON
+
+The Data, As It Actually Looks
+   One Conversational Turn                                                                         Per-Channel Summary — Step 2's Output
+
+   user_text        "I gave my self-study presentation just a few minutes ago."                    PR             "Heart rate registered an elevating shift to 122.0 bpm, with no reversal."
+
+   ai_text          "That must have taken a lot of effort, and it's natural to still be thinking   EDA            "Readings grew moderately to 0.54 uS, without notable peaks or valleys."
+                    about how it went."
+                                                                                                   SkinTemp       "Climbed from 29.05 to 29.18 degC over the first minute."
+   strategy         "Emotional Validation"
+                                                                                                   stress_score   2
+   raw_physio.EDA   [0.47, 0.54]
+                                                                                                   stress_level   "Mild stress"
+   raw_physio.PR    [97.0, 122.0]
+
+   raw_physio.ACCE [0.062, 0.124]
+   L
+
+
+
+
+Both objects live on the same turn — the raw arrays feed the summarizer, and the summary it writes is what the model actually reads.
+Dataset Creation · The Training Strings
+
+case1 vs. case2 — One Line Is the Whole Difference
+  training_string_case1 — no physio                                                                   training_string_case2 — with physio
+  ### Instruction: You are an empathetic emotional support assistant… select a support strategy and   ### Instruction: You are an empathetic emotional support assistant… select a support strategy and
+  respond accordingly.                                                                                respond accordingly.
+
+  ### Input:                                                                                          ### Input:
+  Text: "I am having a hard time in my new job."                                                      Text: "I am having a hard time in my new job."
+
+   Physiological Signals: Not Available                                                                Physiological Signals: "EDA, PR, SkinTemp and ACCEL rose while ACT_COUNT showed no
+                                                                                                       corresponding movement… composite stress score for the first minute is 3, Mild stress."
+  ### Response:
+  Strategy: EmotionalValidation                                                                       ### Response:
+  Response: "Starting something new can feel overwhelming… try focusing on one small task at          Strategy: EmotionalValidation
+  a time."                                                                                            Response: "Starting something new can feel overwhelming… try focusing on one small task at
+                                                                                                      a time."
+
+
+
+Everything else is held identical — the instruction, the message, the strategy, even the written response. Only the physio line changes, which is exactly what the ablation
+and format experiments test against.
+Model Architecture
+
+Data In, Weights Updated, Reply Out
+            Data Sources                                 Preprocessing
+
+
+                                                 Physio Summarizer
+    Conversations
+                                                 trend, stress score, 4-5                                Fine-Tuning
+    user_text, strategy, ai_text
+                                                 line summary
+    Physio Arrays
+                                                 String Builder
+    EDA, PR, SkinTemp, ACCEL                                                                                                                          Output
+                                                 case1 text-only, case2 + physio
+                                                                                               SmolLM2-1.7B
+                                                                                                                                               Strategy + Reply
+                                                                        training               decoder-only transformer,
+                                                                                                                                               "Strategy: … /
+                                                                                               1.71B params                                    Response: …"
+
+                                                                                                                                               Scored
+                                                             Inference
+                                                                                               Full Fine-Tune                                  six parameters
+                                                                                               100% weights, lr 1e-5, fp16
+                                                 Prompt Builder
+                                                                   serving
+                                                 instruction + message    + summary
+
+                                                 Greedy Decode
+                                                 temperature 0, deterministic
+
+
+
+
+ Why full fine-             At ~1,240 training strings, LoRA on a 7B model updates too few parameters to learn much. A smaller model, fully fine-tuned, moves far more of its
+ tuning, not LoRA           weights on the same data — the reasoning behind dropping Llama 7B for SmolLM2-1.7B.
+Results · Model Lane
+
+
+Four Models, One Clear Winner
+ Model                                                   Parameters                 Eval Loss                     Status
+
+ SmolLM2-1.7B-Instruct                                   1.71B                      1.882                         Selected ✓
+
+ SmolLM3-3B                                              3.08B                      1.936                         —
+
+ Qwen3-1.7B (baseline)                                   1.72B                      2.078                         —
+
+ Llama-3.2-1B-Instruct                                   1.24B                      2.162                         —
+
+
+Same data, same hyperparameters, same format. SmolLM2-1.7B wins on loss and barely overfits, where Qwen3-1.7B of nearly identical size climbs
+steadily — the pretraining family mattered more than parameter count.
+Results · Data Formatting Lane
+
+
+Does Training Order Matter?
+ Arrangement                                 Eval Loss                    Finding
+
+ Interleaved (baseline)                      2.075                        Case 1 and case 2 for a turn sit back to back — lowest loss of the
+                                                                          three
+
+ Randomised                                  2.134                        No positional pattern at all — the cleanest control, but a weaker
+                                                                          physio signal
+
+ Batched                                     2.191                        All case 1s, then all case 2s — highest loss, yet still beats the
+                                                                          majority baseline
+
+
+In practice — a turn's two training strings are Case 1 (message only) and Case 2 (message + physio summary): Interleaved = T1‑C1, T1‑C2, T2‑C1, T2‑C2… ·
+Batched = all C1s, then all C2s · Randomised = T340‑C2, T12‑C1, T88‑C2…
+
+Same model, same method — only the order of the 1,240 training strings changes. Interleaved wins, and the feared "batched learns a shortcut" risk
+checked out unfounded against the generations.
+Results · Live Demo
+
+The Chat Interface
+
+
+
+
+                      Every turn shown here is real: typed into chat.py, answered by the published model, physio summary and all.
+Results · A Real Conversation
+
+Does the New Response Actually Do Better?
+   User
+   "Can we discuss some cybersecurity concepts where ML could help? Keep it short."
+
+
+
+   Original — Text Only                                                                            New — Physio-Aware
+   "Machine learning is useful for phishing detection, intrusion detection, malware detection,     "Sure, keeping it short. ML earns its place in phishing detection, intrusion detection,
+   anomaly detection, fraud detection, and more. Areas involving anomaly detection and AI          malware detection, fraud detection... I notice your body seems a little more revved up than
+   copilots have particularly strong startup potential."                                           the conversation sounds, so feel free to slow this down if it's getting heavy."
+
+
+Empathy 1 · Specificity 5 · StrategyFaith 4 · PhysioGround 1 · Fluency 4 · Safety 5              Empathy 4 ▲ · Specificity 4 · StrategyFaith 4 · PhysioGround 4 ▲ · Fluency 5 · Safety 5
+
+
+Same question, same facts — the physio-aware reply adds one grounded line and empathy jumps 1→4, physio grounding 1→4. This turn is the project's own calibration anchor for the
+empathy rubric.
+Results · Human Evaluation, 155 Turns
+
+What the Final Model Scored
+
+3.34/5                                                      4.95/5                                                    99.4%
+Empathy — human-scored                                      Safety — human-scored                                     Turns where the physio signal changed the reply
+
+
+
+
+0.47                                                        ~0%                                                       0%
+Specificity — content ratio, automatic                      Repetition — 4-gram loops, automatic                      Truncation — replies that cut off mid-sentence
+
+
+
+   Read     Safety scored 3 or below on only 2 of 155 turns — both hallucinated-context failures (the model inventing a detail), not harmful content. Empathy and safety
+   honestly were scored by hand against the rubric; the rest are computed by the harness on every run.
+Results · Evaluation Parameters
+
+Human Evaluation Parameters
+
+Informativeness · 0–3                                                         Understanding · 0–3
+How well the person seeking support articulates their emotional challenges.   Does the reply show it grasped the person's experience and emotions.
+
+
+
+Helpfulness · 0–3                                                             Consistency · 0–3
+How effectively the reply mitigates the person's emotional distress.          Stays in role throughout, without contradicting its own earlier tone.
+
+
+
+Coherence · 0–3
+Topics build on each other instead of jumping abruptly between turns.
+The Website · Screen 1
+
+Selecting a Conversation
+
+
+
+
+                     Every card is generated from the data — nothing is hard-coded, no two conversations look alike.
+The Website · Screen 2
+
+Conversation Meets Physiology
+
+
+
+
+                         Click any turn and its window lights up on all five physiological charts at once.
+Tasks & Timeline · The Road Ahead                                                                                                                Done       Remaining
+
+
+What's Left To Do
+ Remaining
+
+ Test cheaper fine-tuning methods
+ Full fine-tuning is used throughout and remains the strongest result; check if
+ LoRA/QLoRA can match it at a fraction of the trainable parameters.
+
+
+
+
+                                                                                  Remaining
+
+                                                                                  Broaden the automatic metrics
+                                                                                  Add SBERT similarity, Distinct-n, Self-BLEU and ROUGE-L to the harness.
+
+
+
+
+ Remaining
+
+ Collect responses on the human evaluation form
+ Collect responses against the five paper parameters — Informativeness,
+ Understanding, Helpfulness, Consistency, Coherence.
+Individual Contribution · 1 of 4
+
+
+Ashutosh Sharma
+  • Built the SLURM training setup and train.py — fp16 mixed precision,   • Set up the web architecture and repo — project structure, shared
+  completion-only loss masking, FSDP, config-driven experiments.          data contract (types.ts), managed team PRs.
+
+  • Built evaluate.py and ran 16 training runs — selected SmolLM2-1.7B    • Built the build_data.py pipeline — flattened sensor timelines for 54
+  (eval loss 1.882) over Qwen3-1.7B and Llama-3.2-1B.                     conversations across 44 contexts and 900+ turns.
+
+  • Key findings: physio context alters replies in 99% of turns; the      • Handled Vercel deployment and data fixes — fixed 404 routing,
+  lowest-loss rate (2e-5) lost to 1e-5; strategy prediction failed.       flattened trend lines in 30 conversations, handled NaN crashes.
+
+  • Caught 4 critical bugs: 271 corrupt text-encoding turns (27%), HF     • Redesigned the UI for accessibility — turn-card colors into 3 distinct
+  Trainer shuffling, checkpoint deletion, blank strategy tokens.          hue families for greyscale and color-blind legibility.
+
+  • Published the Hugging Face release — ashuwhy/psychobase-              • Expanded the dataset with self-recording — generated and scored
+  smollm2-1.7b — built the chat.py demo, tested 5                         data for 5 participants, recorded 7 personal chat/watch sessions.
+  unseen conversations.
+Individual Contribution · 2 of 4
+
+
+B. Siddaarth
+  • Built the website's screen flow from scratch — context list →        • Hand-scored every new response against the original across six
+  participant list → conversation view.                                  parameters — not just whether it read nicer.
+
+  • Fixed a build_data.py pairing bug that matched participant 1's CSV   • Ran the batched and randomised format experiments on the
+  to the wrong modified JSON.                                            baseline model, completing the comparison.
+
+  • Added loadContextSummary to data.ts — the index lookup every         • Fixed an FSDP out-of-memory bug in train.py on a 16GB node — no
+  participant screen loads through.                                      effect on the final results.
+
+  • Wrote context_names.json from scratch, naming 42 contexts that       • Wore the Embrace Plus watch for 5 days, collecting signals
+  had no name before.                                                    alongside the Google Form stress survey.
+
+  • Generated new responses, strategies and summaries for 4              • Noticed original and modified conversations were rendering as
+  participants, edited into training_string_case2.                       duplicate cards — regrouped them: 54 entries → 44.
+Individual Contribution · 3 of 4
+
+
+Krishna Chaitanya
+  • Engineered responsive, synchronized Recharts visualizations for five   • Developed timestamp conversion and interval-formatting utilities —
+  wearable physiological signals — EDA, pulse rate, skin temperature,      handling missing samples, metric-specific precision, and empty
+  acceleration, and activity count.                                        sensor channels while keeping the data contract consistent.
+
+  • Implemented cross-chart temporal highlighting with Recharts            • Wore the Embrace Plus wearable for three days, collecting
+  ReferenceArea, aligning conversation turns with 1-6 minute               physiological signals alongside Google Form stress surveys for
+  physiological observation windows.                                       multimodal data collection.
+Individual Contribution · 4 of 4
+
+
+Nithish Kumar Mahesepu
+  • Built the conversation page (ConversationView.tsx) of the website —      • Wrote the 1-5 rubric for empathy and safety, with anchor examples
+  a two-column layout, about 38% conversation and 62% graphs.                from the team's hand-scored data.
+
+  • Implemented the app's only shared state, selectedTurn — passed           • Built a resumable scoring tool (score_empathy_safety.py) that
+  the selected turn's interval to all five charts so they highlight the      scores generations.jsonl by hand or with a judge model.
+  same range.
+                                                                             • Validated the rubric against 25 hand-scored responses — 92% exact
+  • Built the turn list (TurnList.tsx) showing each turn's details, with a   agreement on empathy, 100% on safety.
+  clear active state for the selected turn.
+                                                                             • Scored all 155 test turns of the smollm2-1.7b run with an LLM judge
+  • Styled the panels (styles.css) so the conversation and graphs scroll     (Claude) — mean empathy 3.34, mean safety 4.95.
+  independently and stack on narrow screens.
+                                                                             • Fixed the physio_grounding metric in evaluate.py so replies quoting
+  • Fixed three SonarCloud findings — replaced a fake button with a real     raw values no longer score as grounded.
+  <button> and marked props read-only.
+                   Thank You
+
+
+
+
+                Q&A
+PhysioBase — Physiology-Aware Conversational Support
+

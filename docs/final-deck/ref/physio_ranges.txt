@@ -1,0 +1,175 @@
+
+Channel
+Unit
+ typical (worn)
+ impossible outside
+
+EDA
+µS
+0.05–20
+0–100
+
+PR
+bpm
+45–140
+30–220
+
+SkinTemp
+°C
+30–37
+20–42
+
+MET
+MET
+0.9–8
+0.8–18
+
+ACCEL
+g
+−2 to 2 raw, vector magnitude 0.8–1.5
+±16
+
+Activity count
+counts
+0–3000 per 30 s
+0–20000
+
+   ACCEL, MET and count move together by activity class (checked on the end values):
+Class
+Count (per min)
+ACCEL (g)
+MET
+still
+0–20
+0.00–0.02
+0.9–1.6
+
+
+
+
+generic
+20–150
+0.02–0.10
+1.5–3.5
+walking
+60–400
+0.05–0.20
+2.5–5.5
+running
+400–1000
+0.13–0.21
+5.5–8.0
+EDA, PR and SkinTemp follow stress, with typical generated values by severity:
+Severity (score)
+EDA (µS)
+PR (bpm)
+SkinTemp
+mild (0–3)
+0.10–0.30
+60–78
+flat or slightly easing
+moderate (4–5)
+0.28–0.50
+78–92
+easing
+severe (5–6)
+0.45–0.70
+90–110
+falling, up to about 1 °C
+  1. Calm, seated (score 0–1)
+Across the past 6 minutes, EDA, PR and ACCEL all stayed flat at resting levels, so the pattern is steady with no clear change.
+Stress score: 1 (Low stress).
+EDA held steady, from 0.22 to 0.21 uS.
+PR held steady, from 70.0 to 70.0 bpm.
+ACCEL held steady, from 0.00 to 0.00 g.
+SkinTemp held steady, 33.70 -> 33.70 degC | MET: 0.95 -> 0.95.
+Activity class: still | Activity count: 0.0.
+2. Mild worry, seated
+Across the past 6 minutes, EDA and PR rose slightly while ACCEL and MET stayed at rest levels, so this is not explained by movement.
+Stress score: 2 (Mild stress).
+EDA rose, from 0.22 to 0.28 uS.
+PR rose, from 71.0 to 75.0 bpm.
+ACCEL held steady, from 0.00 to 0.01 g.
+SkinTemp held steady, 33.70 -> 33.62 degC | MET: 0.95 -> 0.98.
+Activity class: still | Activity count: 2.0.
+3. Moderate stress, seated
+Across the past 6 minutes, EDA and PR both rose while ACCEL and MET stayed at rest levels, so this reads as emotional rather than physical arousal.
+Stress score: 4 (Moderate stress).
+EDA rose, from 0.28 to 0.40 uS.
+PR rose, from 75.0 to 85.0 bpm.
+ACCEL held steady, from 0.01 to 0.01 g.
+SkinTemp eased, 33.62 -> 33.40 degC | MET: 0.98 -> 1.00.
+Activity class: still | Activity count: 3.0.
+4. Severe stress, seated
+Across the past 2 minutes, EDA and PR climbed sharply while ACCEL and MET stayed at rest levels, so this reads as emotional rather than physical arousal.
+Stress score: 6 (High stress).
+EDA rose, from 0.40 to 0.62 uS.
+PR rose, from 85.0 to 106.0 bpm.
+ACCEL held steady, from 0.01 to 0.01 g.
+SkinTemp eased, 33.40 -> 32.90 degC | MET: 1.00 -> 1.05.
+Activity class: still | Activity count: 4.0.
+5. Calming after a supportive reply, seated
+Across the past 6 minutes, EDA and PR eased while ACCEL and MET stayed at rest, so this reflects settling toward rest.
+Stress score: 2 (Mild stress).
+EDA eased, from 0.62 to 0.35 uS.
+PR eased, from 106.0 to 82.0 bpm.
+ACCEL held steady, from 0.01 to 0.00 g.
+SkinTemp rose, 32.90 -> 33.30 degC | MET: 1.05 -> 0.95.
+Activity class: still | Activity count: 0.0.
+6. Calm, walking
+Across the past 3 minutes, ACCEL and MET rose while EDA, PR and SkinTemp held steady, so this looks activity-related.
+Stress score: 1 (Low stress).
+EDA held steady, from 0.22 to 0.23 uS.
+PR held steady, from 72.0 to 73.0 bpm.
+ACCEL rose, from 0.01 to 0.09 g.
+SkinTemp held steady, 33.60 -> 33.58 degC | MET: 1.00 -> 3.50.
+Activity class: walking | Activity count: 110.0.
+7. Stressed, walking
+Across the past 3 minutes, EDA and PR rose along with mild walking, so the source of the change is unclear.
+Stress score: 4 (Moderate stress).
+EDA rose, from 0.30 to 0.48 uS.
+PR rose, from 78.0 to 88.0 bpm.
+ACCEL rose, from 0.02 to 0.09 g.
+SkinTemp eased, 33.50 -> 33.25 degC | MET: 1.40 -> 3.40.
+Activity class: walking | Activity count: 105.0.
+8. Stressed, brisk walk or pacing
+Across the past 3 minutes, EDA and PR rose while ACCEL and MET were clearly higher, so the source of the change is unclear.
+Stress score: 5 (Moderate stress).
+EDA rose, from 0.40 to 0.58 uS.
+PR rose, from 84.0 to 98.0 bpm.
+ACCEL rose, from 0.03 to 0.14 g.
+SkinTemp eased, 33.40 -> 33.10 degC | MET: 2.00 -> 4.40.
+Activity class: walking | Activity count: 240.0.
+9. Stressed, fidgeting or typing (light movement)
+Across the past 6 minutes, EDA and PR rose with only light hand movement, so this is not explained by movement.
+Stress score: 4 (Moderate stress).
+EDA rose, from 0.30 to 0.45 uS.
+PR rose, from 77.0 to 86.0 bpm.
+ACCEL rose, from 0.00 to 0.03 g.
+SkinTemp eased, 33.55 -> 33.35 degC | MET: 0.95 -> 2.00.
+Activity class: generic | Activity count: 40.0.
+10. Lying in bed at night, ruminating
+Across the past 6 minutes, EDA and PR rose while ACCEL and MET stayed at rest levels, so this reads as emotional rather than physical arousal.
+Stress score: 3 (Mild stress).
+EDA rose, from 0.12 to 0.22 uS.
+PR rose, from 60.0 to 70.0 bpm.
+ACCEL held steady, from 0.00 to 0.00 g.
+SkinTemp eased, 34.10 -> 33.90 degC | MET: 0.92 -> 0.95.
+Activity class: still | Activity count: 0.0.
+11. Settling after walking, calm
+Across the past 6 minutes, ACCEL and MET eased to rest while EDA, PR and SkinTemp held steady, so this reflects settling toward rest.
+Stress score: 1 (Low stress).
+EDA held steady, from 0.22 to 0.21 uS.
+PR held steady, from 73.0 to 72.0 bpm.
+ACCEL eased, from 0.09 to 0.01 g.
+SkinTemp held steady, 33.60 -> 33.62 degC | MET: 3.50 -> 1.00.
+Activity class: still | Activity count: 8.0.
+12. Low-arousal grief, withdrawn and flat
+Across the past 6 minutes, EDA, PR and ACCEL all stayed low and flat, so the pattern is steady with no clear change.
+Stress score: 1 (Low stress).
+EDA held steady, from 0.10 to 0.10 uS.
+PR eased, from 64.0 to 62.0 bpm.
+ACCEL held steady, from 0.00 to 0.00 g.
+SkinTemp held steady, 33.90 -> 33.88 degC | MET: 0.95 -> 0.92.
+Activity class: still | Activity count: 0.0.
+
