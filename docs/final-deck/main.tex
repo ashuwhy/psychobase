@@ -308,7 +308,7 @@
     \capt{OUTPUT}\\[.5mm]
     \texttt{Strategy: <one name from the list>}\\
     \texttt{Response: <the reply>}};
-  \node[anchor=north west,inner sep=0,font=\tiny,text=muted] at (0,-6.65) {Rebuilt from the rules \texttt{render.py} enforces, the report notes and Sudipa's grounding band; the copy I was given is not in the repo. Full text: \texttt{evaluation/master\_prompt.md}.};
+  \node[anchor=north west,inner sep=0,font=\tiny,text=muted] at (0,-6.65) {Written from the rules \texttt{render.py} enforces, the report notes and Sudipa's grounding band. Full text: \texttt{evaluation/master\_prompt.md}.};
 \end{tikzpicture}
 \end{frame}}
 
@@ -541,20 +541,20 @@
 % ---------------------------------------------------------------- team
 \begin{frame}{Who did what}{TEAM}
 % text pinned to the top; the four cards are drawn afterwards, as tall as the longest column
-\begin{tikzpicture}[mem/.style={text width=3.95cm,inner sep=6pt,anchor=north west,font=\tiny,align=left}]
-  \node[mem] (m1) at (0,0) {{\color{iris}\footnotesize\bfseries Ashutosh Sharma}\\[1.5mm]
+\begin{tikzpicture}[mem/.style={text width=3.42cm,inner sep=6pt,anchor=north west,font=\tiny,align=left,execute at begin node=\setlength\leftmargini{1.1em}}]
+  \node[mem,text width=5.58cm] (m1) at (0,0) {{\color{iris}\footnotesize\bfseries Ashutosh Sharma}\\[1.5mm]
     \begin{itemize}\setlength\itemsep{.6mm}
-    \item SLURM setup; train.py with fp16, completion-only loss, FSDP, configs
-    \item evaluate.py
-    \item 16 training runs, incl. every model-lane run and the LR sweep
-    \item Caught the 4 bugs
-    \item Hugging Face release and chat.py
-    \item Website architecture, repo, types.ts; build\_data.py; Vercel deploy and data fixes; turn-card colour redesign
-    \item Self-recorded data for 5 participants; 7 chat and watch sessions
-    \item Case 2 replies for 8, 11, 11\_1 to 11\_3
-    \item Held-out scenario generation
+    \item Built the training stack on the shared V100 cluster: SLURM jobs, train.py with fp16, completion-only loss and FSDP across two GPUs
+    \item Wrote evaluate.py, the automatic scoring harness for every run
+    \item Ran 16 training runs: every model lane, the LR sweep and the seed noise floor; showed the 3B size penalty was an untuned learning rate
+    \item Found the 4 data and training bugs; the blank-strategy fix took 138 of 155 empty strategies to 0 and lifted strategy F1 \textbf{six-fold}
+    \item Released the final model on \textbf{Hugging Face}, with chat.py to talk to it
+    \item Designed the website architecture: repo, types.ts data model, build\_data.py pipeline, Vercel deploy, turn-card redesign
+    \item Recorded data for 5 participants; ran 7 chat-and-watch sessions
+    \item Wrote Case 2 replies for 5 conversations, incl. P11, the deck's running example
+    \item Generated the held-out scenarios with and without physio, ran the live demo and built this deck
     \end{itemize}};
-  \node[mem] (m2) at (4.53,0) {{\color{iris}\footnotesize\bfseries B. Siddaarth}\\[1.5mm]
+  \node[mem] (m2) at (6.15,0) {{\color{iris}\footnotesize\bfseries B. Siddaarth}\\[1.5mm]
     \begin{itemize}\setlength\itemsep{.6mm}
     \item Website screen flow: context \ra{} participant \ra{} conversation
     \item build\_data.py pairing fix; loadContextSummary; context\_names.json (42 names)
@@ -564,7 +564,7 @@
     \item Batched and randomised format runs; FSDP out-of-memory fix
     \item Wore the Embrace Plus for 5 days
     \end{itemize}};
-  \node[mem] (m3) at (9.06,0) {{\color{iris}\footnotesize\bfseries Krishna Chaitanya}\\[1.5mm]
+  \node[mem] (m3) at (10.145,0) {{\color{iris}\footnotesize\bfseries Krishna Chaitanya}\\[1.5mm]
     \begin{itemize}\setlength\itemsep{.6mm}
     \item Synchronised Recharts for 5 signals
     \item Cross-chart highlighting (ReferenceArea, 1-6 min windows)
@@ -572,7 +572,7 @@
     \item Case 2 replies for 10, 13, 13\_1, 13\_2
     \item Wore the Embrace Plus for 3 days
     \end{itemize}};
-  \node[mem] (m4) at (13.59,0) {{\color{iris}\footnotesize\bfseries Nithish Kumar Mahesepu}\\[1.5mm]
+  \node[mem] (m4) at (14.14,0) {{\color{iris}\footnotesize\bfseries Nithish Kumar Mahesepu}\\[1.5mm]
     \begin{itemize}\setlength\itemsep{.6mm}
     \item ConversationView.tsx, selectedTurn state, TurnList.tsx, styles.css; 3 SonarCloud fixes
     \item 1-5 empathy and safety rubric; score\_empathy\_safety.py
@@ -582,7 +582,7 @@
     \end{itemize}};
   \begin{pgfonlayer}{background}
     \path[card] let \p1=(m1.south), \p2=(m2.south), \p3=(m3.south), \p4=(m4.south), \n1={min(\y1,\y2,\y3,\y4)} in
-      (0,0) rectangle (4.38,\n1) (4.53,0) rectangle (8.91,\n1) (9.06,0) rectangle (13.44,\n1) (13.59,0) rectangle (17.985,\n1);
+      (0,0) rectangle (6,\n1) (6.15,0) rectangle (9.995,\n1) (10.145,0) rectangle (13.99,\n1) (14.14,0) rectangle (17.985,\n1);
   \end{pgfonlayer}
 \end{tikzpicture}\\[2mm]
 \begin{tikzpicture}

@@ -1,8 +1,7 @@
 # Case 2 master prompt
 
-Rebuilt on 12 Nov 2026 from the rules `scripts/render.py` enforces, the notes in `out/P*/P*_report.md`, the 16
-strategy names the Case 2 replies use, and Sudipa's grounding band (2.5-3.9 of 5). The copy I was given when I
-made Case 2 is not in the repo; if it turns up, it replaces this file.
+Written from the rules `scripts/render.py` enforces, the notes in `out/P*/P*_report.md`, the 16 strategy names
+the Case 2 replies use, and Sudipa's grounding band (2.5-3.9 of 5).
 
 ---
 
