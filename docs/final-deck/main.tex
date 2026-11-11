@@ -86,136 +86,334 @@
 \end{tikzpicture}
 \end{frame}}
 
-% ---------------------------------------------------------------- objective
-\begin{frame}{Does a wristband's signal summary change how a support model answers?}{BACKGROUND AND OBJECTIVES}
+% ---------------------------------------------------------------- why multimodal
+\begin{frame}{Why a support chatbot should read the body as well as the words}{MOTIVATION}
 \begin{tikzpicture}
-  \node[card,text width=8.4cm,inner sep=8pt,anchor=north west] (q) at (0,0) {%
-    {\color{muted}\scriptsize OBJECTIVE}\\[1mm]
-    {\large\bfseries Fine-tune a small language model to give emotional support from what a person writes plus a summary of their body signals, and test whether the signals change the answer.}};
-  \node[anchor=north west,text width=8.4cm,font=\footnotesize] (why) at ([yshift=-4mm]q.south west) {%
-    \textbf{Why the body?} What a person writes and what their body shows can disagree. An Embrace Plus wristband records EDA, pulse rate, motion and skin temperature; we turn each turn's window into a few lines of text the model reads beside the message.};
-  \foreach \i/\t/\s in {1/Pair support chats with body signals/Stage 2 sessions{,} 54 conversations{,} 900+ turns,2/Fine-tune a model that reads the summary/7 runs{,} 4 base models{,} final SmolLM2-1.7B,3/Test whether the signals change the answer/the same turn with and without the summary,4/Score empathy and safety{,} then publish/155 turns by hand; public on Hugging Face}{
-    \node[num] (n\i) at (10.1,-.35-1.3*\i+1.3) {0\i};
-    \node[anchor=west,text width=6.6cm,align=left] at ($(n\i.east)+(.2,0)$) {\footnotesize\bfseries\t\\[-.3mm]\capt{\s}};
+  \foreach \t/\b [count=\i] in {
+    Widely used/Chatbots already help many people with well-being and stress management.,
+    Text is not enough/Existing systems rely only on text{,} which limits how well they understand a person's true state.,
+    Emotions are multimodal/They show in what we write{,} in speech and in heart rate variability.,
+    The body is evidence/Physiological signals give objective{,} real-time indicators of stress.}{
+    \node[card,anchor=north west,minimum width=4.27cm,minimum height=6.35cm] (w\i) at (4.57*\i-4.57,0) {};
+    \node[anchor=north,inner sep=0] (p\i) at ([yshift=-2.6mm]w\i.north) {\includegraphics[width=3.75cm]{img/why_\i}};
+    \node[anchor=north,text width=3.75cm,inner sep=0,font=\scriptsize,align=left] at ([yshift=-3mm]p\i.south) {{\color{iris}\footnotesize\bfseries\t\par}\vspace{.8mm}\b};
   }
-  \draw[iris,line width=.8pt] (n1) -- (n2) -- (n3) -- (n4);
 \end{tikzpicture}
 \vfill
 \begin{tikzpicture}
-  \fill[ink,rounded corners=3pt] (0,0) rectangle (17.99,1.6);
-  \node[anchor=north west,inner sep=0,text=gold,font=\tiny\bfseries] at (.35,1.34) {SINCE THE MID-TERM};
-  \node[anchor=north west,inner sep=0,text=white] at (.35,1.05) {\fontsize{13}{15}\selectfont\bfseries 52 conversations, 2283 turns};
-  \node[anchor=north west,inner sep=0,text=white,font=\tiny] at (.35,.42) {multi-turn data, train / val / test split by person};
-  \foreach \t/\d [count=\i] in {Multi-turn data/{40 / 4 / 8 conversations, history of the last 4 exchanges},LoRA multi-turn/SmolLM2-1.7B base{,} r~8{,} 1024-token context,User simulator/Claude writes each user turn and its body signals together,Live demo/the simulator and the model{,} with and without the summary}{
-    \draw[iris,line width=.4pt] (7.55+2.62*\i-2.62,.3) -- ++(0,1.04);
-    \node[anchor=north west,inner sep=0,text width=2.3cm,align=flush left] at (7.75+2.62*\i-2.62,1.34) {{\color{gold}\scriptsize\bfseries\t\par}\vspace{.6mm}{\color{white}\tiny\d\par}};
-  }
+  \node[fill=ink,text=white,rounded corners=3pt,text width=17.635cm,inner sep=5pt,font=\scriptsize\bfseries] {So PhysioBase reads a short summary of a wristband's signals beside each message before it replies.};
 \end{tikzpicture}
 \end{frame}
 
-% ---------------------------------------------------------------- pipeline
-\begin{frame}{From a wristband to a scored reply}{METHOD \textperiodcentered\ END-TO-END PIPELINE}
-\begin{tikzpicture}[node distance=5.5mm,step/.append style={text width=3.6cm,minimum height=1.22cm}]
-  \foreach \y/\c/\t in {0/iris/DATA,-1.85/saffron/SUMMARY,-3.7/ink/MODEL,-5.55/muted/CHECK}{
-    \fill[\c!8!bg,rounded corners=4pt] (0,\y+.8) rectangle (17.99,\y-.8);
-    \node[rotate=90,font=\tiny\bfseries,text=\c] at (.27,\y) {\t};
-  }
-  \node[step,anchor=west] (d1) at (.55,0) {\textbf{Embrace Plus wristband}\\EDA, pulse rate, motion, skin temperature};
-  \node[step,right=of d1] (d2) {\textbf{Chat and watch sessions}\\Stage 2: a support chat while wearing it};
-  \node[step,right=of d2] (d3) {\textbf{build\_data.py}\\54 conversations, 44 context cards, 900+ turns};
-  \node[step,right=of d3] (d4) {\textbf{Website}\\every turn beside its signal charts};
-  \node[step,anchor=west] (p1) at (.55,-1.85) {\textbf{Signals per turn}\\EDA, PR, ACCEL, SkinTemp, MET, activity};
-  \node[step,right=of p1] (p2) {\textbf{Stress score 0-6}\\Low, Mild, Moderate, High};
-  \node[step,right=of p2,fill=saffron!12] (p3) {\textbf{7-line summary}\\one sentence, the stress score, then each channel's change};
-  \node[step,right=of p3] (p4) {\textbf{Two cases per turn}\\case 1 Not Available, case 2 the summary};
-  \node[step,anchor=west] (m1) at (.55,-3.7) {\textbf{One prompt format}\\instruction, user text, Physiological Signals line};
-  \node[step,right=of m1] (m2) {\textbf{Completion-only loss}\\on Strategy and Response, nothing else};
-  \node[step,right=of m2,fill=saffron!12] (m3) {\textbf{7 runs, 4 base models}\\SmolLM2, SmolLM3, Qwen3, Llama-3.2; fp16, V100};
-  \node[step,right=of m3,fill=ink,text=white,draw=ink] (m4) {\textbf{Final: SmolLM2-1.7B}\\full fine-tune, lr 1e-5, epoch 2; public};
-  \node[step,anchor=west] (k1) at (.55,-5.55) {\textbf{evaluate.py}\\specificity, strategy F1, physio change, repetition, truncation};
-  \node[step,right=of k1,fill=saffron!12] (k2) {\textbf{Human rubric}\\empathy and safety 1-5, all 155 turns by hand};
-  \node[step,right=of k2] (k3) {\textbf{Signals on and off}\\15 Stage 2 turns as none / mild / severe};
-  \node[step,right=of k3] (k4) {\textbf{Held-out scenarios}\\5 people $\times$ 5 turns, with and without};
-  \foreach \a/\b in {d1/d2,d2/d3,d3/d4,p1/p2,p2/p3,p3/p4,m1/m2,m2/m3,m3/m4,k1/k2,k2/k3,k3/k4}{\draw[flowarrow] (\a) -- (\b);}
-  \draw[flowarrow] (d3.south) -- ++(0,-.26) -| (p1.north);
-  \draw[flowarrow] (p4.south) -- ++(0,-.26) -| (m1.north);
-  \draw[flowarrow] (m4.south) -- ++(0,-.26) -| (k1.north);
-\end{tikzpicture}
-\end{frame}
-
-% ---------------------------------------------------------------- one turn
-\begin{frame}{One turn, twice: without and with the body}{DATA \textperiodcentered\ WHAT THE MODEL SEES}
+% ---------------------------------------------------------------- problem statement
+\begin{frame}{A text-only chatbot answers the words, not the person}{PROBLEM STATEMENT}
 \begin{tikzpicture}
-  \node[anchor=north west,inner sep=0] at (0,0) {\capt{ONE MULTI-TURN RECORD, VALUES LEFT OUT}};
-  \fill[haze,draw=rule,line width=.4pt,rounded corners=3pt] (0,-.42) rectangle (17.98,-2.42);
-  \foreach \x/\y/\k/\m in {
-    .25/-.62/{dialogue\_id, person}/which chat{,} which person,
-    6.2/-.62/{turn\_index, history}/place in the chat; up to 8 earlier messages,
-    12.15/-.62/case/1 = no signals{,} 2 = summary,
-    .25/-1.52/{user\_text, physio}/what the model reads,
-    6.2/-1.52/{strategy, response}/what it learns to write,
-    12.15/-1.52/source/stage2{,} ExTES replay{,} new turn types}{
-    \node[anchor=north west,inner sep=0,text width=5.6cm,font=\scriptsize,align=left] at (\x,\y) {\texttt{\k}\\[.2mm]{\color{muted}\m}};
+  \node[anchor=north west,inner sep=0] (riya) at (0,0) {\includegraphics[width=11.7cm]{img/riya}};
+  \node[anchor=north west,text width=5.9cm,inner sep=0,align=left] at (12.08,-.1) {%
+    \capt{1 A.M., THE NIGHT BEFORE HER FINAL EXAM}\par\vspace{2.5mm}
+    {\large\bfseries Riya says she is “fine”.\\Her body disagrees.\par}\vspace{3mm}
+    {\scriptsize She sends a short, calm message. Her wristband records a different night, and a text-only chatbot only ever sees the message.\par}};
+  \foreach \x/\h in {0/WHAT A TEXT-ONLY CHATBOT SEES,9.19/WHAT HER SMARTWATCH SEES}{
+    \fill[haze,draw=rule,line width=.4pt,rounded corners=3pt] (\x,-4.5) rectangle (\x+8.79,-6.55);
+    \node[anchor=north west,inner sep=0] at (\x+.25,-4.72) {\capt{\h}};
   }
-  \foreach \x/\c/\p [count=\i] in {0/CASE 1: NO SIGNALS/{Physiological Signals: Not Available},9.19/CASE 2: SEVEN-LINE SUMMARY/{Physiological Signals: Across the past 2 minutes, EDA edged up while PR held and ACCEL stayed low with MET near resting, so this reads as emotional rather than physical arousal.\\Stress score: 4 (Moderate stress).\\EDA rose, from 0.38 to 0.41 uS.\\... 4 more lines: PR, ACCEL, SkinTemp | MET, activity}}{
-    \node[anchor=north west,inner sep=0] at (\x,-2.8) {\capt{\c}};
-    \node[anchor=north west,text width=8.43cm,inner sep=5pt,font=\fontsize{6.5}{8}\selectfont\ttfamily,align=left] (case\i) at (\x,-3.22) {%
-      \#\#\# Instruction: You are an empathetic emotional support assistant. Analyze the user's message together with their physiological signal summary ... to select an appropriate support strategy and respond accordingly.\\[1.5mm]
-      \#\#\# Input:\\
-      Text: I am having a hard time in my new job.\\
-      \phline{\p}\\[1.5mm]
-      \#\#\# Response:\\
-      Strategy: ...\\
-      Response: ...};
+  \node[anchor=north east,fill=iris,text=white,rounded corners=4pt,font=\scriptsize,inner sep=4pt] at (8.54,-5.05) {Riya: I'm fine, just tired.};
+  \node[anchor=north west,fill=white,draw=rule,rounded corners=4pt,font=\scriptsize,inner sep=4pt] at (.25,-5.75) {Chatbot: Glad to hear it! Get some rest.};
+  \node[anchor=north west,inner sep=0,font=\footnotesize] at (9.44,-5.15) {{\color{saffron}\bfseries$\uparrow$}\enspace Heart rate climbing};
+  \node[anchor=north west,inner sep=0,font=\footnotesize] at (9.44,-5.75) {{\color{saffron}\bfseries$\downarrow$}\enspace Heart rate variability dropping};
+  \node[anchor=north west,text width=3.6cm,inner sep=0,font=\scriptsize,text=muted] at (14.13,-5.15) {Both point to stress that the message never mentions.};
+\end{tikzpicture}
+\vfill
+\begin{tikzpicture}
+  \node[fill=ink,text=white,rounded corners=3pt,text width=17.635cm,inner sep=5pt,font=\scriptsize] {{\color{gold}\tiny\bfseries REQUIREMENT}\\[.5mm]\textbf{A multimodal chatbot that fuses what a person writes with their physiological signals.}};
+\end{tikzpicture}
+\end{frame}
+
+% ---------------------------------------------------------------- participants
+\begin{frame}{22 participants, each with a wristband for a week}{PARTICIPANTS}
+\begin{tikzpicture}
+  \foreach \x/\y/\v/\t in {0/0/22/participants,3.1/0/{13 / 9}/{women / men},0/-1.55/21-67/years old{,} median 27,3.1/-1.55/7 days/each wore the Embrace Plus{,} one support chat a day}{
+    \node[anchor=north west,inner sep=0] (v) at (\x,\y) {\bignum{\v}};
+    \node[anchor=north west,inner sep=0,text width=2.8cm,font=\scriptsize] at ([yshift=-1mm]v.south west) {\t};
   }
-  % both prompt boxes as tall as the longer one
+  \node[anchor=north west,inner sep=0] at (0,-3.4) {\capt{AGE}};
+  \foreach \b/\n [count=\i] in {21-25/8,26-30/6,31-50/3,51-70/5}{
+    \node[anchor=east,font=\scriptsize,inner sep=0] at (1.05,-3.62-.42*\i) {\b};
+    \fill[iris] (1.2,-3.74-.42*\i) rectangle (1.2+.5*\n,-3.5-.42*\i);
+    \node[anchor=west,font=\tiny,text=muted,inner sep=0] at (1.27+.5*\n,-3.62-.42*\i) {\n};
+  }
+  \node[anchor=north west,inner sep=0,text width=6cm,font=\scriptsize,align=left] at (0,-5.75) {\capt{OCCUPATION}\\[.8mm]PhD 4, BTech 3, MS 3, business 3, school teacher 2, housewife 2; BSc, MTech, nurse, home tutor and banker 1 each};
+  \foreach \x/\rows in {
+    6.9/{0 & 25 & M & MS\\ 1 & 27 & F & Nurse\\ 2 & 27 & F & PhD\\ 3 & 31 & F & Home tutor\\ 4 & 27 & F & PhD\\ 5 & 25 & F & PhD\\ 6 & 46 & F & School teacher\\ 7 & 21 & M & BTech\\ 8 & 21 & F & BSc\\ 9 & 22 & M & MS\\ 10 & 28 & F & School teacher\\},
+    12.6/{11 & 62 & F & Housewife\\ 12 & 21 & M & BTech\\ 13 & 22 & F & MTech\\ 14 & 27 & M & Banker\\ 15 & 21 & M & BTech\\ 16 & 33 & F & PhD\\ 17 & 26 & F & MS\\ 18 & 67 & M & Businessman\\ 19 & 65 & M & Businessman\\ 20 & 52 & M & Businessman\\ 21 & 57 & F & Housewife\\}}{
+    \node[anchor=north west,inner sep=0,font=\scriptsize] at (\x,0) {\renewcommand{\arraystretch}{1.18}%
+      \begin{tabular}{@{}r@{\hspace{4mm}}r@{\hspace{4mm}}c@{\hspace{4mm}}l@{}}
+      \toprule
+      {\color{muted}\#} & {\color{muted}Age} & {\color{muted}Gender} & {\color{muted}Profession}\\
+      \midrule
+      \rows
+      \bottomrule
+      \end{tabular}};
+  }
+\end{tikzpicture}
+\end{frame}
+
+% ---------------------------------------------------------------- channels and ranges
+{\newsince
+\begin{frame}{Four of six channels differ from the human range on the wrist}{DATA \textperiodcentered\ CHANNELS AND RANGES}
+\begin{tikzpicture}
+  \node[anchor=north west,inner sep=0] at (0,0) {\capt{THE SIX CHANNELS}};
+  \node[anchor=north west,inner sep=0] at (5,0) {\capt{HUMAN RANGE VS EMBRACEPLUS}};
+  \node[anchor=north west,inner sep=0] at (11.65,0) {\capt{WHAT EMBRACEPLUS SHOWED, AND WHY}};
+  \fill[haze,draw=rule,line width=.3pt] (5,-.56) rectangle ++(.3,.2);
+  \node[anchor=west,inner sep=0,font=\tiny] at (5.38,-.46) {human, worn};
+  \fill[saffron] (6.75,-.5) rectangle ++(.4,.08);
+  \node[anchor=west,inner sep=0,font=\tiny] at (7.23,-.46) {1st-99th percentile};
+  \draw[saffron,line width=.5pt] (8.95,-.46) -- ++(.4,0) (8.95,-.53) -- ++(0,.14) (9.35,-.53) -- ++(0,.14);
+  \node[anchor=west,inner sep=0,font=\tiny] at (9.43,-.46) {min-max};
+  \filldraw[fill=white,draw=saffron,line width=.5pt] (10.55,-.46) circle (.6mm);
+  \node[anchor=west,inner sep=0,font=\tiny] at (10.68,-.46) {median};
+  \begin{scope}[shift={(5,-1.2)}]\input{charts/channel_ranges}\end{scope}
+  \foreach \n/\m/\c/\r [count=\i] in {
+    {EDA, $\mu$S}/{sweat on the skin; rises with arousal}/saffron/{\textbf{387 readings (17\%) under 0.05, 134 of them zero.} Person medians run from 0.02 to 4.9, about 250x. Likely: resting EDA is personal, and zeros are dry skin or poor contact.},
+    {Pulse rate, bpm}/{from the watch's optical sensor (PPG)}/saffron/{\textbf{Median 92 while seated; 40 readings above 140.} Likely: wrist PPG reads high when the hands move, as in typing.},
+    {Skin temperature, $^\circ$C}/{measured at the wrist}/saffron/{\textbf{85 readings under 30; two people have a median under 30.} Likely: the wrist is peripheral, and cool rooms chill it.},
+    {ACCEL, g}/{how much the wrist moves}/saffron/{\textbf{0 to 0.29, nowhere near 0.8-1.5.} Likely: EmbracePlus reports movement intensity with gravity removed, not the raw axes or vector magnitude the doc means.},
+    {MET}/{energy use; 1 is sitting at rest}/iris/{\textbf{Mostly inside; 17 readings under 0.9.} The minimum, $-$0.23, cannot happen; likely a device artefact.},
+    {Activity count}/{movement counts from the accelerometer}/iris/{\textbf{Inside:} median 43, maximum 744, against 0-3000 per 30 s.}}{
+    \node[anchor=base west,inner sep=0,font=\scriptsize\bfseries,text=\c] at (0,-.3-.86*\i) {\n};
+    \node[anchor=north west,text width=4.6cm,inner sep=0,font=\tiny,align=left] at (0,-.42-.86*\i) {\m};
+    \node[anchor=west,text width=6.33cm,inner sep=0,align=left,font=\tiny] at (11.65,-.34-.86*\i) {\r};
+  }
+  \node[anchor=north west,inner sep=0,font=\tiny,text=muted] at (0,-6.05) {2,334 one-minute readings in 991 turns from 54 conversations (the website's data). Human ranges from the ranges doc; the ACCEL band is its vector magnitude.};
+\end{tikzpicture}
+\vfill
+\begin{tikzpicture}
+  \node[fill=ink,text=white,rounded corners=3pt,text width=17.635cm,inner sep=5pt,font=\scriptsize] {Outside the human range is not the same as wrong: the wrist, the device's own units and the person all shift a reading. The doc's severity bands, EDA 0.10 to 0.70 $\mu$S, sit below most participants' resting level.};
+\end{tikzpicture}
+\end{frame}}
+
+% ---------------------------------------------------------------- channels across contexts
+{\newsince
+\begin{frame}{Stress lifts EDA and pulse; walking lifts movement and MET}{DATA \textperiodcentered\ CHANNELS ACROSS CONTEXTS}
+\begin{tikzpicture}
+  \node[anchor=north west,inner sep=0] at (0,0) {\capt{12 SUMMARIES FROM THE RANGES DOC, START TO END OF EACH WINDOW}};
+  \draw[saffron,line width=.9pt,-{Stealth[length=1.3mm]}] (13.2,-.22) -- ++(.45,.12);
+  \node[anchor=west,inner sep=0,font=\tiny] at (13.72,-.16) {rose};
+  \draw[iris,line width=.9pt,-{Stealth[length=1.3mm]}] (14.4,-.1) -- ++(.45,-.12);
+  \node[anchor=west,inner sep=0,font=\tiny] at (14.92,-.16) {eased};
+  \draw[rule,line width=.9pt] (15.7,-.16) -- ++(.45,0); \fill[muted] (16.15,-.16) circle (.45mm);
+  \node[anchor=west,inner sep=0,font=\tiny] at (16.27,-.16) {held steady};
+  \begin{scope}[shift={(0,-1.05)}]\input{charts/contexts}\end{scope}
+\end{tikzpicture}
+\vfill
+\begin{tikzpicture}
+  \node[fill=ink,text=white,rounded corners=3pt,text width=17.635cm,inner sep=5pt,font=\scriptsize] {Skin temperature eases as stress climbs (3, 4, 7 to 10) and comes back as it settles (5). Movement alone (6, 11) leaves EDA and pulse flat, which is how a summary tells physical from emotional arousal.};
+\end{tikzpicture}
+\end{frame}}
+
+% ---------------------------------------------------------------- case 1 and case 2
+{\newsince
+\begin{frame}{Case 2: the same turns, replies rewritten with the body in view}{DATA \textperiodcentered\ CASE 1 AND CASE 2}
+\begin{tikzpicture}
+  \foreach \y/\h/\p/\s/\n in {
+    0/{CASE 1 \textperiodcentered\ IN-HOUSE DATA, AS RECORDED}/{Not Available}/{the original strategy and reply}/{The supporter in the session wrote the reply without seeing any signals.},
+    -2.75/{CASE 2 \textperiodcentered\ CREATED SEPARATELY}/{a 3-4 line summary of the wristband window}/{new, written under the master prompt}/{Same message as Case 1, so the only new input is what the body adds.}}{
+    \fill[haze,draw=rule,line width=.4pt,rounded corners=3pt] (0,\y) rectangle (8.6,\y-2.45);
+    \node[anchor=north west,inner sep=0] at (.25,\y-.22) {\capt{\h}};
+    \node[anchor=north west,text width=8.1cm,inner sep=0,font=\fontsize{6.5}{8.5}\selectfont\ttfamily,align=left] at (.25,\y-.65) {Text: the user's message\\\phline{Physiological Signals: \p}\\Strategy, Response: \s};
+    \node[anchor=north west,text width=8.1cm,inner sep=0,font=\scriptsize] at (.25,\y-1.72) {\n};
+  }
+  \node[anchor=north west,inner sep=0] at (9.1,0) {\capt{HOW WE MAKE CASE 2, ONE PARTICIPANT AT A TIME}};
+  \foreach \t/\d [count=\i] in {
+    extract.py/participant JSON to per-turn CSVs: text{,} original reply{,} the wristband window,
+    Shorten the summary/3-4 lines that open \texttt{Physiological Signals:}{,} worded differently each turn,
+    Rewrite the reply/a new strategy and reply under the master prompt; no values{,} units or channel names{,} the user never sees the summary,
+    Score both/original and new{,} 1-5 on six parameters{,} turn by turn,
+    step5\_replace.py/writes the checked summary{,} strategy and reply into \texttt{training\_string\_case2}}{
+    \node[num] (s\i) at (9.35,-.75-1.08*\i+1.08) {\i};
+    \node[anchor=north west,text width=8.05cm,align=left,inner sep=0,font=\scriptsize] at ($(s\i.north east)+(.25,.02)$) {{\bfseries\t}\\[-.3mm]{\color{muted}\d}};
+  }
+  \begin{pgfonlayer}{background}\draw[iris,line width=.8pt] (s1) -- (s5);\end{pgfonlayer}
+\end{tikzpicture}
+\vfill
+\begin{tikzpicture}
+  \node[fill=ink,text=white,rounded corners=3pt,text width=17.635cm,inner sep=5pt,font=\scriptsize] {{\color{gold}\tiny\bfseries WHY IT MATTERS}\\[.5mm]All 157 original replies score 1 of 5 on physiological grounding, because nobody who wrote them saw the signals. Trained on those alone, the model learns that the summary can be ignored. Case 2 gives it replies the body has shaped, and Case 1 keeps it working when there is no wristband.};
+\end{tikzpicture}
+\end{frame}}
+
+% ---------------------------------------------------------------- case 2 example
+{\newsince
+\begin{frame}{P11, turn 1: the new reply notices the body, never the numbers}{CASE 2 \textperiodcentered\ EXAMPLE}
+\begin{tikzpicture}[reply/.style={anchor=north west,text width=8.43cm,inner sep=5pt,font=\scriptsize,align=left}]
+  \node[anchor=base west,inner sep=0] (ul) at (0,-.3) {\capt{USER TEXT}};
+  \node[anchor=base west,inner sep=0,font=\small\bfseries] at ([xshift=3mm]ul.base east) {“Actually, I am stuck in a situation.”};
+  \node[anchor=north west,inner sep=0] at (0,-.72) {\capt{CASE 1 \textperiodcentered\ ORIGINAL}};
+  \node[anchor=north west,inner sep=0] at (9.19,-.72) {\capt{CASE 2 \textperiodcentered\ NEW}};
+  \node[reply] (o) at (0,-1.12) {%
+    {\fontsize{6}{7.5}\selectfont\ttfamily Physiological Signals: Not Available\par}\vspace{2mm}
+    \textbf{Strategy:} Emotional Validation\par\vspace{1mm}
+    I'm sorry you're feeling this way. It sounds like you're carrying something that's making it hard to see a way forward right now. Feeling stuck often comes from facing uncertainty or too many emotions at once. If you'd like, tell me what's been happening, and we'll work through it together one step at a time.};
+  \node[reply] (n) at (9.19,-1.12) {%
+    {\fontsize{6}{7.5}\selectfont\ttfamily Physiological Signals: Conductance more than doubles inside the opening minute while pulse drops steeply and both temperature and motion stay put, the class holding generic with counts easing 106.0 to 99.0 - movement does not account for it.\\
+    EDA: 0.77 -> 2.09 uS, increasing, first minute.\\
+    PR: 123.0 -> 94.0 bpm, decreasing, first minute. ACCEL: 0.032 -> 0.031 g, flat, first minute.\\
+    Stress score: 2 (Mild stress).\par}\vspace{2mm}
+    \textbf{Strategy:} Emotional Validation\par\vspace{1mm}
+    I'm really glad you said that out loud, even if you don't have the words for it yet. Feeling stuck usually means you've been carrying something heavy on your own for a while, and that takes a toll. {\color{saffron}\bfseries I'm also picking up on signs that your body hasn't fully settled either, which fits what you're describing.} Take your time and tell me what's been going on.};
+  % both boxes as tall as the longer one
   \begin{pgfonlayer}{background}
-    \path[fill=white,draw=rule,line width=.4pt,rounded corners=3pt] let \p1=(case1.south), \p2=(case2.south), \n1={min(\y1,\y2)} in
-      (0,-3.22) rectangle (8.79,\n1) (9.19,-3.22) rectangle (17.98,\n1);
+    \path[fill=white,draw=rule,line width=.4pt,rounded corners=3pt] let \p1=(o.south), \p2=(n.south), \n1={min(\y1,\y2)} in
+      (0,-1.12) rectangle (8.79,\n1) (9.19,-1.12) rectangle (17.98,\n1);
   \end{pgfonlayer}
-  \path let \p1=(case1.south), \p2=(case2.south), \n1={min(\y1,\y2)} in
-    node[anchor=north west,inner sep=0,font=\scriptsize] at (0,\n1-3mm) {Splits are by \texttt{person}, so test people are never seen in training. Loss is on \texttt{Strategy} and \texttt{Response} only.};
 \end{tikzpicture}
-\end{frame}
-
-% ---------------------------------------------------------------- model selection
-\begin{frame}{The lowest validation loss was not the best model}{MODEL SELECTION}
+\vfill
 \begin{tikzpicture}
-  \node[anchor=north west,inner sep=0] at (0,0) {\capt{SEVEN RUNS, FOUR BASE MODELS}};
-  \begin{scope}[shift={(4.4,-.8)}]\input{charts/val_loss}\end{scope}
-  \node[anchor=north west,inner sep=0] at (11.4,0) {\capt{SMOLLM2-1.7B LEARNING RATE}};
-  \begin{scope}[shift={(12.5,-2.9)}]\input{charts/lr_sweep}\end{scope}
-  \node[anchor=north west,text width=6.5cm,font=\scriptsize,inner sep=0] at (11.4,-3.7) {%
-    lr 2e-5 has the lowest loss and lost on every scored column: specificity 0.432 vs 0.469, strategy F1 0.129 vs 0.157, physio change 0.929 vs 0.994, repetition 0.0036 vs 0.0005, truncation 0.0065 vs 0.\\[1mm]
-    {\color{muted}\tiny The sweep's 2e-5 point (1.876) and the 1.875 run on the left are separate runs.}};
+  \fill[ink,rounded corners=3pt] (0,0) rectangle (17.99,1.05);
+  \node[anchor=west,inner sep=0,text=gold,font=\tiny\bfseries,align=left] at (.35,.525) {SCORES 1-5\\ORIGINAL \ra{} NEW};
+  \foreach \p/\a/\b [count=\i] in {Empathy/4/5,Specificity/3/4,Strategy faithfulness/5/5,Physiological grounding/1/5,Safety/5/5}{
+    \node[anchor=west,inner sep=0,text=white,align=left] at (2.75+3.05*\i-3.05,.525) {{\tiny\p}\\[-.2mm]{\footnotesize\bfseries\a\ \ra\ {\color{gold}\b}}};
+  }
+\end{tikzpicture}
+\end{frame}}
+
+% ---------------------------------------------------------------- master prompt
+{\newsince
+\begin{frame}{The master prompt: notice the body lightly, never quote it}{CASE 2 \textperiodcentered\ MASTER PROMPT}
+\begin{tikzpicture}[col/.style={anchor=north west,inner sep=5pt,font=\tiny,align=left}]
+  \foreach \x/\w in {0/6.35,6.6/5.25,12.1/5.535}{\fill[haze,draw=rule,line width=.3pt,rounded corners=2pt] (\x,0) rectangle ++(\w,-6.45);}
+  \node[col,text width=6cm] at (0,0) {You are rewriting one turn of an emotional support conversation. The person wore a wristband while they chatted. You see a short summary of its signals; they never see it.\\[1.6mm]
+    \capt{INPUT}\\[.5mm]
+    \textbullet\ The conversation so far and the user's message for this turn.\\
+    \textbullet\ \texttt{Physiological Signals:} a 3-4 line summary of the last few minutes (EDA, pulse, skin temperature, movement, activity count, stress score).\\
+    \textbullet\ The original strategy and reply, written by someone who did not see the signals.\\[1.6mm]
+    \capt{TASK}\\[.5mm]
+    Pick one strategy from the list and write a new reply in that strategy. Keep what worked in the original; change it only where the signals or the conversation give you a reason.\\[1.2mm]
+    Strategies: Reflective Statements, Clarification, Emotional Validation, Empathetic Statements, Affirmation, Offer Hope, Avoid Judgment and Criticism, Suggest Options, Collaborative Planning, Provide Different Perspectives, Reframe Negative Thoughts, Share Information, Normalize Experiences, Promote Self-Care Practices, Stress Management, Others.};
+  \node[col,text width=4.9cm] at (6.6,0) {\capt{READING THE SIGNALS}\\[.5mm]
+    \textbf{1.} Signals agree with the words (arousal that movement does not explain, and a distressed message): let the reply notice the body once, gently.\\[.8mm]
+    \textbf{2.} Signals and words disagree (calm words, rising arousal): do not contradict the person. Leave room: ``you said you're fine, and you might also be carrying more than that.''\\[.8mm]
+    \textbf{3.} Arousal comes with movement (walking, typing, a high activity count): read it as physical, not emotional, and leave it out.\\[.8mm]
+    \textbf{4.} Signals are flat or unremarkable: leave the body out. Never force a mention.\\[.8mm]
+    \textbf{5.} The person is recalling the past: you may say whether they seem to stay level or tense as they revisit it.\\[1.6mm]
+    \capt{AIM}\\[.5mm]
+    Across a conversation the body should show in some replies, not all. Too many references sound unnatural and can make the person more anxious. Scored 1-5 for physiological grounding, each conversation should average 2.5 to 3.9.};
+  \node[col,text width=5.185cm] at (12.1,0) {\capt{RULES}\\[.5mm]
+    \textbullet\ Never quote a number, a unit or a channel name: no ``your heart rate'', no ``EDA'', no ``92 bpm''. Say ``your body seems to be holding some tension'' or ``you seem a little more settled now''.\\[.6mm]
+    \textbullet\ At most one body reference per reply, offered as a tentative observation, never a diagnosis.\\[.6mm]
+    \textbullet\ The user's words win. When they and the signals disagree, follow the words and keep the body as a soft aside.\\[.6mm]
+    \textbullet\ Never alarm: no ``your stress is high'', no medical claims.\\[.6mm]
+    \textbullet\ If the message suggests self-harm or danger, safety comes first: acknowledge it, encourage them to reach a trusted person or a helpline, and skip the body reference.\\[.6mm]
+    \textbullet\ About as long as the original, 2-5 sentences of plain spoken English, at most one question.\\[1.6mm]
+    \capt{OUTPUT}\\[.5mm]
+    \texttt{Strategy: <one name from the list>}\\
+    \texttt{Response: <the reply>}};
+  \node[anchor=north west,inner sep=0,font=\tiny,text=muted] at (0,-6.65) {Rebuilt from the rules \texttt{render.py} enforces, the report notes and Sudipa's grounding band; the copy I was given is not in the repo. Full text: \texttt{evaluation/master\_prompt.md}.};
+\end{tikzpicture}
+\end{frame}}
+
+% ---------------------------------------------------------------- selection parameters
+{\newsince
+\begin{frame}{Every mean rises with Case 2; grounding rises most, 1.00 to 2.62}{CASE 2 \textperiodcentered\ FIVE SELECTION PARAMETERS}
+\begin{tikzpicture}
+  \node[anchor=north west,inner sep=0] at (0,0) {\capt{MEAN SCORE 1-5, 157 TURNS IN 10 REPORTS}};
+  \fill[rule] (4.2,-.5) rectangle ++(.25,.16);
+  \node[anchor=west,inner sep=0,font=\tiny] at (4.5,-.42) {original reply};
+  \fill[iris] (6.3,-.5) rectangle ++(.25,.16);
+  \node[anchor=west,inner sep=0,font=\tiny] at (6.6,-.42) {Case 2 reply};
+  \foreach \x in {1,...,5}{
+    \draw[rule,line width=.3pt] (4.2+1.3*\x,-.8) -- (4.2+1.3*\x,-5.65);
+    \node[anchor=north,inner sep=0,font=\tiny,text=muted] at (4.2+1.3*\x,-5.72) {\x};
+  }
+  \draw[muted,line width=.4pt] (4.2,-.8) -- (4.2,-5.65);
+  \foreach \p/\d/\a/\b/\c [count=\i] in {
+    Empathy/validates what the person feels/3.73/4.37/iris,
+    Specificity/fits this person's words/3.85/4.27/iris,
+    Strategy faithfulness/does what the named strategy says/4.22/4.99/iris,
+    Physiological grounding/reflects the summary{,} no numbers/1.00/2.62/saffron,
+    Safety/nothing harmful{,} nothing invented/4.99/5.00/iris}{
+    \node[anchor=north west,text width=3.9cm,inner sep=0,align=left] at (0,-.95*\i-.05) {{\scriptsize\bfseries\p}\\[-.3mm]{\tiny\color{muted}\d}};
+    \fill[rule] (4.2,-.95*\i-.1) rectangle (4.2+1.3*\a,-.95*\i-.36);
+    \fill[\c] (4.2,-.95*\i-.4) rectangle (4.2+1.3*\b,-.95*\i-.66);
+    \node[anchor=west,inner sep=0,font=\tiny,text=muted] at (4.27+1.3*\a,-.95*\i-.23) {\a};
+    \node[anchor=west,inner sep=0,font=\tiny\bfseries] at (4.27+1.3*\b,-.95*\i-.53) {\b};
+  }
+  \node[anchor=north west,inner sep=0,text width=6.3cm,font=\scriptsize,align=left] at (11.68,0) {%
+    \capt{WHERE THE GROUNDING COMES FROM}\\[1.5mm]
+    Mean grounding of the new replies, per report:\\[1mm]
+    \begin{tabular}{@{}l@{\hspace{3mm}}l@{}}
+    P11, P11\_1 to P11\_3 & \textbf{4.06 to 4.70}\\
+    P8, P14, P17, P17\_1, P17\_2, P20 & \textbf{1.43 to 2.17}\\
+    \end{tabular}\\[2mm]
+    80 of 157 new replies score below 3. The P11 notes say the master prompt keeps the body subtle and allows no mention when the signals are unremarkable.\\[2mm]
+    \capt{HOW A REPLY WAS KEPT}\\[1mm]
+    Grounding was held to \textbf{2.5 to 3.9 of 5}: too many references to the body sound unnatural and can raise the user's anxiety. The overall mean, 2.62, is inside that band; no single report is.\\[2mm]
+    {\color{muted}Fluency was scored too (4.98 to 5.00) and is not one of the five.}};
+\end{tikzpicture}
+\end{frame}}
+
+% ---------------------------------------------------------------- fine-tuning
+{\newsince
+\begin{frame}{Trained on both cases; the lowest loss was not the best model}{FINE-TUNING}
+\begin{tikzpicture}
+  \node[anchor=north west,inner sep=0] at (0,0) {\capt{TRAINING DATA, 1,833 TURNS}};
+  \fill[iris] (0,-.55) rectangle (2.374,-.95);
+  \fill[saffron] (2.374,-.55) rectangle (4.728,-.95);
+  \fill[iris!45] (4.728,-.55) rectangle (5.762,-.95);
+  \fill[muted] (5.762,-.55) rectangle (6.401,-.95);
+  \foreach \x/\t in {1.187/{Case 1\\680},3.551/{Case 2\\674},5.245/{fix-up\\296},6.082/{ExTES\\183}}{
+    \node[anchor=north,inner sep=0,font=\tiny,align=center] at (\x,-1.03) {\t};
+  }
+  \node[anchor=north west,text width=6.4cm,inner sep=0,font=\scriptsize,align=left] at (0,-1.75) {%
+    \textbf{Case 1 and Case 2:} the in-house conversations, as recorded and with the body in view.\\[1mm]
+    \textbf{Fix-up:} 296 hand-written turns, 148 per case: referral, direct answers, disengaging users, repair after a miss, no repetition.\\[1mm]
+    \textbf{ExTES:} 183 turns from the ExTES support dataset.\\[1mm]
+    \textbf{Order:} interleaved, Case 1, Case 2, Case 1, and so on.\\[1mm]
+    \textbf{Validation and test:} in-house only, 94 + 94 and 131 + 131 turns (Case 1 + Case 2).};
+  \node[anchor=north west,inner sep=0] at (7.3,0) {\capt{SEVEN RUNS, FOUR BASE MODELS}};
+  \begin{scope}[shift={(11.55,-.75)}]\input{charts/val_loss}\end{scope}
+  \node[anchor=north west,text width=10.6cm,font=\scriptsize,inner sep=0] at (7.3,-4.35) {%
+    lr 2e-5 has the lowest loss and lost on every scored column: specificity 0.432 vs 0.469, strategy F1 0.129 vs 0.157, physio change 0.929 vs 0.994, repetition 0.0036 vs 0.0005, truncation 0.0065 vs 0.};
 \end{tikzpicture}
 \vfill
 \begin{tikzpicture}
   \fill[ink,rounded corners=3pt] (0,0) rectangle (17.99,1.2);
-  \node[anchor=north west,inner sep=0,text=gold,font=\tiny\bfseries] at (.35,.98) {FINAL MODEL};
+  \node[anchor=north west,inner sep=0,text=gold,font=\tiny\bfseries] (fm) at (.35,.98) {FINAL MODEL};
   \node[anchor=north west,inner sep=0,text=white,font=\footnotesize\bfseries] at (.35,.7) {SmolLM2-1.7B-Instruct, full fine-tune, interleaved data, lr 1e-5, epoch 2 of 3 (234 steps), one V100, fp16};
-  \node[anchor=north east,inner sep=0,text=gold,font=\scriptsize] at (17.64,.98) {huggingface.co/ashuwhy/psychobase-smollm2-1.7b};
+  \node[anchor=base east,inner sep=0,text=gold,font=\scriptsize] at (17.64,0 |- fm.base) {huggingface.co/ashuwhy/psychobase-smollm2-1.7b};
 \end{tikzpicture}
-\end{frame}
+\end{frame}}
 
-% ---------------------------------------------------------------- bugs and F1
-\begin{frame}{Four bugs we caught, and a strategy F1 below the majority guess}{TRAINING \textperiodcentered\ WHAT WENT WRONG}
-\begin{tikzpicture}[bug/.style={card,anchor=north west,text width=3.85cm,inner sep=6pt,font=\scriptsize,minimum height=2.9cm}]
-  \foreach \x/\y/\t/\b [count=\i] in {
-    0/0/Broken characters/271 of 993 turns (27\%) carried mojibake from a bad text encoding.,
-    4.35/0/Trainer shuffling/The Trainer shuffles rows by default{,} so the interleaved{,} batched and randomised orderings would all have trained the same.,
-    0/-3.15/Best checkpoint deleted/The best checkpoint was deleted during the run. The released model is the epoch 2 checkpoint of 3.,
-    4.35/-3.15/67 blank strategies/The model learned to skip the strategy: none on 138 of 155 answers. After the fix{,} 0 of 155{,} and strategy F1 rose six-fold.}{
-    \node[bug] (b\i) at (\x,\y) {};
-    \node[num,anchor=north west] at ([shift={(.15,-.15)}]b\i.north west) {\i};
-    \node[anchor=north west,text width=3.85cm,font=\scriptsize,inner sep=0] at ([shift={(.21,-.75)}]b\i.north west) {\textbf{\t}\\[.5mm]\b};
+% ---------------------------------------------------------------- website
+{\newsince
+\begin{frame}{P11's summary follows the chat: stress goes 2 to 5 at turn 7}{WEBSITE \textperiodcentered\ SUMMARIES ACROSS TURNS}
+\begin{tikzpicture}
+  \fill[haze] (6.73,.1) rectangle (9.85,-2.62);
+  \node[anchor=north,inner sep=0,font=\tiny\bfseries,text=saffron] at (8.29,.06) {turns 6-8, below};
+  \node[anchor=north west,inner sep=0] at (0,0) {\capt{P11, 16 TURNS}};
+  \foreach \l/\y in {{end EDA, $\mu$S}/-1.15,stress score/-1.95,activity count/-2.3,turn/-2.62}{
+    \node[anchor=west,inner sep=0,font=\tiny,text=muted] at (0,\y) {\l};
   }
-  \node[anchor=north west,inner sep=0] at (9.2,0) {\capt{STRATEGY F1 ON 155 TURNS}};
-  \begin{scope}[shift={(13.15,-.8)}]\input{charts/strategy_f1}\end{scope}
-  \node[anchor=north west,text width=8.6cm,font=\scriptsize,inner sep=0] at (9.2,-4.75) {%
-    Only Qwen3 batched (0.181) beats answering Emotional Validation every time (0.161). The final model scores 0.157.};
-\end{tikzpicture}
-\end{frame}
+  \draw[iris,line width=.8pt] plot coordinates {(2.05,-1.587) (3.09,-1.618) (4.13,-1.510) (5.17,-1.309) (6.21,-1.208) (7.25,-1.104) (8.29,-1.074) (9.33,-0.940) (10.37,-0.798) (11.41,-0.788) (12.45,-0.731) (13.49,-0.881) (14.53,-1.130) (15.57,-1.156) (16.61,-1.226) (17.65,-1.282)};
+  \foreach \v/\s/\n [count=\t] in {2.09/2/99,1.74/2/114,2.94/4/79,5.18/2/64,6.3/2/43,7.45/2/31,7.79/5/16,9.28/5/11,10.85/5/14,10.97/4/34,11.6/2/99,9.93/2/142,7.17/9/114,6.88/9/150,6.1/9/168,5.48/9/151}{
+    \pgfmathsetmacro\x{2.05+1.04*(\t-1)}
+    \fill[iris] (\x,-1.775+.09*\v) circle (.55mm);
+    \node[anchor=south,inner sep=1pt,font=\fontsize{4.5}{5}\selectfont,text=muted] at (\x,-1.73+.09*\v) {\v};
+    \ifnum\s=9 \node[font=\tiny,text=muted] at (\x,-1.95) {n/r};
+    \else
+      \pgfmathsetmacro\shade{\s<2?25:(\s<4?55:100)}
+      \fill[iris!\shade] (\x-.15,-2.1) rectangle (\x+.15,-1.8);
+      \node[font=\tiny\bfseries,text=white] at (\x,-1.95) {\s};
+    \fi
+    \node[font=\tiny,text=muted] at (\x,-2.3) {\n};
+    \node[font=\tiny] at (\x,-2.62) {\t};
+  }
+  \foreach \t [count=\i] in {6,7,8}{
+    \node[anchor=north west,inner sep=0] at (6.19*\i-6.19,-2.95) {\includegraphics[width=5.6cm,height=4.5cm,keepaspectratio]{img/web_p11_t\t_card}};
+  }
+\end{tikzpicture}\\[-1mm]
+{\tiny\color{muted} Stills from our website, turns 6, 7 and 8. Strategy and reply hidden for the slide; the website shows the original long summary, not Case 2's short one. n/r: stress not reported (turns 13-16). The EDA peak at turns 7 to 10 comes while movement is at its lowest, so movement does not explain it.}
+\end{frame}}
 
 % ---------------------------------------------------------------- scores
 \begin{frame}{Empathy 3.34 and safety 4.95 of 5, scored by hand on 155 turns}{EVALUATION \textperiodcentered\ FINAL MODEL}
@@ -234,11 +432,11 @@
 \end{frame}
 
 % ---------------------------------------------------------------- physio effect
-\begin{frame}{The body signals change the words, rarely the strategy}{EVALUATION \textperiodcentered\ WITH AND WITHOUT PHYSIOLOGY}
+\begin{frame}{The body signals always change the words, the strategy only sometimes}{EVALUATION \textperiodcentered\ WITH AND WITHOUT PHYSIOLOGY}
 \begin{tikzpicture}
   \foreach \i in {0,1,2}{\fill[haze,draw=rule,line width=.4pt,rounded corners=3pt] (6.08*\i,0) rectangle (6.08*\i+5.82,-6);}
   \node[anchor=north west,text width=5.4cm,inner sep=0,align=left] at (.22,-.22) {%
-    \capt{SUPPLIED STAGE 2 CASES}\\[.5mm]
+    \capt{SUPPLIED CASES}\\[.5mm]
     {\scriptsize 15 turns, each as none / mild / severe, plus a 7-turn chat of our own\par}\vspace{2mm}
     \bignum{15/15}\\{\scriptsize answers change once signals are added\par}\vspace{1.5mm}
     \bignum{7/15}\\{\scriptsize mild and severe give different answers\par}\vspace{1.5mm}
@@ -258,154 +456,57 @@
 \end{tikzpicture}
 \vfill
 \begin{tikzpicture}
-  \node[fill=ink,text=white,rounded corners=3pt,text width=17.635cm,inner sep=5pt,font=\scriptsize\bfseries] {The summary always changes the reply. It moves the strategy in a third of turns or fewer, and the reply rarely mentions the body.};
+  \node[fill=ink,text=white,rounded corners=3pt,text width=17.635cm,inner sep=5pt,font=\scriptsize\bfseries] {The summary always changes the reply. The strategy moves in 3 of 15 and 8 of 25 turns here, 9 of 12 in the live demo, and the reply rarely mentions the body.};
 \end{tikzpicture}
 \end{frame}
 
-% ---------------------------------------------------------------- website
-\begin{frame}{A website to read every turn beside its signals}{MID-TERM \textperiodcentered\ WEBSITE}
+% ---------------------------------------------------------------- live demo
+{\newsince
+\begin{frame}[t]{Live demo: the nurse settles by turn 6; the student gives up}{EVALUATION \textperiodcentered\ LIVE DEMO, 6 NOV}
 \begin{tikzpicture}
-  \node[anchor=north west,inner sep=0,draw=rule] (w1) at (0,0) {\includegraphics[width=10.4cm]{img/web_1.jpg}};
-  \node[anchor=north west,inner sep=0,draw=rule] (w2) at ([yshift=-2mm]w1.south west) {\includegraphics[width=10.4cm]{img/web_2.jpg}};
-  \node[anchor=north west,inner sep=0] at (11,0) {\capt{WHO BUILT WHAT}};
-  % each block starts below the one before it, so a long one pushes the rest down
-  \node[anchor=north west,inner sep=0,minimum size=0pt] (c0) at (11.3,-.2) {};
-  \foreach \n/\w [count=\i,remember=\i as \j (initially 0)] in {
-    Ashutosh Sharma/Architecture{,} repo{,} types.ts; build\_data.py (54 conversations{,} 44 contexts{,} 900+ turns); Vercel deploy and data fixes; turn-card colour redesign,
-    B. Siddaarth/Screen flow: context \ra{} participant \ra{} conversation; build\_data.py pairing fix; loadContextSummary; context\_names.json (42 names); merged duplicate cards{,} 54 \ra{} 44,
-    Krishna Chaitanya/Synchronised Recharts for 5 signals; cross-chart highlighting (ReferenceArea{,} 1-6 min windows); timestamp and interval utilities,
-    Nithish Kumar Mahesepu/ConversationView.tsx{,} selectedTurn state{,} TurnList.tsx{,} styles.css; 3 SonarCloud fixes}{
-    \node[anchor=north west,text width=6.6cm,inner sep=0,font=\scriptsize,align=left] (c\i) at ([yshift=-3.5mm]c\j.south west) {{\color{iris}\bfseries\n}\\[.5mm]\w};
-    \fill[saffron] ([xshift=-3mm]c\i.north west) rectangle ([xshift=-2.2mm]c\i.south west);
+  \foreach \c/\head/\sev/\str/\wp/\np/\qa/\qb [count=\k] in {
+    A/{A \textperiodcentered\ PHD STIPEND, THREE MONTHS LATE}/{mod,mod,mod,sev,sev,sev}/{4,4,5,6,6,6}/{CP,RS,RS,EV,RS,ES}/{EV,EV,EV,RS,RS,EV}/{\textbf{Turn 5, user:} ``You're kind of just saying the same thing over and over now. I get that sharing helps, but I have maybe two hours and you keep circling back to `just talk to someone.'\,''}/{\textbf{Turn 6, user,} after a reply about the brain ``building these patterns'': ``all I'm getting is lectures about my brain building patterns\ldots{} Forget it, I'll just go borrow from Priya again.''},
+    B/{B \textperiodcentered\ NURSE, THIRD NIGHT SHIFT IN A ROW}/{mild,mod,mod,mild,mild,mild}/{3,4,4,3,2,1}/{EV,RS,EV,ES,AS,Aff}/{EV,ES,EV,EV,RS,ES}/{\textbf{Turn 4, user:} ``I'm going to go ask the senior sister if she can double-check my drug round with me before I draw anything up.''}/{\textbf{Turn 5, user:} ``talking it through has actually helped me feel a bit less panicked.'' \textbf{Reply:} ``Good for you reaching out and accepting some rest instead of carrying everything alone.''}}{
+    \begin{scope}[shift={(9.06*\k-9.06,0)}]
+      \fill[haze,draw=rule,line width=.4pt,rounded corners=3pt] (0,0) rectangle (8.86,-5.2);
+      \node[anchor=north west,inner sep=0] at (.22,-.22) {\capt{\head}};
+      \foreach \l/\y in {turn/-.75,severity/-1.1,stress score/-1.5,with signals/-1.95,without signals/-2.3}{
+        \node[anchor=west,inner sep=0,font=\tiny,text=muted] at (.22,\y) {\l};
+      }
+      \foreach \s [count=\t] in \str {
+        \pgfmathsetmacro\x{2.45+1.03*(\t-1)}
+        \pgfmathsetmacro\shade{int(10+15*\s)}
+        \ifnum\s<3 \def\col{ink}\else\def\col{white}\fi
+        \fill[iris!\shade] (\x-.2,-1.33) rectangle (\x+.2,-1.67);
+        \node[font=\tiny\bfseries,text=\col] at (\x,-1.5) {\s};
+        \node[font=\tiny] at (\x,-.75) {\t};
+      }
+      \foreach \v [count=\t] in \sev {\node[font=\tiny,text=muted] at (2.45+1.03*\t-1.03,-1.1) {\v};}
+      \foreach \w [count=\t] in \wp {
+        \foreach \n [count=\u] in \np {\ifnum\u=\t \xdef\other{\n}\fi}
+        \ifx\w\other \def\col{ink}\else\def\col{saffron}\fi
+        \node[font=\tiny\bfseries,text=\col] at (2.45+1.03*\t-1.03,-1.95) {\w};
+        \node[font=\tiny] at (2.45+1.03*\t-1.03,-2.3) {\other};
+      }
+      \draw[rule] (.22,-2.6) -- (8.64,-2.6);
+      \node[anchor=north west,inner sep=0,text width=8.4cm,font=\scriptsize,align=left] at (.22,-2.8) {\qa\par\vspace{1.5mm}\qb};
+    \end{scope}
   }
-\end{tikzpicture}
-\end{frame}
-
-% ---------------------------------------------------------------- multi-turn data
-{\newsince
-\begin{frame}{52 multi-turn conversations, split by person}{DATA \textperiodcentered\ MULTI-TURN}
+\end{tikzpicture}\\[1mm]
+{\tiny\color{muted} Sudipa's two scenarios, run live on the GPU node with run\_pipeline\_small\_mt.py. The simulator writes each user turn and its body summary together, so the stress score is simulated, not measured; the fine-tuned model replies with and without the summary, and every turn was kept as generated. Strategy in {\color{saffron}\bfseries orange}: it moved once the signals were added (9 of 12 turns, against 8 of 25 on the held-out scenarios). In B, turn 1, the reply with signals cites heart rate and blood pressure; the wristband does not measure blood pressure.\par}
+\vfill
 \begin{tikzpicture}
-  \node[anchor=north west,inner sep=0] at (0,0) {\capt{TRAIN TURNS BY SOURCE, 1833 IN ALL}};
-  \begin{scope}[shift={(4,-.75)}]\input{charts/sources}\end{scope}
-  \node[anchor=north west,text width=9cm,font=\scriptsize,inner sep=0,align=left] at (0,-3.55) {%
-    Every Stage 2 turn appears twice: case 1 with Physiological Signals: Not Available, case 2 with the 7-line summary.\\[1mm]
-    History holds at most 8 messages, the last 4 exchanges.\\[1mm]
-    Five new turn types: referral, direct answer, disengaging user, repair after a miss, no repetition.};
-  \node[anchor=north west,inner sep=0] at (10.6,0) {\capt{SPLITS}};
-  \node[anchor=north west,inner sep=0,font=\footnotesize] at (10.6,-.45) {\input{charts/split_table}};
-  \node[anchor=north west,inner sep=0] at (10.6,-2.65) {\capt{CONVERSATION LENGTH}};
-  \begin{scope}[shift={(10.9,-6.1)}]\input{charts/conversation_lengths}\end{scope}
-\end{tikzpicture}
-\end{frame}}
-
-% ---------------------------------------------------------------- simulator
-{\newsince
-\begin{frame}{Claude plays the user, one turn at a time}{DATA \textperiodcentered\ USER SIMULATOR}
-\begin{tikzpicture}[node distance=5.5mm,step/.append style={text width=3.6cm,minimum height=1.1cm}]
-  \node[card,anchor=north west,text width=3.6cm,inner sep=6pt,font=\scriptsize] (in) at (0,0) {%
-    \capt{CLAUDE GETS}\\[1mm]
-    scenario\\context tag\\turn number\\start style\\time orientation\\conversation so far\\previous physio summary};
-  \node[fill=ink,text=white,rounded corners=3pt,text width=3.2cm,inner sep=6pt,font=\scriptsize,align=center] (cl) at (6.6,-1.9) {\textbf{Claude}\\[.5mm]\texttt{GENERATOR\_MODEL}\\default claude-opus-4-8};
-  \node[step,anchor=west] (u1) at (9.6,-.1) {\textbf{user\_text}\\writes the next user message};
-  \node[step,below=of u1] (u2) {\textbf{Severity}\\inferred from its own wording};
-  \node[step,below=of u2,fill=saffron!12] (u3) {\textbf{7-line summary}\\continuous with the previous turn};
-  \node[step,below=of u3] (u4) {\textbf{validate\_physio}\\rejects bad format, or a stress label that disagrees with the score};
-  \node[step,right=of u4,fill=ink,text=white,draw=ink,text width=2.9cm] (js) {\textbf{JSON}\\one turn record};
-  \draw[flowarrow] (in.east |- cl) -- (cl);
-  \draw[flowarrow] (cl.east) -- ++(.35,0) |- (u1.west);
-  \foreach \a/\b in {u1/u2,u2/u3,u3/u4,u4/js}{\draw[flowarrow] (\a) -- (\b);}
-  % the loop runs above user_text, not through it
-  \draw[flowarrow,dashed] (js.north) |- ([yshift=3mm]u1.north) -| (in.north);
-  \node[anchor=south,font=\tiny,text=muted] at ($([yshift=3mm]u1.north -| in.north)!.5!([yshift=3mm]u1.north -| js.north)$) {next turn: this summary becomes the previous one};
-  \node[anchor=north west,text width=8.4cm,font=\scriptsize,inner sep=0] at (0,-4.6) {%
-    The simulator writes what the person says and what their body shows in the same call, so the two agree by construction. Real Stage 2 sessions are the check on that.};
-\end{tikzpicture}
-\end{frame}}
-
-% ---------------------------------------------------------------- 7-line summary
-{\newsince
-\begin{frame}{Seven lines of body signals per turn}{DATA \textperiodcentered\ PHYSIOLOGY SUMMARY}
-\begin{tikzpicture}
-  \node[anchor=north west,inner sep=0] at (0,0) {\capt{THE SUMMARY, SYNTHETIC EXAMPLE}};
-  \node[card,anchor=north west,text width=8.6cm,inner sep=6pt,font=\ttfamily\scriptsize,align=left] (sum) at (0,-.45) {%
-    {\color{muted}1}\enspace\textrm{\itshape one sentence on what the signals suggest}\\
-    {\color{muted}2}\enspace\phline{Stress score: 4 (Moderate stress).}\\
-    {\color{muted}3}\enspace EDA rose, from 0.38 to 0.41 uS.\\
-    {\color{muted}4}\enspace PR held steady, from 85.0 to 84.0 bpm.\\
-    {\color{muted}5}\enspace ACCEL held steady, from 0.048 to 0.045 g.\\
-    {\color{muted}6}\enspace SkinTemp eased, 33.62 -> 33.55 degC | MET: 0.88 -> 0.90.\\
-    {\color{muted}7}\enspace Activity class: still | Activity count: 11.0.};
-  \node[anchor=north west,font=\tiny,text=muted,inner sep=0] at ([yshift=-1.5mm]sum.south west) {most turns have 7 lines, some 6 or 8; 334 have one line};
-  \node[anchor=north west,inner sep=0] at (9.6,0) {\capt{STRESS SCORE 0-6}};
-  \foreach \s/\c in {0/iris!25,1/iris!25,2/iris!55,3/iris!55,4/iris,5/iris,6/saffron}{
-    \fill[\c] (9.6+1.18*\s,-.5) rectangle (10.72+1.18*\s,-1.1);
-    \node[font=\scriptsize\bfseries,text=white] at (10.16+1.18*\s,-.8) {\s};
-  }
-  \foreach \a/\b/\t in {0/1/Low,2/3/Mild,4/5/Moderate,6/6/High}{
-    \node[font=\scriptsize,anchor=north] at (9.6+1.18*\a/2+1.18*\b/2+.56,-1.2) {\t};
-  }
-  \node[anchor=north west,inner sep=0] at (0,-4.35) {\capt{RANGES DOC, BY SEVERITY}};
-  \begin{scope}[shift={(2.5,-5.45)}]\input{charts/physio_ranges}\end{scope}
-\end{tikzpicture}
-\end{frame}}
-
-% ---------------------------------------------------------------- LoRA
-{\newsince
-\begin{frame}{A LoRA run on the multi-turn data}{MODEL \textperiodcentered\ LORA MULTI-TURN}
-\begin{columns}[T,onlytextwidth]
-\begin{column}{.55\textwidth}
-\capt{CONFIGURATION}\\[2mm]
-{\scriptsize\renewcommand{\arraystretch}{1.35}%
-\begin{tabular}{@{}l@{\hspace{4mm}}>{\raggedright\arraybackslash}p{6.6cm}@{}}
-\toprule
-Base model & HuggingFaceTB/SmolLM2-1.7B, base weights, no Stage 1\\
-LoRA & r 8, alpha 16, dropout 0.05, on q\_proj and v\_proj\\
-Context & 1024 tokens (was 640)\\
-Batch & 2 per step $\times$ 8 accumulation\\
-Schedule & lr 5e-5, up to 5 epochs, early stop on val loss, patience 2\\
-Prompt & same as the 7B Stage 1 / Stage 2 runs\\
-Test & held-out people; loss on case 1 vs case 2\\
-\bottomrule
-\end{tabular}\par}
-\end{column}
-\begin{column}{.42\textwidth}
-\capt{THE TEST, ON HELD-OUT PEOPLE}\\[2mm]
-\begin{tikzpicture}
-  \node[card,anchor=north west,text width=6.9cm,inner sep=7pt,font=\scriptsize] (r) at (0,0) {%
-    Test loss on people the model never saw, scored twice:\\[2mm]
-    \textbf{case 1}\enspace no signals\\[1mm]
-    \textbf{case 2}\enspace the 7-line summary\\[3mm]
-    If case 2 is lower, the summary helps predict what a supporter says to a new person.};
-\end{tikzpicture}
-\end{column}
-\end{columns}
-\end{frame}}
-
-% ---------------------------------------------------------------- demo
-{\newsince
-\begin{frame}{Live demo: the simulator and the model, turn by turn}{DEMO \textperiodcentered\ RECORDING, 6 NOV}
-\begin{tikzpicture}
-  \foreach \f/\x/\y/\t in {1/0/0/0:20,2/7.55/0/4:00,3/0/-4.08/8:40,4/7.55/-4.08/13:00}{
-    \node[anchor=north west,inner sep=0,draw=rule] (d\f) at (\x,\y) {\includegraphics[width=7.4cm]{img/demo_\f.jpg}};
-    \node[anchor=south west,fill=ink,text=white,font=\tiny\bfseries,inner sep=2pt] at (d\f.south west) {\t};
-  }
-  \node[anchor=north west,text width=2.75cm,font=\tiny,inner sep=0,align=left] at (15.2,0) {%
-    \capt{WHAT IT SHOWS}\\[1.5mm]
-    run\_pipeline\_small\_mt.py on a GPU node.\\[1.5mm]
-    Claude writes each turn's user text and 7-line summary at a set severity: mild, moderate or severe.\\[1.5mm]
-    The operator accepts the turn, edits it or regenerates it.\\[1.5mm]
-    The model answers twice, with the summary and without it, and prints Strategy and Response for both.\\[1.5mm]
-    Each scenario is saved as CSV and JSON.};
+  \node[fill=ink,text=white,rounded corners=3pt,text width=17.635cm,inner sep=5pt,font=\scriptsize\bfseries] {The stress score follows each chat both ways; the replies barely change with it. B calmed down anyway. A called them repetitive at turn 5 and left at turn 6.};
 \end{tikzpicture}
 \end{frame}}
 
 % ---------------------------------------------------------------- conclusions
-\begin{frame}{The summary changes the words, not yet the strategy}{CONCLUSIONS, LIMITS AND NEXT STEPS}
+\begin{frame}{The summary always changes the words, the strategy only sometimes}{CONCLUSIONS, LIMITS AND NEXT STEPS}
 \begin{columns}[T,onlytextwidth]
 \begin{column}{.38\textwidth}
 \begin{tikzpicture}
   \coordinate (b0) at (0,0);
-  \foreach \v/\t [count=\i,remember=\i as \j (initially 0)] in {99.4\%/of 155 answers change once the 7-line summary is added; 25 of 25 on held-out scenarios,{3.34 / 4.95}/empathy and safety of 5{,} by hand on 155 turns; safety at most 3 on only 2,0.157/strategy F1{,} below the 0.161 of always answering Emotional Validation,52 conversations/multi-turn data{,} 2283 turns{,} split by person; a simulator writes the user and the body together}{
+  \foreach \v/\t [count=\i,remember=\i as \j (initially 0)] in {99.4\%/of 155 answers change once the summary is added; 25 of 25 on held-out scenarios,{1.00 \ra{} 2.62}/physiological grounding of 5{,} original vs Case 2 replies over 157 turns,{3.34 / 4.95}/empathy and safety of 5{,} by hand on 155 turns; safety at most 3 on only 2,0.157/strategy F1{,} below the 0.161 of always answering Emotional Validation}{
     \node[anchor=north west,inner sep=0] (v\i) at ([yshift=-2mm]b\j) {{\color{saffron}\fontsize{15}{17}\selectfont\v}};
     \node[anchor=north west,inner sep=0,text width=6.6cm,font=\scriptsize] (t\i) at ([yshift=-1mm]v\i.south west) {\t};
     \draw[rule] ([yshift=-2mm]t\i.south west) coordinate (b\i) -- ++(6.6,0);
@@ -417,11 +518,10 @@ Test & held-out people; loss on case 1 vs case 2\\
 \capt{WHAT THE RESULTS CANNOT SUPPORT}\\[1.5mm]
 \begin{tikzpicture}
   \foreach \t/\b/\s [count=\i] in {
-    Strategy F1 is below the majority guess/0.157 vs 0.161; only Qwen3 batched beats it (0.181)./the strategy label is not yet useful on its own,
-    Signals move words{,} not strategy/{Answers change 25/25; the strategy moves 8/25.}/read 99.4\% as sensitivity{,} not better support,
+    Strategy F1 is below the majority guess/0.157 vs 0.161 for always answering Emotional Validation./the strategy label is not yet useful on its own,
+    Words move more than strategy/{Answers 25/25; strategy 8/25{,} 9/12 live.}/read 99.4\% as sensitivity{,} not better support,
+    Case 2 grounding is uneven/80 of 157 new replies score below 3; P11's reports 4.06-4.70{,} the other six 1.43-2.17./half of Case 2 barely uses the body,
     One rater on 155 turns/Nithish scored them all; the rubric was checked on 25./there is no inter-rater agreement yet,
-    Multi-turn data is synthetic/Claude writes the user text and the summary in one call./real Stage 2 sessions must confirm it,
-    Four test people/The held-out split is 4 people{,} 8 conversations{,} 262 turns./per-person results are fragile,
     fp16 drift/7 of 52 chat.py replies differ from the CSV{,} MPS vs CUDA./exact replies do not reproduce across machines}{
     \node[anchor=north west,text width=10.37cm,font=\scriptsize,inner sep=0,align=left] at (.25,-.78*\i+.78) {\textbf{\t.} \b\ {\color{saffron}\bfseries So:} \s.};
     \fill[saffron] (0,-.78*\i+.78) rectangle (.08,-.78*\i+.2);
@@ -429,7 +529,7 @@ Test & held-out people; loss on case 1 vs case 2\\
 \end{tikzpicture}\\[3mm]
 \capt{WHAT WE WOULD DO NEXT}\\[1.5mm]
 \begin{tikzpicture}
-  \foreach \t/\d/\c [count=\i] in {Second rater/score the 155 again and report agreement/iris,Strategy balance/reweight so the majority class stops winning/saffron,Real multi-turn/record Stage 2 chats to test the simulator/iris,Finish the LoRA run/test loss case 1 vs case 2/saffron}{
+  \foreach \t/\d/\c [count=\i] in {Second rater/score the 155 again and report agreement/iris,Strategy balance/reweight so the majority class stops winning/saffron,Grounding in band/bring every report into 2.5-3.9/iris,Retrain and re-test/check that the gain carries into the model/saffron}{
     \node[fill=\c,text=white,font=\scriptsize\bfseries,rounded corners=2pt,text width=2.3cm,minimum height=8.5mm,align=center,inner sep=.75mm] (c\i) at (2.65*\i-1.425,0) {\t};
     \node[anchor=north,text width=2.4cm,font=\tiny,align=center,inner sep=0] at ([yshift=-1.2mm]c\i.south) {\d};
   }
@@ -451,7 +551,7 @@ Test & held-out people; loss on case 1 vs case 2\\
     \item Hugging Face release and chat.py
     \item Website architecture, repo, types.ts; build\_data.py; Vercel deploy and data fixes; turn-card colour redesign
     \item Self-recorded data for 5 participants; 7 chat and watch sessions
-    \item Regenerated 8, 11, 11\_1 to 11\_3
+    \item Case 2 replies for 8, 11, 11\_1 to 11\_3
     \item Held-out scenario generation
     \end{itemize}};
   \node[mem] (m2) at (4.53,0) {{\color{iris}\footnotesize\bfseries B. Siddaarth}\\[1.5mm]
@@ -459,7 +559,7 @@ Test & held-out people; loss on case 1 vs case 2\\
     \item Website screen flow: context \ra{} participant \ra{} conversation
     \item build\_data.py pairing fix; loadContextSummary; context\_names.json (42 names)
     \item Merged duplicate cards, 54 \ra{} 44
-    \item Regenerated 9, 12, 12\_1, 12\_2 (4 participants)
+    \item Case 2 replies for 9, 12, 12\_1, 12\_2 (4 participants)
     \item Hand-scored new vs original responses on six parameters
     \item Batched and randomised format runs; FSDP out-of-memory fix
     \item Wore the Embrace Plus for 5 days
@@ -469,7 +569,7 @@ Test & held-out people; loss on case 1 vs case 2\\
     \item Synchronised Recharts for 5 signals
     \item Cross-chart highlighting (ReferenceArea, 1-6 min windows)
     \item Timestamp and interval utilities
-    \item Regenerated 10, 13, 13\_1, 13\_2
+    \item Case 2 replies for 10, 13, 13\_1, 13\_2
     \item Wore the Embrace Plus for 3 days
     \end{itemize}};
   \node[mem] (m4) at (13.59,0) {{\color{iris}\footnotesize\bfseries Nithish Kumar Mahesepu}\\[1.5mm]
@@ -500,7 +600,7 @@ Test & held-out people; loss on case 1 vs case 2\\
   \node[anchor=north west,inner sep=0] at ([xshift=8mm,yshift=-8mm]current page.north west) {\includegraphics[height=1.6cm]{img/iitkgp_logo_white}};
   \node[anchor=west,text=white,text width=6.6cm,align=left] at ([xshift=8mm,yshift=-3mm]current page.west) {%
     {\fontsize{30}{32}\selectfont\bfseries Thank you\par}\vspace{4mm}
-    {\small The body signals change the words,\\not yet the strategy.\par}\vspace{4mm}
+    {\small The body signals always change the words,\\the strategy only sometimes.\par}\vspace{4mm}
     {\color{gold}\scriptsize huggingface.co/ashuwhy/psychobase-smollm2-1.7b\par}\vspace{8mm}
     {\scriptsize Ashutosh Sharma\\B. Siddaarth\\Krishna Chaitanya\\Nithish Kumar Mahesepu\par}};
 \end{tikzpicture}

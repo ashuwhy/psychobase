@@ -4,8 +4,10 @@ so every number on a chart comes from a file, not from a slide.
 Usage: python3 docs/final-deck/make_charts.py
 Reads counts only from the stage2_mt files; no row text reaches a chart.
 """
+import csv
 import gzip
 import json
+import math
 import re
 from collections import Counter
 from pathlib import Path
@@ -202,6 +204,104 @@ def physio_ranges():
     write('physio_ranges', out)
 
 
+def percentile(xs, q):
+    # linear interpolation between closest ranks, as numpy.percentile does by default
+    xs = sorted(xs)
+    k = (len(xs) - 1) * q / 100
+    f = math.floor(k)
+    return xs[f] + (xs[min(f + 1, len(xs) - 1)] - xs[f]) * (k - f)
+
+
+def channel_ranges():
+    # Every minute of every turn window in the 54 website CSVs, one row per channel, each on its own axis.
+    # Band = the ranges doc's typical worn range; bar = 1st to 99th percentile; whiskers = min and max; dot = median.
+    vals = {}
+    for f in (REPO / 'website' / 'public' / 'data' / 'raw_csv').glob('*.csv'):
+        for r in csv.DictReader(open(f, encoding='utf-8', errors='replace')):
+            for c in ('EDA', 'PR', 'SkinTemp', 'ACCEL', 'MET', 'ACT_COUNT'):
+                if r[c]:
+                    vals.setdefault(c, []).extend(x for x in json.loads(r[c].replace('nan', 'null')) if x is not None)
+    # key, axis lo, hi, log axis, ticks, human worn range, differs from it
+    rows = [('EDA', 0.01, 30, True, (0.01, 0.1, 1, 10), (0.05, 20), True),
+            ('PR', 40, 180, False, (40, 80, 120, 160), (45, 140), True),
+            ('SkinTemp', 26, 40, False, (28, 32, 36, 40), (30, 37), True),
+            ('ACCEL', 0, 1.6, False, (0, 0.5, 1, 1.5), (0.8, 1.5), True),
+            ('MET', -0.5, 9, False, (0, 2, 4, 6, 8), (0.9, 8), False),
+            ('ACT_COUNT', 0, 3000, False, (0, 1000, 2000, 3000), (0, 3000), False)]
+    w, rh = 6.2, 0.86
+    out = []
+    for i, (key, lo, hi, logx, ticks, (h0, h1), differs) in enumerate(rows):
+        y = -i * rh
+        if logx:
+            pos = lambda v: w * (math.log10(max(v, lo)) - math.log10(lo)) / (math.log10(hi) - math.log10(lo))
+        else:
+            pos = lambda v: w * (min(max(v, lo), hi) - lo) / (hi - lo)
+        mn, p1, p50, p99, mx = (percentile(vals[key], q) for q in (0, 1, 50, 99, 100))
+        col = 'saffron' if differs else 'iris'
+        out.append(f'\\fill[haze,draw=rule,line width=.3pt] ({pos(h0):.3f},{y - 0.17:.3f}) rectangle ({pos(h1):.3f},{y + 0.17:.3f});')
+        out.append(f'\\draw[{col},line width=.5pt] ({pos(mn):.3f},{y:.3f}) -- ({pos(mx):.3f},{y:.3f});')
+        for v in (mn, mx):
+            out.append(f'\\draw[{col},line width=.5pt] ({pos(v):.3f},{y - 0.07:.3f}) -- ({pos(v):.3f},{y + 0.07:.3f});')
+        out.append(f'\\fill[{col}] ({pos(p1):.3f},{y - 0.07:.3f}) rectangle ({pos(p99):.3f},{y + 0.07:.3f});')
+        out.append(f'\\filldraw[fill=white,draw={col},line width=.5pt] ({pos(p50):.3f},{y:.3f}) circle (.6mm);')
+        out.append(f'\\draw[rule,line width=.3pt] (0,{y - 0.22:.3f}) -- ({w:.3f},{y - 0.22:.3f});')
+        for t in ticks:
+            out.append(f'\\node[anchor=north,font=\\fontsize{{4.5}}{{5}}\\selectfont,text=muted,inner sep=1pt] at ({pos(t):.3f},{y - 0.22:.3f}) {{{t:g}}};')
+    print('channel_ranges readings:', {k: len(v) for k, v in vals.items()})
+    write('channel_ranges', out)
+
+
+def contexts():
+    # The ranges doc's 12 sample summaries: start -> end of the window per channel, coloured by the summary's own verb
+    text = (HERE / 'ref' / 'physio_ranges.txt').read_text().replace('–', '-')
+    blocks = re.findall(r'^\s*(\d+)\. ([^\n]+)\n.*?Stress score: (\d).*?EDA (\w+(?: \w+)?), from ([\d.]+) to ([\d.]+).*?'
+                        r'PR (\w+(?: \w+)?), from ([\d.]+) to ([\d.]+).*?ACCEL (\w+(?: \w+)?), from ([\d.]+) to ([\d.]+).*?'
+                        r'SkinTemp (\w+(?: \w+)?), ([\d.]+) -> ([\d.]+) degC \| MET: (\d+\.\d+) -> (\d+\.\d+)', text, re.M | re.S)
+    assert len(blocks) == 12, len(blocks)
+    scenarios = []
+    for b in blocks:
+        name = re.sub(r'\s*\(.*\)$', '', b[1]).replace(' or ', '/')
+        name = {'Calming after a supportive reply, seated': 'Calming after support, seated',
+                'Low-arousal grief, withdrawn and flat': 'Grief, withdrawn and flat',
+                'Lying in bed at night, ruminating': 'In bed at night, ruminating'}.get(name, name)
+        met0, met1 = float(b[15]), float(b[16])
+        # MET carries no verb in the summary; a change of 0.1 or less reads as flat
+        met = 'flat' if abs(met1 - met0) <= 0.1 else ('rose' if met1 > met0 else 'eased')
+        scenarios.append((name, int(b[2]), [b[3:6], b[6:9], b[12:15], b[9:12], (met, b[15], b[16])]))
+    heads = ['EDA, $\\mu$S', 'PR, bpm', 'Skin temp, $^\\circ$C', 'ACCEL, g', 'MET']
+    digits = [2, 0, 1, 2, 2]
+    namew, scorew, cellw, slope, rh, ch = 4.4, 0.9, 2.5, 0.75, 0.43, 0.26
+    score_fill = {0: 'iris!25', 1: 'iris!25', 2: 'iris!55', 3: 'iris!55', 4: 'iris', 5: 'iris', 6: 'saffron'}
+    out = [f'\\node[anchor=south,font=\\tiny\\bfseries,text=muted] at ({namew + scorew / 2:.3f},0.25) {{score}};']
+    for j, h in enumerate(heads):
+        out.append(f'\\node[anchor=south west,font=\\tiny\\bfseries,text=muted,inner sep=0] at ({namew + scorew + j * cellw:.3f},0.3) {{{h}}};')
+    for j in range(5):
+        allv = [float(v) for s in scenarios for v in s[2][j][1:]]
+        lo, hi = min(allv), max(allv)
+        x0 = namew + scorew + j * cellw
+        for i, (name, score, cells) in enumerate(scenarios):
+            verb, a, b = cells[j]
+            yc = -i * rh
+            ya, yb = (yc - ch / 2 + ch * (float(v) - lo) / (hi - lo) for v in (a, b))
+            if verb.startswith('rose'):
+                out.append(f'\\draw[saffron,line width=.9pt,-{{Stealth[length=1.3mm]}}] ({x0:.3f},{ya:.3f}) -- ({x0 + slope:.3f},{yb:.3f});')
+            elif verb.startswith('eased'):
+                out.append(f'\\draw[iris,line width=.9pt,-{{Stealth[length=1.3mm]}}] ({x0:.3f},{ya:.3f}) -- ({x0 + slope:.3f},{yb:.3f});')
+            else:
+                out.append(f'\\draw[rule,line width=.9pt] ({x0:.3f},{ya:.3f}) -- ({x0 + slope:.3f},{yb:.3f});')
+                out.append(f'\\fill[muted] ({x0 + slope:.3f},{yb:.3f}) circle (.45mm);')
+            fa, fb = (f'{float(v):.{digits[j]}f}' for v in (a, b))
+            out.append(f'\\node[anchor=west,font=\\fontsize{{5}}{{6}}\\selectfont,text=muted,inner sep=0] at ({x0 + slope + 0.12:.3f},{yc:.3f}) {{{fa} $\\to$ {fb}}};')
+    for i, (name, score, _) in enumerate(scenarios):
+        yc = -i * rh
+        out.append(f'\\node[anchor=west,font=\\scriptsize,inner sep=0] at (0,{yc:.3f}) {{{i + 1}. {name}}};')
+        out.append(f'\\fill[{score_fill[score]}] ({namew + scorew / 2 - 0.17:.3f},{yc - 0.15:.3f}) rectangle ({namew + scorew / 2 + 0.17:.3f},{yc + 0.15:.3f});')
+        out.append(f'\\node[font=\\tiny\\bfseries,text=white] at ({namew + scorew / 2:.3f},{yc:.3f}) {{{score}}};')
+        if i:
+            out.append(f'\\draw[rule,line width=.2pt] (0,{yc + rh / 2:.3f}) -- ({namew + scorew + 5 * cellw - 0.3:.3f},{yc + rh / 2:.3f});')
+    write('contexts', out)
+
+
 val_loss()
 strategy_f1()
 lr_sweep()
@@ -210,4 +310,6 @@ sources()
 split_table()
 conversation_lengths()
 physio_ranges()
+channel_ranges()
+contexts()
 print('wrote', sorted(p.name for p in OUT.glob('*.tex')))
