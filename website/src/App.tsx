@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ContextList from "./pages/ContextList";
 import ParticipantList from "./pages/ParticipantList";
 import ConversationView from "./pages/ConversationView";
+import Demo from "./pages/Demo";
 
 export default function App() {
   return (
@@ -10,6 +11,7 @@ export default function App() {
         <Route path="/" element={<ContextList />} />
         <Route path="/context/:contextId" element={<ParticipantList />} />
         <Route path="/context/:contextId/participant/:participantId" element={<ConversationView />} />
+        <Route path="/demo" element={<Demo />} />
       </Routes>
     </BrowserRouter>
   );

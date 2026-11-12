@@ -16,3 +16,5 @@ __pycache__/
 model/SERVERS.local.md
 .venv-smoke/
 model/runs/
+docs/final-deck/demo/seg/
+docs/NEXT-SESSION.md

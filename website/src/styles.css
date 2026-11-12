@@ -380,3 +380,62 @@ body {
   font-size: 0.8rem;
   color: var(--muted);
 }
+
+/* /demo: the live-demo video page. */
+.demo-page {
+  max-width: 960px;
+}
+
+.demo-lede {
+  margin: -1.2rem 0 1.5rem;
+  max-width: 62ch;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+.demo-video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 7;
+  background: #291973;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+}
+
+.demo-cases {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+
+.demo-case {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--accent);
+  border-radius: 10px;
+  padding: 0.9rem 1rem;
+}
+
+.demo-case h2 {
+  margin: 0 0 0.35rem;
+  font-size: 1rem;
+  font-weight: 650;
+}
+
+.demo-case p,
+.demo-note {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.45;
+  color: var(--muted);
+}
+
+.demo-note {
+  margin-top: 1.25rem;
+  font-size: 0.82rem;
+}
+
+@media (max-width: 600px) {
+  .demo-page { padding: 2rem 1rem 3rem; }
+}

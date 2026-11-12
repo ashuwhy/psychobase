@@ -496,7 +496,11 @@
 {\tiny\color{muted} Sudipa's two scenarios, run live on the GPU node with run\_pipeline\_small\_mt.py. The simulator writes each user turn and its body summary together, so the stress score is simulated, not measured; the fine-tuned model replies with and without the summary, and every turn was kept as generated. Strategy in {\color{saffron}\bfseries orange}: it moved once the signals were added (9 of 12 turns, against 8 of 25 on the held-out scenarios). In B, turn 1, the reply with signals cites heart rate and blood pressure; the wristband does not measure blood pressure.\par}
 \vfill
 \begin{tikzpicture}
-  \node[fill=ink,text=white,rounded corners=3pt,text width=17.635cm,inner sep=5pt,font=\scriptsize\bfseries] {The stress score follows each chat both ways; the replies barely change with it. B calmed down anyway. A called them repetitive at turn 5 and left at turn 6.};
+  \node[fill=ink,text=white,rounded corners=3pt,text width=11.6cm,inner sep=5pt,font=\scriptsize\bfseries,anchor=south west] at (0,0) {The stress score follows each chat both ways; the replies barely change with it. B calmed down anyway. A called them repetitive at turn 5 and left at turn 6.};
+  \fill[white,rounded corners=2pt] (16.005,0) rectangle (17.985,1.98);
+  \begin{scope}[shift={(16.125,1.86)},x=.06cm,y=.06cm,ink]\input{img/demo_qr.tex}\end{scope}
+  \node[anchor=south west,inner sep=0] (qr) at (16.005,0) {\href{https://physio-viz.vercel.app/demo}{\rule{0pt}{1.98cm}\hspace{1.98cm}}};
+  \node[anchor=south east,inner sep=0,align=right,font=\scriptsize] at ([xshift=-2.5mm]qr.south west) {\textbf{\color{ink}Watch the 3-minute cut}\\[.5mm]{\color{muted}\tiny scan, or click}\\[.5mm]\href{https://physio-viz.vercel.app/demo}{\color{iris}\tiny physio-viz.vercel.app/demo}};
 \end{tikzpicture}
 \end{frame}}
 

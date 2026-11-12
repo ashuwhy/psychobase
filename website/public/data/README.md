@@ -5,6 +5,7 @@ public/data/
   raw_csv/   participantGrouped<ID>data.csv                    versioned
   json/      output_participantGrouped<ID>data_full_data.json  versioned
   build/     generated - not versioned, do not edit by hand
+  demo/      the /demo page video (cut by docs/final-deck/demo/cut.sh) and poster
 ```
 
 The source datasets are committed so everyone works from the same version. The
