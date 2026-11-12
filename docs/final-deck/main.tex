@@ -166,13 +166,13 @@
   \node[anchor=north west,inner sep=0] at (5,0) {\capt{HUMAN RANGE VS EMBRACEPLUS}};
   \node[anchor=north west,inner sep=0] at (11.65,0) {\capt{WHAT EMBRACEPLUS SHOWED, AND WHY}};
   \fill[haze,draw=rule,line width=.3pt] (5,-.56) rectangle ++(.3,.2);
-  \node[anchor=west,inner sep=0,font=\tiny] at (5.38,-.46) {human, worn};
-  \fill[saffron] (6.75,-.5) rectangle ++(.4,.08);
-  \node[anchor=west,inner sep=0,font=\tiny] at (7.23,-.46) {1st-99th percentile};
-  \draw[saffron,line width=.5pt] (8.95,-.46) -- ++(.4,0) (8.95,-.53) -- ++(0,.14) (9.35,-.53) -- ++(0,.14);
-  \node[anchor=west,inner sep=0,font=\tiny] at (9.43,-.46) {min-max};
-  \filldraw[fill=white,draw=saffron,line width=.5pt] (10.55,-.46) circle (.6mm);
-  \node[anchor=west,inner sep=0,font=\tiny] at (10.68,-.46) {median};
+  \node[anchor=west,inner sep=0,font=\tiny] (lg) at (5.38,-.46) {human, worn};
+  \fill[saffron] ([xshift=2.5mm]lg.east) ++(0,-.04) rectangle ++(.4,.08);
+  \node[anchor=west,inner sep=0,font=\tiny] (lg) at ([xshift=7.3mm]lg.east) {1st-99th percentile};
+  \draw[saffron,line width=.5pt] ([xshift=2.5mm]lg.east) -- ++(.4,0) ++(0,-.07) -- ++(0,.14) ++(-.4,0) -- ++(0,-.14);
+  \node[anchor=west,inner sep=0,font=\tiny] (lg) at ([xshift=7.3mm]lg.east) {min-max};
+  \filldraw[fill=white,draw=saffron,line width=.5pt] ([xshift=3.1mm]lg.east) circle (.6mm);
+  \node[anchor=west,inner sep=0,font=\tiny] at ([xshift=4.4mm]lg.east) {median};
   \begin{scope}[shift={(5,-1.2)}]\input{charts/channel_ranges}\end{scope}
   \foreach \n/\m/\c/\r [count=\i] in {
     {EDA, $\mu$S}/{sweat on the skin; rises with arousal}/saffron/{\textbf{387 readings (17\%) under 0.05, 134 of them zero.} Person medians run from 0.02 to 4.9, about 250x. Likely: resting EDA is personal, and zeros are dry skin or poor contact.},
