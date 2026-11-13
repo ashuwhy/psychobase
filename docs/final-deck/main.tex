@@ -544,9 +544,9 @@
 % ---------------------------------------------------------------- team
 \begin{frame}{Who did what}{TEAM}
 % text pinned to the top; the four cards are drawn afterwards, as tall as the longest column
-\begin{tikzpicture}[mem/.style={text width=3.42cm,inner sep=6pt,anchor=north west,font=\tiny,align=left,execute at begin node=\setlength\leftmargini{1.1em}}]
-  \node[mem,text width=5.58cm] (m1) at (0,0) {{\color{iris}\footnotesize\bfseries Ashutosh Sharma}\\[1.5mm]
-    \begin{itemize}\setlength\itemsep{.6mm}
+\begin{tikzpicture}[mem/.style={text width=3.96cm,inner sep=6pt,anchor=north west,font=\tiny,align=left,execute at begin node=\setlength\leftmargini{1.1em}}]
+  \node[mem] (m1) at (0,0) {{\color{iris}\footnotesize\bfseries Ashutosh Sharma}\\[.8mm]
+    \begin{itemize}\setlength\itemsep{.15mm}
     \item Built the training stack on the shared V100 cluster: SLURM jobs, train.py with fp16, completion-only loss and FSDP across two GPUs
     \item Wrote evaluate.py, the automatic scoring harness for every run
     \item Ran 16 training runs: every model lane, the LR sweep and the seed noise floor; showed the 3B size penalty was an untuned learning rate
@@ -557,8 +557,8 @@
     \item Wrote Case 2 replies for 5 conversations, incl. P11, the deck's running example
     \item Generated the held-out scenarios with and without physio, ran the live demo and built this deck
     \end{itemize}};
-  \node[mem] (m2) at (6.15,0) {{\color{iris}\footnotesize\bfseries B. Siddaarth}\\[1.5mm]
-    \begin{itemize}\setlength\itemsep{.6mm}
+  \node[mem] (m2) at (4.534,0) {{\color{iris}\footnotesize\bfseries B. Siddaarth}\\[.8mm]
+    \begin{itemize}\setlength\itemsep{.15mm}
     \item Built the context \ra{} participant \ra{} conversation flow; merged duplicate cards, 54 \ra{} 44
     \item Fixed build\_data.py pairing participant 1's CSV with the wrong JSON
     \item loadContextSummary in data.ts, the lookup behind every participant screen
@@ -569,16 +569,16 @@
     \item FSDP out-of-memory fix, train.py
     \item Wore the Embrace Plus for 5 days
     \end{itemize}};
-  \node[mem] (m3) at (10.145,0) {{\color{iris}\footnotesize\bfseries Krishna Chaitanya}\\[1.5mm]
-    \begin{itemize}\setlength\itemsep{.6mm}
+  \node[mem] (m3) at (9.068,0) {{\color{iris}\footnotesize\bfseries Krishna Chaitanya}\\[.8mm]
+    \begin{itemize}\setlength\itemsep{.15mm}
     \item Synchronised Recharts for 5 signals
     \item Cross-chart highlighting (ReferenceArea, 1-6 min windows)
     \item Timestamp and interval utilities
     \item Case 2 replies for 10, 13, 13\_1, 13\_2
     \item Wore the Embrace Plus for 3 days
     \end{itemize}};
-  \node[mem] (m4) at (14.14,0) {{\color{iris}\footnotesize\bfseries Nithish Kumar Mahesepu}\\[1.5mm]
-    \begin{itemize}\setlength\itemsep{.6mm}
+  \node[mem] (m4) at (13.601,0) {{\color{iris}\footnotesize\bfseries Nithish Kumar Mahesepu}\\[.8mm]
+    \begin{itemize}\setlength\itemsep{.15mm}
     \item ConversationView.tsx, selectedTurn state, TurnList.tsx, styles.css; 3 SonarCloud fixes
     \item 1-5 empathy and safety rubric; score\_empathy\_safety.py
     \item Rubric check on 25 hand-scored responses: 92\% exact empathy, 100\% safety
@@ -587,9 +587,9 @@
     \end{itemize}};
   \begin{pgfonlayer}{background}
     \path[card] let \p1=(m1.south), \p2=(m2.south), \p3=(m3.south), \p4=(m4.south), \n1={min(\y1,\y2,\y3,\y4)} in
-      (0,0) rectangle (6,\n1) (6.15,0) rectangle (9.995,\n1) (10.145,0) rectangle (13.99,\n1) (14.14,0) rectangle (17.985,\n1);
+      (0,0) rectangle (4.384,\n1) (4.534,0) rectangle (8.918,\n1) (9.068,0) rectangle (13.451,\n1) (13.601,0) rectangle (17.985,\n1);
   \end{pgfonlayer}
-\end{tikzpicture}\\[2mm]
+\end{tikzpicture}\\[1mm]
 \begin{tikzpicture}
   \node[fill=ink,text=white,rounded corners=3pt,text width=17.635cm,inner sep=5pt,font=\scriptsize] {Mentor: \textbf{Sudipa Garain} \textperiodcentered\ model: \textbf{huggingface.co/ashuwhy/psychobase-smollm2-1.7b}};
 \end{tikzpicture}
