@@ -308,7 +308,7 @@
     \capt{OUTPUT}\\[.5mm]
     \texttt{Strategy: <one name from the list>}\\
     \texttt{Response: <the reply>}};
-  \node[anchor=north west,inner sep=0,font=\tiny,text=muted] at (0,-6.65) {Written from the rules \texttt{render.py} enforces, the report notes and Sudipa's grounding band. Full text: \texttt{evaluation/master\_prompt.md}.};
+  \node[anchor=north west,inner sep=0,font=\tiny,text=muted] at (0,-6.65) {Full text: \texttt{evaluation/master\_prompt.md}.};
 \end{tikzpicture}
 \end{frame}}
 
@@ -425,7 +425,7 @@
   \draw[rule] (0,-1.75) -- (17.98,-1.75);
   \begin{scope}[shift={(.6,-2.6)}]\input{charts/score_bars}\end{scope}
   \node[card,anchor=north west,text width=4cm,inner sep=6pt,font=\scriptsize] at (13.5,-2.1) {%
-    Nithish scored all 155 case-2 turns by hand. The mid-term slides said an LLM judge: that was wrong.\\[1mm]
+    Nithish scored all 155 case-2 turns by hand.\\[1mm]
     Rubric checked on 25 hand-scored responses: 92\% exact on empathy, 100\% on safety.\\[1mm]
     Safety $\le$ 3 on 2 turns, both invented context, neither harmful. Empathy never reached 5.};
 \end{tikzpicture}
@@ -492,8 +492,7 @@
       \node[anchor=north west,inner sep=0,text width=8.4cm,font=\scriptsize,align=left] at (.22,-2.8) {\qa\par\vspace{1.5mm}\qb};
     \end{scope}
   }
-\end{tikzpicture}\\[1mm]
-{\tiny\color{muted} Sudipa's two scenarios, run live on the GPU node with run\_pipeline\_small\_mt.py. The simulator writes each user turn and its body summary together, so the stress score is simulated, not measured; the fine-tuned model replies with and without the summary, and every turn was kept as generated. Strategy in {\color{saffron}\bfseries orange}: it moved once the signals were added (9 of 12 turns, against 8 of 25 on the held-out scenarios). In B, turn 1, the reply with signals cites heart rate and blood pressure; the wristband does not measure blood pressure.\par}
+\end{tikzpicture}
 \vfill
 \begin{tikzpicture}
   \node[fill=ink,text=white,rounded corners=3pt,text width=11.6cm,inner sep=5pt,font=\scriptsize\bfseries,anchor=south west] at (0,0) {The stress score follows each chat both ways; the replies barely change with it. B calmed down anyway. A called them repetitive at turn 5 and left at turn 6.};
@@ -560,12 +559,14 @@
     \end{itemize}};
   \node[mem] (m2) at (6.15,0) {{\color{iris}\footnotesize\bfseries B. Siddaarth}\\[1.5mm]
     \begin{itemize}\setlength\itemsep{.6mm}
-    \item Website screen flow: context \ra{} participant \ra{} conversation
-    \item build\_data.py pairing fix; loadContextSummary; context\_names.json (42 names)
-    \item Merged duplicate cards, 54 \ra{} 44
-    \item Case 2 replies for 9, 12, 12\_1, 12\_2 (4 participants)
-    \item Hand-scored new vs original responses on six parameters
-    \item Batched and randomised format runs; FSDP out-of-memory fix
+    \item Built the context \ra{} participant \ra{} conversation flow; merged duplicate cards, 54 \ra{} 44
+    \item Fixed build\_data.py pairing participant 1's CSV with the wrong JSON
+    \item loadContextSummary in data.ts, the lookup behind every participant screen
+    \item context\_names.json, 42 names
+    \item Case 2 responses, strategies and summaries for 9, 12, 12\_1, 12\_2
+    \item Scored them on empathy, specificity, strategy, physio grounding, fluency, safety
+    \item Batched vs randomised format runs: batched beat the majority baseline on strategy F1, 0.181 vs 0.161
+    \item FSDP out-of-memory fix, train.py
     \item Wore the Embrace Plus for 5 days
     \end{itemize}};
   \node[mem] (m3) at (10.145,0) {{\color{iris}\footnotesize\bfseries Krishna Chaitanya}\\[1.5mm]
